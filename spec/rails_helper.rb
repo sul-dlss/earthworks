@@ -4,6 +4,9 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/poltergeist'
+require 'coveralls'
+
+Coveralls.wear!('rails')
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, timeout: 60)
