@@ -100,6 +100,9 @@ GEM
       warden (~> 1.2.3)
     devise-guests (0.3.3)
       devise
+    devise-remote-user (0.4.0)
+      devise
+      rails (>= 3.2, < 5.0)
     diff-lcs (1.2.5)
     docile (1.1.5)
     erubis (2.7.0)
@@ -278,7 +281,9 @@ DEPENDENCIES
   coveralls
   devise
   devise-guests (~> 0.3)
+  devise-remote-user
   geoblacklight (~> 0.0.4)
+  devise-remote-user
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails

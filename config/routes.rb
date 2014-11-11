@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   post "wms/handle"
   root :to => "catalog#index"
   blacklight_for :catalog
-  devise_for :users
+  devise_for :users, skip: [:sessions]
+  devise_scope :user do
+    get "users/auth/webauth" => "login#login", as: :new_user_session
+    match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
