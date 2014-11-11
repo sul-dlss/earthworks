@@ -3,14 +3,7 @@ lock '3.2.1'
 
 set :application, 'earthworks'
 set :repo_url, 'https://github.com/sul-dlss/earthworks.git'
-set :deploy_host, ask("Server", 'e.g. hostname with no ".stanford.edu" or server node designator')
-ask :user, proc { `whoami`.chomp }.call
-
-# Default branch is :master
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
-
-server "#{fetch(:deploy_host)}.stanford.edu", user: fetch(:user), roles: %w{web db app}
-
+set :branch, 'master'
 
 Capistrano::OneTimeKey.generate_one_time_key!
 
@@ -27,10 +20,10 @@ set :log_level, :info
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/solr.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml config/solr.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{bin config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin config/environments config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
