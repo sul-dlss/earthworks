@@ -281,6 +281,7 @@ DEPENDENCIES
   coveralls
   devise
   devise-guests (~> 0.3)
+  devise-remote-user
   geoblacklight (~> 0.0.4)
   devise-remote-user
   jbuilder (~> 2.0)
