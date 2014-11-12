@@ -3,7 +3,12 @@
 
 ## EarthWorks
 
-Geospatial discovery application for Stanford University Libraries. Built using [GeoBlacklight](https://github.com/geoblacklight/geoblacklight)
+Geospatial discovery application for Stanford University Libraries. Built using:
+
+* [GeoBlacklight](https://github.com/geoblacklight)
+* [GeoHydra](https://github.com/sul-dlss/geohydra)
+* [gis-robot-suite](https://github.com/sul-dlss/gis-robot-suite)
+* [OpenGeoMetadatda](https://github.com/opengeometadata)
 
 ## Installation
 
