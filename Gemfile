@@ -30,7 +30,10 @@ group :development, :test do
   gem 'poltergeist'
 end
 
-gem 'coveralls', require: false
+group :test do
+  gem 'simplecov', '~> 0.9.1', require: false
+  gem 'coveralls', require: false
+end
 
 group :deployment do
   gem 'capistrano', '~> 3.0'
