@@ -3,7 +3,13 @@ lock '3.2.1'
 
 set :application, 'earthworks'
 set :repo_url, 'https://github.com/sul-dlss/earthworks.git'
-set :branch, 'master'
+ask :deploy_host, 'kurma-earthworks'
+ask :user, 'geostaff'
+
+# Default branch is :master
+ask :branch, 'master'
+
+server "#{fetch(:deploy_host)}.stanford.edu", user: fetch(:user), roles: %w{web db app}
 
 Capistrano::OneTimeKey.generate_one_time_key!
 
