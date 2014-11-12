@@ -4,9 +4,6 @@ require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/poltergeist'
-require 'coveralls'
-
-Coveralls.wear!('rails')
 
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, timeout: 60)
@@ -14,6 +11,16 @@ end
 Capybara.javascript_driver = :poltergeist
 
 Capybara.default_wait_time = 10
+
+if ENV["COVERAGE"] or ENV["CI"]
+  require 'simplecov'
+  require 'coveralls' if ENV["CI"]
+
+  SimpleCov.formatter = Coveralls::SimpleCov::Formatter if ENV["CI"]
+  SimpleCov.start do
+    add_filter "/spec/"
+  end
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in

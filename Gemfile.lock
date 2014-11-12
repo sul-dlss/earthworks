@@ -283,7 +283,6 @@ DEPENDENCIES
   devise-guests (~> 0.3)
   devise-remote-user
   geoblacklight (~> 0.0.4)
-  devise-remote-user
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
@@ -294,6 +293,7 @@ DEPENDENCIES
   rspec-rails (~> 3.1.0)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
+  simplecov (~> 0.9.1)
   spring
   sqlite3
   therubyracer
