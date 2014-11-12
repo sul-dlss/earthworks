@@ -21,7 +21,7 @@ class OpengeometadataController < ApplicationController
       raise ActiveRecord::RecordNotFound.new("Layer is not registered: #{@uuid}") if layer_path.nil?
     else
       # ... otherwise locate as-is
-      layer_path = layer_id
+      layer_path = @layer_id
     end
     
     # validate that we actually hold this layer
