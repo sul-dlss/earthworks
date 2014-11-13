@@ -9,7 +9,7 @@ class OpengeometadataController < ApplicationController
     @institution = params[:institution]
     @layer_id = params[:layer_id]
     @metadata_format = params[:metadata_format] || 'iso19139'
-    @metadata_format = 'iso19139' if @metadata_format = 'default'
+    @metadata_format = 'iso19139' if @metadata_format == 'default'
 
     # construct the layer's UUID
     @uuid = "#{@institution}:#{@layer_id}"
@@ -30,15 +30,15 @@ class OpengeometadataController < ApplicationController
     raise ActiveRecord::RecordNotFound.new("Layer is not available: #{@uuid}") unless File.directory?(fn)
     
     # ...and in the given format
-    fn = File.join(fn, "#{@metadata_format}.xml")
-    raise ActiveRecord::RecordNotFound.new("Layer is not available in #{@metadata_format} format") unless File.size?(fn)
 
     # show the layer now
     respond_to do |format|
-      # respond with the source XML in the given metadata format
-      format.xml do
-        send_file fn
-      end
+      fn = File.join(fn, "#{@metadata_format}.#{params[:format]}")
+      puts fn
+      raise ActiveRecord::RecordNotFound.new("Layer is not available in #{@metadata_format.upcase} format as #{params[:format].upcase}") unless File.size?(fn)
+      
+      format.xml { send_file fn }
+      format.html { send_file fn, :disposition => 'inline' }
     end
   end
 
