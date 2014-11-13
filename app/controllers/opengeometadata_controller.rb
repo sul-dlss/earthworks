@@ -9,6 +9,7 @@ class OpengeometadataController < ApplicationController
     @institution = params[:institution]
     @layer_id = params[:layer_id]
     @metadata_format = params[:metadata_format] || 'iso19139'
+    @metadata_format = 'iso19139' if @metadata_format = 'default'
 
     # construct the layer's UUID
     @uuid = "#{@institution}:#{@layer_id}"
