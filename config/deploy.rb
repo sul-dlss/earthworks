@@ -3,15 +3,13 @@ lock '3.2.1'
 
 set :application, 'earthworks'
 set :repo_url, 'https://github.com/sul-dlss/earthworks.git'
-ask :deploy_host, 'kurma-earthworks'
-ask :user, 'geostaff'
 
 # Default branch is :master
-ask :branch, 'master'
+ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+ask :user, proc { `whoami`.chomp }.call
+set :home_directory, "/opt/app/#{fetch(:user)}"
 
-server "#{fetch(:deploy_host)}.stanford.edu", user: fetch(:user), roles: %w{web db app}
-
-Capistrano::OneTimeKey.generate_one_time_key!
+set :deploy_to, "#{fetch(:home_directory)}/#{fetch(:application)}"
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -29,7 +27,7 @@ set :log_level, :info
 set :linked_files, %w{config/database.yml config/secrets.yml config/solr.yml}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{bin config/environments config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+set :linked_dirs, %w{bin config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
