@@ -34,7 +34,6 @@ class OpengeometadataController < ApplicationController
     # show the layer now
     respond_to do |format|
       fn = File.join(fn, "#{@metadata_format}.#{params[:format]}")
-      puts fn
       raise ActiveRecord::RecordNotFound.new("Layer is not available in #{@metadata_format.upcase} format as #{params[:format].upcase}") unless File.size?(fn)
       
       format.xml { send_file fn }
