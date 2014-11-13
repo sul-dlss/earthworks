@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   blacklight_for :catalog
   devise_for :users, skip: [:sessions]
   devise_scope :user do
-    get "users/auth/webauth" => "login#login", as: :new_user_session
+    get "restricted/users/auth/webauth" => "login#login", as: :new_user_session
     match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
   end
   # The priority is based upon order of creation: first created -> highest priority.
