@@ -40,7 +40,7 @@ GEM
       blacklight (>= 5.0.0.pre4, < 6)
       jquery-rails
       rails (>= 3.0, < 5.0)
-    bootstrap-sass (3.3.0.1)
+    bootstrap-sass (3.3.1.0)
       sass (~> 3.2)
     builder (3.2.2)
     bundler-audit (0.3.1)
@@ -112,8 +112,8 @@ GEM
     ffi (1.9.6)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (0.0.4)
-      blacklight (~> 5.7.1)
+    geoblacklight (0.0.5)
+      blacklight (~> 5.7.2)
       blacklight_range_limit (~> 5.0.1)
       faraday
       font-awesome-rails (~> 4.1.0.0)
@@ -152,7 +152,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     mini_portile (0.6.1)
-    minitest (5.4.2)
+    minitest (5.4.3)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -282,7 +282,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3)
   devise-remote-user
-  geoblacklight (~> 0.0.4)
+  geoblacklight (~> 0.0.5)
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
