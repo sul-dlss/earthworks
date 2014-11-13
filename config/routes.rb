@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
   end
   
-  get 'opengeometadata/layers/:institution/:layer_id' => 'opengeometadata#show', :constraints => { :institution => /[\w\.]+/ }, :defaults => { :format => 'xml' }
   get 'opengeometadata/layers/:institution/:layer_id/:metadata_format' => 'opengeometadata#show', :constraints => { :institution => /[\w\.]+/ }, :defaults => { :format => 'xml' }
   
   # The priority is based upon order of creation: first created -> highest priority.
