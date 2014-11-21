@@ -60,7 +60,7 @@ gem 'mysql'
 
 
 gem "blacklight"
-gem "geoblacklight", '~> 0.0.7'
+gem "geoblacklight", '~> 0.0.8'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3"
