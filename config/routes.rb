@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
   end
   
-  get 'metadata/layers/:institution/:layer_id/:metadata_format' => 'opengeometadata#show', :constraints => { :institution => /[\w\.]+/ }, :defaults => { :format => 'xml' }
+  get 'metadata/layers/:institution/:layer_id/:metadata_format' => 'opengeometadata#show', :constraints => { :institution => /[\w\.]+/, :layer_id => /[\w:\/]+/ }, :defaults => { :format => 'xml' }  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
