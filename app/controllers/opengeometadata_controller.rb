@@ -18,7 +18,8 @@ class OpengeometadataController < ApplicationController
     json_fn = "#{SRCDIR}/#{@institution}/layers.json"
     if File.size?(json_fn)
       layers = JSON.parse(File.open(json_fn).read)
-      layer_path = layers[@uuid]      
+      layer_path = layers[@layer_id]
+      layer_path = layers[@uuid] if layer_path.nil?
       raise ActiveRecord::RecordNotFound.new("Layer is not registered: #{@uuid}") if layer_path.nil?
     else
       # ... otherwise locate as-is
