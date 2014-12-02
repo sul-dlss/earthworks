@@ -156,7 +156,6 @@ GEM
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql (2.9.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.1)
@@ -164,6 +163,7 @@ GEM
     nokogiri (1.6.4.1)
       mini_portile (~> 0.6.0)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     poltergeist (1.5.1)
       capybara (~> 2.1)
       cliver (~> 0.3.1)
@@ -287,7 +287,7 @@ DEPENDENCIES
   jettywrapper
   jquery-rails
   lyberteam-capistrano-devel
-  mysql
+  pg
   poltergeist
   rails (= 4.1.8)
   rspec-rails (~> 3.1.0)
