@@ -31,7 +31,7 @@ namespace :earthworks do
   namespace :spec do
     begin
       require 'rspec/core/rake_task'
-      desc 'spec task that runs only data-integration tests (run on Jenkins against production data)'
+      desc 'spec task that runs only data-integration tests (run locally against production data)'
       RSpec::Core::RakeTask.new('data-integration') do |t|
         t.rspec_opts = '--tag data-integration'
       end

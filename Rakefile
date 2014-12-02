@@ -23,3 +23,11 @@ task :ci => [:environment] do
     system('rake ci RAILS_ENV=test')
   end
 end
+desc 'Execute the integration test build against production index'
+task :integration => [:environment] do
+  if Rails.env.test?
+    Rake::Task['earthworks:spec:data-integration'].invoke
+  else
+    system('rake integration RAILS_ENV=test')
+  end
+end
