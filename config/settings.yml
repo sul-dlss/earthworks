@@ -1,3 +1,5 @@
+EMAIL_TO: 'fake-email@example.com'
+HOSTNAME: 'HOST'
 INSTITUTION: 'Stanford'
 WMS_PARAMS:
   :SERVICE: 'WMS'
@@ -7,3 +9,4 @@ WMS_PARAMS:
   :SRS: 'EPSG:4326'
   :EXCEPTIONS: 'application/json'
   :INFO_FORMAT: 'text/html'
+  
