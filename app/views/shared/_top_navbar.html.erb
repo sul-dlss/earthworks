@@ -6,6 +6,14 @@
       <%= image_tag "sul-logo.png", class: "hidden-xs", alt: "", height: 25 %>
       <%= image_tag "sul-logo-small.png", class: "visible-xs", alt: "", height: 25 %>
       <% end %>
+      <div class='topnav-links'>
+        <%= link_to feedback_path, data: { toggle: 'collapse', target: '#feedback-form' } do %>
+          Feedback
+        <% end %>
+      </div>
     </header>
   </div>
+</div>
+<div id='feedback-form' class='feedback-form-container collapse'>
+  <%= render 'shared/feedback_forms/form' if show_feedback_form? %>
 </div>

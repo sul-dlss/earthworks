@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  earthworks:
+    feedback_form:
+      success: 'Thank you! Your feedback has been sent.'
