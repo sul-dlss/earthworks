@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post "wms/handle"
   root :to => "catalog#index"
   blacklight_for :catalog
-  devise_for :users, skip: [:sessions]
+  devise_for :users, skip: [:registrations, :passwords, :sessions]
   devise_scope :user do
     get "restricted/users/auth/webauth" => "login#login", as: :new_user_session
     match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
