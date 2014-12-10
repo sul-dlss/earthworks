@@ -112,7 +112,7 @@ GEM
     ffi (1.9.6)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (0.2.2)
+    geoblacklight (0.3.1)
       blacklight (~> 5.7.2)
       blacklight_range_limit (~> 5.0.1)
       faraday
@@ -282,7 +282,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3)
   devise-remote-user
-  geoblacklight (~> 0.2.2)
+  geoblacklight (~> 0.3.1)
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
