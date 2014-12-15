@@ -125,6 +125,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.11)
+    is_it_working (1.0.10)
     jbuilder (2.2.4)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -283,6 +284,7 @@ DEPENDENCIES
   devise-guests (~> 0.3)
   devise-remote-user
   geoblacklight (~> 0.3.4)
+  is_it_working
   jbuilder (~> 2.0)
   jettywrapper
   jquery-rails
