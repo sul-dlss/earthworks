@@ -3,6 +3,8 @@ GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
 HOSTNAME: 'HOST'
 INSTITUTION: 'Stanford'
 
+PROXY_URL: 'http://www.example.com/restricted'
+
 # (For external Download) timeout and open_timeout parameters for Faraday
 TIMEOUT_DOWNLOAD: 16
 
