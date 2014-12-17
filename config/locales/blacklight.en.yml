@@ -1,3 +1,7 @@
 en:
   blacklight:
     application_name: 'EarthWorks'
+    search:
+      form:
+        q: ''
+    

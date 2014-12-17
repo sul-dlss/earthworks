@@ -1,8 +1,11 @@
 //Add module import here
 
 @import 'modules/header_navbar';
-@import 'modules/top_navbar';
+@import 'modules/home';
+@import 'modules/leaflet';
 @import 'modules/show';
+@import 'modules/top_navbar';
+
 
 #su-wrap {
   margin-bottom: 20px;
