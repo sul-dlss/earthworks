@@ -7,6 +7,10 @@ class SolrDocument
 
   # self.unique_key = 'id'
   self.unique_key = 'layer_slug_s'
+  
+  self.field_semantics[:author] = :dc_creator_sm
+  self.field_semantics[:title] = :dc_title_s
+  self.field_semantics[:year] = :dct_temporal_sm
 
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension(Blacklight::Solr::Document::Email )
