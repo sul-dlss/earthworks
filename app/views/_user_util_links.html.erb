@@ -31,7 +31,7 @@
     <% end %>
     <% else %>
     <li>
-      <%= link_to t('blacklight.header_links.login'), new_user_session_path %>
+      <%= link_to t('blacklight.header_links.login'), new_user_session_path(:url => request.env['PATH_INFO']) %>
     </li>
     <% end %>
   </ul>
