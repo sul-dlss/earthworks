@@ -40,7 +40,7 @@ class FeedbackFormsController < ApplicationController
       params[:viewport]   =~ url_regex
       errors << 'Your message appears to be spam, and has not been sent.'
     end
-    flash[:error] = errors.join('<br/>') unless errors.empty?
-    flash[:error].nil?
+    flash[:danger] = errors.join('<br/>') unless errors.empty?
+    flash[:danger].nil?
   end
 end
