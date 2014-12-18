@@ -2,7 +2,7 @@ class WmsController < ApplicationController
 
   before_action :format_url
   def handle
-    response = WmsLayer.new(params).get_feature_info
+    response = Geoblacklight::WmsLayer.new(params).get_feature_info
 
     respond_to do |format|
       format.json { render json: response }
