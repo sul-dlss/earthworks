@@ -57,3 +57,5 @@ namespace :deploy do
   end
 
 end
+
+before 'deploy:publishing', 'squash:write_revision'

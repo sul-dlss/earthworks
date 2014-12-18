@@ -7,6 +7,10 @@ PROXY_URL: 'http://www.example.com/restricted'
 
 RESTRICTED_URL: 'http://www.example-services.com'
 
+SQUASH_API_HOST: 'http://squash-host.example.com'
+SQUASH_API_KEY: 'squash-api-key'
+SQUASH_DISABLE: <%= (Rails.env.development? || Rails.env.test?) %>
+
 # (For external Download) timeout and open_timeout parameters for Faraday
 TIMEOUT_DOWNLOAD: 16
 
