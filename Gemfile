@@ -66,3 +66,5 @@ gem "devise"
 gem "devise-guests", "~> 0.3"
 gem 'devise-remote-user'
 gem 'is_it_working'
+gem 'squash_ruby', require: 'squash/ruby'
+gem 'squash_rails', require: 'squash/rails'
