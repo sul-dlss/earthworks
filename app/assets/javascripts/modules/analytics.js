@@ -64,6 +64,10 @@ Blacklight.onLoad(function() {
 
   // Log download clicks
   $('[data-download-path]').on('click', function(e) {
-    window._gaq.push(['_trackEvent', 'Download', 'Initiate', e.target.innerText, e.target.href]);
+    var urlFragments = $(e.target).data('download-path').split('?'),
+      layerId = urlFragments[0].replace('/download/', ''),
+      type = urlFragments[1].replace('type=', '');
+
+    window._gaq.push(['_trackEvent', 'Download', layerId, type]);
   });
 });
