@@ -63,11 +63,16 @@ Blacklight.onLoad(function() {
   });
 
   // Log download clicks
-  $('[data-download-path]').on('click', function(e) {
-    var urlFragments = $(e.target).data('download-path').split('?'),
-      layerId = urlFragments[0].replace('/download/', ''),
-      type = urlFragments[1].replace('type=', '');
+  $(document).on('click', '[data-download="trigger"]', function(e) {
+    var data = $(e.target).data();
+    window._gaq.push(['_trackEvent', 'Download', data.downloadId, data.downloadType]);
+  });
 
-    window._gaq.push(['_trackEvent', 'Download', layerId, type]);
+  // Log failed download
+  $(document).on('DOMNodeInserted', function(e) {
+    var data = $('[data-download="error"]').data();
+    if (data) {
+      window._gaq.push(['_trackEvent', 'Failed Download', data.downloadId, data.downloadType]);
+    }
   });
 });
