@@ -112,7 +112,7 @@ GEM
     ffi (1.9.6)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (0.4.1)
+    geoblacklight (0.4.2)
       blacklight (~> 5.7.2)
       blacklight_range_limit (~> 5.0.1)
       faraday
@@ -124,7 +124,7 @@ GEM
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.6.11)
+    i18n (0.7.0)
     is_it_working (1.0.10)
     jbuilder (2.2.4)
       activesupport (>= 3.0.0, < 5)
@@ -287,7 +287,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3)
   devise-remote-user
-  geoblacklight (~> 0.4.1)
+  geoblacklight (~> 0.4.2)
   is_it_working
   jbuilder (~> 2.0)
   jettywrapper
