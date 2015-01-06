@@ -82,6 +82,10 @@ class CatalogController < ApplicationController
     }
 
     config.add_facet_field 'dc_rights_s', label: 'Access', limit: 8, partial: "icon_facet"
+    # config.add_facet_field 'layer_availability_score_f', :label => 'Availability', :query => {
+    #   offline: { label: 'Offline', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]" },
+    #   online: { label: 'Online', fq: "(*:* AND -layer_availability_score_f:[* TO *] AND -layer_geom_type_s:\"Paper Map\") OR (layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])" }
+    # }
     config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: "icon_facet"
     config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 3
 
