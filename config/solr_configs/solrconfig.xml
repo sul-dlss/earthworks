@@ -94,10 +94,30 @@
       <int name="indent">2</int>
       <str name="defType">edismax</str>
       <str name="echoParams">all</str>
+      <str name="mm">6&lt;-1 6&lt;90%</str>
+      <int name="qs">1</int>
+      <int name="ps">0</int>
+      <float name="tie">0.01</float>
       <str name="fl">*,score</str>
       <str name="sort">score desc, dc_title_sort asc</str>
       <str name="q.alt">*:*</str>
       <str name="qf">
+        text^1
+        dc_description_ti^2
+        dc_creator_tmi^3
+        dc_publisher_ti^3
+        dct_isPartOf_tmi^4
+        dc_subject_tmi^5
+        dct_spatial_tmi^5
+        dct_temporal_tmi^5
+        dc_title_ti^6
+        dc_rights_ti^7
+        dct_provenance_ti^8
+        layer_geom_type_ti^9
+        layer_slug_ti^10
+        dc_identifier_ti^10
+      </str>
+      <str name="pf"><!-- phrase boost within result set -->
         text^1
         dc_description_ti^2
         dc_creator_tmi^3
