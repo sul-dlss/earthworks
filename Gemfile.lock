@@ -113,7 +113,7 @@ GEM
     ffi (1.9.6)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (0.5.0)
+    geoblacklight (0.5.1)
       blacklight (~> 5.8.2)
       blacklight_range_limit (~> 5.0.2)
       faraday
@@ -136,7 +136,7 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
-    json (1.8.1)
+    json (1.8.2)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -152,7 +152,7 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.4.3)
     mini_portile (0.6.2)
-    minitest (5.5.0)
+    minitest (5.5.1)
     multi_json (1.10.1)
     multipart-post (2.0.0)
     net-scp (1.2.1)
@@ -169,7 +169,7 @@ GEM
       multi_json (~> 1.0)
       websocket-driver (>= 0.2.0)
     rack (1.5.2)
-    rack-test (0.6.2)
+    rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.8)
       actionmailer (= 4.1.8)
@@ -287,7 +287,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3)
   devise-remote-user
-  geoblacklight (~> 0.5.0)
+  geoblacklight (~> 0.5.1)
   is_it_working
   jbuilder (~> 2.0)
   jettywrapper
