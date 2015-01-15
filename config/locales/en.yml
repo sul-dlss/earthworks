@@ -23,3 +23,6 @@ en:
   earthworks:
     feedback_form:
       success: 'Thank you! Your feedback has been sent.'
+    use_and_reproduction:
+      public_html: 'This item is in the public domain. There are no restrictions on use.'
+      restricted_html: 'These data are licensed by Stanford Libraries and are available to Stanford University affiliates only. Affiliates are limited to current faculty, staff and students. These data may not be reproduced or used for any purpose without permission. For more information please contact <a href="mailto:brannerlibrary@stanford.edu">brannerlibrary@stanford.edu</a>.'
