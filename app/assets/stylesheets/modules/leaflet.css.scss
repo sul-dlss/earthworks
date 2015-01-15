@@ -1,3 +1,6 @@
 .leaflet-container {
   background: $beige-10-percent;
+  
+  // Needed to overwrite a font set by Leaflet-Rails
+  font-family: 'Source Sans Pro', sans-serif;
 }
