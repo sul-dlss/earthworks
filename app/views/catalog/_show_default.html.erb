@@ -1,5 +1,7 @@
 <% document ||= @document %>
 
+<% @page_title = t 'blacklight.search.show.title_html', :document_title => document_show_html_title, :application_name => application_name %>
+
 <%= render 'upper_metadata', locals: { document: document} %>
 
 <%= render 'show_message' %>
