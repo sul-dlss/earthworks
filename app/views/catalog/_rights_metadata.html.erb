@@ -1,0 +1,23 @@
+<% document ||= @document %>
+
+<% rights_metadata ||= document.rights_metadata %>
+
+<dl class='dl-horizontal'>
+  <% if rights_metadata.use_and_reproduction %>
+    <dt>Use and reproduction</dt>
+    <dd><%= rights_metadata.use_and_reproduction %></dd>
+  <% end %>
+  
+  <% if rights_metadata.copyright %>
+    <dt>Copyright</dt>
+    <dd itemprop='copyrightHolder'><%= rights_metadata.copyright %></dd>
+  <% end %>
+  
+  <% if rights_metadata.license %>
+    <dt>License</dt>
+    <dd itemprop='license'>
+      <%= image_tag "#{rights_metadata.license[:machine]}.png", class: "earthworks-license earthworks-license-#{rights_metadata.license[:machine]}" %>
+      <%= rights_metadata.license[:human] %>
+    </dd>
+  <% end %>
+</dl>
