@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
 <head>
   <title><%= render_page_title %></title>
   <meta charset="utf-8">
@@ -30,6 +30,7 @@
       <%= render 'shared/header_navbar' %>
       <%= render partial: 'shared/ajax_modal' %>
       <div id='main-container' role='main' class='container' data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+        <h1 class="sr-only">EarthWorks Geospatial Catalog</h1>
         <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
         <div class='row'>
           <%= yield %>
