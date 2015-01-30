@@ -6,3 +6,4 @@ en:
         q: ''
       show:
         title_html: '%{document_title} in %{application_name}'
+        label: '%{label}'
