@@ -36,5 +36,5 @@
   "solr_geom":"ENVELOPE(29.572742, 35.000308, 4.234077, -1.478794)",
   "solr_bbox":"29.572742 -1.478794 35.000308 4.234077",
   "solr_year_i":2005,
-  "stanford_rights_metadata_ss": "<rightsMetadata><access type=\"discover\"><machine><world \/><\/machine><\/access><access type=\"read\"><machine><world \/><\/machine><\/access><use><human type=\"useAndReproduction\">This item is in the public domain. There are no restrictions on use.<\/human><human type=\"creativeCommons\">Attribution Share Alike 3.0 Unported<\/human><machine type=\"creativeCommons\">by_sa<\/machine><\/use><copyright><human>This work is in the Public Domain, meaning that it is not subject to copyright.<\/human><\/copyright><\/rightsMetadata>"
+  "stanford_rights_metadata_s": "<rightsMetadata><access type=\"discover\"><machine><world \/><\/machine><\/access><access type=\"read\"><machine><world \/><\/machine><\/access><use><human type=\"useAndReproduction\">This item is in the public domain. There are no restrictions on use.<\/human><human type=\"creativeCommons\">Attribution Share Alike 3.0 Unported<\/human><machine type=\"creativeCommons\">by_sa<\/machine><\/use><copyright><human>This work is in the Public Domain, meaning that it is not subject to copyright.<\/human><\/copyright><\/rightsMetadata>"
 }
