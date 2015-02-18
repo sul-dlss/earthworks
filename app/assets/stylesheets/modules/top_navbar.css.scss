@@ -26,12 +26,11 @@
     padding-left: 0;
   }
   
-  li {
+  ul.navbar-nav > li {
     display: inline;
     
     a {
       color: $cardinal-red;
-      padding: 0;
       text-decoration: none;
       
       &:hover,
@@ -39,10 +38,21 @@
         border-bottom: 2px solid $cardinal-red;
       }
     }
+
+    & > a {
+      padding: 0;
+    }
   }
 
   .login-dropdown {
     z-index: 10000;
+    
+    li a {
+      &:hover,
+      &:focus {
+        color: $dropdown-link-hover-color;
+      }
+    }
   }
 
   .nav-element-divider {
