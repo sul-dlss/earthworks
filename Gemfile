@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.8'
+gem 'rails', '4.2.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -63,7 +63,7 @@ gem "blacklight"
 gem "geoblacklight", '~> 0.6.0'
 gem "jettywrapper"
 gem "devise"
-gem "devise-guests", "~> 0.3"
+gem "devise-guests", "~> 0.3.3"
 gem 'devise-remote-user'
 gem 'is_it_working'
 gem 'squash_ruby', require: 'squash/ruby'
