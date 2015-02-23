@@ -1,10 +1,11 @@
 <% document ||= @document %>
+<% document_unavailable = document_unavailable_options(document).uniq %>
 
-<% unless (document_available? || document.stanford? || document.restricted?) %>
+<% if document_unavailable.any? %>
   <div class='alert alert-warning unavailable-warning'>
-    <i class='fa fa-exclamation-triangle'></i>This data is hosted by <strong><%= document[:dct_provenance_s] %></strong>, and is currently unavailable to view or download. If you have questions about this or other unavailable datasets please submit this as 
+    <i class='fa fa-exclamation-triangle'></i>This data is hosted by <strong><%= document[:dct_provenance_s] %></strong>, and is currently unavailable to <%= document_unavailable.to_sentence %>. If you have questions about this or other unavailable datasets please submit this as 
     <%= link_to feedback_path, data: { toggle: 'collapse', target: '#feedback-form' } do %>
-    feedback
+      feedback
     <% end %>.
   </div>
 <% end %>
