@@ -1,4 +1,8 @@
 EMAIL_TO: 'fake-email@example.com'
+
+#Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
+GEOMETRY_FIELD: 'solr_bbox'
+
 GEOMONITOR_TOLERANCE: 0.8
 GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
 GOOGLE_SITE_VERIFICATION: 'I1DQ46tUnPOrYpnhDUsy5tOL22oywWb2LyUTwT8M-HU'
@@ -18,6 +22,11 @@ TIMEOUT_DOWNLOAD: 16
 
 # (For WMS inspection) timeout and open_timeout parameters for Faraday
 TIMEOUT_WMS: 4
+
+# Web services shown in tool panel
+WEBSERVICES_SHOWN:
+  - 'wms'
+  - 'wfs'
 
 WMS_PARAMS:
   :SERVICE: 'WMS'
