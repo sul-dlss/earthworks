@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
@@ -59,8 +58,8 @@ gem 'pg'
 # gem 'debugger', group: [:development, :test]
 
 
-gem "blacklight"
-gem "geoblacklight", '~> 0.6.0'
+gem "blacklight", '~> 5.9.3'
+gem "geoblacklight", '~> 0.7.0'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
