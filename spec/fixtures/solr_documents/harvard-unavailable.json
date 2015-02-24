@@ -19,7 +19,7 @@
   "layer_id_s":"sde:SDE.NTADCD106",
   "layer_geom_type_s":"Polygon",
   "layer_modified_dt":"2014-12-16T00:47:27Z",
-  "solr_bbox":"-179.149436 -14.602623 179.759346 71.331916",
+  "solr_bbox":"ENVELOPE(-179.149436, 179.759346, 71.331916, -14.602623)",
   "solr_geom":"ENVELOPE(-179.149436, 179.759346, 71.331916, -14.602623)",
   "solr_year_i":1999,
   "layer_availability_score_f":0.0
