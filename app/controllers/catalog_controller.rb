@@ -87,7 +87,31 @@ class CatalogController < ApplicationController
     #   online: { label: 'Online', fq: "(*:* AND -layer_availability_score_f:[* TO *] AND -layer_geom_type_s:\"Paper Map\") OR (layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])" }
     # }
     config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: "icon_facet"
-    config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 3
+
+    config.add_facet_field 'Download as', query: {
+      shapefile: {
+        label: 'Shapefile',
+        fq: '((dct_references_s:*wfs* AND layer_geom_type_s:(Polygon OR Line OR Point)) OR (dc_format_s:(Shapefile) AND dct_references_s:*downloadUrl*))'
+      },
+      kmz: {
+        label: 'KMZ',
+        fq: '(dct_references_s:*wms* AND layer_geom_type_s:(Polygon OR Line OR Point))'
+      },
+      geojson: {
+        label: 'GeoJSON',
+        fq: '((dct_references_s:*wfs* AND layer_geom_type_s:(Polygon OR Line OR Point)) OR dc_format_s:(GeoJSON))'
+      },
+      geotiff: {
+        label: 'GeoTIFF',
+        fq: '((dct_references_s:*wms* AND dc_format_s:(GeoTIFF OR ArcGRID)) OR (dc_format_s:(GeoTIFF) AND dct_references_s:*downloadUrl*))'
+      },
+      arcgrid: {
+        label: 'ArcGRID',
+        fq: '(dc_format_s:ArcGRID AND dct_references_s:*downloadUrl*)'
+      }
+    }
+
+    # config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 3
 
 
     # Have BL send all facet field names to Solr, which has been the default

@@ -1,0 +1,45 @@
+{  
+   "uuid":"http://purl.stanord.edu/sf815vr1246",
+   "dc_identifier_s":"http://purl.stanord.edu/sf815vr1246",
+   "dc_title_s":"1-Degree Digital Elevation Model: Monterey Bay, California, 1994",
+   "dc_description_s":"This raster dataset is a 1-degree Digital Elevation Model (DEM) showing Monterey Bay, California. These data were acquired from a DEM of Monterey Bay (monterey_w.dem), originally produced by the USGS. Original data were converted into a lattice grid to produce this layer. This layer is part of the GIS Data of the Monterey Bay collection, a compilation of data and imagery of the Monterey Bay area, including coastline, imagery, and bathymetry.This collection of data provides documented layers of of the Monterey Bay to persons/institutions of interest throughout the research and educational communities. These maps help define the geological variability of the seafloor and provide a detailed framework for future research, monitoring, and management activities. DEM's can be used as source elevation data for digital orthophotos, and, as layers in geographic information systems, for earth science analysis. DEM's can also serve as tools for volumetric analysis, for site location of towers, or for drainage basin delineation.",
+   "dc_rights_s":"Restricted",
+   "dct_provenance_s":"Stanford",
+   "dct_references_s":"{\"http://schema.org/url\":\"http://purl.stanord.edu/sf815vr1246\",\"http://schema.org/downloadUrl\":\"http://stacks.stanford.edu/file/druid:sf815vr1246/data.zip\",\"http://www.loc.gov/mods/v3\":\"http://purl.stanord.edu/sf815vr1246.mods\",\"http://www.isotc211.org/schemas/2005/gmd/\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:sf815vr1246/iso19139.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:sf815vr1246/default.html\",\"http://www.opengis.net/def/serviceType/ogc/wcs\":\"https://geowebservices-restricted.stanford.edu/geoserver/wcs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geowebservices-restricted.stanford.edu/geoserver/wms\"}",
+   "layer_id_s":"druid:sf815vr1246",
+   "layer_slug_s":"stanford-sf815vr1246",
+   "layer_geom_type_s":"Raster",
+   "layer_modified_dt":"2015-02-05T01:10:16Z",
+   "dc_format_s":"ArcGRID",
+   "dc_language_s":"English",
+   "dc_type_s":"Dataset",
+   "dc_publisher_s":"Monterey Bay Aquarium Research Institute",
+   "dc_creator_sm":[  
+      "Hatcher, Gerry"
+   ],
+   "dc_subject_sm":[  
+      "Continental margins",
+      "Digital elevation models",
+      "Topographic maps",
+      "Bathymetric maps",
+      "Elevation",
+      "Inland Waters",
+      "Imagery and Base Maps"
+   ],
+   "dct_issued_s":"1994",
+   "dct_temporal_sm":[  
+      "1994"
+   ],
+   "dct_spatial_sm":[  
+      "Monterey Bay (Calif.)"
+   ],
+   "dc_relation_sm":[  
+      "http://sws.geonames.org/5374363/about.rdf"
+   ],
+   "georss_box_s":"35.9662772 -122.0131988 37.0341003 -119.9610935",
+   "georss_polygon_s":"35.9662772 -122.0131988 37.0341003 -122.0131988 37.0341003 -119.9610935 35.9662772 -119.9610935 35.9662772 -122.0131988",
+   "solr_geom":"ENVELOPE(-122.0131988, -119.9610935, 37.0341003, 35.9662772)",
+   "solr_bbox":"-122.0131988 35.9662772 -119.9610935 37.0341003",
+   "solr_year_i":1994,
+   "stanford_rights_metadata_s":"\u003c?xml version=\"1.0\"?\u003e\n\u003crightsMetadata\u003e\n  \u003caccess type=\"discover\"\u003e\n    \u003cmachine\u003e\n      \u003cworld/\u003e\n    \u003c/machine\u003e\n  \u003c/access\u003e\n  \u003caccess type=\"read\"\u003e\n    \u003cmachine\u003e\n      \u003cgroup\u003eStanford\u003c/group\u003e\n    \u003c/machine\u003e\n  \u003c/access\u003e\n  \u003cuse\u003e\n    \u003chuman type=\"useAndReproduction\"\u003eThese data are licensed by Stanford Libraries and are available to Stanford University affiliates only. Affiliates are limited to current faculty, staff and students. These data may not be reproduced or used for any purpose without permission. For more information please contact brannerlibrary@stanford.edu.\u003c/human\u003e\n    \u003chuman type=\"creativeCommons\"/\u003e\n    \u003cmachine type=\"creativeCommons\"/\u003e\n  \u003c/use\u003e\n  \u003ccopyright\u003e\n    \u003chuman\u003eCopyright ownership resides with the originator.\u003c/human\u003e\n  \u003c/copyright\u003e\n\u003c/rightsMetadata\u003e\n"
+}
