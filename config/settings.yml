@@ -7,6 +7,7 @@ GEOMONITOR_TOLERANCE: 0.8
 GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
 GOOGLE_SITE_VERIFICATION: 'I1DQ46tUnPOrYpnhDUsy5tOL22oywWb2LyUTwT8M-HU'
 HOSTNAME: 'HOST'
+HOST_URL: 'http://www.example.com'
 INSTITUTION: 'Stanford'
 
 PROXY_URL: 'http://www.example.com/restricted'
