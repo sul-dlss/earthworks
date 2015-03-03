@@ -9,6 +9,12 @@ GOOGLE_SITE_VERIFICATION: 'I1DQ46tUnPOrYpnhDUsy5tOL22oywWb2LyUTwT8M-HU'
 HOSTNAME: 'HOST'
 INSTITUTION: 'Stanford'
 
+# Metadata shown in tool panel
+METADATA_SHOWN:
+  - 'fgdc'
+  - 'iso19139'
+  - 'mods'
+
 PROXY_URL: 'http://www.example.com/restricted'
 
 RESTRICTED_URL: 'http://www.example-services.com'
