@@ -1,7 +1,7 @@
 EMAIL_TO: 'fake-email@example.com'
 
 #Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
-GEOMETRY_FIELD: 'solr_bbox'
+GEOMETRY_FIELD: 'solr_geom'
 
 GEOMONITOR_TOLERANCE: 0.8
 GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
