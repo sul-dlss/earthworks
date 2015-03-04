@@ -232,6 +232,9 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial :downloads, partial: 'downloads', if: proc { |_context, _config, options| options[:document] }
     config.show.document_actions.delete(:sms)
     config.show.document_actions.delete(:citation)
+
+    # Custom results collection tool for GeoBlacklight
+    config.add_results_collection_tool :save_search
   end
 
 
