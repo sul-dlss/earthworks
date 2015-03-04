@@ -227,7 +227,7 @@ class CatalogController < ApplicationController
     config.spell_max = 5
 
     # Custom tools for GeoBlacklight
-    config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
+    config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
     config.show.document_actions.delete(:sms)
     config.show.document_actions.delete(:citation)
   end
