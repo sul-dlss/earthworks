@@ -1,16 +1,12 @@
 #
 # Generates sitemaps/sitemap*.xml.gz files from all of the slugs in the Solr index
 #
-require 'rsolr'
+require 'blacklight'
 require 'sitemap_generator'
 
-# initialization (XXX: we only run sitemaps in production)
-SOLR_URL = 'https://sul-solr.stanford.edu/solr/kurma-earthworks-prod'
-HOST_URL = 'https://earthworks.stanford.edu'
-
 # fetch all the slugs and their last modified (indexed) date
-solr = RSolr.connect(:url => SOLR_URL, :read_timeout => 300)
-response = solr.get 'select', :params => {
+# solr = RSolr.connect(:url => SOLR_URL, :read_timeout => 300)
+response = Blacklight.solr.get 'select', :params => {
   :q => '*:*',
   :facet => 'false',
   :rows => 1000000, # keep this very large
@@ -26,7 +22,7 @@ response['response']['docs'].each do |doc|
 end
 
 # generate sitemaps/sitemap*.xml.gz for all slugs
-SitemapGenerator::Sitemap.default_host = HOST_URL
+SitemapGenerator::Sitemap.default_host = Settings.HOST_URL
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.create_index = :auto
 SitemapGenerator::Sitemap.create do
