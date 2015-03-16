@@ -1,6 +1,6 @@
 <div class="container">
   <%= form_tag feedback_form_path, method: :post, class:"form-horizontal feedback-form", role:"form" do %>
-  <div class="col-sm-6 col-sm-offset-2">
+  <div class="col-sm-6 col-sm-offset-1">
     <div class="col-sm-offset-3">
       <%= render "shared/feedback_forms/reporting_from" %>
     </div>
@@ -11,7 +11,7 @@
     <%= hidden_field_tag :user_agent %>
     <%= hidden_field_tag :viewport %>
   </span>
-  <div class="col-sm-6 col-sm-offset-2">
+  <div class="col-sm-6 col-sm-offset-1">
     <div class="form-group">
       <%= label_tag(:message, 'Message', class:"col-sm-3 control-label") %>
       <div class="col-sm-9">
@@ -39,5 +39,6 @@
   </div>
   <% end %>
   <div class="col-sm-4">
+    If you cannot access content or use features on the EarthWorks website due to a disability or other accessibility-related issue, please contact the <a href='https://soap.stanford.edu/'>Stanford Online Accessibility Program</a> via <a href='https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=webaccessibility'>HelpSU</a> or by email at <a href='mailto:web-accessibility@stanford.edu'>web-accessibility@stanford.edu</a>.
   </div>
 </div>
