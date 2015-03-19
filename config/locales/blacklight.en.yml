@@ -3,7 +3,9 @@ en:
     application_name: 'EarthWorks'
     search:
       form:
-        q: ''
+        search:
+          label: 'search for'
+          placeholder: ''
       show:
         title_html: '%{document_title} in %{application_name}'
         label: '%{label}'

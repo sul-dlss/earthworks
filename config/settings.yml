@@ -1,7 +1,7 @@
 EMAIL_TO: 'fake-email@example.com'
 
 #Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
-GEOMETRY_FIELD: 'solr_bbox'
+GEOMETRY_FIELD: 'solr_geom'
 
 GEOMONITOR_TOLERANCE: 0.8
 GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
@@ -9,6 +9,12 @@ GOOGLE_SITE_VERIFICATION: 'I1DQ46tUnPOrYpnhDUsy5tOL22oywWb2LyUTwT8M-HU'
 HOSTNAME: 'HOST'
 HOST_URL: 'http://www.example.com'
 INSTITUTION: 'Stanford'
+
+# Metadata shown in tool panel
+METADATA_SHOWN:
+  - 'fgdc'
+  - 'iso19139'
+  - 'mods'
 
 PROXY_URL: 'http://www.example.com/restricted'
 
