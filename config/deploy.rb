@@ -58,4 +58,4 @@ namespace :deploy do
 
 end
 
-before 'deploy:publishing', 'squash:write_revision'
+# before 'deploy:publishing', 'squash:write_revision'
