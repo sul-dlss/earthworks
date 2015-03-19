@@ -16,6 +16,9 @@ METADATA_SHOWN:
   - 'iso19139'
   - 'mods'
 
+NEWRELIC_APP_NAME: 'should be specific to stage and prod'
+NEWRELIC_LICENSE_KEY: 'this is private'
+
 PROXY_URL: 'http://www.example.com/restricted'
 
 RESTRICTED_URL: 'http://www.example-services.com'
