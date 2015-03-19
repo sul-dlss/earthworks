@@ -27,6 +27,8 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.1.0'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 
 gem 'coveralls', require: false
