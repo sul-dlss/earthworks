@@ -7,7 +7,7 @@ feature 'Author search', feature: true, :"data-integration" => true do
     click_button 'search'
     expect(page).to have_css '.document', count: 1
     within '.document' do
-      expect(page).to have_css 'a', text: 'Watersheds of the Pacific Salmon Conservation Assessment Study Area, 1950-2005'
+      expect(page).to have_css 'a', text: 'Abundance Estimates of the Pacific Salmon Conservation Assessment Database, 1978-2008'
     end
   end
 end
