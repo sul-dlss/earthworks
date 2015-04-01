@@ -1,0 +1,8 @@
+.geoblacklight-available {
+  @extend .fa, .fa-check;
+  color: $pantone-334;
+}
+
+.geoblacklight-unavailable {
+  @extend .fa, .fa-times;
+}

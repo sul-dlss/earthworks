@@ -325,8 +325,8 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.3.3)
   devise-remote-user
-  geoblacklight (~> 0.7.1)
   factory_girl_rails
+  geoblacklight (~> 0.7.1)
   is_it_working
   jbuilder (~> 2.0)
   jettywrapper
