@@ -23,7 +23,7 @@ require 'capistrano/rvm'
 require 'capistrano/bundler'
 require 'capistrano/rails/assets'
 require 'dlss/capistrano'
-# require 'squash/rails/capistrano3'
+require 'squash/rails/capistrano3'
 require 'capistrano/sitemap_generator'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
