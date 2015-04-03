@@ -81,7 +81,10 @@ class CatalogController < ApplicationController
       # :segments => true
     }
 
-    config.add_facet_field 'dc_rights_s', label: 'Access', query: {
+    # Needed as a fallback for dc_rights_s facet selections that were previously linked, does not show up in UI
+    config.add_facet_field 'dc_rights_s', label: 'Rights', partial: 'icon_facet', show: false
+
+    config.add_facet_field 'access', label: 'Access', query: {
       restricted: {
         label: 'Restricted', fq: 'dc_rights_s:Restricted'
       },
