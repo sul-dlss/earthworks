@@ -34,7 +34,8 @@ end
 gem 'coveralls', require: false
 
 group :deployment do
-  gem 'capistrano', '3.2.1'
+  # pin to 3.4.0 for upgrade compatibility reasons
+  gem 'capistrano', '3.4.0'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'

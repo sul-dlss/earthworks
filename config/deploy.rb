@@ -1,5 +1,5 @@
-# config valid only for Capistrano 3.1
-lock '3.2.1'
+# config valid only for Capistrano 3.4.0
+lock '3.4.0'
 
 set :application, 'earthworks'
 set :repo_url, 'https://github.com/sul-dlss/earthworks.git'
@@ -27,7 +27,7 @@ set :log_level, :info
 set :linked_files, %w{config/database.yml config/secrets.yml config/solr.yml public/robots.txt}
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{bin config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/sitemaps}
+set :linked_dirs, %w{config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/sitemaps}
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -58,4 +58,4 @@ namespace :deploy do
 
 end
 
-# before 'deploy:publishing', 'squash:write_revision'
+before 'deploy:publishing', 'squash:write_revision'
