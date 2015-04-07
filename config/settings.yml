@@ -1,3 +1,5 @@
+BING_SITE_VERIFICATION: '4E61263975C6ABBF2ECE5A8CA5E592B7'
+
 EMAIL_TO: 'fake-email@example.com'
 
 #Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
