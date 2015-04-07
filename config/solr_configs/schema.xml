@@ -35,7 +35,8 @@
     <dynamicField name="*_tmi"  type="text_en" stored="false" indexed="true" multiValued="true"
                                 termVectors="true" termPositions="true" termOffsets="true"/>
     <dynamicField name="*_sort" type="text_sort" stored="false" indexed="true" multiValued="false"/>
-
+    
+    <dynamicField name="*spell" type="text_en" indexed="true" stored="false" multiValued="true" />
     <!-- Spatial field types:
 
          Solr3:
@@ -154,5 +155,12 @@
   <copyField source="dct_provenance_s"   dest="dct_provenance_sort"/>
   <copyField source="dc_publisher_s"     dest="dc_publisher_sort"/>
   <copyField source="dc_title_s"         dest="dc_title_sort"/>
-
+  
+  <!-- for spell checking -->
+  <copyField source="dc_title_s" dest="spell"/>
+  <copyField source="dc_creator_sm" dest="spell"/>
+  <copyField source="dc_publisher_s" dest="spell"/>
+  <copyField source="dct_provenance_s" dest="spell"/>
+  <copyField source="dc_subject_sm" dest="spell"/>
+  <copyField source="dct_spatial_sm" dest="spell"/>
 </schema>
