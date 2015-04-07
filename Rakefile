@@ -5,7 +5,7 @@ require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
 
-BLACKLIGHT_JETTY_VERSION = '4.10.2'
+BLACKLIGHT_JETTY_VERSION = '4.10.4'
 ZIP_URL = "https://github.com/projectblacklight/blacklight-jetty/archive/v#{BLACKLIGHT_JETTY_VERSION}.zip"
 require 'jettywrapper'
 
