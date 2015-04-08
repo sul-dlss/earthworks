@@ -347,9 +347,5 @@ DEPENDENCIES
   squash_rails
   squash_ruby
   therubyracer
-<<<<<<< HEAD
-=======
-  turbolinks
   twitter-typeahead-rails
->>>>>>> add typeahead js
   uglifier (>= 1.3.0)
