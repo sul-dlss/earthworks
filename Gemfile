@@ -61,8 +61,8 @@ gem 'pg'
 # gem 'debugger', group: [:development, :test]
 
 
-gem "blacklight", '~> 5.9.3'
-gem "geoblacklight", '~> 0.8.0'
+gem "blacklight", '~> 5.12.1'
+gem "geoblacklight", '~> 0.9.0'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
