@@ -1,0 +1,18 @@
+<h2><%= t 'blacklight.search.zero_results.title' %></h2>
+<div id="documents" class="noresults">
+  <h3 class='modify-search'> <%= t 'blacklight.search.zero_results.modify_search' %></h3>
+  <ul>
+    <li><%= t 'blacklight.search.zero_results.use_fewer_keywords' %></li>
+
+    <% if params[:q] and params[:search_field] and params[:search_field] != blacklight_config.default_search_field.try(:key) %>
+      <li><%= t 'blacklight.search.zero_results.search_fields', :search_fields => search_field_label(params) %> - 
+      <%= link_to t('blacklight.search.zero_results.search_everything', field: blacklight_config.default_search_field.label), url_for(params_for_search(:search_field=>blacklight_config.default_search_field.key)) %>
+      </li>
+    <% end %>
+  </ul>
+  <h3 class='ask-for-dataset'> Ask for a dataset to be added</h3>
+  <p>You can submit <%= link_to feedback_path, data: { toggle: 'collapse', target: '#feedback-form' } do %>
+    feedback
+  <% end %> to the <%= link_to 'EarthWorks', root_path %> team requesting data to be added.
+  </p>
+</div>
