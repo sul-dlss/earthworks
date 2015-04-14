@@ -6,7 +6,7 @@ module GeomonitorConcern
   end
 
   def score_meets_threshold?
-    score = get(:layer_availability_score_f)
+    score = fetch(:layer_availability_score_f, {})
     if score.present?
       score > Settings.GEOMONITOR_TOLERANCE
     else
