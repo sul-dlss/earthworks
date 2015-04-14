@@ -31,7 +31,7 @@ class CatalogController < ApplicationController
 
     config.show.display_type_field = 'format'
 
-
+    config.search_builder_class = Geoblacklight::SearchBuilder
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
