@@ -132,7 +132,7 @@ GEM
     ffi (1.9.6)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (0.9.1)
+    geoblacklight (0.9.2)
       blacklight (~> 5.12.0)
       blacklight_range_limit (~> 5.0.3)
       coderay
@@ -324,7 +324,7 @@ DEPENDENCIES
   devise-guests (~> 0.3.3)
   devise-remote-user
   factory_girl_rails
-  geoblacklight (~> 0.9.1)
+  geoblacklight (~> 0.9.2)
   is_it_working
   jbuilder (~> 2.0)
   jettywrapper
