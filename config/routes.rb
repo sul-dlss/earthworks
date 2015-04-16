@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
   end
 
+  resources :suggest, only: :index, defaults: { format: 'json' }
+
   resource :feedback_form, path: 'feedback', only: [:new, :create]
   get 'feedback' => 'feedback_forms#new'
   # The priority is based upon order of creation: first created -> highest priority.

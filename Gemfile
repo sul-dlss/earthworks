@@ -71,4 +71,4 @@ gem 'squash_ruby', require: 'squash/ruby'
 gem 'squash_rails', require: 'squash/rails'
 gem 'sitemap_generator', '~> 5.0.5'
 gem 'newrelic_rpm'
-
+gem 'twitter-typeahead-rails'
