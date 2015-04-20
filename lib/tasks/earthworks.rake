@@ -33,10 +33,6 @@ namespace :earthworks do
       cp "#{Rails.root}/config/solr_configs/#{file}.xml", "#{Rails.root}/jetty/solr/blacklight-core/conf/"
     end
   end
-  desc 'Load GeoMonitor availability scores in geomonitor_datafile into Solr index at solr_url'
-  task :update_availability, :solr_url, :geomonitor_datafile do |t, args|
-      system "ruby #{Rails.root}/tools/geomonitor/update.rb #{args.solr_url} #{args.geomonitor_datafile}"
-  end
   namespace :spec do
     begin
       require 'rspec/core/rake_task'
