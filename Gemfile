@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.0'
+gem 'rails', '4.2.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -61,7 +61,7 @@ gem 'pg'
 
 
 gem "blacklight", '~> 5.12.1'
-gem "geoblacklight", '~> 0.9.2'
+gem "geoblacklight", '~> 0.10.1'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
