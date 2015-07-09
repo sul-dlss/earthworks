@@ -16,7 +16,7 @@
   <% if rights_metadata.license %>
     <dt>License</dt>
     <dd itemprop='license'>
-      <%= image_tag "#{rights_metadata.license[:machine]}.png", class: "earthworks-license earthworks-license-#{rights_metadata.license[:machine]}" %>
+      <%= image_tag "#{rights_metadata.license[:machine].to_s.gsub('_', '-')}.png", class: "earthworks-license earthworks-license-#{rights_metadata.license[:machine].to_s.gsub('_', '-')}" %>
       <%= rights_metadata.license[:human] %>
     </dd>
   <% end %>
