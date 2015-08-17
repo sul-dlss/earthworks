@@ -6,6 +6,7 @@ class SolrDocument
   include GeomonitorConcern
   include RightsMetadataConcern
   include WmsRewriteConcern
+  include CartodbConcern
 
   # self.unique_key = 'id'
   self.unique_key = 'layer_slug_s'
