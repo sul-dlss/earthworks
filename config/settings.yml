@@ -1,4 +1,10 @@
+# Configurable Logo Used for CartoDB export
+APPLICATION_LOGO_URL: 'http://geoblacklight.org/images/geoblacklight-logo.png'
+
 BING_SITE_VERIFICATION: '4E61263975C6ABBF2ECE5A8CA5E592B7'
+
+# CartoDB OneClick Service https://cartodb.com/open-in-cartodb/
+CARTODB_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
 
 EMAIL_TO: 'fake-email@example.com'
 
