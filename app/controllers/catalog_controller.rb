@@ -254,6 +254,10 @@ class CatalogController < ApplicationController
     config.add_results_collection_tool :save_search
   end
 
-
-
+  ##
+  # Overrides default Blacklight method to return true for an empty q value
+  # @return [Boolean]
+  def has_search_parameters?
+    !params[:q].nil? || super
+  end
 end
