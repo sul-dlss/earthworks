@@ -1,0 +1,9 @@
+require 'rails_helper'
+
+feature 'Spatial search', feature: true, :'data-integration' => true do
+  scenario 'isWithin should be more relevant' do
+    visit catalog_index_path(q: 'road', bbox: '61.34 2.11 92 40.45')
+    expect(page).to have_css 'h3.index_title', text: '1. Roads: Badakhshān Pr' \
+      'ovince, Afghanistan, 2005'
+  end
+end
