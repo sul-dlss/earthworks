@@ -61,7 +61,7 @@ gem 'pg'
 
 
 gem "blacklight", '~> 5.12.1'
-gem "geoblacklight", '~> 0.11.0'
+gem "geoblacklight", '~> 0.12.1'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
@@ -72,3 +72,4 @@ gem 'squash_rails', require: 'squash/rails'
 gem 'sitemap_generator', '~> 5.0.5'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
+gem 'blacklight_range_limit'
