@@ -3,15 +3,15 @@ require 'rails_helper'
 describe Earthworks::Suggest::SearchHelper do
 
   class SearchHelperTestClass
-    include Earthworks::Suggest::SearchHelper
+    include SearchHelper
 
     attr_accessor :blacklight_config
     attr_accessor :repository
 
     def initialize blacklight_config, conn
       self.blacklight_config = blacklight_config
-      self.repository = Blacklight::SolrRepository.new(blacklight_config)
-      self.repository.connection = conn
+      self.repository = Blacklight::Solr::Repository.new(blacklight_config)
+      repository.connection = conn
     end
 
     def params
@@ -25,11 +25,10 @@ describe Earthworks::Suggest::SearchHelper do
   let(:copy_of_catalog_config) { ::CatalogController.blacklight_config.deep_copy }
   let(:blacklight_solr) { RSolr.connect(Blacklight.connection_config) }
 
-
-
   describe '#get_suggestions' do
     it 'returns a Earthworks::Suggest::Response' do
-      expect(subject.get_suggestions q: 'test').to be_an Earthworks::Suggest::Response
+      expect(subject.get_suggestions(q: 'test'))
+        .to be_an Earthworks::Suggest::Response
     end
   end
   describe '#suggest_results' do
@@ -38,7 +37,7 @@ describe Earthworks::Suggest::SearchHelper do
         expect(path).to eq 'suggest'
         expect(params).to eq params: { q: 'st' }
       end
-      subject.query_solr q: 'st'
+      subject.suggest_results q: 'st'
     end
   end
 end

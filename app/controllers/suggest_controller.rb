@@ -1,3 +1,3 @@
 class SuggestController < ApplicationController
-  include Earthworks::Suggest
+  include Suggest
 end

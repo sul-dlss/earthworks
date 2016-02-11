@@ -41,7 +41,7 @@ GEM
       execjs
       json
     bcrypt (3.1.10)
-    blacklight (5.12.1)
+    blacklight (5.18.0)
       bootstrap-sass (~> 3.2)
       deprecation
       kaminari (>= 0.15)
@@ -323,7 +323,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight (~> 5.12.1)
+  blacklight
   blacklight_range_limit
   capistrano (= 3.4.0)
   capistrano-bundler

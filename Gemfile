@@ -60,7 +60,7 @@ gem 'pg'
 # gem 'debugger', group: [:development, :test]
 
 
-gem "blacklight", '~> 5.12.1'
+gem "blacklight"
 gem "geoblacklight", '~> 0.12.1'
 gem "jettywrapper"
 gem "devise"
