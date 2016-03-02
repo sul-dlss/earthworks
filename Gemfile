@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '4.2.5.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -38,7 +38,7 @@ group :deployment do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'lyberteam-capistrano-devel'
+  gem 'dlss-capistrano'
 end
 
 group :sqlite do
