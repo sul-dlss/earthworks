@@ -3,7 +3,8 @@ $(document).on('ready page:load', function() {
     datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
-      url: '/suggest?q=%QUERY'
+      url: '/suggest?q=%QUERY',
+      wildcard: '%QUERY'
     }
   });
 
