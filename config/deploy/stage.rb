@@ -1,5 +1,5 @@
 set :deploy_host, ask("Server", 'e.g. server.stanford.edu')
-set :bundle_without, %w{sqlite production test}.join(' ')
+set :bundle_without, %w{sqlite production test development}.join(' ')
 
 server fetch(:deploy_host), user: fetch(:user), roles: %w{web db app}
 

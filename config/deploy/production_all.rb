@@ -1,7 +1,7 @@
 # Deploys to all production nodes
 
 set :deploy_host, ask("Server", 'e.g. hostname with no ".stanford.edu", no server node designator, and no environment')
-set :bundle_without, %w{sqlite test}.join(' ')
+set :bundle_without, %w{sqlite test development}.join(' ')
 
 server_extensions = [1, 2]
 
