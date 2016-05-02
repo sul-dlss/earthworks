@@ -11,13 +11,13 @@
     width: 100%;
   }
 
-  .tt-dropdown-menu {
+  .tt-menu {
     @extend .dropdown-menu;
     font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; 
     
     width: 100%;
 
-    .tt-suggestion p{
+    .tt-suggestion{
       font-size: 14px;
       padding-left: 10px;
     }
