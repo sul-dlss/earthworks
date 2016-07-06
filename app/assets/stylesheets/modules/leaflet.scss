@@ -4,3 +4,8 @@
   // Needed to overwrite a font set by Leaflet-Rails
   font-family: 'Source Sans Pro', sans-serif;
 }
+
+.leaflet-overlay-pane g path {
+  fill: $cardinal-red;
+  stroke: $cardinal-red;
+}
