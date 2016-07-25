@@ -11,6 +11,25 @@ EMAIL_TO: 'fake-email@example.com'
 #Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
 GEOMETRY_FIELD: 'solr_geom'
 
+#Solr field mappings
+FIELDS:
+  :FILE_FORMAT: 'dc_format_s'
+  :GEOMETRY: 'solr_geom'
+  :WXS_IDENTIFIER: 'layer_id_s'
+  :RIGHTS: 'dc_rights_s'
+  :PROVENANCE: 'dct_provenance_s'
+  :GEOM_TYPE: 'layer_geom_type_s'
+  :SPATIAL_COVERAGE: 'dct_spatial_sm'
+  :SUBJECT: 'dc_subject_sm'
+  :REFERENCES: 'dct_references_s'
+  :YEAR: 'solr_year_i'
+  :CREATOR: 'dc_creator_sm'
+  :DESCRIPTION: 'dc_description_s'
+  :PUBLISHER: 'dc_publisher_s'
+  :PART_OF: 'dct_isPartOf_sm'
+  :TEMPORAL: 'dct_temporal_sm'
+  :TITLE: 'dc_title_s'
+
 GEOMONITOR_TOLERANCE: 0.8
 GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
 GOOGLE_SITE_VERIFICATION: 'I1DQ46tUnPOrYpnhDUsy5tOL22oywWb2LyUTwT8M-HU'
@@ -54,4 +73,25 @@ WMS_PARAMS:
   :SRS: 'EPSG:4326'
   :EXCEPTIONS: 'application/json'
   :INFO_FORMAT: 'text/html'
+
+# Settings for leaflet 
+OPACITY_CONTROL: &opacity_control
+  CONTROLS:
+    - 'Opacity'
+
+LEAFLET:
+  MAP:
+  LAYERS:
+  VIEWERS:
+    WMS:
+      <<: *opacity_control
+    TILEDMAPLAYER:
+      <<: *opacity_control
+    FEATURELAYER:
+      <<: *opacity_control
+    DYNAMICMAPLAYER:
+      <<: *opacity_control
+    IMAGEMAPLAYER:
+      <<: *opacity_control
+
   
