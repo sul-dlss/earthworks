@@ -31,8 +31,6 @@ class CatalogController < ApplicationController
 
     config.show.display_type_field = 'format'
 
-    config.search_builder_class = Earthworks::SearchBuilder
-
     # Custom GeoBlacklight fields which currently map to GeoBlacklight-Schema
     # v0.3.2
     config.wxs_identifier_field = 'layer_id_s'
