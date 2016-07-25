@@ -335,7 +335,7 @@ DEPENDENCIES
   newrelic_rpm
   pg
   poltergeist
-  rails (= 4.2.5.2)
+  rails (~> 4.2)
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0.3)
   sdoc (~> 0.4.0)
