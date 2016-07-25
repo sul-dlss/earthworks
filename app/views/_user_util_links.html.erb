@@ -1,6 +1,6 @@
 <div class="navbar-right">
   <ul class="nav navbar-nav">
-    <% if render_bookmarks_control? %>
+    <% if has_user_authentication_provider? && current_or_guest_user.present? %>
     <li>
       <%= link_to bookmarks_path, id:'bookmarks_nav' do %>
       <%= t('blacklight.header_links.bookmarks') %>
