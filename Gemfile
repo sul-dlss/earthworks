@@ -73,3 +73,5 @@ gem 'sitemap_generator', '~> 5.0.5'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
+
+gem 'rsolr'

@@ -336,6 +336,7 @@ DEPENDENCIES
   pg
   poltergeist
   rails (~> 4.2)
+  rsolr
   rspec-rails (~> 3.1.0)
   sass-rails (~> 5.0.3)
   sdoc (~> 0.4.0)
