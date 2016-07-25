@@ -8,13 +8,13 @@ feature 'Main page title' do
 end
 feature 'Search results' do
   scenario 'have title' do
-    visit catalog_index_path q: ''
+    visit search_catalog_path q: ''
     expect(page.title).to eq ' - EarthWorks Search Results'
   end
 end
 feature 'Show page' do
   scenario 'have title' do
-    visit catalog_path 'stanford-cg357zz0321'
+    visit solr_document_path'stanford-cg357zz0321'
     expect(page.title).to eq '10 Meter Countours: Russian River Basin, California in EarthWorks'
   end
 end
