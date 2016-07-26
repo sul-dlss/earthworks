@@ -266,6 +266,10 @@ class CatalogController < ApplicationController
 
     # Configure basemap provider
     config.basemap_provider = 'OpenStreetMap.HOT'
+
+    # Configuration for autocomplete suggestor
+    config.autocomplete_enabled = true
+    config.autocomplete_path = 'suggest'
   end
 
   ##
