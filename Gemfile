@@ -28,9 +28,12 @@ group :development, :test do
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'coveralls', require: false
+  ##
+  # Peg simplecov to < 0.8 until this is resolved:
+  # https://github.com/colszowka/simplecov/issues/281
+  gem 'simplecov', '~> 0.7.1', require: false
 end
-
-gem 'coveralls', require: false
 
 group :deployment do
   # pin to 3.4.0 for upgrade compatibility reasons
