@@ -61,7 +61,7 @@ gem 'pg'
 
 
 gem "blacklight"
-gem "geoblacklight", '~> 0.12.1'
+gem "geoblacklight", '1.0.0'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
