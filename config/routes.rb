@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
+
   devise_for :users, skip: [:registrations, :passwords, :sessions]
   devise_scope :user do
     get "restricted/users/auth/webauth" => "login#login", as: :new_user_session
@@ -34,6 +36,8 @@ Rails.application.routes.draw do
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
+    concerns :range_searchable
+
   end
 
   concern :exportable, Blacklight::Routes::Exportable.new
