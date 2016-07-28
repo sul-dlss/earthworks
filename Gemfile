@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.2'
+gem 'rails', '~> 4.2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -28,9 +28,12 @@ group :development, :test do
   gem 'poltergeist'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
+  gem 'coveralls', require: false
+  ##
+  # Peg simplecov to < 0.8 until this is resolved:
+  # https://github.com/colszowka/simplecov/issues/281
+  gem 'simplecov', '~> 0.7.1', require: false
 end
-
-gem 'coveralls', require: false
 
 group :deployment do
   # pin to 3.4.0 for upgrade compatibility reasons
@@ -61,7 +64,7 @@ gem 'pg'
 
 
 gem "blacklight"
-gem "geoblacklight", '~> 0.12.1'
+gem "geoblacklight", '1.0.0'
 gem "jettywrapper"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
@@ -73,3 +76,5 @@ gem 'sitemap_generator', '~> 5.0.5'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
+
+gem 'rsolr'

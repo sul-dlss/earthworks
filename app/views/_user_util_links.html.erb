@@ -1,6 +1,6 @@
 <div class="navbar-right">
   <ul class="nav navbar-nav">
-    <% if render_bookmarks_control? %>
+    <% if has_user_authentication_provider? && current_or_guest_user.present? %>
     <li>
       <%= link_to bookmarks_path, id:'bookmarks_nav' do %>
       <%= t('blacklight.header_links.bookmarks') %>
@@ -10,11 +10,11 @@
     <% end %>
     <% if has_user_authentication_provider? and current_user %>
     <li>
-      <%= link_to t('blacklight.header_links.saved_searches'), saved_searches_path %>
+      <%= link_to t('blacklight.header_links.saved_searches'), blacklight.saved_searches_path %>
     </li>
     <% end %>
     <li>
-      <%= link_to t('blacklight.header_links.search_history'), search_history_path %>
+      <%= link_to t('blacklight.header_links.search_history'), blacklight.search_history_path %>
     </li>
   </ul>
 </div>
