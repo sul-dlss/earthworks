@@ -41,7 +41,7 @@ GEM
     autoprefixer-rails (6.3.7)
       execjs
     bcrypt (3.1.10)
-    blacklight (6.3.3)
+    blacklight (6.4.0)
       bootstrap-sass (~> 3.2)
       deprecation
       globalid
@@ -141,7 +141,7 @@ GEM
     ffi (1.9.10)
     font-awesome-rails (4.1.0.0)
       railties (>= 3.2, < 5.0)
-    geoblacklight (1.0.0)
+    geoblacklight (1.0.1)
       blacklight (~> 6.3)
       coderay
       faraday
@@ -341,7 +341,7 @@ DEPENDENCIES
   devise-remote-user
   dlss-capistrano
   factory_girl_rails
-  geoblacklight (= 1.0.0)
+  geoblacklight (~> 1.0)
   is_it_working
   jbuilder (~> 2.0)
   jettywrapper
