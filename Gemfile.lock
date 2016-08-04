@@ -38,7 +38,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     arel (6.0.3)
-    autoprefixer-rails (6.3.7)
+    autoprefixer-rails (6.4.0)
       execjs
     bcrypt (3.1.10)
     blacklight (6.4.0)
@@ -139,13 +139,13 @@ GEM
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.10)
-    font-awesome-rails (4.1.0.0)
-      railties (>= 3.2, < 5.0)
-    geoblacklight (1.0.1)
+    font-awesome-rails (4.6.3.1)
+      railties (>= 3.2, < 5.1)
+    geoblacklight (1.0.3)
       blacklight (~> 6.3)
       coderay
       faraday
-      font-awesome-rails (~> 4.1.0.0)
+      font-awesome-rails
       geoblacklight-icons (>= 0.2)
       leaflet-rails (~> 0.7.3)
       rails_config (~> 0.4.2)
