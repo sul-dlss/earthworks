@@ -6,21 +6,19 @@
  The ASF licenses this file to You under the Apache License, Version 2.0
  (the "License"); you may not use this file except in compliance with
  the License.  You may obtain a copy of the License at
-
      http://www.apache.org/licenses/LICENSE-2.0
-
  Unless required by applicable law or agreed to in writing, software
  distributed under the License is distributed on an "AS IS" BASIS,
  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  See the License for the specific language governing permissions and
  limitations under the License.
 -->
-<!-- 
+<!--
      For more details about configurations options that may appear in
-     this file, see http://wiki.apache.org/solr/SolrConfigXml. 
+     this file, see http://wiki.apache.org/solr/SolrConfigXml.
 -->
 <config>
-  <luceneMatchVersion>LUCENE_CURRENT</luceneMatchVersion>
+  <luceneMatchVersion>6.1.0</luceneMatchVersion>
   <dataDir>${solr.data.dir:}</dataDir>
   <directoryFactory name="DirectoryFactory" class="${solr.directoryFactory:solr.NRTCachingDirectoryFactory}"/>
   <codecFactory class="solr.SchemaCodecFactory"/>
@@ -40,16 +38,15 @@
     </autoCommit>
   </updateHandler>
 
-  <!-- realtime get handler, guaranteed to return the latest stored fields 
-    of any document, without the need to commit or open a new searcher. The current 
-    implementation relies on the updateLog feature being enabled. -->
+  <jmx />
+
+  <!-- Required for Solr Cloud on sul-solr -->
+  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
   <requestHandler name="/get" class="solr.RealTimeGetHandler">
-    <lst name="defaults">
-      <str name="omitHeader">true</str>
-    </lst>
-  </requestHandler>  
-  
-  <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" /> 
+   <lst name="defaults">
+     <str name="omitHeader">true</str>
+   </lst>
+  </requestHandler>
 
   <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
        Query section - these settings control query time things like caches
@@ -80,7 +77,7 @@
   </query>
 
   <requestDispatcher handleSelect="false">
-    <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048000" formdataUploadLimitInKB="2048"/>
+    <requestParsers enableRemoteStreaming="true" multipartUploadLimitInKB="2048000" formdataUploadLimitInKB="2048" addHttpRequestToContext="false"/>
     <httpCaching never304="true"/>
    </requestDispatcher>
 
@@ -147,17 +144,14 @@
       <str name="facet.field">dc_subject_sm</str>
       <str name="facet.field">layer_geom_type_s</str>
       <str name="facet.field">solr_year_i</str>
-      
+
       <str name="spellcheck">true</str>
     </lst>
-    
+
     <arr name="last-components">
       <str>spellcheck</str>
     </arr>
   </requestHandler>
-
-  <requestHandler name="/update" class="solr.UpdateRequestHandler"/>
-  <requestHandler name="/admin/" class="solr.admin.AdminHandlers"/>
 
   <!-- ping/healthcheck -->
   <requestHandler name="/admin/ping" class="solr.PingRequestHandler">
@@ -167,23 +161,18 @@
     <lst name="defaults">
       <str name="echoParams">all</str>
     </lst>
-    <!-- An optional feature of the PingRequestHandler is to configure the 
-         handler with a "healthcheckFile" which can be used to enable/disable 
+    <!-- An optional feature of the PingRequestHandler is to configure the
+         handler with a "healthcheckFile" which can be used to enable/disable
          the PingRequestHandler.
-         relative paths are resolved against the data dir 
+         relative paths are resolved against the data dir
       -->
     <str name="healthcheckFile">server-enabled.txt</str>
   </requestHandler>
-  
-  <requestHandler name="/analysis/field" 
+
+  <requestHandler name="/analysis/field"
                   startup="lazy"
                   class="solr.FieldAnalysisRequestHandler" />
-                  
-  <!-- Legacy config for the admin interface -->
-  <admin>
-    <defaultQuery>*:*</defaultQuery>
-  </admin>
-  
+
   <searchComponent name="spellcheck" class="solr.SpellCheckComponent">
     <!-- a spellchecker built from a field of the main index -->
     <lst name="spellchecker">
@@ -209,7 +198,7 @@
       -->
     </lst>
   </searchComponent>
-  
+
   <searchComponent name="suggest" class="solr.SuggestComponent">
     <lst name="suggester">
       <str name="name">mySuggester</str>
