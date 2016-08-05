@@ -64,7 +64,7 @@ gem 'pg'
 
 
 gem "blacklight"
-gem "geoblacklight", '~> 1.0'
+gem "geoblacklight", '~> 1.1'
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
 gem 'devise-remote-user'
