@@ -13,3 +13,5 @@ env:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
 
 script: bundle exec rake ci
+
+jdk: oraclejdk8
