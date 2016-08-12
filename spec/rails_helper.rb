@@ -16,7 +16,7 @@ Capybara.register_driver :poltergeist do |app|
 end
 Capybara.javascript_driver = :poltergeist
 
-Capybara.default_wait_time = 10
+Capybara.default_max_wait_time = 10
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -56,8 +56,8 @@ RSpec.configure do |config|
     end
   end
 
-  config.include Devise::TestHelpers, type: :controller
-  config.include Devise::TestHelpers, type: :view
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
   config.include Warden::Test::Helpers, type: :feature
 
   config.include FactoryGirl::Syntax::Methods

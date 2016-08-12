@@ -3,11 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0.3'
+gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
-gem 'coffee-rails', '~> 4.0.0'
+gem 'coffee-rails', '~> 4.2'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer',  platforms: :ruby
 
@@ -15,7 +15,7 @@ gem 'therubyracer',  platforms: :ruby
 gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+gem 'jbuilder', '~> 2.5'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
@@ -23,7 +23,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails', '~> 3.1'
   gem 'capybara'
   gem 'poltergeist'
   gem 'factory_girl_rails'
@@ -64,10 +64,9 @@ gem 'pg'
 
 
 gem "blacklight"
-gem "geoblacklight", '~> 1.0'
-gem "jettywrapper"
+gem "geoblacklight", '~> 1.1'
 gem "devise"
-gem "devise-guests", "~> 0.3.3"
+gem "devise-guests", "~> 0.3"
 gem 'devise-remote-user'
 gem 'is_it_working'
 gem 'squash_ruby', require: 'squash/ruby'
@@ -77,4 +76,8 @@ gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
 
-gem 'rsolr'
+group :development, :test do
+  gem 'solr_wrapper', '>= 0.3'
+end
+
+gem 'rsolr', '~> 1.0'
