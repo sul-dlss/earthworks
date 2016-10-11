@@ -70,8 +70,7 @@ gem "devise"
 gem "devise-guests", "~> 0.3.3"
 gem 'devise-remote-user'
 gem 'is_it_working'
-gem 'squash_ruby', require: 'squash/ruby'
-gem 'squash_rails', require: 'squash/rails'
+gem 'honeybadger', '~> 2.0'
 gem 'sitemap_generator', '~> 5.0.5'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
