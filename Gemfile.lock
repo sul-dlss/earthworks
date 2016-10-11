@@ -152,6 +152,7 @@ GEM
     geoblacklight-icons (0.3.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    honeybadger (2.6.1)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
     i18n (0.7.0)
@@ -174,7 +175,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     leaflet-rails (0.7.7)
-    libv8 (3.16.14.13)
+    libv8 (3.16.14.15)
     logger (1.2.8)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
@@ -286,10 +287,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.11)
-    squash_rails (1.3.4)
-      squash_ruby
-    squash_ruby (2.0.0)
-      json
     sshkit (1.8.1)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
@@ -342,6 +339,7 @@ DEPENDENCIES
   dlss-capistrano
   factory_girl_rails
   geoblacklight (~> 1.0)
+  honeybadger (~> 2.0)
   is_it_working
   jbuilder (~> 2.0)
   jettywrapper
@@ -358,11 +356,9 @@ DEPENDENCIES
   sitemap_generator (~> 5.0.5)
   spring
   sqlite3
-  squash_rails
-  squash_ruby
   therubyracer
   twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
   uglifier (>= 1.3.0)
 
 BUNDLED WITH
-   1.12.5
+   1.13.1
