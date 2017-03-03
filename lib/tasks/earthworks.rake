@@ -3,34 +3,23 @@
 # sitemap:clean to remove sitemap files
 require 'sitemap_generator/tasks' 
 
-require 'jettywrapper'
 namespace :earthworks do
   desc 'Install EarthWorks'
   task install: [:environment] do
     Rake::Task['db:migrate'].invoke
-    Rake::Task['earthworks:download_and_unzip_jetty'].invoke
-    Rake::Task['earthworks:copy_solr_configs'].invoke
-    Jettywrapper.wrap(Jettywrapper.load_config) do
-      Rake::Task['geoblacklight:solr:seed'].invoke
-    end
   end
   desc 'Index test fixtures'
   task :fixtures do
     Rake::Task['geoblacklight:solr:seed'].invoke
   end
-  desc 'Download and unzip jetty'
-  task :download_and_unzip_jetty do
-    unless File.exist?("#{Rails.root}/jetty")
-      puts 'Downloading jetty'
-      Rake::Task['jetty:download'].invoke
-      puts 'Unzipping jetty'
-      Rake::Task['jetty:unzip'].invoke
-    end
-  end
-  desc 'Copy solr configs'
-  task :copy_solr_configs do
-    %w{schema solrconfig}.each do |file|
-      cp "#{Rails.root}/config/solr_configs/#{file}.xml", "#{Rails.root}/jetty/solr/blacklight-core/conf/"
+  desc 'Run an EarthWorks server'
+  task :server, [:rails_server_args] do |_t, args|
+    Rake::Task['db:migrate'].invoke
+    SolrWrapper.wrap do |solr|
+      solr.with_collection(name: 'blacklight-core', dir: "#{Rails.root}/config/solr_configs") do
+        Rake::Task['geoblacklight:solr:seed'].invoke
+        system "bundle exec rails s #{args[:rails_server_args]}"
+      end
     end
   end
   namespace :spec do
