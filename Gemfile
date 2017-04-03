@@ -23,7 +23,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.1.0'
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'capybara'
   gem 'poltergeist'
   gem 'factory_girl_rails'
