@@ -3,8 +3,7 @@
     <header id="topnav" class="header-logo" role="banner">
       <%= link_to 'http://library.stanford.edu' do %>
       <%= content_tag :span, "Stanford University Libraries", class: "sr-only" %>
-      <%= image_tag "sul-logo.png", class: "hidden-xs", alt: "", height: 25 %>
-      <%= image_tag "sul-logo-small.png", class: "visible-xs", alt: "", height: 25 %>
+      <%= image_tag "sul-logo.png", alt: "", height: 25 %>
       <% end %>
       <div class='topnav-links'>
         <% if has_user_authentication_provider? %>
