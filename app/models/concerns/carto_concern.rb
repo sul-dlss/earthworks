@@ -1,7 +1,7 @@
-module CartodbConcern
+module CartoConcern
   extend Geoblacklight::SolrDocument
 
-  def cartodb_reference
+  def carto_reference
     return unless available?
     super
   end
