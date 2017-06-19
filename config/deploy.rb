@@ -1,16 +1,10 @@
-# config valid only for Capistrano 3.4.0
-lock '3.4.0'
-
 set :application, 'earthworks'
 set :repo_url, 'https://github.com/sul-dlss/earthworks.git'
-set :user, 'geostaff'
-
 
 # Default branch is :master
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
-set :home_directory, "/opt/app/#{fetch(:user)}"
 
-set :deploy_to, "#{fetch(:home_directory)}/#{fetch(:application)}"
+set :deploy_to, '/opt/app/geostaff/earthworks'
 
 # Default value for :scm is :git
 # set :scm, :git
