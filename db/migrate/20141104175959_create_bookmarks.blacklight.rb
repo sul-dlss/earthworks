@@ -7,12 +7,12 @@ class CreateBookmarks < ActiveRecord::Migration
       t.string :user_type
       t.string :document_id
       t.string :title
-      t.timestamps
+      t.timestamps null: false
     end
   end
 
   def self.down
     drop_table :bookmarks
   end
-  
+
 end
