@@ -242,6 +242,7 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    retriable (3.1.1)
     rsolr (1.1.2)
       builder (>= 2.1.2)
     rspec-core (3.5.4)
@@ -261,7 +262,7 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    ruby-progressbar (1.8.1)
+    ruby-progressbar (1.9.0)
     rubyzip (1.2.1)
     sass (3.5.1)
       sass-listen (~> 4.0.0)
@@ -283,8 +284,9 @@ GEM
     simplecov-html (0.7.1)
     sitemap_generator (5.0.5)
       builder
-    solr_wrapper (0.21.0)
+    solr_wrapper (1.2.0)
       faraday
+      retriable
       ruby-progressbar
       rubyzip
     spring (1.6.4)
@@ -362,7 +364,7 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   simplecov (~> 0.7.1)
   sitemap_generator (~> 5.0.5)
-  solr_wrapper (~> 0.21)
+  solr_wrapper
   spring
   sqlite3
   therubyracer
