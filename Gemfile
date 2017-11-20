@@ -76,7 +76,7 @@ gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
 
 group :development, :test do
-  gem 'solr_wrapper', '~> 0.21'
+  gem 'solr_wrapper'
 end
 
 gem 'rsolr', '~> 1.0'
