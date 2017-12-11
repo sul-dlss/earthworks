@@ -33,6 +33,8 @@ group :development, :test do
   # Peg simplecov to < 0.8 until this is resolved:
   # https://github.com/colszowka/simplecov/issues/281
   gem 'simplecov', '~> 0.7.1', require: false
+  gem 'sqlite3'
+  gem 'solr_wrapper'
 end
 
 group :deployment do
@@ -44,11 +46,9 @@ group :deployment do
   gem 'dlss-capistrano'
 end
 
-group :sqlite do
-  gem 'sqlite3'
+group :production do
+  gem 'pg'
 end
-
-gem 'pg'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -74,9 +74,5 @@ gem 'sitemap_generator', '~> 5.0.5'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
-
-group :development, :test do
-  gem 'solr_wrapper'
-end
 
 gem 'rsolr', '~> 1.0'

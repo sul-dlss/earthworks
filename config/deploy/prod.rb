@@ -1,6 +1,6 @@
 # Deploys to all production nodes
 
-set :bundle_without, %w[sqlite test development].join(' ')
+set :bundle_without, %w[test development deployment].join(' ')
 
 server 'kurma-earthworks1-prod.stanford.edu', user: 'geostaff', roles: %w[web db app]
 server 'kurma-earthworks2-prod.stanford.edu', user: 'geostaff', roles: %w[web db app]
