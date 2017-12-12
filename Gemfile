@@ -23,7 +23,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'poltergeist'
   gem 'factory_girl_rails'
@@ -33,13 +33,13 @@ group :development, :test do
   # Peg simplecov to < 0.8 until this is resolved:
   # https://github.com/colszowka/simplecov/issues/281
   gem 'simplecov', '~> 0.7.1', require: false
-  gem 'sqlite3'
   gem 'solr_wrapper'
+  gem 'sqlite3'
 end
 
+
 group :deployment do
-  # pin to 3.4.0 for upgrade compatibility reasons
-  gem 'capistrano', '3.4.0'
+  gem 'capistrano'
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
@@ -50,29 +50,15 @@ group :production do
   gem 'pg'
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-
 gem "blacklight"
-gem "geoblacklight", '~> 1.0'
+gem "geoblacklight"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"
 gem 'devise-remote-user'
 gem 'is_it_working'
-gem 'honeybadger', '~> 2.0'
+gem 'honeybadger'
 gem 'sitemap_generator', '~> 5.0.5'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
-
-gem 'rsolr', '~> 1.0'
+gem 'rsolr'
