@@ -23,6 +23,10 @@
     <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie7.css" />
   <![endif]-->
   <%= csrf_meta_tags %>
+  <% if content_for? :head %>
+   <%= yield :head %>
+ <% end %>
+
 </head>
 <body class="<%= render_body_class %>">
   <div id="su-wrap"> <!-- #su-wrap start -->
