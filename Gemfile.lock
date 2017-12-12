@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/OpenGeoMetadata/GeoCombine.git
+  revision: 234b20ddab31a5187b54353b00b6771b8eaa76dc
+  branch: master
+  specs:
+    geo_combine (0.3.1)
+      json-schema
+      nokogiri
+      rsolr
+      sanitize
+      thor
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -408,6 +420,7 @@ DEPENDENCIES
   devise-remote-user
   dlss-capistrano
   factory_bot_rails
+  geo_combine!
   geoblacklight
   honeybadger
   is_it_working
