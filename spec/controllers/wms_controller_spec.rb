@@ -12,7 +12,10 @@ describe WmsController do
         format: 'json',
         controller: 'wms'
       ).and_return(wms_layer)
-      post :handle, format: :json, URL: 'http://www.example.com/restricted/geoserver'
+      post :handle, params: {
+        format: :json,
+        URL: 'http://www.example.com/restricted/geoserver'
+      }
     end
   end
 end
