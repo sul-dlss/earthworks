@@ -182,8 +182,8 @@ GEM
       rsolr
       sanitize
       thor
-    geoblacklight (1.6.0)
-      blacklight (~> 6.10)
+    geoblacklight (1.7.0)
+      blacklight (~> 6.11)
       coderay
       config
       deprecation
@@ -193,6 +193,7 @@ GEM
       geo_combine (>= 0.3)
       geoblacklight-icons (>= 0.2)
       leaflet-rails (~> 0.7.3)
+      mime-types
       rails (~> 5.0)
     geoblacklight-icons (1.1.0)
     globalid (0.4.1)
