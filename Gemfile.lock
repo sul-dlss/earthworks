@@ -1,9 +1,10 @@
 GIT
-  remote: git://github.com/OpenGeoMetadata/GeoCombine.git
-  revision: 234b20ddab31a5187b54353b00b6771b8eaa76dc
+  remote: https://github.com/OpenGeoMetadata/GeoCombine.git
+  revision: a1d2d1dc005cf82c49ba7edc43287f98660fd1fa
   branch: master
   specs:
     geo_combine (0.3.1)
+      activesupport
       json-schema
       nokogiri
       rsolr
@@ -188,12 +189,6 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
-    geo_combine (0.3.1)
-      json-schema
-      nokogiri
-      rsolr
-      sanitize
-      thor
     geoblacklight (1.7.0)
       blacklight (~> 6.11)
       coderay
