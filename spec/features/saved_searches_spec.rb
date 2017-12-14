@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 feature 'Saved searches' do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { FactoryBot.create(:user) }
   before { login_as user }
   scenario 'test' do
     visit search_catalog_path q: '*'
