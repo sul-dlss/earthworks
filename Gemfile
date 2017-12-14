@@ -50,7 +50,7 @@ group :production do
   gem 'pg'
 end
 
-gem "blacklight"
+gem "blacklight", '~> 6.11.0' # Pin to less than 6.12 until https://github.com/geoblacklight/geoblacklight/pull/577 is released
 gem "geoblacklight"
 gem "devise"
 gem "devise-guests", "~> 0.3.3"

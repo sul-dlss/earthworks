@@ -46,7 +46,7 @@ GEM
     autoprefixer-rails (7.2.3)
       execjs
     bcrypt (3.1.11)
-    blacklight (6.13.0)
+    blacklight (6.11.2)
       bootstrap-sass (~> 3.2)
       deprecation
       globalid
@@ -387,7 +387,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  blacklight
+  blacklight (~> 6.11.0)
   blacklight_range_limit
   capistrano
   capistrano-bundler
