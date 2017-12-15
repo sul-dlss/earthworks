@@ -29,11 +29,8 @@ group :development, :test do
   gem 'poltergeist'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
-  gem 'coveralls', require: false
-  ##
-  # Peg simplecov to < 0.8 until this is resolved:
-  # https://github.com/colszowka/simplecov/issues/281
-  gem 'simplecov', '~> 0.7.1', require: false
+  gem 'coveralls', '>= 0.8.21', require: false
+  gem 'simplecov', require: false
   gem 'solr_wrapper'
   gem 'sqlite3'
 end
