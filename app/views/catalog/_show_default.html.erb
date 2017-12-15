@@ -1,5 +1,11 @@
 <% document ||= @document %>
 
+<% if document.stanford? %>
+  <% content_for :head do %>
+    <link rel="canonical" href="<%= "#{Settings.HOST_URL}#{solr_document_path(document.id)}" %>">
+  <% end %>
+<% end %>
+
 <% @page_title = t 'blacklight.search.show.title_html', :document_title => document_show_html_title, :application_name => application_name %>
 
 <%= render 'upper_metadata', locals: { document: document} %>
