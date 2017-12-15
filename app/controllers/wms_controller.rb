@@ -1,8 +1,11 @@
 class WmsController < ApplicationController
 
   before_action :format_url
+  ##
+  # TODO: Consolidate this somehow with GeoBlacklight's `wms_params` permitted
+  # parameters
   def handle
-    response = Geoblacklight::WmsLayer.new(params).feature_info
+    response = Geoblacklight::WmsLayer.new(params.to_unsafe_hash).feature_info
 
     respond_to do |format|
       format.json { render json: response }
