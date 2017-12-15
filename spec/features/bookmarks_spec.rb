@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'Blacklight Bookmarks' do
   scenario 'index has created bookmarks' do

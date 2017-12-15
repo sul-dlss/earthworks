@@ -1,7 +1,5 @@
 require 'rails_helper'
 
-require 'spec_helper'
-
 describe FeedbackMailer do
   describe 'submit_feedback' do
     describe 'with all fields' do

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 feature 'Saved searches' do
   let(:user) { FactoryBot.create(:user) }
