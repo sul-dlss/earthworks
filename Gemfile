@@ -60,3 +60,5 @@ gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
 gem 'rsolr'
+
+gem 'geo_combine', git: 'https://github.com/OpenGeoMetadata/GeoCombine.git', branch: 'master'
