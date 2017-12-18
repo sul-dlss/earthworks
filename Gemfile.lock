@@ -176,6 +176,9 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.12.0)
+    engine_cart (1.2.0)
+      bundler (~> 1.5)
+      rails
     erubi (1.7.0)
     execjs (2.7.0)
     factory_bot (4.8.2)
@@ -190,6 +193,10 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    geo_monitor (0.2.0)
+      engine_cart
+      faraday
+      rails (~> 5.1.4)
     geoblacklight (1.7.0)
       blacklight (~> 6.11)
       coderay
@@ -416,6 +423,7 @@ DEPENDENCIES
   dlss-capistrano
   factory_bot_rails
   geo_combine!
+  geo_monitor
   geoblacklight
   honeybadger
   is_it_working
