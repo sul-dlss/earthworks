@@ -59,4 +59,23 @@ namespace :earthworks do
       File.open(fn, 'w') {|f| f << JSON.pretty_generate(data) }
     end
   end
+  desc 'Update the layers GeoMonitor checks from the Solr index'
+  task update_geomonitor_layers: [:environment] do
+    response = Blacklight.default_index.connection.get(
+      'select',
+      q: '*:*', fl: '*', rows: 999_999
+    )
+    docs = response.try(:[], 'response').try(:[], 'docs')
+    docs.each do |doc|
+      puts "Updating GeoMonitor::Layer #{doc['layer_slug_s']}"
+      GeoMonitor::Layer.from_geoblacklight(doc.to_json).save
+    end
+  end
+  desc 'Check all of the active GeoMonitor layers'
+  task check_geomonitor: [:environment] do
+    GeoMonitor::Layer.where(active: true).find_each do |layer|
+      puts "Checking #{layer.slug}"
+      layer.check
+    end
+  end
 end

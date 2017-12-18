@@ -14,6 +14,11 @@ module Earthworks
 
     require 'rights_metadata'
     require 'suggest/response'
+    # Inject our StatusExtension concern to add behavior
+    # (index updates) to the GeoMonitor::Status class
+    config.to_prepare do
+      GeoMonitor::Status.send(:include, StatusExtension)
+    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
