@@ -55,7 +55,7 @@ common: &default_settings
   # application and reports this data to the New Relic service at
   # newrelic.com. This global switch is normally overridden for each
   # environment below. (formerly called 'enabled')
-  monitor_mode: true
+  monitor_mode: <%= Settings.NEWRELIC_ENABLED %>
 
   # Developer mode should be off in every environment but
   # development as it has very high overhead in memory.
@@ -190,9 +190,6 @@ common: &default_settings
 
 development:
   <<: *default_settings
-  # Turn on communication to New Relic service in development mode
-  monitor_mode: false
-  app_name: Rails Config My Application (Development)
 
   # Rails Only - when running in Developer Mode, the New Relic Agent will
   # present performance information on the last 100 transactions you have
@@ -213,7 +210,6 @@ test:
 # incurring any user-visible performance degradation.
 production:
   <<: *default_settings
-  monitor_mode: true
   app_name: <%= Settings.NEWRELIC_APP_NAME %>
 
 # Many applications have a staging environment which behaves
@@ -221,5 +217,4 @@ production:
 # here.  By default, the staging environment has the agent turned on.
 stage:
   <<: *default_settings
-  monitor_mode: true
   app_name: <%= Settings.NEWRELIC_APP_NAME %>

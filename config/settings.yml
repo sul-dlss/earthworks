@@ -46,6 +46,7 @@ METADATA_SHOWN:
 
 NEWRELIC_APP_NAME: 'should be specific to stage and prod'
 NEWRELIC_LICENSE_KEY: 'this is private'
+NEWRELIC_ENABLED: false
 
 PROXY_URL: 'http://www.example.com/restricted'
 
@@ -71,7 +72,7 @@ WMS_PARAMS:
   :EXCEPTIONS: 'application/json'
   :INFO_FORMAT: 'text/html'
 
-# Settings for leaflet 
+# Settings for leaflet
 OPACITY_CONTROL: &opacity_control
   CONTROLS:
     - 'Opacity'
@@ -90,5 +91,3 @@ LEAFLET:
       <<: *opacity_control
     IMAGEMAPLAYER:
       <<: *opacity_control
-
-  
