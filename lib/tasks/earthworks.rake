@@ -75,8 +75,8 @@ namespace :earthworks do
     desc 'Check all of the active GeoMonitor layers'
     task check: [:environment] do
       GeoMonitor::Layer.where(active: true).find_each do |layer|
-        puts "Checking #{layer.slug}"
-        layer.check
+        puts "Enqueueing check for #{layer.slug}"
+        CheckLayerJob.perform_later(layer)
       end
     end
   end
