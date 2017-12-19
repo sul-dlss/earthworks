@@ -30,6 +30,8 @@ set :linked_dirs, %w{config/settings log tmp/pids tmp/cache tmp/sockets vendor/b
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+set :honeybadger_env, fetch(:stage)
+
 namespace :deploy do
 
   desc 'Restart application'
