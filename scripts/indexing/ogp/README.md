@@ -16,5 +16,5 @@ Then to convert to GeoBlacklight and index:
 ```
 bundle exec ruby to_geoblacklight.rb
 ls -l geoblacklight.json
-OGP_PATH=`pwd` bundle exec rake geocombine:index
+OGM_PATH=`pwd` bundle exec rake geocombine:index
 ```
