@@ -50,6 +50,8 @@ NEWRELIC_ENABLED: false
 
 PROXY_URL: 'http://www.example.com/restricted'
 
+REDIS_URL: 'redis://localhost:6379/'
+
 RESTRICTED_URL: 'http://www.example-services.com'
 
 SOLR_COMMIT_WITHIN: 5000
