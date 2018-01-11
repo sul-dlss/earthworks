@@ -59,4 +59,33 @@ namespace :earthworks do
       File.open(fn, 'w') {|f| f << JSON.pretty_generate(data) }
     end
   end
+  namespace :geomonitor do
+    desc 'Update the layers GeoMonitor checks from the Solr index'
+    task update: [:environment] do
+      num_found = 999_999 # Set sufficiently large, and then update in first query
+      rows = 100
+      start = 1
+      while start < num_found
+        puts "Selecting from Solr at #{start}, #{rows} rows"
+        response = Blacklight.default_index.connection.get(
+          'select',
+          params: { q: '*:*', fl: '*', start: start, rows: rows }
+        )
+        num_found = response['response']['numFound'].to_i
+        docs = response.try(:[], 'response').try(:[], 'docs')
+        docs.each do |doc|
+          puts "Updating GeoMonitor::Layer #{doc['layer_slug_s']}"
+          GeoMonitor::Layer.from_geoblacklight(doc.to_json).save
+        end
+        start += rows
+      end
+    end
+    desc 'Check all of the active GeoMonitor layers'
+    task check: [:environment] do
+      GeoMonitor::Layer.where(active: true).find_each do |layer|
+        puts "Enqueueing check for #{layer.slug}"
+        CheckLayerJob.perform_later(layer)
+      end
+    end
+  end
 end

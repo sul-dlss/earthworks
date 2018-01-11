@@ -42,6 +42,7 @@ group :deployment do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'dlss-capistrano'
+  gem 'capistrano-sidekiq'
 end
 
 group :production do
@@ -60,5 +61,6 @@ gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
 gem 'blacklight_range_limit'
 gem 'rsolr'
-
 gem 'geo_combine', git: 'https://github.com/OpenGeoMetadata/GeoCombine.git', branch: 'master'
+gem 'geo_monitor'
+gem 'sidekiq'

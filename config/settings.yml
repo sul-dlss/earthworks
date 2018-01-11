@@ -52,6 +52,8 @@ PROXY_URL: 'http://www.example.com/restricted'
 
 RESTRICTED_URL: 'http://www.example-services.com'
 
+SOLR_COMMIT_WITHIN: 5000
+
 # (For external Download) timeout and open_timeout parameters for Faraday
 TIMEOUT_DOWNLOAD: 16
 

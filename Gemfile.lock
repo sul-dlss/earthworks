@@ -100,6 +100,9 @@ GEM
       capistrano (~> 3.0)
       sshkit (~> 1.2)
     capistrano-shared_configs (0.2.2)
+    capistrano-sidekiq (0.20.0)
+      capistrano (>= 3.9.0)
+      sidekiq (>= 3.4)
     capybara (2.16.1)
       addressable
       mini_mime (>= 0.1.3)
@@ -121,6 +124,7 @@ GEM
       activesupport (>= 3.0)
       deep_merge (~> 1.1.1)
       dry-validation (>= 0.10.4)
+    connection_pool (2.2.1)
     coveralls (0.8.21)
       json (>= 1.8, < 3)
       simplecov (~> 0.14.1)
@@ -176,6 +180,9 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.12.0)
+    engine_cart (1.2.0)
+      bundler (~> 1.5)
+      rails
     erubi (1.7.0)
     execjs (2.7.0)
     factory_bot (4.8.2)
@@ -190,6 +197,10 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    geo_monitor (0.2.0)
+      engine_cart
+      faraday
+      rails (~> 5.1.4)
     geoblacklight (1.7.0)
       blacklight (~> 6.11)
       coderay
@@ -270,6 +281,8 @@ GEM
       websocket-driver (>= 0.2.0)
     public_suffix (3.0.1)
     rack (2.0.3)
+    rack-protection (2.0.0)
+      rack
     rack-test (0.8.2)
       rack (>= 1.0, < 3)
     rails (5.1.4)
@@ -300,6 +313,7 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     rdoc (4.3.0)
+    redis (4.0.1)
     ref (2.0.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
@@ -346,6 +360,11 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sidekiq (5.0.5)
+      concurrent-ruby (~> 1.0)
+      connection_pool (~> 2.2, >= 2.2.0)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.4, < 5)
     simplecov (0.14.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -406,6 +425,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
+  capistrano-sidekiq
   capybara
   coffee-rails (~> 4.2.2)
   coveralls (>= 0.8.21)
@@ -416,6 +436,7 @@ DEPENDENCIES
   dlss-capistrano
   factory_bot_rails
   geo_combine!
+  geo_monitor
   geoblacklight
   honeybadger
   is_it_working
@@ -430,6 +451,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 5.0.6)
   sdoc (~> 0.4.0)
+  sidekiq
   simplecov
   sitemap_generator (~> 5.0.5)
   solr_wrapper
