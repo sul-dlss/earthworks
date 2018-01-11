@@ -12,6 +12,16 @@ GIT
       sanitize
       thor
 
+GIT
+  remote: https://github.com/geoblacklight/geo_monitor.git
+  revision: 2bde6ec1b5c7e2c51426e16806ad07062d5c15c7
+  branch: move-to-constants
+  specs:
+    geo_monitor (0.2.3)
+      engine_cart
+      faraday
+      rails (~> 5.1.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -198,10 +208,6 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
-    geo_monitor (0.2.0)
-      engine_cart
-      faraday
-      rails (~> 5.1.4)
     geoblacklight (1.7.0)
       blacklight (~> 6.11)
       coderay
@@ -270,7 +276,7 @@ GEM
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
     newrelic_rpm (4.6.0.338)
-    nio4r (2.1.0)
+    nio4r (2.2.0)
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.4.13)
@@ -438,7 +444,7 @@ DEPENDENCIES
   dlss-capistrano
   factory_bot_rails
   geo_combine!
-  geo_monitor
+  geo_monitor!
   geoblacklight
   honeybadger
   is_it_working

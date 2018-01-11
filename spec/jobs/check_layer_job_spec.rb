@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CheckLayerJob, type: :job do
   context 'when in Solr index' do
-    let(:layer) { create(:layer, slug: 'tufts-cambridgegrid100-04') }
+    let(:layer) { create(:layer, slug: 'tufts-cambridgegrid100-04', checktype: 'WMS') }
     it 'checks the GeoMonitor::Layer' do
       expect(layer).to receive(:check)
       subject.perform(layer)
