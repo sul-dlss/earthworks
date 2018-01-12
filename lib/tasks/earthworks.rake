@@ -87,6 +87,16 @@ namespace :earthworks do
         CheckLayerJob.perform_later(layer)
       end
     end
+    desc 'Reset availability for GeoMonitor layers'
+    task reset_availability: [:environment] do
+      GeoMonitor::Layer.find_each do |layer|
+        data = [{
+          layer_availability_score_f: { set: nil },
+          layer_slug_s: layer.slug
+        }]
+        Indexer.new.solr_update(data)
+      end
+    end
   end
   namespace :opengeometadata do
     task setup: [:environment] do
