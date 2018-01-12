@@ -1,0 +1,3 @@
+# concurrency per process should match the database connection pool size
+---
+:concurrency: 5
