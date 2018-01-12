@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/geoblacklight/geo_monitor.git
-  revision: 2bde6ec1b5c7e2c51426e16806ad07062d5c15c7
+  revision: a0b435808c52499116b7b231fe30c1d25dead4a0
   branch: move-to-constants
   specs:
     geo_monitor (0.2.3)

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171215154810) do
+ActiveRecord::Schema.define(version: 20180112221250) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20171215154810) do
     t.integer "layer_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "content_type"
     t.index ["layer_id"], name: "index_geo_monitor_statuses_on_layer_id"
   end
 
