@@ -75,7 +75,7 @@ namespace :earthworks do
         docs = response.try(:[], 'response').try(:[], 'docs')
         docs.each do |doc|
           puts "Updating GeoMonitor::Layer #{doc['layer_slug_s']}"
-          GeoMonitor::Layer.from_geoblacklight(doc.to_json).save
+          GeoMonitor::Layer.from_geoblacklight(doc.to_json).save!
         end
         start += rows
       end
@@ -83,6 +83,20 @@ namespace :earthworks do
     desc 'Check all of the active GeoMonitor layers'
     task check: [:environment] do
       GeoMonitor::Layer.where(active: true).find_each do |layer|
+        puts "Enqueueing check for #{layer.slug}"
+        CheckLayerJob.perform_later(layer)
+      end
+    end
+    desc 'Check all of the active Stanford layers'
+    task check_stanford: [:environment] do
+      GeoMonitor::Layer.where(active: true, institution: 'Stanford').find_each do |layer|
+        puts "Enqueueing check for #{layer.slug}"
+        CheckLayerJob.perform_later(layer)
+      end
+    end
+    desc 'Check all of the active public layers'
+    task check_public: [:environment] do
+      GeoMonitor::Layer.where(active: true, rights: 'Public').find_each do |layer|
         puts "Enqueueing check for #{layer.slug}"
         CheckLayerJob.perform_later(layer)
       end
