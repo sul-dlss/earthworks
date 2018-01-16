@@ -38,3 +38,11 @@ $ TEST_SOLR_URL=http://example.com:8080/solr/core_name rake integration
 $ solr_wrapper &
 $ rails s
 ```
+
+### Running OpenGeoMetadata indexing
+To ingest the metadata in OpenGeoMetadata into the Solr index (as defined by `config/blacklight.yml`), use:
+
+```
+$ mkdir /var/tmp/opengeometadata # optional, but recommended on servers
+$ rake earthworks:opengeometadata:pipeline
+```

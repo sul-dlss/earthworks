@@ -1,7 +1,7 @@
-# sitemap:create to generate sitemaps, 
-# sitemap:refresh to generate sitemaps and ping search engines, 
+# sitemap:create to generate sitemaps,
+# sitemap:refresh to generate sitemaps and ping search engines,
 # sitemap:clean to remove sitemap files
-require 'sitemap_generator/tasks' 
+require 'sitemap_generator/tasks'
 
 namespace :earthworks do
   desc 'Install EarthWorks'
@@ -87,5 +87,43 @@ namespace :earthworks do
         CheckLayerJob.perform_later(layer)
       end
     end
+  end
+  namespace :opengeometadata do
+    task setup: [:environment] do
+      ENV['OGM_PATH'] = 'tmp/opengeometadata'
+      ENV['OGM_PATH'] = '/var/tmp/opengeometadata' if File.directory?('/var/tmp/opengeometadata')
+      ENV['SOLR_URL'] = Blacklight.default_index.connection.uri.to_s
+      puts "Using OGM_PATH=#{ENV['OGM_PATH']} SOLR_URL=#{ENV['SOLR_URL']}"
+    end
+
+    desc 'Clone specific OpenGeoMetadata repositories for indexing'
+    task clone: ['earthworks:opengeometadata:setup'] do
+      %w[
+        edu.berkeley
+        edu.columbia
+        edu.nyu
+        edu.princeton.arks
+
+        big-ten
+        edu.virginia
+      ].each do |repo|
+        system "rake geocombine:clone[#{repo}]" # need `system` to pick up ENV vars
+      end
+    end
+
+    desc 'Update OpenGeoMetadata repositories via git pull'
+    task pull: ['earthworks:opengeometadata:setup'] do
+      system "rake geocombine:pull" # need `system` to pick up ENV vars
+    end
+
+    desc 'Index OpenGeoMetadata repositories'
+    task index: ['earthworks:opengeometadata:setup'] do
+      system "rake geocombine:index" # need `system` to pick up ENV vars
+    end
+
+    desc 'Run full OpenGeoMetadata indexing pipeline'
+    task pipeline: ['earthworks:opengeometadata:clone',
+                    'earthworks:opengeometadata:pull',
+                    'earthworks:opengeometadata:index']
   end
 end

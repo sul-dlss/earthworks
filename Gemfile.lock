@@ -1,11 +1,12 @@
 GIT
   remote: https://github.com/OpenGeoMetadata/GeoCombine.git
-  revision: a1d2d1dc005cf82c49ba7edc43287f98660fd1fa
+  revision: 934e86f0ed7f29ab48e28a237ae2b8e9e2d7727c
   branch: master
   specs:
     geo_combine (0.3.1)
       activesupport
       json-schema
+      net-http-persistent (~> 2.0)
       nokogiri
       rsolr
       sanitize
@@ -261,9 +262,10 @@ GEM
     mime-types-data (3.2016.0521)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.10.3)
+    minitest (5.11.1)
     multi_json (1.12.2)
     multipart-post (2.0.0)
+    net-http-persistent (2.9.4)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (4.2.0)
