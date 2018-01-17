@@ -9,7 +9,7 @@ class CheckLayerJob < ApplicationJob
       'select',
       params: { q: "layer_slug_s:#{layer.slug}", fl: 'layer_slug_s' }
     )['response']['numFound'].to_i
-    if num_found > 0
+    if num_found > 0 && layer.checktype == 'WMS'
       layer.check
     else
       layer.update(active: false)
