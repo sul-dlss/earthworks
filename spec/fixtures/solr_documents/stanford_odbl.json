@@ -1,0 +1,39 @@
+{
+  "uuid": "http://purl.stanford.edu/cj936rq6257",
+  "dc_identifier_s": "http://purl.stanford.edu/cj936rq6257",
+  "dc_title_s": "Vasserot Arrondissements (1810-1836)",
+  "dc_description_s": "This polygon shapefile contains the boundaries of 12 arrondissements in Paris, France, as represented in Philibert Vasserot's Atlas of Paris (1810-1836). This layer covers the whole of Paris (including the Seine) up to the boundary of the Farmers General.The ALPAGE programme aims to provide collaborative tools for the Humanities and Social Sciences and for Information Communication Technology (ICT) allowing for the development of research about the Parisian urban area. This aim is achieved by means of a GIS that includes cadastral and historical layers.",
+  "dc_rights_s": "Public",
+  "dct_provenance_s": "Stanford",
+  "dct_references_s": "{\"http://schema.org/url\":\"http://purl.stanford.edu/cj936rq6257\",\"http://schema.org/downloadUrl\":\"http://stacks.stanford.edu/file/druid:cj936rq6257/data.zip\",\"http://www.loc.gov/mods/v3\":\"http://purl.stanford.edu/cj936rq6257.mods\",\"http://www.isotc211.org/schemas/2005/gmd/\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:cj936rq6257/iso19139.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:cj936rq6257/default.html\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geowebservices.stanford.edu/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geowebservices.stanford.edu/geoserver/wms\"}",
+  "layer_id_s": "druid:cj936rq6257",
+  "layer_slug_s": "stanford-cj936rq6257",
+  "layer_geom_type_s": "Polygon",
+  "layer_modified_dt": "2017-08-31T20:45:43Z",
+  "dc_format_s": "Shapefile",
+  "dc_language_s": "English",
+  "dc_type_s": "Dataset",
+  "dc_publisher_s": "Analyse Diachronique de l'espace Urbain Parisien: Approche Geomatique",
+  "dc_creator_sm": [
+    "Bethe, Anne-Laure"
+  ],
+  "dc_subject_sm": [
+    "Administrative and political divisions",
+    "Boundaries"
+  ],
+  "dct_issued_s": "2015",
+  "dct_temporal_sm": [
+    "1810-1836"
+  ],
+  "dct_spatial_sm": [
+    "Paris (France)"
+  ],
+  "dc_relation_sm": [
+    "http://sws.geonames.org/2988507/"
+  ],
+  "georss_box_s": "48.829617 2.287239 48.884585 2.402833",
+  "georss_polygon_s": "48.829617 2.287239 48.884585 2.287239 48.884585 2.402833 48.829617 2.402833 48.829617 2.287239",
+  "solr_geom": "ENVELOPE(2.287239, 2.402833, 48.884585, 48.829617)",
+  "solr_year_i": 1810,
+  "stanford_rights_metadata_s": "<?xml version=\"1.0\"?>\n<rightsMetadata>\n   <access type=\"discover\">\n      <machine>\n         <world/>\n      </machine>\n   </access>\n   <access type=\"read\">\n      <machine>\n         <world/>\n      </machine>\n   </access>\n   <use>\n      <human type=\"openDataCommons\">Open Data Commons Open Database License 1.0</human>\n      <machine type=\"openDataCommons\" uri=\"http://opendatacommons.org/licenses/odbl/1.0/\">odc-odbl</machine>\n      <human type=\"useAndReproduction\">This data is a direct result of the work of the researchers from the ALPAGE consortium who released this data under an Open Data Commons Open Database Licence (ODbL). Therefore, use of this data by others must respect the legal requirements specific to this licence. All freely downloadable data contains the shapefiles, metadata file and licence files describing the users rights and responsibilities. All data produced within the consortium is published in this way with the exception of any ongoing work which is in process of academic evaluation (masters, doctoral thesis, habilitation to supervise research).</human>\n   </use>\n   <copyright>\n      <human>Copyright resides with the originator.</human>\n   </copyright>\n</rightsMetadata>\n"
+}
