@@ -198,7 +198,7 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
-    geo_monitor (0.3.3)
+    geo_monitor (0.4.0)
       engine_cart
       faraday
       rails (~> 5.1.4)
@@ -438,7 +438,7 @@ DEPENDENCIES
   dlss-capistrano
   factory_bot_rails
   geo_combine!
-  geo_monitor (~> 0.3)
+  geo_monitor (~> 0.4)
   geoblacklight
   honeybadger
   is_it_working
