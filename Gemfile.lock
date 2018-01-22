@@ -57,10 +57,10 @@ GEM
     airbrussh (1.3.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (8.0.0)
-    autoprefixer-rails (7.2.3)
+    autoprefixer-rails (7.2.5)
       execjs
     bcrypt (3.1.11)
-    blacklight (6.13.0)
+    blacklight (6.14.0)
       bootstrap-sass (~> 3.2)
       deprecation
       globalid
@@ -159,7 +159,7 @@ GEM
     dry-container (0.6.0)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
-    dry-core (0.4.1)
+    dry-core (0.4.2)
       concurrent-ruby (~> 1.0)
     dry-equalizer (0.2.0)
     dry-logic (0.4.2)
@@ -191,18 +191,18 @@ GEM
     factory_bot_rails (4.8.2)
       factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
-    faraday (0.13.1)
+    faraday (0.14.0)
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.12.2)
       faraday (>= 0.7.4, < 1.0)
     ffi (1.9.18)
-    font-awesome-rails (4.7.0.2)
+    font-awesome-rails (4.7.0.3)
       railties (>= 3.2, < 5.2)
     geo_monitor (0.4.0)
       engine_cart
       faraday
       rails (~> 5.1.4)
-    geoblacklight (1.7.0)
+    geoblacklight (1.7.1)
       blacklight (~> 6.11)
       coderay
       config
@@ -263,7 +263,7 @@ GEM
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     minitest (5.11.1)
-    multi_json (1.12.2)
+    multi_json (1.13.1)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)
     net-scp (1.2.1)
@@ -348,7 +348,7 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.4.4)
       nokogumbo (~> 1.4.1)
-    sass (3.5.3)
+    sass (3.5.5)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
       rb-fsevent (~> 0.9, >= 0.9.4)
