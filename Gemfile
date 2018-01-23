@@ -33,6 +33,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'solr_wrapper'
   gem 'sqlite3'
+  gem 'byebug'
 end
 
 
