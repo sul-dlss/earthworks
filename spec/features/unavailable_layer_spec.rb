@@ -9,12 +9,9 @@ feature 'Unavailable layer' do
     end
     expect(page).to_not have_content 'Download Shapefile'
   end
-  scenario 'with no downloads shows no download message' do
+  scenario 'iiif layer' do
     visit solr_document_path'princeton-02870w62c'
-    within '.unavailable-warning' do
-      expect(page).to have_content 'Princeton'
-      expect(page).to have_content 'unavailable to download'
-    end
+    expect(page).to_not have_content 'unavailable to download'
   end
   scenario 'catalog index page should have availablility facets' do
     visit search_catalog_path q: '*'
