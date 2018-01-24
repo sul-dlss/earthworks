@@ -1,15 +1,36 @@
-.category-block {
-  .category-icon {
-    .glyphicon {
-      color: $gray-90-percent;
-    }
+.search-block {
+  h2 {
+    font-weight: 300;
   }
-  
-  h3 {
-    margin-top: 0px;
+
+  input.search_q {
+    @extend .input-lg;
+  }
+
+  button.search-btn {
+    @extend .btn-lg;
   }
 }
 
-.jumbotron {
-  padding-bottom: 80px;
+.home-page-linked-searches {
+  .explore {
+    font-weight: 300;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .panel-body {
+    padding: 0;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 300;
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+
+  img {
+    width: 100%;
+  }
 }
