@@ -2,7 +2,7 @@
 
 set :bundle_without, %w[test development deployment].join(' ')
 
-server 'kurma-earthworks1-prod.stanford.edu', user: 'geostaff', roles: %w[web db app]
+server 'kurma-earthworks1-prod.stanford.edu', user: 'geostaff', roles: %w[web db app whenevs]
 server 'kurma-earthworks2-prod.stanford.edu', user: 'geostaff', roles: %w[web db app]
 server 'kurma-earthworks-worker-prod-a.stanford.edu', user: 'geostaff', roles: %w[app background]
 

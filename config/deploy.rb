@@ -32,6 +32,8 @@ set :linked_dirs, %w{config/settings log tmp/pids tmp/cache tmp/sockets vendor/b
 
 set :honeybadger_env, fetch(:stage)
 
+set :whenever_roles, [:whenevs]
+
 namespace :deploy do
 
   desc 'Restart application'

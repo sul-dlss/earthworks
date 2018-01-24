@@ -64,3 +64,4 @@ gem 'rsolr'
 gem 'geo_combine', git: 'https://github.com/OpenGeoMetadata/GeoCombine.git', branch: 'master'
 gem 'geo_monitor', '~> 0.4'
 gem 'sidekiq'
+gem 'whenever', require: false
