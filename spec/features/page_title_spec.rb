@@ -8,8 +8,8 @@ feature 'Main page title' do
 end
 feature 'Search results' do
   scenario 'have title' do
-    visit search_catalog_path q: ''
-    expect(page.title).to eq ' - EarthWorks Search Results'
+    visit search_catalog_path q: 'california'
+    expect(page.title).to eq 'Keywords: california - EarthWorks Search Results'
   end
 end
 feature 'Show page' do

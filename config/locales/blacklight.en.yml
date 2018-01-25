@@ -9,6 +9,8 @@ en:
       show:
         title_html: '%{document_title} in %{application_name}'
         label: '%{label}'
+      fields:
+        search: 'Keywords'
     search_history:
       save: 'Save this search'
       forget: 'Forget this search'
