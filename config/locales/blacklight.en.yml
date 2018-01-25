@@ -5,7 +5,7 @@ en:
       form:
         search:
           label: 'search for'
-          placeholder: ''
+          placeholder: 'Try "groundwater"'
       show:
         title_html: '%{document_title} in %{application_name}'
         label: '%{label}'

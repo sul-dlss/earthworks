@@ -24,4 +24,45 @@ describe SearchBuilder do
         .to match(/.*IsWithin.*\^300/)
     end
   end
+  describe '#add_featured_content' do
+    context 'scanned maps' do
+      it do
+        params = { featured: 'scanned_maps' }
+        subject.with(params)
+        expect(subject.add_featured_content(solr_params)[:fq]).to eq [
+          'layer_geom_type_s:Image OR layer_geom_type_s:"Paper Map"'
+        ]
+      end
+    end
+    context 'geospatial data' do
+      it do
+        params = { featured: 'geospatial_data' }
+        subject.with(params)
+        expect(subject.add_featured_content(solr_params)[:fq]).to eq [
+          '-layer_geom_type_s:Image AND -layer_geom_type_s:"Paper Map" AND -la'\
+          'yer_geom_type_s:Mixed AND -layer_geom_type_s:Table'
+        ]
+      end
+    end
+    context 'census data' do
+      it do
+        params = { featured: 'census_data' }
+        subject.with(params)
+        expect(subject.add_featured_content(solr_params)[:fq]).to eq [
+          'dc_title_ti:census OR dc_description_ti:census OR dc_publisher_ti:c'\
+          'ensus OR dc_subject_tmi:census'
+        ]
+      end
+    end
+    context 'california data' do
+      it do
+        params = { featured: 'california_data' }
+        subject.with(params)
+        expect(subject.add_featured_content(solr_params)[:fq]).to eq [
+          'dc_title_ti:california OR dc_description_ti:california OR dc_publis'\
+          'her_ti:california OR dc_subject_tmi:california'
+        ]
+      end
+    end
+  end
 end

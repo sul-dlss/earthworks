@@ -3,6 +3,9 @@ class SearchBuilder < Blacklight::SearchBuilder
   include BlacklightRangeLimit::RangeLimitBuilder
 
   include Geoblacklight::SpatialSearchBehavior
+  include ::FeaturedContentBehavior
+
+  self.default_processor_chain += %i[add_featured_content]
 
   def add_spatial_params(solr_params)
     if blacklight_params[:bbox]
