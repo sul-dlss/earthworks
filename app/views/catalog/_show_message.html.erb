@@ -3,9 +3,7 @@
 
 <% if document_unavailable.any? %>
   <div class='alert alert-warning unavailable-warning'>
-    <i class='fa fa-exclamation-triangle'></i>This data is hosted by <strong><%= document[:dct_provenance_s] %></strong>, and is currently unavailable to <%= document_unavailable.to_sentence %>. If you have questions about this or other unavailable datasets please submit this as 
-    <%= link_to feedback_path, data: { toggle: 'collapse', target: '#feedback-form' } do %>
-      feedback
-    <% end %>.
+    <i class='fa fa-exclamation-triangle'></i>
+    <%= t('earthworks.unavailable_html', institution: document.institution, email: document.contact_email, department: document.department ) %>
   </div>
 <% end %>

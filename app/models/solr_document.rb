@@ -15,6 +15,18 @@ class SolrDocument
   self.field_semantics[:title] = :dc_title_s
   self.field_semantics[:year] = :dct_temporal_sm
 
+  def institution
+    fetch(Settings.FIELDS.PROVENANCE)
+  end
+
+  def contact_email
+    Settings.INSTITUTIONS.send(institution).email
+  end
+
+  def department
+    Settings.INSTITUTIONS.send(institution).department
+  end
+
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension(Blacklight::Document::Email )
 
