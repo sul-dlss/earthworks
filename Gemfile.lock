@@ -204,7 +204,7 @@ GEM
       engine_cart
       faraday
       rails (~> 5.1.4)
-    geoblacklight (1.7.1)
+    geoblacklight (1.8.0)
       blacklight (~> 6.11)
       coderay
       config
@@ -214,14 +214,19 @@ GEM
       font-awesome-rails
       geo_combine (>= 0.3)
       geoblacklight-icons (>= 0.2)
+      handlebars_assets
       leaflet-rails (~> 0.7.3)
       mime-types
       rails (~> 5.0)
     geoblacklight-icons (1.2.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    handlebars_assets (0.23.2)
+      execjs (~> 2.0)
+      sprockets (>= 2.0.0)
+      tilt (>= 1.2)
     honeybadger (3.2.0)
-    i18n (0.9.1)
+    i18n (0.9.3)
       concurrent-ruby (~> 1.0)
     inflecto (0.0.2)
     is_it_working (1.1.0)
@@ -264,7 +269,7 @@ GEM
     mime-types-data (3.2016.0521)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
-    minitest (5.11.1)
+    minitest (5.11.2)
     multi_json (1.13.1)
     multipart-post (2.0.0)
     net-http-persistent (2.9.4)

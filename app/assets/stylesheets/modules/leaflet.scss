@@ -5,7 +5,10 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.leaflet-overlay-pane g path {
-  fill: $cardinal-red;
-  stroke: $cardinal-red;
+// Style all but the index map
+[data-map="home"], [data-map="index"], [data-map="item"]:not([data-protocol="IndexMap"]) {
+  .leaflet-overlay-pane g path {
+    fill: $cardinal-red;
+    stroke: $cardinal-red;
+  }
 }
