@@ -32,3 +32,7 @@ end
 every 2.days, roles: %i[whenevs] do
   rake 'earthworks:geomonitor:check_public'
 end
+
+every 1.week, roles: %i[sitemap] do
+  rake 'sitemap:refresh'
+end
