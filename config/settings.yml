@@ -96,3 +96,59 @@ LEAFLET:
       <<: *opacity_control
     IMAGEMAPLAYER:
       <<: *opacity_control
+
+INSTITUTIONS:
+  Columbia:
+    department: Columbia University GIS & Statistical Data Resources
+    email: dssc@library.columbia.edu
+  Harvard:
+    department: Harvard Map Collection
+    email: maps@harvard.edu
+  MIT:
+    department: MIT GIS Servcies
+    email: gishelp@mit.edu
+  Tufts:
+    department: GIS at Tufts
+    email: datalab-support@elist.tufts.edu
+  MassGIS:
+    department: MassGIS (Bureau of Geographic Information)
+    email: massgismail@mass.gov
+  Berkeley:
+    department: UC Berkeley Earth Sciences & Map Library
+    email: eart@library.berkeley.edu
+  Minnesota:
+    department: UMN Enterprise GIS Service Center
+    email: gis@umn.edu
+  UCLA:
+    department: Geospatial@UCLA
+    email: geospatial@ucla.edu
+  Iowa:
+    department: UI Libraries Map Collection
+    email: lib-maps@uiowa.edu
+  Princeton:
+    department: Princeton Maps and Geospatial Information Center
+    email: shawatw@princeton.edu
+  NYU:
+    department: NYU Data Services
+    email: data.services@nyu.edu
+  UVa:
+    department: The Scholars' Lab at UVa
+    email: slabgis@virginia.edu
+  Michigan:
+    department: UMich Spatial and Numeric Data Library
+    email: nscholtz@umich.edu
+  Wisconsin:
+    department: Arthur H. Robinson Map Library at University of Wisconsin
+    email: jmartindale@wisc.edu
+  Indiana:
+    department: Indiana University Research Technologies Division
+    email: uitsgis@iu.edu
+  Baruch CUNY: 
+    department: Baruch CUNY GIS Lab
+    email: francis.donnelly@baruch.cuny.edu
+  Michigan State:
+    department: Michigan State University Map Library
+    email: atickner@msu.edu
+  Maryland:
+    department: University of Maryland Libraries’ GIS and Geospatial Services Center
+    email: kelleyo@umd.edu
