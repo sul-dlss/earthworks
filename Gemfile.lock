@@ -432,6 +432,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rvm
+  capistrano-shared_configs
   capistrano-sidekiq
   capybara
   coffee-rails (~> 4.2.2)
