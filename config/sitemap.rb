@@ -5,8 +5,8 @@ require 'blacklight'
 require 'sitemap_generator'
 
 # fetch all the slugs and their last modified (indexed) date
-# solr = RSolr.connect(:url => SOLR_URL, :read_timeout => 300)
-response = Blacklight.solr.get 'select', :params => {
+solr = Blacklight.default_index.connection
+response = solr.get 'select', :params => {
   :q => '*:*',
   :facet => 'false',
   :rows => 1000000, # keep this very large
