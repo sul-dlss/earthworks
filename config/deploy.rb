@@ -34,6 +34,9 @@ set :honeybadger_env, fetch(:stage)
 
 set :whenever_roles, [:whenevs]
 
+# update shared_configs before restarting app
+before 'deploy:restart', 'shared_configs:update'
+
 namespace :deploy do
 
   desc 'Restart application'
