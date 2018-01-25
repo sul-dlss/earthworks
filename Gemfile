@@ -44,6 +44,7 @@ group :deployment do
   gem 'capistrano-rails'
   gem 'dlss-capistrano'
   gem 'capistrano-sidekiq'
+  gem 'capistrano-shared_configs'
 end
 
 group :production do

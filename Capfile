@@ -25,7 +25,7 @@ require 'dlss/capistrano'
 require 'capistrano/sitemap_generator'
 require 'capistrano/sidekiq'
 require 'whenever/capistrano'
-
+require 'capistrano/shared_configs'
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.
 Dir.glob('lib/capistrano/tasks/*.rake').each { |r| import r }
