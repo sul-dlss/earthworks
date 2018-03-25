@@ -2,7 +2,7 @@ set :application, 'earthworks'
 set :repo_url, 'https://github.com/sul-dlss/earthworks.git'
 
 # Default branch is :master
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, 'master'
 
 set :deploy_to, '/opt/app/geostaff/earthworks'
 
