@@ -3,18 +3,19 @@ ENV["RAILS_ENV"] ||= 'test'
 require 'spec_helper'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'capybara/poltergeist'
-require 'coveralls'
-
-Coveralls.wear!('rails')
 
 require 'devise'
 require 'factory_bot'
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, timeout: 60)
+Capybara.javascript_driver = :headless_chrome
+
+Capybara.register_driver :headless_chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+    chromeOptions: { args: %w[headless disable-gpu no-sandbox] }
+  )
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities)
 end
-Capybara.javascript_driver = :poltergeist
 
 Capybara.default_max_wait_time = 10
 # Add additional requires below this line. Rails is not loaded until this point!
