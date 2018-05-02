@@ -1,3 +1,5 @@
+addons:
+  chrome: stable
 cache: bundler
 language: ruby
 sudo: false
@@ -11,7 +13,19 @@ rvm:
 env:
   global:
     - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+    - CC_TEST_REPORTER_ID=6759f620e47cddafe48fb8a974a7b91a77c2d99b9c8847616ff490f64e99d148
+
+before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 script: bundle exec rake ci
 
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
 jdk: oraclejdk8
+
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
