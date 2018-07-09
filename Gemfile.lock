@@ -63,7 +63,7 @@ GEM
     archive-zip (0.11.0)
       io-like (~> 0.3.0)
     arel (9.0.0)
-    autoprefixer-rails (8.6.3)
+    autoprefixer-rails (8.6.5)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -114,7 +114,7 @@ GEM
     capistrano-sidekiq (1.0.2)
       capistrano (>= 3.9.0)
       sidekiq (>= 3.4)
-    capybara (3.2.1)
+    capybara (3.3.1)
       addressable
       mini_mime (>= 0.1.3)
       nokogiri (~> 1.8)
@@ -168,7 +168,7 @@ GEM
     dry-container (0.6.0)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
-    dry-core (0.4.6)
+    dry-core (0.4.7)
       concurrent-ruby (~> 1.0)
     dry-equalizer (0.2.1)
     dry-inflector (0.1.2)
@@ -183,7 +183,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 0.4, >= 0.4.2)
-    dry-validation (0.12.0)
+    dry-validation (0.12.1)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.1, >= 0.1.3)
       dry-core (~> 0.2, >= 0.2.1)
@@ -285,7 +285,7 @@ GEM
     net-ssh (5.0.2)
     newrelic_rpm (5.2.0.345)
     nio4r (2.3.1)
-    nokogiri (1.8.3)
+    nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
     nokogumbo (1.5.0)
       nokogiri
@@ -385,7 +385,7 @@ GEM
     simplecov-html (0.10.2)
     sitemap_generator (6.0.1)
       builder (~> 3.0)
-    solr_wrapper (1.2.0)
+    solr_wrapper (2.0.0)
       faraday
       retriable
       ruby-progressbar
@@ -418,7 +418,7 @@ GEM
       railties (>= 3.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-    uglifier (4.1.11)
+    uglifier (4.1.14)
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
@@ -473,7 +473,7 @@ DEPENDENCIES
   rsolr
   rspec-rails
   sass-rails (~> 5.0)
-  selenium-webdriver
+  selenium-webdriver (!= 3.13.0)
   sidekiq
   simplecov
   sitemap_generator (~> 6.0)
