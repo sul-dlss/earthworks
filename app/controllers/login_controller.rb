@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
   def login
-    redirect_to devise_referrer_path
+    redirect_to params[:referrer] || root_path
   end
 end
