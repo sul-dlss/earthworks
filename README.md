@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/sul-dlss/earthworks.svg?branch=master)](https://travis-ci.org/sul-dlss/earthworks)
-[![Coverage Status](https://coveralls.io/repos/github/sul-dlss/earthworks/badge.svg?branch=master)](https://coveralls.io/github/sul-dlss/earthworks?branch=master)
+[![Code Climate Test Coverage](https://codeclimate.com/github/sul-dlss/earthworks/badges/coverage.svg)](https://codeclimate.com/github/sul-dlss/earthworks/coverage)
 
 ## EarthWorks
 
