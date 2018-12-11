@@ -231,7 +231,7 @@ GEM
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
     honeybadger (4.1.0)
-    i18n (1.1.1)
+    i18n (1.2.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
     is_it_working (1.1.0)
@@ -491,4 +491,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
