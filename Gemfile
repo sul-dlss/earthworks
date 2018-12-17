@@ -79,3 +79,4 @@ gem 'geo_combine', git: 'https://github.com/OpenGeoMetadata/GeoCombine.git', bra
 gem 'geo_monitor', '~> 0.4'
 gem 'sidekiq'
 gem 'whenever', require: false
+gem 'bootstrap-sass', '3.3.7' # pin to 3.3.7 because our centos6 environment isn't compatible with sassc
