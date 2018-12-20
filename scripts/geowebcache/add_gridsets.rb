@@ -45,6 +45,9 @@ layer_names.each do |name|
             <gridSetName>EPSG:900913 - 512</gridSetName>
           </gridSubset>
           <gridSubset>
+            <gridSetName>EPSG:3857 - 512</gridSetName>
+          </gridSubset>
+          <gridSubset>
             <gridSetName>EPSG:4326 - 512</gridSetName>
           </gridSubset>
         </gridSubsets>
