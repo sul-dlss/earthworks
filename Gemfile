@@ -45,7 +45,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'solr_wrapper'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.13'
 end
 
 
@@ -64,7 +64,7 @@ group :production do
 end
 
 gem "blacklight"
-gem "geoblacklight"
+gem "geoblacklight", '~> 1.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
