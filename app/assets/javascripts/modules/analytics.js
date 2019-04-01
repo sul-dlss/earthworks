@@ -8,6 +8,7 @@ GoogleAnalytics = (function() {
     window._gaq = [];
     GoogleAnalytics.analyticsId = GoogleAnalytics.getAnalyticsId();
     window._gaq.push(['_setAccount', GoogleAnalytics.analyticsId]);
+    window._gaq.push(['_gat._anonymizeIp']);
     ga = document.createElement('script');
     ga.type = 'text/javascript';
     ga.async = true;
@@ -77,7 +78,7 @@ Blacklight.onLoad(function() {
   });
 
   // Log Open in CartoDB Clicks
-  $(document).on('click', 'li.exports a:contains("Open in CartoDB")', function(e) {
+  $(document).on('click', 'li.exports a:contains("Open in Carto")', function(e) {
     window._gaq.push(['_trackEvent', 'Open in CartoDB', window.location.pathname.replace('/catalog/', '')]);
   });
 });
