@@ -78,7 +78,7 @@ Blacklight.onLoad(function() {
   });
 
   // Log Open in CartoDB Clicks
-  $(document).on('click', 'li.exports a:contains("Open in CartoDB")', function(e) {
+  $(document).on('click', 'li.exports a:contains("Open in Carto")', function(e) {
     window._gaq.push(['_trackEvent', 'Open in CartoDB', window.location.pathname.replace('/catalog/', '')]);
   });
 });
