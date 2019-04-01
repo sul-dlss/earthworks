@@ -8,6 +8,7 @@ GoogleAnalytics = (function() {
     window._gaq = [];
     GoogleAnalytics.analyticsId = GoogleAnalytics.getAnalyticsId();
     window._gaq.push(['_setAccount', GoogleAnalytics.analyticsId]);
+    window._gaq.push(['_gat._anonymizeIp']);
     ga = document.createElement('script');
     ga.type = 'text/javascript';
     ga.async = true;
