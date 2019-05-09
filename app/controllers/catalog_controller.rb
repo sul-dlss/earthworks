@@ -275,9 +275,6 @@ class CatalogController < ApplicationController
     config.show.document_actions.delete(:sms)
     config.show.document_actions.delete(:citation)
 
-    # Custom results collection tool for GeoBlacklight
-    config.add_results_collection_tool :save_search
-
     # Configure basemap provider
     config.basemap_provider = 'OpenStreetMap.HOT'
 
