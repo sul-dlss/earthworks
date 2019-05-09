@@ -39,8 +39,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver', '!= 3.13.0'
-  # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'simplecov', require: false
