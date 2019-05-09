@@ -13,13 +13,13 @@ $dropdown-link-hover-color: #fff;
 $dropdown-link-hover-bg: $cardinal-red;
 
 // Navbar
-$navbar-default-bg: $beige-20-percent;
-$navbar-height: 71px;
-$navbar-inverse-bg: $cardinal-red;
-$navbar-inverse-link-color: #fff;
-$navbar-inverse-brand-hover-color: $beige-10-percent;
-$navbar-inverse-link-hover-color: $beige-10-percent;
-$navbar-inverse-toggle-hover-bg: $dark-red;
+.bg-beige {
+  background-color: $beige-20-percent;
+}
+
+.bg-cardinal-red {
+  background-color: $cardinal-red;
+}
 
 // Jumbotron
 $jumbotron-bg: $light-sandstone;

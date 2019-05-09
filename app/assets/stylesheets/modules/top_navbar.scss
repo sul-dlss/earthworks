@@ -17,10 +17,10 @@
   .topnav-links {
     float: right;
     margin-top: 2px;
-    position: relative;
   }
 
   .navbar-nav {
+    display: inline;
     list-style: none;
     margin: 0;
     padding-left: 0;
@@ -61,8 +61,7 @@
     padding-right: 5px;
   }
 }
-
-@media screen and (max-width: $screen-xs-max) {
+@include media-breakpoint-up(xs) {
   #topnav {
     padding-left: 10px;
     padding-right: 10px;
