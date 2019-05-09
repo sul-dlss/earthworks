@@ -11,12 +11,14 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
+//= require rails-ujs
 
 //
 // Required by Blacklight
+//= require popper
+// Twitter Typeahead for autocomplete
+//= require twitter/typeahead
+//= require bootstrap
 //= require blacklight/blacklight
 //= require blacklight_range_limit
 //= require_tree .
-
-//= require twitter/typeahead.min
