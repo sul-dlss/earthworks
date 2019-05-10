@@ -15,7 +15,7 @@ feature 'Unavailable layer' do
   end
   scenario 'catalog index page should have availablility facets' do
     visit search_catalog_path q: '*'
-    expect(page).to have_css '.facet_select', text: 'Unavailable'
-    expect(page).to have_css '.facet_select', text: 'Available'
+    expect(page).to have_css '.facet-select', text: 'Unavailable'
+    expect(page).to have_css '.facet-select', text: 'Available'
   end
 end
