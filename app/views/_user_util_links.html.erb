@@ -8,11 +8,6 @@
       <% end %>
     </li>
     <% end %>
-    <% if has_user_authentication_provider? and current_user %>
-    <li class='nav-item'>
-      <%= link_to t('blacklight.header_links.saved_searches'), blacklight.saved_searches_path, class: 'nav-link' %>
-    </li>
-    <% end %>
     <li class='nav-item'>
       <%= link_to t('blacklight.header_links.search_history'), blacklight.search_history_path, class: 'nav-link' %>
     </li>
