@@ -10,6 +10,14 @@
   button.search-btn {
     @extend .btn-lg;
     display: inline-flex;
+    
+    .blacklight-icons,
+    .blacklight-icons svg {
+      height: 1.5rem;
+      left: .225rem;
+      line-height: 1.5rem;
+      width: 1.5rem;
+    }
   }
 }
 

@@ -25,5 +25,13 @@
   }
   button.search-btn {
     display: inline-flex;
+
+    .blacklight-icons svg{
+      height: 1.5rem;
+      left: .125rem;
+      line-height: 1.5rem;
+      top: .075rem;
+      width: 1.5rem;
+    }
   }
 }
