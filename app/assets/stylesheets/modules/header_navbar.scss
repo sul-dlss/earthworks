@@ -6,7 +6,6 @@
     background-size: contain;
     flex: 0 0 175px;
     height: auto;
-    margin-left: 10px;
   }
 }
 
@@ -20,6 +19,10 @@
 }
 
 #search-navbar {
+  .container {
+    padding-left: 0;
+  }
+
   .input-group {
     @extend .flex-nowrap;
   }

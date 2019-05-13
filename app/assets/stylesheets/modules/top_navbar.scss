@@ -35,12 +35,12 @@
       
       &:hover,
       &:focus {
-        border-bottom: 2px solid $cardinal-red;
+        text-decoration: underline;
       }
     }
 
     & > a {
-      padding: 0;
+      padding: 0 .5rem;
     }
   }
 
@@ -63,8 +63,6 @@
 }
 @include media-breakpoint-up(xs) {
   #topnav {
-    padding-left: 10px;
-    padding-right: 10px;
     width: 100%;
   }
 }
