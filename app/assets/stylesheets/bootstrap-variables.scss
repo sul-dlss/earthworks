@@ -21,5 +21,9 @@ $dropdown-link-hover-bg: $cardinal-red;
   background-color: $cardinal-red;
 }
 
+$navbar-dark-color: #fff;
+$navbar-dark-hover-color: #fff;
+$navbar-brand-height: 1rem * 1.25 * 1.5 * 1.5 * 2 !default; // Bootstrap variables are not availabe so hardcoding
+
 // Jumbotron
 $jumbotron-bg: $light-sandstone;

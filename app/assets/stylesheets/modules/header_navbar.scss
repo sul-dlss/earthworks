@@ -1,23 +1,22 @@
 #header-navbar {
   box-shadow: 0 4px 8px -2px rgba(0, 0, 0, .2);
-  height: 71px;
 
   .navbar-brand {
-    background-size: cover;
+    background-position: center;
+    background-size: contain;
     flex: 0 0 175px;
-    height: 28px;
+    height: auto;
     margin-left: 10px;
   }
 }
 
 .nav.navbar-nav > li > a {
-  margin-left: 15px;
-  margin-right: 15px;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  text-decoration: none;
   text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 #search-navbar {
