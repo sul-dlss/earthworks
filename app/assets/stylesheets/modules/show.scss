@@ -3,3 +3,18 @@ dd[itemprop='url'] a {
     text-overflow: ellipsis;
     display: block;
 }
+
+// GeoBlacklight padding/margin overrides (sets back to Boostrap default)
+.show-tools .list-group {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.exports {
+  margin: 0;
+
+  .list-group {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+}
