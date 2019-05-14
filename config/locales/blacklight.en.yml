@@ -11,6 +11,3 @@ en:
         label: '%{label}'
       fields:
         search: 'Keywords'
-    search_history:
-      save: 'Save this search'
-      forget: 'Forget this search'
