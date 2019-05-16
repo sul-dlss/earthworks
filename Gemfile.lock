@@ -234,7 +234,6 @@ GEM
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
-    is_it_working (1.1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -292,6 +291,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     nokogumbo (2.0.1)
       nokogiri (~> 1.8, >= 1.8.4)
+    okcomputer (1.17.4)
     orm_adapter (0.5.0)
     pg (1.1.4)
     public_suffix (3.0.3)
@@ -470,11 +470,11 @@ DEPENDENCIES
   geo_monitor (~> 0.4)
   geoblacklight (~> 1.0)
   honeybadger
-  is_it_working
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
   newrelic_rpm
+  okcomputer
   pg
   puma (~> 3.11)
   rails (~> 5.2.0)
