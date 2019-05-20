@@ -228,7 +228,6 @@ GEM
     honeybadger (4.2.2)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
-    is_it_working (1.1.0)
     jbuilder (2.8.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
