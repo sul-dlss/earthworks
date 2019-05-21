@@ -28,7 +28,7 @@ end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
+  gem 'web-console'
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
@@ -44,7 +44,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'solr_wrapper'
-  gem 'sqlite3', '~> 1.3.13'
+  gem 'sqlite3'
 end
 
 
@@ -71,7 +71,7 @@ gem 'okcomputer'
 gem 'honeybadger'
 gem 'sitemap_generator', '~> 6.0'
 gem 'newrelic_rpm'
-gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
+gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 6.0'
 gem 'rsolr'
 gem 'geo_combine', git: 'https://github.com/OpenGeoMetadata/GeoCombine.git', branch: 'master'
