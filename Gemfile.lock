@@ -194,7 +194,7 @@ GEM
     geo_monitor (0.5.0)
       faraday
       rails (>= 5.1.4, < 6)
-    geoblacklight (2.1.0)
+    geoblacklight (2.1.1)
       blacklight (~> 7.0)
       coderay
       config
