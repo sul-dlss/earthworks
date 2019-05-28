@@ -1,5 +1,5 @@
 #su-content {
-  padding-bottom: 200px !important;
+  padding-bottom: 220px !important;
 }
 
 #sul-footer-container {
@@ -7,8 +7,8 @@
   -webkit-box-shadow: 0 4px 8px -8px rgba(0, 0, 0, .2) inset;
   box-shadow: 0 4px 8px -8px rgba(0, 0, 0, .2) inset;
   clear: both;
-  margin-top: -200px;
-  min-height: 200px;
+  margin-top: -220px;
+  min-height: 220px;
   padding: 0 !important;
   position: relative;  
 	width: 100%;
@@ -52,6 +52,15 @@
 
 #global-footer {
   max-width: 100%;
+
+  .row {
+    display: block;
+    flex-wrap: nowrap;
+  }
+
+  .span10 {
+    margin: 0 !important;
+  }
 
   p {
     max-width: 100%;

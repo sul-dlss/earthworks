@@ -1,7 +1,7 @@
 @import 'bootstrap-variables';
 
-@import 'bootstrap-sprockets';
-
 @import 'bootstrap';
+
+$logo-image: image-url('earthworks.svg');
 
 @import 'blacklight/blacklight';

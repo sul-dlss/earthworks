@@ -31,6 +31,12 @@ class CatalogController < ApplicationController
     # solr field configuration for document/show views
 
     config.show.display_type_field = 'format'
+    config.show.partials << 'rights_metadata'
+    config.show.partials << 'show_message'
+    config.show.partials << 'show_default_viewer_container'
+    config.show.partials << 'show_default_attribute_table'
+    config.show.partials << 'show_default_viewer_information'
+    config.show.partials << 'show_default_canonical_link'
 
     ##
     # Configure the index document presenter.
@@ -148,14 +154,22 @@ class CatalogController < ApplicationController
     # item_prop: [String] property given to span with Schema.org item property
     # link_to_search: [Boolean] that can be passed to link to a facet search
     # helper_method: [Symbol] method that can be used to render the value
-    config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author'
+    config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author', link_to_facet: true
     config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
     config.add_show_field Settings.FIELDS.PUBLISHER, label: 'Publisher', itemprop: 'publisher'
     config.add_show_field Settings.FIELDS.PART_OF, label: 'Collection', itemprop: 'isPartOf'
-    config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_search: true
-    config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_search: true
+    config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_facet: true
+    config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject(s)', itemprop: 'keywords', link_to_facet: true
     config.add_show_field Settings.FIELDS.TEMPORAL, label: 'Year', itemprop: 'temporal'
-    config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_search: true
+    config.add_show_field Settings.FIELDS.PROVENANCE, label: 'Held by', link_to_facet: true
+    config.add_show_field(
+      Settings.FIELDS.REFERENCES,
+      label: 'More details at',
+      accessor: [:external_url],
+      if: proc { |_, _, doc| doc.external_url },
+      helper_method: :render_references_url
+    )
+
 
     # config.add_show_field 'dc_title_t', :label => 'Title:'
     # config.add_show_field 'title_display', :label => 'Title:'
@@ -254,15 +268,20 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
 
+    # Tools from Blacklight
+    config.add_results_collection_tool(:sort_widget)
+    config.add_results_collection_tool(:per_page_widget)
+    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
+    config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
+
+
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
     config.add_show_tools_partial :exports, partial: 'exports', if: proc { |_context, _config, options| options[:document] }
     config.show.document_actions.delete(:sms)
     config.show.document_actions.delete(:citation)
-
-    # Custom results collection tool for GeoBlacklight
-    config.add_results_collection_tool :save_search
 
     # Configure basemap provider
     config.basemap_provider = 'OpenStreetMap.HOT'

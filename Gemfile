@@ -8,8 +8,6 @@ gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-# See https://github.com/sstephenson/execjs#readme for more supported runtimes
-gem 'therubyracer',  platforms: :ruby
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -61,7 +59,7 @@ group :production do
 end
 
 gem "blacklight"
-gem "geoblacklight", '~> 1.0'
+gem "geoblacklight", '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
@@ -70,10 +68,10 @@ gem 'honeybadger'
 gem 'sitemap_generator', '~> 6.0'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
-gem 'blacklight_range_limit', '~> 6.0'
+gem 'blacklight_range_limit', '~> 7.0'
 gem 'rsolr'
 gem 'geo_combine', git: 'https://github.com/OpenGeoMetadata/GeoCombine.git', branch: 'master'
 gem 'geo_monitor', '~> 0.4'
 gem 'sidekiq'
 gem 'whenever', require: false
-gem 'bootstrap-sass'
+gem 'bootstrap'

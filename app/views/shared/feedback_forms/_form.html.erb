@@ -1,44 +1,48 @@
 <div class="container">
-  <%= form_tag feedback_form_path, method: :post, class:"form-horizontal feedback-form", role:"form" do %>
-  <div class="col-sm-6 col-sm-offset-1">
-    <div class="col-sm-offset-3">
-      <%= render "shared/feedback_forms/reporting_from" %>
-    </div>
-  </div>
-  <span style="display:none;visibility:hidden;">
-    <%= label_tag(:email_address, 'Ignore this text box. It is used to detect spammers. If you enter anything into this text box, your message will not be sent.') %><br/>
-    <%= email_field_tag :email_address %><br/>
-    <%= hidden_field_tag :user_agent %>
-    <%= hidden_field_tag :viewport %>
-  </span>
-  <div class="col-sm-6 col-sm-offset-1">
-    <div class="form-group">
-      <%= label_tag(:message, 'Message', class:"col-sm-3 control-label") %>
-      <div class="col-sm-9">
-        <%= text_area_tag :message, "", rows:"5", class:"form-control" %>
+  <%= form_tag feedback_form_path, method: :post, class:"feedback-form", role:"form" do %>
+    <div class="row">
+      <div class="col-sm-8 offset-sm-1">
+        <div class="offset-sm-x">
+          <%= render "shared/feedback_forms/reporting_from" %>
+        </div>
       </div>
     </div>
-    <div class="form-group">
-      <%= label_tag(:name, 'Your name', class:"col-sm-3 control-label") %>
-      <div class="col-sm-9">
-        <%= text_field_tag :name, "", class:"form-control" %>
+    <div class="row">
+      <span style="display:none;visibility:hidden;">
+        <%= label_tag(:email_address, 'Ignore this text box. It is used to detect spammers. If you enter anything into this text box, your message will not be sent.') %><br/>
+        <%= email_field_tag :email_address %><br/>
+        <%= hidden_field_tag :user_agent %>
+        <%= hidden_field_tag :viewport %>
+      </span>
+      <div class="col-sm-6 offset-sm-1">
+        <div class="form-group row">
+          <%= label_tag(:message, 'Message', class:"col-sm-3 col-form-label") %>
+          <div class="col-sm-9">
+            <%= text_area_tag :message, "", rows:"5", class:"form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= label_tag(:name, 'Your name', class:"col-sm-3 col-form-label") %>
+          <div class="col-sm-9">
+            <%= text_field_tag :name, "", class:"form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <%= label_tag(:to, 'Your email', class:"col-sm-3 col-form-label") %>
+          <div class="col-sm-9">
+            <%= email_field_tag :to, "", class:"form-control" %>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-sm--3 col-sm-9">
+            <button type="submit" class="btn btn-primary">Send</button>
+            <%= link_to "Cancel", :back, class:"cancel-link", data: {toggle:"collapse", target:"#feedback-form"} %>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        If you cannot access content or use features on the EarthWorks website due to a disability or other accessibility-related issue, please contact the <a href='https://soap.stanford.edu/'>Stanford Online Accessibility Program</a> via <a href='https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=webaccessibility'>HelpSU</a> or by email at <a href='mailto:web-accessibility@stanford.edu'>web-accessibility@stanford.edu</a>.
       </div>
     </div>
-    <div class="form-group">
-      <%= label_tag(:to, 'Your email', class:"col-sm-3 control-label") %>
-      <div class="col-sm-9">
-        <%= email_field_tag :to, "", class:"form-control" %>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-9">
-        <button type="submit" class="btn btn-primary">Send</button>
-        <%= link_to "Cancel", :back, class:"cancel-link", data: {toggle:"collapse", target:"#feedback-form"} %>
-      </div>
-    </div>
-  </div>
   <% end %>
-  <div class="col-sm-4">
-    If you cannot access content or use features on the EarthWorks website due to a disability or other accessibility-related issue, please contact the <a href='https://soap.stanford.edu/'>Stanford Online Accessibility Program</a> via <a href='https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=webaccessibility'>HelpSU</a> or by email at <a href='mailto:web-accessibility@stanford.edu'>web-accessibility@stanford.edu</a>.
-  </div>
 </div>

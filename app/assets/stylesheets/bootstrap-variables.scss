@@ -1,6 +1,7 @@
 // Bootstrap Overrides
 
 // Colors
+$success: $pantone-334;
 
 // Scaffolding
 $link-color: $pantone-405;
@@ -13,13 +14,17 @@ $dropdown-link-hover-color: #fff;
 $dropdown-link-hover-bg: $cardinal-red;
 
 // Navbar
-$navbar-default-bg: $beige-20-percent;
-$navbar-height: 71px;
-$navbar-inverse-bg: $cardinal-red;
-$navbar-inverse-link-color: #fff;
-$navbar-inverse-brand-hover-color: $beige-10-percent;
-$navbar-inverse-link-hover-color: $beige-10-percent;
-$navbar-inverse-toggle-hover-bg: $dark-red;
+.bg-beige {
+  background-color: $beige-20-percent;
+}
+
+.bg-cardinal-red {
+  background-color: $cardinal-red;
+}
+
+$navbar-dark-color: #fff;
+$navbar-dark-hover-color: #fff;
+$navbar-brand-height: 1rem * 1.25 * 1.5 * 1.5 * 2 !default; // Bootstrap variables are not availabe so hardcoding
 
 // Jumbotron
 $jumbotron-bg: $light-sandstone;

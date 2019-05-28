@@ -10,7 +10,7 @@
   <%= favicon_link_tag 'favicon.ico' %>
   <meta name="description" content="Stanford University Libraries' official online search tool for geographic information systems (GIS), maps, and other geographic datasets." />
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= stylesheet_link_tag "https://www.stanford.edu/su-identity/css/su-identity.css" %>
+  <%= stylesheet_link_tag "https://www-media.stanford.edu/su-identity/css/su-identity.css" %>
   <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700" %>
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,16 +33,21 @@
     <div id="su-content"> <!-- #su-content start -->
       <%= render 'shared/top_navbar' %>
       <%= render 'shared/header_navbar' %>
-      <%= render partial: 'shared/ajax_modal' %>
-      <div id='main-container' role='main' class='container' data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+      <%= render partial: 'shared/modal' %>
+      <div id='main-container' role='main' class='container mt-4' data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+        <%= content_for(:container_header) %>
+
         <h1 class="sr-only">EarthWorks Geospatial Catalog</h1>
-        <%= render :partial=>'/flash_msg', layout: 'shared/flash_messages' %>
+        <%= render :partial=>'/shared/flash_msg', layout: 'shared/flash_messages' %>
+
         <div class='row'>
-          <%= yield %>
+          <%= content_for?(:content) ? yield(:content) : yield %>
         </div>
       </div>
     </div> <!-- #su-content end -->
   </div> <!-- #su-wrap end -->
+  <%= render partial: 'shared/footer' %>
+  <%= render partial: 'shared/modal' %>
   <%= render 'shared/su_footer' %>
   <%= render 'shared/sitelinks_search_box' %>
 </body>

@@ -65,25 +65,22 @@ GEM
       execjs
     bcrypt (3.1.12)
     bindex (0.7.0)
-    blacklight (6.20.0)
-      bootstrap-sass (~> 3.2)
+    blacklight (7.0.1)
       deprecation
       globalid
       jbuilder (~> 2.7)
       kaminari (>= 0.15)
       nokogiri (~> 1.6)
-      rails (>= 4.2, < 6)
-      rsolr (>= 1.0.6, < 3)
-      twitter-typeahead-rails (= 0.11.1.pre.corejavascript)
-    blacklight_range_limit (6.3.3)
-      blacklight (>= 6.0.2)
-      jquery-rails
+      rails (~> 5.1)
+    blacklight_range_limit (7.1.0)
+      blacklight (>= 7.0)
       rails (>= 3.0)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
-    bootstrap-sass (3.4.1)
-      autoprefixer-rails (>= 5.2.1)
-      sassc (>= 2.0.0)
+    bootstrap (4.3.1)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 1.14.3, < 2)
+      sassc-rails (>= 2.0.0)
     builder (3.2.3)
     bundler-audit (0.6.1)
       bundler (>= 1.2.0, < 3)
@@ -197,20 +194,20 @@ GEM
     geo_monitor (0.5.0)
       faraday
       rails (>= 5.1.4, < 6)
-    geoblacklight (1.9.1)
-      blacklight (~> 6.11)
+    geoblacklight (2.1.1)
+      blacklight (~> 7.0)
       coderay
       config
       deprecation
       faraday
       faraday_middleware
       font-awesome-rails
-      geo_combine (>= 0.3)
+      geo_combine (~> 0.4)
       geoblacklight-icons (>= 0.2)
       handlebars_assets
-      leaflet-rails (~> 1.3.0)
       mime-types
       rails (~> 5.0)
+      webpacker (~> 3.5)
     geoblacklight-icons (1.3.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -242,9 +239,6 @@ GEM
       activerecord
       kaminari-core (= 1.1.1)
     kaminari-core (1.1.1)
-    leaflet-rails (1.3.1)
-      rails (>= 4.2.0)
-    libv8 (3.16.14.19)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
@@ -279,10 +273,13 @@ GEM
     okcomputer (1.17.4)
     orm_adapter (0.5.0)
     pg (1.1.4)
+    popper_js (1.14.5)
     public_suffix (3.1.0)
     puma (3.12.1)
     rack (2.0.7)
     rack-protection (2.0.5)
+      rack
+    rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -315,7 +312,6 @@ GEM
     rb-inotify (0.10.0)
       ffi (~> 1.0)
     redis (4.1.1)
-    ref (2.0.0)
     regexp_parser (1.5.1)
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
@@ -362,6 +358,12 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
+    sassc-rails (2.1.1)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (3.142.3)
       childprocess (>= 0.5, < 2.0)
       rubyzip (~> 1.2, >= 1.2.2)
@@ -398,9 +400,6 @@ GEM
     sshkit (1.18.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
-    therubyracer (0.12.3)
-      libv8 (~> 3.16.14.15)
-      ref
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
@@ -423,6 +422,10 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (~> 1.0)
       selenium-webdriver (~> 3.0)
+    webpacker (3.6.0)
+      activesupport (>= 4.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 4.2)
     websocket-driver (0.7.0)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.3)
@@ -436,9 +439,9 @@ PLATFORMS
 
 DEPENDENCIES
   blacklight
-  blacklight_range_limit (~> 6.0)
+  blacklight_range_limit (~> 7.0)
   bootsnap (>= 1.1.0)
-  bootstrap-sass
+  bootstrap
   byebug
   capistrano
   capistrano-bundler
@@ -455,7 +458,7 @@ DEPENDENCIES
   factory_bot_rails
   geo_combine!
   geo_monitor (~> 0.4)
-  geoblacklight (~> 1.0)
+  geoblacklight (~> 2.0)
   honeybadger
   jbuilder (~> 2.5)
   jquery-rails
@@ -476,7 +479,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
-  therubyracer
   twitter-typeahead-rails
   uglifier (>= 1.3.0)
   web-console

@@ -1,24 +1,27 @@
 .search-block {
-  h2 {
-    font-weight: 300;
+  .input-group {
+    @extend .flex-nowrap;
   }
 
-  input.search_q {
-    @extend .input-lg;
+  input.search-q {
+    @extend .form-control-lg;
   }
 
   button.search-btn {
     @extend .btn-lg;
+    display: inline-flex;
+    
+    .blacklight-icons,
+    .blacklight-icons svg {
+      height: 1.5rem;
+      left: .225rem;
+      line-height: 1.5rem;
+      width: 1.5rem;
+    }
   }
 }
 
 .home-page-linked-searches {
-  .explore {
-    font-weight: 300;
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   .panel-body {
     padding: 0;
   }

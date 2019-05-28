@@ -1,3 +1,7 @@
-a:not(.btn):not(.leaflet-control-zoom-in):not(.leaflet-control-zoom-out) {
+a:not(.btn):not(.leaflet-control-zoom-in):not(.leaflet-control-zoom-out,.nav-link):not(.remove) {
   text-decoration: underline;
+}
+
+body {
+  overflow-x: hidden;
 }
