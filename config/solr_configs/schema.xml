@@ -134,6 +134,7 @@
         <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
+        <filter class="solr.LengthFilterFactory" min="2" max="255"/>
       </analyzer>
     </fieldType>
 
