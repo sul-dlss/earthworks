@@ -28,6 +28,8 @@ class CatalogController < ApplicationController
 
     config.index.title_field = 'dc_title_s'
 
+    config.raw_endpoint.enabled = true
+
     # solr field configuration for document/show views
 
     config.show.display_type_field = 'format'
