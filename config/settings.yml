@@ -6,6 +6,9 @@ BING_SITE_VERIFICATION: '4E61263975C6ABBF2ECE5A8CA5E592B7'
 # Carto OneClick Service https://carto.com/help/working-with-data/open-in-carto/
 CARTO_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
 
+# ArcGIS Online Base URL
+ARCGIS_BASE_URL: 'https://www.arcgis.com/home/webmap/viewer.html'
+
 EMAIL_TO: 'fake-email@example.com'
 
 #Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
