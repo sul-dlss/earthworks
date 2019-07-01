@@ -1,3 +1,4 @@
+dist: xenial
 addons:
   chrome: stable
 cache: bundler
