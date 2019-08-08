@@ -20,11 +20,11 @@ class SolrDocument
   end
 
   def contact_email
-    Settings.INSTITUTIONS.send(institution).email
+    Settings.INSTITUTIONS.send(institution)&.email
   end
 
   def department
-    Settings.INSTITUTIONS.send(institution).department
+    Settings.INSTITUTIONS.send(institution)&.department
   end
 
   # Email uses the semantic field mappings below to generate the body of an email.
