@@ -7,7 +7,7 @@
 //= require geoblacklight/downloaders
 
 //= require leaflet-iiif
-//= require readmore.min
+//= require readmore
 
 GeoBlacklight.Basemaps['OpenStreetMap.HOT'] = L.tileLayer(
     'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
