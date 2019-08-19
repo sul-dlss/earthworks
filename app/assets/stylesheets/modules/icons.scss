@@ -1,8 +1,12 @@
-.geoblacklight-available {
-  @extend .fa, .fa-check;
-  color: $pantone-334;
+.blacklight-icons {
+  svg[aria-labelledby="aria-label-available"] {
+    fill: $pantone-334;
+  }
 }
 
-.geoblacklight-unavailable {
-  @extend .fa, .fa-times;
+
+.blacklight-icons {
+  svg[aria-labelledby="aria-label-stanford"] {
+    fill: $cardinal-red;
+  }
 }
