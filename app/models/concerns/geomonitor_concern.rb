@@ -2,7 +2,11 @@ module GeomonitorConcern
   extend Geoblacklight::SolrDocument
 
   def available?
-    score_meets_threshold? && super
+    index_map? || (score_meets_threshold? && super)
+  end
+
+  def index_map?
+    references.index_map.present?
   end
 
   def score_meets_threshold?
