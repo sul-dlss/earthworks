@@ -6,6 +6,7 @@ gem 'rails', '~> 5.2.0'
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'sassc', '2.0.1' # pin since we can't upgrade our deployment environment
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
