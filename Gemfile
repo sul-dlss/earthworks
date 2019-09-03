@@ -72,6 +72,6 @@ gem 'blacklight_range_limit', '~> 7.0'
 gem 'rsolr'
 gem 'geo_combine', git: 'https://github.com/OpenGeoMetadata/GeoCombine.git', branch: 'master'
 gem 'geo_monitor', '~> 0.4'
-gem 'sidekiq'
+gem 'sidekiq', '~> 5.0'
 gem 'whenever', require: false
 gem 'bootstrap'
