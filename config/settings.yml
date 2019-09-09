@@ -167,3 +167,16 @@ INSTITUTIONS:
   Maryland:
     department: University of Maryland Libraries’ GIS and Geospatial Services Center
     email: kelleyo@umd.edu
+
+# Toggle the help text feature that offers users context
+HELP_TEXT:
+  viewer_protocol:
+      - 'dynamic_map_layer'
+      - 'feature_layer'
+      - 'iiif'
+      - 'iiif_manifest'
+      - 'image_map_layer'
+      - 'index_map'
+      - 'tiled_map_layer'
+      - 'wms'
+      - 'oembed'
