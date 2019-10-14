@@ -25,7 +25,7 @@ script: bundle exec rake ci
 after_script:
   - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
-jdk: oraclejdk9
+jdk: openjdk11
 
 before_install:
   - gem update --system
