@@ -125,7 +125,7 @@ GEM
       deep_merge (~> 1.2, >= 1.2.1)
       dry-schema (~> 1.0)
     connection_pool (2.2.2)
-    crass (1.0.4)
+    crass (1.0.5)
     database_cleaner (1.7.0)
     deep_merge (1.2.1)
     deprecation (1.0.0)
