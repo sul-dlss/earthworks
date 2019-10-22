@@ -13,6 +13,10 @@ feature 'Unavailable layer' do
     visit solr_document_path'princeton-02870w62c'
     expect(page).to_not have_content 'unavailable to download'
   end
+  scenario 'oembed layer' do
+    visit solr_document_path'stanford-dt131hw5005'
+    expect(page).to_not have_content 'unavailable to preview and download'
+  end
   scenario 'catalog index page should have availablility facets' do
     visit search_catalog_path q: '*'
     expect(page).to have_css '.facet-select', text: 'Unavailable'
