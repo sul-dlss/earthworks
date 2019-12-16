@@ -28,5 +28,4 @@ after_script:
 jdk: openjdk11
 
 before_install:
-  - gem update --system
   - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
