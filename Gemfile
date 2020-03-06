@@ -75,3 +75,4 @@ gem 'geo_monitor', '~> 0.4'
 gem 'sidekiq', '~> 5.0'
 gem 'whenever', require: false
 gem 'bootstrap'
+gem 'rack-attack' # For throttle configuration
