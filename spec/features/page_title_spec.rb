@@ -9,7 +9,7 @@ end
 feature 'Search results' do
   scenario 'have title' do
     visit search_catalog_path q: 'california'
-    expect(page.title).to eq 'Keywords: california - EarthWorks Search Results'
+    expect(page.title).to eq 'california - EarthWorks Search Results'
   end
 end
 feature 'Show page' do
