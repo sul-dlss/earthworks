@@ -84,14 +84,14 @@ namespace :earthworks do
     task check: [:environment] do
       GeoMonitor::Layer.where(active: true).find_each(batch_size: 250) do |layer|
         puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: [*60..1800].sample.seconds).perform_later(layer)
+        CheckLayerJob.set(wait: [*60..3600].sample.seconds).perform_later(layer)
       end
     end
     desc 'Check all of the active Stanford layers'
     task check_stanford: [:environment] do
       GeoMonitor::Layer.where(active: true, institution: 'Stanford').find_each(batch_size: 250) do |layer|
         puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: [*60..1800].sample.seconds).perform_later(layer)
+        CheckLayerJob.set(wait: [*60..3600].sample.seconds).perform_later(layer)
       end
     end
     desc 'Check all of the active public layers'
