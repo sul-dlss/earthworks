@@ -40,3 +40,8 @@ end
 every '0 3 * * *', roles: %i[app] do # daily at 3 am
   rake 'earthworks:clear_rack_attack_cache'
 end
+
+# Uncomment once we babysit this the first time in production
+# every 1.day, at: '4:04 am' do
+#   rake 'rake earthworks:prune_old_search_data[14]'
+# end
