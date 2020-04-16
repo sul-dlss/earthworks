@@ -460,7 +460,7 @@ DEPENDENCIES
   devise
   devise-guests (>= 0.3.3)
   devise-remote-user
-  dlss-capistrano
+  dlss-capistrano (~> 3.5)
   factory_bot_rails
   geo_combine!
   geo_monitor (~> 0.4)

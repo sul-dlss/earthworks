@@ -49,7 +49,7 @@ group :deployment do
   gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
-  gem 'dlss-capistrano'
+  gem 'dlss-capistrano', '~> 3.5'
   gem 'capistrano-sidekiq'
   gem 'capistrano-shared_configs'
 end
