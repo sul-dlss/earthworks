@@ -1,8 +1,3 @@
-# sitemap:create to generate sitemaps,
-# sitemap:refresh to generate sitemaps and ping search engines,
-# sitemap:clean to remove sitemap files
-require 'sitemap_generator/tasks'
-
 namespace :earthworks do
   desc 'Install EarthWorks'
   task install: [:environment] do

@@ -65,7 +65,7 @@ gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
 gem 'okcomputer'
 gem 'honeybadger'
-gem 'sitemap_generator', '~> 6.0'
+gem 'blacklight_dynamic_sitemap'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'

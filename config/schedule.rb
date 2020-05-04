@@ -33,10 +33,6 @@ every 2.days, roles: %i[whenevs] do
   rake 'earthworks:geomonitor:check_public'
 end
 
-every 1.week, roles: %i[sitemap] do
-  rake 'sitemap:refresh'
-end
-
 every '0 3 * * *', roles: %i[app] do # daily at 3 am
   rake 'earthworks:clear_rack_attack_cache'
 end

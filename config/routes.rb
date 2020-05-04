@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   resources :download, only: [:show]
 
   mount Geoblacklight::Engine => 'geoblacklight'
+  mount BlacklightDynamicSitemap::Engine => '/'
   concern :exportable, Blacklight::Routes::Exportable.new
 
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
