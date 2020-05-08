@@ -27,7 +27,9 @@ class FeedbackFormsController < ApplicationController
 
   def validate
     errors = []
-    errors << 'You did not pass the reCaptcha challenge' if !verify_recaptcha(action: 'send_feedback')
+
+    errors << 'You did not pass the reCaptcha challenge' if current_user.blank? && !verify_recaptcha
+
     if params[:message].nil? || params[:message] == ''
       errors << 'A message is required'
     end
