@@ -1,0 +1,9 @@
+// Override the explicit height set on [data-map="item"] for leaflet maps to be
+// auto-height when coming from Oembed (which should manage its own height)
+#document {
+  #viewer-container {
+    [data-map="item"][data-protocol="Oembed"] {
+      height: auto;
+    }
+  }
+}
