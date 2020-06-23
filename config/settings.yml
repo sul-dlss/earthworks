@@ -61,6 +61,9 @@ RESTRICTED_URL: 'http://www.example-services.com'
 
 SOLR_COMMIT_WITHIN: 5000
 
+# DOWNLOAD_PATH is set in production but defaults to this tmp dir when not set
+# DOWNLOAD_PATH: './tmp/cache/downloads'
+
 # (For external Download) timeout and open_timeout parameters for Faraday
 TIMEOUT_DOWNLOAD: 16
 
