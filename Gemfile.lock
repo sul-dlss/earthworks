@@ -12,6 +12,26 @@ GIT
       sanitize
       thor
 
+GIT
+  remote: https://github.com/geoblacklight/geoblacklight.git
+  revision: 3eb95c7593cb9b7d997b666e15ba604f2a86d347
+  branch: master
+  specs:
+    geoblacklight (2.3.0)
+      blacklight (~> 7.0)
+      coderay
+      config
+      deprecation
+      faraday (~> 1.0)
+      faraday_middleware (~> 1.0.0.rc1)
+      font-awesome-rails
+      geo_combine (~> 0.4)
+      geoblacklight-icons (>= 0.2)
+      handlebars_assets
+      mime-types
+      rails (~> 5.0)
+      webpacker
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -65,7 +85,7 @@ GEM
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
-    blacklight (7.8.1)
+    blacklight (7.9.0)
       deprecation
       globalid
       jbuilder (~> 2.7)
@@ -149,7 +169,7 @@ GEM
       capistrano-one_time_key
       capistrano-shared_configs
     docile (1.3.2)
-    dry-configurable (0.11.5)
+    dry-configurable (0.11.6)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.4, >= 0.4.7)
       dry-equalizer (~> 0.2)
@@ -204,20 +224,6 @@ GEM
     geo_monitor (0.6.0)
       faraday
       rails (>= 5.1.4, < 6)
-    geoblacklight (2.3.0)
-      blacklight (~> 7.0)
-      coderay
-      config
-      deprecation
-      faraday (~> 1.0)
-      faraday_middleware (~> 1.0.0.rc1)
-      font-awesome-rails
-      geo_combine (~> 0.4)
-      geoblacklight-icons (>= 0.2)
-      handlebars_assets
-      mime-types
-      rails (~> 5.0)
-      webpacker
     geoblacklight-icons (1.4.0)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -472,7 +478,7 @@ DEPENDENCIES
   factory_bot_rails
   geo_combine!
   geo_monitor (~> 0.4)
-  geoblacklight (~> 2.0)
+  geoblacklight!
   honeybadger
   jbuilder (~> 2.5)
   jquery-rails
