@@ -59,7 +59,7 @@ group :production do
 end
 
 gem "blacklight"
-gem "geoblacklight", '~> 2.0'
+gem "geoblacklight", github: 'geoblacklight/geoblacklight', branch: 'master'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
