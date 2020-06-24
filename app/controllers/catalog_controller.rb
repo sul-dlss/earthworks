@@ -267,6 +267,7 @@ class CatalogController < ApplicationController
     config.add_sort_field 'solr_year_i desc, dc_title_sort asc', :label => 'year'
     config.add_sort_field 'dc_publisher_sort asc, dc_title_sort asc', :label => 'publisher'
     config.add_sort_field 'dc_title_sort asc', :label => 'title'
+    config.add_sort_field 'layer_modified_dt asc', label: 'Layer modified date (for API use only)', if: false
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.

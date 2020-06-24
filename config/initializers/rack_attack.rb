@@ -17,7 +17,7 @@ class Rack::Attack
   # Key: "rack::attack:#{Time.now.to_i/:period}:req/ip:#{req.ip}"
   if Settings.THROTTLE_TRAFFIC
     throttle('req/ip', limit: 300, period: 5.minutes) do |req|
-      req.ip unless req.path.start_with?('/assets')
+      req.ip unless req.path.start_with?('/assets') || req.params['format'] == 'json'
     end
   end
 end
