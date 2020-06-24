@@ -37,6 +37,10 @@ every '0 3 * * *', roles: %i[app] do # daily at 3 am
   rake 'earthworks:clear_rack_attack_cache'
 end
 
+every 1.day, at: '3:04 am' do
+  rake 'rake earthworks:prune_old_guest_user_data[3]'
+end
+
 every 1.day, at: '4:04 am' do
   rake 'rake earthworks:prune_old_search_data[14]'
 end
