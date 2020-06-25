@@ -77,3 +77,4 @@ gem 'whenever', require: false
 gem 'bootstrap'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
+gem 'http'
