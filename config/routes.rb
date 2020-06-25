@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     concerns :searchable
     concerns :range_searchable
   end
+  
+  get 'restricted_proxy/geoserver/:webservice' => 'restricted_proxy#access'
 
   devise_for :users, skip: [:registrations, :passwords, :sessions]
   devise_scope :user do
