@@ -46,5 +46,9 @@ namespace :deploy do
       # end
     end
   end
-
+  after :restart, :restart_sidekiq do
+    on roles(:background) do
+      sudo :systemctl, "restart", "sidekiq-*", raise_on_non_zero_exit: false
+    end
+  end
 end

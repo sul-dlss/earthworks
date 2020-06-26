@@ -21,7 +21,6 @@ require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/passenger'
 require 'dlss/capistrano'
-require 'capistrano/sidekiq'
 require 'whenever/capistrano'
 require 'capistrano/shared_configs'
 
