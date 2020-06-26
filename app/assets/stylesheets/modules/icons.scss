@@ -1,12 +1,12 @@
 .blacklight-icons {
-  svg[aria-labelledby="aria-label-available"] {
+  svg[aria-labelledby="aria-label-available"], svg[aria-labelledby^="bl-icon-available"] {
     fill: $pantone-334;
   }
 }
 
 
 .blacklight-icons {
-  svg[aria-labelledby="aria-label-stanford"] {
+  svg[aria-labelledby="aria-label-stanford"], svg[aria-labelledby^="bl-icon-stanford"] {
     fill: $cardinal-red;
   }
 }
