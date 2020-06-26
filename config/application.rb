@@ -13,7 +13,6 @@ module Earthworks
     config.application_name = 'EarthWorks'
 
     require 'rights_metadata'
-    require 'suggest/response'
     # Inject our StatusExtension concern to add behavior
     # (index updates) to the GeoMonitor::Status class
     config.to_prepare do
