@@ -52,6 +52,7 @@ group :deployment do
   gem 'dlss-capistrano'
   gem 'capistrano-sidekiq'
   gem 'capistrano-shared_configs'
+  gem 'capistrano-passenger'
 end
 
 group :production do
