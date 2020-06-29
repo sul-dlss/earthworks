@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenGeoMetadata/GeoCombine.git
-  revision: 19b2d4e14257861e8a274d46aeb88024c63e8c78
+  revision: 77fde5526c0d1c4d9b6c79d58cd0acb7351ce46b
   branch: master
   specs:
     geo_combine (0.4.0)
@@ -81,7 +81,7 @@ GEM
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
-    autoprefixer-rails (9.8.1)
+    autoprefixer-rails (9.8.4)
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
@@ -95,7 +95,7 @@ GEM
     blacklight_dynamic_sitemap (0.2.0)
       blacklight (> 6.0)
       rails (~> 5.0)
-    blacklight_range_limit (7.8.1)
+    blacklight_range_limit (7.8.2)
       blacklight (>= 7.0)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
@@ -161,8 +161,8 @@ GEM
       devise
     devise-remote-user (1.0.0)
       devise
-    diff-lcs (1.3)
-    dlss-capistrano (3.8.0)
+    diff-lcs (1.4.2)
+    dlss-capistrano (3.9.0)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.3.0)
       capistrano-one_time_key
@@ -186,7 +186,7 @@ GEM
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
-    dry-schema (1.5.1)
+    dry-schema (1.5.2)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.8, >= 0.8.3)
       dry-core (~> 0.4)
@@ -345,7 +345,7 @@ GEM
       ffi (~> 1.0)
     recaptcha (5.5.0)
       json
-    redis (4.1.4)
+    redis (4.2.1)
     regexp_parser (1.7.1)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -401,11 +401,11 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (2.3.0)
-    sidekiq (5.2.9)
-      connection_pool (~> 2.2, >= 2.2.2)
+    sidekiq (6.0.7)
+      connection_pool (>= 2.2.2)
       rack (~> 2.0)
-      rack-protection (>= 1.5.0)
-      redis (>= 3.3.5, < 4.2)
+      rack-protection (>= 2.0.0)
+      redis (>= 4.1.0)
     simplecov (0.18.5)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
