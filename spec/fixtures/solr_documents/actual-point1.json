@@ -6,6 +6,7 @@
   "dc_language_s": "English",
   "dc_rights_s": "Public",
   "dc_title_s": "Actual Evapotrans",
+  "dc_publisher_s": "",
   "dc_type_s": "Dataset",
   "dct_references_s": "{\"http://www.opengis.net/cat/csw/csdgm\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/Columbia:Columbia.landinfo_global_aet/fgdc.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/Columbia:Columbia.landinfo_global_aet/fgdc.html\"}",
   "dct_spatial_sm": [
