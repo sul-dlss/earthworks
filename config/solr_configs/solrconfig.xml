@@ -38,17 +38,9 @@
     </autoCommit>
   </updateHandler>
 
-  <updateProcessor class="solr.processor.SignatureUpdateProcessorFactory" name="add_hashed_id">
-    <bool name="enabled">true</bool>
-    <str name="signatureField">hashed_id_ssi</str>
-    <bool name="overwriteDupes">false</bool>
-    <str name="fields">layer_slug_s</str>
-    <str name="signatureClass">solr.processor.Lookup3Signature</str>
-  </updateProcessor>
-
   <updateProcessor class="solr.RemoveBlankFieldUpdateProcessorFactory" name="remove_blanks" />
 
-  <updateRequestProcessorChain name="earthworks-processor" processor="remove_blanks,add_hashed_id">
+  <updateRequestProcessorChain name="earthworks-processor" processor="remove_blanks">
     <processor class="solr.LogUpdateProcessorFactory" />
     <processor class="solr.RunUpdateProcessorFactory" />
   </updateRequestProcessorChain>
