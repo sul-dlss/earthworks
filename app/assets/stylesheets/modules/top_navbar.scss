@@ -9,14 +9,13 @@
   height: 29px;
   margin-bottom: 0;
   padding: 2px 0;
-  
+
   a img {
     float: left;
   }
-  
+
   .topnav-links {
     float: right;
-    margin-top: 2px;
   }
 
   .navbar-nav {
@@ -25,40 +24,30 @@
     margin: 0;
     padding-left: 0;
   }
-  
+
   ul.navbar-nav > li {
     display: inline;
-    
+
     a {
       color: $cardinal-red;
+      padding-bottom: 3px;
       text-decoration: none;
-      
-      &:hover,
-      &:focus {
-        text-decoration: underline;
+      margin-left: 15px;
+
+      &.first {
+        margin-left: 0;
       }
-    }
 
-    & > a {
-      padding: 0 .5rem;
-    }
-  }
-
-  .login-dropdown {
-    z-index: 10000;
-    
-    a {
       &:hover,
       &:focus {
-        color: $dropdown-link-hover-color;
+        border-bottom: 3px solid $cardinal-red;
       }
     }
   }
 
-  .nav-element-divider {
-    color: $cardinal-red;
-    padding-left: 5px;
-    padding-right: 5px;
+  // Add the border on hover, or when the #feedback-form is open
+  a:hover, a[data-target="#feedback-form"][aria-expanded="true"] {
+    border-bottom: 3px solid $cardinal-red;
   }
 }
 @include media-breakpoint-up(xs) {

@@ -8,15 +8,12 @@
       <div class='topnav-links'>
         <% if has_user_authentication_provider? %>
           <ul class="navbar-nav">
-            <li>
+            <li class="first">
               <% if current_user && !current_user.sunet.blank? %>
                 <%= link_to "#{current_user.sunet}: Logout", destroy_user_session_path %>
               <% else %>
                 <%= link_to 'Login', new_user_session_path(referrer: request.original_url) %>
               <% end %>
-            </li>
-            <li>
-              <span class='nav-element-divider'>|</span>
             </li>
             <li>
               <%= link_to feedback_path, data: { toggle: 'collapse', target: '#feedback-form' } do %>
