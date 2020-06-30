@@ -8,25 +8,13 @@
       <div class='topnav-links'>
         <% if has_user_authentication_provider? %>
           <ul class="navbar-nav">
-            <% if current_user %>
-              <% unless current_user.to_s.blank? -%>
-                <li>
-                  <%= link_to current_user, 'https://accounts.stanford.edu/' %>
-                </li>
-                <li class='dropdown'>
-                  <a href='#' id="dropdownMenuLink" class='dropdown-toggle' role='button' data-toggle='dropdown' aria-haspopup="true" aria-expanded='false'>
-                    <span class='caret'></span>
-                  </a>
-                  <div class="login-dropdown dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <%= link_to t('blacklight.header_links.logout'), destroy_user_session_path(referrer: request.original_url), class: 'dropdown-item' %>
-                  </div>
-                </li>
+            <li>
+              <% if current_user && !current_user.sunet.blank? %>
+                <%= link_to "#{current_user.sunet}: Logout", destroy_user_session_path %>
+              <% else %>
+                <%= link_to 'Login', new_user_session_path(referrer: request.original_url) %>
               <% end %>
-            <% else %>
-              <li>
-                <%= link_to t('blacklight.header_links.login'), new_user_session_path(referrer: request.original_url) %>
-              </li>
-            <% end %>
+            </li>
             <li>
               <span class='nav-element-divider'>|</span>
             </li>
