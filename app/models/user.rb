@@ -16,4 +16,8 @@ class User < ActiveRecord::Base
   def to_s
     email
   end
+
+  def sunet
+    email.gsub('@stanford.edu', '')
+  end
 end

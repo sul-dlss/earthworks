@@ -27,4 +27,10 @@ RSpec.describe User do
       expect(User.guests_without_bookmarks.count).to be 10
     end
   end
+
+  describe '#sunet' do
+    it 'returns just the SUNet part of the email address' do
+      expect(User.new(email: 'jstanford@stanford.edu').sunet).to eq 'jstanford'
+    end
+  end
 end

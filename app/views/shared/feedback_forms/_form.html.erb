@@ -1,9 +1,11 @@
 <div class="container">
   <%= form_tag feedback_form_path, method: :post, class:"feedback-form", role:"form" do %>
     <div class="row">
-      <div class="col-sm-8 offset-sm-1">
-        <div class="offset-sm-x">
-          <%= render "shared/feedback_forms/reporting_from" %>
+      <div class="col-sm-6 offset-sm-1 mb-3">
+        <div class="row">
+          <div class="col offset-sm-3">
+            <%= render "shared/feedback_forms/reporting_from" %>
+          </div>
         </div>
       </div>
     </div>
@@ -35,8 +37,8 @@
         </div>
 
         <% if current_user.blank? %>
-          <div class="form-group">
-            <div class="col-sm-9 col-sm-offset-3">
+          <div class="form-group row">
+            <div class="col-sm-9 offset-sm-3">
               <%= recaptcha_tags %>
 
               <p>(Stanford users can avoid this Captcha by logging in.)</p>
@@ -45,7 +47,7 @@
         <% end %>
 
         <div class="form-group row">
-          <div class="col-sm-9">
+          <div class="col-sm-9 offset-sm-3">
             <button type="submit" class="btn btn-primary">Send</button>
             <%= link_to "Cancel", :back, class:"cancel-link", data: {toggle:"collapse", target:"#feedback-form"} %>
           </div>
