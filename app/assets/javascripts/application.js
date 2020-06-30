@@ -17,7 +17,7 @@
 // Required by Blacklight
 //= require popper
 // Twitter Typeahead for autocomplete
-//= require twitter/typeahead
+//= require typeahead.bundle
 //= require bootstrap
 //= require blacklight/blacklight
 //= require blacklight_range_limit
