@@ -1,8 +1,10 @@
 .feedback-form {
   margin-top: 1rem;
 
-  .col-form-label {
-    text-align: right;
+  @include media-breakpoint-up(md) {
+    .col-form-label {
+      text-align: right;
+    }
   }
 
   .btn-primary {

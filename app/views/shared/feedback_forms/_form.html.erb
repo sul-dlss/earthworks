@@ -1,12 +1,8 @@
 <div class="container">
   <%= form_tag feedback_form_path, method: :post, class:"feedback-form", role:"form" do %>
     <div class="row">
-      <div class="col-sm-6 offset-sm-1 mb-3">
-        <div class="row">
-          <div class="col offset-sm-3">
-            <%= render "shared/feedback_forms/reporting_from" %>
-          </div>
-        </div>
+      <div class="offset-md-2 col-md-8 mb-2">
+          <%= render "shared/feedback_forms/reporting_from" %>
       </div>
     </div>
     <div class="row">
@@ -16,29 +12,29 @@
         <%= hidden_field_tag :user_agent %>
         <%= hidden_field_tag :viewport %>
       </span>
-      <div class="col-sm-6 offset-sm-1">
+      <div class="offset-md-2 col-md-8">
         <div class="form-group row">
-          <%= label_tag(:message, 'Message', class:"col-sm-3 col-form-label") %>
-          <div class="col-sm-9">
-            <%= text_area_tag :message, "", rows:"5", class:"form-control" %>
+          <%= label_tag(:message, 'Message', class:"col-md-3 col-form-label") %>
+          <div class="col-md-9">
+            <%= text_area_tag :message, "", rows:"5", class:"form-control", required: true %>
           </div>
         </div>
         <div class="form-group row">
-          <%= label_tag(:name, 'Your name', class:"col-sm-3 col-form-label") %>
-          <div class="col-sm-9">
-            <%= text_field_tag :name, "", class:"form-control" %>
+          <%= label_tag(:name, 'Your name', class:"col-md-3 col-form-label") %>
+          <div class="col-md-9">
+            <%= text_field_tag :name, "", class:"form-control", required: true %>
           </div>
         </div>
         <div class="form-group row">
-          <%= label_tag(:to, 'Your email', class:"col-sm-3 col-form-label") %>
-          <div class="col-sm-9">
-            <%= email_field_tag :to, "", class:"form-control" %>
+          <%= label_tag(:to, 'Your email', class:"col-md-3 col-form-label") %>
+          <div class="col-md-9">
+            <%= email_field_tag :to, "", class:"form-control", required: true %>
           </div>
         </div>
 
         <% if current_user.blank? %>
           <div class="form-group row">
-            <div class="col-sm-9 offset-sm-3">
+            <div class="col-md-9 offset-md-3">
               <%= recaptcha_tags %>
 
               <p>(Stanford users can avoid this Captcha by logging in.)</p>
@@ -47,14 +43,11 @@
         <% end %>
 
         <div class="form-group row">
-          <div class="col-sm-9 offset-sm-3">
+          <div class="col-md-9 offset-md-3">
             <button type="submit" class="btn btn-primary">Send</button>
             <%= link_to "Cancel", :back, class:"cancel-link", data: {toggle:"collapse", target:"#feedback-form"} %>
           </div>
         </div>
-      </div>
-      <div class="col-sm-4">
-        If you cannot access content or use features on the EarthWorks website due to a disability or other accessibility-related issue, please contact the <a href='https://soap.stanford.edu/'>Stanford Online Accessibility Program</a> via <a href='https://helpsu.stanford.edu/helpsu/3.0/helpsu-form?pcat=webaccessibility'>HelpSU</a> or by email at <a href='mailto:web-accessibility@stanford.edu'>web-accessibility@stanford.edu</a>.
       </div>
     </div>
   <% end %>
