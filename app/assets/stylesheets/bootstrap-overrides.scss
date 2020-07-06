@@ -3,3 +3,9 @@
     text-decoration: underline !important;
   }
 }
+
+.btn-primary {
+  &:hover, &:focus {
+    background-color: $link-hover-color;
+  }
+}
