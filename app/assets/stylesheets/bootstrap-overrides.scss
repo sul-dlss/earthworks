@@ -6,6 +6,7 @@
 
 .btn-primary {
   &:hover, &:focus {
+    border-color: $link-hover-color;
     background-color: $link-hover-color;
   }
 }
