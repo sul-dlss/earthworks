@@ -17,11 +17,11 @@
 </nav>
 
 <% if controller_name == 'catalog' && has_search_parameters? %>
-  <nav id="search-navbar" class="navbar navbar-expand-md navbar-light bg-beige" role="navigation">
+  <div id="search-navbar" class="navbar navbar-expand-md navbar-light bg-beige">
     <div class="container">
       <div class='col-lg-8 my-3 col-xs-12'>
         <%= render_search_bar  %>
       </div>
     </div>
-  </nav>
+  </div>
 <% end %>
