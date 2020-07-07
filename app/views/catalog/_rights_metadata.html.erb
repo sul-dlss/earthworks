@@ -7,17 +7,17 @@
     <dt class='col-md-3'>Use and reproduction</dt>
     <dd class='col-md-9'><%= rights_metadata.use_and_reproduction %></dd>
   <% end %>
-  
+
   <% if rights_metadata.copyright %>
     <dt class='col-md-3'>Copyright</dt>
     <dd itemprop='copyrightHolder'  class='col-md-9'><%= rights_metadata.copyright %></dd>
   <% end %>
-  
+
   <% if rights_metadata.license %>
     <dt class='col-md-3'>License</dt>
     <dd itemprop='license' class='col-md-9'>
       <% if rights_metadata.license[:machine] != 'odc-odbl' %>
-        <%= image_tag "#{rights_metadata.license[:machine]}.png", class: "earthworks-license earthworks-license-#{rights_metadata.license[:machine]}" %>
+        <%= image_tag "#{rights_metadata.license[:machine]}.png", class: "earthworks-license earthworks-license-#{rights_metadata.license[:machine]}", alt: "", aria: { hidden: true } %>
       <% end %>
       <%= rights_metadata.license[:human] %>
     </dd>
