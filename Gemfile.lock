@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: c0f32574601239f560488adec3e9ec17e84d94f8
+  revision: 4a49ebfbb582b3ffca50d9db12955afbc688039a
   branch: master
   specs:
     geoblacklight (2.3.0)
@@ -85,7 +85,7 @@ GEM
       execjs
     bcrypt (3.1.13)
     bindex (0.8.1)
-    blacklight (7.9.0)
+    blacklight (7.10.0)
       deprecation
       globalid
       jbuilder (~> 2.7)
@@ -95,8 +95,8 @@ GEM
     blacklight_dynamic_sitemap (0.2.0)
       blacklight (> 6.0)
       rails (~> 5.0)
-    blacklight_range_limit (7.8.2)
-      blacklight (>= 7.0)
+    blacklight_range_limit (7.9.0)
+      blacklight (~> 7.0)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     bootstrap (4.5.0)
@@ -296,7 +296,7 @@ GEM
     net-ssh (6.1.0)
     newrelic_rpm (6.11.0.365)
     nio4r (2.5.2)
-    nokogiri (1.10.9)
+    nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     nokogumbo (2.0.2)
       nokogiri (~> 1.8, >= 1.8.4)
