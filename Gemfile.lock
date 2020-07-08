@@ -14,7 +14,7 @@ GIT
 
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: 4a49ebfbb582b3ffca50d9db12955afbc688039a
+  revision: fa2b1fe8d5cf070fc9ae38ad089a410f37ad3372
   branch: master
   specs:
     geoblacklight (2.3.0)
@@ -441,7 +441,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
-    view_component (2.13.0)
+    view_component (2.14.0)
       activesupport (>= 5.0.0, < 7.0)
     warden (1.2.8)
       rack (>= 2.0.6)

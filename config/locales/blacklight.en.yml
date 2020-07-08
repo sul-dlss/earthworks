@@ -11,3 +11,5 @@ en:
         label: '%{label}'
       fields:
         search: 'Keywords'
+    tools:
+      citation: Citation
