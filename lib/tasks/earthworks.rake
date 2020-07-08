@@ -122,7 +122,7 @@ namespace :earthworks do
         edu.columbia
         edu.nyu
         edu.princeton.arks
-
+        edu.cornell
         big-ten
         edu.virginia
       ].each do |repo|
