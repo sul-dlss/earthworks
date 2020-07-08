@@ -1,5 +1,14 @@
+$stanford-footer-height: 250px;
+$stanford-footer-md-height: 140px;
+$sul-footer-height: 80px;
+
 #su-content {
-  padding-bottom: 220px !important;
+  height: 100%;
+  padding-bottom: $stanford-footer-height + $sul-footer-height !important;
+
+  @media (min-width: 768px) {
+    padding-bottom: $stanford-footer-md-height + $sul-footer-height !important;
+  }
 }
 
 #sul-footer-container {
@@ -7,17 +16,22 @@
   -webkit-box-shadow: 0 4px 8px -8px rgba(0, 0, 0, .2) inset;
   box-shadow: 0 4px 8px -8px rgba(0, 0, 0, .2) inset;
   clear: both;
-  margin-top: -220px;
-  min-height: 220px;
+  margin-top: -1 * ($stanford-footer-height + $sul-footer-height);
+  min-height: $stanford-footer-height + $sul-footer-height;
+
+  @media (min-width: 768px) {
+    margin-top: -1 * ($stanford-footer-md-height + $sul-footer-height);
+    min-height: $stanford-footer-md-height + $sul-footer-height;
+  }
   padding: 0 !important;
-  position: relative;  
+  position: relative;
 	width: 100%;
 }
 
 #sul-footer {
   @extend .container;
   display: table;
-  height: 80px;
+  height: $sul-footer-height;
 
   ul {
     list-style-type: none;
@@ -50,24 +64,4 @@
   vertical-align: middle;
 }
 
-#global-footer {
-  max-width: 100%;
-
-  .row {
-    display: block;
-    flex-wrap: nowrap;
-  }
-
-  .span10 {
-    margin: 0 !important;
-  }
-
-  p {
-    max-width: 100%;
-    width: auto;
-	}
-
-  #bottom-text {
-    margin-right: 6px;
-	}
 }
