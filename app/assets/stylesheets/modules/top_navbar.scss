@@ -6,23 +6,19 @@
 #topnav {
   background: none;
   border: 0;
+  display: flex;
   height: 29px;
   margin-bottom: 0;
   padding: 2px 0;
 
-  a img {
-    float: left;
-  }
-
   .topnav-links {
-    float: right;
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
   }
 
   .navbar-nav {
-    display: inline;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
+    flex-direction: row;
   }
 
   ul.navbar-nav > li {
@@ -43,11 +39,11 @@
         border-bottom: 3px solid $cardinal-red;
       }
     }
-  }
 
-  // Add the border on hover, or when the #feedback-form is open
-  a:hover, a[data-target="#feedback-form"][aria-expanded="true"] {
-    border-bottom: 3px solid $cardinal-red;
+    // Add the border on hover, or when the #feedback-form is open
+    a:hover, a[data-target="#feedback-form"][aria-expanded="true"] {
+      border-bottom: 3px solid $cardinal-red;
+    }
   }
 }
 @include media-breakpoint-up(xs) {
