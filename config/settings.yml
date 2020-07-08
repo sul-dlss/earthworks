@@ -35,6 +35,7 @@ FIELDS:
   :TEMPORAL: 'dct_temporal_sm'
   :TITLE: 'dc_title_s'
   :SOURCE: 'dc_source_sm'
+  :ISSUED: 'dct_issued_s'
 
 GEOMONITOR_TOLERANCE: 0.2
 GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
