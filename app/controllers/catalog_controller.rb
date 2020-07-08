@@ -1,10 +1,13 @@
 # -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
+require 'legacy_id_map'
 
 class CatalogController < ApplicationController
 
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
+
+  rescue_from Blacklight::Exceptions::RecordNotFound, with: :redirect_from_legacy_id
 
   configure_blacklight do |config|
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
@@ -301,5 +304,13 @@ class CatalogController < ApplicationController
   # @return [Boolean]
   def has_search_parameters?
     !params[:q].nil? || super
+  end
+
+  def redirect_from_legacy_id
+    if (redirect_id = LegacyIdMap.map[params[:id]])
+      redirect_to solr_document_path(redirect_id)
+    else
+      raise Blacklight::Exceptions::RecordNotFound
+    end
   end
 end
