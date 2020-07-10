@@ -11,8 +11,7 @@
   </div>
 </div>
 <div class='container'>
-  <hr/>
-  <h2 class='font-weight-light'>Explore</h2>
+  <h2 class='font-weight-light section-heading'>Explore</h2>
   <div class='row home-page-linked-searches'>
     <div class='col-sm-3 col-xs-6'>
       <div class='panel panel-default'>
@@ -55,10 +54,9 @@
       </div>
     </div>
   </div>
-  <hr/>
   <div class='row'>
     <div class='col-12'>
-      <h2 class='font-weight-light'>Search an area like California or zoom out to explore</h2>
+      <h2 class='font-weight-light section-heading'>Search an area like California or zoom out to explore</h2>
       <%= content_tag :div, '', id: 'map', data: { map: 'home', 'catalog-path'=> search_catalog_path , 'map-bbox' => '-122.23423 37.37616 -122.11441 37.507002', basemap: geoblacklight_basemap, leaflet_options: leaflet_options } %>
     </div>
   </div>
