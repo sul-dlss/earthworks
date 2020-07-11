@@ -168,7 +168,7 @@ INSTITUTIONS:
   Indiana:
     department: Indiana University Research Technologies Division
     email: uitsgis@iu.edu
-  Baruch CUNY: 
+  Baruch CUNY:
     department: Baruch CUNY GIS Lab
     email: francis.donnelly@baruch.cuny.edu
   Michigan State:
@@ -194,3 +194,11 @@ HELP_TEXT:
 RECAPTCHA:
   SITE_KEY: 6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy
   SECRET_KEY: 6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx
+
+GEO_BLACKLIGHT_HARVEST_SITES:
+  MIT:
+    host: https://geodata.mit.edu
+    params:
+      f:
+        dct_provenance_s:
+          - MIT
