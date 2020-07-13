@@ -1,15 +1,14 @@
 #topnav-container {
-  padding: 2px 0;
   position: relative;
 }
 
 #topnav {
   background: none;
   border: 0;
+  height: 35px;
   display: flex;
-  height: 29px;
   margin-bottom: 0;
-  padding: 2px 0;
+  padding: 4px 0;
 
   .topnav-links {
     display: flex;
