@@ -54,6 +54,10 @@ $sul-footer-height: 80px;
   display: table-cell;
   vertical-align: middle;
   width: 162px;
+
+  a:hover {
+    border-bottom: 1px solid transparent;
+  }
 }
 
 #sul-footer-links {
@@ -66,4 +70,10 @@ $sul-footer-height: 80px;
 
 #global-footer .container {
   box-sizing: border-box !important;
+
+  #bottom-logo {
+    a:hover {
+      border-bottom: 1px solid transparent;
+    }
+  }
 }

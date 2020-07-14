@@ -8,6 +8,10 @@
     height: auto;
     line-height: 30px;
     width: 175px;
+
+    &:hover {
+      border-bottom: 1px solid transparent;
+    }
   }
 }
 

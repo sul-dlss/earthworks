@@ -10,6 +10,10 @@
   margin-bottom: 0;
   padding: 4px 0;
 
+  .header-logo:hover {
+    border-bottom: 1px solid transparent;
+  }
+
   .topnav-links {
     display: flex;
     margin-left: auto;
