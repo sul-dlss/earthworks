@@ -1,18 +1,4 @@
 GIT
-  remote: https://github.com/OpenGeoMetadata/GeoCombine.git
-  revision: 77fde5526c0d1c4d9b6c79d58cd0acb7351ce46b
-  branch: master
-  specs:
-    geo_combine (0.4.0)
-      activesupport
-      json-schema
-      net-http-persistent (~> 2.0)
-      nokogiri
-      rsolr
-      sanitize
-      thor
-
-GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
   revision: 48366be84d3413e3d6d6b5164a86a332802efe7e
   branch: master
@@ -225,6 +211,14 @@ GEM
       rake
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    geo_combine (0.5.0)
+      activesupport
+      json-schema
+      net-http-persistent (~> 2.0)
+      nokogiri
+      rsolr
+      sanitize
+      thor
     geo_monitor (0.6.0)
       faraday
       rails (>= 5.1.4, < 6)
@@ -490,7 +484,7 @@ DEPENDENCIES
   devise-remote-user
   dlss-capistrano
   factory_bot_rails
-  geo_combine!
+  geo_combine
   geo_monitor (~> 0.4)
   geoblacklight!
   honeybadger

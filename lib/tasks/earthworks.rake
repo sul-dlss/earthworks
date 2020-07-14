@@ -144,6 +144,17 @@ namespace :earthworks do
     task pipeline: ['earthworks:opengeometadata:clone',
                     'earthworks:opengeometadata:pull',
                     'earthworks:opengeometadata:index']
+
+    desc 'Index content from GeoBlacklight sites'
+    task :harvest_geo_blacklight do
+      GeoCombine::GeoBlacklightHarvester.configure do
+        Settings.GEO_BLACKLIGHT_HARVEST_SITES.to_h
+      end
+
+      Settings.GEO_BLACKLIGHT_HARVEST_SITES.to_h.keys.each do |site_key|
+        Rake::Task['geocombine:geoblacklight_harvester:index'].invoke(site_key)
+      end
+    end
   end
 
   desc "Prune old guest users from the database"
