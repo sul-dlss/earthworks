@@ -1,3 +1,15 @@
 body {
   overflow-x: hidden;
 }
+
+a {
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-bottom: 1px solid $link-hover-color;
+    text-decoration: none;
+  }
+}
