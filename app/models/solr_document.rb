@@ -31,6 +31,10 @@ class SolrDocument
     fetch(Settings.FIELDS.GEOM_TYPE, nil) == 'Collection'
   end
 
+  def mixed?
+    fetch(Settings.FIELDS.GEOM_TYPE, nil) == 'Mixed'
+  end
+
   # Email uses the semantic field mappings below to generate the body of an email.
   SolrDocument.use_extension(Blacklight::Document::Email )
 
