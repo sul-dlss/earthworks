@@ -9,7 +9,8 @@ Bundler.require(*Rails.groups)
 module Earthworks
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    config.load_defaults 6.0
+    config.autoloader = :classic # Our helper overrides don't work under the new loader
     config.application_name = 'EarthWorks'
 
     require 'rights_metadata'
