@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 6.0'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -65,13 +65,13 @@ gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
 gem 'okcomputer'
 gem 'honeybadger'
-gem 'blacklight_dynamic_sitemap'
+gem 'blacklight_dynamic_sitemap', '~> 0.3'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'rsolr'
 gem 'geo_combine'
-gem 'geo_monitor', '~> 0.4'
+gem 'geo_monitor', '~> 0.7'
 gem 'sidekiq'
 gem 'whenever', require: false
 gem 'bootstrap'
