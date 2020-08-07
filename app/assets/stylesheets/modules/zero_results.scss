@@ -1,9 +1,0 @@
-.noresults {
-  .modify-search:before {
-    @extend .fa, .fa-search;
-  }
-
-  .ask-for-dataset:before {
-    @extend .fa, .fa-bullhorn;
-  }
-}
