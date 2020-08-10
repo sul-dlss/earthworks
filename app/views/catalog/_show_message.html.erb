@@ -3,7 +3,7 @@
 
 <% if document_unavailable.any? %>
   <div class='alert alert-warning unavailable-warning'>
-    <i class='fa fa-exclamation-triangle'></i>
+    <%= blacklight_icon('exclamation-triangle') %>
     <%= t('earthworks.unavailable_html', institution: document.institution, email: document.contact_email, department: document.department ) %>
   </div>
 <% end %>
