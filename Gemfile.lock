@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: 2ad307b2f0f79493268b9591e82708ad2c33c005
+  revision: ddd6f9c090bc00cb48274a2b6918304164ed8610
   branch: master
   specs:
     geoblacklight (2.4.0)
@@ -81,7 +81,7 @@ GEM
       rails (>= 5.2, <= 6.1)
     blacklight_range_limit (7.9.0)
       blacklight (~> 7.0)
-    bootsnap (1.4.7)
+    bootsnap (1.4.8)
       msgpack (~> 1.0)
     bootstrap (4.5.2)
       autoprefixer-rails (>= 9.1.0)
@@ -166,7 +166,7 @@ GEM
     dry-equalizer (0.3.0)
     dry-inflector (0.2.0)
     dry-initializer (3.0.3)
-    dry-logic (1.0.6)
+    dry-logic (1.0.7)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
@@ -224,7 +224,7 @@ GEM
       execjs (~> 2.0)
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
-    honeybadger (4.7.0)
+    honeybadger (4.7.1)
     http (4.4.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -391,7 +391,7 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
-    simplecov (0.18.5)
+    simplecov (0.19.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
     simplecov-html (0.12.2)
@@ -442,7 +442,7 @@ GEM
       nokogiri (~> 1.6)
       rubyzip (>= 1.3.0)
       selenium-webdriver (>= 3.0, < 4.0)
-    webpacker (4.2.2)
+    webpacker (4.3.0)
       activesupport (>= 4.2)
       rack-proxy (>= 0.6.1)
       railties (>= 4.2)
