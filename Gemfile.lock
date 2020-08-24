@@ -60,7 +60,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
-    autoprefixer-rails (9.8.6.1)
+    autoprefixer-rails (9.8.6.2)
       execjs
     bcrypt (3.1.15)
     bindex (0.8.1)
@@ -165,7 +165,7 @@ GEM
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.2)
       dry-equalizer (~> 0.2)
-    dry-schema (1.5.2)
+    dry-schema (1.5.3)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 0.8, >= 0.8.3)
       dry-core (~> 0.4)
@@ -180,7 +180,7 @@ GEM
       dry-equalizer (~> 0.3)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 1.0, >= 1.0.2)
-    dry-validation (1.5.3)
+    dry-validation (1.5.4)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.7, >= 0.7.1)
       dry-core (~> 0.4)
@@ -213,7 +213,7 @@ GEM
     geo_monitor (0.7.0)
       faraday
       rails (>= 5.1.4, < 6.1)
-    geoblacklight (3.0.0)
+    geoblacklight (3.1.0)
       blacklight (~> 7.0)
       coderay
       config
