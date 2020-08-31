@@ -60,7 +60,7 @@ GEM
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
       sshkit (>= 1.6.1, != 1.7.0)
-    autoprefixer-rails (9.8.6.2)
+    autoprefixer-rails (9.8.6.3)
       execjs
     bcrypt (3.1.15)
     bindex (0.8.1)
@@ -74,7 +74,7 @@ GEM
     blacklight_dynamic_sitemap (0.3.0)
       blacklight (> 6.0)
       rails (>= 5.2, <= 6.1)
-    blacklight_range_limit (7.9.0)
+    blacklight_range_limit (7.9.1)
       blacklight (~> 7.0)
     bootsnap (1.4.8)
       msgpack (~> 1.0)
@@ -269,7 +269,7 @@ GEM
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
       ruby_dep (~> 1.2)
-    loofah (2.6.0)
+    loofah (2.7.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -410,7 +410,7 @@ GEM
       retriable
       ruby-progressbar
       rubyzip
-    spring (2.1.0)
+    spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
