@@ -64,7 +64,7 @@ GEM
       execjs
     bcrypt (3.1.16)
     bindex (0.8.1)
-    blacklight (7.11.1)
+    blacklight (7.12.1)
       deprecation
       globalid
       jbuilder (~> 2.7)
@@ -194,8 +194,9 @@ GEM
     factory_bot_rails (6.1.0)
       factory_bot (~> 6.1.0)
       railties (>= 5.0.0)
-    faraday (1.0.1)
+    faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
+      ruby2_keywords
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
     ffi (1.13.1)
@@ -340,7 +341,7 @@ GEM
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    recaptcha (5.5.0)
+    recaptcha (5.6.0)
       json
     redis (4.2.2)
     regexp_parser (1.8.2)
@@ -369,6 +370,7 @@ GEM
       rspec-support (~> 3.9)
     rspec-support (3.9.3)
     ruby-progressbar (1.10.1)
+    ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
     rubyzip (2.3.0)
     sanitize (5.2.1)
