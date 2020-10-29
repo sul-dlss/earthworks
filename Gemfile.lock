@@ -76,7 +76,7 @@ GEM
       rails (>= 5.2, <= 6.1)
     blacklight_range_limit (7.9.1)
       blacklight (~> 7.0)
-    bootsnap (1.4.8)
+    bootsnap (1.4.9)
       msgpack (~> 1.0)
     bootstrap (4.5.2)
       autoprefixer-rails (>= 9.1.0)
@@ -141,7 +141,7 @@ GEM
     devise-remote-user (1.0.0)
       devise
     diff-lcs (1.4.4)
-    dlss-capistrano (3.9.0)
+    dlss-capistrano (3.10.1)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.3.0)
       capistrano-one_time_key
@@ -302,7 +302,7 @@ GEM
     pg (1.2.3)
     popper_js (1.16.0)
     public_suffix (4.0.6)
-    puma (5.0.3)
+    puma (5.0.4)
       nio4r (~> 2.0)
     rack (2.2.3)
     rack-attack (6.3.1)
@@ -441,7 +441,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.7.7)
-    view_component (2.20.0)
+    view_component (2.21.0)
       activesupport (>= 5.0.0, < 7.0)
     warden (1.2.9)
       rack (>= 2.0.9)
