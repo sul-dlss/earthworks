@@ -3,4 +3,4 @@
 collection:
   dir: config/solr_configs/
   name: blacklight-core
-version: 8.4.1
+version: 8.8.0
