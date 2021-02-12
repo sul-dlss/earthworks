@@ -21,17 +21,17 @@
 
 set :output, 'log/cron.log'
 
-every 1.day, at: '9:34pm', roles: %i[whenevs] do
-  rake 'earthworks:geomonitor:update'
-end
-
-every 1.day, at: ['1:13 am', '7:42 am', '1:13 pm', '7:42 pm'], roles: %i[whenevs] do
-  rake 'earthworks:geomonitor:check_stanford'
-end
-
-every 2.days, at: ['2:21 am'], roles: %i[whenevs] do
-  rake 'earthworks:geomonitor:check_public'
-end
+# every 1.day, at: '9:34pm', roles: %i[whenevs] do
+#   rake 'earthworks:geomonitor:update'
+# end
+# 
+# every 1.day, at: ['1:13 am', '7:42 am', '1:13 pm', '7:42 pm'], roles: %i[whenevs] do
+#   rake 'earthworks:geomonitor:check_stanford'
+# end
+# 
+# every 2.days, at: ['2:21 am'], roles: %i[whenevs] do
+#   rake 'earthworks:geomonitor:check_public'
+# end
 
 every '0 3 * * *', roles: %i[app] do # daily at 3 am
   rake 'earthworks:clear_rack_attack_cache'
