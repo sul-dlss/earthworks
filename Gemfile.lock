@@ -181,7 +181,7 @@ GEM
       dry-initializer (~> 3.0)
       dry-logic (~> 1.0)
       dry-types (~> 1.5)
-    dry-types (1.5.0)
+    dry-types (1.5.1)
       concurrent-ruby (~> 1.0)
       dry-container (~> 0.3)
       dry-core (~> 0.5, >= 0.5)
@@ -519,4 +519,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.2.9
+   2.2.11
