@@ -12,36 +12,65 @@ class RightsMetadata
   end
 
   def license
-    cc_license || odc_licence
+    @license ||= License.new(url: license_url)
   end
+
+  def license?
+    license_url.present?
+  end
+
+  private
 
   def ng_xml
     @ng_xml ||= Nokogiri::XML(@rights_metadata)
   end
 
-  private
-
-  def cc_license
-    { human: cc_license_human, machine: cc_license_machine } if cc_license_human.present? && cc_license_machine.present?
+  # Try each way, from most prefered to least preferred to get the license
+  def license_url
+    license_url_from_node || url_from_attribute || url_from_code
   end
 
-  def cc_license_machine
-    ng_xml.xpath('//rightsMetadata/use/machine[@type="creativeCommons"]').first.try(:content)
+  # This is the most modern way of determining what license to use.
+  def license_url_from_node
+    ng_xml.at_xpath('//rightsMetadata/use/license').try(:text).presence
   end
 
-  def cc_license_human
-    ng_xml.xpath('//rightsMetadata/use/human[@type="creativeCommons"]').first.try(:content)
+  # This is a slightly older way, but it can differentiate between CC 3.0 and 4.0 licenses
+  def url_from_attribute
+    return unless machine_node
+
+    machine_node['uri'].presence
   end
 
-  def odc_licence
-    { human: odc_licence_human, machine: odc_licence_machine } if odc_licence_human.present? && odc_licence_machine.present?
+  # This is the most legacy and least preferred way, because it only handles out of data license versions
+  def url_from_code
+    type, code = machine_readable_license
+    return unless type && code.present?
+
+    case type.to_s
+    when 'creativeCommons'
+      if code == 'pdm'
+        'https://creativecommons.org/publicdomain/mark/1.0/'
+      else
+        "https://creativecommons.org/licenses/#{code}/3.0/legalcode"
+      end
+    when 'openDataCommons'
+      case code
+      when 'odc-pddl', 'pddl'
+        'https://opendatacommons.org/licenses/pddl/1-0/'
+      when 'odc-by'
+        'https://opendatacommons.org/licenses/by/1-0/'
+      when 'odc-odbl'
+        'https://opendatacommons.org/licenses/odbl/1-0/'
+      end
+    end
   end
 
-  def odc_licence_human
-    ng_xml.xpath('//rightsMetadata/use/human[@type="openDataCommons"]').first.try(:content)
+  def machine_readable_license
+    [machine_node.attribute('type'), machine_node.text] if machine_node
   end
 
-  def odc_licence_machine
-    ng_xml.xpath('//rightsMetadata/use/machine[@type="openDataCommons"]').first.try(:content)
+  def machine_node
+    @machine_node ||= ng_xml.at_xpath('//rightsMetadata/use/machine[@type="openDataCommons" or @type="creativeCommons"]')
   end
 end
