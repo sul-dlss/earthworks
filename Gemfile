@@ -79,3 +79,4 @@ gem 'bootstrap', '~> 4.0'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
+gem 'rexml' # see https://github.com/ruby-marc/ruby-marc/issues/67

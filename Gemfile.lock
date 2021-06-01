@@ -376,6 +376,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     retriable (3.1.2)
+    rexml (3.2.4)
     rsolr (2.3.0)
       builder (>= 2.1.2)
       faraday (>= 0.9.0)
@@ -520,6 +521,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1)
   recaptcha (>= 5.4.1)
+  rexml
   rsolr
   rspec-rails
   sass-rails (>= 6)
