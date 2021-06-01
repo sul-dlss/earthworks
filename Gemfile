@@ -60,7 +60,7 @@ group :production do
 end
 
 gem "blacklight"
-gem "geoblacklight", '~> 3.2.0'
+gem "geoblacklight", '>= 3.3.1', '~> 3.2'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
