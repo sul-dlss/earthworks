@@ -94,6 +94,7 @@ class CatalogController < ApplicationController
     config.add_facet_field Settings.FIELDS.SUBJECT, :label => 'Subject', :limit => 6
     config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, :label => 'Place', :limit => 6
     # config.add_facet_field 'dct_isPartOf_sm', :label => 'Collection', :limit => 6
+    config.add_facet_field Settings.FIELDS.SOURCE, show: false, label: 'Collection'
 
     config.add_facet_field 'solr_year_i', label: 'Year', limit: 10, range: {
       # :num_segments => 6,
