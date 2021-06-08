@@ -13,7 +13,6 @@ module Earthworks
     config.autoloader = :classic # Our helper overrides don't work under the new loader
     config.application_name = 'EarthWorks'
 
-    require 'rights_metadata'
     # Inject our StatusExtension concern to add behavior
     # (index updates) to the GeoMonitor::Status class
     config.to_prepare do
