@@ -301,6 +301,7 @@ GEM
     mini_portile2 (2.5.3)
     minitest (5.14.4)
     msgpack (1.4.2)
+    multi_json (1.15.0)
     multipart-post (2.1.1)
     net-http-persistent (2.9.4)
     net-scp (3.0.0)
@@ -369,6 +370,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     retriable (3.1.2)
+    rexml (3.2.5)
     rgeo (2.3.0)
     rgeo-geojson (2.1.1)
       rgeo (>= 1.0.0)
@@ -506,6 +508,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.3)
+  multi_json
   newrelic_rpm
   okcomputer
   pg
@@ -514,6 +517,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1)
   recaptcha (>= 5.4.1)
+  rexml
   rsolr
   rspec-rails
   sass-rails (>= 6)
