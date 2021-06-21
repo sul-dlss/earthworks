@@ -216,7 +216,7 @@ GEM
     faraday-net_http_persistent (1.1.0)
     faraday_middleware (1.0.0)
       faraday (~> 1.0)
-    ffi (1.15.1)
+    ffi (1.15.3)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
@@ -318,7 +318,7 @@ GEM
       nokogiri (~> 1.8, >= 1.8.4)
     okcomputer (1.18.4)
     orm_adapter (0.5.0)
-    ostruct (0.3.3)
+    ostruct (0.4.0)
     pg (1.2.3)
     popper_js (1.16.0)
     public_suffix (4.0.6)
