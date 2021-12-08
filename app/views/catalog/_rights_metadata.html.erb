@@ -3,17 +3,28 @@
 <% rights_metadata ||= document.rights_metadata %>
 
 <dl class='row dl-invert document-metadata'>
-  <% if rights_metadata.use_and_reproduction %>
+  <% if document.first('stanford_use_and_reproduction_s') %>
+    <dt class='col-md-3'>Use and reproduction</dt>
+    <dd class='col-md-9'><%= document.first('stanford_use_and_reproduction_s') %></dd>
+  <% elsif rights_metadata.use_and_reproduction %>
     <dt class='col-md-3'>Use and reproduction</dt>
     <dd class='col-md-9'><%= rights_metadata.use_and_reproduction %></dd>
   <% end %>
 
-  <% if rights_metadata.copyright %>
+  <% if document.first('stanford_copyright_s') %>
+    <dt class='col-md-3'>Copyright</dt>
+    <dd itemprop='copyrightHolder' class='col-md-9'><%= document.first('stanford_copyright_s') %></dd>
+  <% elsif rights_metadata.copyright %>
     <dt class='col-md-3'>Copyright</dt>
     <dd itemprop='copyrightHolder'  class='col-md-9'><%= rights_metadata.copyright %></dd>
   <% end %>
 
-  <% if rights_metadata.license %>
+  <% if document.first('stanford_license_s') %>
+    <dt class='col-md-3'>License</dt>
+    <dd itemprop='license' class='col-md-9'>
+      <%= document.first('stanford_license_s').html_safe %>
+    </dd>
+  <% elsif rights_metadata.license %>
     <dt class='col-md-3'>License</dt>
     <dd itemprop='license' class='col-md-9'>
       <% if rights_metadata.license[:machine] != 'odc-odbl' %>

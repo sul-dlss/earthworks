@@ -60,7 +60,7 @@ group :production do
 end
 
 gem "blacklight"
-gem "geoblacklight", '~> 3.2.0'
+gem "geoblacklight", '>= 3.3.1', '~> 3.2'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
@@ -75,8 +75,9 @@ gem 'geo_combine'
 gem 'geo_monitor', '~> 0.7'
 gem 'sidekiq'
 gem 'whenever', require: false
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.0'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
-gem 'rexml' # see https://github.com/ruby-marc/ruby-marc/issues/67
+gem 'rexml'
+gem 'multi_json'
