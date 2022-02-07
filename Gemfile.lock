@@ -373,7 +373,7 @@ GEM
       ffi (~> 1.0)
     recaptcha (5.8.1)
       json
-    redis (4.6.0)
+    redis (4.5.1)
     regexp_parser (2.2.0)
     responders (3.0.1)
       actionpack (>= 5.0)
@@ -527,6 +527,7 @@ DEPENDENCIES
   rack-mini-profiler (~> 2.0)
   rails (~> 6.1)
   recaptcha (>= 5.4.1)
+  redis (~> 4.5.1)
   rexml
   rsolr
   rspec-rails
@@ -544,4 +545,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.2.16
+   2.2.32
