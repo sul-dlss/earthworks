@@ -70,6 +70,7 @@ gem 'blacklight_dynamic_sitemap', '~> 0.3'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'
+gem 'redis', '~> 4.5.1' # 4.6.0 spews deprecation warnings out of sidekiq
 gem 'rsolr'
 gem 'geo_combine'
 gem 'geo_monitor', '~> 0.7'
