@@ -153,7 +153,7 @@ GEM
     devise-remote-user (1.1.0)
       devise
     diff-lcs (1.5.0)
-    dlss-capistrano (3.11.1)
+    dlss-capistrano (4.0.0)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.3.0)
       capistrano-one_time_key
@@ -229,7 +229,7 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    geo_combine (0.5.1)
+    geo_combine (0.6.0)
       activesupport
       json-schema
       net-http-persistent (~> 2.0)
@@ -318,7 +318,7 @@ GEM
     net-scp (3.0.0)
       net-ssh (>= 2.6.5, < 7.0.0)
     net-ssh (6.1.0)
-    newrelic_rpm (8.4.0)
+    newrelic_rpm (8.5.0)
     nio4r (2.5.8)
     nokogiri (1.13.3)
       mini_portile2 (~> 2.8.0)
@@ -328,7 +328,7 @@ GEM
     okcomputer (1.18.4)
     orm_adapter (0.5.0)
     ostruct (0.5.3)
-    pg (1.3.2)
+    pg (1.3.3)
     popper_js (1.16.0)
     public_suffix (4.0.6)
     puma (5.6.2)
@@ -337,7 +337,7 @@ GEM
     rack (2.2.3)
     rack-attack (6.6.0)
       rack (>= 1.0, < 3)
-    rack-mini-profiler (2.3.3)
+    rack-mini-profiler (2.3.4)
       rack (>= 1.2.0)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
