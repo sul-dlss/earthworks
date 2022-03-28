@@ -127,7 +127,7 @@ GEM
     childprocess (4.1.0)
     chronic (0.10.2)
     coderay (1.1.3)
-    concurrent-ruby (1.1.9)
+    concurrent-ruby (1.1.10)
     config (4.0.0)
       deep_merge (~> 1.2, >= 1.2.1)
       dry-validation (~> 1.0, >= 1.0.0)
@@ -327,7 +327,7 @@ GEM
       racc (~> 1.4)
     okcomputer (1.18.4)
     orm_adapter (0.5.0)
-    ostruct (0.5.3)
+    ostruct (0.5.4)
     pg (1.3.4)
     popper_js (1.16.0)
     public_suffix (4.0.6)
@@ -433,7 +433,7 @@ GEM
       simplecov_json_formatter (~> 0.1)
     simplecov-html (0.12.3)
     simplecov_json_formatter (0.1.4)
-    solr_wrapper (3.1.2)
+    solr_wrapper (3.1.3)
       http
       retriable
       ruby-progressbar
@@ -463,7 +463,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.8.1)
-    view_component (2.51.0)
+    view_component (2.52.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
     warden (1.2.9)
