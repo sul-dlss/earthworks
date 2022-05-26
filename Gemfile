@@ -59,7 +59,7 @@ group :production do
   gem 'pg'
 end
 
-gem 'blacklight', '~> 7.24', '< 7.25' 
+gem 'blacklight', '~> 7.24'
 gem "geoblacklight", '>= 3.3.1', '~> 3.2'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
