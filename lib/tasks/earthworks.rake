@@ -125,6 +125,24 @@ namespace :earthworks do
         edu.cornell
         big-ten
         edu.virginia
+        edu.gmu
+        edu.indiana
+        edu.umn
+        edu.harvard
+        edu.illinois
+        edu.mit
+        edu.msu
+        edu.psu
+        edu.tufts
+        edu.uarizona
+        edu.uchicago
+        edu.uiowa
+        edu.umd
+        edu.umich
+        edu.upenn
+        edu.utexas
+        edu.vt
+        edu.wisc
       ].each do |repo|
         system "rake geocombine:clone[#{repo}]" # need `system` to pick up ENV vars
       end
