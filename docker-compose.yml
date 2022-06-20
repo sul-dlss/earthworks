@@ -1,0 +1,58 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      RAILS_ENV: development
+      REDIS_URL: redis://cache:6379
+      REDIS_HOST: cache
+      REDIS_PORT: 6379
+      DATABASE_URL: postgres://earthworks:earthworks@db:5432/earthworks
+      SOLR_URL: http://index:8983/solr/earthworks
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - db
+      - index
+      - cache
+
+  db:
+    image: postgres:12.8
+    environment:
+      POSTGRES_USER: earthworks
+      POSTGRES_DB: earthworks
+      POSTGRES_PASSWORD: earthworks
+    ports:
+      - "5432:5432"
+    volumes:
+      - db:/var/lib/postgresql/data
+
+  index:
+    image: solr:8.11.1
+    ports:
+      - "8983:8983"
+    volumes:
+      - index:/var/solr
+      - ./config/solr_configs:/solr-setup/conf
+    entrypoint:
+      - docker-entrypoint.sh
+      - solr-precreate
+      - earthworks
+      - /solr-setup/conf
+
+  cache:
+    image: redis:6.2
+    ports:
+      - "6379:6379"
+    volumes:
+      - cache:/data
+
+volumes:
+  db:
+  index:
+  cache:
