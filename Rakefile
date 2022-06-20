@@ -1,6 +1,7 @@
 # Add your own tasks in files placed in lib/tasks ending in .rake,
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
+require 'rubocop/rake_task'
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
@@ -9,6 +10,7 @@ desc 'Execute the test build that runs on travis'
 task :ci => [:environment] do
   require 'solr_wrapper'
   if Rails.env.test?
+    Rake::Task['rubocop'].invoke
     Rake::Task['db:migrate'].invoke
     SolrWrapper.wrap do |solr|
       solr.with_collection(name: 'blacklight-core', dir: "#{Rails.root}/config/solr_configs") do
