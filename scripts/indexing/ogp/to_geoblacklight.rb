@@ -11,12 +11,10 @@ class ConvertOgp
   def save(fn)
     output = File.open(fn, 'w')
     converted = @input.collect do |ogp|
-      begin
-        ogp.to_geoblacklight
-      rescue ArgumentError => e
-        puts e.message
-        nil
-      end
+      ogp.to_geoblacklight
+    rescue ArgumentError => e
+      puts e.message
+      nil
     end.compact
     output << JSON.pretty_generate(converted)
     output.close

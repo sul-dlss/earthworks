@@ -1,16 +1,8 @@
 class FeedbackMailer < ApplicationMailer
   def submit_feedback(params, ip)
-    if params[:name].present?
-      @name = params[:name]
-    else
-      @name = 'No name given'
-    end
+    @name = params[:name].presence || 'No name given'
 
-    if params[:to].present?
-      @email = params[:to]
-    else
-      @email = 'No email given'
-    end
+    @email = params[:to].presence || 'No email given'
 
     @message = params[:message]
     @url = params[:url]

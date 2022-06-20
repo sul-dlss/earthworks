@@ -34,7 +34,12 @@ class RightsMetadata
   end
 
   def odc_licence
-    { human: odc_licence_human, machine: odc_licence_machine } if odc_licence_human.present? && odc_licence_machine.present?
+    return unless odc_licence_human.present? && odc_licence_machine.present?
+
+    {
+      human: odc_licence_human,
+      machine: odc_licence_machine
+    }
   end
 
   def odc_licence_human

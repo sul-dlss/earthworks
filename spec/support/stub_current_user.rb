@@ -4,10 +4,10 @@
 # You can also pass in a context to stub the user on (either an instance of a class or the class itself)
 module StubCurrentUser
   def stub_current_user(
-        user: User.new(email: 'example@stanford.edu'),
-        context: ApplicationController,
-        method_name: :current_user,
-        affiliation: nil
+    user: User.new(email: 'example@stanford.edu'),
+    context: ApplicationController,
+    method_name: :current_user,
+    affiliation: nil
   )
     return unless user
 

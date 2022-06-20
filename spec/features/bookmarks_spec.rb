@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Blacklight Bookmarks' do
-  scenario 'index has created bookmarks' do
+describe 'Blacklight Bookmarks' do
+  it 'index has created bookmarks' do
     skip('Passes locally, not on Travis.') if ENV['CI']
     visit solr_document_path 'columbia-columbia-landinfo-global-aet'
     click_button 'Bookmark'

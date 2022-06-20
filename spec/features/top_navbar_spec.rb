@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Top Navbar' do
-  scenario 'has links' do
+describe 'Top Navbar' do
+  it 'has links' do
     visit root_path
     within '#topnav' do
       expect(page).to have_link 'Stanford University Libraries'

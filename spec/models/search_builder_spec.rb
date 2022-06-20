@@ -1,21 +1,21 @@
 require 'rails_helper'
 
 describe SearchBuilder do
-  let(:user_params) { Hash.new }
-  let(:solr_params) { Hash.new }
+  subject { search_builder.with(user_params) }
+
+  let(:user_params) { {} }
+  let(:solr_params) { {} }
   let(:blacklight_config) { CatalogController.blacklight_config.deep_copy }
   let(:context) { CatalogController.new }
 
   let(:search_builder) { described_class.new(context) }
 
-  subject { search_builder.with(user_params) }
-
   describe '#add_spatial_params' do
-    it 'should return the solr_params when no bbox is given' do
+    it 'returns the solr_params when no bbox is given' do
       expect(subject.add_spatial_params(solr_params)).to eq solr_params
     end
 
-    it 'should return a spatial search if bbox is given' do
+    it 'returns a spatial search if bbox is given' do
       params = { bbox: '-180 -80 120 80' }
       subject.with(params)
       expect(subject.add_spatial_params(solr_params)[:fq].to_s)
@@ -24,6 +24,7 @@ describe SearchBuilder do
         .to match(/.*IsWithin.*\^300/)
     end
   end
+
   describe '#add_featured_content' do
     context 'scanned maps' do
       it do
@@ -34,6 +35,7 @@ describe SearchBuilder do
         ]
       end
     end
+
     context 'geospatial data' do
       it do
         params = { featured: 'geospatial_data' }
@@ -44,6 +46,7 @@ describe SearchBuilder do
         ]
       end
     end
+
     context 'census data' do
       it do
         params = { featured: 'census_data' }
@@ -54,6 +57,7 @@ describe SearchBuilder do
         ]
       end
     end
+
     context 'california data' do
       it do
         params = { featured: 'california_data' }

@@ -2,12 +2,12 @@
 # for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
 require 'rubocop/rake_task'
-require File.expand_path('../config/application', __FILE__)
+require File.expand_path('config/application', __dir__)
 
 Rails.application.load_tasks
 
 desc 'Execute the test build that runs on travis'
-task :ci => [:environment] do
+task ci: [:environment] do
   require 'solr_wrapper'
   if Rails.env.test?
     Rake::Task['rubocop'].invoke
@@ -23,7 +23,7 @@ task :ci => [:environment] do
   end
 end
 desc 'Execute the integration test build against production index'
-task :integration => [:environment] do
+task integration: [:environment] do
   if Rails.env.test?
     Rake::Task['earthworks:spec:data-integration'].invoke
   else

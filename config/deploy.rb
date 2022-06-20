@@ -19,10 +19,12 @@ set :log_level, :info
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w{config/database.yml config/honeybadger.yml config/secrets.yml config/blacklight.yml public/robots.txt config/newrelic.yml }
+set :linked_files,
+    %w[config/database.yml config/honeybadger.yml config/secrets.yml config/blacklight.yml public/robots.txt
+       config/newrelic.yml]
 
 # Default value for linked_dirs is []
-set :linked_dirs, %w{config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/sitemaps}
+set :linked_dirs, %w[config/settings log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/sitemaps]
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
@@ -48,7 +50,7 @@ namespace :deploy do
   end
   after :restart, :restart_sidekiq do
     on roles(:background) do
-      sudo :systemctl, "restart", "sidekiq-*", raise_on_non_zero_exit: false
+      sudo :systemctl, 'restart', 'sidekiq-*', raise_on_non_zero_exit: false
     end
   end
 end

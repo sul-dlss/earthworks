@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-feature 'Feedback form (js)', js: true do
+describe 'Feedback form (js)', js: true do
   before do
     visit root_path
   end
-  scenario 'feedback form should be hidden' do
-    expect(page).to_not have_css('#feedback-form', visible: true)
+
+  it 'feedback form should be hidden' do
+    expect(page).not_to have_css('#feedback-form', visible: true)
   end
-  scenario 'feedback form should be shown filled out and submitted' do
+
+  it 'feedback form should be shown filled out and submitted' do
     click_link 'Feedback'
-    skip("Passes locally, not on Travis.") if ENV['CI']
+    skip('Passes locally, not on Travis.') if ENV['CI']
     expect(page).to have_css('#feedback-form', visible: true)
     expect(page).to have_css('button', text: 'Cancel')
     within 'form.feedback-form' do
@@ -22,11 +24,12 @@ feature 'Feedback form (js)', js: true do
   end
 end
 
-feature 'Feedback form (no js)' do
+describe 'Feedback form (no js)' do
   before do
     visit root_path
   end
-  scenario 'feedback form should be shown filled out and submitted' do
+
+  it 'feedback form should be shown filled out and submitted' do
     click_link 'Feedback'
     expect(page).to have_css('#feedback-form', visible: true)
     expect(page).to have_css('a', text: 'Cancel')

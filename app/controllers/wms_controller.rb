@@ -1,5 +1,4 @@
 class WmsController < ApplicationController
-
   before_action :format_url
   ##
   # TODO: Consolidate this somehow with GeoBlacklight's `wms_params` permitted
@@ -13,6 +12,8 @@ class WmsController < ApplicationController
   end
 
   def format_url
-    params['URL'] = params['URL'].gsub(/.+?(?=\/geoserver)/, Settings.RESTRICTED_URL) if params['URL'] =~ /#{Settings.PROXY_URL}.*/
+    return unless params['URL'] =~ /#{Settings.PROXY_URL}.*/
+
+    params['URL'] = params['URL'].gsub(%r{.+?(?=/geoserver)}, Settings.RESTRICTED_URL)
   end
 end

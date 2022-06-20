@@ -18,26 +18,24 @@ namespace :earthworks do
     end
   end
   namespace :spec do
-    begin
-      require 'rspec/core/rake_task'
-      desc 'spec task that runs only data-integration tests (run locally against production data)'
-      RSpec::Core::RakeTask.new('data-integration') do |t|
-        t.rspec_opts = '--tag data-integration'
-      end
-      desc 'spec task that ignores data-integration tests (run during local development/travis on local data)'
-      RSpec::Core::RakeTask.new('without-data-integration') do |t|
-        t.rspec_opts =  '--tag ~data-integration'
-      end
-      task 'spec:all' => 'test:prepare'
-    rescue LoadError => e
-      desc 'rspec not installed'
-      task 'data-integration' do
-        abort 'rspec not installed'
-      end
-      desc 'rspec not installed'
-      task 'without-data-integration' do
-        abort 'rspec not installed'
-      end
+    require 'rspec/core/rake_task'
+    desc 'spec task that runs only data-integration tests (run locally against production data)'
+    RSpec::Core::RakeTask.new('data-integration') do |t|
+      t.rspec_opts = '--tag data-integration'
+    end
+    desc 'spec task that ignores data-integration tests (run during local development/travis on local data)'
+    RSpec::Core::RakeTask.new('without-data-integration') do |t|
+      t.rspec_opts = '--tag ~data-integration'
+    end
+    task 'spec:all' => 'test:prepare'
+  rescue LoadError => e
+    desc 'rspec not installed'
+    task 'data-integration' do
+      abort 'rspec not installed'
+    end
+    desc 'rspec not installed'
+    task 'without-data-integration' do
+      abort 'rspec not installed'
     end
   end
   desc 'Remediate geoblacklight.json schema from preversion to 1.0'
@@ -45,13 +43,13 @@ namespace :earthworks do
     Dir.glob("#{Rails.root}/spec/fixtures/solr_documents/*.json").each do |fn|
       data = JSON.parse(File.read(fn))
       data['geoblacklight_version'] = '1.0'
-      %w(uuid georss_polygon_s georss_point_s georss_box_s dc_relation_sm solr_issued_i).each do |k|
+      %w[uuid georss_polygon_s georss_point_s georss_box_s dc_relation_sm solr_issued_i].each do |k|
         if data.include?(k)
           puts "Deleting #{k} for #{data['layer_slug_s']}"
           data.delete(k)
         end
       end
-      File.open(fn, 'w') {|f| f << JSON.pretty_generate(data) }
+      File.open(fn, 'w') { |f| f << JSON.pretty_generate(data) }
     end
   end
   namespace :geomonitor do
@@ -79,21 +77,21 @@ namespace :earthworks do
     task check: [:environment] do
       GeoMonitor::Layer.where(active: true).find_each(batch_size: 250) do |layer|
         puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: (1.minute...4.hours).to_a.sample.seconds).perform_later(layer)
+        CheckLayerJob.set(wait: ((1.minute)...(4.hours)).to_a.sample.seconds).perform_later(layer)
       end
     end
     desc 'Check all of the active Stanford layers'
     task check_stanford: [:environment] do
       GeoMonitor::Layer.where(active: true, institution: 'Stanford').find_each(batch_size: 250) do |layer|
         puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: (1.minute...4.hours).to_a.sample.seconds).perform_later(layer)
+        CheckLayerJob.set(wait: ((1.minute)...(4.hours)).to_a.sample.seconds).perform_later(layer)
       end
     end
     desc 'Check all of the active public layers'
     task check_public: [:environment] do
       GeoMonitor::Layer.where(active: true, rights: 'Public').find_each(batch_size: 250) do |layer|
         puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: (1.minute...4.hours).to_a.sample.seconds).perform_later(layer)
+        CheckLayerJob.set(wait: ((1.minute)...(4.hours)).to_a.sample.seconds).perform_later(layer)
       end
     end
     desc 'Reset availability for GeoMonitor layers'
@@ -112,7 +110,7 @@ namespace :earthworks do
       ENV['OGM_PATH'] = 'tmp/opengeometadata'
       ENV['OGM_PATH'] = '/var/tmp/opengeometadata' if File.directory?('/var/tmp/opengeometadata')
       ENV['SOLR_URL'] = Blacklight.default_index.connection.uri.to_s
-      puts "Using OGM_PATH=#{ENV['OGM_PATH']} SOLR_URL=#{ENV['SOLR_URL']}"
+      puts "Using OGM_PATH=#{ENV.fetch('OGM_PATH', nil)} SOLR_URL=#{ENV.fetch('SOLR_URL', nil)}"
     end
 
     desc 'Clone specific OpenGeoMetadata repositories for indexing'
@@ -132,12 +130,12 @@ namespace :earthworks do
 
     desc 'Update OpenGeoMetadata repositories via git pull'
     task pull: ['earthworks:opengeometadata:setup'] do
-      system "rake geocombine:pull" # need `system` to pick up ENV vars
+      system 'rake geocombine:pull' # need `system` to pick up ENV vars
     end
 
     desc 'Index OpenGeoMetadata repositories'
     task index: ['earthworks:opengeometadata:setup'] do
-      system "rake geocombine:index" # need `system` to pick up ENV vars
+      system 'rake geocombine:index' # need `system` to pick up ENV vars
     end
 
     desc 'Run full OpenGeoMetadata indexing pipeline'
@@ -157,11 +155,13 @@ namespace :earthworks do
     end
   end
 
-  desc "Prune old guest users from the database"
-  task :prune_old_guest_user_data, [:months_old] => [:environment] do |t, args|
+  desc 'Prune old guest users from the database'
+  task :prune_old_guest_user_data, [:months_old] => [:environment] do |_t, args|
+    # rubocop:disable Layout/MultilineMethodCallIndentation
     old_bookmarkless_guest_users_ids = User.guests_without_bookmarks
-                                           .where("users.updated_at < :date", { date: args[:months_old].to_i.months.ago })
-                                           .pluck(:id)
+      .where('users.updated_at < :date', { date: args[:months_old].to_i.months.ago })
+      .pluck(:id)
+    # rubocop:enable Layout/MultilineMethodCallIndentation
 
     User.delete(old_bookmarkless_guest_users_ids)
   end
@@ -180,12 +180,12 @@ namespace :earthworks do
   end
 
   desc 'Prune old search data from the database'
-  task :prune_old_search_data, [:days_old] => [:environment] do |t, args|
-    chunk = 20000
-    raise ArgumentError.new('days_old is expected to be greater than 0') if args[:days_old].to_i <= 0
+  task :prune_old_search_data, [:days_old] => [:environment] do |_t, args|
+    chunk = 20_000
+    raise ArgumentError, 'days_old is expected to be greater than 0' if args[:days_old].to_i <= 0
 
-    total = Search.where("updated_at < :date", { date: (Date.today - args[:days_old].to_i) }).count
-    total = total - (total % chunk) if (total % chunk) != 0
+    total = Search.where('updated_at < :date', { date: (Date.today - args[:days_old].to_i) }).count
+    total -= (total % chunk) if (total % chunk) != 0
     i = 0
     while i < total
       # might want to add a .where("user_id = NULL") when we have authentication hooked up.

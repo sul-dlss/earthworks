@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
-
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'
-  mount OkComputer::Engine, at: "/status"
+  mount OkComputer::Engine, at: '/status'
   # API compatibility with is_it_working checks
-  match "/is_it_working" => "ok_computer/ok_computer#index", via: [:get, :options]
+  match '/is_it_working' => 'ok_computer/ok_computer#index', via: %i[get options]
 
   root to: 'catalog#index'
   concern :searchable, Blacklight::Routes::Searchable.new
@@ -13,16 +12,17 @@ Rails.application.routes.draw do
     concerns :searchable
     concerns :range_searchable
   end
-  
+
   get 'restricted_proxy/geoserver/:webservice' => 'restricted_proxy#access'
 
-  devise_for :users, skip: [:registrations, :passwords, :sessions]
+  devise_for :users, skip: %i[registrations passwords sessions]
   devise_scope :user do
-    get "restricted/users/auth/webauth" => "login#login", as: :new_user_session
-    match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session, :via => Devise.mappings[:user].sign_out_via
+    get 'restricted/users/auth/webauth' => 'login#login', as: :new_user_session
+    match 'users/auth/webauth/logout' => 'devise/sessions#destroy', :as => :destroy_user_session,
+          :via => Devise.mappings[:user].sign_out_via
   end
 
-  resource :feedback_form, path: 'feedback', only: [:new, :create]
+  resource :feedback_form, path: 'feedback', only: %i[new create]
   get 'feedback' => 'feedback_forms#new'
 
   concern :gbl_exportable, Geoblacklight::Routes::Exportable.new

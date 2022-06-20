@@ -15,6 +15,7 @@ module FeaturedContentBehavior
 
   private
 
+  # rubocop:disable Layout/LineLength
   def scanned_maps_content_params
     [
       'layer_geom_type_s:Image OR layer_geom_type_s:"Paper Map"'
@@ -32,10 +33,11 @@ module FeaturedContentBehavior
       'dc_title_ti:census OR dc_description_ti:census OR dc_publisher_ti:census OR dc_subject_tmi:census'
     ]
   end
-  
+
   def california_data_content_params
     [
       'dc_title_ti:california OR dc_description_ti:california OR dc_publisher_ti:california OR dc_subject_tmi:california'
     ]
   end
+  # rubocop:enable Layout/LineLength
 end

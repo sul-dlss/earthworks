@@ -10,24 +10,22 @@ class RestrictedProxyController < ApplicationController
   end
 
   private
-  
+
   def request_url
     request.url.gsub(Settings.PROXY_URL, Settings.RESTRICTED_URL)
   end
 
   def proxied_response
-    @proxied_response ||= begin
-      benchmark "Fetch #{request_url}" do
-        HTTP.get(request_url)
-      end
+    @proxied_response ||= benchmark "Fetch #{request_url}" do
+      HTTP.get(request_url)
     end
   end
 
   def proxied_headers
-    proxied_response.headers.select do |k, v|
+    proxied_response.headers.select do |k, _v|
       k == 'Content-Disposition' ||
-      k == 'Content-Type' ||
-      k.match(/Geowebcache/)
+        k == 'Content-Type' ||
+        k.match(/Geowebcache/)
     end
   end
 end

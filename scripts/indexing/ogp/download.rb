@@ -11,7 +11,7 @@ class DownloadOgp
     'minnesota' => 'http://ec2-54-87-229-228.compute-1.amazonaws.com:8080/solr/collection1/select'
   }
 
-  FIELDS = %w{
+  FIELDS = %w[
     Abstract
     Access
     Area
@@ -39,12 +39,12 @@ class DownloadOgp
     SrsProjectionCode
     ThemeKeywords
     WorkspaceName
-  }.join(',')
+  ].join(',')
 
-  def download(src, i, n, w=50)
+  def download(src, i, n, w = 50)
     start = 0
     i = src if i.nil?
-    while start < n do
+    while start < n
       fetch(src, i, start, w)
       start += w
     end
@@ -57,27 +57,26 @@ class DownloadOgp
   # @param [Integer] start
   # @param [Integer] rows
   def fetch(src, target, start, rows, datadir = 'data')
-    fn = File.join(datadir, "#{src.downcase}_#{target.downcase}_#{sprintf('%05i', start)}_#{rows}.json")
-    unless File.exist?(fn)
+    fn = File.join(datadir, "#{src.downcase}_#{target.downcase}_#{format('%05i', start)}_#{rows}.json")
+    if File.exist?(fn)
+      puts "Using cache for #{target} #{start} to #{start + rows}"
+    else
       raise "Unknown URL for #{src}" unless URL.include?(src.downcase)
-      puts "Downloading #{target} #{start} to #{start+rows}"
-      url = "#{URL[src.downcase]}?" + URI::encode_www_form(
-                  'q' => '*:*',
-                  'fq' => "Institution:#{target}",
-                  'start' => start,
-                  'rows' => rows,
-                  'wt' => 'json',
-                  'indent' => 'on',
-                  'fl' => FIELDS
-                  )
+
+      puts "Downloading #{target} #{start} to #{start + rows}"
+      url = "#{URL[src.downcase]}?" + URI.encode_www_form(
+        'q' => '*:*',
+        'fq' => "Institution:#{target}",
+        'start' => start,
+        'rows' => rows,
+        'wt' => 'json',
+        'indent' => 'on',
+        'fl' => FIELDS
+      )
       puts "    #{url}" if $DEBUG
       open(url) do |res|
-        File.open(fn, 'wb') do |f|
-          f.write(res.read())
-        end
+        File.binwrite(fn, res.read)
       end
-    else
-      puts "Using cache for #{target} #{start} to #{start+rows}"
     end
   end
 end
@@ -87,8 +86,8 @@ ogp = DownloadOgp.new
 # ogp.download('Berkeley', 'Berkeley', 450)
 ogp.download('Tufts', 'MassGIS', 600)
 ogp.download('Tufts', 'Tufts', 3100)
-ogp.download('Harvard', 'Harvard', 11000)
-ogp.download('MIT', 'MIT', 11000)
+ogp.download('Harvard', 'Harvard', 11_000)
+ogp.download('MIT', 'MIT', 11_000)
 # ogp.download('UCLA', 'UCLA', 200)
 # ogp.download('Columbia', 'Columbia', 3600)
 # ogp.download('Minnesota', 'Minnesota', 2300)

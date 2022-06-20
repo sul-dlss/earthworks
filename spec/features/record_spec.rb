@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-feature 'Record view' do
+describe 'Record view' do
   it 'does not have empty values indexed' do
     visit solr_document_path('columbia-columbia-landinfo-global-aet')
 

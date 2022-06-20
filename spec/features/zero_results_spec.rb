@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'Zero results' do
-  scenario 'includes feedback text and link' do
+describe 'Zero results' do
+  it 'includes feedback text and link' do
     visit search_catalog_path q: 'xyz'
     within '.noresults' do
       expect(page).to have_css '.ask-for-dataset'

@@ -30,8 +30,9 @@ describe FeedbackFormsController do
       end
     end
   end
+
   describe 'format json' do
-    it 'should return json success' do
+    it 'returns json success' do
       post :create, params: {
         url: 'http://example.com/',
         message: 'Hello Kittenz',
@@ -39,7 +40,8 @@ describe FeedbackFormsController do
       }
       expect(flash[:success]).to eq 'Thank you! Your feedback has been sent.'
     end
-    it 'should return html success' do
+
+    it 'returns html success' do
       post :create, params: {
         url: 'http://test.host/',
         message: 'Hello Kittenz'
@@ -47,8 +49,9 @@ describe FeedbackFormsController do
       expect(flash[:success]).to eq 'Thank you! Your feedback has been sent.'
     end
   end
+
   describe 'validate' do
-    it 'should return an error if no message is sent' do
+    it 'returns an error if no message is sent' do
       post :create, params: {
         url: 'http://test.host/',
         message: '',
@@ -56,31 +59,41 @@ describe FeedbackFormsController do
       }
       expect(flash[:danger]).to eq 'A message is required'
     end
-    it 'should block potential spam with a href in the message' do
+
+    it 'blocks potential spam with a href in the message' do
       post :create, params: {
         message: 'I like to spam by sending you a http://www.somespam.com.  lolzzzz',
         url: 'http://test.host/',
         email_address: ''
       }
+      # rubocop:disable Layout/LineLength
       expect(flash[:danger]).to eq 'Your message appears to be spam, and has not been sent. Please try sending your message again without any links in the comments.'
+      # rubocop:enable Layout/LineLength
     end
-    it 'should block potential spam with a url= in the message' do
+
+    it 'blocks potential spam with a url= in the message' do
       post :create, params: {
         message: 'I like to spam by sending you a http://www.somespam.com.  lolzzzz',
         url: 'http://test.host/',
         email_address: ''
       }
+      # rubocop:disable Layout/LineLength
       expect(flash[:danger]).to eq 'Your message appears to be spam, and has not been sent. Please try sending your message again without any links in the comments.'
+      # rubocop:enable Layout/LineLength
     end
-    it 'should block potential spam with a http:// in the message' do
+
+    it 'blocks potential spam with a http:// in the message' do
       post :create, params: {
         message: 'I like to spam by sending you a http://www.somespam.com.  lolzzzz',
         url: 'http://test.host/',
         email_address: ''
       }
+      # rubocop:disable Layout/LineLength
       expect(flash[:danger]).to eq 'Your message appears to be spam, and has not been sent. Please try sending your message again without any links in the comments.'
+      # rubocop:enable Layout/LineLength
     end
-    it 'should block potential spam with a http:// in the user_agent field' do
+
+    it 'blocks potential spam with a http:// in the user_agent field' do
       post :create, params: {
         user_agent: 'http://www.google.com',
         message: 'Legit message',
@@ -88,7 +101,8 @@ describe FeedbackFormsController do
       }
       expect(flash[:danger]).to eq 'Your message appears to be spam, and has not been sent.'
     end
-    it 'should block potential spam with a http:// in the viewport field' do
+
+    it 'blocks potential spam with a http:// in the viewport field' do
       post :create, params: {
         viewport: 'http://www.google.com',
         message: 'Legit message',
@@ -96,13 +110,16 @@ describe FeedbackFormsController do
       }
       expect(flash[:danger]).to eq 'Your message appears to be spam, and has not been sent.'
     end
-    it 'should return an error if a bot fills in the email_addrss field (email is correct field)' do
+
+    it 'returns an error if a bot fills in the email_addrss field (email is correct field)' do
       post :create, params: {
         message: 'I am spamming you!',
         url: 'http://test.host/',
         email_address: 'spam!'
-      }        
+      }
+      # rubocop:disable Layout/LineLength
       expect(flash[:danger]).to eq 'You have filled in a field that makes you appear as a spammer.  Please follow the directions for the individual form fields.'
+      # rubocop:enable Layout/LineLength
     end
   end
 end

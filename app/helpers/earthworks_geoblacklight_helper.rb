@@ -2,13 +2,14 @@ module EarthworksGeoblacklightHelper
   include GeoblacklightHelper
 
   def document_available?
-    (@document.public? && @document.available?) || (@document.same_institution? && user_signed_in? && @document.available?)
+    (@document.public? && @document.available?) ||
+      (@document.same_institution? && user_signed_in? && @document.available?)
   end
 
   ##
   # Override from GeoBlacklight to include custom `featured` param
   def has_search_parameters?
-    !params[:featured].blank? || super
+    params[:featured].present? || super
   end
 
   ##

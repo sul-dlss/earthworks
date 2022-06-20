@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-feature 'Search' do
-  feature 'spelling suggestions' do
-    scenario 'are turned on' do
+describe 'Search' do
+  describe 'spelling suggestions' do
+    it 'are turned on' do
       visit root_path
       fill_in 'q', with: 'standford'
       click_button 'search'
