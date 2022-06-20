@@ -1,48 +1,59 @@
-[![Build Status](https://travis-ci.org/sul-dlss/earthworks.svg?branch=master)](https://travis-ci.org/sul-dlss/earthworks)
-[![Code Climate Test Coverage](https://codeclimate.com/github/sul-dlss/earthworks/badges/coverage.svg)](https://codeclimate.com/github/sul-dlss/earthworks/coverage)
+# EarthWorks
+[![CI](https://github.com/sul-dlss/earthworks/actions/workflows/ruby.yml/badge.svg)](https://github.com/sul-dlss/earthworks/actions/workflows/ruby.yml)
 
-## EarthWorks
+Geospatial discovery application for Stanford University Libraries, built using [GeoBlacklight](https://github.com/geoblacklight).
 
-Geospatial discovery application for Stanford University Libraries. Built using:
+<img src="preview.png" align="center" alt="bay area video arcades slideshow preview">
 
-* [GeoBlacklight](https://github.com/geoblacklight)
-* [gis-robot-suite](https://github.com/sul-dlss/gis-robot-suite)
-* [OpenGeoMetadatda](https://github.com/opengeometadata)
-
-## Installation
-
+## Developing
+### Pre-requisites
+* Ruby 3.0. **Other versions may work but are unsupported.**
+### Installing
+Pull down the code:
+```sh
+git clone git@github.com:sul-dlss/earthworks.git
 ```
-# Clone repository
-$ git clone git@github.com:sul-dlss/earthworks.git
-
-# Install for development
-$ rake earthworks:install
+Unless using [Docker](https://www.docker.com/) (see below), proceed to install dependencies and prepare the database:
+```sh
+bin/setup
 ```
-
-### Running tests
-
-#### Running continuous integration tests
+Start an [Apache Solr](https://solr.apache.org/) instance using [solr_wrapper](https://github.com/cbeer/solr_wrapper):
+```sh
+solr_wrapper
 ```
-$ rake ci
+Finally, start the development web server:
+```sh
+bin/rails server
 ```
-
-#### Running data integration tests
-**Important!!!**
-Must be run with a production index passed in using the `TEST_SOLR_URL` env variable. If ssh tunneling, make *sure* to **NOT** run rake ci while tunneled as it may delete the index.
-
+### Using Docker
+A more production-like setup using [Redis](https://redis.com/) and [Postgresql](https://www.postgresql.org/) is available via Docker. To create the stack:
+```sh
+docker compose up
 ```
-$ TEST_SOLR_URL=http://example.com:8080/solr/core_name rake integration
+Then, to prepare the database:
+```sh
+docker compose exec app bin/setup
 ```
-### Running application
+Most other commands can be run by prepending `docker compose exec app` to the command, which will execute the command in the `app` container.
+### Adding data
+To add a small amount of test records to the Solr index, you can use the `seed` task:
+```sh
+bin/rake geoblacklight:solr:seed
 ```
-$ solr_wrapper &
-$ rails s
+You can also fetch records from [OpenGeoMetadata](https://github.com/OpenGeoMetadata) using [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine):
+```sh
+export OGM_PATH=tmp/opengeometadata     # location to store data
+bin/rake geocombine:clone[edu.nyu]      # pull data from NYU
+bin/rake geocombine:index               # index data in Solr
 ```
-
-### Running OpenGeoMetadata indexing
-To ingest the metadata in OpenGeoMetadata into the Solr index (as defined by `config/blacklight.yml`), use:
-
+At Stanford, geospatial data is transformed and indexed by the [gis-robot-suite](https://github.com/sul-dlss/gis-robot-suite).
+## Testing
+You can run the full suite of tests with the `ci` command. **Do not** run this while ssh tunneled as it may delete the production index!
+```sh
+bin/rake ci
 ```
-$ mkdir /var/tmp/opengeometadata # optional, but recommended on servers
-$ rake earthworks:opengeometadata:pipeline
+There is also a separate suite of "data integration" tests, which are intended to be run against a production search index.
+```sh
+export TEST_SOLR_URL=http://example.com:8080/solr/core_name
+bin/rake integration
 ```
