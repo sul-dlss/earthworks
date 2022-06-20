@@ -1,10 +1,25 @@
 inherit_from: .rubocop_todo.yml
 
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
 AllCops:
+  TargetRubyVersion: 3.0
+  DisplayCopNames: true
   NewCops: enable
   Exclude:
     - 'Gemfile'
     - 'bin/**/*'
     - 'db/**/*'
+    - 'tmp/**/*'
     - 'storage/**/*'
     - 'node_modules/**/*'
+
+Rails:
+  Enabled: true
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/features/**/*'
+    - 'spec/integration/**/*'
