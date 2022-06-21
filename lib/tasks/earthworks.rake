@@ -40,13 +40,14 @@ namespace :earthworks do
   end
   desc 'Remediate geoblacklight.json schema from preversion to 1.0'
   task :remediate_geoblacklight_schema do
+    fields = %w[uuid georss_polygon_s georss_point_s georss_box_s dc_relation_sm solr_issued_i]
     Dir.glob("#{Rails.root}/spec/fixtures/solr_documents/*.json").each do |fn|
       data = JSON.parse(File.read(fn))
       data['geoblacklight_version'] = '1.0'
-      %w[uuid georss_polygon_s georss_point_s georss_box_s dc_relation_sm solr_issued_i].each do |k|
-        if data.include?(k)
-          puts "Deleting #{k} for #{data['layer_slug_s']}"
-          data.delete(k)
+      fields.each do |field|
+        if data.include?(field)
+          puts "Deleting #{field} for #{data['layer_slug_s']}"
+          data.delete(field)
         end
       end
       File.open(fn, 'w') { |f| f << JSON.pretty_generate(data) }

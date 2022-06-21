@@ -31,7 +31,7 @@ class CatalogController < ApplicationController
 
     config.raw_endpoint.enabled = true
 
-    config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT'] =~ /bot/ }
+    config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT'].include?('bot') }
 
     # solr field configuration for document/show views
 

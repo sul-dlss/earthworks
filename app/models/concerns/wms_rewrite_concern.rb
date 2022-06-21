@@ -15,6 +15,6 @@ module WmsRewriteConcern
   end
 
   def stanford?
-    fetch(:dct_provenance_s).downcase == 'stanford'
+    fetch(:dct_provenance_s).casecmp('stanford').zero?
   end
 end

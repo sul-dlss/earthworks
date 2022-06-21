@@ -35,7 +35,7 @@ class FeedbackFormsController < ApplicationController
       errors << 'You have filled in a field that makes you appear as a spammer.  Please follow the directions for the individual form fields.'
       # rubocop:enable Layout/LineLength
     end
-    if params[:message] =~ url_regex
+    if params[:message]&.match?(url_regex)
       # rubocop:disable Layout/LineLength
       errors << 'Your message appears to be spam, and has not been sent. Please try sending your message again without any links in the comments.'
       # rubocop:enable Layout/LineLength

@@ -3,7 +3,7 @@ require 'devise_remote_user'
 DeviseRemoteUser.configure do |config|
   config.env_key = lambda do |env|
     if env['REMOTE_USER'].present?
-      if env['REMOTE_USER'] =~ /@stanford.edu$/
+      if /@stanford.edu$/.match?(env['REMOTE_USER'])
         env['REMOTE_USER']
       else
         "#{env['REMOTE_USER']}@stanford.edu"
