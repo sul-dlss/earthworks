@@ -6,7 +6,7 @@ require 'nokogiri'
 # host. Unfortunately there is no global way to set this, so it has to happen
 # on a per layer basis.
 
-geoserver_url = ENV['GEOSERVER_URL']
+geoserver_url = ENV.fetch('GEOSERVER_URL', nil)
 
 raise('GEOSERVER_URL not provided') unless geoserver_url
 raise('GEOSERVER_USER not provided') unless ENV['GEOSERVER_USER']
@@ -15,7 +15,7 @@ raise('GEOSERVER_PASS not provided') unless ENV['GEOSERVER_PASS']
 puts "Updating cache defaults for all layers on #{geoserver_url}"
 
 conn = Faraday.new(url: geoserver_url) do |faraday|
-  faraday.basic_auth(ENV['GEOSERVER_USER'], ENV['GEOSERVER_PASS'])
+  faraday.basic_auth(ENV.fetch('GEOSERVER_USER', nil), ENV.fetch('GEOSERVER_PASS', nil))
   faraday.adapter :net_http
 end
 

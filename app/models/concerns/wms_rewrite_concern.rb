@@ -4,7 +4,7 @@ module WmsRewriteConcern
   def viewer_endpoint
     if is_stanford_restricted?
       # replace wms prefix with webauthed proxy
-      super.gsub(/.+?(?=\/geoserver)/, Settings.PROXY_URL)
+      super.gsub(%r{.+?(?=/geoserver)}, Settings.PROXY_URL)
     else
       super
     end
@@ -15,6 +15,6 @@ module WmsRewriteConcern
   end
 
   def stanford?
-    fetch(:dct_provenance_s).downcase == 'stanford'
+    fetch(:dct_provenance_s).casecmp('stanford').zero?
   end
 end

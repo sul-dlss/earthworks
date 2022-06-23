@@ -1,7 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
-ENV["RAILS_ENV"] ||= 'test'
+ENV['RAILS_ENV'] ||= 'test'
 require 'spec_helper'
-require File.expand_path("../../config/environment", __FILE__)
+require File.expand_path('../config/environment', __dir__)
 require 'rspec/rails'
 
 require 'devise'
@@ -33,8 +33,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
-
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
@@ -46,12 +45,10 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.before(:suite) do
-    begin
-      DatabaseCleaner.start
-      FactoryBot.lint
-    ensure
-      DatabaseCleaner.clean
-    end
+    DatabaseCleaner.start
+    FactoryBot.lint
+  ensure
+    DatabaseCleaner.clean
   end
 
   config.include Devise::Test::ControllerHelpers, type: :controller

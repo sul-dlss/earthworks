@@ -1,9 +1,7 @@
-# -*- encoding : utf-8 -*-
 require 'blacklight/catalog'
 require 'legacy_id_map'
 
 class CatalogController < ApplicationController
-
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
 
@@ -17,12 +15,12 @@ class CatalogController < ApplicationController
       'q.alt' => '*:*'
     }
 
-    ## Default parameters to send on single-document requests to Solr. These settings are the Blackligt defaults (see SolrHelper#solr_doc_params) or
-    ## parameters included in the Blacklight-jetty document requestHandler.
-    #
+    # Default parameters to send on single-document requests to Solr.
+    # These settings are the Blacklight defaults (see SolrHelper#solr_doc_params) or
+    # parameters included in the Blacklight-jetty document requestHandler.
     config.default_document_solr_params = {
-     :qt => 'document',
-     :q => '{!raw f=layer_slug_s v=$id}'
+      qt: 'document',
+      q: '{!raw f=layer_slug_s v=$id}'
     }
 
     # solr field configuration for search results/index views
@@ -33,7 +31,7 @@ class CatalogController < ApplicationController
 
     config.raw_endpoint.enabled = true
 
-    config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT'] =~ /bot/ }
+    config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }
 
     # solr field configuration for document/show views
 
@@ -88,17 +86,17 @@ class CatalogController < ApplicationController
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
 
-    config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: "icon_facet"
-    config.add_facet_field Settings.FIELDS.CREATOR, :label => 'Author', :limit => 6
-    config.add_facet_field Settings.FIELDS.PUBLISHER, :label => 'Publisher', :limit => 6
-    config.add_facet_field Settings.FIELDS.SUBJECT, :label => 'Subject', :limit => 6
-    config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, :label => 'Place', :limit => 6
+    config.add_facet_field Settings.FIELDS.PROVENANCE, label: 'Institution', limit: 8, partial: 'icon_facet'
+    config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 6
+    config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 6
+    config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 6
+    config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 6
     # config.add_facet_field 'dct_isPartOf_sm', :label => 'Collection', :limit => 6
     config.add_facet_field Settings.FIELDS.SOURCE, show: false, label: 'Collection'
 
     config.add_facet_field 'solr_year_i', label: 'Year', limit: 10, range: {
       # :num_segments => 6,
-      assumed_boundaries: [0001, 2016]
+      assumed_boundaries: [0o001, 2016]
       # :segments => true
     }
 
@@ -119,13 +117,8 @@ class CatalogController < ApplicationController
         label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
       }
     }, partial: 'icon_facet'
-    # config.add_facet_field 'layer_availability_score_f', :label => 'Availability', :query => {
-    #   offline: { label: 'Offline', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]" },
-    #   online: { label: 'Online', fq: "(*:* AND -layer_availability_score_f:[* TO *] AND -layer_geom_type_s:\"Paper Map\") OR (layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])" }
-    # }
-    config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: "icon_facet"
-    config.add_facet_field 'dc_format_s', :label => 'Format', :limit => 3
-
+    config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: 'icon_facet'
+    config.add_facet_field 'dc_format_s', label: 'Format', limit: 3
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
@@ -154,16 +147,14 @@ class CatalogController < ApplicationController
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit
     config.add_index_field Settings.FIELDS.PUBLISHER
 
-
-
-
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     # item_prop: [String] property given to span with Schema.org item property
     # link_to_search: [Boolean] that can be passed to link to a facet search
     # helper_method: [Symbol] method that can be used to render the value
     config.add_show_field Settings.FIELDS.CREATOR, label: 'Author(s)', itemprop: 'author', link_to_facet: true
-    config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itemprop: 'description', helper_method: :render_value_as_truncate_abstract
+    config.add_show_field Settings.FIELDS.DESCRIPTION, label: 'Description', itemprop: 'description',
+                                                       helper_method: :render_value_as_truncate_abstract
     config.add_show_field Settings.FIELDS.PUBLISHER, label: 'Publisher', itemprop: 'publisher'
     config.add_show_field Settings.FIELDS.PART_OF, label: 'Collection', itemprop: 'isPartOf'
     config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place(s)', itemprop: 'spatial', link_to_facet: true
@@ -177,7 +168,6 @@ class CatalogController < ApplicationController
       if: proc { |_, _, doc| doc.external_url },
       helper_method: :render_references_url
     )
-
 
     # config.add_show_field 'dc_title_t', :label => 'Title:'
     # config.add_show_field 'title_display', :label => 'Title:'
@@ -267,10 +257,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, dc_title_sort asc', :label => 'relevance'
-    config.add_sort_field 'solr_year_i desc, dc_title_sort asc', :label => 'year'
-    config.add_sort_field 'dc_publisher_sort asc, dc_title_sort asc', :label => 'publisher'
-    config.add_sort_field 'dc_title_sort asc', :label => 'title'
+    config.add_sort_field 'score desc, dc_title_sort asc', label: 'relevance'
+    config.add_sort_field 'solr_year_i desc, dc_title_sort asc', label: 'year'
+    config.add_sort_field 'dc_publisher_sort asc, dc_title_sort asc', label: 'publisher'
+    config.add_sort_field 'dc_title_sort asc', label: 'title'
     config.add_sort_field 'layer_modified_dt asc', label: 'Layer modified date (for API use only)', if: false
 
     # If there are more than this many search results, no spelling ("did you
@@ -285,12 +275,21 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
-
     # Custom tools for GeoBlacklight
-    config.add_show_tools_partial :web_services, if: proc { |_context, _config, options| options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
-    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
-    config.add_show_tools_partial :carto, partial: 'carto', if: proc { |_context, _config, options| options[:document] && options[:document].carto_reference.present? }
-    config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options| options[:document] && options[:document].arcgis_urls.present? }
+    # rubocop:disable Layout/LineLength
+    config.add_show_tools_partial :web_services, if: proc { |_context, _config, options|
+      options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any?
+    }
+    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
+      options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any?
+    }
+    config.add_show_tools_partial :carto, partial: 'carto', if: proc { |_context, _config, options|
+      options[:document] && options[:document].carto_reference.present?
+    }
+    config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options|
+      options[:document] && options[:document].arcgis_urls.present?
+    }
+    # rubocop:enable Layout/LineLength
     config.show.document_actions.delete(:sms)
 
     # Configure basemap provider

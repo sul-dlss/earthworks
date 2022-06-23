@@ -5,9 +5,9 @@ require 'nokogiri'
 # This script updates the GeoWebCache tile caching gridsets for every layer
 # within a GeoServer node. This is necessary for existing layers that may have
 # not been created with a default gridset that was added after creation. The
-# original need here was part of adding GeoWebCache for 512x512 tiles. 
+# original need here was part of adding GeoWebCache for 512x512 tiles.
 
-geoserver_url = ENV['GEOSERVER_URL']
+geoserver_url = ENV.fetch('GEOSERVER_URL', nil)
 
 raise('GEOSERVER_URL not provided') unless geoserver_url
 raise('GEOSERVER_USER not provided') unless ENV['GEOSERVER_USER']
@@ -16,7 +16,7 @@ raise('GEOSERVER_PASS not provided') unless ENV['GEOSERVER_PASS']
 puts "Updating gridsets for all layers on #{geoserver_url}"
 
 conn = Faraday.new(url: geoserver_url) do |faraday|
-  faraday.basic_auth(ENV['GEOSERVER_USER'], ENV['GEOSERVER_PASS'])
+  faraday.basic_auth(ENV.fetch('GEOSERVER_USER', nil), ENV.fetch('GEOSERVER_PASS', nil))
   faraday.adapter :net_http
 end
 

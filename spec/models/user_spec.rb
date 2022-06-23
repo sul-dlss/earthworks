@@ -9,9 +9,7 @@ RSpec.describe User do
 
     before do
       Bookmark.create(document: SolrDocument.new('stanford-abc123'), user: guest_user_with_bookmarks)
-      10.times do
-        FactoryBot.create(:user, guest: true)
-      end
+      FactoryBot.create_list(:user, 10, guest: true)
     end
 
     it 'does not include non-guest users' do

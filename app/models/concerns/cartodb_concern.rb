@@ -3,6 +3,7 @@ module CartodbConcern
 
   def carto_reference
     return unless available?
+
     super
   end
 end

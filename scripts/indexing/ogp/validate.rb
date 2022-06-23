@@ -23,13 +23,11 @@ class ValidateOgp
     puts "Validating #{fn}"
     json = JSON.parse(File.read(fn))
     json['response']['docs'].each do |doc| # contains JSON Solr query results
-      begin
-        validate(doc)
-        stats[:accepted] += 1
-      rescue ArgumentError => e
-        puts e
-        stats[:rejected] += 1
-      end
+      validate(doc)
+      stats[:accepted] += 1
+    rescue ArgumentError => e
+      puts e
+      stats[:rejected] += 1
     end
     stats
   end
@@ -38,9 +36,7 @@ class ValidateOgp
     id = layer['LayerId']
 
     %w[LayerId Name Institution Access MinX MinY MaxX MaxY LayerDisplayName].each do |k|
-      if layer[k].nil? || layer[k].to_s.empty?
-        raise ArgumentError, "ERROR: #{id} missing #{k}"
-      end
+      raise ArgumentError, "ERROR: #{id} missing #{k}" if layer[k].nil? || layer[k].to_s.empty?
     end
 
     k = 'LayerId'
@@ -55,13 +51,9 @@ class ValidateOgp
       raise ArgumentError, "ERROR: #{id} Invalid latitude value: #{layer[lat]}" unless lat?(layer[lat])
     end
 
-    if layer['MinX'].to_s.to_f > layer['MaxX'].to_s.to_f
-      raise ArgumentError, "ERROR: #{id} has MinX > MaxX"
-    end
+    raise ArgumentError, "ERROR: #{id} has MinX > MaxX" if layer['MinX'].to_s.to_f > layer['MaxX'].to_s.to_f
 
-    if layer['MinY'].to_s.to_f > layer['MaxY'].to_s.to_f
-      raise ArgumentError, "ERROR: #{id} has MinY > MaxY"
-    end
+    raise ArgumentError, "ERROR: #{id} has MinY > MaxY" if layer['MinY'].to_s.to_f > layer['MaxY'].to_s.to_f
 
     k = 'Institution'
     layer[k] = 'Columbia' if layer[k] == 'Columbia University'
@@ -71,14 +63,12 @@ class ValidateOgp
 
     k = 'DataType'
     layer[k] = 'Paper Map' if layer[k] == 'Paper'
-    if ([layer[k]] & %w[Line Paper\ Map Point Polygon Raster CD-ROM DVD-ROM]).empty?
+    if ([layer[k]] & ['Line', 'Paper Map', 'Point', 'Polygon', 'Raster', 'CD-ROM', 'DVD-ROM']).empty?
       raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}"
     end
 
     k = 'Access'
-    if ([layer[k]] & %w[Public Restricted]).empty?
-      raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}"
-    end
+    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" if ([layer[k]] & %w[Public Restricted]).empty?
 
     k = 'WorkspaceName'
     layer[k] = layer['Institution'] if layer[k].nil?
@@ -90,15 +80,11 @@ class ValidateOgp
     when 'offline'
       layer[k] = 'Offline'
     end
-    if ([layer[k]] & %w[Online Offline]).empty?
-      raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}"
-    end
+    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" if ([layer[k]] & %w[Online Offline]).empty?
 
     k = 'Location'
     layer[k] = validate_location(id, layer[k])
-    if layer[k].nil?
-      raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}"
-    end
+    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" if layer[k].nil?
 
     k = 'GeoReferenced'
     unless layer[k].nil? || (layer[k] == true)
@@ -107,9 +93,7 @@ class ValidateOgp
     end
 
     k = 'Area'
-    unless layer[k].to_i >= 0
-      raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}"
-    end
+    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" unless layer[k].to_i >= 0
 
     k = 'ContentDate'
     if layer[k].nil? || layer[k].to_s.strip.empty?
@@ -160,34 +144,33 @@ class ValidateOgp
     end
 
     %w[download wms wcs wfs url].each do |protocol|
-      begin
-        unless x[protocol].nil?
-          if x[protocol].is_a? String
-            if x[protocol].empty? || x[protocol] == 'None available'
-              x[protocol] = nil
-              next
-            else
-              x[protocol] = [x[protocol]]
-            end
+      unless x[protocol].nil?
+        if x[protocol].is_a? String
+          if x[protocol].empty? || x[protocol] == 'None available'
+            x[protocol] = nil
+            next
+          else
+            x[protocol] = [x[protocol]]
           end
-
-          unless x[protocol].is_a? Array
-            raise ArgumentError, "ERROR: #{id}: Unknown #{protocol} value: #{x}"
-          end
-
-          x[protocol].each do |url|
-            uri = URI.parse(url)
-            raise ArgumentError, "ERROR: #{id}: Invalid URL: #{uri}" unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS) || uri.is_a?(URI::FTP)
-          end
-
-          # convert from Array to String
-          x[protocol] = x[protocol].first if x[protocol].is_a? Array
-
-          @wms_servers[x[protocol]] = true if protocol == 'wms'
         end
-      rescue URI::InvalidURIError => e
-        raise ArgumentError, "ERROR: #{id}: Invalid URL parsing: #{x}"
+
+        raise ArgumentError, "ERROR: #{id}: Unknown #{protocol} value: #{x}" unless x[protocol].is_a? Array
+
+        x[protocol].each do |url|
+          uri = URI.parse(url)
+          unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS) || uri.is_a?(URI::FTP)
+            raise ArgumentError,
+                  "ERROR: #{id}: Invalid URL: #{uri}"
+          end
+        end
+
+        # convert from Array to String
+        x[protocol] = x[protocol].first if x[protocol].is_a? Array
+
+        @wms_servers[x[protocol]] = true if protocol == 'wms'
       end
+    rescue URI::InvalidURIError => e
+      raise ArgumentError, "ERROR: #{id}: Invalid URL parsing: #{x}"
     end
     x.to_json
   end

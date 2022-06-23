@@ -3,4 +3,6 @@
 # will use the application's secret key base instead.
 #
 
+# rubocop:disable Layout/LineLength
 # Blacklight.secret_key = '1f8b8df5dae9df3d32cbbb0bc2019c72b33e22db01470ab35fd5eb6c809a34ce742cbdf94b13272a7bb0ad2d2d5ed35d3fdca9a262696fb82cb50673fa392faf'
+# rubocop:enable Layout/LineLength
