@@ -41,7 +41,7 @@ describe SearchBuilder do
         params = { featured: 'geospatial_data' }
         subject.with(params)
         expect(subject.add_featured_content(solr_params)[:fq]).to eq [
-          '-layer_geom_type_s:Image AND -layer_geom_type_s:"Paper Map" AND -la'\
+          '-layer_geom_type_s:Image AND -layer_geom_type_s:"Paper Map" AND -la' \
           'yer_geom_type_s:Mixed AND -layer_geom_type_s:Table'
         ]
       end
@@ -52,7 +52,7 @@ describe SearchBuilder do
         params = { featured: 'census_data' }
         subject.with(params)
         expect(subject.add_featured_content(solr_params)[:fq]).to eq [
-          'dc_title_ti:census OR dc_description_ti:census OR dc_publisher_ti:c'\
+          'dc_title_ti:census OR dc_description_ti:census OR dc_publisher_ti:c' \
           'ensus OR dc_subject_tmi:census'
         ]
       end
@@ -63,7 +63,7 @@ describe SearchBuilder do
         params = { featured: 'california_data' }
         subject.with(params)
         expect(subject.add_featured_content(solr_params)[:fq]).to eq [
-          'dc_title_ti:california OR dc_description_ti:california OR dc_publis'\
+          'dc_title_ti:california OR dc_description_ti:california OR dc_publis' \
           'her_ti:california OR dc_subject_tmi:california'
         ]
       end

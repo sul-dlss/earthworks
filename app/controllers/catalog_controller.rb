@@ -103,20 +103,24 @@ class CatalogController < ApplicationController
     # Needed as a fallback for dc_rights_s facet selections that were previously linked, does not show up in UI
     config.add_facet_field 'dc_rights_s', label: 'Rights', partial: 'icon_facet', show: false
 
-    config.add_facet_field 'access', label: 'Access', query: {
-      restricted: {
-        label: 'Restricted', fq: 'dc_rights_s:Restricted'
-      },
-      public: {
-        label: 'Public', fq: 'dc_rights_s:Public'
-      },
-      available: {
-        label: 'Available', fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
-      },
-      unavailable: {
-        label: 'Unavailable', fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
-      }
-    }, partial: 'icon_facet'
+    config.add_facet_field 'access', label: 'Access',
+                                     query: {
+                                       restricted: {
+                                         label: 'Restricted', fq: 'dc_rights_s:Restricted'
+                                       },
+                                       public: {
+                                         label: 'Public', fq: 'dc_rights_s:Public'
+                                       },
+                                       available: {
+                                         label: 'Available',
+                                         fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
+                                       },
+                                       unavailable: {
+                                         label: 'Unavailable',
+                                         fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
+                                       }
+                                     },
+                                     partial: 'icon_facet'
     config.add_facet_field 'layer_geom_type_s', label: 'Data type', limit: 8, partial: 'icon_facet'
     config.add_facet_field 'dc_format_s', label: 'Format', limit: 3
 
