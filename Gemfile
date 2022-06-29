@@ -1,11 +1,17 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 6.1'
+gem 'rails', '~> 7.0'
+
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
+
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
-gem 'sass-rails', '>= 6'# Use Uglifier as compressor for JavaScript assets
+gem 'sassc-rails'
+
+# Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 # Use jquery as the JavaScript library
@@ -34,8 +40,6 @@ group :development do
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
 end
 
 group :development, :test do
@@ -66,7 +70,7 @@ group :production do
 end
 
 gem 'blacklight', '~> 7.24'
-gem "geoblacklight", '>= 3.3.1', '~> 3.2'
+gem "geoblacklight", '~> 3.7'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
@@ -79,7 +83,7 @@ gem 'blacklight_range_limit', '~> 7.0'
 gem 'redis', '~> 4.5.1' # 4.6.0 spews deprecation warnings out of sidekiq
 gem 'rsolr'
 gem 'geo_combine'
-gem 'geo_monitor', '~> 0.7'
+gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
 gem 'sidekiq'
 gem 'whenever', require: false
 gem 'bootstrap', '~> 4.0'
