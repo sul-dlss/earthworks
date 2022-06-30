@@ -1,65 +1,79 @@
+GIT
+  remote: https://github.com/geoblacklight/geo_monitor.git
+  revision: b4cad62d8bdd43c42e5f31f56fe62e666c5f03d2
+  specs:
+    geo_monitor (0.8.0)
+      faraday
+      rails (>= 5.2, < 7.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    actioncable (6.1.6)
-      actionpack (= 6.1.6)
-      activesupport (= 6.1.6)
+    actioncable (7.0.3)
+      actionpack (= 7.0.3)
+      activesupport (= 7.0.3)
       nio4r (~> 2.0)
       websocket-driver (>= 0.6.1)
-    actionmailbox (6.1.6)
-      actionpack (= 6.1.6)
-      activejob (= 6.1.6)
-      activerecord (= 6.1.6)
-      activestorage (= 6.1.6)
-      activesupport (= 6.1.6)
+    actionmailbox (7.0.3)
+      actionpack (= 7.0.3)
+      activejob (= 7.0.3)
+      activerecord (= 7.0.3)
+      activestorage (= 7.0.3)
+      activesupport (= 7.0.3)
       mail (>= 2.7.1)
-    actionmailer (6.1.6)
-      actionpack (= 6.1.6)
-      actionview (= 6.1.6)
-      activejob (= 6.1.6)
-      activesupport (= 6.1.6)
+      net-imap
+      net-pop
+      net-smtp
+    actionmailer (7.0.3)
+      actionpack (= 7.0.3)
+      actionview (= 7.0.3)
+      activejob (= 7.0.3)
+      activesupport (= 7.0.3)
       mail (~> 2.5, >= 2.5.4)
+      net-imap
+      net-pop
+      net-smtp
       rails-dom-testing (~> 2.0)
-    actionpack (6.1.6)
-      actionview (= 6.1.6)
-      activesupport (= 6.1.6)
-      rack (~> 2.0, >= 2.0.9)
+    actionpack (7.0.3)
+      actionview (= 7.0.3)
+      activesupport (= 7.0.3)
+      rack (~> 2.0, >= 2.2.0)
       rack-test (>= 0.6.3)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.0, >= 1.2.0)
-    actiontext (6.1.6)
-      actionpack (= 6.1.6)
-      activerecord (= 6.1.6)
-      activestorage (= 6.1.6)
-      activesupport (= 6.1.6)
+    actiontext (7.0.3)
+      actionpack (= 7.0.3)
+      activerecord (= 7.0.3)
+      activestorage (= 7.0.3)
+      activesupport (= 7.0.3)
+      globalid (>= 0.6.0)
       nokogiri (>= 1.8.5)
-    actionview (6.1.6)
-      activesupport (= 6.1.6)
+    actionview (7.0.3)
+      activesupport (= 7.0.3)
       builder (~> 3.1)
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
-    activejob (6.1.6)
-      activesupport (= 6.1.6)
+    activejob (7.0.3)
+      activesupport (= 7.0.3)
       globalid (>= 0.3.6)
-    activemodel (6.1.6)
-      activesupport (= 6.1.6)
-    activerecord (6.1.6)
-      activemodel (= 6.1.6)
-      activesupport (= 6.1.6)
-    activestorage (6.1.6)
-      actionpack (= 6.1.6)
-      activejob (= 6.1.6)
-      activerecord (= 6.1.6)
-      activesupport (= 6.1.6)
+    activemodel (7.0.3)
+      activesupport (= 7.0.3)
+    activerecord (7.0.3)
+      activemodel (= 7.0.3)
+      activesupport (= 7.0.3)
+    activestorage (7.0.3)
+      actionpack (= 7.0.3)
+      activejob (= 7.0.3)
+      activerecord (= 7.0.3)
+      activesupport (= 7.0.3)
       marcel (~> 1.0)
       mini_mime (>= 1.1.0)
-    activesupport (6.1.6)
+    activesupport (7.0.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     airbrussh (1.4.0)
@@ -155,6 +169,7 @@ GEM
     devise-remote-user (1.1.0)
       devise
     diff-lcs (1.5.0)
+    digest (3.1.0)
     dlss-capistrano (4.3.0)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.3.0)
@@ -239,9 +254,6 @@ GEM
       rsolr
       sanitize
       thor
-    geo_monitor (0.8.0)
-      faraday
-      rails (>= 5.2, < 6.2)
     geoblacklight (3.7.0)
       blacklight (~> 7.8)
       coderay
@@ -320,9 +332,23 @@ GEM
     multi_json (1.15.0)
     multipart-post (2.2.3)
     net-http-persistent (2.9.4)
-    net-scp (3.0.0)
-      net-ssh (>= 2.6.5, < 7.0.0)
-    net-ssh (6.1.0)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
+    net-pop (0.1.1)
+      digest
+      net-protocol
+      timeout
+    net-protocol (0.1.3)
+      timeout
+    net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
+    net-ssh (7.0.1)
     newrelic_rpm (8.8.0)
     nio4r (2.5.8)
     nokogiri (1.13.6)
@@ -349,32 +375,32 @@ GEM
       rack (>= 1.2.0)
     rack-test (2.0.2)
       rack (>= 1.3)
-    rails (6.1.6)
-      actioncable (= 6.1.6)
-      actionmailbox (= 6.1.6)
-      actionmailer (= 6.1.6)
-      actionpack (= 6.1.6)
-      actiontext (= 6.1.6)
-      actionview (= 6.1.6)
-      activejob (= 6.1.6)
-      activemodel (= 6.1.6)
-      activerecord (= 6.1.6)
-      activestorage (= 6.1.6)
-      activesupport (= 6.1.6)
+    rails (7.0.3)
+      actioncable (= 7.0.3)
+      actionmailbox (= 7.0.3)
+      actionmailer (= 7.0.3)
+      actionpack (= 7.0.3)
+      actiontext (= 7.0.3)
+      actionview (= 7.0.3)
+      activejob (= 7.0.3)
+      activemodel (= 7.0.3)
+      activerecord (= 7.0.3)
+      activestorage (= 7.0.3)
+      activesupport (= 7.0.3)
       bundler (>= 1.15.0)
-      railties (= 6.1.6)
-      sprockets-rails (>= 2.0.0)
+      railties (= 7.0.3)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
-    railties (6.1.6)
-      actionpack (= 6.1.6)
-      activesupport (= 6.1.6)
+    railties (7.0.3)
+      actionpack (= 7.0.3)
+      activesupport (= 7.0.3)
       method_source
       rake (>= 12.2)
       thor (~> 1.0)
+      zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
     rb-fsevent (0.11.1)
@@ -439,8 +465,6 @@ GEM
     sanitize (6.0.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -469,7 +493,6 @@ GEM
       minitar
       retriable
       ruby-progressbar
-    spring (4.0.0)
     sprockets (4.1.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -481,8 +504,10 @@ GEM
     sshkit (1.21.2)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    strscan (3.0.3)
     thor (1.2.1)
     tilt (2.0.10)
+    timeout (0.3.0)
     twitter-typeahead-rails (0.11.1)
       actionpack (>= 3.1)
       jquery-rails
@@ -544,8 +569,8 @@ DEPENDENCIES
   dlss-capistrano
   factory_bot_rails
   geo_combine
-  geo_monitor (~> 0.7)
-  geoblacklight (~> 3.2, >= 3.3.1)
+  geo_monitor (~> 0.7)!
+  geoblacklight (~> 3.7)
   hiredis (~> 0.6.3)
   honeybadger
   http
@@ -559,7 +584,7 @@ DEPENDENCIES
   puma (~> 5.0)
   rack-attack
   rack-mini-profiler (~> 2.0)
-  rails (~> 6.1)
+  rails (~> 7.0)
   recaptcha (>= 5.4.1)
   redis (~> 4.5.1)
   rexml
@@ -569,12 +594,12 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
-  sass-rails (>= 6)
+  sassc-rails
   selenium-webdriver (!= 3.13.0)
   sidekiq
   simplecov
   solr_wrapper
-  spring
+  sprockets-rails
   sqlite3
   twitter-typeahead-rails
   uglifier (>= 1.3.0)
