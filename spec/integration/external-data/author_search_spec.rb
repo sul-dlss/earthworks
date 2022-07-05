@@ -7,10 +7,7 @@ describe 'Author search', feature: true, 'data-integration': true do
     click_button 'search'
     expect(page).to have_css '.document', count: 1
     within '.document' do
-      # rubocop:disable Layout/LineLength
-      expect(page).to have_css 'a',
-                               text: 'Abundance Estimates of the Pacific Salmon Conservation Assessment Database, 1978-2008'
-      # rubocop:enable Layout/LineLength
+      expect(page).to have_link 'Abundance Estimates of the Pacific Salmon Conservation Assessment Database, 1978-2008'
     end
   end
 end
