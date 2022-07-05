@@ -5,7 +5,7 @@ describe 'Zero results' do
     visit search_catalog_path q: 'xyz'
     within '.noresults' do
       expect(page).to have_css '.ask-for-dataset'
-      expect(page).to have_css 'a', text: 'feedback'
+      expect(page).to have_link 'feedback'
     end
   end
 end
