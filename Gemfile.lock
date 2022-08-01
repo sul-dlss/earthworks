@@ -83,7 +83,7 @@ GEM
       execjs (~> 2)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    blacklight (7.28.0)
+    blacklight (7.29.0)
       deprecation
       globalid
       hashdiff
@@ -98,7 +98,7 @@ GEM
       rails
     blacklight_range_limit (7.9.1)
       blacklight (~> 7.0)
-    bootsnap (1.12.0)
+    bootsnap (1.13.0)
       msgpack (~> 1.2)
     bootstrap (4.6.1)
       autoprefixer-rails (>= 9.1.0)
@@ -170,7 +170,7 @@ GEM
       devise
     diff-lcs (1.5.0)
     digest (3.1.0)
-    dlss-capistrano (4.3.0)
+    dlss-capistrano (4.3.1)
       capistrano (~> 3.0)
       capistrano-bundle_audit (>= 0.3.0)
       capistrano-one_time_key
@@ -181,9 +181,9 @@ GEM
     dry-configurable (0.15.0)
       concurrent-ruby (~> 1.0)
       dry-core (~> 0.6)
-    dry-container (0.10.0)
+    dry-container (0.10.1)
       concurrent-ruby (~> 1.0)
-    dry-core (0.8.0)
+    dry-core (0.8.1)
       concurrent-ruby (~> 1.0)
     dry-inflector (0.3.0)
     dry-initializer (3.1.1)
@@ -361,7 +361,7 @@ GEM
     parallel (1.22.1)
     parser (3.1.2.0)
       ast (~> 2.4.1)
-    pg (1.4.1)
+    pg (1.4.2)
     popper_js (1.16.0)
     public_suffix (4.0.7)
     puma (5.6.4)
@@ -519,7 +519,7 @@ GEM
       unf_ext
     unf_ext (0.0.8.2)
     unicode-display_width (2.2.0)
-    view_component (2.61.1)
+    view_component (2.62.0)
       activesupport (>= 5.0.0, < 8.0)
       method_source (~> 1.0)
     warden (1.2.9)
