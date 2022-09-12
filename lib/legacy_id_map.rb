@@ -9,7 +9,7 @@ class LegacyIdMap
     private
 
     def path
-      File.join(Rails.root, 'config', 'legacy_id.map')
+      Rails.root.join('config', 'legacy_id.map')
     end
   end
 end
