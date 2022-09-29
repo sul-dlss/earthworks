@@ -1,0 +1,5 @@
+# .git-blame-ignore-revs
+# rubocop reformat
+e135112dcbb6bd38cb46e489865655974642288a
+# rubocop-performance reformat
+71de73bf052df7df76ae563956c2dc7839c24d2c
