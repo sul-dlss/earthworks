@@ -83,7 +83,7 @@ GEM
       execjs (~> 2)
     bcrypt (3.1.18)
     bindex (0.8.1)
-    blacklight (7.29.0)
+    blacklight (7.30.0)
       deprecation
       globalid
       hashdiff
