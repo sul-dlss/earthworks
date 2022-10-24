@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CheckLayerJob, type: :job do
+RSpec.describe CheckLayerJob do
   context 'when in Solr index' do
     let(:layer) { create(:layer, slug: 'tufts-cambridgegrid100-04', checktype: 'WMS') }
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Author search', feature: true, 'data-integration': true do
+describe 'Author search', 'data-integration': true, feature: true do
   it 'returns 1 result for pinsky' do
     visit root_path
     fill_in 'q', with: 'pinsky'
