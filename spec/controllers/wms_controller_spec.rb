@@ -6,12 +6,12 @@ describe WmsController do
 
     it 'rewrites restricted urls for a proxy' do
       expect(wms_layer).to receive(:feature_info)
-      expect(Geoblacklight::WmsLayer).to receive(:new).with(
-        URL: 'http://www.example-services.com/geoserver',
-        action: 'handle',
-        format: 'json',
-        controller: 'wms'
-      ).and_return(wms_layer)
+      expect(Geoblacklight::WmsLayer).to receive(:new).with({
+                                                              URL: 'http://www.example-services.com/geoserver',
+                                                              action: 'handle',
+                                                              format: 'json',
+                                                              controller: 'wms'
+                                                            }).and_return(wms_layer)
       post :handle, params: {
         format: :json,
         URL: 'http://www.example.com/restricted/geoserver'
