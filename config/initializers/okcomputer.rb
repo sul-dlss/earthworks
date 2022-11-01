@@ -9,4 +9,9 @@ OkComputer::Registry.register 'downloads-cache',
   OkComputer::DirectoryCheck.new(
     Settings.DOWNLOAD_PATH || (Rails.root + 'tmp/cache/downloads').to_s, true
   )
+
+OkComputer::Registry.register 'redis',
+  OkComputer::RedisCheck.new(url: ENV.fetch('REDIS_URL') { Settings.REDIS_URL })
 # rubocop:enable Layout/ArgumentAlignment
+
+OkComputer.make_optional %w[redis]
