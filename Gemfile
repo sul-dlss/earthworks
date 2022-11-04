@@ -84,7 +84,7 @@ gem 'redis', '~> 4.5.1' # 4.6.0 spews deprecation warnings out of sidekiq
 gem 'rsolr'
 gem 'geo_combine'
 gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
-gem 'sidekiq'
+gem 'sidekiq', '< 7' # Remain on v6 until Redis is updated to v7 on VMs
 gem 'whenever', require: false
 gem 'bootstrap', '~> 4.0'
 gem 'rack-attack' # For throttle configuration
