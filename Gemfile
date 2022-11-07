@@ -92,5 +92,5 @@ gem 'recaptcha', '>= 5.4.1'
 gem 'http'
 gem 'rexml'
 gem 'multi_json'
-
+gem 'view_component', github: 'jdelStrother/view_component', branch: 'config-fix'
 gem "hiredis", "~> 0.6.3"
