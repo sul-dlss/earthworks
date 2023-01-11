@@ -11,9 +11,6 @@ gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
 gem 'sassc-rails'
 
-# Use Uglifier as compressor for JavaScript assets
-gem 'uglifier', '>= 1.3.0'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
@@ -23,9 +20,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
-
   # Rubocop is a static code analyzer to enforce style.
   gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
@@ -39,7 +33,6 @@ group :development do
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
   gem 'rack-mini-profiler', '~> 2.0'
-  gem 'listen', '~> 3.3'
 end
 
 group :development, :test do
@@ -53,7 +46,6 @@ group :development, :test do
   gem 'solr_wrapper'
   gem 'sqlite3'
 end
-
 
 group :deployment do
   gem 'capistrano'
@@ -70,6 +62,7 @@ group :production do
 end
 
 gem 'blacklight', '~> 7.33'
+gem 'rsolr' # required for Blacklight
 gem "geoblacklight", '~> 3.7'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
@@ -90,7 +83,3 @@ gem 'bootstrap', '~> 4.0'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
-gem 'rexml'
-gem 'multi_json'
-
-gem "hiredis", "~> 0.6.3"
