@@ -7,7 +7,7 @@ Geospatial discovery application for Stanford University Libraries, built using 
 
 ## Developing
 ### Pre-requisites
-* Ruby 3.0. **Other versions may work but are unsupported.**
+* Ruby 3.1 or 3.2. **Other versions may work but are unsupported.**
 ### Installing
 Pull down the code:
 ```sh
