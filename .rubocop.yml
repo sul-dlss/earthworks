@@ -25,6 +25,10 @@ RSpec/DescribeClass:
     - 'spec/features/**/*'
     - 'spec/integration/**/*'
 
+RSpec/MultipleMemoizedHelpers:
+  Exclude:
+    - 'spec/lib/earthworks/harvester_spec.rb'
+
 Gemspec/DeprecatedAttributeAssignment: # new in 1.30
   Enabled: true
 Gemspec/RequireMFA: # new in 1.23

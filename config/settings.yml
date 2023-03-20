@@ -202,3 +202,63 @@ GEO_BLACKLIGHT_HARVEST_SITES:
       f:
         dct_provenance_s:
           - MIT
+
+# Repositories listed here will be harvested and indexed by rake tasks. See:
+# https://github.com/OpenGeoMetadata
+# If supplied, "provenance" value overrides the dct_provenance_s in the record
+# This creates a more consistent display in facets, etc.
+OGM_REPOS:
+  edu.nyu: # includes records from both NYU and Baruch CUNY
+  shared-repository: # multi-institutional
+  edu.princeton.arks:
+    provenance: Princeton
+  edu.mit:
+    provenance: MIT
+  edu.harvard:
+    provenance: Harvard
+  edu.columbia:
+    provenance: Columbia
+  edu.tufts:
+    provenance: Tufts
+  edu.virginia:
+    provenance: Virginia
+  edu.umich:
+    provenance: Michigan
+  edu.wisc:
+    provenance: Wisconsin
+  edu.umn:
+    provenance: Minnesota
+  edu.berkeley:
+    provenance: Berkeley
+  edu.cornell:
+    provenance: Cornell
+  edu.uiowa:
+    provenance: Iowa
+  edu.indiana:
+    provenance: Indiana
+  edu.purdue:
+    provenance: Purdue
+  edu.illinois:
+    provenance: Illinois
+  edu.msu:
+    provenance: Michigan State
+  edu.umd:
+    provenance: Maryland
+  edu.rutgers:
+    provenance: Rutgers
+  edu.psu:
+    provenance: Penn State
+  edu.osu:
+    provenance: Ohio State
+  edu.uchicago:
+    provenance: Chicago
+  edu.unl:
+    provenance: Nebraska
+  edu.colostate:
+    provenance: Colorado State
+  edu.gmu:
+    provenance: George Mason
+  edu.uarizona:
+    provenance: Arizona
+  edu.vt:
+    provenance: Virginia Tech
