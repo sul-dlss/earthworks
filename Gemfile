@@ -74,7 +74,7 @@ gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'redis', '~> 5.0'
-gem 'geo_combine'
+gem 'geo_combine', github: 'OpenGeoMetadata/GeoCombine'
 gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false
