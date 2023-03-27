@@ -14,6 +14,10 @@ jobs:
         ruby: ['3.1', '3.2']
     steps:
     - uses: actions/checkout@v3
+    # required to avoid https://github.com/actions/runner-images/issues/37
+    # because faraday depends on patron, which requires curl headers to build
+    - name: Install cURL Headers
+      run: sudo apt-get update && sudo apt-get install libcurl4-openssl-dev
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
       with:
