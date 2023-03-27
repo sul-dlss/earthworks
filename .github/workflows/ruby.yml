@@ -18,15 +18,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: ${{ matrix.ruby }}
-    - uses: actions/cache@v3
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-202206-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-202206-
-    - name: Bundle install
-      run: bundle config path vendor/bundle
-    - name: Install dependencies
+        bundler-cache: true
+    - name: Prepare application
       run: bin/setup
     - name: Run tests
       run: bundle exec rake ci
