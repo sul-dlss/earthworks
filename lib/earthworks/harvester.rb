@@ -49,7 +49,7 @@ module Earthworks
 
     # Only harvest configured repositories, if configuration was provided
     def repositories
-      @repositories ||= @ogm_repos ? super.compact.select { |repo| @ogm_repos.has_key?(repo.to_sym) } : super
+      @repositories ||= @ogm_repos ? super.compact.select { |repo| @ogm_repos.key?(repo.to_sym) } : super
     end
   end
 end
