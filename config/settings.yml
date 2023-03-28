@@ -38,7 +38,7 @@ FIELDS:
   :ISSUED: 'dct_issued_s'
 
 GEOMONITOR_TOLERANCE: 0.2
-GOOGLE_ANALYTICS_ID: 'UA-XXXXX-X'
+analytics_debug: true
 GOOGLE_SITE_VERIFICATION: '654321sitever'
 HOSTNAME: 'HOST'
 HOST_URL: 'http://www.example.com'

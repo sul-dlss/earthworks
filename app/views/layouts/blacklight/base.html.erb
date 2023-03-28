@@ -7,6 +7,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="<%= Settings.GOOGLE_SITE_VERIFICATION %>" />
   <meta name="msvalidate.01" content="<%= Settings.BING_SITE_VERIFICATION %>" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL7MQNBFW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    
+    const config = {};
+    <% if Settings.analytics_debug %>
+      config.debug_mode = true
+    <% end %>
+        
+    gtag('config', 'G-ZL7MQNBFW9', config)
+  </script>
   <%= favicon_link_tag 'favicon.ico' %>
   <meta name="description" content="Stanford University Libraries' official online search tool for geographic information systems (GIS), maps, and other geographic datasets." />
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -39,7 +53,7 @@
     <div id="su-content"> <!-- #su-content start -->
       <%= render 'shared/top_navbar' %>
       <%= render 'shared/header_navbar' %>
-      <div id='main-container' role='main' class='container mt-4' data-analytics-id="<%= Settings.GOOGLE_ANALYTICS_ID %>">
+      <div id='main-container' role='main' class='container mt-4'>
         <%= content_for(:container_header) %>
 
         <%= render :partial=>'/shared/flash_msg', layout: 'shared/flash_messages' %>
