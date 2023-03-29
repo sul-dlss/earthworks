@@ -259,23 +259,20 @@ GEM
       patron (>= 0.4.2)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
-    faraday_middleware (1.0.0)
-      faraday (~> 1.0)
     ffi (1.15.5)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    geoblacklight (3.7.0)
-      blacklight (~> 7.8)
+    geoblacklight (4.0.0)
+      blacklight (~> 7.12)
       coderay
       config
       deprecation
-      faraday (~> 1.0)
-      faraday_middleware (~> 1.0.0.rc1)
+      faraday (>= 1.0)
       geo_combine (~> 0.4)
       handlebars_assets
       mime-types
-      rails (>= 5.2.4, < 7.1)
+      rails (>= 6.1, < 7.1)
       rgeo-geojson
     git (1.18.0)
       addressable (~> 2.8)
@@ -562,6 +559,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -586,7 +584,7 @@ DEPENDENCIES
   factory_bot_rails
   geo_combine!
   geo_monitor (~> 0.7)!
-  geoblacklight (~> 3.7)
+  geoblacklight (~> 4.0)
   honeybadger
   http
   jbuilder (~> 2.5)
