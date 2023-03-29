@@ -1,3 +1,5 @@
+require 'earthworks/harvester'
+
 namespace :earthworks do
   desc 'Install EarthWorks'
   task install: [:environment] do
@@ -106,43 +108,31 @@ namespace :earthworks do
       end
     end
   end
+
+  # Customized tasks for OpenGeoMetadata records
   namespace :opengeometadata do
-    task setup: [:environment] do
-      ENV['OGM_PATH'] = 'tmp/opengeometadata'
-      ENV['OGM_PATH'] = '/var/tmp/opengeometadata' if File.directory?('/var/tmp/opengeometadata')
-      ENV['SOLR_URL'] = Blacklight.default_index.connection.uri.to_s
-      puts "Using OGM_PATH=#{ENV.fetch('OGM_PATH', nil)} SOLR_URL=#{ENV.fetch('SOLR_URL', nil)}"
+    desc 'Initialize OpenGeoMetadata repositories'
+    task :clone do
+      harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
+      total = harvester.clone
+      puts "Cloned #{total} repositories"
     end
 
-    desc 'Clone specific OpenGeoMetadata repositories for indexing'
-    task clone: ['earthworks:opengeometadata:setup'] do
-      %w[
-        edu.berkeley
-        edu.columbia
-        edu.nyu
-        edu.princeton.arks
-        edu.cornell
-        big-ten
-        edu.virginia
-      ].each do |repo|
-        system "rake geocombine:clone[#{repo}]" # need `system` to pick up ENV vars
-      end
-    end
-
-    desc 'Update OpenGeoMetadata repositories via git pull'
-    task pull: ['earthworks:opengeometadata:setup'] do
-      system 'rake geocombine:pull' # need `system` to pick up ENV vars
+    desc 'Fetch updated OpenGeoMetadata records for indexing'
+    task :pull do
+      harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
+      total = harvester.pull
+      puts "Updated #{total} repositories"
     end
 
     desc 'Index OpenGeoMetadata repositories'
-    task index: ['earthworks:opengeometadata:setup'] do
-      system 'rake geocombine:index' # need `system` to pick up ENV vars
+    task :index do
+      harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
+      indexer = GeoCombine::Indexer.new
+      puts "Indexing #{harvester.ogm_path} into #{indexer.solr_url}"
+      total = indexer.index(harvester.docs_to_index)
+      puts "Indexed #{total} documents"
     end
-
-    desc 'Run full OpenGeoMetadata indexing pipeline'
-    task pipeline: ['earthworks:opengeometadata:clone',
-                    'earthworks:opengeometadata:pull',
-                    'earthworks:opengeometadata:index']
 
     desc 'Index content from GeoBlacklight sites'
     task :harvest_geo_blacklight do

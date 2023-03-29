@@ -1,4 +1,18 @@
 GIT
+  remote: https://github.com/OpenGeoMetadata/GeoCombine.git
+  revision: c2c54279da4be9ef6105d5a8bf3fd30d552aa8ad
+  specs:
+    geo_combine (0.7.0)
+      activesupport
+      faraday-net_http_persistent (~> 2.0)
+      git
+      json-schema
+      nokogiri
+      rsolr
+      sanitize
+      thor
+
+GIT
   remote: https://github.com/geoblacklight/geo_monitor.git
   revision: b4cad62d8bdd43c42e5f31f56fe62e666c5f03d2
   specs:
@@ -154,6 +168,9 @@ GEM
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
     date (3.3.3)
+    debug (1.7.1)
+      irb (>= 1.5.0)
+      reline (>= 0.3.1)
     deep_merge (1.2.2)
     deprecation (1.1.0)
       activesupport
@@ -215,27 +232,31 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faraday (1.10.3)
+    faraday (1.9.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
-      faraday-httpclient (~> 1.0)
+      faraday-httpclient (< 3)
       faraday-multipart (~> 1.0)
-      faraday-net_http (~> 1.0)
-      faraday-net_http_persistent (~> 1.0)
-      faraday-patron (~> 1.0)
+      faraday-net_http (< 3)
+      faraday-net_http_persistent (< 3)
+      faraday-patron (< 3)
       faraday-rack (~> 1.0)
       faraday-retry (~> 1.0)
       ruby2_keywords (>= 0.0.4)
     faraday-em_http (1.0.0)
     faraday-em_synchrony (1.0.0)
     faraday-excon (1.1.0)
-    faraday-httpclient (1.0.1)
+    faraday-httpclient (2.0.1)
+      httpclient (>= 2.2)
     faraday-multipart (1.0.4)
       multipart-post (~> 2)
-    faraday-net_http (1.0.1)
-    faraday-net_http_persistent (1.2.0)
-    faraday-patron (1.0.0)
+    faraday-net_http (2.1.0)
+    faraday-net_http_persistent (2.0.2)
+      faraday-net_http (< 3)
+      net-http-persistent (~> 4.0)
+    faraday-patron (2.0.1)
+      patron (>= 0.4.2)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
     faraday_middleware (1.0.0)
@@ -244,14 +265,6 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    geo_combine (0.6.0)
-      activesupport
-      json-schema
-      net-http-persistent (~> 2.0)
-      nokogiri
-      rsolr
-      sanitize
-      thor
     geoblacklight (3.7.0)
       blacklight (~> 7.8)
       coderay
@@ -264,6 +277,9 @@ GEM
       mime-types
       rails (>= 5.2.4, < 7.1)
       rgeo-geojson
+    git (1.18.0)
+      addressable (~> 2.8)
+      rchardet (~> 1.8)
     globalid (1.1.0)
       activesupport (>= 5.0)
     handlebars_assets (0.23.9)
@@ -280,8 +296,12 @@ GEM
     http-cookie (1.0.5)
       domain_name (~> 0.5)
     http-form_data (2.3.0)
+    httpclient (2.8.3)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
+    io-console (0.6.0)
+    irb (1.6.3)
+      reline (>= 0.3.0)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
@@ -322,12 +342,12 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2023.0218.1)
     mini_mime (1.1.2)
-    mini_portile2 (2.8.1)
     minitar (0.9)
     minitest (5.18.0)
     msgpack (1.6.1)
     multipart-post (2.3.0)
-    net-http-persistent (2.9.4)
+    net-http-persistent (4.0.1)
+      connection_pool (~> 2.2)
     net-imap (0.3.4)
       date
       net-protocol
@@ -342,8 +362,7 @@ GEM
     net-ssh (7.1.0)
     newrelic_rpm (9.0.0)
     nio4r (2.5.8)
-    nokogiri (1.14.2)
-      mini_portile2 (~> 2.8.0)
+    nokogiri (1.14.2-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.14.2-x86_64-linux)
       racc (~> 1.4)
@@ -353,6 +372,7 @@ GEM
     parallel (1.22.1)
     parser (3.2.1.1)
       ast (~> 2.4.1)
+    patron (0.13.3)
     pg (1.4.6)
     popper_js (1.16.1)
     public_suffix (5.0.1)
@@ -394,6 +414,7 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    rchardet (1.8.0)
     recaptcha (5.12.3)
       json
     redis (5.0.6)
@@ -401,6 +422,8 @@ GEM
     redis-client (0.14.0)
       connection_pool
     regexp_parser (2.7.0)
+    reline (0.3.2)
+      io-console (~> 0.5)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -494,8 +517,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.6.2)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.6.2-x86_64-darwin)
     sqlite3 (1.6.2-x86_64-linux)
     sshkit (1.21.4)
       net-scp (>= 1.1.2)
@@ -539,7 +561,7 @@ GEM
     zeitwerk (2.6.7)
 
 PLATFORMS
-  ruby
+  x86_64-darwin-20
   x86_64-linux
 
 DEPENDENCIES
@@ -556,12 +578,13 @@ DEPENDENCIES
   capistrano-shared_configs
   capybara
   database_cleaner
+  debug
   devise
   devise-guests (>= 0.3.3)
   devise-remote-user
   dlss-capistrano
   factory_bot_rails
-  geo_combine
+  geo_combine!
   geo_monitor (~> 0.7)!
   geoblacklight (~> 3.7)
   honeybadger
@@ -596,4 +619,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.3.20
+   2.4.7
