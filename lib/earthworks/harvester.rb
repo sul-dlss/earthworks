@@ -9,7 +9,7 @@ module Earthworks
     def initialize(ogm_repos: ENV.fetch('OGM_REPOS'), **kwargs)
       super(**kwargs)
 
-      @ogm_repos = ogm_repos
+      @ogm_repos = ogm_repos.transform_keys(&:to_s)
     end
 
     # Support skipping and transforming arbitrary records prior to indexing
@@ -49,7 +49,7 @@ module Earthworks
 
     # Only harvest configured repositories, if configuration was provided
     def repositories
-      @repositories ||= @ogm_repos ? super.compact.select { |repo| @ogm_repos.key?(repo.to_sym) } : super
+      @repositories ||= @ogm_repos ? super.compact.select { |repo| @ogm_repos.key?(repo) } : super
     end
   end
 end
