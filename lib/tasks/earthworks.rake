@@ -114,14 +114,14 @@ namespace :earthworks do
     desc 'Initialize OpenGeoMetadata repositories'
     task :clone do
       harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
-      total = harvester.clone
+      total = harvester.clone_all
       puts "Cloned #{total} repositories"
     end
 
     desc 'Fetch updated OpenGeoMetadata records for indexing'
     task :pull do
       harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
-      total = harvester.pull
+      total = harvester.pull_all
       puts "Updated #{total} repositories"
     end
 
