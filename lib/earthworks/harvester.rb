@@ -9,7 +9,7 @@ module Earthworks
     def initialize(ogm_repos: ENV.fetch('OGM_REPOS'), **kwargs)
       super(**kwargs)
 
-      @ogm_repos = ogm_repos.transform_keys(&:to_s)
+      @ogm_repos = ogm_repos.to_h.transform_keys(&:to_s)
     end
 
     # Support skipping and transforming arbitrary records prior to indexing

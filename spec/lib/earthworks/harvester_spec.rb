@@ -36,7 +36,7 @@ RSpec.describe Earthworks::Harvester do
     it 'clones only repositories configured in settings' do
       expect(Git).to receive(:clone).twice
       expect(Git).not_to receive(:clone).with('https://github.com/OpenGeoMetadata/edu.stanford.git')
-      harvester.clone
+      harvester.clone_all
     end
   end
 
@@ -44,7 +44,7 @@ RSpec.describe Earthworks::Harvester do
     it 'pulls only repositories configured in settings' do
       expect(stub_repo).to receive(:pull).twice
       expect(stub_repo).not_to receive(:pull).with('edu.stanford')
-      harvester.pull
+      harvester.pull_all
     end
   end
 

@@ -256,8 +256,10 @@ OGM_REPOS:
     provenance: Nebraska
   edu.colostate:
     provenance: Colorado State
-  edu.gmu:
-    provenance: George Mason
+  # GMU records are incorrectly marked as v1.0 compliant when they are Aardvark.
+  # see: https://github.com/OpenGeoMetadata/edu.gmu/issues/1
+  # edu.gmu:
+  #   provenance: George Mason
   edu.uarizona:
     provenance: Arizona
   edu.vt:
