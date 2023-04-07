@@ -1,18 +1,4 @@
 GIT
-  remote: https://github.com/OpenGeoMetadata/GeoCombine.git
-  revision: 6b2fd2b5c5fd5718d22be141faefde30e0df8e48
-  specs:
-    geo_combine (0.7.0)
-      activesupport
-      faraday-net_http_persistent (~> 2.0)
-      git
-      json-schema
-      nokogiri
-      rsolr
-      sanitize
-      thor
-
-GIT
   remote: https://github.com/geoblacklight/geo_monitor.git
   revision: b4cad62d8bdd43c42e5f31f56fe62e666c5f03d2
   specs:
@@ -205,12 +191,12 @@ GEM
       concurrent-ruby (~> 1.0)
       dry-core (~> 1.0, < 2)
       zeitwerk (~> 2.6)
-    dry-schema (1.13.0)
+    dry-schema (1.13.1)
       concurrent-ruby (~> 1.0)
       dry-configurable (~> 1.0, >= 1.0.1)
       dry-core (~> 1.0, < 2)
       dry-initializer (~> 3.0)
-      dry-logic (>= 1.5, < 2)
+      dry-logic (>= 1.4, < 2)
       dry-types (>= 1.7, < 2)
       zeitwerk (~> 2.6)
     dry-types (1.7.1)
@@ -259,20 +245,26 @@ GEM
       patron (>= 0.4.2)
     faraday-rack (1.0.0)
     faraday-retry (1.0.3)
-    faraday_middleware (1.0.0)
-      faraday (~> 1.0)
     ffi (1.15.5)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
-    geoblacklight (3.7.0)
+    geo_combine (0.8.0)
+      activesupport
+      faraday-net_http_persistent (~> 2.0)
+      git
+      json-schema
+      nokogiri
+      rsolr
+      sanitize
+      thor
+    geoblacklight (3.8.0)
       blacklight (~> 7.8)
       coderay
       config
       deprecation
-      faraday (~> 1.0)
-      faraday_middleware (~> 1.0.0.rc1)
-      geo_combine (~> 0.4)
+      faraday (>= 1.0)
+      geo_combine (~> 0.8)
       handlebars_assets
       mime-types
       rails (>= 5.2.4, < 7.1)
@@ -584,9 +576,8 @@ DEPENDENCIES
   devise-remote-user
   dlss-capistrano
   factory_bot_rails
-  geo_combine!
   geo_monitor (~> 0.7)!
-  geoblacklight (~> 3.7)
+  geoblacklight (~> 3.8)
   honeybadger
   http
   jbuilder (~> 2.5)
