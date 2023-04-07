@@ -156,9 +156,6 @@ INSTITUTIONS:
   NYU:
     department: NYU Data Services
     email: data.services@nyu.edu
-  UVa:
-    department: The Scholars' Lab at UVa
-    email: slabgis@virginia.edu
   Michigan:
     department: UMich Spatial and Numeric Data Library
     email: nscholtz@umich.edu
@@ -220,8 +217,10 @@ OGM_REPOS:
     provenance: Columbia
   edu.tufts:
     provenance: Tufts
-  edu.virginia:
-    provenance: Virginia
+  # No longer publishing to OpenGeoMetadata. See:
+  # https://github.com/OpenGeoMetadata/edu.virginia/issues/13
+  # edu.virginia:
+  #   provenance: Virginia
   edu.umich:
     provenance: Michigan
   edu.wisc:
