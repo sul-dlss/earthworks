@@ -18,7 +18,7 @@ raise('GEOSERVER_PASS not provided') unless ENV['GEOSERVER_PASS']
 puts "Updating WMS default style for all raster layers on #{geoserver_url}"
 
 conn = Faraday.new(url: geoserver_url) do |faraday|
-  faraday.basic_auth(ENV.fetch('GEOSERVER_USER', nil), ENV.fetch('GEOSERVER_PASS', nil))
+  faraday.set_basic_auth(ENV.fetch('GEOSERVER_USER', nil), ENV.fetch('GEOSERVER_PASS', nil))
   faraday.adapter :net_http
 end
 

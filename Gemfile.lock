@@ -553,6 +553,7 @@ DEPENDENCIES
   devise-remote-user
   dlss-capistrano
   factory_bot_rails
+  faraday (~> 2.0)
   geo_monitor (~> 0.7)!
   geoblacklight (~> 3.8)
   honeybadger
