@@ -64,7 +64,7 @@ end
 
 gem 'blacklight', '~> 7.33'
 gem 'rsolr' # required for Blacklight
-gem "geoblacklight", '~> 3.7'
+gem "geoblacklight", '~> 3.8'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
@@ -75,7 +75,6 @@ gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'redis', '~> 5.0'
-gem 'geo_combine', github: 'OpenGeoMetadata/GeoCombine'
 gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false
