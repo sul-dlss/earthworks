@@ -1,12 +1,6 @@
-# Configurable Logo Used for CartoDB export
-APPLICATION_LOGO_URL: 'http://geoblacklight.org/images/geoblacklight-logo.png'
-
 BING_SITE_VERIFICATION: '4E61263975C6ABBF2ECE5A8CA5E592B7'
 
 THROTTLE_TRAFFIC: false
-
-# Carto OneClick Service https://carto.com/help/working-with-data/open-in-carto/
-CARTO_ONECLICK_LINK: 'http://oneclick.cartodb.com/'
 
 # ArcGIS Online Base URL
 ARCGIS_BASE_URL: 'https://www.arcgis.com/home/webmap/viewer.html'

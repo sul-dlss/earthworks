@@ -287,9 +287,6 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
       options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any?
     }
-    config.add_show_tools_partial :carto, partial: 'carto', if: proc { |_context, _config, options|
-      options[:document] && options[:document].carto_reference.present?
-    }
     config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options|
       options[:document] && options[:document].arcgis_urls.present?
     }
