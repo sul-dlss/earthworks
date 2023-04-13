@@ -12,7 +12,7 @@ pipeline {
       }
 
       when {
-        branch 'master'
+        branch 'main'
       }
 
       steps {
@@ -56,7 +56,7 @@ pipeline {
       }
 
       when {
-        branch 'master'
+        branch 'main'
       }
 
       steps {
