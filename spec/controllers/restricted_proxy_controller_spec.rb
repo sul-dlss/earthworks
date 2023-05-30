@@ -12,7 +12,7 @@ describe RestrictedProxyController do
 
   context 'with a current user' do
     before do
-      sign_in FactoryBot.create(:user)
+      sign_in create(:user)
       allow(HTTP).to receive(:get).and_return(
         double(:response, {
                  headers: { 'Content-Disposition' => 'image', 'Geowebcache-Stuff' => 'foo' },
