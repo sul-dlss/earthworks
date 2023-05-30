@@ -4,12 +4,12 @@ require 'rails_helper'
 
 RSpec.describe User do
   describe 'guests_without_bookmarks scope' do
-    let!(:guest_user_with_bookmarks) { FactoryBot.create(:user, guest: true) }
-    let!(:non_guest_user) { FactoryBot.create(:user, guest: false) }
+    let!(:guest_user_with_bookmarks) { create(:user, guest: true) }
+    let!(:non_guest_user) { create(:user, guest: false) }
 
     before do
       Bookmark.create(document: SolrDocument.new('stanford-abc123'), user: guest_user_with_bookmarks)
-      FactoryBot.create_list(:user, 10, guest: true)
+      create_list(:user, 10, guest: true)
     end
 
     it 'does not include non-guest users' do
