@@ -40,7 +40,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver', '!= 3.13.0'
-  gem 'webdrivers'
   gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'simplecov', require: false
