@@ -213,10 +213,10 @@ GEM
       zeitwerk (~> 2.6)
     erubi (1.12.0)
     execjs (2.9.1)
-    factory_bot (6.4.0)
+    factory_bot (6.2.1)
       activesupport (>= 5.0.0)
-    factory_bot_rails (6.4.0)
-      factory_bot (~> 6.4)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
     faraday (2.7.11)
       base64
@@ -562,7 +562,7 @@ DEPENDENCIES
   devise-guests (>= 0.3.3)
   devise-remote-user
   dlss-capistrano
-  factory_bot_rails
+  factory_bot_rails (~> 6.2.0)
   faraday (~> 2.0)
   geo_monitor (~> 0.7)!
   geoblacklight (~> 3.8)
