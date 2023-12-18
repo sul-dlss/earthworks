@@ -2,7 +2,7 @@ module FeaturedContentBehavior
   extend ActiveSupport::Concern
 
   def add_featured_content(solr_params)
-    featured_content_params = send("#{blacklight_params[:featured]}_content_params")
+    featured_content_params = send(:"#{blacklight_params[:featured]}_content_params")
     featured_content_params.each do |param|
       solr_params[:fq] ||= []
       solr_params[:fq] << param
