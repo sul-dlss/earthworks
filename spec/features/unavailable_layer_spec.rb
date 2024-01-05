@@ -7,17 +7,17 @@ describe 'Unavailable layer' do
       expect(page).to have_content 'Harvard'
       expect(page).to have_content 'unavailable to preview and download'
     end
-    expect(page).not_to have_content 'Download Shapefile'
+    expect(page).to have_no_content 'Download Shapefile'
   end
 
   it 'iiif layer' do
     visit solr_document_path 'princeton-02870w62c'
-    expect(page).not_to have_content 'unavailable to download'
+    expect(page).to have_no_content 'unavailable to download'
   end
 
   it 'oembed layer' do
     visit solr_document_path 'stanford-dt131hw5005'
-    expect(page).not_to have_content 'unavailable to preview and download'
+    expect(page).to have_no_content 'unavailable to preview and download'
   end
 
   it 'catalog index page should have availablility facets' do

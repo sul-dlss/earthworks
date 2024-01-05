@@ -6,7 +6,7 @@ describe 'Feedback form (js)', js: true do
   end
 
   it 'feedback form should be hidden' do
-    expect(page).not_to have_css('#feedback-form', visible: true)
+    expect(page).to have_no_css('#feedback-form', visible: true)
   end
 
   it 'feedback form should be shown filled out and submitted' do
