@@ -261,7 +261,7 @@ GEM
       sprockets (>= 2.0.0)
       tilt (>= 1.2)
     hashdiff (1.1.0)
-    honeybadger (5.4.1)
+    honeybadger (5.5.0)
     http (5.2.0)
       addressable (~> 2.8)
       base64 (~> 0.1)
@@ -353,7 +353,7 @@ GEM
     parser (3.3.0.5)
       ast (~> 2.4.1)
       racc
-    pg (1.5.4)
+    pg (1.5.5)
     popper_js (1.16.1)
     psych (5.1.2)
       stringio
@@ -404,7 +404,7 @@ GEM
     recaptcha (5.16.0)
     redis (5.1.0)
       redis-client (>= 0.17.0)
-    redis-client (0.19.1)
+    redis-client (0.20.0)
       connection_pool
     regexp_parser (2.9.0)
     reline (0.4.2)
@@ -484,7 +484,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
-    sidekiq (7.2.1)
+    sidekiq (7.2.2)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
       rack (>= 2.2.4)
