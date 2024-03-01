@@ -78,6 +78,7 @@ gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'redis', '~> 5.0'
 gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
+gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false
 gem 'bootstrap', '~> 4.0'

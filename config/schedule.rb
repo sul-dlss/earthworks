@@ -44,3 +44,8 @@ end
 every 1.day, at: '4:04 am', roles: %i[whenevs] do
   rake 'rake earthworks:prune_old_search_data[14]'
 end
+
+every :tuesday, at: '5:04 am', roles: %i[whenevs] do
+  rake 'rake earthworks:opengeometadata:pull'
+  rake 'rake earthworks:opengeometadata:index'
+end

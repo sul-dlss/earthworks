@@ -114,35 +114,20 @@ namespace :earthworks do
     desc 'Initialize OpenGeoMetadata repositories'
     task :clone do
       harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
-      total = harvester.clone_all
-      puts "Cloned #{total} repositories"
+      harvester.clone_all
     end
 
     desc 'Fetch updated OpenGeoMetadata records for indexing'
     task :pull do
       harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
-      total = harvester.pull_all
-      puts "Updated #{total} repositories"
+      harvester.pull_all
     end
 
     desc 'Index OpenGeoMetadata repositories'
     task :index do
       harvester = Earthworks::Harvester.new(ogm_repos: Settings.OGM_REPOS)
       indexer = GeoCombine::Indexer.new
-      puts "Indexing #{harvester.ogm_path} into #{indexer.solr_url}"
-      total = indexer.index(harvester.docs_to_index)
-      puts "Indexed #{total} documents"
-    end
-
-    desc 'Index content from GeoBlacklight sites'
-    task :harvest_geo_blacklight do
-      GeoCombine::GeoBlacklightHarvester.configure do
-        Settings.GEO_BLACKLIGHT_HARVEST_SITES.to_h
-      end
-
-      Settings.GEO_BLACKLIGHT_HARVEST_SITES.to_h.keys.each do |site_key|
-        Rake::Task['geocombine:geoblacklight_harvester:index'].invoke(site_key)
-      end
+      indexer.index(harvester.docs_to_index)
     end
   end
 
