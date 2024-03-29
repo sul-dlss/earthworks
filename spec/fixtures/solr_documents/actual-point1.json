@@ -1,28 +1,29 @@
 {
-  "uuid": "urn:columbia.edu:Columbia.landinfo_global_aet",
-  "dc_description_s": "Actual Evapotrans is a point theme representing the sum of evaporation and plant transpiration to the atmosphere from throughout the world.  Measurements are represented by points at every.5 degrees and provided for every month of the year. This dataset is a part of the Global Climate Database from the Global Change Department National Institute of Public Health and Environmental Protection.",
-  "dc_format_s": "Shapefile",
-  "dc_identifier_s": "urn:columbia.edu:Columbia.landinfo_global_aet",
-  "dc_language_s": "English",
-  "dc_rights_s": "Public",
-  "dc_title_s": "Actual Evapotrans",
-  "dc_publisher_s": "",
-  "dc_type_s": "Dataset",
+  "dct_description_sm": [
+    "Actual Evapotrans is a point theme representing the sum of evaporation and plant transpiration to the atmosphere from throughout the world.  Measurements are represented by points at every.5 degrees and provided for every month of the year. This dataset is a part of the Global Climate Database from the Global Change Department National Institute of Public Health and Environmental Protection."
+  ],
+  "dct_format_s": "Shapefile",
+  "dct_identifier_sm": ["urn:columbia.edu:Columbia.landinfo_global_aet"],
+  "dct_language_sm": ["eng"],
+  "dct_accessRights_s": "Public",
+  "dct_title_s": "Actual Evapotrans",
+  "dct_publisher_sm": [""],
   "dct_references_s": "{\"http://www.opengis.net/cat/csw/csdgm\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/Columbia:Columbia.landinfo_global_aet/fgdc.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/Columbia:Columbia.landinfo_global_aet/fgdc.html\"}",
   "dct_spatial_sm": [
     "World",
     "Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet. Erat me exerci eorum anteposuerit quam. Liber feugait iis lorem assum imperdiet. Nibh luptatum ipsum quis notare tation. Clari seacula aliquam futurum nunc sed. Lectorum eu lius velit tation lius. Delenit placerat claritas diam hendrerit diam. Dolor vero non nulla anteposuerit imperdiet."
   ],
-  "dct_temporal_sm": [
-    "1996"
-  ],
-  "dct_provenance_s": "Columbia",
+  "dct_temporal_sm": ["1996"],
+  "schema_provider_s": "Columbia",
   "georss_box_s": "-56.0 -179.5 83.0 180.0",
   "georss_polygon_s": "83.0 -179.5 83.0 180.0 -56.0 180.0 -56.0 -179.5 83.0 -179.5",
-  "layer_slug_s": "columbia-columbia-landinfo-global-aet",
-  "layer_id_s": "Columbia:Columbia.landinfo_global_aet",
-  "layer_geom_type_s": "Point",
-  "layer_modified_dt": "2014-12-12T19:54:57Z",
-  "solr_geom": "ENVELOPE(-179.5, 180.0, 83.0, -56.0)",
-  "solr_year_i": 1996
+  "id": "columbia-columbia-landinfo-global-aet",
+  "gbl_wxsIdentifier_s": "Columbia:Columbia.landinfo_global_aet",
+  "gbl_mdModified_dt": "2014-12-12T19:54:57Z",
+  "dcat_bbox": "ENVELOPE(-179.5, 180.0, 83.0, -56.0)",
+	"locn_geometry": "ENVELOPE(-179.5, 180.0, 83.0, -56.0)",
+  "gbl_indexYear_im": [1996],
+  "gbl_resourceClass_sm": ["Datasets"],
+  "gbl_resourceType_sm": ["Point data"],
+  "gbl_mdVersion_s": "Aardvark"
 }

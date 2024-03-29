@@ -5,15 +5,10 @@ class SolrDocument
   include RightsMetadataConcern
   include WmsRewriteConcern
 
-  # self.unique_key = 'id'
-  self.unique_key = 'layer_slug_s'
-
-  field_semantics[:author] = :dc_creator_sm
-  field_semantics[:title] = :dc_title_s
-  field_semantics[:year] = :dct_temporal_sm
+  alias stanford? same_institution?
 
   def institution
-    fetch(Settings.FIELDS.PROVENANCE)
+    fetch(Settings.FIELDS.PROVIDER, '')
   end
 
   def contact_email
@@ -25,11 +20,11 @@ class SolrDocument
   end
 
   def collection?
-    fetch(Settings.FIELDS.GEOM_TYPE, nil) == 'Collection'
+    fetch(Settings.FIELDS.RESOURCE_CLASS, []).include? 'Collections'
   end
 
   def mixed?
-    fetch(Settings.FIELDS.GEOM_TYPE, nil) == 'Mixed'
+    fetch(Settings.FIELDS.RESOURCE_CLASS, []) == 'Other'
   end
 
   # Email uses the semantic field mappings below to generate the body of an email.

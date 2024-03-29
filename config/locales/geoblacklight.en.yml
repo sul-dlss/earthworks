@@ -3,5 +3,5 @@ en:
     home:
       headline: 'Discover and download GIS data and maps'
     relations:
-      ancestor: Item belongs to a collection
-      descendant: Collection items
+      member_of_ancestors: 'Item belongs to a collection'
+      member_of_descendants: 'Collection items'

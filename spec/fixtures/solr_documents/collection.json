@@ -1,31 +1,25 @@
 {
-  "dc_identifier_s": "http://purl.stanford.edu/bq589tv8583",
-  "dc_title_s": "Metropolitan Transportation Commission GIS Maps & Data",
-  "dc_description_s": "by Bay Area Metropolitan Transportation Commission These are geospatial data layers acquired from the Bay Area Metropolitan Transportation Commission (MTC) spatial data library. Layers contain feature data related to transportation, administrative boundaries, demographics, environmental factors, census activities, and regional projects. New data layers are added on an ongoing basis.",
-  "dc_rights_s": "Public",
-  "layer_modified_dt": "2020-03-21T21:39:02Z",
+  "dct_identifier_sm": ["http://purl.stanford.edu/bq589tv8583"],
+  "dct_title_s": "Metropolitan Transportation Commission GIS Maps & Data",
+  "dct_description_sm": [
+    "by Bay Area Metropolitan Transportation Commission These are geospatial data layers acquired from the Bay Area Metropolitan Transportation Commission (MTC) spatial data library. Layers contain feature data related to transportation, administrative boundaries, demographics, environmental factors, census activities, and regional projects. New data layers are added on an ongoing basis."
+  ],
+  "dct_accessRights_s": "Public",
+  "gbl_mdModified_dt": "2020-03-21T21:39:02Z",
   "dct_issued_s": "c2010",
-  "layer_geom_type_s": "Collection",
-  "dc_language_s": "English",
-  "dc_subject_sm": [
-    "Transportation",
-    "Boundaries",
-    "Census"
-  ],
-  "dct_spatial_sm": [
-    "San Francisco Bay Area",
-    "California"
-  ],
-  "dc_publisher_s": "California. Metropolitan Transportation Commission",
-  "dc_creator_sm": [
-    "California Metropolitan Transportation Commission"
-  ],
+  "dct_language_sm": ["eng"],
+  "dct_subject_sm": ["Transportation", "Boundaries", "Census"],
+  "dct_spatial_sm": ["San Francisco Bay Area", "California"],
+  "dct_publisher_sm": ["California. Metropolitan Transportation Commission"],
+  "dct_creator_sm": ["California Metropolitan Transportation Commission"],
   "layer_availability_score_f": 1,
-  "geoblacklight_version": "1.0",
+  "gbl_mdVersion_s": "Aardvark",
   "dct_references_s": "{\"http://schema.org/url\":\"https://purl.stanford.edu/bq589tv8583\",\"http://www.loc.gov/mods/v3\":\"https://purl.stanford.edu/bq589tv8583.mods\"}",
-  "solr_geom": "ENVELOPE(-123.10749999999999, -122.32777777777777, 37.92972222222222, 37.69333333333333)",
-  "layer_slug_s": "stanford-bq589tv8583",
-  "dct_provenance_s": "Stanford",
+  "dcat_bbox": "ENVELOPE(-123.10749999999999, -122.32777777777777, 37.92972222222222, 37.69333333333333)",
+	"locn_geometry": "ENVELOPE(-123.10749999999999, -122.32777777777777, 37.92972222222222, 37.69333333333333)",
+  "id": "stanford-bq589tv8583",
+  "schema_provider_s": "Stanford",
   "stanford_rights_metadata_s": "<rightsMetadata>\n    <access type=\"discover\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <access type=\"read\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <use>\n      <human type=\"useAndReproduction\">This item is in the public domain.  There are no restrictions on use.</human>\n      <human type=\"creativeCommons\"/>\n      <machine type=\"creativeCommons\"/>\n    </use>\n    <copyright>\n      <human>This work is in the Public Domain, meaning that it is not subject to copyright.</human>\n    </copyright>\n  </rightsMetadata>",
-  "solr_year_i": 2010
+  "gbl_indexYear_im": [2010],
+  "gbl_resourceClass_sm": ["Other"]
 }

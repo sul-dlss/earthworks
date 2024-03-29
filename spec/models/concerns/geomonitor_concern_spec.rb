@@ -7,8 +7,8 @@ describe GeomonitorConcern do
     describe 'for Stanford resources' do
       let(:document_attributes) do
         {
-          dct_provenance_s: 'Stanford',
-          dc_rights_s: 'Restricted'
+          schema_provider_s: 'Stanford',
+          dct_accessRights_s: 'Restricted'
         }
       end
 
@@ -20,8 +20,8 @@ describe GeomonitorConcern do
     describe 'for resources less than threshold tolerance' do
       let(:document_attributes) do
         {
-          dct_provenance_s: 'Harvard',
-          dc_rights_s: 'Restricted',
+          schema_provider_s: 'Harvard',
+          dct_accessRights_s: 'Restricted',
           layer_availability_score_f: 0.6
         }
       end

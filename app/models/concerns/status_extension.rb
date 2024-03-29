@@ -7,7 +7,7 @@ module StatusExtension
   def update_index
     data = [{
       layer_availability_score_f: { set: layer.availability_score },
-      layer_slug_s: layer.slug
+      id: layer.id
     }]
     Indexer.new.solr_update(data)
   end

@@ -7,8 +7,8 @@ describe WmsRewriteConcern do
     describe 'for stanford restricted' do
       let(:document_attributes) do
         {
-          dct_provenance_s: 'Stanford',
-          dc_rights_s: 'Restricted',
+          schema_provider_s: 'Stanford',
+          dct_accessRights_s: 'Restricted',
           dct_references_s: {
             'http://www.opengis.net/def/serviceType/ogc/wms' => 'http://www.example.com/geoserver/wms'
           }.to_json
@@ -23,8 +23,8 @@ describe WmsRewriteConcern do
     describe 'for not stanford or public' do
       let(:document_attributes) do
         {
-          dct_provenance_s: 'Princeton',
-          dc_rights_s: 'Restricted',
+          schema_provider_s: 'Princeton',
+          dct_accessRights_s: 'Restricted',
           dct_references_s: {
             'http://www.opengis.net/def/serviceType/ogc/wms' => 'http://www.example.com/geoserver/wms'
           }.to_json
@@ -37,27 +37,9 @@ describe WmsRewriteConcern do
     end
   end
 
-  describe 'is_stanford_restricted?' do
-    describe 'for Stanford and Restricted' do
-      let(:document_attributes) { { dct_provenance_s: 'Stanford', dc_rights_s: 'Restricted' } }
-
-      it 'identifies restricted stanford documents' do
-        expect(document.is_stanford_restricted?).to be_truthy
-      end
-    end
-
-    describe 'for Stanford public' do
-      let(:document_attributes) { { dct_provenance_s: 'Stanford', dc_rights_s: 'Public' } }
-
-      it 'requires both conditions' do
-        expect(document.is_stanford_restricted?).to be_falsey
-      end
-    end
-  end
-
   describe 'stanford?' do
     describe 'for stanford' do
-      let(:document_attributes) { { dct_provenance_s: 'Stanford' } }
+      let(:document_attributes) { { schema_provider_s: 'Stanford' } }
 
       it 'identifies stanford documents' do
         expect(document.stanford?).to be_truthy
@@ -65,7 +47,7 @@ describe WmsRewriteConcern do
     end
 
     describe 'for non stanford' do
-      let(:document_attributes) { { dct_provenance_s: 'Princeton' } }
+      let(:document_attributes) { { schema_provider_s: 'Princeton' } }
 
       it 'identifies stanford documents' do
         expect(document.stanford?).to be_falsey

@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema name="geoblacklight-schema" version="1.6">
-  <uniqueKey>layer_slug_s</uniqueKey>
+<schema name="geoblacklight-schema" version="4.0">
+  <uniqueKey>id</uniqueKey>
   <fields>
     <field name="_version_" type="long"   stored="true" indexed="true"/>
     <field name="timestamp" type="date"   stored="true" indexed="true" default="NOW"/>
-    <field name="layer_slug_s" type="string" stored="true" indexed="true" required="true"/>
-    <field name="geoblacklight_version" type="string" stored="true" indexed="true"/>
-    <field name="uuid"      type="string" stored="true" indexed="true"/><!-- deprecated -->
+    <field name="id"        type="string" stored="true" indexed="true" required="true"/>
 
     <!-- core generated fields -->
     <field name="text" type="text_en" stored="false" indexed="true" multiValued="true"
                        termVectors="true" termPositions="true" termOffsets="true" />
+
+    <!-- Spatial Field Type: Represents the exent of the resource and powers map search functionality.
+      Value can be any valid WKT or ENVELOPE String:
+        <field name="locn_geometry">POLYGON((1 8, 1 9, 2 9, 2 8, 1 8))</field>
+        <field name="locn_geometry">ENVELOPE(-117.312, -115.39, 84.31, 83.1)</field> -->
+    <field name="locn_geometry" type="location_geo3d" stored="true" indexed="true"/>
+
+    <!-- Spatial Field Type: The bounding box of the resource. Used in overlap ratio boosting.
+      Value must be an ENVELOPE String:
+        <field name="dcat_bbox">ENVELOPE(-117.312, -115.39, 84.31, 83.1)</field> -->
+    <field name="dcat_bbox" type="location_rpt" stored="true" indexed="true"/>
+
+    <!-- Spatial Field Type: Used to display the center point of a resource. -->
+    <field name="dcat_centroid" type="location" stored="true" indexed="true"/>
+
+    <!-- Spatial Field Type: Internal field used for overlap ratio boosting. -->
+    <field name="solr_bboxtype" type="bbox" stored="true" indexed="true"/>
 
     <!-- dynamic field with simple types by suffix -->
     <dynamicField name="*_b"    type="boolean" stored="true"  indexed="true"/>
@@ -18,12 +33,11 @@
     <dynamicField name="*_dt"   type="date"    stored="true"  indexed="true"/>
     <dynamicField name="*_f"    type="float"   stored="true"  indexed="true"/>
     <dynamicField name="*_i"    type="int"     stored="true"  indexed="true"/>
-    <dynamicField name="*_im"   type="int"     stored="true"  indexed="true" multiValued="true" />
+    <dynamicField name="*_im"   type="int"     stored="true"  indexed="true" multiValued="true" sortMissingLast="true" />
     <dynamicField name="*_l"    type="long"    stored="true"  indexed="true"/>
     <dynamicField name="*_s"    type="string"  stored="true"  indexed="true"/>
     <dynamicField name="*_ss"   type="string"  stored="true"  indexed="false"/>
     <dynamicField name="*_si"   type="string"  stored="false" indexed="true"/>
-    <dynamicField name="*_ssi"  type="string"  stored="true"  indexed="true" omitNorms="true" />
     <dynamicField name="*_sim"  type="string"  stored="false" indexed="true" multiValued="true" />
     <dynamicField name="*_sm"   type="string"  stored="true"  indexed="true" multiValued="true" />
     <dynamicField name="*_url"  type="string"  stored="true"  indexed="false"/>
@@ -44,26 +58,8 @@
 
     <dynamicField name="*suggest" type="textSuggest" indexed="true" stored="false" multiValued="true" />
 
-    <!-- Spatial field types:
-
-         Solr3:
-           <field name="my_pt">83.1,-117.312</field>
-             as (y,x)
-
-         Solr4:
-
-           <field name="my_bbox">-117.312 83.1 -115.39 84.31</field>
-             as (W S E N)
-
-           <field name="my_geom">ENVELOPE(-117.312, -115.39, 84.31, 83.1)</field>
-             as (W E N S)
-
-           <field name="my_jts">POLYGON((1 8, 1 9, 2 9, 2 8, 1 8))</field>
-             as WKT for point, linestring, polygon
-
-      -->
-    <dynamicField name="*_bbox" type="location_rpt" stored="true" indexed="true"/><!-- deprecated -->
-    <dynamicField name="*_geom" type="location_rpt" stored="true" indexed="true"/>
+    <!-- date range (_drsim) -->
+    <dynamicField name="*_drsim" type="dateRange" stored="true" indexed="true" multiValued="true"/>
   </fields>
 
   <types>
@@ -79,6 +75,9 @@
          The trailing "Z" designates UTC time and is mandatory.
          A Trie based date field for faster date range queries and date faceting. -->
     <fieldType name="date" class="solr.TrieDateField" precisionStep="6" positionIncrementGap="0"/>
+
+    <!-- A DateRange based date field for truly faster date range queries. -->
+    <fieldType name="dateRange" class="solr.DateRangeField"/>
 
     <!--Binary data type. The data should be sent/retrieved in as Base64 encoded Strings -->
     <fieldtype name="binary" class="solr.BinaryField"/>
@@ -134,54 +133,65 @@
         <tokenizer class="solr.KeywordTokenizerFactory"/>
         <filter class="solr.LowerCaseFilterFactory"/>
         <filter class="solr.RemoveDuplicatesTokenFilterFactory"/>
-        <filter class="solr.LengthFilterFactory" min="2" max="255"/>
       </analyzer>
     </fieldType>
 
     <!-- Spatial field types -->
     <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
                geo="true" distErrPct="0.025" maxDistErr="0.001" distanceUnits="kilometers"/>
+    <fieldType name="location_geo3d"
+      class="solr.SpatialRecursivePrefixTreeFieldType"
+      spatialContextFactory="Geo3D"
+      prefixTree="s2"
+      geo="true"
+      maxDistErr="0.001"
+      planetModel="WGS84"/>
 
+    <!-- Adding field type for bboxField that enables, among other things, overlap ratio calculations -->
+    <fieldType name="bbox" class="solr.BBoxField"
+           geo="true" distanceUnits="kilometers" numberType="pdouble" />
+    <fieldType name="pdouble" class="solr.DoublePointField" docValues="true"/>
   </types>
 
   <!-- for scoring formula -->
   <copyField source="dct_spatial_sm"     dest="dct_spatial_tmi"     maxChars="10000"/>
   <copyField source="dct_temporal_sm"    dest="dct_temporal_tmi"    maxChars="10000"/>
-  <copyField source="dc_creator_sm"      dest="dc_creator_tmi"      maxChars="1000"/>
-  <copyField source="dc_description_s"   dest="dc_description_ti"   maxChars="10000"/>
-  <copyField source="dc_format_s"        dest="dc_format_ti"        maxChars="100"/>
-  <copyField source="dc_identifier_s"    dest="dc_identifier_ti"    maxChars="100"/>
-  <copyField source="dc_publisher_s"     dest="dc_publisher_ti"     maxChars="1000"/>
-  <copyField source="dc_rights_s"        dest="dc_rights_ti"        maxChars="100"/>
-  <copyField source="dct_provenance_s"   dest="dct_provenance_ti"   maxChars="1000"/>
-  <copyField source="dc_subject_sm"      dest="dc_subject_tmi"      maxChars="10000"/>
-  <copyField source="dc_title_s"         dest="dc_title_ti"         maxChars="1000"/>
+  <copyField source="dct_creator_sm"      dest="dct_creator_tmi"      maxChars="1000"/>
+  <copyField source="dct_description_sm"   dest="dct_description_tmi"   maxChars="10000"/>
+  <copyField source="dct_format_s"        dest="dct_format_ti"        maxChars="100"/>
+  <copyField source="dct_identifier_sm"    dest="dct_identifier_tmi"    maxChars="100"/>
+  <copyField source="dct_publisher_sm"     dest="dct_publisher_tmi"     maxChars="1000"/>
+  <copyField source="dct_accessRights_s"        dest="dct_accessRights_ti"        maxChars="100"/>
+  <copyField source="schema_provider_s"   dest="dct_provider_ti"   maxChars="1000"/>
+  <copyField source="dct_subject_sm"      dest="dct_subject_tmi"      maxChars="10000"/>
+  <copyField source="dct_title_s"         dest="dct_title_ti"         maxChars="1000"/>
   <copyField source="dct_isPartOf_sm"    dest="dct_isPartOf_tmi"    maxChars="1000"/>
-  <copyField source="layer_geom_type_s"  dest="layer_geom_type_ti"  maxChars="100"/>
-  <copyField source="layer_slug_s"       dest="layer_slug_ti"       maxChars="100"/>
+  <copyField source="id"       dest="layer_slug_ti"       maxChars="100"/>
 
   <!-- core text search -->
-  <copyField source="*_ti"               dest="text" />
-  <copyField source="*_tmi"              dest="text" />
+  <copyField source="*_s"                dest="text" />
+  <copyField source="*_sm"               dest="text" />
 
   <!-- for sorting text fields -->
-  <copyField source="dct_provenance_s"   dest="dct_provenance_sort"/>
-  <copyField source="dc_publisher_s"     dest="dc_publisher_sort"/>
-  <copyField source="dc_title_s"         dest="dc_title_sort"/>
+  <copyField source="schema_provider_s"   dest="schema_provider_sort"/>
+  <copyField source="dct_title_s"         dest="dct_title_sort"/>
 
   <!-- for spell checking -->
-  <copyField source="dc_title_s" dest="spell"/>
-  <copyField source="dc_creator_sm" dest="spell"/>
-  <copyField source="dc_publisher_s" dest="spell"/>
-  <copyField source="dct_provenance_s" dest="spell"/>
-  <copyField source="dc_subject_sm" dest="spell"/>
+  <copyField source="dct_title_s" dest="spell"/>
+  <copyField source="dct_creator_sm" dest="spell"/>
+  <copyField source="dct_publisher_sm" dest="spell"/>
+  <copyField source="schema_provider_s" dest="spell"/>
+  <copyField source="dct_subject_sm" dest="spell"/>
   <copyField source="dct_spatial_sm" dest="spell"/>
 
   <!-- for suggestions -->
-  <copyField source="dc_title_s" dest="suggest"/>
-  <copyField source="dc_creator_sm" dest="suggest"/>
-  <copyField source="dc_publisher_s" dest="suggest"/>
-  <copyField source="dct_provenance_s" dest="suggest"/>
-  <copyField source="dc_subject_sm" dest="suggest"/>
+  <copyField source="dct_title_s" dest="suggest"/>
+  <copyField source="dct_creator_sm" dest="suggest"/>
+  <copyField source="dct_publisher_sm" dest="suggest"/>
+  <copyField source="schema_provider_s" dest="suggest"/>
+  <copyField source="dct_subject_sm" dest="suggest"/>
   <copyField source="dct_spatial_sm" dest="suggest"/>
+
+  <!-- for bbox value -->
+  <copyField source="dcat_bbox" dest="solr_bboxtype"/>
 </schema>
