@@ -1,7 +1,6 @@
 require 'blacklight/catalog'
 require 'legacy_id_map'
 
-# rubocop:disable Metrics/ClassLength
 class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
@@ -102,19 +101,21 @@ class CatalogController < ApplicationController
     }
     config.add_facet_field Settings.FIELDS.ACCESS_RIGHTS, label: 'Access', limit: 8,
                                                           item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field 'availability',
-                           label: 'Availability',
-                           query: {
-                             available: {
-                               label: 'Available',
-                               fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
-                             },
-                             unavailable: {
-                               label: 'Unavailable',
-                               fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
-                             }
-                           },
-                           item_component: Geoblacklight::IconFacetItemComponent
+    # Disabled until GeoMonitor is updated for v4.x compatibility
+    # https://github.com/geoblacklight/geo_monitor/issues/12
+    # config.add_facet_field 'availability',
+    #                        label: 'Availability',
+    #                        query: {
+    #                          available: {
+    #                            label: 'Available',
+    #                            fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
+    #                          },
+    #                          unavailable: {
+    #                            label: 'Unavailable',
+    #                            fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
+    #                          }
+    #                        },
+    #                        item_component: Geoblacklight::IconFacetItemComponent
     config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8
     config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Resource Type', limit: 8
     config.add_facet_field Settings.FIELDS.FORMAT, label: 'Format', limit: 8
@@ -356,4 +357,3 @@ class CatalogController < ApplicationController
     end
   end
 end
-# rubocop:enable Metrics/ClassLength

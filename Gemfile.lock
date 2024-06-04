@@ -1,11 +1,3 @@
-GIT
-  remote: https://github.com/geoblacklight/geo_monitor.git
-  revision: 28d61996677292730a9285f5686e4f5a193c8fae
-  specs:
-    geo_monitor (0.8.0)
-      faraday
-      rails (>= 6.1, < 7.2)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -580,7 +572,6 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2.0)
   faraday (~> 2.0)
   geo_combine (>= 0.9)
-  geo_monitor (~> 0.7)!
   geoblacklight (~> 4.3.0)
   honeybadger
   http
