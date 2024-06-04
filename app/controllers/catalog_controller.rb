@@ -282,10 +282,10 @@ class CatalogController < ApplicationController
     # Custom tools for GeoBlacklight
     # rubocop:disable Layout/LineLength
     config.add_show_tools_partial :web_services, if: proc { |_context, _config, options|
-      options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any?
+      options[:document] && (Settings.WEBSERVICES_SHOWN & options[:document].references.refs.map { |r| r.type.to_s }).any?
     }
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
-      options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any?
+      options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map { |r| r.type.to_s }).any?
     }
     config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options|
       options[:document] && options[:document].arcgis_urls.present?

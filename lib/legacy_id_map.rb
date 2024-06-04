@@ -3,7 +3,7 @@
 class LegacyIdMap
   class << self
     def map
-      @map ||= YAML.safe_load(File.read(path))
+      @map ||= YAML.safe_load_file(path)
     end
 
     private
