@@ -62,7 +62,6 @@
              as WKT for point, linestring, polygon
 
       -->
-    <dynamicField name="*_pt"   type="location"     stored="true" indexed="true"/>
     <dynamicField name="*_bbox" type="location_rpt" stored="true" indexed="true"/><!-- deprecated -->
     <dynamicField name="*_geom" type="location_rpt" stored="true" indexed="true"/>
   </fields>
@@ -140,8 +139,6 @@
     </fieldType>
 
     <!-- Spatial field types -->
-    <fieldType name="location" class="solr.LatLonType" subFieldSuffix="_d"/>
-
     <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType"
                geo="true" distErrPct="0.025" maxDistErr="0.001" distanceUnits="kilometers"/>
 
