@@ -18,3 +18,8 @@ dd[itemprop='url'] a {
     padding-top: 0;
   }
 }
+
+// Remove margin after final paragraph in description
+.blacklight-dct_description_sm p:last-of-type {
+  margin-bottom: 0;
+}
