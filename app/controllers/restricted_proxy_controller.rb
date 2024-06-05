@@ -23,9 +23,9 @@ class RestrictedProxyController < ApplicationController
 
   def proxied_headers
     proxied_response.headers.select do |k, _v|
-      k == 'Content-Disposition' ||
-        k == 'Content-Type' ||
-        k.include?('Geowebcache')
+      k == 'content-disposition' ||
+        k == 'content-type' ||
+        k.include?('geowebcache')
     end
   end
 end
