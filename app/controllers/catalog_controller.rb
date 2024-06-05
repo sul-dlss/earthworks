@@ -118,7 +118,6 @@ class CatalogController < ApplicationController
     #                        item_component: Geoblacklight::IconFacetItemComponent
     config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8
     config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Resource Type', limit: 8
-    config.add_facet_field Settings.FIELDS.FORMAT, label: 'Format', limit: 8
 
     # GEOBLACKLIGHT APPLICATION FACETS
 
@@ -180,11 +179,10 @@ class CatalogController < ApplicationController
     config.add_show_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', itemprop: 'class',
                                                           link_to_facet: true
     config.add_show_field Settings.FIELDS.RESOURCE_TYPE, label: 'Resource Type', itemprop: 'type', link_to_facet: true
+    config.add_show_field Settings.FIELDS.FORMAT, label: 'Format', itemprop: 'format'
     config.add_show_field Settings.FIELDS.RIGHTS, label: 'Rights', itemprop: 'rights'
     config.add_show_field Settings.FIELDS.RIGHTS_HOLDER, label: 'Rights Holder', itemprop: 'rights_holder'
     config.add_show_field Settings.FIELDS.LICENSE, label: 'License', itemprop: 'license'
-    config.add_show_field Settings.FIELDS.ACCESS_RIGHTS, label: 'Access Rights', itemprop: 'access_rights'
-    config.add_show_field Settings.FIELDS.FORMAT, label: 'Format', itemprop: 'format', link_to_facet: true
     config.add_show_field(
       Settings.FIELDS.IDENTIFIER,
       label: 'More details at',
