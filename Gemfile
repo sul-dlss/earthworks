@@ -57,6 +57,8 @@ group :deployment do
   gem 'dlss-capistrano'
   gem 'capistrano-shared_configs'
   gem 'capistrano-passenger'
+  gem "ed25519", "~> 1.3"
+  gem "bcrypt_pbkdf", "~> 1.1"
 end
 
 group :production do
