@@ -3,7 +3,6 @@ class SolrDocument
   include Geoblacklight::SolrDocument
   # include GeomonitorConcern
   # https://github.com/geoblacklight/geo_monitor/issues/12
-  include RightsMetadataConcern
   include WmsRewriteConcern
 
   alias stanford? same_institution?

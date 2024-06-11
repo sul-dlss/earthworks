@@ -40,7 +40,6 @@ class CatalogController < ApplicationController
 
     # solr field configuration for document/show views
     config.show.display_type_field = 'format'
-    config.show.partials << 'rights_metadata'
     config.show.partials << 'show_message'
     config.show.partials << 'show_default_viewer_container'
     config.show.partials << 'show_default_attribute_table'
