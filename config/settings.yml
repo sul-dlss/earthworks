@@ -408,64 +408,64 @@ GEOMONITOR_TOLERANCE: 0.2
 # GeoCombine settings (harvesting/indexing from OpenGeoMetadata)
 # Repositories listed here will be harvested and indexed by rake tasks. See:
 # https://github.com/OpenGeoMetadata
-# If supplied, "provenance" value overrides the dct_provenance_s in the record
+# If supplied, "provider" value overrides the dct_provider_s in the record
 # This creates a more consistent display in facets, etc.
 OGM_REPOS:
   edu.nyu: # includes records from both NYU and Baruch CUNY
   shared-repository: # multi-institutional
   edu.princeton.arks:
-    provenance: Princeton
+    provider: Princeton
   edu.mit:
-    provenance: MIT
+    provider: MIT
   edu.harvard:
-    provenance: Harvard
+    provider: Harvard
   edu.columbia:
-    provenance: Columbia
+    provider: Columbia
   edu.tufts:
-    provenance: Tufts
+    provider: Tufts
   # No longer publishing to OpenGeoMetadata. See:
   # https://github.com/OpenGeoMetadata/edu.virginia/issues/13
   # edu.virginia:
-  #   provenance: Virginia
+  #   provider: Virginia
   edu.umich:
-    provenance: Michigan
+    provider: Michigan
   edu.wisc:
-    provenance: Wisconsin
+    provider: Wisconsin
   edu.umn:
-    provenance: Minnesota
+    provider: Minnesota
   edu.berkeley:
-    provenance: Berkeley
+    provider: Berkeley
   edu.cornell:
-    provenance: Cornell
+    provider: Cornell
   edu.uiowa:
-    provenance: Iowa
+    provider: Iowa
   edu.indiana:
-    provenance: Indiana
+    provider: Indiana
   edu.purdue:
-    provenance: Purdue
+    provider: Purdue
   edu.illinois:
-    provenance: Illinois
+    provider: Illinois
   edu.msu:
-    provenance: Michigan State
+    provider: Michigan State
   edu.umd:
-    provenance: Maryland
+    provider: Maryland
   edu.rutgers:
-    provenance: Rutgers
+    provider: Rutgers
   edu.psu:
-    provenance: Penn State
+    provider: Penn State
   edu.osu:
-    provenance: Ohio State
+    provider: Ohio State
   edu.uchicago:
-    provenance: Chicago
+    provider: Chicago
   edu.unl:
-    provenance: Nebraska
+    provider: Nebraska
   edu.colostate:
-    provenance: Colorado State
+    provider: Colorado State
   # GMU records are incorrectly marked as v1.0 compliant when they are Aardvark.
   # see: https://github.com/OpenGeoMetadata/edu.gmu/issues/1
   # edu.gmu:
-  #   provenance: George Mason
+  #   provider: George Mason
   edu.uarizona:
-    provenance: Arizona
+    provider: Arizona
   edu.vt:
-    provenance: Virginia Tech
+    provider: Virginia Tech

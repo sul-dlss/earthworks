@@ -11,8 +11,8 @@ RSpec.describe Earthworks::Harvester do
   let(:ogm_path) { 'tmp/ogm' }
   let(:ogm_repos) do
     {
-      'edu.princeton.arks' => { provenance: 'Princeton' },
-      'edu.psu' => { provenance: 'Penn State' }
+      'edu.princeton.arks' => { provider: 'Princeton' },
+      'edu.psu' => { provider: 'Penn State' }
     }
   end
 
@@ -81,7 +81,7 @@ RSpec.describe Earthworks::Harvester do
 
     it 'supports transforming arbitrary records' do
       docs = harvester.docs_to_index.to_a
-      expect(docs.first.first['dct_provenance_s']).to eq('Penn State')
+      expect(docs.first.first['schema_provider_s']).to eq('Penn State')
     end
   end
 end
