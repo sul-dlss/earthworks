@@ -112,7 +112,8 @@ class CatalogController < ApplicationController
     #                          }
     #                        },
     #                        item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8
+    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8,
+                                                           item_component: Geoblacklight::IconFacetItemComponent
     config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Resource Type', limit: 8
 
     # GEOBLACKLIGHT APPLICATION FACETS
