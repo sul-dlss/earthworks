@@ -12,4 +12,9 @@ module EarthworksGeoblacklightHelper
       Array(args[:value]).flatten.collect { |v| concat tag.p(v) }
     end
   end
+
+  # Use Mirador as the IIIF manifest viewer
+  def iiif_manifest_viewer
+    tag.div(nil, id: 'mirador', data: { 'manifest-url' => @document.viewer_endpoint })
+  end
 end
