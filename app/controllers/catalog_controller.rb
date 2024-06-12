@@ -91,6 +91,7 @@ class CatalogController < ApplicationController
     config.add_facet_field Settings.FIELDS.CREATOR, label: 'Creator', limit: 8
     config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
     config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8
+    config.add_facet_field Settings.FIELDS.THEME, label: 'Theme', limit: 8
     config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
     config.add_facet_field Settings.FIELDS.INDEX_YEAR, label: 'Year', limit: 10, range: {
       assumed_boundaries: [1100, Time.zone.now.year + 2]
@@ -170,6 +171,7 @@ class CatalogController < ApplicationController
     config.add_show_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', itemprop: 'spatial',
                                                             link_to_facet: true
     config.add_show_field Settings.FIELDS.SUBJECT, label: 'Subject', itemprop: 'keywords', link_to_facet: true
+    config.add_show_field Settings.FIELDS.THEME, label: 'Theme', itemprop: 'theme', link_to_facet: true
     config.add_show_field Settings.FIELDS.DATE_ISSUED, label: 'Date Issued', itemprop: 'issued'
     config.add_show_field Settings.FIELDS.TEMPORAL_COVERAGE, label: 'Temporal Coverage', itemprop: 'temporal'
     config.add_show_field Settings.FIELDS.PROVIDER, label: 'Provider', link_to_facet: true
