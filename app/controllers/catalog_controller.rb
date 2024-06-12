@@ -181,7 +181,7 @@ class CatalogController < ApplicationController
     # config.add_show_field Settings.FIELDS.FORMAT, label: 'Format', itemprop: 'format'
     config.add_show_field Settings.FIELDS.RIGHTS, label: 'Use and Reproduction', itemprop: 'rights'
     config.add_show_field Settings.FIELDS.RIGHTS_HOLDER, label: 'Copyright', itemprop: 'rights_holder'
-    config.add_show_field Settings.FIELDS.LICENSE, label: 'License', itemprop: 'license'
+    config.add_show_field Settings.FIELDS.LICENSE, label: 'License', itemprop: 'license', helper_method: :render_license
     config.add_show_field(
       Settings.FIELDS.IDENTIFIER,
       label: 'More details at',

@@ -19,7 +19,6 @@
 	"locn_geometry": "ENVELOPE(-123.10749999999999, -122.32777777777777, 37.92972222222222, 37.69333333333333)",
   "id": "stanford-bq589tv8583",
   "schema_provider_s": "Stanford",
-  "stanford_rights_metadata_s": "<rightsMetadata>\n    <access type=\"discover\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <access type=\"read\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <use>\n      <human type=\"useAndReproduction\">This item is in the public domain.  There are no restrictions on use.</human>\n      <human type=\"creativeCommons\"/>\n      <machine type=\"creativeCommons\"/>\n    </use>\n    <copyright>\n      <human>This work is in the Public Domain, meaning that it is not subject to copyright.</human>\n    </copyright>\n  </rightsMetadata>",
   "gbl_indexYear_im": [2010],
   "gbl_resourceClass_sm": ["Other"]
 }

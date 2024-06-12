@@ -4,6 +4,7 @@ class SolrDocument
   # include GeomonitorConcern
   # https://github.com/geoblacklight/geo_monitor/issues/12
   include WmsRewriteConcern
+  include LicenseConcern
 
   alias stanford? same_institution?
 

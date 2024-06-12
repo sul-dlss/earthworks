@@ -35,7 +35,6 @@
   "dcat_bbox": "ENVELOPE(-122.54625, -121.751457, 38.080099, 37.239303)",
 	"locn_geometry": "ENVELOPE(-122.54625, -121.751457, 38.080099, 37.239303)",
   "gbl_indexYear_im": [2002],
-  "stanford_rights_metadata_s": "\u003c?xml version=\"1.0\"?\u003e\n\u003crightsMetadata\u003e\n  \u003caccess type=\"discover\"\u003e\n    \u003cmachine\u003e\n      \u003cworld/\u003e\n    \u003c/machine\u003e\n  \u003c/access\u003e\n  \u003caccess type=\"read\"\u003e\n    \u003cmachine\u003e\n      \u003cworld/\u003e\n    \u003c/machine\u003e\n  \u003c/access\u003e\n  \u003cuse\u003e\n    \u003chuman type=\"useAndReproduction\"\u003eThis item is in the public domain.  There are no restrictions on use.\u003c/human\u003e\n    \u003chuman type=\"creativeCommons\"/\u003e\n    \u003cmachine type=\"creativeCommons\"/\u003e\n  \u003c/use\u003e\n  \u003ccopyright\u003e\n    \u003chuman\u003eThis work is in the Public Domain, meaning that it is not subject to copyright.\u003c/human\u003e\n  \u003c/copyright\u003e\n\u003c/rightsMetadata\u003e\n",
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Line data"]
 }

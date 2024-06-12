@@ -16,6 +16,5 @@
 	"locn_geometry": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
   "id": "stanford-dt131hw5005",
   "schema_provider_s": "Stanford",
-  "stanford_rights_metadata_s": "<rightsMetadata>\n    <access type=\"discover\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <access type=\"read\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <use>\n      <human type=\"useAndReproduction\">Property rights reside with the repository. Literary rights reside with  the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Public Services Librarian of the Dept. of Special Collections (http://library.stanford.edu/spc).</human>\n    </use>\n    <use>\n      <human type=\"creativeCommons\"/>\n      <machine type=\"creativeCommons\"/>\n    </use>\n  </rightsMetadata>",
   "gbl_resourceClass_sm": ["Imagery"]
 }

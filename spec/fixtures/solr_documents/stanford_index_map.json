@@ -28,7 +28,6 @@
   "dcat_bbox": "ENVELOPE(108.000122, 116.500122, 41.666687, 39.000122)",
 	"locn_geometry": "ENVELOPE(108.000122, 116.500122, 41.666687, 39.000122)",
   "gbl_indexYear_im": [1940],
-  "stanford_rights_metadata_s": "<rightsMetadata><access type=\"discover\"><machine><world /></machine></access><access type=\"read\"><machine><world /></machine></access><use><human type=\"useAndReproduction\">This item is in the public domain. There are no restrictions on use.</human><human type=\"creativeCommons\">Attribution Share Alike 3.0 Unported</human><machine type=\"creativeCommons\">by-sa</machine></use><copyright><human>This work is in the Public Domain, meaning that it is not subject to copyright.</human></copyright></rightsMetadata>",
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Polygon data"],
   "gbl_mdVersion_s": "Aardvark"
