@@ -46,7 +46,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'solr_wrapper'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.7'
 end
 
 group :deployment do
