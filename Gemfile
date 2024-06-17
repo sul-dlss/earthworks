@@ -22,8 +22,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Rubocop is a static code analyzer to enforce style.
   gem 'rubocop', require: false
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-factory_bot', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rubocop-rspec_rails', require: false
   gem 'rubocop-performance', require: false
 end
 
@@ -40,7 +43,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver', '!= 3.13.0'
-  
+
   # Pinned until https://github.com/thoughtbot/factory_bot_rails/issues/433 is resolved
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'database_cleaner'
