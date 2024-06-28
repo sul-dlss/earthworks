@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0'
+gem 'rails', '~> 7.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6'
+
 # Use SCSS for stylesheets
 gem 'sassc-rails'
 

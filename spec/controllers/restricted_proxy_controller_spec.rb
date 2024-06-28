@@ -15,7 +15,7 @@ describe RestrictedProxyController do
       sign_in create(:user)
       allow(HTTP).to receive(:get).and_return(
         double(:response, {
-                 headers: { 'Content-Disposition' => 'image', 'Geowebcache-Stuff' => 'foo' },
+                 headers: { 'content-disposition' => 'image', 'geowebcache-stuff' => 'foo' },
                  status: 200,
                  body: 'image!'
                })
@@ -34,8 +34,8 @@ describe RestrictedProxyController do
 
     it 'passes through headers' do
       get :access, params: { webservice: 'wms', format: 'image/png' }
-      expect(response.headers.to_h).to include 'Content-Disposition' => 'image',
-                                               'Geowebcache-Stuff' => 'foo'
+      expect(response.headers.to_h).to include 'content-disposition' => 'image',
+                                               'geowebcache-stuff' => 'foo'
     end
   end
 end
