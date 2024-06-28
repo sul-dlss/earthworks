@@ -22,7 +22,7 @@
     <field name="dcat_bbox" type="location_rpt" stored="true" indexed="true"/>
 
     <!-- Spatial Field Type: Used to display the center point of a resource. -->
-    <field name="dcat_centroid" type="location" stored="true" indexed="true"/>
+    <field name="dcat_centroid" type="location_rpt" stored="true" indexed="true"/>
 
     <!-- Spatial Field Type: Internal field used for overlap ratio boosting. -->
     <field name="solr_bboxtype" type="bbox" stored="true" indexed="true"/>
