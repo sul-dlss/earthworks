@@ -51,8 +51,6 @@
     </lst>
   </requestHandler>
 
-  <jmx />
-
   <!-- Required for Solr Cloud on sul-solr -->
   <requestHandler name="/replication" class="solr.ReplicationHandler" startup="lazy" />
   <requestHandler name="/get" class="solr.RealTimeGetHandler">
