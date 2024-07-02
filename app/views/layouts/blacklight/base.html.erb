@@ -15,7 +15,7 @@
     gtag('js', new Date());
     
     const config = {};
-    <% if Settings.analytics_debug %>
+    <% if Settings.ANALYTICS_DEBUG %>
       config.debug_mode = true
     <% end %>
         
@@ -29,6 +29,7 @@
   <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+  <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
   <%= javascript_include_tag 'application' %>
   <!--[if IE 8]>
     <link rel="stylesheet" type="text/css" href="https://www.stanford.edu/su-identity/css/ie/ie8.css" />

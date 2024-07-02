@@ -14,12 +14,6 @@ module Earthworks
     config.load_defaults 6.1
     config.application_name = 'EarthWorks'
 
-    require 'rights_metadata'
-    # Inject our StatusExtension concern to add behavior
-    # (index updates) to the GeoMonitor::Status class
-    config.to_prepare do
-      GeoMonitor::Status.include StatusExtension
-    end
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

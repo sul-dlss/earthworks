@@ -6,24 +6,22 @@ module EarthworksGeoblacklightHelper
       (@document.same_institution? && user_signed_in? && @document.available?)
   end
 
-  ##
-  # Override from GeoBlacklight to include custom `featured` param
-  def has_search_parameters?
-    params[:featured].present? || super
+  # Override to render multi-valued description as individual paragraphs
+  def render_value_as_truncate_abstract(args)
+    tag.div class: 'truncate-abstract' do
+      Array(args[:value]).flatten.collect { |v| concat tag.p(v) }
+    end
   end
 
-  ##
-  # Override from GeoBlacklight to include custom `featured` param
-  def render_constraints_filters(localized_params = params)
-    content = super(localized_params)
-    localized_params = localized_params.to_unsafe_h unless localized_params.is_a?(Hash)
+  # Try to render a human-readable license description, or fall back to the URI
+  def render_license(args)
+    tag.span @document.license.description
+  rescue License::UnknownLicenseError
+    tag.span args[:value]
+  end
 
-    if localized_params[:featured]
-      value = localized_params[:featured].humanize.split.map(&:capitalize).join(' ')
-      path = search_action_path(remove_spatial_filter_group(:featured, localized_params))
-      content << render_constraint_element('Featured', value, remove: path)
-    end
-
-    content
+  # Use Mirador as the IIIF manifest viewer
+  def iiif_manifest_viewer
+    tag.div(nil, id: 'mirador', data: { 'manifest-url' => @document.viewer_endpoint })
   end
 end

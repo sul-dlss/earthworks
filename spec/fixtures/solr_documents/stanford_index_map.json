@@ -1,23 +1,20 @@
 {
-  "uuid": "http://purl.stanford.edu/vj008bs4183",
-  "dc_identifier_s": "http://purl.stanford.edu/vj008bs4183",
-  "dc_title_s": "Yōzu (Kūchū shashin sokuryō) Kita Shina jūmanbun no ichi zu, Maps Index",
-  "dc_description_s": "This polygon shapefile is an index to 1:100,000 scale topographic maps of Northern China, titled 'Yōzu (Kūchū shashin sokuryō) Kita Shina jūmanbun no ichi zu.' This map series was originally produced by the Japanese Land Survey Department of the General Staff Headquarters between 1940 and 1944. Stanford University Libraries holds a large collection of Japanese military and imperial maps, referred to as gaihōzu, or \"maps of outer lands.\" These maps were produced starting in the early Meiji (1868-1912) era and the end of World War II by the Land Survey Department of the General Staff Headquarters, the former Japanese Army. The Library is in the process of scanning and making available all of the maps in the collection. To create this index, footprints were generated using the fishnet tool, and metadata were supplied for the digitized paper maps by Stanford University Libraries. After the footprints were created, the shapefile was trimmed and labeled according to the sources.This layer provides an index map that can be used to locate individual scanned map sheets.",
-  "dc_rights_s": "Public",
-  "dct_provenance_s": "Stanford",
-  "dct_references_s": "{\"http://schema.org/url\":\"http://purl.stanford.edu/vj008bs4183\",\"http://schema.org/downloadUrl\":\"http://stacks.stanford.edu/file/druid:vj008bs4183/data.zip\",\"http://www.loc.gov/mods/v3\":\"http://purl.stanford.edu/vj008bs4183.mods\",\"http://www.isotc211.org/schemas/2005/gmd/\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:vj008bs4183/iso19139.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:vj008bs4183/default.html\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geowebservices.stanford.edu/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geowebservices.stanford.edu/geoserver/wms\"}",
-  "layer_id_s": "druid:vj008bs4183",
-  "layer_slug_s": "stanford-vj008bs4183",
-  "layer_geom_type_s": "Polygon",
-  "layer_modified_dt": "2016-07-08T16:08:20Z",
-  "dc_format_s": "Shapefile",
-  "dc_language_s": "English",
-  "dc_type_s": "Dataset",
-  "dc_publisher_s": "Stanford Digital Repository",
-  "dc_creator_sm": [
-    "Stanford Geospatial Center"
+  "dct_identifier_sm": ["http://purl.stanford.edu/vj008bs4183"],
+  "dct_title_s": "Yōzu (Kūchū shashin sokuryō) Kita Shina jūmanbun no ichi zu, Maps Index",
+  "dct_description_sm": [
+    "This polygon shapefile is an index to 1:100,000 scale topographic maps of Northern China, titled 'Yōzu (Kūchū shashin sokuryō) Kita Shina jūmanbun no ichi zu.' This map series was originally produced by the Japanese Land Survey Department of the General Staff Headquarters between 1940 and 1944. Stanford University Libraries holds a large collection of Japanese military and imperial maps, referred to as gaihōzu, or \"maps of outer lands.\" These maps were produced starting in the early Meiji (1868-1912) era and the end of World War II by the Land Survey Department of the General Staff Headquarters, the former Japanese Army. The Library is in the process of scanning and making available all of the maps in the collection. To create this index, footprints were generated using the fishnet tool, and metadata were supplied for the digitized paper maps by Stanford University Libraries. After the footprints were created, the shapefile was trimmed and labeled according to the sources.This layer provides an index map that can be used to locate individual scanned map sheets."
   ],
-  "dc_subject_sm": [
+  "dct_accessRights_s": "Public",
+  "schema_provider_s": "Stanford",
+  "dct_references_s": "{\"http://schema.org/url\":\"http://purl.stanford.edu/vj008bs4183\",\"http://schema.org/downloadUrl\":\"http://stacks.stanford.edu/file/druid:vj008bs4183/data.zip\",\"http://www.loc.gov/mods/v3\":\"http://purl.stanford.edu/vj008bs4183.mods\",\"http://www.isotc211.org/schemas/2005/gmd/\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:vj008bs4183/iso19139.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/edu.stanford.purl/druid:vj008bs4183/default.html\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geowebservices.stanford.edu/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geowebservices.stanford.edu/geoserver/wms\"}",
+  "gbl_wxsIdentifier_s": "druid:vj008bs4183",
+  "id": "stanford-vj008bs4183",
+  "gbl_mdModified_dt": "2016-07-08T16:08:20Z",
+  "dct_format_s": "Shapefile",
+  "dct_language_sm": ["eng"],
+  "dct_publisher_sm": ["Stanford Digital Repository"],
+  "dct_creator_sm": ["Stanford Geospatial Center"],
+  "dct_subject_sm": [
     "Grids (Cartography)",
     "Index maps",
     "World War, 1939-1945",
@@ -26,13 +23,12 @@
     "Boundaries",
     "Military"
   ],
-  "dct_temporal_sm": [
-    "1940-1944"
-  ],
-  "dct_spatial_sm": [
-    "China"
-  ],
-  "solr_geom": "ENVELOPE(108.000122, 116.500122, 41.666687, 39.000122)",
-  "solr_year_i": 1940,
-  "stanford_rights_metadata_s": "<?xml version=\"1.0\"?>\n<rightsMetadata>\n  <access type=\"discover\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <access type=\"read\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <use>\n    <human type=\"useAndReproduction\">This item is in the public domain.  There are no restrictions on use.</human>\n    <human type=\"creativeCommons\"/>\n    <machine type=\"creativeCommons\"/>\n  </use>\n  <copyright>\n    <human>This work is in the Public Domain, meaning that it is not subject to copyright.</human>\n  </copyright>\n</rightsMetadata>\n"
+  "dct_temporal_sm": ["1940-1944"],
+  "dct_spatial_sm": ["China"],
+  "dcat_bbox": "ENVELOPE(108.000122, 116.500122, 41.666687, 39.000122)",
+	"locn_geometry": "ENVELOPE(108.000122, 116.500122, 41.666687, 39.000122)",
+  "gbl_indexYear_im": [1940],
+  "gbl_resourceClass_sm": ["Datasets"],
+  "gbl_resourceType_sm": ["Polygon data"],
+  "gbl_mdVersion_s": "Aardvark"
 }

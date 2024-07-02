@@ -1,37 +1,28 @@
 {
-  "uuid": "http://arks.princeton.edu/ark:/88435/02870w62c",
-  "dc_description_s": "Partly colored. Relief shown pictorially. Shows administrative divisions. From Thomas Jefferys's The American atlas, or, A geographical description of the whole continent of America (London : Printed by R. Sayer and Bennett, 1778). Insets: A chart of the mouth of Hudson's River, from Sandy Hook to New York. A plan of the city of New York. Plan of Amboy, with its environs, from an actual survey.",
-  "dc_format_s": "Raster",
-  "dc_identifier_s": "http://arks.princeton.edu/ark:/88435/02870w62c",
-  "dc_language_s": "English",
-  "dc_publisher_s": "London, Robt. Sayer & John Bennett",
-  "dc_rights_s": "Public",
-  "dc_subject_sm": [
-    "New York (State)‒Maps",
-    "New Jersey‒Maps"
+  "dct_description_sm": [
+    "Partly colored. Relief shown pictorially. Shows administrative divisions. From Thomas Jefferys's The American atlas, or, A geographical description of the whole continent of America (London : Printed by R. Sayer and Bennett, 1778). Insets: A chart of the mouth of Hudson's River, from Sandy Hook to New York. A plan of the city of New York. Plan of Amboy, with its environs, from an actual survey."
   ],
-  "dc_title_s": "The provinces of New York and New Jersey, with part of Pensilvania, and the Province of Quebec : drawn by Major Holland, Surveyor General, of the Northern District in America. Corrected and improved, from the original materials, by Governr. Pownall, Member of Parliament, 1776",
-  "dc_type_s": "Dataset",
-  "dc_creator_sm": [
-    "Rogers, Henry Darwin",
-    "Pownall, Thomas"
-  ],
+  "dct_format_s": "Raster",
+  "dct_identifier_sm": ["http://arks.princeton.edu/ark:/88435/02870w62c"],
+  "dct_language_sm": ["eng"],
+  "dct_publisher_sm": ["London, Robt. Sayer & John Bennett"],
+  "dct_accessRights_s": "Public",
+  "dct_subject_sm": ["New York (State)‒Maps", "New Jersey‒Maps"],
+  "dct_title_s": "The provinces of New York and New Jersey, with part of Pensilvania, and the Province of Quebec : drawn by Major Holland, Surveyor General, of the Northern District in America. Corrected and improved, from the original materials, by Governr. Pownall, Member of Parliament, 1776",
+  "dct_creator_sm": ["Rogers, Henry Darwin", "Pownall, Thomas"],
   "dct_references_s": "{\"http://schema.org/url\":\"http://arks.princeton.edu/ark:/88435/02870w62c\",\"http://schema.org/thumbnailUrl\":\"http://libimages.princeton.edu/loris2/pudl0076%2Fmap_pownall%2F00000001.jp2/full/50,/0/default.jpg\",\"http://iiif.io/api/image\":\"http://libimages.princeton.edu/loris2/pudl0076%2Fmap_pownall%2F00000001.jp2/info.json\"}",
-  "dct_spatial_sm": [
-    "New York (State)",
-    "New Jersey",
-    "Pennsylvania"
-  ],
-  "dct_temporal_sm": [
-    "1778"
-  ],
+  "dct_spatial_sm": ["New York (State)", "New Jersey", "Pennsylvania"],
+  "dct_temporal_sm": ["1778"],
   "dct_issued_s": "1778",
-  "dct_provenance_s": "Princeton",
+  "schema_provider_s": "Princeton",
   "georss_box_s": "38.6693 -76.3394 46.5798 -72.1916",
-  "layer_slug_s": "princeton-02870w62c",
-  "layer_id_s": "02870w62c",
-  "layer_geom_type_s": "Raster",
-  "layer_modified_dt": "2014-10-09T18:00:18Z",
-  "solr_geom": "ENVELOPE(-76.3394, -72.1916, 46.5798, 38.6693)",
-  "solr_year_i": 1778
+  "id": "princeton-02870w62c",
+  "gbl_wxsIdentifier_s": "02870w62c",
+  "gbl_mdModified_dt": "2014-10-09T18:00:18Z",
+  "dcat_bbox": "ENVELOPE(-76.3394, -72.1916, 46.5798, 38.6693)",
+	"locn_geometry": "ENVELOPE(-76.3394, -72.1916, 46.5798, 38.6693)",
+  "gbl_indexYear_im": [1778],
+  "gbl_resourceClass_sm": ["Datasets"],
+  "gbl_resourceType_sm": ["Raster data"],
+  "gbl_mdVersion_s": "Aardvark"
 }

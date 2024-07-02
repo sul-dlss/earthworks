@@ -1,27 +1,20 @@
 {
-  "dc_identifier_s": "http://purl.stanford.edu/dt131hw5005",
-  "dc_title_s": "Buffer Zone Study, Stanford University. Eldridge T. Spencer. 1955",
-  "dc_description_s": "Stanford University campus buffer zone study prepared by the Stanford University Planning Office. Digitized by Stanford University Libraries.",
-  "dc_rights_s": "Public",
-  "layer_geom_type_s": "Image",
-  "dc_type_s": "Image",
-  "dc_format_s": "JPEG 2000",
-  "dc_language_s": "English",
-  "dc_subject_sm": [
-    "Stanford University Lands",
-    "Stanford University Campus"
+  "dct_identifier_sm": ["http://purl.stanford.edu/dt131hw5005"],
+  "dct_title_s": "Buffer Zone Study, Stanford University. Eldridge T. Spencer. 1955",
+  "dct_description_sm": [
+    "Stanford University campus buffer zone study prepared by the Stanford University Planning Office. Digitized by Stanford University Libraries."
   ],
-  "dct_spatial_sm": [
-    "Palo Alto (Calif.)",
-    "Stanford (Calif.)"
-  ],
-  "dc_creator_sm": [
-    "Spencer, Eldridge T"
-  ],
-  "geoblacklight_version": "1.0",
+  "dct_accessRights_s": "Public",
+  "dct_format_s": "JPEG 2000",
+  "dct_language_sm": ["eng"],
+  "dct_subject_sm": ["Stanford University Lands", "Stanford University Campus"],
+  "dct_spatial_sm": ["Palo Alto (Calif.)", "Stanford (Calif.)"],
+  "dct_creator_sm": ["Spencer, Eldridge T"],
+  "gbl_mdVersion_s": "Aardvark",
   "dct_references_s": "{\"http://schema.org/url\":\"https://purl.stanford.edu/dt131hw5005\",\"https://oembed.com\":\"https://purl.stanford.edu/embed.json?&hide_title=true&url=https://purl.stanford.edu/dt131hw5005\",\"http://iiif.io/api/presentation#manifest\":\"https://purl.stanford.edu/dt131hw5005/iiif/manifest\"}",
-  "solr_geom": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
-  "layer_slug_s": "stanford-dt131hw5005",
-  "dct_provenance_s": "Stanford",
-  "stanford_rights_metadata_s": "<rightsMetadata>\n    <access type=\"discover\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <access type=\"read\">\n      <machine>\n        <world/>\n      </machine>\n    </access>\n    <use>\n      <human type=\"useAndReproduction\">Property rights reside with the repository. Literary rights reside with  the creators of the documents or their heirs. To obtain permission to publish or reproduce, please contact the Public Services Librarian of the Dept. of Special Collections (http://library.stanford.edu/spc).</human>\n    </use>\n    <use>\n      <human type=\"creativeCommons\"/>\n      <machine type=\"creativeCommons\"/>\n    </use>\n  </rightsMetadata>"
+  "dcat_bbox": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
+	"locn_geometry": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
+  "id": "stanford-dt131hw5005",
+  "schema_provider_s": "Stanford",
+  "gbl_resourceClass_sm": ["Imagery"]
 }

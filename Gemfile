@@ -71,7 +71,7 @@ end
 
 gem 'blacklight', '~> 7.33'
 gem 'rsolr' # required for Blacklight
-gem "geoblacklight", '~> 3.8'
+gem "geoblacklight", '~> 4.3.0'
 gem 'faraday', '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
@@ -83,7 +83,9 @@ gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'redis', '~> 5.0'
-gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
+# Not compatible with GeoBlacklight 4.x
+# https://github.com/geoblacklight/geo_monitor/issues/12
+# gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
 gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false

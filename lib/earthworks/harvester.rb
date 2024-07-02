@@ -34,9 +34,9 @@ module Earthworks
     # We transform some records in order to get more consistent metadata display
     # in Earthworks, especially for facets.
     def transform_record(record, path)
-      # Transform provenance to a shorter, consistent value based on the repository
-      if (transformed_provenance = @ogm_repos.dig(record_repo(path), :provenance))
-        record.update({ 'dct_provenance_s' => transformed_provenance })
+      # Transform provider name to a shorter, consistent value based on the repository
+      if (transformed_provider = @ogm_repos.dig(record_repo(path), :provider))
+        record.update({ 'schema_provider_s' => transformed_provider })
       end
 
       record

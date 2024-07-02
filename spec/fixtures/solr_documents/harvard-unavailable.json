@@ -1,25 +1,26 @@
 {
-  "uuid":"urn:hul.harvard.edu:HARVARD.SDE.NTADCD106",
-  "dc_description_s":"The 106th Congressional District Boundaries data set contains geographic information for the political entities of the Congressional districts of the United States and U.S. Territories.",
-  "dc_format_s":"Shapefile",
-  "dc_identifier_s":"urn:hul.harvard.edu:HARVARD.SDE.NTADCD106",
-  "dc_language_s":"English",
-  "dc_publisher_s":"Bureau of Transportation Statistics",
-  "dc_rights_s":"Public",
-  "dc_title_s":"106th Congressional District Boundaries",
-  "dc_type_s":"Dataset",
-  "dct_references_s":"{\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"http://hgl.harvard.edu:8080/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"http://hgl.harvard.edu:8080/geoserver/wms\",\"http://schema.org/UserDownloads\":\"http://hgl.harvard.edu:8080/HGL/RemoteServiceStarter\",\"http://tilecache.org\":\"http://hgl.harvard.edu/cgi-bin/tilecache/tilecache.cgi\",\"http://www.opengis.net/cat/csw/csdgm\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/sde:SDE.NTADCD106/fgdc.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/sde:SDE.NTADCD106/fgdc.html\",\"http://schema.org/url\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/sde:SDE.NTADCD106/fgdc.html\"}",
-  "dct_temporal_sm":[
-    "1999"
+  "dct_description_sm": [
+    "The 106th Congressional District Boundaries data set contains geographic information for the political entities of the Congressional districts of the United States and U.S. Territories."
   ],
-  "dct_provenance_s":"Harvard",
-  "georss_box_s":"-14.602623 -179.149436 71.331916 179.759346",
-  "georss_polygon_s":"71.331916 -179.149436 71.331916 179.759346 -14.602623 179.759346 -14.602623 -179.149436 71.331916 -179.149436",
-  "layer_slug_s":"harvard-ntadcd106",
-  "layer_id_s":"sde:SDE.NTADCD106",
-  "layer_geom_type_s":"Polygon",
-  "layer_modified_dt":"2014-12-16T00:47:27Z",
-  "solr_geom":"ENVELOPE(-179.149436, 179.759346, 71.331916, -14.602623)",
-  "solr_year_i":1999,
-  "layer_availability_score_f":0.0
+  "dct_format_s": "Shapefile",
+  "dct_identifier_sm": ["urn:hul.harvard.edu:HARVARD.SDE.NTADCD106"],
+  "dct_language_sm": ["eng"],
+  "dct_publisher_sm": ["Bureau of Transportation Statistics"],
+  "dct_accessRights_s": "Public",
+  "dct_title_s": "106th Congressional District Boundaries",
+  "dct_references_s": "{\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"http://hgl.harvard.edu:8080/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"http://hgl.harvard.edu:8080/geoserver/wms\",\"http://schema.org/UserDownloads\":\"http://hgl.harvard.edu:8080/HGL/RemoteServiceStarter\",\"http://tilecache.org\":\"http://hgl.harvard.edu/cgi-bin/tilecache/tilecache.cgi\",\"http://www.opengis.net/cat/csw/csdgm\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/sde:SDE.NTADCD106/fgdc.xml\",\"http://www.w3.org/1999/xhtml\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/sde:SDE.NTADCD106/fgdc.html\",\"http://schema.org/url\":\"http://opengeometadata.stanford.edu/metadata/org.opengeoportal/sde:SDE.NTADCD106/fgdc.html\"}",
+  "dct_temporal_sm": ["1999"],
+  "schema_provider_s": "Harvard",
+  "georss_box_s": "-14.602623 -179.149436 71.331916 179.759346",
+  "georss_polygon_s": "71.331916 -179.149436 71.331916 179.759346 -14.602623 179.759346 -14.602623 -179.149436 71.331916 -179.149436",
+  "id": "harvard-ntadcd106",
+  "gbl_wxsIdentifier_s": "sde:SDE.NTADCD106",
+  "gbl_mdModified_dt": "2014-12-16T00:47:27Z",
+  "dcat_bbox": "ENVELOPE(-179.149436, 179.759346, 71.331916, -14.602623)",
+	"locn_geometry": "ENVELOPE(-179.149436, 179.759346, 71.331916, -14.602623)",
+  "gbl_indexYear_im": [1999],
+  "layer_availability_score_f": 0.0,
+  "gbl_resourceClass_sm": ["Datasets"],
+  "gbl_resourceType_sm": ["Polygon data"],
+  "gbl_mdVersion_s": "Aardvark"
 }

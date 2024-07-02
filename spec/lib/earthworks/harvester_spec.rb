@@ -11,8 +11,8 @@ RSpec.describe Earthworks::Harvester do
   let(:ogm_path) { 'tmp/ogm' }
   let(:ogm_repos) do
     {
-      'edu.princeton.arks' => { provenance: 'Princeton' },
-      'edu.psu' => { provenance: 'Penn State' }
+      'edu.princeton.arks' => { provider: 'Princeton' },
+      'edu.psu' => { provider: 'Penn State' }
     }
   end
 
@@ -60,11 +60,11 @@ RSpec.describe Earthworks::Harvester do
 
   describe '#docs_to_index' do
     # Provenance value will be transformed by our ogm_repos config
-    let(:psu_doc) { { dct_provenance_s: 'Pennsylvania State University', geoblacklight_version: '1.0' }.to_json }
+    let(:psu_doc) { { schema_provider_s: 'Pennsylvania State University', geoblacklight_version: '1.0' }.to_json }
     let(:psu_path) { "#{ogm_path}/edu.psu/metadata-1.0/Maps/08d-01/geoblacklight.json" }
 
     # PolicyMap records have placeholder data and should be skipped
-    let(:policymap_doc) { { dct_provenance_s: 'Geoblacklight', geoblacklight_version: '1.0' }.to_json }
+    let(:policymap_doc) { { schema_provider_s: 'Geoblacklight', geoblacklight_version: '1.0' }.to_json }
     let(:policymap_path) { "#{ogm_path}/shared-repository/gbl-policymap/records/geoblacklight.json" }
 
     before do
@@ -81,7 +81,7 @@ RSpec.describe Earthworks::Harvester do
 
     it 'supports transforming arbitrary records' do
       docs = harvester.docs_to_index.to_a
-      expect(docs.first.first['dct_provenance_s']).to eq('Penn State')
+      expect(docs.first.first['schema_provider_s']).to eq('Penn State')
     end
   end
 end

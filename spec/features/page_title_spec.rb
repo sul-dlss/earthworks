@@ -17,6 +17,6 @@ end
 describe 'Show page' do
   it 'have title' do
     visit solr_document_path 'stanford-cg357zz0321'
-    expect(page.title).to eq '10 Meter Countours: Russian River Basin, California in EarthWorks'
+    expect(page.title).to eq '10 Meter Contours: Russian River Basin, California in EarthWorks'
   end
 end
