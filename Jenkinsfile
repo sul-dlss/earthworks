@@ -12,7 +12,7 @@ pipeline {
       }
 
       when {
-        branch 'geobl4'
+        branch 'main'
       }
 
       steps {
@@ -29,7 +29,7 @@ pipeline {
           bundle install --without production
 
           # Deploy it
-          bundle exec cap $DEPLOY_ENVIRONMENT deploy BRANCH=geobl4
+          bundle exec cap $DEPLOY_ENVIRONMENT deploy
           '''
         }
       }
@@ -56,7 +56,7 @@ pipeline {
       }
 
       when {
-        branch 'geobl4'
+        branch 'main'
       }
 
       steps {
@@ -73,7 +73,7 @@ pipeline {
           bundle install --without production
 
           # Deploy it
-          bundle exec cap $DEPLOY_ENVIRONMENT deploy BRANCH=geobl4
+          bundle exec cap $DEPLOY_ENVIRONMENT deploy
           '''
         }
       }
