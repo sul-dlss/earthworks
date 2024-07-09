@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
   concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'
@@ -57,4 +59,9 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
+
+  # @note Only admins should be able to access the Sidekiq web UI. This is
+  # accomplished using Apache configuration that is managed by Puppet which
+  # require a user be logged in as a developer to access /queues
+  mount Sidekiq::Web => '/queues'
 end
