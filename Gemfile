@@ -55,7 +55,6 @@ end
 
 group :deployment do
   gem 'capistrano'
-  gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'dlss-capistrano'
