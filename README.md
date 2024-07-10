@@ -38,11 +38,8 @@ Most other commands can be run by prepending `docker compose exec app` to the co
 ### Adding data
 To add a small amount of test records to the Solr index, you can use the `seed` task:
 ```sh
-SOLR_URL=http://127.0.0.1:8983/solr/earthworks bin/rake geoblacklight:solr:seed
+bin/rake geoblacklight:solr:seed
 ```
-
-Note that the Docker solr instance uses a core name of "earthworks", while the default core name configured in the local `blacklight.yml` is called "blacklight-core" (and used in solr-wrapper).  This can cause some confusion.
-
 You can also fetch records from [OpenGeoMetadata](https://github.com/OpenGeoMetadata) using [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine):
 ```sh
 export OGM_PATH=tmp/opengeometadata     # location to store data
