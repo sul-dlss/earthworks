@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   app:
     build:
@@ -11,7 +9,7 @@ services:
       REDIS_HOST: cache
       REDIS_PORT: 6379
       DATABASE_URL: postgres://earthworks:earthworks@db:5432/earthworks
-      SOLR_URL: http://index:8983/solr/earthworks
+      SOLR_URL: http://index:8983/solr/blacklight-core
     ports:
       - "3000:3000"
     volumes:
@@ -42,7 +40,7 @@ services:
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
-      - earthworks
+      - blacklight-core
       - /solr-setup/conf
 
   cache:
