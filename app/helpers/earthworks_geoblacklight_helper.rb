@@ -1,9 +1,8 @@
 module EarthworksGeoblacklightHelper
   include GeoblacklightHelper
 
-  def document_available?
-    (@document.public? && @document.available?) ||
-      (@document.same_institution? && user_signed_in? && @document.available?)
+  def document_available?(document = @document)
+    super && document.available?
   end
 
   # Override to render multi-valued description as individual paragraphs

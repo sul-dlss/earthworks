@@ -1,3 +1,22 @@
+GIT
+  remote: https://github.com/geoblacklight/geoblacklight.git
+  revision: 24aba2e82f4b386e0301d8beebf969727bcf7fb0
+  branch: main
+  specs:
+    geoblacklight (4.4.0)
+      blacklight (~> 7.0)
+      coderay
+      config
+      deprecation
+      faraday (~> 2.0)
+      geo_combine (~> 0.9)
+      handlebars_assets
+      mime-types
+      rails (>= 6.1, < 7.2)
+      rgeo-geojson
+      sprockets-rails (~> 3.0)
+      vite_rails (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -225,19 +244,6 @@ GEM
       rsolr
       sanitize
       thor
-    geoblacklight (4.4.0)
-      blacklight (~> 7.0)
-      coderay
-      config
-      deprecation
-      faraday (~> 2.0)
-      geo_combine (~> 0.9)
-      handlebars_assets
-      mime-types
-      rails (>= 6.1, < 7.2)
-      rgeo-geojson
-      sprockets-rails (~> 3.0)
-      vite_rails (~> 3.0)
     git (2.1.1)
       activesupport (>= 5.0)
       addressable (~> 2.8)
@@ -610,7 +616,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2.0)
   faraday (~> 2.0)
   geo_combine (>= 0.9)
-  geoblacklight (~> 4.4)
+  geoblacklight (~> 4.4)!
   honeybadger
   http
   jbuilder (~> 2.5)
