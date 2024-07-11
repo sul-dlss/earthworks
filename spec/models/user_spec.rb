@@ -31,4 +31,13 @@ RSpec.describe User do
       expect(User.new(email: 'jstanford@stanford.edu').sunet).to eq 'jstanford'
     end
   end
+
+  describe '#shibboleth_groups=' do
+    subject(:user) { User.new }
+
+    it 'splits groups on the pipe character' do
+      user.shibboleth_groups = 'a;b;c'
+      expect(user.shibboleth_groups).to match_array %w[a b c]
+    end
+  end
 end
