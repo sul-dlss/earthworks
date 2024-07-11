@@ -309,15 +309,12 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
     # Custom tools for GeoBlacklight
-    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
-      options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map { |r| r.type.to_s }).any?
-    }
-    config.add_show_tools_partial :arcgis, partial: 'arcgis', if: proc { |_context, _config, options|
-      options[:document] && options[:document].arcgis_urls.present?
-    }
-    config.add_show_tools_partial :data_dictionary, partial: 'data_dictionary', if: proc { |_context, _config, options|
-      options[:document] && options[:document].data_dictionary_download.present?
-    }
+    config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
+                                                    if: proc { |_context, _config, options|
+                                                          options[:document] &&
+                                                            options[:document].searchworks_url.present?
+                                                        }
+
     config.show.document_actions.delete(:sms)
 
     # Configure basemap provider

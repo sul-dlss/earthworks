@@ -225,7 +225,7 @@ GEM
       rsolr
       sanitize
       thor
-    geoblacklight (4.3.0)
+    geoblacklight (4.4.0)
       blacklight (~> 7.0)
       coderay
       config
@@ -360,7 +360,7 @@ GEM
     puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.8.0)
-    rack (3.1.6)
+    rack (3.1.7)
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
     rack-mini-profiler (2.3.4)
@@ -610,7 +610,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2.0)
   faraday (~> 2.0)
   geo_combine (>= 0.9)
-  geoblacklight (~> 4.3.0)
+  geoblacklight (~> 4.4)
   honeybadger
   http
   jbuilder (~> 2.5)

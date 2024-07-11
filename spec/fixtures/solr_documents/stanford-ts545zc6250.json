@@ -11,7 +11,7 @@
   "dct_spatial_sm": ["Palo Alto (Calif.)", "Stanford (Calif.)"],
   "dct_creator_sm": ["Spencer, Eldridge T"],
   "gbl_mdVersion_s": "Aardvark",
-  "dct_references_s": "{\"http://schema.org/url\":\"https://purl.stanford.edu/dt131hw5005\",\"https://oembed.com\":\"https://purl.stanford.edu/embed.json?&hide_title=true&url=https://purl.stanford.edu/dt131hw5005\",\"http://iiif.io/api/presentation#manifest\":\"https://purl.stanford.edu/dt131hw5005/iiif/manifest\"}",
+  "dct_references_s": "{\"https://schema.org/relatedLink\":\"https://searchworks.stanford.edu/view/dt131hw5005\",\"http://schema.org/url\":\"https://purl.stanford.edu/dt131hw5005\",\"https://oembed.com\":\"https://purl.stanford.edu/embed.json?&hide_title=true&url=https://purl.stanford.edu/dt131hw5005\",\"http://iiif.io/api/presentation#manifest\":\"https://purl.stanford.edu/dt131hw5005/iiif/manifest\"}",
   "dcat_bbox": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
 	"locn_geometry": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
   "id": "stanford-dt131hw5005",
