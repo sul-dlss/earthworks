@@ -19,4 +19,10 @@ class User < ActiveRecord::Base
   def sunet
     email.gsub('@stanford.edu', '')
   end
+
+  attr_reader :shibboleth_groups
+
+  def shibboleth_groups=(groups)
+    @shibboleth_groups = groups.split(';')
+  end
 end
