@@ -616,7 +616,7 @@ DEPENDENCIES
   factory_bot_rails (~> 6.2.0)
   faraday (~> 2.0)
   geo_combine (>= 0.9)
-  geoblacklight (~> 4.4)!
+  geoblacklight!
   honeybadger
   http
   jbuilder (~> 2.5)
