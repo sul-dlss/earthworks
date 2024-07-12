@@ -2,7 +2,7 @@
 ARCGIS_BASE_URL: "https://www.arcgis.com/home/webmap/viewer.html"
 
 # DOWNLOAD_PATH is set in production but defaults to this tmp dir when not set
-# DOWNLOAD_PATH: './tmp/cache/downloads'
+DOWNLOAD_PATH: './tmp/cache/downloads'
 download_cache_expiry_time_days: 14 # the number of days since a download was last accessed before it is removed from the cache
 
 # Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
