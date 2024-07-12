@@ -1,5 +1,5 @@
 # ArcGIS Online Base URL
-ARCGIS_BASE_URL: "https://www.arcgis.com/home/webmap/viewer.html"
+ARCGIS_BASE_URL: "https://stanford.maps.arcgis.com/home/webmap/viewer.html"
 
 # DOWNLOAD_PATH is set in production but defaults to this tmp dir when not set
 # DOWNLOAD_PATH: './tmp/cache/downloads'
