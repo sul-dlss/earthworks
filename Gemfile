@@ -70,7 +70,7 @@ end
 
 gem 'blacklight', '~> 7.33'
 gem 'rsolr' # required for Blacklight
-gem "geoblacklight", '~> 4.3.0'
+gem 'geoblacklight', github: 'geoblacklight/geoblacklight', branch: 'main'
 gem 'faraday', '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
