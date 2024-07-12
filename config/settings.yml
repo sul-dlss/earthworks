@@ -469,3 +469,5 @@ OGM_REPOS:
     provider: Arizona
   edu.vt:
     provider: Virginia Tech
+
+IIIF_DRAG_DROP_LINK: '@manifest?manifest=@manifest'
