@@ -314,6 +314,9 @@ class CatalogController < ApplicationController
                                                           options[:document] &&
                                                             options[:document].searchworks_url.present?
                                                         }
+    # This may go elsewhere
+    # config.add_show_tools_partial(:code_snippet_component)
+    config.add_show_tools_partial(:code_snippet_link, partial: 'code_snippet_link')
 
     config.show.document_actions.delete(:sms)
 
@@ -341,5 +344,17 @@ class CatalogController < ApplicationController
   # @return [Boolean]
   def has_search_parameters?
     !params[:q].nil? || super
+  end
+
+  ## Adding code snippet function, uses code_snippet partial
+  def code_snippet
+    @response, @documents = action_documents
+
+    respond_to do |format|
+      format.html do
+        return render layout: false if request.xhr?
+        # Otherwise draw the full page
+      end
+    end
   end
 end

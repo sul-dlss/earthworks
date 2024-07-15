@@ -38,3 +38,54 @@ dd[itemprop='url'] a {
   width: 100%;
   min-height: 493px;
 }
+
+// Styles for code snippet
+
+/*
+.code-snippet-tab {
+  color:$primary;
+}
+
+.code-snippet-tab.nav-link.active {
+  color:$primary;
+}
+
+.code-snippet-tab.active {
+  text-decoration: underline !important;
+  text-decoration-color: $primary !important;
+}
+  */
+
+.code-snippet-content {
+  background-color: #f4f4f4 !important;
+  font-size: 1.2em;
+}
+
+.code-snippet-tab {
+  color: $primary;
+  font-size: 1.5rem;
+
+  &.active {
+    color: $primary;
+    text-decoration: underline !important;
+    text-decoration-color: $primary !important;
+  }
+
+  &.nav-link.active {
+    color: $primary;
+  }
+}
+
+.bd-clipboard {
+  position:relative;
+  float:right;
+}
+
+.btn-clipboard{
+  background-color: white !important;
+
+  &:active, &:hover, &:focus {
+    color: #00548F !important;
+    border-color: #00548F !important;
+  }
+}

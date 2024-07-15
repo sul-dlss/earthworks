@@ -1,0 +1,10 @@
+Raster Python content: Coming soon
+
+Information that may be used in this code: 
+
+- Geoserver WMS URL: <<GEOSERVER_WMS>>
+- Bounding box: 
+-- Max x :  <<MAX_X>>
+-- Max y : <<MAX_Y>>
+-- Min y : <<MIN_Y>>
+-- Min x : <<MIN_X>>
