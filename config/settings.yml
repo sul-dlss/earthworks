@@ -376,6 +376,13 @@ GOOGLE_SITE_VERIFICATION: "654321sitever"
 # Turn on to enable rack-attack throttling
 THROTTLE_TRAFFIC: false
 
+throttling:
+  notify_honeybadger: true
+  safelist:
+  - 171.64.0.0/14
+  - 10.0.0.0/8
+  - 172.16.0.0/12
+
 # Turn off in production to store events via google analytics
 ANALYTICS_DEBUG: true
 
