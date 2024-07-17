@@ -33,117 +33,119 @@ Television, Televisions, TV, TVs
 # Synonym mappings can be used for spelling correction too
 pixima => pixma
 
-# Copied from OGP LCSH synonyms
+# Copied from OGP LCSH synonyms, with duplicates removed from multi-way expansion synonyms 
 Harbors,Pier,Quay,Warf
 
 Hydrocarbons,CNG,Coal,ethanol,gas,gasoline,kerosene,LNG,oil,OPEC,petrol,Petroleum,propane
 
-Walls,Fences,Fortification,fortresses,Gates,Hedges,Seawall,Wall,Walls
+Walls,Fences,Fortification,fortresses,Gates,Hedges,Seawall,Wall
 
-Roads,arteries,automobiles,Avenue,Avenues,beltways,Boulevards,driveways,expressway,expressways,Freeways,highway,highways,intersections,interstate,interstates,lanes,motorways,road,Roadblocks,Roads,Roadways,route,Routes,Speedlimits,Street,Streets,Thoroughfares,Tollbooths,way
+Roads,arteries,automobiles,Avenue,Avenues,beltways,Boulevards,driveways,expressway,expressways,Freeways,highway,highways,intersections,interstate,interstates,lanes,motorways,road,Roadblocks,Roadways,route,Routes,Speedlimits,Street,Streets,Thoroughfares,Tollbooths,way
 
-Schools,academies,College,colleges,colleges/universities,Education,preschool,preschools,school,Schools,universities,university,University/Colleges
+Schools,academies,College,colleges,colleges/universities,Education,preschool,preschools,school,universities,university,University/Colleges
 
 Pedestrians,Curbs,Roads,Footpaths,handicap,Pavements,Pedestrian,sidewalk,Sidewalks,walk,Walking,Walkways
 
-Atmosphere,Air,Atmosphere,climate,Climatology,climatologymeteorology,Cloudiness,Clouds,Evapotrans,Evapotranspiration,haze,humidity,hurricane,Isohyets,Meteorological,Meteorology,Precipitation,Rain,rainfall,Sunshine,temperature,weather,wind
+Atmosphere,Air,climate,Climatology,climatologymeteorology,Cloudiness,Clouds,Evapotrans,Evapotranspiration,haze,humidity,hurricane,Isohyets,Meteorological,Meteorology,Precipitation,Rain,rainfall,Sunshine,temperature,weather,wind
 
-Altitudes,Altitude,Altitudes,Aspect,bathymetry,breaklines,contour,Contours,DEM,depths,DTM,echosounder,elevations,GTOPO30,highpoint,hillshaded,Hypsography,ruggedness,SRTM,terrain,topographic,topography,Topoquads
+Altitudes,Altitude,Aspect,bathymetry,breaklines,contour,Contours,DEM,depths,DTM,echosounder,elevations,GTOPO30,highpoint,hillshaded,Hypsography,ruggedness,SRTM,terrain,topographic,topography,Topoquads
 
 History,ancestry,Historic,historical,History,Memorial,Memorials,Ruins
 
-Industries,chemists,Factories,Buildings,Factory,Buildings,industrial,industries,industry,Iron-works,Manufacture,refineries
+Industries,chemists,Factories,Buildings,Factory,Buildings,industrial,industry,Iron-works,Manufacture,refineries
 
-Water-supply,Drinking,Water-pipes,Water-supply,Waterworks
+Water-supply,Drinking,Water-pipes,Waterworks
 
-watersheds,catchments,hydrology,drainage,hydrology,drainages,hydrology,watershed,hydrology
+watersheds,catchments,hydrology,drainage,drainages,watershed
 
-fishes,anadromous,fish,fisheries,fishing,oncorhynchus,spawn,
+fishes,anadromous,fish,fisheries,fishing,oncorhynchus,spawn
 
-census,ageb,cbsa,census
+census,ageb,cbsa
 
-mountains,hill,hills,mount,mountain,mountains,peak,peaks,ridge,ridgelines,geology,summit
+mountains,hill,hills,mount,mountain,peak,peaks,ridge,ridgelines,geology,summit
 
 bicycles,bicycle,bike
 
-sewerage,drains,manhole,manholes,sewage,sewer,sewerage,sewer-pipe,sewers
+sewerage,drains,manhole,manholes,sewage,sewer,sewer-pipe,sewers
 
-invertebrates,lobsters,mosquitoes,shellfish
+floods,dfirm,finance,flood,flooding,floodplains,watersheds,floodwalls,walls,floodway,nfip,finance,sfha
 
-floods,dfirm,finance,flood,flooding,floodplains,watersheds,floods,floodwalls,walls,floodway,nfip,finance,sfha
+agriculture,agricultural,appellation,commerce,broilers,calves,cattle,chickens,corn,cotton,cranberies,cranberries,cranberry,food,croplands,crops,farm,farming,farms,fertilizers,grazing,herbicide,livestock,orchards,pesticide,plantations,poultry,rice,soybeans,vegetables,viticulture,wheat,wine,wineries
 
-agriculture,agricultural,agriculture,appellation,commerce,broilers,calves,cattle,chickens,corn,cotton,cranberies,food,cranberries,food,cranberry,food,croplands,crops,farm,farming,farms,fertilizers,grazing,herbicide,livestock,orchards,pesticide,plantations,poultry,rice,soybeans,vegetables,viticulture,wheat,wine,food,wineries,food
+hydrology,fwhydrography,hydrographic,hydrography,hydrologic,hydrological,runoff,water-holes
 
-hydrology,fwhydrography,hydrographic,hydrography,hydrologic,hydrological,hydrology,runoff,water-holes
+buildings,building,buildingsr,castles,chimneys,decks,garage,garages,halls,hotels,mansions,porches,rooftop,stories
 
-buildings,building,buildings,buildingsr,castles,chimneys,decks,garage,garages,halls,hotels,mansions,porches,rooftop,stories
+buses,bus,ctran,grta
 
-buses,bus,buses,ctran,grta
+geology,bedrock,erosion,eruptions,eskers,cryosphere,faults,fjords,cryosphere,geomorphology,geoscience,isopach,kettlehole,cryosphere,landslides,lava,lithology,petrology,rocks,volcanoes
 
-geology,bedrock,erosion,eruptions,eskers,cryosphere,faults,fjords,cryosphere,geology,geomorphology,geoscience,isopach,kettlehole,cryosphere,landslides,lava,lithology,petrology,rocks,volcanoes
-
-demography,births,caste,citizenship,deaths,demographic,demographics,demography,ethnicity,family,females,fertility,foreign-born,household,households,illiteracy,schools,language,languages,literacy,males,minorities,mortality,multilingualism,people,population,populations,unemployment,finance
+demography,births,caste,citizenship,deaths,demographic,demographics,ethnicity,family,females,fertility,foreign-born,household,households,illiteracy,schools,language,languages,literacy,males,minorities,mortality,multilingualism,people,population,populations,unemployment,finance
 
 machinery,mechanical,tractors
 
 wetlands,bog
 
-food,burgers,food,hamburgers,restaurants,commerce,supermarket,commerce
+food,burgers,hamburgers,restaurants,commerce,supermarket
 
-coasts,accretion,geology,beach,beaches,breakwater,capes,coast,coastal,coastline,coastlines,coasts,intracoastal,isthmus,isthmuses,nearshore,peninsula,peninsulas,seashore,seashores,shore,shoreline,shorelines,spit
+coasts,accretion,geology,beach,beaches,breakwater,capes,coast,coastal,coastline,coastlines,intracoastal,isthmus,isthmuses,nearshore,peninsula,peninsulas,seashore,seashores,shore,shoreline,shorelines,spit
 
-cryosphere,glaciers,geology,ice,icebergs,nunataks,geology,permafrost,snow,atmosphere,snowsheds
+cryosphere,glaciers,geology,ice,icebergs,nunataks,permafrost,snow,atmosphere,snowsheds
 
-groundwater,aquifers,geology,groundwater,geology,oases,springs,geology
+groundwater,aquifers,geology,geology,oases,springs
 
-youth,child,children,teen,youth
+youth,child,children,teen
 
-plants,eelgrass,gardens,agriculture,plants,seagrass,vegetation
+plants,eelgrass,gardens,agriculture,seagrass,vegetation
 
-earthquakes,earthquakes,geology,magnitude,geology,magnitudes,geology,paleoseismology,geology,seismology,geology
+earthquakes,geology,magnitude,magnitudes,paleoseismology,seismology
 
-recreation,amphitheaters,amphitheatre,aquariums,arenas,athletics,auditoriums,ballfields,campgrounds,casinos,cinemas,clubs,entertainment,exhibitions,golf,hiking,mountaineering,nightclubs,nightlife,opera,play,playground,playgrounds,racetracks,racing,rail-trails,railroads,recreation,regattas,resorts,rinks,speedways,sports,stadium,stadiums,swimming,tennis,theaters,theatres,trail,trails,venues,yachts,ymcas,zoos
+recreation,amphitheaters,amphitheatre,aquariums,arenas,athletics,auditoriums,ballfields,campgrounds,casinos,cinemas,clubs,entertainment,exhibitions,golf,hiking,mountaineering,nightclubs,nightlife,opera,play,playground,playgrounds,racetracks,racing,rail-trails,railroads,regattas,resorts,rinks,speedways,sports,stadium,stadiums,swimming,tennis,theaters,theatres,trail,trails,venues,yachts,ymcas,zoos
 
 photography,landsat,naturalvue,ortho,orthoimagery,ortho-imagery,orthophoto,orthophotography,othophoto
 
-telecommunication,broadcasting,cable,celltowers,telecommunication,telecommunications,telegraph,telephone,telephones,television
+telecommunication,broadcasting,cable,celltowers,telecommunications,telegraph,telephone,telephones,television
 
-railroads,amtrak,fixed-guideway,lirr,metro,metros,monorail,rail,railroad,railroads,rails,railway,railways,railyards,street-railroads,subway,subways,train,trains
+railroads,amtrak,fixed-guideway,lirr,metro,metros,monorail,rail,railroad,rails,railway,railways,railyards,street-railroads,subway,subways,train,trains
 
 airports,aircraft,airfield,airfields,airlines,airplanes,airstrips,enplanements,helicopters,icao,runway,runways
 
-pollution,contaminant,contamination,fouling,atmosphere,nox,atmosphere,ozone,atmosphere,pm10,atmosphere,pollutants,pollution,reclamation,smokestacks,sox,atmosphere
+pollution,contaminant,contamination,fouling,nox,ozone,atmosphere,pm10,pollutants,reclamation,smokestacks,sox
 
-commerce,billboards,businesses,industries,cargo,commerce,commercial,companies,industries,containerization,currencies,customers,employment,freeports,harbors,freight,imports,malls,marketing,markets,occupations,pricing,purchases,rates,retail,revenues,sales,shipping,shops,trade
+commerce,billboards,businesses,industries,cargo,commercial,companies,industries,containerization,currencies,customers,employment,freeports,harbors,freight,imports,malls,marketing,markets,occupations,pricing,purchases,rates,retail,revenues,sales,shipping,shops,trade
 
-rivers,brook,hydrology,brooks,hydrology,creek,hydrology,creeks,hydrology,falls,rapids,river,hydrology,hydrology,riverbeds,riverine,riverline,rivers,hydrology,rivulet,hydrology,runs,stream,hydrology,streambed,streambeds,streamflow,streams,hydrology,streamways,tributary,hydrology,wadies,hydrology,waterfall,waterfalls
+rivers,brook,hydrology,brooks,creek,creeks,falls,rapids,river,riverbeds,riverine,riverline,rivulet,runs,stream,streambed,streambeds,streamflow,streams,streamways,tributary,wadies,waterfall,waterfalls
 
 archaeology,antiquities,relics
 
-finance,atms,bank,banks,finance,income,insurance,tax,taxation,taxes
+finance,atms,bank,banks,income,insurance,tax,taxation,taxes
 
 crises,disaster
 
-# Copied from OGP ISO synonyms
-Pollution,Contaminant,Contamination,Fouling,Atmosphere,NOx,Atmosphere,Ozone,Atmosphere,PM10,Atmosphere,Pollutants,pollution,Reclamation,smokestacks,SOx,Atmosphere
+# Copied from OGP ISO synonyms - with duplicates removed
+
+# Invertebrates line changed to be expansion in a single direction
+Invertebrates => Invertebrates,Lobsters,Mosquitoes,Shellfish
+
+Pollution,Contaminant,Contamination,Fouling,Atmosphere,NOx,Atmosphere,Ozone,Atmosphere,PM10,Atmosphere,Pollutants,Reclamation,smokestacks,SOx,Atmosphere
 
 Older people,elder,elderly,retirement,senior
 
-Buses,Bus,Buses,CTRAN,GRTA
+Buses,Bus,CTRAN,GRTA
 
 Photography,landsat,NaturalVue,ortho,Orthoimagery,ortho-imagery,orthophoto,Orthophotography,Othophoto
 
-Mountains,hill,hills,mount,mountain,Mountains,peak,Peaks,ridge,ridgelines,Geology,summit
+Mountains,hill,hills,mount,mountain,peak,Peaks,ridge,ridgelines,Geology,summit
 
-Water-supply,Drinking,Water-pipes,Water-supply,Waterworks
+Water-supply,Drinking,Water-pipes,Waterworks
 
-Youth,child,children,teen,youth
+Youth,child,children,teen
 
-Coasts,accretion,Geology,beach,Beaches,Breakwater,capes,coast,Coastal,Coastline,coastlines,Coasts,Intracoastal,isthmus,isthmuses,nearshore,peninsula,peninsulas,Seashore,seashores,shore,shoreline,shorelines,spit
+Coasts,accretion,Geology,beach,Beaches,Breakwater,capes,coast,Coastal,Coastline,coastlines,Intracoastal,isthmus,isthmuses,nearshore,peninsula,peninsulas,Seashore,seashores,shore,shoreline,shorelines,spit
 
 Refuse, refuse disposal,garbage,hazmat,Landfill,Landfills,litter,recycling,trash,waste,wastewater
 
-climatologyMeterorologyAtmosphere,Atmosphere,Air,Atmosphere,climate,Climatology,climatologymeteorology,Cloudiness,Clouds,Evapotrans,Evapotranspiration,haze,humidity,hurricane,Isohyets,Meteorological,Meteorology,Precipitation,Rain,rainfall,Sunshine,temperature,weather,wind
+climatologyMeterorologyAtmosphere,Atmosphere,Air,climate,Climatology,climatologymeteorology,Cloudiness,Clouds,Evapotrans,Evapotranspiration,haze,humidity,hurricane,Isohyets,Meteorological,Meteorology,Precipitation,Rain,rainfall,Sunshine,temperature,weather,wind
 
 Census,AGEB,cbsa,Census
 
@@ -151,9 +153,9 @@ Recreation,Amphitheaters,Amphitheatre,aquariums,Arenas,athletics,Auditoriums,bal
 
 Crises,disaster
 
-Agriculture,agricultural,Agriculture,Appellation,Commerce,Broilers,Calves,Cattle,Chickens,Corn,Cotton,Cranberies,Food,Cranberries,Food,cranberry,Food,Croplands,Crops,farm,farming,Farms,fertilizers,grazing,herbicide,Livestock,Orchards,pesticide,Plantations,Poultry,Rice,Soybeans,Vegetables,Viticulture,Wheat,Wine,Food,wineries,Food
+Agriculture,agricultural,Appellation,Commerce,Broilers,Calves,Cattle,Chickens,Corn,Cotton,Cranberies,Food,Cranberries,cranberry,Croplands,Crops,farm,farming,Farms,fertilizers,grazing,herbicide,Livestock,Orchards,pesticide,Plantations,Poultry,Rice,Soybeans,Vegetables,Viticulture,Wheat,Wine,wineries
 
-Geology,bedrock,Erosion,eruptions,Eskers,Cryosphere,faults,fjords,Cryosphere,Geology,Geomorphology,geoscience,isopach,Kettlehole,Cryosphere,Landslides,lava,Lithology,Petrology,Rocks,Volcanoes
+Geology,bedrock,Erosion,eruptions,Eskers,Cryosphere,faults,fjords,Cryosphere,Geomorphology,geoscience,isopach,Kettlehole,Cryosphere,Landslides,lava,Lithology,Petrology,Rocks,Volcanoes
 
 Airports,aircraft,airfield,airfields,airlines,Airplanes,airstrips,enplanements,Helicopters,ICAO,runway,runways
 
@@ -161,13 +163,13 @@ Real property,apartments,Buildings,Assessing,Assessor,cadastral,deeds,Easement,E
 
 "Justice, Administration of",Court,courthouses,Courts,Judicial,Justice,magistrate
 
-Hydrology,FWHYDROGRAPHY,Hydrographic,Hydrography,hydrologic,Hydrological,Hydrology,Runoff,water-holes
+Hydrology,FWHYDROGRAPHY,Hydrographic,Hydrography,hydrologic,Hydrological,Runoff,water-holes
 
-Floods,DFIRM,Finance,Flood,Flooding,Floodplains,Watersheds,Floods,floodwalls,Walls,Floodway,NFIP,Finance,SFHA
+Floods,DFIRM,Finance,Flood,Flooding,Floodplains,Watersheds,floodwalls,Walls,Floodway,NFIP,Finance,SFHA
 
-History,ancestry,Historic,historical,History,Memorial,Memorials,Ruins
+History,ancestry,Historic,historical,Memorial,Memorials,Ruins
 
-Earthquakes,Earthquakes,Geology,Magnitude,Geology,magnitudes,Geology,Paleoseismology,Geology,Seismology,Geology
+Earthquakes,Geology,Magnitude,magnitudes,Paleoseismology,Seismology
 
 utilitiesCommunications,Telecommunication,Broadcasting,cable,celltowers,Telecommunication,Telecommunications,Telegraph,telephone,telephones,television
 
@@ -179,33 +181,34 @@ Public safety,assaults,Emergency,FEMA,Fire,Firebreaks,Firehouses,Fires,Firewall,
 
 Bodies of water,Bayous,channel,channels,Freshwater,gulfs,Coasts,Oshanas,pond,Ponds,sea,Seas,surfacewater
 
-Schools,academies,College,colleges,colleges/universities,Education,preschool,preschools,school,Schools,universities,university,University/Colleges
+Schools,academies,College,colleges,colleges/universities,Education,preschool,preschools,school,universities,university,University/Colleges
 
 Grids (Cartography),Equator,graticule,grid100,grid50,grids,Latitude,Latitude/Longitude,latitudes,Longitude,longitudes,utm
 
-Railroads,Amtrak,fixed-guideway,LIRR,metro,metros,monorail,rail,railroad,Railroads,Rails,railway,railways,Railyards,Street-railroads,subway,Subways,train,Trains
+Railroads,Amtrak,fixed-guideway,LIRR,metro,metros,monorail,rail,railroad,Rails,railway,railways,Railyards,Street-railroads,subway,Subways,train,Trains
 
 Pedestrians,Curbs,Roads,Footpaths,handicap,Pavements,Pedestrian,sidewalk,Sidewalks,walk,Walking,Walkways
 
-structure,Hydraulic structures,aqueduct,aqueducts,Barrages,Breakwaters,Coasts,canal,Canals,Culverts,Dam,Dams,Embankments,Flumes,Gryone,Coasts,Levees,Penstocks,Qanats,sluices,Weir,Weirs
+structure,Hydraulic structures,aqueduct,aqueducts,Barrages,Breakwaters,Coasts,canal,Canals,Culverts,Dam,Dams,Embankments,Flumes,Gryone,Levees,Penstocks,Qanats,sluices,Weir,Weirs
 
-Groundwater,Aquifers,Geology,Groundwater,Geology,Oases,Springs,Geology
+Groundwater,Aquifers,Geology,Oases,Springs
 
-Religious institutions,abbeys,Buddhism,chapels,church,churches,Convents,monasteries,Buildings,Mosques,Buildings,religion,religious,shrines,synagogues,Buildings,Temples,Buildings,Worship
+# This line originally had "buildings" which seems an odd term to make substitutions for, so it was removed here
+Religious institutions,abbeys,Buddhism,chapels,church,churches,Convents,monasteries,Mosques,religion,religious,shrines,synagogues,Temples,Worship
 
-Commerce,Billboards,businesses,Industries,Cargo,commerce,commercial,companies,Industries,Containerization,currencies,customers,employment,freeports,Harbors,freight,imports,malls,marketing,Markets,Occupations,pricing,purchases,rates,retail,revenues,sales,Shipping,shops,trade
+Commerce,Billboards,businesses,Industries,Cargo,commercial,companies,Containerization,currencies,customers,employment,freeports,Harbors,freight,imports,malls,marketing,Markets,Occupations,pricing,purchases,rates,retail,revenues,sales,Shipping,shops,trade
 
 Land use,Cemeteries,cemetery,graveyards,Greenways,grounds,landscaping,Landuse,pave,paved,Pavement,Planimetric,Planning,Plazas,PLSS,rangeland,Redevelopment,Surveying,unpaved,Zoning
 
 Archaeology,Antiquities,Relics
 
-Watersheds,Catchments,Hydrology,Drainage,Hydrology,drainages,Hydrology,Watershed,Watersheds,Hydrology
+Watersheds,Catchments,Hydrology,Drainage,drainages,Watershed,Watersheds
 
 Protected areas,parkland,Parklands,Parks,Parkways,preserves
 
-Demography,births,Caste,Citizenship,deaths,demographic,demographics,Demography,Ethnicity,Family,females,fertility,Foreign-Born,household,households,illiteracy,Schools,language,Languages,Literacy,males,Minorities,mortality,Multilingualism,people,Population,populations,Unemployment,Finance
+Demography,births,Caste,Citizenship,deaths,demographic,demographics,Ethnicity,Family,females,fertility,Foreign-Born,household,households,illiteracy,Schools,language,Languages,Literacy,males,Minorities,mortality,Multilingualism,people,Population,populations,Unemployment,Finance
 
-Public institutions,Jails,Libraries,Buildings,Library,Buildings,museums,penitentiaries,Prison,Prisons
+Public institutions,Jails,Libraries,Buildings,Library,museums,penitentiaries,Prison,Prisons
 
 biota, Ecology & environment,biome,ecological,Ecology,ecoregions,Ecosystem,ecosystems,environmental,evolutionary,habitat,Habitats,reef,Reefs,sustainability,Wildlife,Zoology
 
@@ -213,13 +216,13 @@ Marine mammals,Cetaceans,Dolphins,Porpoises,Whales
 
 Metropolitan areas,metropolitan,urban,Urbanization
 
-Forests,forestry,arboretums,Plants,Evergreen,Plants,forestry,oak,Plants,Pine,Timberline,tree,Plants,Trees,Plants
+Forests,forestry,arboretums,Plants,Evergreen,oak,Pine,Timberline,tree,Trees
 
 Roads,arteries,automobiles,Avenue,Avenues,beltways,Boulevards,driveways,expressway,expressways,Freeways,highway,highways,intersections,interstate,interstates,lanes,motorways,road,Roadblocks,Roads,Roadways,route,Routes,Speedlimits,Street,Streets,Thoroughfares,Tollbooths,way
 
 health,Public health,Clinics,dentists,doctor,doctors,ER,Gonorrhea,HIV,hospital,hospitals,immunization,MDPH,medical,Medicare,medicine,pharmacies,Physicians,polyclinics,quarantine,Sanitation,Syphilis,veterinarians
 
-elevation,Altitudes,Altitude,Altitudes,Aspect,bathymetry,breaklines,contour,Contours,DEM,depths,DTM,echosounder,elevations,GTOPO30,highpoint,hillshaded,Hypsography,ruggedness,SRTM,terrain,topographic,topography,Topoquads
+elevation,Altitudes,Altitude,Aspect,bathymetry,breaklines,contour,Contours,DEM,depths,DTM,echosounder,elevations,GTOPO30,highpoint,hillshaded,Hypsography,ruggedness,SRTM,terrain,topographic,topography,Topoquads
 
 Capitals (Cities),capitals
 
@@ -227,9 +230,9 @@ Wetlands,Bog
 
 "Names, Geographical",gazetteer,Gazetteers,GNS,label,Labels,Lable
 
-Walls,Fences,Fortification,fortresses,Buildings,Gates,Hedges,Seawall,Wall,Walls
+Walls,Fences,Fortification,fortresses,Buildings,Gates,Hedges,Seawall,Wall
 
-Finance,atms,bank,banks,Finance,income,Insurance,Tax,Taxation,Taxes
+Finance,atms,bank,banks,income,Insurance,Tax,Taxation,Taxes
 
 Boats, boating,Boat,Boating,Ferries,ferry,lighthouse,Coasts,lighthouses,Coasts,locks,Marinas,Shipwrecks,waterway,Waterways
 
@@ -237,11 +240,11 @@ intelligenceMilitary,International relations,Armistices,Crises,Army,bioterrorism
 
 boundaries, Administrative,political divisions,administrative,administrativeBoundaries,barrios,border,Borders,boundariesAdministrative,canton,cantons,colony,Counties,countries,county,Countyline,distirct,district,Districts,emirates,lgas,Macroregions,nations,precinct,precincts,Prefectures,province,Provinces,Redistrict,sovereignties,subdistricts,Subdivision,subdivisions,submunicipalities,subregions
 
-Politics, government,commonwealth,Congress,Congressional,constituency,councils,deregulation,election,Elections,Elections--Massachusetts,Electoral,embassies,Governates,Government,legislation,Legislative,Legislators,Legislature,Parliament,political,Politics,Regulation,republic,republics,Senate,States,vote,Voting
+Politics, government,commonwealth,Congress,Congressional,constituency,councils,deregulation,election,Elections,Elections--Massachusetts,Electoral,embassies,Governates,Government,legislation,Legislative,Legislators,Legislature,Parliament,political,Regulation,republic,republics,Senate,States,vote,Voting
 
 Machinery,mechanical,Tractors
 
-Cities,towns,borough,Boroughs,Cities,hamlets,Municipalities,municipality,municipality,municipios,suburbs,Town,Townlands,towns,towns/ville,Villages,ville
+Cities,towns,borough,Boroughs,hamlets,Municipalities,municipality,municipios,suburbs,Town,Townlands,towns/ville,Villages,ville
 
 Hydrocarbons,CNG,Coal,ethanol,gas,gasoline,kerosene,LNG,oil,OPEC,petrol,Petroleum,propane
 
@@ -253,19 +256,17 @@ Harbors,Pier,Quay,Warf
 
 Automobile parking,Parking
 
-Plants,eelgrass,gardens,Agriculture,Plants,seagrass,Vegetation
+Plants,eelgrass,gardens,Agriculture,seagrass,Vegetation
 
-Buildings,building,Buildings,Buildingsr,castles,Chimneys,Decks,garage,garages,halls,Hotels,mansions,office,Porches,rooftop,stories
+Buildings,building,Buildingsr,castles,Chimneys,Decks,garage,garages,halls,Hotels,mansions,office,Porches,rooftop,stories
 
-Industries,chemists,Factories,Buildings,Factory,Buildings,industrial,industries,industry,Iron-works,Manufacture,refineries
+Industries,chemists,Factories,Buildings,Factory,Buildings,industrial,industry,Iron-works,Manufacture,refineries
 
-Mines,mineral resources,Mineral,Geology,minerals,Geology,Mines,mining,prospects,quarries,Quarry,USBM
+Mines,mineral resources,Mineral,Geology,minerals,mining,prospects,quarries,Quarry,USBM
 
 inlandWaters,Rivers,brook,Hydrology,brooks,Hydrology,creek,Hydrology,Creeks,Hydrology,falls,Rapids,river,Hydrology,river/fleuve,Hydrology,riverbeds,Riverine,Riverline,rivers,Hydrology,rivulet,Hydrology,runs,stream,Hydrology,streambed,Streambeds,Streamflow,streams,Hydrology,streamways,tributary,Hydrology,Wadies,Hydrology,Waterfall,Waterfalls
 
-Invertebrates,Lobsters,Mosquitoes,Shellfish
-
-Food,burgers,Food,hamburgers,restaurants,Commerce,supermarket,Commerce
+Food,burgers,hamburgers,restaurants,Commerce,supermarket,Commerce
 
 Cryosphere,Glaciers,Geology,Ice,Icebergs,Nunataks,Geology,permafrost,Snow,Atmosphere,Snowsheds
 
@@ -275,11 +276,11 @@ Postal service,address,Roads,addresses,Roads,CEP8,mail,PLZgrenzen,postal,postcod
 
 Human settlements,condominiums,Dormitories,Dwellings,homelessness,homes,Huts,inhabitancy,Neighborhood,Neighborhoods,residences,Settlement,settlements,squatters
 
-Sewerage,drains,manhole,Manholes,sewage,Sewer,Sewerage,Sewer-pipe,Sewers
+Sewerage,drains,manhole,Manholes,sewage,Sewer,Sewer-pipe,Sewers
 
 Fishes,Anadromous,Fish,Fisheries,Fishing,Oncorhynchus,Spawn,Wildlife/Fisheries
 
-Territories, possessions,Annexation,Annexations,territories,territory
+Territories, possessions,Annexation,Annexations,territory
 
 Electric power systems,biodiesel,Electric,electricity,energy,fuel,Fuels,Generators,hydrogen,megawatt-hours,MWh,Power-plants,Substation,substations,Windmills
 
