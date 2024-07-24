@@ -32,34 +32,26 @@ A more production-like setup using [Redis](https://redis.com/) and [Postgresql](
 docker compose up
 ```
 
-#### Install the Ruby and Javascript dependencies, and prepare the database
-Run the setup script:
+To have the app use the Postresql container instead of SQLite, uncomment the `DATABASE_URL` line in the `.env[.test]` file(s) (in the project root).
 
-##### If running the supporting services directly
-If you're running the supporting services directly on your dev machine, you can use the default database config and just invoke the script:
+To have the app use the Redis container, uncomment the `REDIS_URL`, `REDIS_HOST`, and `REDIS_PORT` lines in the `.env[.test]` file(s).
+
+The Solr connection info is the same regardless of whether it's run using solr_wrapper or Docker.
+
+Alternatively, you could specify those env vars by prefixing the rails command with them, to (for example) run the app once using Postgres while generally defaulting to SQLite (e.g. `DATABASE_URL='postgresql://earthworks:earthworks@localhost/earthworks?pool=5' bin/rails server`).
+
+#### Install the Ruby and Javascript dependencies, and prepare the database
+Next, run the setup script:
+
 ```sh
 bin/setup
-```
-
-##### If running the supporting services in Docker
-If you're using containers to run Postgres and Solr, you'll want to point the setup script to the PG container:
-```sh
-DATABASE_URL='postgresql://earthworks:earthworks@localhost/earthworks?pool=5' bin/setup
 ```
 
 ### Run the application
 Finally, start the development web server:
 
-#### If running the supporting services directly
-If you're running the supporting services directly on your dev machine, you can use the default database config, and just start Rails server:
 ```sh
 bin/rails server
-```
-
-#### If running the supporting services in Docker
-If you're using containers to run Postgres and Solr, you'll want to point your app to the PG container:
-```sh
-DATABASE_URL='postgresql://earthworks:earthworks@localhost/earthworks?pool=5' bin/rails server
 ```
 
 ### Adding data
@@ -78,16 +70,8 @@ At Stanford, geospatial data is transformed and indexed by the [gis-robot-suite]
 ## Testing
 You can run the full suite of tests with the `ci` command. **Do not** run this while ssh tunneled as it may delete the production index!
 
-### If running the supporting services directly
-You can just use the default DB config, and run the `ci` task:
 ```sh
 bin/rake ci
-```
-
-### If running the supporting services in Docker
-If you're using containers to run Postgres and Solr, you'll want to point your test suite to the PG container:
-```sh
-DATABASE_URL='postgresql://earthworks:earthworks@localhost/earthworks?pool=5' bin/rake ci
 ```
 
 There is also a separate suite of "data integration" tests, which are intended to be run against a production search index.
