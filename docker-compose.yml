@@ -1,25 +1,8 @@
-version: "3.9"
-
 services:
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    environment:
-      RAILS_ENV: development
-      REDIS_URL: redis://cache:6379
-      REDIS_HOST: cache
-      REDIS_PORT: 6379
-      DATABASE_URL: postgres://earthworks:earthworks@db:5432/earthworks
-      SOLR_URL: http://index:8983/solr/earthworks
-    ports:
-      - "3000:3000"
-    volumes:
-      - .:/usr/src/app
-    depends_on:
-      - db
-      - index
-      - cache
+  # The app container was removed because it's not used for deployment, and local development
+  # is often easier with the app running directly on the host machine. If an app container is
+  # useful, the PR for the issue that removed it might be a good starting point, see:
+  # https://github.com/sul-dlss/earthworks/issues/1037
 
   db:
     image: postgres:12.8
@@ -42,7 +25,7 @@ services:
     entrypoint:
       - docker-entrypoint.sh
       - solr-precreate
-      - earthworks
+      - blacklight-core
       - /solr-setup/conf
 
   cache:

@@ -1,22 +1,18 @@
 {
-  "dc_creator_sm": [
-    "California. Metropolitan Transportation Commission"
+  "dct_creator_sm": ["California. Metropolitan Transportation Commission"],
+  "dct_description_sm": [
+    "This line shapefile represents high-occupancy vehicle (HOV) lanes within the San Francisco Bay Area of California. An HOV lane (also known as carpool lane) is a restricted traffic lane reserved at peak travel times or longer for the exclusive use of vehicles with a driver and one or more passengers, including carpools, vanpools, and transit buses. This layer is part of the Bay Area Metropolitan Transportation Commission (MTC) GIS Maps and Data collection.This dataset is intended for researchers, students, and policy makers for reference and mapping purposes, and may be used for basic applications such as viewing, querying, and map output production, or to provide a basemap to support graphical overlays and analysis with other spatial data."
   ],
-  "dc_description_s": "This line shapefile represents high-occupancy vehicle (HOV) lanes within the San Francisco Bay Area of California. An HOV lane (also known as carpool lane) is a restricted traffic lane reserved at peak travel times or longer for the exclusive use of vehicles with a driver and one or more passengers, including carpools, vanpools, and transit buses. This layer is part of the Bay Area Metropolitan Transportation Commission (MTC) GIS Maps and Data collection.This dataset is intended for researchers, students, and policy makers for reference and mapping purposes, and may be used for basic applications such as viewing, querying, and map output production, or to provide a basemap to support graphical overlays and analysis with other spatial data.",
-  "dc_format_s": "Shapefile",
-  "dc_identifier_s": "http://purl.stanford.edu/mc977kq8162",
-  "dc_language_s": "English",
-  "dc_publisher_s": "California. Metropolitan Transportation Commission",
-  "dc_rights_s": "Public",
-  "dc_subject_sm": [
-    "High occupancy vehicle lanes",
-    "Transportation"
-  ],
-  "dc_source_sm": ["stanford-bq589tv8583"],
-  "dc_title_s": "HOV Lanes, San Francisco Bay Area, 2002",
-  "dc_type_s": "Dataset",
+  "dct_format_s": "Shapefile",
+  "dct_identifier_sm": ["http://purl.stanford.edu/mc977kq8162"],
+  "dct_language_sm": ["eng"],
+  "dct_publisher_sm": ["California. Metropolitan Transportation Commission"],
+  "dct_accessRights_s": "Public",
+  "dct_subject_sm": ["High occupancy vehicle lanes", "Transportation"],
+  "pcdm_memberOf_sm": ["stanford-bq589tv8583"],
+  "dct_title_s": "HOV Lanes, San Francisco Bay Area, 2002",
   "dct_issued_s": "2002",
-  "dct_provenance_s": "Stanford",
+  "schema_provider_s": "Stanford",
   "dct_references_s": "{\"http://schema.org/url\":\"http://purl.stanford.edu/mc977kq8162\",\"http://schema.org/downloadUrl\":\"http://stacks.stanford.edu/file/druid:mc977kq8162/data.zip\",\"http://www.loc.gov/mods/v3\":\"http://purl.stanford.edu/mc977kq8162.mods\",\"http://www.isotc211.org/schemas/2005/gmd/\":\"https://raw.githubusercontent.com/OpenGeoMetadata/edu.stanford.purl/master/mc/977/kq/8162/iso19139.xml\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geowebservices.stanford.edu/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geowebservices.stanford.edu/geoserver/wms\"}",
   "dct_spatial_sm": [
     "San Francisco Bay Area (Calif.)",
@@ -30,16 +26,15 @@
     "Marin County (Calif.)",
     "Alameda County (Calif.)"
   ],
-  "dct_temporal_sm": [
-    "2002"
-  ],
-  "geoblacklight_version": "1.0",
+  "dct_temporal_sm": ["2002"],
+  "gbl_mdVersion_s": "Aardvark",
   "layer_availability_score_f": 1,
-  "layer_geom_type_s": "Line",
-  "layer_id_s": "druid:mc977kq8162",
-  "layer_modified_dt": "2016-02-04T00:03:29Z",
-  "layer_slug_s": "stanford-mc977kq8162",
-  "solr_geom": "ENVELOPE(-122.54625, -121.751457, 38.080099, 37.239303)",
-  "solr_year_i": 2002,
-  "stanford_rights_metadata_s": "<?xml version=\"1.0\"?>\n<rightsMetadata>\n  <access type=\"discover\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <access type=\"read\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <use>\n    <human type=\"useAndReproduction\">This item is in the public domain.  There are no restrictions on use.</human>\n    <human type=\"creativeCommons\"/>\n    <machine type=\"creativeCommons\"/>\n  </use>\n  <copyright>\n    <human>This work is in the Public Domain, meaning that it is not subject to copyright.</human>\n  </copyright>\n</rightsMetadata>\n"
+  "gbl_wxsIdentifier_s": "druid:mc977kq8162",
+  "gbl_mdModified_dt": "2016-02-04T00:03:29Z",
+  "id": "stanford-mc977kq8162",
+  "dcat_bbox": "ENVELOPE(-122.54625, -121.751457, 38.080099, 37.239303)",
+	"locn_geometry": "ENVELOPE(-122.54625, -121.751457, 38.080099, 37.239303)",
+  "gbl_indexYear_im": [2002],
+  "gbl_resourceClass_sm": ["Datasets"],
+  "gbl_resourceType_sm": ["Line data"]
 }

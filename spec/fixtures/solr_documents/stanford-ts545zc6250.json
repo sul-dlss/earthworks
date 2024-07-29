@@ -1,38 +1,20 @@
 {
-  "geoblacklight_version": "1.0",
-  "dc_identifier_s": "http://purl.stanford.edu/ts545zc6250",
-  "dc_title_s": "Chōsen Gomanbunnoichi Zu, Maps Index",
-  "dc_description_s": "This polygon shapefile is an index to 1:50,000 scale maps of North Korea, titled 'Chosen 1:50,000 Chikeizu.' This map series was originally produced by the Japanese Land Survey Department of the General Staff Headquarters between 1916 and 1918. Stanford University Libraries holds a large collection of Japanese military and imperial maps, referred to as gaihōzu, or \"maps of outer lands.\" These maps were produced starting in the early Meiji (1868-1912) era and the end of World War II by the Land Survey Department of the General Staff Headquarters, the former Japanese Army. The Library is in the process of scanning and making available all of the maps in the collection. To create this index, footprints were generated using the fishnet tool, and metadata were supplied for the digitized paper maps by Stanford University Libraries. After the footprints were created, the shapefile was trimmed and labeled according to the sources.This layer provides an index map that can be used to locate individual scanned map sheets.",
-  "dc_rights_s": "Public",
-  "dct_provenance_s": "Stanford",
-  "dct_references_s": "{\"http://schema.org/url\":\"http://purl.stanford.edu/ts545zc6250\",\"http://schema.org/downloadUrl\":\"http://stacks.stanford.edu/file/druid:ts545zc6250/data.zip\",\"http://www.loc.gov/mods/v3\":\"http://purl.stanford.edu/ts545zc6250.mods\",\"http://www.isotc211.org/schemas/2005/gmd/\":\"https://raw.githubusercontent.com/OpenGeoMetadata/edu.stanford.purl/master/ts/545/zc/6250/iso19139.xml\",\"http://www.opengis.net/def/serviceType/ogc/wfs\":\"https://geowebservices.stanford.edu/geoserver/wfs\",\"http://www.opengis.net/def/serviceType/ogc/wms\":\"https://geowebservices.stanford.edu/geoserver/wms\",\"https://openindexmaps.org\":\"https://stacks.stanford.edu/file/druid:ts545zc6250/index_map.json\"}",
-  "layer_id_s": "druid:ts545zc6250",
-  "layer_slug_s": "stanford-ts545zc6250",
-  "layer_geom_type_s": "Polygon",
-  "layer_modified_dt": "2018-01-25T20:31:47Z",
-  "dc_format_s": "Shapefile",
-  "dc_language_s": "English",
-  "dc_type_s": "Dataset",
-  "dc_publisher_s": "Stanford Digital Repository",
-  "dc_creator_sm": [
-    "Stanford Geospatial Center"
+  "dct_identifier_sm": ["http://purl.stanford.edu/dt131hw5005"],
+  "dct_title_s": "Buffer Zone Study, Stanford University. Eldridge T. Spencer. 1955",
+  "dct_description_sm": [
+    "Stanford University campus buffer zone study prepared by the Stanford University Planning Office. Digitized by Stanford University Libraries."
   ],
-  "dc_subject_sm": [
-    "Military maps",
-    "Topographic maps",
-    "Grids (Cartography)",
-    "Index maps",
-    "Boundaries",
-    "Military"
-  ],
-  "dct_issued_s": "2016",
-  "dct_temporal_sm": [
-    "1916-1918"
-  ],
-  "dct_spatial_sm": [
-    "Korea (North)"
-  ],
-  "solr_geom": "ENVELOPE(124, 130, 42.666667, 38)",
-  "solr_year_i": 1916,
-  "stanford_rights_metadata_s": "<?xml version=\"1.0\"?>\n<rightsMetadata>\n  <access type=\"discover\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <access type=\"read\">\n    <machine>\n      <world/>\n    </machine>\n  </access>\n  <use>\n    <human type=\"useAndReproduction\">This item is in the public domain.  There are no restrictions on use.</human>\n    <human type=\"creativeCommons\"/>\n    <machine type=\"creativeCommons\"/>\n  </use>\n  <copyright>\n    <human>This work is in the Public Domain, meaning that it is not subject to copyright.</human>\n  </copyright>\n</rightsMetadata>\n"
+  "dct_accessRights_s": "Public",
+  "dct_format_s": "JPEG 2000",
+  "dct_language_sm": ["eng"],
+  "dct_subject_sm": ["Stanford University Lands", "Stanford University Campus"],
+  "dct_spatial_sm": ["Palo Alto (Calif.)", "Stanford (Calif.)"],
+  "dct_creator_sm": ["Spencer, Eldridge T"],
+  "gbl_mdVersion_s": "Aardvark",
+  "dct_references_s": "{\"https://schema.org/relatedLink\":\"https://searchworks.stanford.edu/view/dt131hw5005\",\"http://schema.org/url\":\"https://purl.stanford.edu/dt131hw5005\",\"https://oembed.com\":\"https://purl.stanford.edu/embed.json?&hide_title=true&url=https://purl.stanford.edu/dt131hw5005\",\"http://iiif.io/api/presentation#manifest\":\"https://purl.stanford.edu/dt131hw5005/iiif/manifest\"}",
+  "dcat_bbox": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
+	"locn_geometry": "ENVELOPE(-122.191292, -122.149475, 37.4435369, 37.4063388)",
+  "id": "stanford-dt131hw5005",
+  "schema_provider_s": "Stanford",
+  "gbl_resourceClass_sm": ["Imagery"]
 }

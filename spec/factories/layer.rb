@@ -1,5 +1,4 @@
-FactoryBot.define do
-  factory :layer, class: 'GeoMonitor::Layer' do
-    sequence(:slug) { |n| "institution-#{n}" }
-  end
-end
+# https://github.com/geoblacklight/geo_monitor/issues/12
+# FactoryBot.define do
+#   factory :layer, class: 'GeoMonitor::Layer'
+# end

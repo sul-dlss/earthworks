@@ -3,6 +3,7 @@ class CheckLayerJob < ApplicationJob
 
   ##
   # @param [GeoMonitor::Layer] layer
+  # TODO: migrate this to the geo_monitor gem itself?
   def perform(layer)
     # See if in Solr first, if not, deactivate and exit
     num_found = Blacklight.default_index.connection.get(

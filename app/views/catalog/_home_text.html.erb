@@ -16,7 +16,7 @@
     <div class='col-sm-3 col-xs-6'>
       <div class='panel panel-default'>
         <div class='panel-body'>
-          <%= link_to search_catalog_path(featured: 'geospatial_data', q: '') do %>
+          <%= link_to search_catalog_path(f: { gbl_resourceClass_sm: ['Datasets']}) do %>
             <%= image_tag 'geospatial_data.png', alt: '' %>
             <h3>Geospatial data</h3>
           <% end %>
@@ -26,7 +26,7 @@
     <div class='col-sm-3 col-xs-6'>
       <div class='panel panel-default'>
         <div class='panel-body'>
-          <%= link_to search_catalog_path(featured: 'scanned_maps', q: '') do %>
+          <%= link_to search_catalog_path(f: { gbl_resourceClass_sm: ['Maps'] }) do %>
             <%= image_tag 'scanned_maps.png', alt: '' %>
             <h3>Scanned maps</h3>
           <% end %>
@@ -36,7 +36,7 @@
     <div class='col-sm-3 col-xs-6'>
       <div class='panel panel-default'>
         <div class='panel-body'>
-          <%= link_to search_catalog_path(featured: 'census_data', q: '') do %>
+          <%= link_to search_catalog_path(f: { dct_subject_sm: ['Census']}) do %>
             <%= image_tag 'census_data.png', alt: '' %>
             <h3>Census data</h3>
           <% end %>
@@ -46,7 +46,7 @@
     <div class='col-sm-3 col-xs-6'>
       <div class='panel panel-default'>
         <div class='panel-body'>
-          <%= link_to search_catalog_path(featured: 'california_data', q: '') do %>
+          <%= link_to search_catalog_path(f: { dct_spatial_sm: ['California'] }) do %>
             <%= image_tag 'california_data.png', alt: '' %>
             <h3>California data</h3>
           <% end %>

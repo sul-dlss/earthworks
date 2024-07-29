@@ -25,18 +25,26 @@ module Earthworks
 
     # Some records have placeholder data or are otherwise problematic, but we
     # can't denylist them at the institution/repository level.
-    def skip_record?(_record, path)
+    def skip_record?(record, path)
       # Skip PolicyMap records in shared-repository; they have placeholder data
-      # See https://github.com/OpenGeoMetadata/shared-repository/tree/master/gbl-policymap
-      record_repo(path) == 'shared-repository' && path.include?('gbl-policymap')
+      #   See https://github.com/OpenGeoMetadata/shared-repository/tree/master/gbl-policymap
+      # Skip other institutions' restricted records (need not check instituion here: Stanford records already filtered)
+      #   See https://github.com/sul-dlss/earthworks/issues/1089
+      (record_repo(path) == 'shared-repository' && path.include?('gbl-policymap')) || restricted?(record)
+    end
+
+    def restricted?(record)
+      # no need to check dc_rights_s, that was the field name under schema 1.0, but we don't expect
+      # to switch back from Aardvark
+      record.fetch('dct_accessRights_s', '').downcase == 'restricted'
     end
 
     # We transform some records in order to get more consistent metadata display
     # in Earthworks, especially for facets.
     def transform_record(record, path)
-      # Transform provenance to a shorter, consistent value based on the repository
-      if (transformed_provenance = @ogm_repos.dig(record_repo(path), :provenance))
-        record.update({ 'dct_provenance_s' => transformed_provenance })
+      # Transform provider name to a shorter, consistent value based on the repository
+      if (transformed_provider = @ogm_repos.dig(record_repo(path), :provider))
+        record.update({ 'schema_provider_s' => transformed_provider })
       end
 
       record

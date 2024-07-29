@@ -4,6 +4,7 @@
 <% if document_unavailable.any? %>
   <div class='alert alert-warning unavailable-warning'>
     <%= blacklight_icon('exclamation-triangle') %>
-    <%= t('earthworks.unavailable_html', institution: document.institution, email: document.contact_email, department: document.department ) %>
+    <% email = document.contact_email ? document.contact_email : Settings.INSTITUTION_EMAIL %>
+    <%= t('earthworks.unavailable_html', institution: document.institution, email:, department: document.department) %>
   </div>
 <% end %>

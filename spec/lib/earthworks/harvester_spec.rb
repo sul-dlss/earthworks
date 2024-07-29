@@ -6,13 +6,13 @@ require 'earthworks/harvester'
 require 'spec_helper'
 
 RSpec.describe Earthworks::Harvester do
-  subject(:harvester) { described_class.new(ogm_repos: ogm_repos, ogm_path: ogm_path) }
+  subject(:harvester) { described_class.new(ogm_repos: ogm_repos, ogm_path: ogm_path, schema_version: 'Aardvark') }
 
   let(:ogm_path) { 'tmp/ogm' }
   let(:ogm_repos) do
     {
-      'edu.princeton.arks' => { provenance: 'Princeton' },
-      'edu.psu' => { provenance: 'Penn State' }
+      'edu.princeton.arks' => { provider: 'Princeton' },
+      'edu.psu' => { provider: 'Penn State' }
     }
   end
 
@@ -60,28 +60,44 @@ RSpec.describe Earthworks::Harvester do
 
   describe '#docs_to_index' do
     # Provenance value will be transformed by our ogm_repos config
-    let(:psu_doc) { { dct_provenance_s: 'Pennsylvania State University', geoblacklight_version: '1.0' }.to_json }
-    let(:psu_path) { "#{ogm_path}/edu.psu/metadata-1.0/Maps/08d-01/geoblacklight.json" }
+    let(:psu_doc) { { schema_provider_s: 'Pennsylvania State University', gbl_mdVersion_s: 'Aardvark' }.to_json }
+    let(:psu_path) { "#{ogm_path}/edu.psu/metadata-aardvark/Maps/08d-01/geoblacklight.json" }
 
     # PolicyMap records have placeholder data and should be skipped
-    let(:policymap_doc) { { dct_provenance_s: 'Geoblacklight', geoblacklight_version: '1.0' }.to_json }
+    let(:policymap_doc) { { schema_provider_s: 'Geoblacklight', gbl_mdVersion_s: 'Aardvark' }.to_json }
     let(:policymap_path) { "#{ogm_path}/shared-repository/gbl-policymap/records/geoblacklight.json" }
 
+    let(:psu_doc2_hash) { { schema_provider_s: 'Pennsylvania State University', gbl_mdVersion_s: 'Aardvark' } }
+    let(:psu_doc2) { psu_doc2_hash.to_json }
+    let(:psu_path2) { "#{ogm_path}/edu.psu/metadata-aardvark/Maps/08d-01/geoblacklight_2.json" }
+
     before do
-      allow(Find).to receive(:find).and_yield(psu_path).and_yield(policymap_path)
+      allow(Find).to receive(:find).and_yield(psu_path).and_yield(policymap_path).and_yield(psu_path2)
       allow(File).to receive(:read).with(psu_path).and_return(psu_doc)
       allow(File).to receive(:read).with(policymap_path).and_return(policymap_doc)
+      allow(File).to receive(:read).with(psu_path2).and_return(psu_doc2)
     end
 
-    it 'supports skipping arbitrary records' do
+    it 'skips PolicyMap records in shared-repository' do
       docs = harvester.docs_to_index.to_a
-      expect(docs.length).to eq(1)
+      expect(docs.length).to eq(2)
       expect(docs.first.last).to eq(psu_path)
+      expect(docs.last.last).to eq(psu_path2)
+    end
+
+    context 'when access is restricted' do
+      let(:psu_doc2) { psu_doc2_hash.merge({ dct_accessRights_s: 'Restricted' }).to_json }
+
+      it 'skips the record' do
+        docs = harvester.docs_to_index.to_a
+        expect(docs.length).to eq(1)
+        expect(docs.first.last).to eq(psu_path)
+      end
     end
 
     it 'supports transforming arbitrary records' do
       docs = harvester.docs_to_index.to_a
-      expect(docs.first.first['dct_provenance_s']).to eq('Penn State')
+      expect(docs.first.first['schema_provider_s']).to eq('Penn State')
     end
   end
 end

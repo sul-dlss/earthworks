@@ -155,6 +155,14 @@ namespace :earthworks do
     end
   end
 
+  desc 'Clean earthworks stale download files'
+  task clear_download_cache_stale_files: [:environment] do
+    # Commented line below is for testing purposes, it will just list the files that
+    # would be deleted with timestamp created
+    # `find /var/cache/earthworks/downloads -type f -atime +14 -printf '%TY-%Tm-%Td %TH:%TM %p\n'`
+    `find #{Settings.DOWNLOAD_PATH} -type f -atime +#{Settings.download_cache_expiry_time_days} -delete`
+  end
+
   desc 'Prune old search data from the database'
   task :prune_old_search_data, [:days_old] => [:environment] do |_t, args|
     chunk = 20_000

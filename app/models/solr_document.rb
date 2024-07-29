@@ -1,19 +1,15 @@
 class SolrDocument
   include Blacklight::Solr::Document
   include Geoblacklight::SolrDocument
-  include GeomonitorConcern
-  include RightsMetadataConcern
+  # include GeomonitorConcern
+  # https://github.com/geoblacklight/geo_monitor/issues/12
   include WmsRewriteConcern
+  include LicenseConcern
 
-  # self.unique_key = 'id'
-  self.unique_key = 'layer_slug_s'
-
-  field_semantics[:author] = :dc_creator_sm
-  field_semantics[:title] = :dc_title_s
-  field_semantics[:year] = :dct_temporal_sm
+  alias stanford? same_institution?
 
   def institution
-    fetch(Settings.FIELDS.PROVENANCE)
+    fetch(Settings.FIELDS.PROVIDER, '')
   end
 
   def contact_email
@@ -25,11 +21,21 @@ class SolrDocument
   end
 
   def collection?
-    fetch(Settings.FIELDS.GEOM_TYPE, nil) == 'Collection'
+    fetch(Settings.FIELDS.RESOURCE_CLASS, []).include? 'Collections'
   end
 
   def mixed?
-    fetch(Settings.FIELDS.GEOM_TYPE, nil) == 'Mixed'
+    fetch(Settings.FIELDS.RESOURCE_CLASS, []) == 'Other'
+  end
+
+  # Examine the list of references (in dct_references_s) to find a "schema.org/relatedLink"
+  #  This is going to be the searchworks url if present.
+  #  See https://github.com/sul-dlss/searchworks_traject_indexer/pull/1490
+  #  References are retrieved from the SolrDocument as an array of Geoblacklight::Reference
+  #  where the "reference" attribute is an array of two elements, the first being the type and the second being the url
+  def searchworks_url
+    related_link = references.refs.find { |ref| ref.reference[0] == 'https://schema.org/relatedLink' }
+    related_link.present? ? related_link.reference[1] : nil
   end
 
   # Email uses the semantic field mappings below to generate the body of an email.

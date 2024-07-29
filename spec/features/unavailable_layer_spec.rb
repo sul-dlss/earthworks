@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Unavailable layer' do
+describe 'Unavailable layer', skip: 'needs GBLv4 compatibility' do
   it 'hides and shows appropriate messages for geomonitored unavailable' do
     visit solr_document_path 'harvard-ntadcd106'
     within '.unavailable-warning' do

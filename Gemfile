@@ -1,13 +1,14 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.0'
+gem 'rails', '~> 7.1'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
 # Use Puma as the app server
-gem 'puma', '~> 5.0'
+gem 'puma', '~> 6'
+
 # Use SCSS for stylesheets
 gem 'sassc-rails'
 
@@ -22,8 +23,11 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Rubocop is a static code analyzer to enforce style.
   gem 'rubocop', require: false
+  gem 'rubocop-capybara', require: false
+  gem 'rubocop-factory_bot', require: false
   gem 'rubocop-rails', require: false
   gem 'rubocop-rspec', require: false
+  gem 'rubocop-rspec_rails', require: false
   gem 'rubocop-performance', require: false
 end
 
@@ -40,18 +44,18 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver', '!= 3.13.0'
-  
+
   # Pinned until https://github.com/thoughtbot/factory_bot_rails/issues/433 is resolved
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'database_cleaner'
+  gem 'dotenv'
   gem 'simplecov', require: false
   gem 'solr_wrapper'
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.7'
 end
 
 group :deployment do
   gem 'capistrano'
-  gem 'capistrano-rvm'
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'dlss-capistrano'
@@ -67,7 +71,7 @@ end
 
 gem 'blacklight', '~> 7.33'
 gem 'rsolr' # required for Blacklight
-gem "geoblacklight", '~> 3.8'
+gem 'geoblacklight', github: 'geoblacklight/geoblacklight', branch: 'main'
 gem 'faraday', '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
@@ -79,7 +83,9 @@ gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
 gem 'blacklight_range_limit', '~> 7.0'
 gem 'redis', '~> 5.0'
-gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
+# Not compatible with GeoBlacklight 4.x
+# https://github.com/geoblacklight/geo_monitor/issues/12
+# gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
 gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false

@@ -18,3 +18,23 @@ dd[itemprop='url'] a {
     padding-top: 0;
   }
 }
+
+// Paragraph margins for description field
+.blacklight-dct_description_sm p {
+  margin-bottom: 0.5rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+// Move the index map legend to make space for "Embedded Content" text
+.index-map-legend {
+  left: unset;
+}
+
+// Styles for Mirador viewer (non-stanford IIIF content)
+#mirador {
+  width: 100%;
+  min-height: 493px;
+}

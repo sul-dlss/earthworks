@@ -7,7 +7,7 @@ describe 'Canonical urls' do
   end
 
   it 'not Stanford' do
-    visit solr_document_path 'mit-us-ma-e25zcta5dct-2000'
+    visit solr_document_path 'princeton-02870w62c'
     expect(page).to have_no_css 'link[rel="canonical"]', visible: false
   end
 end
