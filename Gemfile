@@ -48,6 +48,7 @@ group :development, :test do
   # Pinned until https://github.com/thoughtbot/factory_bot_rails/issues/433 is resolved
   gem 'factory_bot_rails', '~> 6.2.0'
   gem 'database_cleaner'
+  gem 'dotenv'
   gem 'simplecov', require: false
   gem 'solr_wrapper'
   gem 'sqlite3', '~> 1.7'
