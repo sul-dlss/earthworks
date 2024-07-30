@@ -86,3 +86,6 @@ gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
 gem "cssbundling-rails", "~> 1.4"
+gem "importmap-rails", "~> 2.0"
+gem "stimulus-rails", "~> 1.3"
+gem "turbo-rails", "~> 2.0"
