@@ -46,10 +46,6 @@ class CatalogController < ApplicationController
     config.show.partials << 'show_default_viewer_information'
     config.show.partials << 'show_default_canonical_link'
 
-    ##
-    # Configure the index document presenter.
-    config.index.document_presenter_class = Geoblacklight::DocumentPresenter
-
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
     #
