@@ -5,7 +5,6 @@
 
 @import 'sul-variables';
 @import 'blacklight';
-@import 'slider';
-@import 'blacklight_range_limit/blacklight_range_limit';
+@import 'blacklight-range-limit/vendor/assets/stylesheets/slider';
+@import 'blacklight-range-limit/app/assets/stylesheets/blacklight_range_limit/blacklight_range_limit';
 @import 'geoblacklight';
-@import 'earthworks';

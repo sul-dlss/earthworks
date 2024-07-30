@@ -1,9 +1,8 @@
 @import 'bootstrap-variables';
 
-@import 'bootstrap';
+@import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-overrides';
 
-$logo-image: image-url('earthworks.svg');
+$logo-image: url('earthworks.svg');
 
-@import 'blacklight/blacklight';
-@import 'modules/blacklight_overrides';
+@import 'blacklight-frontend/app/assets/stylesheets/blacklight/blacklight';
