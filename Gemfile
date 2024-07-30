@@ -9,12 +9,6 @@ gem "propshaft"
 # Use Puma as the app server
 gem 'puma', '~> 6'
 
-# Use SCSS for stylesheets
-gem 'sassc-rails'
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
@@ -89,7 +83,7 @@ gem 'redis', '~> 5.0'
 gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false
-gem 'bootstrap', '~> 4.0'
+gem 'bootstrap', '~> 5.3'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
