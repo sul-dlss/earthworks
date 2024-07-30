@@ -34,17 +34,21 @@ class CatalogController < ApplicationController
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'format'
 
+    config.index.document_component = Geoblacklight::SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
 
     config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }
 
     # solr field configuration for document/show views
     config.show.display_type_field = 'format'
+    config.show.partials.delete(:show)
     config.show.partials << 'show_message'
     config.show.partials << 'show_default_viewer_container'
     config.show.partials << 'show_default_attribute_table'
     config.show.partials << 'show_default_viewer_information'
     config.show.partials << 'show_default_canonical_link'
+    config.show.partials << :show
+    config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -295,16 +299,23 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
+  
+    # Nav actions from Blacklight
+    config.add_nav_action(:bookmark, partial: "blacklight/nav/bookmark", if: :render_bookmarks_control?)
+    config.add_nav_action(:search_history, partial: "blacklight/nav/search_history")
+
+    config.add_results_document_tool(:bookmark, component: Blacklight::Document::BookmarkComponent, if: :render_bookmarks_control?)
 
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
-    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:bookmark, component: Blacklight::Document::BookmarkComponent, if: :render_bookmarks_control?)
     config.add_show_tools_partial(:citation)
     config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
     # Custom tools for GeoBlacklight
+    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
     config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
                                                     if: proc { |_context, _config, options|
                                                           options[:document] &&
@@ -314,7 +325,7 @@ class CatalogController < ApplicationController
     config.show.document_actions.delete(:sms)
 
     # Configure basemap provider
-    config.basemap_provider = 'OpenStreetMap.HOT'
+    config.basemap_provider = 'openstreetmapHot'
 
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
