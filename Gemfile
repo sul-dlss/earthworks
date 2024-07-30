@@ -3,8 +3,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.1'
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# Successor to sprockets. https://github.com/rails/propshaft
+gem "propshaft"
 
 # Use Puma as the app server
 gem 'puma', '~> 6'
@@ -91,3 +91,4 @@ gem 'bootstrap', '~> 4.0'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
+gem "cssbundling-rails", "~> 1.4"
