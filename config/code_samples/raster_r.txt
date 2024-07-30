@@ -1,10 +1,41 @@
-Raster Python content: Coming soon
+# Load necessary libraries
+library(httr)
+library(zip)
+library(raster)
+library(tiff)
 
-Information that may be used in this code: 
+# Define the layer name
+layer_name <- "<<LAYER_ID>>"
 
-- Geoserver WMS URL: <<GEOSERVER_WMS>>
-- Bounding box: 
--- Max x :  <<MAX_X>>
--- Max y : <<MAX_Y>>
--- Min y : <<MIN_Y>>
--- Min x : <<MIN_X>>
+# Construct URL to the zip file
+zip_url <- paste0("https://stacks.stanford.edu/object/", layer_name)
+
+# Define the file paths
+zip_file_path <- paste0(layer_name, ".zip")
+extract_path <- paste0("./", layer_name)
+dir.create(extract_path, showWarnings = FALSE)
+
+# Download the zip file
+GET(zip_url, write_disk(zip_file_path, overwrite = TRUE))
+
+# Unzip the outer zip file
+unzip(zip_file_path, exdir = extract_path)
+
+# Find the inner zip file (data.zip)
+inner_zip_path <- file.path(extract_path, "data.zip")
+
+# Unzip the inner zip file
+unzip(inner_zip_path, exdir = extract_path)
+
+# Find the GeoTIFF file in the extracted contents
+tif_files <- list.files(extract_path, pattern = "\\.tif$", full.names = TRUE)
+
+if (length(tif_files) == 0) {
+    stop("No GeoTIFF file found in the extracted contents.")
+}
+
+# Load the GeoTIFF file
+r <- raster(tif_files[1])
+
+# Plot the image data
+plot(r, col = gray.colors(256), main = paste("Raster Data for", layer_name))

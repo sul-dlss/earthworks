@@ -32,6 +32,9 @@ module Earthworks
       # replace DRUID_ID
       sub_content = sub_content.gsub('<<WXS_ID>>', @document.wxs_identifier) unless @document.wxs_identifier.empty?
 
+      # If layer id is required
+      sub_content = sub_content.gsub('<<LAYER_ID>>', layer_id) unless layer_id.nil?
+
       # replace WMS reference
       unless @document.references.wms.nil? || @document.references.wms.endpoint.nil?
         sub_content = sub_content.gsub('<<GEOSERVER_WMS>>', @document.references.wms.endpoint)
@@ -60,6 +63,15 @@ module Earthworks
         end
       end
       sub_content
+    end
+
+    def layer_id
+      # If the Solr document either does not have a wxs identifier or does not have the "druid:" prefix
+      unless @document.wxs_identifier.empty? || @document.wxs_identifier.exclude?('druid:')
+        return @document.wxs_identifier.split('druid:')[1]
+      end
+
+      nil
     end
 
     private
