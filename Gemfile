@@ -61,9 +61,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'blacklight', '~> 7.33'
+gem 'blacklight', '~> 8.3'
 gem 'rsolr' # required for Blacklight
-gem 'geoblacklight','~> 4.4'
+gem 'geoblacklight', github: 'geoblacklight/geoblacklight', branch: 'blacklight8'
 gem 'faraday', '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
