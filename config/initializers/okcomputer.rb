@@ -3,7 +3,7 @@ OkComputer.mount_at = false
 
 # rubocop:disable Layout/ArgumentAlignment
 OkComputer::Registry.register 'solr',
-  OkComputer::HttpCheck.new(Blacklight.default_index.connection.uri.to_s.sub(%r{/$}, '') + '/admin/ping')
+  OkComputer::HttpCheck.new(Blacklight.connection_config[:url].to_s.sub(%r{/$}, '') + '/admin/ping')
 
 OkComputer::Registry.register 'downloads-cache',
   OkComputer::DirectoryCheck.new(Settings.DOWNLOAD_PATH, true)
