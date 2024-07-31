@@ -7,3 +7,8 @@
 
 /* GeoBlacklight */
 @import url("geoblacklight.css");
+
+
+.palo-alto-base {
+  --bs-dark-rgb: 23, 94, 84;
+}
