@@ -110,6 +110,17 @@ GEM
     ast (2.4.2)
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
+    axe-core-api (4.10.0)
+      dumb_delegator
+      virtus
+    axe-core-rspec (4.10.0)
+      axe-core-api (= 4.10.0)
+      dumb_delegator
+      virtus
+    axiom-types (0.1.1)
+      descendants_tracker (~> 0.0.4)
+      ice_nine (~> 0.11.0)
+      thread_safe (~> 0.3, >= 0.3.1)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bcrypt_pbkdf (1.1.1)
@@ -161,6 +172,8 @@ GEM
       xpath (~> 3.2)
     chronic (0.10.2)
     coderay (1.1.3)
+    coercible (1.0.0)
+      descendants_tracker (~> 0.0.1)
     concurrent-ruby (1.3.4)
     config (5.5.1)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -181,6 +194,8 @@ GEM
     deep_merge (1.2.2)
     deprecation (1.1.0)
       activesupport
+    descendants_tracker (0.0.4)
+      thread_safe (~> 0.3, >= 0.3.1)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -204,6 +219,7 @@ GEM
     dotenv (3.1.2)
     drb (2.2.1)
     dry-cli (1.1.0)
+    dumb_delegator (1.0.0)
     ed25519 (1.3.0)
     erubi (1.13.0)
     execjs (2.9.1)
@@ -264,6 +280,7 @@ GEM
     http-form_data (2.3.0)
     i18n (1.14.5)
       concurrent-ruby (~> 1.0)
+    ice_nine (0.11.2)
     importmap-rails (2.0.1)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
@@ -532,6 +549,7 @@ GEM
     stringio (3.1.1)
     strscan (3.1.0)
     thor (1.3.1)
+    thread_safe (0.3.6)
     timeout (0.4.1)
     turbo-rails (2.0.6)
       actionpack (>= 6.0.0)
@@ -550,6 +568,10 @@ GEM
       activesupport (>= 5.2.0, < 8.0)
       concurrent-ruby (~> 1.0)
       method_source (~> 1.0)
+    virtus (2.0.0)
+      axiom-types (~> 0.1)
+      coercible (~> 1.0)
+      descendants_tracker (~> 0.0, >= 0.0.3)
     vite_rails (3.0.17)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
@@ -592,6 +614,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  axe-core-rspec
   bcrypt_pbkdf (~> 1.1)
   blacklight!
   blacklight_dynamic_sitemap (~> 0.3)
