@@ -44,6 +44,7 @@ group :development, :test do
   gem 'simplecov', require: false
   gem 'solr_wrapper'
   gem 'sqlite3', '~> 1.7'
+  gem "axe-core-rspec"
 end
 
 group :deployment do
