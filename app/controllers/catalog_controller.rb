@@ -42,12 +42,13 @@ class CatalogController < ApplicationController
     # solr field configuration for document/show views
     config.show.display_type_field = 'format'
     config.show.partials.delete(:show)
-    config.show.partials << 'show_message'
+    config.show.partials << 'show_default_display_note'
     config.show.partials << 'show_default_viewer_container'
     config.show.partials << 'show_default_attribute_table'
     config.show.partials << 'show_default_viewer_information'
     config.show.partials << 'show_default_canonical_link'
     config.show.partials << :show
+    config.show.sidebar_component = Geoblacklight::SidebarComponent
     config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application
@@ -237,6 +238,7 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
 
+    config.add_search_field 'all_fields', label: 'All Fields'
     # config.add_search_field 'text', :label => 'All Fields'
     # config.add_search_field 'dct_title_ti', :label => 'Title'
     # config.add_search_field 'dct_description_ti', :label => 'Description'
@@ -299,17 +301,19 @@ class CatalogController < ApplicationController
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
     config.spell_max = 5
-  
-    # Nav actions from Blacklight
-    config.add_nav_action(:bookmark, partial: "blacklight/nav/bookmark", if: :render_bookmarks_control?)
-    config.add_nav_action(:search_history, partial: "blacklight/nav/search_history")
 
-    config.add_results_document_tool(:bookmark, component: Blacklight::Document::BookmarkComponent, if: :render_bookmarks_control?)
+    # Nav actions from Blacklight
+    config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
+    config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
+
+    config.add_results_document_tool(:bookmark, component: Blacklight::Document::BookmarkComponent,
+                                                if: :render_bookmarks_control?)
 
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
-    config.add_show_tools_partial(:bookmark, component: Blacklight::Document::BookmarkComponent, if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:bookmark, component: Blacklight::Document::BookmarkComponent,
+                                             if: :render_bookmarks_control?)
     config.add_show_tools_partial(:citation)
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
                                                    options[:document] &&
@@ -320,7 +324,9 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
     # Custom tools for GeoBlacklight
-    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options| options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any? }
+    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
+                                                   options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any?
+                                                 }
     config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
                                                     if: proc { |_context, _config, options|
                                                           options[:document] &&
@@ -338,7 +344,7 @@ class CatalogController < ApplicationController
   end
 
   def web_services
-    @response, @documents = action_documents
+    @docs = action_documents
 
     respond_to do |format|
       format.html do
@@ -346,12 +352,5 @@ class CatalogController < ApplicationController
         # Otherwise draw the full page
       end
     end
-  end
-
-  ##
-  # Overrides default Blacklight method to return true for an empty q value
-  # @return [Boolean]
-  def has_search_parameters?
-    !params[:q].nil? || super
   end
 end
