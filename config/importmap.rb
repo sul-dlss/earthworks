@@ -6,8 +6,8 @@ pin '@hotwired/stimulus-loading', to: 'stimulus-loading.js', preload: true
 pin '@hotwired/turbo-rails', to: 'turbo.min.js', preload: true
 
 # Bootstrap
-pin 'bootstrap', to: 'https://cdn.skypack.dev/bootstrap@5.3.3/dist/js/bootstrap.js'
 pin '@popperjs/core', to: 'https://cdn.skypack.dev/@popperjs/core@2.11.8/dist/umd/popper.min.js'
+pin 'bootstrap', to: 'https://cdn.skypack.dev/bootstrap@5.3.3/dist/js/bootstrap.bundle.js'
 
 # Blacklight
 pin 'blacklight', to: 'https://cdn.skypack.dev/blacklight-frontend@8.3.0/dist/blacklight.js'
