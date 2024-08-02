@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: d9a35353a61f06c89af24fbc1e2e4da036b6457b
+  revision: d5ff4ea72a4c61d3f53a5ed6190268344b7720cf
   branch: blacklight8
   specs:
     geoblacklight (4.4.0)
@@ -209,7 +209,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faraday (2.10.0)
+    faraday (2.10.1)
       faraday-net_http (>= 2.0, < 3.2)
       logger
     faraday-net_http (3.1.1)
@@ -368,7 +368,7 @@ GEM
     public_suffix (6.0.1)
     puma (6.4.2)
       nio4r (~> 2.0)
-    racc (1.8.0)
+    racc (1.8.1)
     rack (3.1.7)
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
@@ -569,7 +569,7 @@ GEM
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.16)
+    zeitwerk (2.6.17)
 
 PLATFORMS
   aarch64-linux
