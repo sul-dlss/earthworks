@@ -3,3 +3,10 @@ en:
     feedback_form:
       success: 'Thank you! Your feedback has been sent.'
     unavailable_html: This data is hosted by %{institution}, and is currently unavailable to preview and download. Stanford University does not hold this data and cannot provide access to it, at this time. If you have questions about this or other unavailable datasets from %{department} please submit your feedback to <a href="mailto:%{email}">%{email}</a>.
+    home:
+      datasets:
+        header: Geospatial data
+        description: Need copy for this ... contains over %{sets} datasets...
+      maps:
+        header:  Scanned maps
+        description: Need copy for this ... contains over %{sets} maps...
