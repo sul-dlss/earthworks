@@ -1,3 +1,16 @@
+.palo-alto-base {
+  --bs-dark-rgb: 23, 94, 84;
+}
+
+.home-header .blacklight-icons, .home-header .blacklight-icons svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.home-tab {
+  margin-left: 2.3rem;
+}
+
 .component-container .card, .component-container .card-header, .component-container .card-body, .component-container .list-group, .component-container .list-group-item {
   background-color: inherit;
   border: none!important;

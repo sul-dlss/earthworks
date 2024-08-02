@@ -1,0 +1,18 @@
+<h1 class="h3 home-header">
+  <%= geoblacklight_icon(type) %>
+  <span class="ms-1"><%= t("earthworks.home.#{type}.header") %></span>
+</h1>
+<div class="home-tab">
+  <div class="mb-1">
+    <%= t("earthworks.home.#{type}.description", sets: count) %>
+  </div>
+  <h2 class="h4">Recently added</h2>
+  <ul class="list-unstyled">
+    <% docs.each do | doc | %>
+      <li class="my-1"><%= link_to doc['dct_title_s'], solr_document_path(doc['id']) %></li>
+    <% end %>
+  </ul>
+  <div class="d-flex justify-content-end">
+    <%= link_to "Browse all  records", search_catalog_path("f[#{field}][]": term), class: 'btn btn-outline-primary' %>
+  </div>
+</div>
