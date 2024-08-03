@@ -365,7 +365,10 @@ class CatalogController < ApplicationController
 
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
-    config.autocomplete_path = 'suggest'
+    # config.autocomplete_path = 'suggest'
+    # This path is translating to the SOLR endpoint
+    # not the URL in the dropdown
+    # config.autocomplete_path = 'select'
   end
 
   def web_services
@@ -389,5 +392,20 @@ class CatalogController < ApplicationController
         # Otherwise draw the full page
       end
     end
+  end
+
+  # def autosearch
+  #   @suggestions = [
+  #     {
+  #       'term' => 'serious'
+  #     }
+  #   ]
+  #   render 'autosearch', layout: false
+  # end
+
+  def suggest
+    @autoresults = search_service.repository.search(q: params[:q], fq: ['-gbl_suppressed_b: true'], rows: 20,
+                                                    'facet.field': %w[gbl_resourceClass_sm dct_spatial_sm])
+    render 'autosearch', layout: false
   end
 end
