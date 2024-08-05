@@ -70,11 +70,12 @@
   <div class="container pt-3">
     <div class="row justify-content-center">
       <form
-        class="col-md-8"
+        class="col-md-8 feedback-form"
         action="/feedback"
         accept-charset="UTF-8"
         method="post"
       >
+        <input type="hidden" id="url" name="url" value="<%= request.original_url %>" />
         <div class="alert alert-info" role="alert">
           Reporting from:
           <%= root_url %>

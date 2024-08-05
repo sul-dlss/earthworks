@@ -4,6 +4,22 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="<%= Settings.GOOGLE_SITE_VERIFICATION %>" />
+    <meta name="msvalidate.01" content="<%= Settings.BING_SITE_VERIFICATION %>" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL7MQNBFW9"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      
+      const config = {};
+      <% if Settings.ANALYTICS_DEBUG %>
+        config.debug_mode = true
+      <% end %>
+          
+      gtag('config', 'G-ZL7MQNBFW9', config)
+    </script>
 
     <title><%= render_page_title %></title>
     <script>

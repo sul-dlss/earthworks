@@ -1,7 +1,9 @@
 # frozen_string_literal: true
+
 module Blacklight
   class TopNavbarComponent < Blacklight::Component
     def initialize(blacklight_config:)
+      super
       @blacklight_config = blacklight_config
     end
 

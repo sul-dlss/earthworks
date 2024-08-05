@@ -325,7 +325,9 @@ class CatalogController < ApplicationController
 
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
-                                                   options[:document] && (Settings.METADATA_SHOWN & options[:document].references.refs.map(&:type).map(&:to_s)).any?
+                                                   options[:document] &&
+                                                     (Settings.METADATA_SHOWN &
+                                                      options[:document].references.refs.map { |x| x.type.to_s }).any?
                                                  }
     config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
                                                     if: proc { |_context, _config, options|
