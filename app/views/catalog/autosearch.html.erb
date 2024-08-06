@@ -1,4 +1,6 @@
 <% 
+  # We used this to sort the results from an actual search
+  # This file can be removed if we choose not to use the search option
   # Map documents by resource class, and also retrieve locations
   data_results = @autoresults.documents.select { |doc| doc['gbl_resourceClass_sm'].include?('Datasets') }
   map_results = @autoresults.documents.select { |doc| doc['gbl_resourceClass_sm'].include?('Maps') }

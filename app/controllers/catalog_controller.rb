@@ -2,6 +2,7 @@ require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
   include Blacklight::Catalog
+  include Blacklight::Searchable
 
   # Protect searches with bot_challenge_page & turnstile
   # See: https://github.com/samvera-labs/bot_challenge_page
@@ -365,7 +366,7 @@ class CatalogController < ApplicationController
 
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
-    # config.autocomplete_path = 'suggest'
+    config.autocomplete_path = 'suggest'
     # This path is translating to the SOLR endpoint
     # not the URL in the dropdown
     # config.autocomplete_path = 'select'
@@ -401,6 +402,16 @@ class CatalogController < ApplicationController
   #     }
   #   ]
   #   render 'autosearch', layout: false
+  # # end
+  # We do not need to override this if still using the suggestion service
+  # and the suggest.html.erb template.  Leaving this here in case something
+  # needs to be changed with processing the results
+  # def suggest
+  #   # @autoresults = search_service.repository.search(q: params[:q], fq: ['-gbl_suppressed_b: true'], rows: 20,
+  #   #                                                'facet.field': %w[gbl_resourceClass_sm dct_spatial_sm])
+
+  #   @suggestions = suggestions_service.suggestions
+  #   render 'suggest', layout: false
   # end
 
   def suggest
