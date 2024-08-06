@@ -21,7 +21,7 @@
   d_num = data_results.length > 3 ? 3: data_results.length
   data_results.first(d_num).each do |data_result|
 %>
-  <li role="option" class="dropdown-item"><span><%=data_result['term']%></span></li>
+  <li role="option" class="dropdown-item"><span><%=sanitize data_result['term']%></span></li>
 <%
   end
 %>
@@ -30,7 +30,7 @@
   m_num = map_results.length > 3 ? 3: map_results.length
   map_results.first(m_num).each do |map_result|
 %>
-  <li role="option" class="dropdown-item"><span><%=map_result['term']%></span></li>
+  <li role="option" class="dropdown-item"><span><%=sanitize map_result['term']%></span></li>
 <%
   end
 %>
