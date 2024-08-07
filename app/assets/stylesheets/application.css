@@ -7,7 +7,7 @@
 
 /* GeoBlacklight */
 @import url("geoblacklight.css");
-
+@import url("earthworks.css");
 
 .palo-alto-base {
   --bs-dark-rgb: 23, 94, 84;

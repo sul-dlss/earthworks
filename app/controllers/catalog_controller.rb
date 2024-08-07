@@ -48,7 +48,7 @@ class CatalogController < ApplicationController
     config.show.partials << 'show_default_viewer_information'
     config.show.partials << 'show_default_canonical_link'
     config.show.partials << :show
-    config.show.sidebar_component = Geoblacklight::SidebarComponent
+    config.show.sidebar_component = Earthworks::SidebarComponent
     config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application
@@ -312,11 +312,6 @@ class CatalogController < ApplicationController
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
-    config.add_show_tools_partial(:bookmark, component: Blacklight::Document::BookmarkComponent,
-                                             if: :render_bookmarks_control?)
-    config.add_show_tools_partial(:citation)
-    config.add_show_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
-    config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
     # Custom tools for GeoBlacklight
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|

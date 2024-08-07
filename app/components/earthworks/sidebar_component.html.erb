@@ -1,0 +1,13 @@
+<div class="bg-fog-light component-container rounded">
+  <% filtered_components = components.map{|component | render component }.uniq.compact_blank %>
+  <%= filtered_components.join('<hr style="border-top: dotted 1px;" />').html_safe if filtered_components.any? %>
+  <% tools = render_show_tools %>
+  <% if filtered_components.any? && tools.present? %>
+    <hr style="border-top: dotted 1px;" />
+  <% end %>
+  <%= tools %>
+</div>
+
+<div class="mt-4">
+  <%= render Blacklight::Document::MoreLikeThisComponent.new(document:) %>
+</div>
