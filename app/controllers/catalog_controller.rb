@@ -329,6 +329,11 @@ class CatalogController < ApplicationController
                                                           options[:document] &&
                                                             options[:document].searchworks_url.present?
                                                         }
+    # Custom tool for EarthWorks
+    # This may need to be placed in a different location
+    # This partial includes the link that triggers the modal that points to /code_snippet
+    # which is defined below under the "code_snippet" function.
+    config.add_show_tools_partial(:code_snippet_link, partial: 'code_snippet_link')
 
     config.show.document_actions.delete(:sms)
 
@@ -341,6 +346,18 @@ class CatalogController < ApplicationController
   end
 
   def web_services
+    @docs = action_documents
+
+    respond_to do |format|
+      format.html do
+        return render layout: false if request.xhr?
+        # Otherwise draw the full page
+      end
+    end
+  end
+
+  # Adding code snippet function, uses code_snippet.html.erb partial
+  def code_snippet
     @docs = action_documents
 
     respond_to do |format|
