@@ -56,7 +56,7 @@ pipeline {
       }
 
       when {
-        branch 'main'
+        branch 'bl8'
       }
 
       steps {
@@ -73,7 +73,7 @@ pipeline {
           bundle install --without production
 
           # Deploy it
-          bundle exec cap $DEPLOY_ENVIRONMENT deploy
+          bundle exec cap $DEPLOY_ENVIRONMENT deploy BRANCH=bl8
           '''
         }
       }
