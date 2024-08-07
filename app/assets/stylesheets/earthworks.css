@@ -1,0 +1,45 @@
+.component-container .card, .component-container .card-header, .component-container .card-body, .component-container .list-group, .component-container .list-group-item {
+  background-color: inherit;
+  border: none!important;
+  padding: 0px!important;
+  margin: 0px!important;
+}
+
+.component-container .card-header, .blacklight-catalog-show .page-sidebar .card-header h2 {
+  font-size: calc(1.275rem + 0.3vw);
+}
+
+.component-container li a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+}
+
+.component-container, .card.relations {
+  --bs-border-radius: 4px;
+  padding: 1.5rem 1rem;
+}
+.authentication {
+  text-align:center;
+}
+
+.bg-fog-light {
+  background-color: var(--stanford-fog-light);
+}
+
+.card.relations, .card.relations > * {
+  border: none!important;
+  --bs-list-group-bg: var(--stanford-fog-light);
+  background-color: var(--stanford-fog-light);
+  --bs-list-group-item-padding-y: 5px;
+  --bs-list-group-item-padding-x: 0px;
+  --bs-card-cap-padding-y: 0px;
+  --bs-card-cap-padding-x: 0px;
+}
+
+.authentication .btn {
+  --bs-btn-bg: var(--stanford-cardinal)!important;
+  --bs-btn-border-color: var(--stanford-cardinal)!important;
+  --bs-btn-hover-bg: var(--stanford-digital-red-dark)!important;
+  --bs-btn-hover-border-color: var(--stanford-digital-red-dark)!important;
+  --bs-btn-active-bg: var(--stanford-digital-red-darker)!important;
+  --bs-btn-active-border-color: var(--stanford-digital-red-darker)!important;
+}

@@ -48,7 +48,7 @@ class CatalogController < ApplicationController
     config.show.partials << 'show_default_viewer_information'
     config.show.partials << 'show_default_canonical_link'
     config.show.partials << :show
-    config.show.sidebar_component = Geoblacklight::SidebarComponent
+    config.show.sidebar_component = Earthworks::SidebarComponent
     config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application
