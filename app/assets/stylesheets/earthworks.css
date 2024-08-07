@@ -164,3 +164,38 @@ Uncomment lines 142-144
   --bs-pagination-focus-bg: none;
   --bs-pagination-focus-box-shadow: none;
 }
+/* Styles for code snippet */
+
+.code-snippet-content {
+  background-color: #f4f4f4 !important;
+  font-size: 1.2em;
+}
+
+.code-snippet-tab {
+  color: var(--stanford-digital-blue);
+  font-size: 1.5rem;
+}
+
+.code-snippet-tab.active {
+  color: var(--stanford-digital-blue);
+  text-decoration: underline !important;
+  text-decoration-color: var(--stanford-digital-blue) !important;
+}
+
+.code-snippet-tab.nav-link.active {
+  color: var(--stanford-digital-blue);
+}
+
+.bd-clipboard {
+  position:relative;
+  float:right;
+}
+
+.btn-clipboard{
+  background-color: white !important;
+}
+
+.btn-clipboard:active, .btn-clipboard:hover, .btn-clipboard:focus {
+  color: var(--stanford-digital-blue-dark) !important;
+  border-color: var(--stanford-digital-blue-dark) !important;
+}
