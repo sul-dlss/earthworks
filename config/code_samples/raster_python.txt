@@ -1,0 +1,62 @@
+# Before running this code, install or check for these libraries
+# pip install rasterio matplotlib
+import requests
+import zipfile
+import io
+import rasterio
+from rasterio.plot import show
+import matplotlib.pyplot as plt
+import os
+
+def download_and_display_geotiff(layer_name):
+    # Construct URL to the zip file
+    zip_url = f"https://stacks.stanford.edu/object/{layer_name}"
+    
+    # Fetch the zip file
+    response = requests.get(zip_url)
+    
+    # Path to extract the zip file
+    extract_path = f"./{layer_name}"
+    os.makedirs(extract_path, exist_ok=True)
+    
+    # Unzip the outer zip file
+    with open(f"{extract_path}/{layer_name}.zip", "wb") as f:
+        f.write(response.content)
+        
+    with zipfile.ZipFile(f"{extract_path}/{layer_name}.zip", 'r') as zip_ref:
+        zip_ref.extractall(extract_path)
+    
+    # Find the inner zip file (data.zip)
+    inner_zip_path = os.path.join(extract_path, "data.zip")
+    
+    if not os.path.exists(inner_zip_path):
+        print("No inner zip file (data.zip) found.")
+        return
+
+    # Unzip the inner zip file
+    with zipfile.ZipFile(inner_zip_path, 'r') as inner_zip_ref:
+        inner_zip_ref.extractall(extract_path)
+
+    # Find the GeoTIFF file in the extracted contents
+    geotiff_filename = None
+    for root, dirs, files in os.walk(extract_path):
+        for file in files:
+            if file.endswith('.tif'):
+                geotiff_filename = os.path.join(root, file)
+                break
+
+    if geotiff_filename is None:
+        print("No GeoTIFF file found in the extracted contents.")
+        return
+
+    # Load the GeoTIFF file into rasterio
+    with rasterio.open(geotiff_filename) as dataset:
+        # Plot the image data using matplotlib
+        plt.figure(figsize=(10, 10))
+        plt.title(f"Raster Data for {layer_name}")
+        show(dataset, cmap='gray')
+        plt.close()
+
+# Example usage
+layer_name = "<<LAYER_ID>>"
+download_and_display_geotiff(layer_name)

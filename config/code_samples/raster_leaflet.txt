@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaflet WMS Map</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Configuration variables
+        const wmsEndpoint = "<<GEOSERVER_WMS>>";
+        const layerId = `<<WXS_ID>>`;
+
+        // Initialize the map
+        const map = L.map('map');
+
+        // Add a base layer for better context
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Add the WMS layer
+        const wmsLayer = L.tileLayer.wms(wmsEndpoint, {
+            layers: layerId,
+            format: 'image/png',
+            transparent: true,
+            version: '1.1.0',
+            attribution: '© Stanford'
+        }).addTo(map);
+
+        // Set the map view based on the layer's bounding box
+        const bounds = [[<<MIN_Y>>, <<MIN_X>>], [<<MAX_Y>>, <<MAX_X>>]];
+        map.fitBounds(bounds);
+    </script>
+</body>
+</html>
