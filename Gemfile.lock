@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: 4af93ba5736bf53bbea143545f25d0955536b7ee
+  revision: 7f4bf0b325002609c3be1e1db2eb6cc9edffb2b8
   branch: main
   specs:
     geoblacklight (4.4.0)
@@ -10,11 +10,9 @@ GIT
       deprecation
       faraday (~> 2.0)
       geo_combine (~> 0.9)
-      handlebars_assets
       mime-types
       rails (>= 6.1, < 7.2)
       rgeo-geojson
-      sprockets-rails (~> 3.0)
       vite_rails (~> 3.0)
 
 GEM
@@ -99,7 +97,7 @@ GEM
     airbrussh (1.5.2)
       sshkit (>= 1.6.1, != 1.7.0)
     ast (2.4.2)
-    autoprefixer-rails (10.4.16.0)
+    autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
@@ -212,7 +210,7 @@ GEM
     factory_bot_rails (6.2.0)
       factory_bot (~> 6.2.0)
       railties (>= 5.0.0)
-    faraday (2.10.0)
+    faraday (2.10.1)
       faraday-net_http (>= 2.0, < 3.2)
       logger
     faraday-net_http (3.1.1)
@@ -252,12 +250,8 @@ GEM
       rchardet (~> 1.8)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    handlebars_assets (0.23.9)
-      execjs (~> 2.0)
-      sprockets (>= 2.0.0)
-      tilt (>= 1.2)
-    hashdiff (1.1.0)
-    honeybadger (5.15.3)
+    hashdiff (1.1.1)
+    honeybadger (5.15.4)
     http (5.2.0)
       addressable (~> 2.8)
       base64 (~> 0.1)
@@ -367,7 +361,7 @@ GEM
     public_suffix (6.0.1)
     puma (6.4.2)
       nio4r (~> 2.0)
-    racc (1.8.0)
+    racc (1.8.1)
     rack (3.1.7)
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
@@ -428,7 +422,7 @@ GEM
       actionpack (>= 5.2)
       railties (>= 5.2)
     retriable (3.1.2)
-    rexml (3.3.2)
+    rexml (3.3.4)
       strscan
     rgeo (3.0.1)
     rgeo-geojson (2.2.0)
@@ -454,7 +448,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
-    rubocop (1.65.0)
+    rubocop (1.65.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -523,7 +517,7 @@ GEM
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
-    sprockets-rails (3.5.1)
+    sprockets-rails (3.5.2)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
@@ -578,7 +572,7 @@ GEM
       chronic (>= 0.6.3)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.16)
+    zeitwerk (2.6.17)
 
 PLATFORMS
   aarch64-linux
