@@ -56,3 +56,11 @@
   --bs-btn-active-bg: var(--stanford-digital-red-darker)!important;
   --bs-btn-active-border-color: var(--stanford-digital-red-darker)!important;
 }
+
+.blacklight-icons-stanford svg path {
+  fill: var(--stanford-cardinal);
+}
+
+.blacklight-icons-restricted svg path {
+  fill: var(--stanford-digital-red)
+}
