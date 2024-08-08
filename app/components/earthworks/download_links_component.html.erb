@@ -1,0 +1,41 @@
+<% direct_dowload = document.direct_download.present? || document.hgl_download.present? || document.iiif_download.present?  %>
+<% if direct_dowload %>
+<div class="h4">Download</div>
+<% end %>
+<% if document.direct_download.present? %>
+<% if document.direct_download[:download].is_a? Array %>
+    <% document.direct_download[:download].each do |download| %>
+      <div>
+        <%= download_link_file(download['label'], document.id, download['url']) %>
+      </div>
+    <% end %>
+<% end %>
+<% if document.direct_download[:download].is_a? String %>
+    <div>
+      <%= download_link_file(download_text(document.file_format), document.id, document.direct_download[:download]) %>
+    </div>
+<% end %>
+<% end %>
+
+<% if document.hgl_download.present? %>
+  <div>
+    <%= download_link_hgl(download_text(document.download_types.first[0]), document) %>
+  </div>
+<% end %>
+
+<% if document.iiif_download.present? %>
+<div>
+  <%= download_link_iiif %>
+</div>
+<% end %>
+
+<% if direct_dowload && document.download_types.present? %>
+<hr style="border-top: dotted 1px;" />
+<% end %>
+
+<% if document.download_types.present? %>
+<div class="h4">Export as</div>
+<% document.download_types.each do |type| %>
+    <div><%= download_link_generated(type.first, document) %></div>
+<% end %>
+<% end %>
