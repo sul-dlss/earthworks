@@ -337,9 +337,6 @@ class CatalogController < ApplicationController
 
     config.show.document_actions.delete(:sms)
 
-    # Configure basemap provider
-    config.basemap_provider = 'openstreetmapHot'
-
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
