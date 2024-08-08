@@ -16,7 +16,7 @@ services:
       - db:/var/lib/postgresql/data
 
   index:
-    image: solr:8.11.1
+    image: solr:8.11.2
     ports:
       - "8983:8983"
     volumes:
