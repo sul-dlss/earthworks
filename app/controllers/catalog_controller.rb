@@ -34,7 +34,7 @@ class CatalogController < ApplicationController
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'format'
 
-    config.index.document_component = Geoblacklight::SearchResultComponent
+    config.index.document_component = Earthworks::SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
 
     config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }

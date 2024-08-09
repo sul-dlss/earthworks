@@ -68,12 +68,3 @@
 .documents-list article:hover, .documents-list article:focus {
   box-shadow: -4px 4px 4px 0px var(--stanford-fog-light);
 }
-
-.document-counter {
-  display: none;
-}
-
-.documents-list .documentHeader .index_title {
-  margin-left: .75rem;
-  align-self: center;
-}
