@@ -61,11 +61,7 @@
   box-shadow: -4px 4px 4px 0px var(--stanford-fog-light);
 }
 
-.document-counter {
-  display: none;
-}
-
-.documents-list .documentHeader .index_title {
-  margin-left: .75rem;
-  align-self: center;
+.documents-list .document {
+  padding-top: 0px;
+  margin-top: 0px;
 }
