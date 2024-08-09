@@ -6,6 +6,12 @@
   <section class="<%= show_content_classes %>">
     <%= yield %>
   </section>
+
+  <section class="col-lg-5">
+    <%= render Geoblacklight::ViewerContainerComponent.new(document: @document) %>
+    <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
+    <%= render Geoblacklight::IndexMapInspectComponent.new(document: @document) %>
+  </section>
 <% end %>
 
 <%= render template: "layouts/blacklight/base" %>
