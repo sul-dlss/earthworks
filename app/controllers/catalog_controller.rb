@@ -41,14 +41,9 @@ class CatalogController < ApplicationController
 
     # solr field configuration for document/show views
     config.show.display_type_field = 'format'
-    config.show.partials.delete(:show)
-    config.show.partials << 'show_default_display_note'
-    config.show.partials << 'show_default_viewer_container'
-    config.show.partials << 'show_default_attribute_table'
-    config.show.partials << 'show_default_viewer_information'
-    config.show.partials << 'show_default_canonical_link'
-    config.show.partials << :show
+
     config.show.sidebar_component = Earthworks::Document::SidebarComponent
+    config.show.document_component = Earthworks::DocumentComponent
     config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application
