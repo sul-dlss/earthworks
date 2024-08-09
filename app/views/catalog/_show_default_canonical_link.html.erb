@@ -1,7 +1,0 @@
-<% document ||= @document %>
-
-<% if document.stanford? %>
-  <% content_for :head do %>
-    <link rel="canonical" href="<%= "#{Settings.HOST_URL}#{solr_document_path(document.id)}" %>">
-  <% end %>
-<% end %>
