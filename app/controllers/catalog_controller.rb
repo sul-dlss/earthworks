@@ -34,7 +34,7 @@ class CatalogController < ApplicationController
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'format'
 
-    config.index.document_component = Geoblacklight::SearchResultComponent
+    config.index.document_component = Earthworks::SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
 
     config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }
@@ -48,7 +48,7 @@ class CatalogController < ApplicationController
     config.show.partials << 'show_default_viewer_information'
     config.show.partials << 'show_default_canonical_link'
     config.show.partials << :show
-    config.show.sidebar_component = Earthworks::SidebarComponent
+    config.show.sidebar_component = Earthworks::Document::SidebarComponent
     config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application

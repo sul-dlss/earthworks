@@ -1,0 +1,7 @@
+<div>
+  <% @fields.each do |field| %>
+    <% icon, label = get_icon(field) %>
+    <%= icon %>
+    <span class="me-1"><%= label %></span>
+  <% end %>
+</div>

@@ -56,3 +56,12 @@
   --bs-btn-active-bg: var(--stanford-digital-red-darker)!important;
   --bs-btn-active-border-color: var(--stanford-digital-red-darker)!important;
 }
+
+.documents-list article:hover, .documents-list article:focus {
+  box-shadow: -4px 4px 4px 0px var(--stanford-fog-light);
+}
+
+.documents-list .document {
+  padding-top: 0px;
+  margin-top: 0px;
+}
