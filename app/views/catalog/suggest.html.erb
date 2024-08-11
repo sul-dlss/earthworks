@@ -1,36 +1,26 @@
-<%
-  spatial_results = @suggestions["spatialSuggester"]
-  title_results = @suggestions["titleSuggester"]
+<% if @suggestions[:locations].length > 0 %>
+  <li class="fw-bold" aria-disabled="true">Locations</li>
+  <% @suggestions[:locations].first(3).each do |result| %>
+    <li role="option" class="dropdown-item" data-autocomplete-value="<%= strip_tags result['term'] %>">
+      <span><%= link_to sanitize(result['term']), controller: 'catalog', params: {"f[dct_spatial_sm][]": strip_tags(result['term'])} %></span>
+    </li>
+  <% end %>
+<% end %>
 
-# Map documents by resource class which is saved in payload
-  data_results = title_results.select { |s| s['payload'] == 'Datasets' }
-  map_results = title_results.select { |s| s['payload'] == 'Maps' }
-  
-%>
-<%= 'Locations' if spatial_results.length > 0 %>
-<%
-  l_num = spatial_results.length > 3 ? 3: spatial_results.length
-  spatial_results.first(l_num).each do |loc|
-%>
-  <li role="option" class="dropdown-item"><span><%=loc['term']%></span></li>
-<%
-  end
-%>
-<%= 'Datasets' if data_results.length > 0 %>
-<%
-  d_num = data_results.length > 3 ? 3: data_results.length
-  data_results.first(d_num).each do |data_result|
-%>
-  <li role="option" class="dropdown-item"><span><%=sanitize data_result['term']%></span></li>
-<%
-  end
-%>
-<%= 'Maps' if map_results.length > 0 %>
-<%
-  m_num = map_results.length > 3 ? 3: map_results.length
-  map_results.first(m_num).each do |map_result|
-%>
-  <li role="option" class="dropdown-item"><span><%=sanitize map_result['term']%></span></li>
-<%
-  end
-%>
+<% if @suggestions[:datasets].length > 0 %>
+  <li class="fw-bold" aria-disabled="true">Datasets</li>
+  <% @suggestions[:datasets].first(3).each do |result| %>
+  <li role="option" class="dropdown-item">
+    <span><%= link_to sanitize(result['term']), controller: 'catalog', params: {"q": strip_tags(result['term'])} %></span>
+  </li>
+  <% end %>
+<% end %>
+
+<% if @suggestions[:maps].length > 0 %>
+  <li class="fw-bold" aria-disabled="true">Maps</li>
+  <% @suggestions[:maps].first(3).each do |result| %>
+    <li role="option" class="dropdown-item">
+      <span><%= link_to sanitize(result['term']), controller: 'catalog', params: {"q": strip_tags(result['term'])} %></span>
+    </li>
+  <% end %>
+<% end %>

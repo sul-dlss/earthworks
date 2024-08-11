@@ -23,14 +23,14 @@ module Blacklight
       # present
       # @return [Array]
       def suggestions
-        # (response.dig(suggest_path, suggester_name, request_params[:q], 'suggestions') || []).uniq
-        suggester_names = %w[spatialSuggester titleSuggester]
-        suggestion_results = {}
-        suggester_names.each do |suggester_name|
-          suggestion_results[suggester_name] =
-            (response.dig(suggest_path, suggester_name, request_params[:q], 'suggestions') || []).uniq
-        end
-        suggestion_results
+        locations = response.dig(suggest_path, 'spatialSuggester', request_params[:q], 'suggestions')
+
+        # unpack the titles into datasets and maps using their payload value
+        titles = response.dig(suggest_path, 'titleSuggester', request_params[:q], 'suggestions')
+        datasets = titles.select { |s| s['payload'] == 'Datasets' }
+        maps = titles.select { |s| s['payload'] == 'Maps' }
+
+        { locations: locations, datasets: datasets, maps: maps }
       end
     end
   end

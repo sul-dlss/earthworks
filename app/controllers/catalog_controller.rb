@@ -2,7 +2,6 @@ require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
   include Blacklight::Catalog
-  include Blacklight::Searchable
 
   # Protect searches with bot_challenge_page & turnstile
   # See: https://github.com/samvera-labs/bot_challenge_page
@@ -330,7 +329,7 @@ class CatalogController < ApplicationController
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
-    config.spell_max = 5
+    config.spell_max = 25
 
     # Nav actions from Blacklight
     config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
@@ -367,9 +366,6 @@ class CatalogController < ApplicationController
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
-    # This path is translating to the SOLR endpoint
-    # not the URL in the dropdown
-    # config.autocomplete_path = 'select'
   end
 
   def web_services

@@ -206,16 +206,6 @@
 
   <searchComponent name="suggest" class="solr.SuggestComponent">
     <lst name="suggester">
-      <str name="name">mySuggester</str>
-      <str name="lookupImpl">FuzzyLookupFactory</str>
-      <str name="suggestAnalyzerFieldType">textSuggest</str>
-      <str name="buildOnCommit">true</str>
-      <str name="field">suggest</str>
-    </lst>
-    <!-- Suggester for the title field -->
-    <!-- Uses BlendedInfixLookupFactor to favor strings matching at the beginning-->
-    <!-- Can also use FuzzyLookupFactor or other lookup implementations-->
-    <lst name="suggester">
       <str name="name">titleSuggester</str>
       <str name="dictionaryImpl">DocumentDictionaryFactory</str>
       <str name="lookupImpl">BlendedInfixLookupFactory</str>
@@ -224,11 +214,10 @@
       <str name="field">title_suggest</str>
       <str name="payloadField">gbl_resourceClass_sm</str>
     </lst>
-    <!-- Suggester for location based on dct_spatial_sm-->
-    <!-- When no dictionary is specified, HighFrequencyDictionaryFactory is used-->
     <lst name="suggester">
       <str name="name">spatialSuggester</str>
-      <str name="lookupImpl">FuzzyLookupFactory</str>
+      <str name="dictionaryImpl">DocumentDictionaryFactory</str>
+      <str name="lookupImpl">BlendedInfixLookupFactory</str>
       <str name="suggestAnalyzerFieldType">textSuggest</str>
       <str name="buildOnCommit">true</str>
       <str name="field">spatial_suggest</str>
@@ -238,7 +227,7 @@
   <requestHandler name="/suggest" class="solr.SearchHandler" startup="lazy">
     <lst name="defaults">
       <str name="suggest">true</str>
-      <str name="suggest.count">5</str>
+      <str name="suggest.count">25</str>
       <str name="suggest.dictionary">titleSuggester</str>
       <str name="suggest.dictionary">spatialSuggester</str>
     </lst>
