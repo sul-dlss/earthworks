@@ -3,7 +3,6 @@ require 'blacklight/catalog'
 class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
-  include Blacklight::Searchable
 
   configure_blacklight do |config|
     # Ensures that JSON representations of Solr Documents can be retrieved using
@@ -300,7 +299,7 @@ class CatalogController < ApplicationController
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
-    config.spell_max = 5
+    config.spell_max = 25
 
     # Nav actions from Blacklight
     config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
@@ -330,9 +329,6 @@ class CatalogController < ApplicationController
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
-    # This path is translating to the SOLR endpoint
-    # not the URL in the dropdown
-    # config.autocomplete_path = 'select'
   end
 
   def web_services
@@ -345,23 +341,4 @@ class CatalogController < ApplicationController
       end
     end
   end
-
-  # def autosearch
-  #   @suggestions = [
-  #     {
-  #       'term' => 'serious'
-  #     }
-  #   ]
-  #   render 'autosearch', layout: false
-  # # end
-  # We do not need to override this if still using the suggestion service
-  # and the suggest.html.erb template.  Leaving this here in case something
-  # needs to be changed with processing the results
-  # def suggest
-  #   # @autoresults = search_service.repository.search(q: params[:q], fq: ['-gbl_suppressed_b: true'], rows: 20,
-  #   #                                                'facet.field': %w[gbl_resourceClass_sm dct_spatial_sm])
-
-  #   @suggestions = suggestions_service.suggestions
-  #   render 'suggest', layout: false
-  # end
 end

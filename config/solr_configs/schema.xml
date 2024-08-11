@@ -184,15 +184,6 @@
   <copyField source="dct_subject_sm" dest="spell"/>
   <copyField source="dct_spatial_sm" dest="spell"/>
 
-  <!-- for suggestions -->
-  <!-- Commenting out original suggest field, remove after testing-->
-  <!--copyField source="dct_title_s" dest="suggest"/>
-  <copyField source="dct_creator_sm" dest="suggest"/>
-  <copyField source="dct_publisher_sm" dest="suggest"/>
-  <copyField source="schema_provider_s" dest="suggest"/>
-  <copyField source="dct_subject_sm" dest="suggest"/>
-  <copyField source="dct_spatial_sm" dest="suggest"/-->
-
   <!-- for specific field suggestions-->
   <copyField source="dct_title_s" dest="title_suggest"/>
   <copyField source="dct_spatial_sm" dest="spatial_suggest"/>
