@@ -10,3 +10,5 @@ en:
       maps:
         header:  Scanned maps
         description: Need copy for this ... contains over %{sets} maps...
+    show:
+      no_georeference_message: 'This map is not georeferenced.'
