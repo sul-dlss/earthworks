@@ -3,6 +3,7 @@ require 'blacklight/catalog'
 class CatalogController < ApplicationController
   include BlacklightRangeLimit::ControllerOverride
   include Blacklight::Catalog
+  include Blacklight::Searchable
 
   configure_blacklight do |config|
     # Ensures that JSON representations of Solr Documents can be retrieved using
@@ -340,5 +341,10 @@ class CatalogController < ApplicationController
         # Otherwise draw the full page
       end
     end
+  end
+
+  def suggest
+    @suggestions = Suggester.suggest(search_service, params[:q])
+    render layout: false
   end
 end

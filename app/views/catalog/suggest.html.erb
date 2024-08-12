@@ -1,0 +1,26 @@
+<% if @suggestions.locations.length > 0 %>
+  <li class="fw-bold" aria-disabled="true">Locations</li>
+  <% @suggestions.locations.first(5).each do |result| %>
+    <li role="option" class="dropdown-item" data-autocomplete-value="<%= strip_tags result.name %>">
+      <span><%= link_to sanitize(result.highlighted_name), controller: 'catalog', params: {"f[dct_spatial_sm][]": strip_tags(result.name)} %></span>
+    </li>
+  <% end %>
+<% end %>
+
+<% if @suggestions.datasets.length > 0 %>
+  <li class="fw-bold" aria-disabled="true">Datasets</li>
+  <% @suggestions.datasets.first(5).each do |result| %>
+  <li role="option" class="dropdown-item">
+    <span><%= link_to sanitize(result.highlighted_name), solr_document_path(result.id) %></span>
+  </li>
+  <% end %>
+<% end %>
+
+<% if @suggestions.maps.length > 0 %>
+  <li class="fw-bold" aria-disabled="true">Maps</li>
+  <% @suggestions.maps.first(5).each do |result| %>
+    <li role="option" class="dropdown-item">
+      <span><%= link_to sanitize(result.highlighted_name), solr_document_path(result.id) %></span>
+    </li>
+  <% end %>
+<% end %>
