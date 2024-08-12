@@ -225,7 +225,7 @@ WMS_PARAMS:
   :STYLES: ""
   :SRS: "EPSG:4326"
   :EXCEPTIONS: "application/json"
-  :INFO_FORMAT: "text/html"
+  :INFO_FORMAT: "application/json"
 
 # Settings for leaflet
 LEAFLET:
@@ -507,3 +507,16 @@ ALLOWED_OGM_THEMES:
   - Transportation
   - Utilities
 
+ICON_MAPPING:
+  chicago: university-of-chicago
+  illinois: university-of-illinois-urbana-champaign
+  iowa: university-of-iowa
+  maryland: university-of-maryland
+  michigan-state: michigan-state-university
+  michigan: university-of-michigan
+  minnesota: university-of-minnesota
+  nebraska: university-of-nebraska-lincoln
+  ohio-state: the-ohio-state-university
+  penn-state: pennsylvania-state-university
+  purdue: purdue-university
+  wisconsin: university-of-wisconsin-madison
