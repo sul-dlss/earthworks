@@ -21,6 +21,9 @@
         <%= render Geoblacklight::DisplayNoteComponent.new(display_note: display_note) %>
       <% end %>
       <%= title %>
+      <div class="mb-2">
+        <%= render Earthworks::HeaderIconsComponent.new(document: @document) %>
+      </div>
       <%= embed %>
       <%= content %>
       <%= metadata %>
