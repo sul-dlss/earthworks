@@ -47,6 +47,10 @@ module Earthworks
         record.update({ 'schema_provider_s' => transformed_provider })
       end
 
+      if (themes = record['dcat_theme_sm'])
+        # Filter out themes that are not in the controlled vocabulary from OGM
+        record.update({ 'dcat_theme_sm' => themes.select { |theme| Settings.ALLOWED_OGM_THEMES.include?(theme) } })
+      end
       record
     end
 

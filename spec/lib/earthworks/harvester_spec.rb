@@ -4,6 +4,7 @@ require 'git'
 require 'net/http'
 require 'earthworks/harvester'
 require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe Earthworks::Harvester do
   subject(:harvester) { described_class.new(ogm_repos: ogm_repos, ogm_path: ogm_path, schema_version: 'Aardvark') }
@@ -95,9 +96,20 @@ RSpec.describe Earthworks::Harvester do
       end
     end
 
-    it 'supports transforming arbitrary records' do
+    it 'transforms provider name based on repository' do
       docs = harvester.docs_to_index.to_a
       expect(docs.first.first['schema_provider_s']).to eq('Penn State')
+    end
+
+    context 'when record contains themes outside the controlled vocabulary' do
+      let(:psu_doc) do
+        psu_doc2_hash.merge({ dcat_theme_sm: %w[Agriculture Biota Farming] }).to_json
+      end
+
+      it 'filters theme data to fit controlled vocabulary' do
+        docs = harvester.docs_to_index.to_a
+        expect(docs.first.first['dcat_theme_sm']).to eq(%w[Agriculture])
+      end
     end
   end
 end
