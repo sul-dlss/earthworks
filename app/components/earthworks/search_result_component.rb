@@ -7,7 +7,7 @@ module Earthworks
         @classes,
         helpers.render_document_class(@document),
         'document',
-        'pt-0',
+        'p-2',
         'mt-0',
         ("document-position-#{@counter}" if @counter)
       ].compact.flatten
