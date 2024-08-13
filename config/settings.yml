@@ -243,27 +243,6 @@ LEAFLET:
       SELECTED:
         <<: *default
         color: "yellow"
-  VIEWERS:
-    WMS:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    TILEDMAPLAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    FEATURELAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    DYNAMICMAPLAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    IMAGEMAPLAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
 
 # Toggle the help text feature that offers users context
 HELP_TEXT:
