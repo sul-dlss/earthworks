@@ -152,3 +152,15 @@ Uncomment lines 142-144
     display: none;
   }
 }
+
+.pagination {
+  --bs-pagination-hover-bg: none;
+  --bs-pagination-disabled-bg: none;
+  --bs-pagination-padding-x: .25rem;
+  --bs-pagination-active-bg: none;
+  --bs-pagination-border-width: 0;
+  --bs-pagination-active-color: black;
+  --bs-focus-ring-color: none;
+  --bs-pagination-focus-bg: none;
+  --bs-pagination-focus-box-shadow: none;
+}
