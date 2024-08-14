@@ -1,3 +1,18 @@
+:root {
+  --stanford-50-black: #979694;
+}
+
+.header-icons {
+  color: var(--stanford-50-black);
+  font-size: .875rem;
+  line-height: 1.125rem;
+}
+
+.header-icons .blacklight-icons, .header-icons .blacklight-icons svg {
+  height: .875rem;
+  width: .875rem;
+}
+
 .palo-alto-base {
   --bs-dark-rgb: 23, 94, 84;
 }

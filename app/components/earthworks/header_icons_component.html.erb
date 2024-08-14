@@ -1,7 +1,7 @@
-<div>
+<div class="header-icons">
   <% @fields.each do |field| %>
     <% icon, label = get_icon(field) %>
     <%= icon %>
-    <span class="me-1"><%= label %></span>
+    <span class="me-1"><%= label.upcase %></span>
   <% end %>
 </div>
