@@ -13,10 +13,11 @@ class CatalogController < ApplicationController
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :start => 0,
-      :rows => 10,
+      :rows => 20,
       'q.alt' => '*:*'
     }
 
+    config.default_per_page = 20
     # Default parameters to send on single-document requests to Solr.
     # These settings are the Blacklight defaults (see SolrHelper#solr_doc_params) or
     # parameters included in the Blacklight-jetty document requestHandler.
