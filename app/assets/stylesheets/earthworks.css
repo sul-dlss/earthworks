@@ -83,3 +83,18 @@
 .documents-list article:hover, .documents-list article:focus {
   box-shadow: -4px 4px 4px 0px var(--stanford-fog-light);
 }
+
+.search-widgets .btn {
+  --bs-btn-font-size: .875rem;
+  --bs-border-radius: 4px;
+  --bs-btn-padding-x: 6px;
+  --bs-btn-padding-y: 2px;
+  --bs-btn-line-height: 1;
+  height: 1.6rem;
+  align-self: center;
+}
+
+.sort-pagination, .pagination-search-widgets {
+  padding-bottom: .5rem;
+  border-bottom: 2px solid var(--bs-border-color);
+}
