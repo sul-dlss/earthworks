@@ -8,7 +8,8 @@ module Earthworks
         [
           Geoblacklight::LoginLinkComponent.new(document: document),
           Geoblacklight::StaticMapComponent.new(document: document),
-          Earthworks::DownloadLinksComponent.new(document: document)
+          Earthworks::DownloadLinksComponent.new(document: document),
+          Earthworks::OtherOptionsComponent.new(document: document)
         ]
       end
     end
