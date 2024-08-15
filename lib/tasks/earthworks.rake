@@ -65,7 +65,7 @@ namespace :earthworks do
         puts "Selecting from Solr at #{start}, #{rows} rows"
         response = Blacklight.default_index.connection.get(
           'select',
-          params: { q: '*:*', fl: '*', start: start, rows: rows }
+          params: { q: '*:*', fl: '*', start:, rows: }
         )
         num_found = response['response']['numFound'].to_i
         docs = response.try(:[], 'response').try(:[], 'docs')

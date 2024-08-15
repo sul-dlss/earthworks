@@ -7,7 +7,7 @@ require 'spec_helper'
 require 'rails_helper'
 
 RSpec.describe Earthworks::Harvester do
-  subject(:harvester) { described_class.new(ogm_repos: ogm_repos, ogm_path: ogm_path, schema_version: 'Aardvark') }
+  subject(:harvester) { described_class.new(ogm_repos:, ogm_path:, schema_version: 'Aardvark') }
 
   let(:ogm_path) { 'tmp/ogm' }
   let(:ogm_repos) do

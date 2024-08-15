@@ -6,8 +6,8 @@ module Earthworks
     attr_reader :ogm_repos
 
     # Support passing in a configured list of repositories to harvest
-    def initialize(ogm_repos: ENV.fetch('OGM_REPOS'), **kwargs)
-      super(**kwargs)
+    def initialize(ogm_repos: ENV.fetch('OGM_REPOS'), **)
+      super(**)
 
       @ogm_repos = ogm_repos.to_h.transform_keys(&:to_s)
     end

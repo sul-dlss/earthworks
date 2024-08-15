@@ -57,18 +57,19 @@ class ValidateOgp
 
     k = 'Institution'
     layer[k] = 'Columbia' if layer[k] == 'Columbia University'
-    if ([layer[k]] & %w[Berkeley Harvard MIT MassGIS Stanford Tufts UCLA Minnesota Columbia]).empty?
+    unless [layer[k]].intersect?(%w[Berkeley Harvard MIT MassGIS Stanford Tufts UCLA Minnesota Columbia])
       raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}"
     end
 
     k = 'DataType'
     layer[k] = 'Paper Map' if layer[k] == 'Paper'
-    if ([layer[k]] & ['Line', 'Paper Map', 'Point', 'Polygon', 'Raster', 'CD-ROM', 'DVD-ROM']).empty?
+    unless [layer[k]].intersect?(['Line', 'Paper Map', 'Point', 'Polygon', 'Raster', 'CD-ROM', 'DVD-ROM'])
       raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}"
     end
 
     k = 'Access'
-    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" if ([layer[k]] & %w[Public Restricted]).empty?
+    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" unless [layer[k]].intersect?(%w[Public
+                                                                                                          Restricted])
 
     k = 'WorkspaceName'
     layer[k] = layer['Institution'] if layer[k].nil?
@@ -80,7 +81,8 @@ class ValidateOgp
     when 'offline'
       layer[k] = 'Offline'
     end
-    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" if ([layer[k]] & %w[Online Offline]).empty?
+    raise ArgumentError, "ERROR: #{id} has unsupported #{k}: #{layer[k]}" unless [layer[k]].intersect?(%w[Online
+                                                                                                          Offline])
 
     k = 'Location'
     layer[k] = validate_location(id, layer[k])
