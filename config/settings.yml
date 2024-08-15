@@ -482,3 +482,28 @@ OGM_REPOS:
     provider: Virginia Tech
 
 IIIF_DRAG_DROP_LINK: '@manifest?manifest=@manifest'
+
+# Allowed values itemized in https://opengeometadata.org/ogm-aardvark/#theme-values
+ALLOWED_OGM_THEMES:
+  - Agriculture
+  - Biology
+  - Boundaries
+  - Climate
+  - Economy
+  - Elevation
+  - Environment
+  - Events
+  - Geology
+  - Health
+  - Imagery
+  - Inland Waters
+  - Land Cover
+  - Location
+  - Military
+  - Oceans
+  - Property
+  - Society
+  - Structure
+  - Transportation
+  - Utilities
+
