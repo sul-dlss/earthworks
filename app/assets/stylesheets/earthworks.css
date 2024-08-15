@@ -2,6 +2,12 @@
   --stanford-50-black: #979694;
 }
 
+/* Selects both #main-content and navbar containers */
+#main-container, .navbar-search > * {
+  max-width:  1600px;
+  padding: 0 60px;
+}
+
 .header-icons {
   color: var(--stanford-50-black);
   font-size: .875rem;

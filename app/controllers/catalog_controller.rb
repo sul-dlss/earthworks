@@ -25,6 +25,9 @@ class CatalogController < ApplicationController
       q: "{!raw f=#{Settings.FIELDS.ID} v=$id}"
     }
 
+    # When set to true, Blacklight uses container-fluid as the layout container
+    config.full_width_layout = true
+
     # GeoBlacklight Defaults
     # * Adds the "map" split view for catalog#index
     config.view.split(partials: ['index'])
