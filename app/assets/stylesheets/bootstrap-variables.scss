@@ -1,12 +1,13 @@
 // Bootstrap Overrides
 
 // Colors
-$primary: #006CB8;
+$primary: #006cb8;
 $success: $pantone-334;
 
 $link-hover-color: #00548f;
 // Typography
-$font-family-sans-serif: 'Source Sans Pro', 'Arial Unicode MS', Helvetica, sans-serif;
+$font-family-sans-serif: "Source Sans Pro", "Arial Unicode MS", Helvetica,
+  sans-serif;
 $small-font-size: 90%;
 
 // Dropdowns
@@ -29,3 +30,23 @@ $navbar-brand-height: 1rem * 1.25 * 1.5 * 1.5 * 2 !default; // Bootstrap variabl
 
 // Jumbotron
 $jumbotron-bg: $light-sandstone;
+
+// add xxxl breakpoint ( a multiple of 10px and 12px)
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+  xxxl: 1620px,
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+  xxxl: 1540px,
+);
