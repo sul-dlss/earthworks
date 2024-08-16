@@ -152,3 +152,10 @@ Uncomment lines 142-144
     display: none;
   }
 }
+
+.expand-collapse .btn {
+  --bs-btn-disabled-color: var(--bs-btn-bg);
+  --bs-btn-disabled-bg: var(--bs-btn-color);
+  --bs-btn-disabled-border-color:var(--bs-btn-border-color);
+  --bs-btn-disabled-opacity: 1;
+}

@@ -1,0 +1,14 @@
+<div id="sortAndPerPage" class="sort-pagination d-md-flex justify-content-between" role="navigation" aria-label="<%= t('blacklight.search.per_page.aria_label')%>">
+  <%= render partial: "paginate_compact", object: @response if show_pagination? %>
+  <div class="search-widgets">
+    <%= render_results_collection_tools %>
+    <div class="expand-collapse btn-group" data-controller="expandcollapse">
+      <button class="btn btn-outline-secondary active" aria-label="collapse descriptions" disabled data-action="expandcollapse#toggleDescriptions">
+        <i class="bi bi-list-ul"></i>
+      </button>
+      <button class="btn btn-outline-secondary" aria-label="expand descriptions" data-action="expandcollapse#toggleDescriptions">
+        <i class="bi bi-text-paragraph"></i>
+      </button>
+    </div>
+  </div>
+</div>
