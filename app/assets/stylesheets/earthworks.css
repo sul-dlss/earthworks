@@ -199,3 +199,18 @@ Uncomment lines 142-144
   color: var(--stanford-digital-blue-dark) !important;
   border-color: var(--stanford-digital-blue-dark) !important;
 }
+
+/* Styles for search result description expand/collapse */
+
+.expand-collapse .btn-outline-secondary {
+  display: flex;
+  &.active {
+    color: white;
+    background-color:var(--stanford-cardinal);
+  }
+}
+
+.expand-collapse i {
+  align-self: center;
+}
+
