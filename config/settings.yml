@@ -230,6 +230,13 @@ WMS_PARAMS:
 # Settings for leaflet
 LEAFLET:
   MAP:
+  BOUNDSOVERLAY:
+    INDEX:
+      color: '#175E54'
+    SHOW:
+      color: '#175E54'
+    STATIC_MAP:
+      color: '#175E54'
   LAYERS:
     DETECT_RETINA: true
     INDEX:
