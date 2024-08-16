@@ -2,6 +2,16 @@
   --stanford-50-black: #979694;
 }
 
+
+.btn-outline-secondary {
+  --bs-btn-border-color: var(--stanford-digital-blue);
+  --bs-btn-color: var(--stanford-digital-blue);
+  --bs-btn-hover-color: var(--stanford-digital-blue-dark);
+  --bs-btn-hover-border-color: var(--stanford-digital-blue-dark);
+  --bs-btn-active-border-color: var(--stanford-digital-blue-darker);
+  --bs-btn-active-color: var(--stanford-digital-blue-darker);
+}
+
 /* Selects both #main-content and navbar containers */
 #main-container, .navbar-search > * {
   max-width:  1600px;
