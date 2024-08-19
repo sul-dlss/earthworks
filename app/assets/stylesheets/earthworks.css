@@ -233,6 +233,10 @@ Uncomment lines 142-144
   border-radius: .25rem;
 }
 
+.document-counter {
+  display: none;
+}
+
 label.toggle-bookmark {
   --bs-primary: rgb(var(--bs-link-color-rgb));
   color: rgb(var(--bs-link-color-rgb));

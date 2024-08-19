@@ -13,11 +13,8 @@
   itemscope: true,
   itemtype: @document.itemtype,
   class: classes.flatten.join(' ') do %>
-    <%= content_tag :div, class: 'documentHeader index-split d-flex flex-grow-1 flex-column m-2', data: { layer_id: @document.id, geom: @document.geometry.geojson } do %>
-      <h3 class="index_title d-flex flex-grow-1">
-        <%= helpers.link_to_document(@document, counter: @counter, itemprop: "name") %>
-      </h3>
-
+    <%= content_tag :div, class: 'row index-split d-flex flex-grow-1 flex-column me-2', data: { layer_id: @document.id, geom: @document.geometry.geojson } do %>
+      <%= title %>
       <div class='status-icons flex-grow-1 ms-0'>
         <%= render Earthworks::HeaderIconsComponent.new(document: @document) %>
       </div>

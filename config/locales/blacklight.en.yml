@@ -12,6 +12,10 @@ en:
         label: '%{label}'
       fields:
         search: 'Keywords'
+      bookmarks:
+        present: "Bookmarked"
+        absent: "Bookmark"
+        inprogress: "Saving..."
     tools:
       citation: Cite
       title: 'Other options'
