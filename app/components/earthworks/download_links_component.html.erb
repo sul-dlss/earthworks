@@ -1,4 +1,4 @@
-<% direct_dowload = document.direct_download.present? || document.hgl_download.present? || document.iiif_download.present?  %>
+<% direct_dowload = document.direct_download.present? || document.iiif_download.present?  %>
 <% if direct_dowload %>
 <div class="h4">Download</div>
 <% end %>
@@ -15,12 +15,6 @@
       <%= download_link_file(download_text(document.file_format), document.id, document.direct_download[:download]) %>
     </div>
 <% end %>
-<% end %>
-
-<% if document.hgl_download.present? %>
-  <div>
-    <%= download_link_hgl(download_text(document.download_types.first[0]), document) %>
-  </div>
 <% end %>
 
 <% if document.iiif_download.present? %>
