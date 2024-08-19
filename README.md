@@ -51,8 +51,10 @@ bin/setup
 Finally, start the development web server:
 
 ```sh
-bin/rails server
+bin/dev
 ```
+
+This will compile the SCSS stylesheets with live reloading in addition to running a rails server.
 
 ### Adding data
 To add a small amount of test records to the Solr index, you can use the `seed` task:
