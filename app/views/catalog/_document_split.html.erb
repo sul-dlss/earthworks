@@ -6,7 +6,8 @@
     data-action="leaflet-viewer:loaded@window->search-results#fitResultBounds"
     data-search-results-leaflet-viewer-outlet=".leaflet-viewer"
     >
-    <%= render blacklight_config.view_config(document_index_view_type).search_header_component.new %>
+    <% isIndex = results_js_map_selector(controller.controller_name) == "index" %>
+    <%= render blacklight_config.view_config(document_index_view_type).search_header_component.new if isIndex%>
     <turbo-frame id="documents-frame">
       <% document_presenters = documents.map { |doc| document_presenter(doc) } -%>
       <% document_presenters.each_with_index do |presenter, index| %>
