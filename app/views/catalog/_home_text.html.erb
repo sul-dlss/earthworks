@@ -11,17 +11,6 @@
     <%= render Earthworks::RecentlyAddedList.new(term: 'Datasets') %>
     <hr>
     <%= render Earthworks::RecentlyAddedList.new(additional_fq: '-gbl_resourceClass_sm: Datasets', term: 'Maps') %>
-    <hr>
-    <h1 class="h3">
-      <i class="bi bi-tools fs-4"></i>
-      <span class="ms-1">GIS tools and resources</span>
-    </h1>
-    <ul class="list-unstyled home-tab">
-      <li class="my-1"><%= link_to 'Links to be added later', 'link' %></li>
-      <li class="my-1"><%= link_to 'Links to be added later', 'link' %></li>
-      <li class="my-1"><%= link_to 'Links to be added later', 'link' %></li>
-      <li class="my-1"><%= link_to 'Links to be added later', 'link' %></li>
-    </ul>
     </div>
     <div class='col-sm'>
       <%= render(Geoblacklight::LocationLeafletMapComponent.new(page: 'home', geosearch: { dynamic: false })) %>
