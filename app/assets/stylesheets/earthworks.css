@@ -142,3 +142,13 @@ Uncomment lines 142-144
 /* .search-query-form .search-btn .blacklight-icons-search {
   display: none;
 } */
+
+#main-container .leaflet-container {
+  height: 620px;
+}
+
+@media (max-width: 575.98px) {
+  #main-container #leaflet-viewer  {
+    display: none;
+  }
+}
