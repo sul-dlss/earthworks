@@ -463,6 +463,7 @@ OGM_REPOS:
 IIIF_DRAG_DROP_LINK: '@manifest?manifest=@manifest'
 
 ICON_MAPPING:
+  berkeley: university-of-california-berkeley
   chicago: university-of-chicago
   illinois: university-of-illinois-urbana-champaign
   iowa: university-of-iowa
