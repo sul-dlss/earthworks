@@ -3,6 +3,8 @@ en:
     application_name: 'EarthWorks'
     back_to_search: 'Back to search results'
     search:
+      filters:
+        title: 'Your selections: '
       form:
         search:
           label: 'search for'
@@ -10,6 +12,7 @@ en:
       show:
         title: '%{document_title} in %{application_name}'
         label: '%{label}'
+      start_over: 'Clear all'
       fields:
         search: 'Keywords'
       bookmarks:
