@@ -1,0 +1,8 @@
+<div class="h2">Also available at</div>
+<div>
+    <ul class="list-unstyled">
+        <% document.also_available_links.each do |label, url| %>
+            <li><%= link_to label, url %></li>
+        <% end %>
+    </ul>
+</div>

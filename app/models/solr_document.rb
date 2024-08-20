@@ -28,6 +28,11 @@ class SolrDocument
     fetch(Settings.FIELDS.RESOURCE_CLASS, []) == 'Other'
   end
 
+  # a list of all the available other urls for the document
+  def also_available_links
+    { SearchWorks: searchworks_url }.compact_blank
+  end
+
   # Examine the list of references (in dct_references_s) to find a "schema.org/relatedLink"
   #  This is going to be the searchworks url if present.
   #  See https://github.com/sul-dlss/searchworks_traject_indexer/pull/1490
