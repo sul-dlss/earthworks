@@ -1,5 +1,5 @@
 <%= render Blacklight::System::ModalComponent.new do |component| %>
-  <% component.with_title { t('geoblacklight.code_snippet.title') } %>
+  <% component.with_title { t('earthworks.code_snippet.title') } %>
   <% component.with_body do %>
     <div class="p-3" data-controller="codesnippet">
       <div class="mb-2">
@@ -32,7 +32,7 @@
       </div>
 
       <!-- Code snippet content -->
-      <div class="tab-content code-snippet-content" id="codeContent">
+      <div class="tab-content code-snippet-content" id="codeContent" data-codesnippet-target="codeContent">
           <div class="tab-pane fade show p-3 active" id="python-code" role="tabpanel" aria-labelledby="python-tab">
             <%= code_block(render_python) %> 
           </div>

@@ -29,24 +29,30 @@ module Earthworks
     def substitute_values(content)
       sub_content = content
 
-      # replace DRUID_ID
-      sub_content = sub_content.gsub('<<WXS_ID>>', @document.wxs_identifier) unless @document.wxs_identifier.empty?
+      # replace WXS_ID
+      sub_content = sub_content.gsub('<<WXS_ID>>',
+                                     substitute_id_value(@document.wxs_identifier, '[Insert Web Services ID]'))
 
       # If layer id is required
-      sub_content = sub_content.gsub('<<LAYER_ID>>', layer_id) unless layer_id.nil?
+      sub_content = sub_content.gsub('<<LAYER_ID>>',
+                                     substitute_id_value(layer_id, '[Insert Layer ID]'))
 
       # replace WMS reference
-      unless @document.references.wms.nil? || @document.references.wms.endpoint.nil?
-        sub_content = sub_content.gsub('<<GEOSERVER_WMS>>', @document.references.wms.endpoint)
-      end
+      sub_content = sub_content.gsub('<<GEOSERVER_WMS>>',
+                                     substitute_webservice_value(@document.references.wms, '[Insert WMS endpoint]'))
 
       # replace WFS reference
-      unless @document.references.wfs.nil? || @document.references.wfs.endpoint.nil?
-        sub_content = sub_content.gsub('<<GEOSERVER_WFS>>', @document.references.wfs.endpoint)
-      end
+      sub_content = sub_content.gsub('<<GEOSERVER_WFS>>',
+                                     substitute_webservice_value(@document.references.wfs, '[Insert WFS endpoint]'))
 
       # Replace Bounding box information
-      unless @document.geom_field.empty?
+      if @document.geom_field.blank? || @document.geometry.geom.blank?
+        # If geometry information is not available, subsitute the coordinates with placeholder text
+        sub_content = sub_content.gsub('<<MIN_X>>', '[Insert bounding box min X value]')
+        sub_content = sub_content.gsub('<<MIN_Y>>', '[Insert bounding box min Y value]')
+        sub_content = sub_content.gsub('<<MAX_X>>', '[Insert bounding box max X value]')
+        sub_content = sub_content.gsub('<<MAX_Y>>', '[Insert bounding box max Y value]')
+      else
         geometry = @document.geometry.geom
         bbox_array = geometry.split('ENVELOPE(')[1].split(')')[0].split(',').map(&:strip)
 
@@ -66,12 +72,23 @@ module Earthworks
     end
 
     def layer_id
-      # If the Solr document either does not have a wxs identifier or does not have the "druid:" prefix
-      unless @document.wxs_identifier.empty? || @document.wxs_identifier.exclude?('druid:')
-        return @document.wxs_identifier.split('druid:')[1]
+      # If the Solr document has a wxs_identifier field, handle two cases:
+      # if the string has 'druid:', return the portion after this prefix.
+      # Otherwise, return the whole string.  The latter case is for other institutions' data.
+      unless @document.wxs_identifier.empty?
+        wxs_id = @document.wxs_identifier
+        return wxs_id.include?('druid:') ? wxs_id.split('druid:')[1] : wxs_id
       end
 
       nil
+    end
+
+    def substitute_id_value(value, placeholder_value)
+      value.presence || placeholder_value
+    end
+
+    def substitute_webservice_value(webservice, placeholder_value)
+      webservice.nil? || webservice.endpoint.nil? ? placeholder_value : webservice.endpoint
     end
 
     private

@@ -1,18 +1,18 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-    static targets = ["clipboardText", "clipboardCheck"];
+    static targets = ["clipboardText", "clipboardCheck", "codeContent"];
 
     async copyToClipboard(event) {  
-        let text = this.copyActivePaneContent();
+        const text = this.copyActivePaneContent();
         await navigator.clipboard.writeText(text);
         this.displayCopyClick();
     }
 
     copyActivePaneContent() {
-      const codeText = document.querySelector("div#codeContent div.tab-pane.active pre code");
+      const codeText = this.codeContentTarget.querySelector("div.tab-pane.active pre code");
       if(! codeText) {
-        console.log("Error copying content.  Code was not found");
+        console.error("Error copying content.  Code was not found");
         return "";
       }
 

@@ -9,6 +9,3 @@ en:
       member_of_descendants: 'Collection items'
     formats:
       jpeg2000: 'JP2'
-  code_snippet:
-    title: 'Code snippets'
-    copy: 'Copy'

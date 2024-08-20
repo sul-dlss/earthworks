@@ -318,6 +318,11 @@ class CatalogController < ApplicationController
                                                      (Settings.METADATA_SHOWN &
                                                       options[:document].references.refs.map { |x| x.type.to_s }).any?
                                                  }
+    config.add_show_tools_partial :code_snippet_link, component: Earthworks::CodeSnippetLinkComponent,
+                                                      if: proc { |_context, _config, options|
+                                                        options[:document] &&
+                                                          !options[:document].restricted?
+                                                      }
     config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
                                                     if: proc { |_context, _config, options|
                                                           options[:document] &&

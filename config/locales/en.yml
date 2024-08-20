@@ -12,3 +12,6 @@ en:
         description: Need copy for this ... contains over %{sets} maps...
     show:
       no_georeference_message: 'This map is not georeferenced.'
+    code_snippet:
+      title: 'Code snippets'
+      copy: 'Copy'
