@@ -33,14 +33,10 @@
     >
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a id="bookmarks_nav" class="nav-link" href="/bookmarks">
-            Bookmarks
-            <span
-              class="badge badge-secondary bg-secondary"
-              data-role="bookmark-counter"
-              >0</span
-            >
-          </a>
+          <%= link_to bookmarks_path, id:'bookmarks_nav', class: 'nav-link' do %>
+            <%= t('blacklight.header_links.bookmarks') %>
+            <span data-role='bookmark-counter'>(<%= helpers.current_or_guest_user.bookmarks.count %>)</span>
+          <% end %>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/search_history">History</a>
