@@ -19,7 +19,7 @@ describe 'Display relevant links in Other Options section' do
 
   context 'when dataset is restricted' do
     before do
-      visit solr_document_path 'stanford-np727vv0751'
+      visit solr_document_path 'stanford-cg357zz0321'
     end
 
     it 'does not contain the code snippets text' do
