@@ -279,3 +279,10 @@ label.toggle-bookmark {
 .leaflet-container {
   background-color: #d4dadc!important;
 }
+
+/* Override https://github.com/projectblacklight/blacklight/blob/96a3a85c614ac1a4283c102f59fba05edf3c1cd0/app/assets/stylesheets/blacklight/_balanced_list.scss#L9-L11
+.dl-invert dt text-align: right;
+*/
+.dl-invert dt {
+  text-align: left;
+}
