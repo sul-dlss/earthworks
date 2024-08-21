@@ -52,7 +52,7 @@ Altitudes,Altitude,Aspect,bathymetry,breaklines,contour,Contours,DEM,depths,DTM,
 
 History,ancestry,Historic,historical,History,Memorial,Memorials,Ruins
 
-Industries,chemists,Factories,Buildings,Factory,Buildings,industrial,industry,Iron-works,Manufacture,refineries
+Industries,Factories,Buildings,Factory,Buildings,industrial,industry,Iron-works,Manufacture,refineries
 
 Water-supply,Drinking,Water-pipes,Waterworks
 
@@ -260,7 +260,7 @@ Plants,eelgrass,gardens,Agriculture,seagrass,Vegetation
 
 Buildings,building,Buildingsr,castles,Chimneys,Decks,garage,garages,halls,Hotels,mansions,office,Porches,rooftop,stories
 
-Industries,chemists,Factories,Buildings,Factory,Buildings,industrial,industry,Iron-works,Manufacture,refineries
+Industries,Factories,Buildings,Factory,Buildings,industrial,industry,Iron-works,Manufacture,refineries
 
 Mines,mineral resources,Mineral,Geology,minerals,mining,prospects,quarries,Quarry,USBM
 
