@@ -226,3 +226,41 @@ Uncomment lines 142-144
   --bs-navbar-active-color: white;
   border-radius: .25rem;
 }
+
+label.toggle-bookmark {
+  --bs-primary: rgb(var(--bs-link-color-rgb));
+  color: rgb(var(--bs-link-color-rgb));
+}
+
+.header-tools .btn {
+  --bs-btn-border-color: none;
+  --bs-btn-hover-border-color: none;
+  --bs-btn-active-border-color: none;
+}
+
+.back-to-search::before {
+  content: "\f12A";
+  font-family: "bootstrap-icons";
+  margin-right: .25rem;
+  vertical-align: middle;
+}
+
+#citationLink, #emailLink {
+  background-image: none;
+  padding-left: 0;
+  --bs-btn-padding-x: .25rem;
+  --bs-btn-padding-y: 0;
+}
+
+#citationLink::before {
+  content: "\f6B0";
+  font-family: "bootstrap-icons";
+  vertical-align: middle;
+}
+
+#emailLink::before {
+  content: "\f32C";
+  font-family: "bootstrap-icons";
+  margin-right: .25rem;
+  vertical-align: middle;
+}
