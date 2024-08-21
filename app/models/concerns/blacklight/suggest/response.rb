@@ -24,13 +24,32 @@ module Blacklight
       # @return [Array]
       def suggestions
         locations = response.dig(suggest_path, 'spatialSuggester', request_params[:q], 'suggestions')
-
         # unpack the titles into datasets and maps using their payload value
         titles = response.dig(suggest_path, 'titleSuggester', request_params[:q], 'suggestions')
-        datasets = titles.select { |s| s['payload'] == 'Datasets' }
-        maps = titles.select { |s| s['payload'] == 'Maps' }
+        themes = response.dig(suggest_path, 'themeSuggester', request_params[:q], 'suggestions')
+        categorized_titles = categorize_titles(titles)
 
-        { locations: locations, datasets: datasets, maps: maps }
+        { locations: locations, datasets: categorized_titles['datasets'], maps: categorized_titles['maps'],
+          themes: themes, full: response }
+      end
+
+      def categorize_titles(titles)
+        datasets = []
+        maps = []
+        titles.each do |title|
+          payload = title['payload']
+          payload_json = JSON.parse(payload) unless payload.empty?
+
+          id = payload_json['id']
+          classes = payload_json['class']
+          types = payload_json['type']
+          title['id'] = id
+          title['classes'] = classes
+          title['types'] = types
+          datasets.push(title) if classes.include?('Datasets')
+          maps.push(title) if classes.include?('Maps')
+        end
+        { datasets: datasets, maps: maps }.with_indifferent_access
       end
     end
   end

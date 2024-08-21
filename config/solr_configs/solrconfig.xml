@@ -205,22 +205,32 @@
   </searchComponent>
 
   <searchComponent name="suggest" class="solr.SuggestComponent">
-    <lst name="suggester">
+        <lst name="suggester">
       <str name="name">titleSuggester</str>
       <str name="dictionaryImpl">DocumentDictionaryFactory</str>
       <str name="lookupImpl">BlendedInfixLookupFactory</str>
       <str name="suggestAnalyzerFieldType">textSuggest</str>
       <str name="buildOnCommit">true</str>
       <str name="field">title_suggest</str>
-      <str name="payloadField">gbl_resourceClass_sm</str>
+      <str name="payloadField">suggestinfo_s</str>
     </lst>
+    <!-- Suggester for location based on dct_spatial_sm-->
+    <!-- When no dictionary is specified, HighFrequencyDictionaryFactory is used-->
     <lst name="suggester">
       <str name="name">spatialSuggester</str>
-      <str name="dictionaryImpl">DocumentDictionaryFactory</str>
       <str name="lookupImpl">BlendedInfixLookupFactory</str>
+      <str name="dictionaryImpl">DocumentDictionaryFactory</str>
       <str name="suggestAnalyzerFieldType">textSuggest</str>
       <str name="buildOnCommit">true</str>
       <str name="field">spatial_suggest</str>
+    </lst>
+     <lst name="suggester">
+      <str name="name">themeSuggester</str>
+      <str name="lookupImpl">BlendedInfixLookupFactory</str>
+      <str name="dictionaryImpl">DocumentDictionaryFactory</str>
+      <str name="suggestAnalyzerFieldType">textSuggest</str>
+      <str name="buildOnCommit">true</str>
+      <str name="field">theme_suggest</str>
     </lst>
   </searchComponent>
 
@@ -230,6 +240,7 @@
       <str name="suggest.count">25</str>
       <str name="suggest.dictionary">titleSuggester</str>
       <str name="suggest.dictionary">spatialSuggester</str>
+      <str name="suggest.dictionary">themeSuggester</str>
     </lst>
     <arr name="components">
       <str>suggest</str>

@@ -188,6 +188,7 @@
   <!-- for specific field suggestions-->
   <copyField source="dct_title_s" dest="title_suggest"/>
   <copyField source="dct_spatial_sm" dest="spatial_suggest"/>
+  <copyField source="dcat_theme_sm" dest="theme_suggest"/>
 
   <!-- for bbox value -->
   <copyField source="dcat_bbox" dest="solr_bboxtype"/>

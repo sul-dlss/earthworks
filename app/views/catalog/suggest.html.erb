@@ -11,7 +11,7 @@
   <li class="fw-bold" aria-disabled="true">Datasets</li>
   <% @suggestions[:datasets].first(3).each do |result| %>
   <li role="option" class="dropdown-item">
-    <span><%= link_to sanitize(result['term']), controller: 'catalog', params: {"q": strip_tags(result['term'])} %></span>
+    <span><%= link_to sanitize(result['term']), solr_document_path(result["id"]) %></span>
   </li>
   <% end %>
 <% end %>
@@ -20,7 +20,16 @@
   <li class="fw-bold" aria-disabled="true">Maps</li>
   <% @suggestions[:maps].first(3).each do |result| %>
     <li role="option" class="dropdown-item">
-      <span><%= link_to sanitize(result['term']), controller: 'catalog', params: {"q": strip_tags(result['term'])} %></span>
+      <span><%= link_to sanitize(result['term']), solr_document_path(result["id"]) %></span>
+    </li>
+  <% end %>
+<% end %>
+
+<% if @suggestions[:themes].length > 0 %>
+  <li class="fw-bold" aria-disabled="true">Themes</li>
+  <% @suggestions[:themes].first(3).each do |result| %>
+    <li role="option" class="dropdown-item">
+      <span><%= link_to sanitize(result['term']), controller: 'catalog', params: {"f[dcat_theme_sm][]": strip_tags(result['term'])} %></span>
     </li>
   <% end %>
 <% end %>
