@@ -61,7 +61,8 @@ group :production do
   gem 'pg'
 end
 
-gem 'blacklight', '~> 8.3'
+#gem 'blacklight', '~> 8.3'
+gem 'blacklight', github: 'projectblacklight/blacklight', branch: 'main'
 gem 'rsolr' # required for Blacklight
 gem 'geoblacklight', github: 'geoblacklight/geoblacklight', branch: 'main'
 gem 'faraday', '~> 2.0'

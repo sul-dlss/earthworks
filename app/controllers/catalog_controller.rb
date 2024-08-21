@@ -41,6 +41,10 @@ class CatalogController < ApplicationController
     config.index.document_component = Earthworks::SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
 
+    config.bookmark_icon_component = Blacklight::Icons::BookmarkIconComponent
+
+    config.track_search_session.applied_params_component = Earthworks::ServerAppliedParamsComponent
+
     config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }
 
     # solr field configuration for document/show views
@@ -335,6 +339,10 @@ class CatalogController < ApplicationController
                                                       }
 
     config.show.document_actions.delete(:sms)
+
+    config.add_show_header_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_header_tools_partial(:citation)
+    config.add_show_header_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
 
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
