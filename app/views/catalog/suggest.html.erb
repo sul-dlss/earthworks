@@ -10,17 +10,21 @@
 <% if @suggestions[:datasets].length > 0 %>
   <li class="fw-bold" aria-disabled="true">Datasets</li>
   <% @suggestions[:datasets].first(3).each do |result| %>
-  <li role="option" class="dropdown-item">
-    <span><%= link_to sanitize(result['term']), solr_document_path(result["id"]) %></span>
-  </li>
+    <% display_term =  result['term'] %>
+    <% display_term = display_term.length > 100 ? display_term[0..100].gsub(/\s\w+\s*$/, '...') : display_term %>
+    <li role="option" class="dropdown-item">
+      <span><%= link_to sanitize(display_term), solr_document_path(result["id"]) %></span>
+    </li>
   <% end %>
 <% end %>
 
 <% if @suggestions[:maps].length > 0 %>
   <li class="fw-bold" aria-disabled="true">Maps</li>
   <% @suggestions[:maps].first(3).each do |result| %>
+    <% display_term =  result['term'] %>
+    <% display_term = display_term.length > 100 ? display_term[0..100].gsub(/\s\w+\s*$/, '...') : display_term %>
     <li role="option" class="dropdown-item">
-      <span><%= link_to sanitize(result['term']), solr_document_path(result["id"]) %></span>
+      <span><%= link_to sanitize(display_term), solr_document_path(result["id"]) %></span>
     </li>
   <% end %>
 <% end %>
