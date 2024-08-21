@@ -1,5 +1,6 @@
 :root {
   --stanford-50-black: #979694;
+  --stanford-fog-light-rgb: 244, 244, 244;
 }
 
 /* Selects both #main-content and navbar containers */
@@ -120,6 +121,11 @@
   border: 1px solid #ABABA9;
   padding: .5rem;
   border-radius: .25rem;
+  background-color: white;
+}
+
+.navbar-search {
+  --bs-light-rgb: var(--stanford-fog-light-rgb);
 }
 
 .search-query-form input:focus {
