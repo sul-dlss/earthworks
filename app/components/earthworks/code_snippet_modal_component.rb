@@ -75,7 +75,7 @@ module Earthworks
       # If the Solr document has a wxs_identifier field, handle two cases:
       # if the string has 'druid:', return the portion after this prefix.
       # Otherwise, return the whole string.  The latter case is for other institutions' data.
-      unless @document.wxs_identifier.empty?
+      if @document.wxs_identifier.present?
         wxs_id = @document.wxs_identifier
         return wxs_id.include?('druid:') ? wxs_id.split('druid:')[1] : wxs_id
       end
