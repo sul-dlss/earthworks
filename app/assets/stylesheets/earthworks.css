@@ -116,32 +116,33 @@
   border: none;
 }
 
-.search-query-form, .navbar-search .search-query-form{
+.search-query-form {
   border: 1px solid #ABABA9;
-  padding: .5rem;
-  border-radius: .25rem;
-}
+  padding: 0.5rem;
+  border-radius: 0.25rem;
 
-.search-query-form input:focus {
-  box-shadow: none;
-}
-.search-query-form .search-btn {
-  border-radius: .25rem!important;
-}
+  input:focus {
+    box-shadow: none;
+  }
 
-/* TODO: when we get a new blacklight release (v8.3.1)
-Remove file app/components/blacklight/icons/search_component.rb
-Remove lines 138-140
-Uncomment lines 142-144
-*/
+  .search-btn {
+    border-radius: 0.25rem !important;
+  }
 
-.search-query-form .search-btn .blacklight-icons {
-  width: auto;
+  /* TODO: when we get a new blacklight release (v8.3.1)
+  Remove file app/components/blacklight/icons/search_component.rb
+  Remove lines 138-140
+  Uncomment lines 142-144
+  */
+
+  .search-btn .blacklight-icons {
+    width: auto;
+  }
+
+  /* .search-btn .blacklight-icons-search {
+    display: none;
+  } */
 }
-
-/* .search-query-form .search-btn .blacklight-icons-search {
-  display: none;
-} */
 
 #main-container .leaflet-container {
   height: 620px;
@@ -182,16 +183,12 @@ Uncomment lines 142-144
   text-decoration-color: var(--stanford-digital-blue) !important;
 }
 
-.code-snippet-tab.nav-link.active {
-  color: var(--stanford-digital-blue);
-}
-
 .bd-clipboard {
   position:relative;
   float:right;
 }
 
-.btn-clipboard{
+.btn-clipboard {
   background-color: white !important;
 }
 
