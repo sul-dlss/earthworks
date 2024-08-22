@@ -18,10 +18,6 @@ ccc => cccc1,cccc2
 a\=>a => b\=>b
 a\,a => b\,b
 fooaaa,baraaa,bazaaa
-#The OGP file also includes these mappings
-aaafoo => aaabar
-bbbfoo => bbbfoo bbbbar
-cccfoo => cccbar cccbaz
 
 # Some synonym groups specific to this example
 GB,gib,gigabyte,gigabytes
@@ -52,7 +48,7 @@ Altitudes,Altitude,Aspect,bathymetry,breaklines,contour,Contours,DEM,depths,DTM,
 
 History,ancestry,Historic,historical,History,Memorial,Memorials,Ruins
 
-Industries,chemists,Factories,Buildings,Factory,Buildings,industrial,industry,Iron-works,Manufacture,refineries
+Industries,chemists,Factories,Buildings,Factory,industrial,industry,Iron-works,Manufacture,refineries
 
 Water-supply,Drinking,Water-pipes,Waterworks
 
@@ -234,13 +230,13 @@ Walls,Fences,Fortification,fortresses,Buildings,Gates,Hedges,Seawall,Wall
 
 Finance,atms,bank,banks,income,Insurance,Tax,Taxation,Taxes
 
-Boats, boating,Boat,Boating,Ferries,ferry,lighthouse,Coasts,lighthouses,Coasts,locks,Marinas,Shipwrecks,waterway,Waterways
+Boats,boating,Boat,Boating,Ferries,ferry,lighthouse,Coasts,lighthouses,Coasts,locks,Marinas,Shipwrecks,waterway,Waterways
 
 intelligenceMilitary,International relations,Armistices,Crises,Army,bioterrorism,Crises,CIA,Installation,Installations,Military,Navy
 
-boundaries, Administrative,political divisions,administrative,administrativeBoundaries,barrios,border,Borders,boundariesAdministrative,canton,cantons,colony,Counties,countries,county,Countyline,distirct,district,Districts,emirates,lgas,Macroregions,nations,precinct,precincts,Prefectures,province,Provinces,Redistrict,sovereignties,subdistricts,Subdivision,subdivisions,submunicipalities,subregions
+boundaries,Administrative,political divisions,administrative,administrativeBoundaries,barrios,border,Borders,boundariesAdministrative,canton,cantons,colony,Counties,countries,county,Countyline,distirct,district,Districts,emirates,lgas,Macroregions,nations,precinct,precincts,Prefectures,province,Provinces,Redistrict,sovereignties,subdistricts,Subdivision,subdivisions,submunicipalities,subregions
 
-Politics, government,commonwealth,Congress,Congressional,constituency,councils,deregulation,election,Elections,Elections--Massachusetts,Electoral,embassies,Governates,Government,legislation,Legislative,Legislators,Legislature,Parliament,political,Regulation,republic,republics,Senate,States,vote,Voting
+Politics,government,commonwealth,Congress,Congressional,constituency,councils,deregulation,election,Elections,Elections--Massachusetts,Electoral,embassies,Governates,Government,legislation,Legislative,Legislators,Legislature,Parliament,political,Regulation,republic,republics,Senate,States,vote,Voting
 
 Machinery,mechanical,Tractors
 
@@ -285,106 +281,106 @@ Territories, possessions,Annexation,Annexations,territory
 Electric power systems,biodiesel,Electric,electricity,energy,fuel,Fuels,Generators,hydrogen,megawatt-hours,MWh,Power-plants,Substation,substations,Windmills
 
 # Copied from OGP placename synonyms
-Alabama ,AL ,Ala ,Ala 
+Alabama,AL,Ala 
 
-Alaska ,AK ,Alaska ,Alas
+Alaska,AK,Alaska,Alas
 
-Arizona ,AZ ,Ariz ,Ariz 
+Arizona,AZ,Ariz
 
-Arkansas ,AR ,Ark ,Ark 
+Arkansas,AR,Ark 
 
-California ,CA ,Calif ,Calif 
+California,CA,Calif 
 
-Colorado ,CO ,Colo ,Colo 
+Colorado,CO,Colo 
 
-Connecticut ,CT ,Conn ,Conn 
+Connecticut,CT,Conn 
 
-Delaware ,DE ,Del ,Del 
+Delaware,DE,Del 
 
-District of Columbia ,DC ,DC ,DC 
+District of Columbia,DC 
 
-Florida ,FL ,Fla ,Fla 
+Florida,FL,Fla 
 
-Georgia ,GA ,Ga ,Ga 
+Georgia,GA
 
-Hawaii ,HI ,Hawaii ,Hawaii 
+Hawaii,HI 
 
-Idaho ,ID ,Idaho ,Idaho 
+Idaho,ID 
 
-Illinois ,IL ,Ill ,Ill 
+Illinois,IL,Ill 
 
-Indiana ,IN ,Ind ,Ind 
+Indiana,IN,Ind 
 
-Iowa ,IA ,Iowa ,Iowa 
+Iowa,IA,Iowa 
 
-Kansas ,KS ,Kans ,Kan 
+Kansas,KS,Kans,Kan 
 
-Kentucky ,KY ,Ky ,Ky 
+Kentucky,KY 
 
-Louisiana ,LA ,La ,La 
+Louisiana,LA 
 
-Maine ,ME ,Maine ,Maine 
+Maine,ME,Maine 
 
-Maryland ,MD ,Md ,Md 
+Maryland,MD
 
-Massachusetts ,MA ,Mass ,Mass 
+Massachusetts,MA,Mass 
 
-Michigan ,MI ,Mich ,Mich 
+Michigan,MI,Mich 
 
-Minnesota ,MN ,Minn ,Minn 
+Minnesota,MN,Minn 
 
-Mississippi ,MS ,Miss ,Miss 
+Mississippi,MS,Miss 
 
-Missouri ,MO ,Mo ,Mo 
+Missouri,MO 
 
-Montana ,MT ,Mont ,Mont 
+Montana,MT,Mont 
 
-Nebraska ,NE ,Nebr ,Neb 
+Nebraska,NE,Nebr,Neb 
 
-Nevada ,NV ,Nev ,Nev 
+Nevada,NV,Nev 
 
-New Hampshire ,NH ,NH ,NH 
+New Hampshire,NH 
 
-New Jersey ,NJ ,NJ ,NJ 
+New Jersey,NJ 
 
-New Mexico ,NM ,N Mex ,NM 
+New Mexico,NM,N Mex 
 
-New York ,NY ,NY ,NY 
+New York,NY 
 
-North Carolina ,NC ,NC ,N Car
+North Carolina,NC,N Car
 
-North Dakota ,ND ,N Dak ,ND 
+North Dakota,ND,N Dak 
 
-Ohio ,OH ,Ohio ,Ohio 
+Ohio,OH 
 
-Oklahoma ,OK ,Okla ,Okla 
+Oklahoma,OK,Okla 
 
-Oregon ,OR ,Oreg ,Ore 
+Oregon,OR,Oreg,Ore 
 
-Pennsylvania ,PA ,Pa ,Penn
+Pennsylvania,PA,Penn
 
-Rhode Island ,RI ,RI ,RI 
+Rhode Island,RI
 
-South Carolina ,SC ,SC ,S Car
+South Carolina,SC,S Car
 
-South Dakota ,SD ,S Dak ,SD 
+South Dakota,SD,S Dak
 
-Tennessee ,TN ,Tenn ,Tenn 
+Tennessee,TN,Tenn
 
-Texas ,TX ,Tex ,Texas 
+Texas,TX,Tex,Texas 
 
-Utah ,UT ,Utah ,Utah 
+Utah,UT,Utah
 
-Vermont ,VT ,Vt ,Vt 
+Vermont,VT,Vt
 
-Virginia ,VA ,Va ,Virg 
+Virginia,VA,Virg 
 
-Washington ,WA ,Wash ,Wash 
+Washington,WA,Wash
 
-West Virginia ,WV ,W Va ,WVa 
+West Virginia,WV,W Va,WVa 
 
-Wisconsin ,WI ,Wis ,Wisc
+Wisconsin,WI,Wis,Wisc
 
-Wyoming ,WY ,Wyo ,Wyo 
+Wyoming,WY,Wyo
 
-Puerto Rico,PR,PR,
+Puerto Rico,PR
