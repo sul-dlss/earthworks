@@ -1,0 +1,17 @@
+{
+  "id": ["stanford-synonymtwo"],
+  "dct_title_s": "Marine mammals are so cool",
+  "dct_description_sm": [
+    "Marine mammals are cool"
+  ],
+  "dct_language_sm": ["eng"],
+  "schema_provider_s": "Stanford",
+  "gbl_resourceClass_sm": ["Datasets"],
+  "gbl_resourceType_sm": ["Polygon data"],
+  "dct_format_s": "Shapefile",
+  "locn_geometry": "ENVELOPE(29.572742, 35.000308, 4.234077, -1.478794)",
+  "dcat_bbox": "ENVELOPE(29.572742, 35.000308, 4.234077, -1.478794)",
+  "dct_accessRights_s": "Public",
+  "gbl_mdVersion_s": "Aardvark",
+  
+}
