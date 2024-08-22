@@ -1,5 +1,5 @@
 :root {
-  --stanford-50-black: #979694;
+  --stanford-60-black: #767674;
   --stanford-fog-light-rgb: 244, 244, 244;
 }
 
@@ -10,8 +10,8 @@
 }
 
 .header-icons {
-  color: var(--stanford-50-black);
-  font-size: .875rem;
+  color: var(--stanford-60-black);
+  font-size: 0.875rem;
   line-height: 1.125rem;
 }
 
