@@ -4,7 +4,7 @@
     "vite-plugin-ruby": "^5.0.0"
   },
   "dependencies": {
-    "@geoblacklight/frontend": "^5.0.0-alpha.3",
+    "@geoblacklight/frontend": "^5.0.0-alpha.9",
     "blacklight-frontend": "^8.3.0",
     "blacklight-range-limit": "^8.5.0",
     "bootstrap": "^5.3.3",
