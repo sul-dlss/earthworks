@@ -318,12 +318,16 @@ class CatalogController < ApplicationController
                                                      (Settings.METADATA_SHOWN &
                                                       options[:document].references.refs.map { |x| x.type.to_s }).any?
                                                  }
+    config.add_show_tools_partial :code_snippet_link, component: Earthworks::CodeSnippetLinkComponent,
+                                                      if: proc { |_context, _config, options|
+                                                        options[:document] &&
+                                                          !options[:document].restricted?
+                                                      }
     config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
                                                     if: proc { |_context, _config, options|
                                                           options[:document] &&
                                                             options[:document].searchworks_url.present?
                                                         }
-
     config.show.document_actions.delete(:sms)
 
     # Configuration for autocomplete suggestor
@@ -332,6 +336,18 @@ class CatalogController < ApplicationController
   end
 
   def web_services
+    @docs = action_documents
+
+    respond_to do |format|
+      format.html do
+        return render layout: false if request.xhr?
+        # Otherwise draw the full page
+      end
+    end
+  end
+
+  # Adding code snippet function, uses code_snippet.html.erb partial
+  def code_snippet
     @docs = action_documents
 
     respond_to do |format|
