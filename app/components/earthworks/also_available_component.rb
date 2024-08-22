@@ -16,7 +16,7 @@ module Earthworks
     end
 
     def render?
-      document.also_available_links.present?
+      also_available_links.present?
     end
   end
 end
