@@ -3,14 +3,14 @@
   <div class="search-widgets">
     <%= render_results_collection_tools %>
     <div class="expand-collapse btn-group" data-controller="expandcollapse" data-expandcollapse-description-outlet=".description">
-      <label class="btn btn-outline-secondary active" aria-label="collapse descriptions" disabled data-action="expandcollapse#toggleDescriptions">
-        <input type="radio" class="d-none" name="expandcollapse" value="collapse" selected data-action="expandcollapse#toggleDescriptions">
+      <label class="btn btn-outline-secondary active" aria-label="collapse descriptions" data-expandcollapse-target="expandButton">
+        <input type="radio" class="d-none" name="expandcollapse" value="collapse" data-action="expandcollapse#collapseDescriptions" selected>
         <i class="bi bi-list-ul"></i>
       </label>
-      <label class="btn btn-outline-secondary" aria-label="expand descriptions" data-action="expandcollapse#toggleDescriptions">
-        <input type="radio" class="d-none" name="expandcollapse" value="expand" data-action="expandcollapse#toggleDescriptions">
+      <label class="btn btn-outline-secondary" aria-label="expand descriptions"  data-expandcollapse-target="collapseButton">
+        <input type="radio" class="d-none" name="expandcollapse" value="expand" data-action="expandcollapse#expandDescriptions">
         <i class="bi bi-text-paragraph"></i>
       </label>
     </div>
   </div>
-</div>
+</div>  
