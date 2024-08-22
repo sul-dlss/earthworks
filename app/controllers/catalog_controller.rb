@@ -52,6 +52,7 @@ class CatalogController < ApplicationController
 
     config.show.sidebar_component = Earthworks::Document::SidebarComponent
     config.show.document_component = Earthworks::DocumentComponent
+    config.show.metadata_component = DocumentMetadataComponent
     config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application
