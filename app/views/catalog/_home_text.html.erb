@@ -8,9 +8,9 @@
         autocomplete_path: suggest_index_catalog_path
       ) %>
     <hr>
-    <%= render Earthworks::RecentlyAddedList.new(term: 'Datasets') %>
+    <%= render RecentlyAddedList.new(term: 'Datasets') %>
     <hr>
-    <%= render Earthworks::RecentlyAddedList.new(additional_fq: '-gbl_resourceClass_sm: Datasets', term: 'Maps') %>
+    <%= render RecentlyAddedList.new(additional_fq: '-gbl_resourceClass_sm: Datasets', term: 'Maps') %>
     </div>
     <div class='col-sm'>
       <%= render(Geoblacklight::LocationLeafletMapComponent.new(page: 'home', geosearch: { dynamic: false })) %>
