@@ -3,7 +3,7 @@
 require 'rails_helper'
 require 'spec_helper'
 
-RSpec.describe Earthworks::CodeSnippetModalComponent, type: :component do
+RSpec.describe CodeSnippetModalComponent, type: :component do
   subject(:rendered) do
     render_inline(described_class.new(document))
   end
