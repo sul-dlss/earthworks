@@ -1,5 +1,5 @@
 <div class="result">
-<%# This template copies from Blacklight's components/document_component.html.erb 
+<%# This template copies from Blacklight's components/document_component.html.erb
       # for the wrapping `content_tag @component` structure
       # and adds custom layout within for the document header, status-icons and more-info areas %>
 
@@ -17,7 +17,7 @@
     <%= content_tag :div, class: 'row index-split d-flex flex-grow-1 flex-column me-2', data: { layer_id: @document.id, geom: @document.geometry.geojson } do %>
       <%= title %>
       <div class='status-icons flex-grow-1 ms-0'>
-        <%= render Earthworks::HeaderIconsComponent.new(document: @document) %>
+        <%= render HeaderIconsComponent.new(document: @document) %>
       </div>
     <% end %>
   <% end %>

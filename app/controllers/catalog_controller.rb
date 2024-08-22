@@ -38,21 +38,21 @@ class CatalogController < ApplicationController
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'format'
 
-    config.index.document_component = Earthworks::SearchResultComponent
+    config.index.document_component = SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
-    config.index.search_bar_component = Earthworks::SearchBarComponent
+    config.index.search_bar_component = SearchBarComponent
 
     config.bookmark_icon_component = Blacklight::Icons::BookmarkIconComponent
 
-    config.track_search_session.applied_params_component = Earthworks::ServerAppliedParamsComponent
+    config.track_search_session.applied_params_component = ServerAppliedParamsComponent
 
     config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }
 
     # solr field configuration for document/show views
     config.show.display_type_field = 'format'
 
-    config.show.sidebar_component = Earthworks::Document::SidebarComponent
-    config.show.document_component = Earthworks::DocumentComponent
+    config.show.sidebar_component = Document::SidebarComponent
+    config.show.document_component = DocumentComponent
     config.show.metadata_component = DocumentMetadataComponent
     config.header_component = Geoblacklight::HeaderComponent
 
@@ -333,12 +333,11 @@ class CatalogController < ApplicationController
                                                      (Settings.METADATA_SHOWN &
                                                       options[:document].references.refs.map { |x| x.type.to_s }).any?
                                                  }
-    config.add_show_tools_partial :code_snippet_link, component: Earthworks::CodeSnippetLinkComponent,
+    config.add_show_tools_partial :code_snippet_link, component: CodeSnippetLinkComponent,
                                                       if: proc { |_context, _config, options|
                                                         options[:document] &&
                                                           !options[:document].restricted?
                                                       }
-
     config.show.document_actions.delete(:sms)
 
     config.add_show_header_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
