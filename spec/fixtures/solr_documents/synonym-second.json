@@ -12,6 +12,5 @@
   "locn_geometry": "ENVELOPE(29.572742, 35.000308, 4.234077, -1.478794)",
   "dcat_bbox": "ENVELOPE(29.572742, 35.000308, 4.234077, -1.478794)",
   "dct_accessRights_s": "Public",
-  "gbl_mdVersion_s": "Aardvark",
-  
+  "gbl_mdVersion_s": "Aardvark"
 }
