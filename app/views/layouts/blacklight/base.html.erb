@@ -12,12 +12,12 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
       gtag('js', new Date());
-      
+
       const config = {};
       <% if Settings.ANALYTICS_DEBUG %>
         config.debug_mode = true
       <% end %>
-          
+
       gtag('config', 'G-ZL7MQNBFW9', config)
     </script>
 
@@ -65,5 +65,11 @@
 
     <%= render partial: 'shared/footer' %>
     <%= render partial: 'shared/modal' %>
+
+    <% # Non-render blocking css should be outside of the head %>
+    <%= stylesheet_link_tag "https://cdn.skypack.dev/leaflet@1.9.4/dist/leaflet.css" %>
+    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.css" %>
+    <%= stylesheet_link_tag "https://cdn.skypack.dev/ol@8.1.0/ol.css" %>
+
   </body>
 <% end %>
