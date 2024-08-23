@@ -5,7 +5,7 @@ module Earthworks
   class AlsoAvailableComponent < ViewComponent::Base
     attr_reader :document
 
-    def initialize(document:, **)
+    def initialize(document:)
       @document = document
       super
     end
