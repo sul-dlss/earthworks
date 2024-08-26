@@ -18,11 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/projectblacklight/blacklight.git
-<<<<<<< HEAD
   revision: 69373f202753f04ec6aca179fdf8fa01248a9edf
-=======
-  revision: 96a3a85c614ac1a4283c102f59fba05edf3c1cd0
->>>>>>> 44c617b (using configurable dropdowncomponent to change class of button)
   branch: main
   specs:
     blacklight (8.3.0)
