@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: 3e11b2ec01ffd629e89ae9d6e37b0ecb11b26e91
-  branch: main
+  revision: 680e9bf3ce083a14caf37f117cdf51f89a7f1cf8
+  branch: importmap-generator
   specs:
     geoblacklight (4.4.0)
       blacklight (~> 8.0)

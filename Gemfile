@@ -63,7 +63,7 @@ end
 
 gem 'blacklight', '~> 8.3'
 gem 'rsolr' # required for Blacklight
-gem 'geoblacklight', github: 'geoblacklight/geoblacklight', branch: 'main'
+gem 'geoblacklight', github: 'geoblacklight/geoblacklight', branch: 'importmap-generator'
 gem 'faraday', '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
