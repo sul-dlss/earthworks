@@ -50,9 +50,14 @@
             >Feedback</a
           >
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <% if helpers.current_user && !helpers.current_user.sunet.blank? %>
-            <%= link_to "#{helpers.current_user.sunet}: Logout", destroy_user_session_path, class: "nav-link" %>
+            <button class="nav-link btn-link logout-dropdown dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              Logged in: <%= helpers.current_user.display_name ||  helpers.current_user.sunet %>
+            </button>
+            <ul class="dropdown-menu">
+              <li><%= link_to "Logout", destroy_user_session_path, class: "dropdown-item" %></li>
+            </ul>
           <% else %>
             <%= link_to 'Login', new_user_session_path(referrer: request.original_url), class: "nav-link" %>
           <% end %>

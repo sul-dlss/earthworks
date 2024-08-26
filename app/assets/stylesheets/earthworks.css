@@ -205,3 +205,9 @@ Uncomment lines 142-144
   color: var(--stanford-digital-blue-dark) !important;
   border-color: var(--stanford-digital-blue-dark) !important;
 }
+
+.logout-dropdown {
+  background-color:  rgb(var(--stanford-palo-alto-dark-rgb));
+  --bs-navbar-active-color: white;
+  border-radius: .25rem;
+}
