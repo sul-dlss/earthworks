@@ -205,3 +205,9 @@ Uncomment lines 142-144
   color: var(--stanford-digital-blue-dark) !important;
   border-color: var(--stanford-digital-blue-dark) !important;
 }
+
+:focus-visible {
+  outline: 1px solid var(--stanford-black)!important; /* Outer color */
+  box-shadow: 0 0 0 2px white!important; /* Inner color */
+  border-radius: .375rem;
+}
