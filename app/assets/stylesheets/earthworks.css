@@ -277,5 +277,13 @@ label.toggle-bookmark {
 
 /* Have to use !important because we load leaflet.css after earthworks.  */
 .leaflet-container {
-  background-color: #d4dadc!important;
+  background-color: #d4dadc !important;
+}
+
+.facet-limit-active .card-header {
+  background-color: rgba(23, 94, 84) !important;
+}
+
+.facet-values li .selected {
+  color: rgba(23, 94, 84) !important;
 }
