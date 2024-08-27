@@ -185,9 +185,9 @@ class CatalogController < ApplicationController
     config.add_show_field(
       Settings.FIELDS.IDENTIFIER,
       label: 'More details at',
-      accessor: [:external_url],
-      if: proc { |_, _, doc| doc.external_url },
-      helper_method: :render_references_url
+      accessor: [:identifiers],
+      if: proc { |_, _, doc| doc.identifiers.any? },
+      helper_method: :render_details_links
     )
 
     # ADDITIONAL FIELDS
@@ -333,11 +333,7 @@ class CatalogController < ApplicationController
                                                         options[:document] &&
                                                           !options[:document].restricted?
                                                       }
-    config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
-                                                    if: proc { |_context, _config, options|
-                                                          options[:document] &&
-                                                            options[:document].searchworks_url.present?
-                                                        }
+
     config.show.document_actions.delete(:sms)
 
     # Configuration for autocomplete suggestor
