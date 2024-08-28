@@ -15,6 +15,6 @@
     "sass": "^1.77.8"
   },
   "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/geoblacklight.scss:./app/assets/builds/geoblacklight.css --load-path=node_modules"
+    "build:css": "bin/build-css"
   }
 }

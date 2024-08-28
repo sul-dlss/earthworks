@@ -1,6 +1,7 @@
 en:
   blacklight:
     application_name: 'EarthWorks'
+    back_to_search: 'Back to search results'
     search:
       form:
         search:
@@ -12,5 +13,5 @@ en:
       fields:
         search: 'Keywords'
     tools:
-      citation: Citation
+      citation: Cite
       title: 'Other options'
