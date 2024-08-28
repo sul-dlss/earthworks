@@ -38,6 +38,7 @@
     <dynamicField name="*_s"    type="string"  stored="true"  indexed="true"/>
     <dynamicField name="*_ss"   type="string"  stored="true"  indexed="false"/>
     <dynamicField name="*_si"   type="string"  stored="false" indexed="true"/>
+    <dynamicField name="*_ssi"  type="string"  stored="true"  indexed="true" omitNorms="true" />
     <dynamicField name="*_sim"  type="string"  stored="false" indexed="true" multiValued="true" />
     <dynamicField name="*_sm"   type="string"  stored="true"  indexed="true" multiValued="true" />
     <dynamicField name="*_url"  type="string"  stored="true"  indexed="false"/>
