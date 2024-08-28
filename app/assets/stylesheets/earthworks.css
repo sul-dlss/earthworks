@@ -264,3 +264,8 @@ label.toggle-bookmark {
   margin-right: .25rem;
   vertical-align: middle;
 }
+
+/* Have to use !important because we load leaflet.css after earthworks.  */
+.leaflet-container {
+  background-color: #d4dadc!important;
+}
