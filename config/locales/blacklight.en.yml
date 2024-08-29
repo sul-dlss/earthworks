@@ -16,6 +16,15 @@ en:
         present: "Bookmarked"
         absent: "Bookmark"
         inprogress: "Saving..."
+      per_page:
+        label: '%{count}<span class="sr-only visually-hidden"> per page</span>'
+        button_label_html: '%{count}<span class="d-sm-inline"> per page</span>'
+        title: 'Number of results to display per page'
+        submit: 'Update'
+        aria_label: 'Results navigation'
+      sort:
+        label_html: 'Sort<span class="d-sm-inline"> by %{field}</span>'
+        submit: 'sort results'
     tools:
       citation: Cite
       title: 'Other options'

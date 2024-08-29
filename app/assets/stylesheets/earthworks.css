@@ -95,6 +95,13 @@
   box-shadow: -4px 4px 4px 0px var(--stanford-fog-light);
 }
 
+.search-widgets {
+  /* center these widgets on small screens */
+  @media (max-width: 575.98px) {
+    justify-content: center;
+  } 
+}
+
 .search-widgets .btn {
   --bs-btn-font-size: .875rem;
   --bs-border-radius: 4px;
@@ -103,6 +110,16 @@
   --bs-btn-line-height: 1;
   height: 1.6rem;
   align-self: center;
+}
+
+.paginate-section {
+  /* center these widgets on small screens */
+  @media (max-width: 575.98px) {
+    text-align: center;
+    & > .page-links {
+      padding-right: 0;
+    }
+  } 
 }
 
 .sort-pagination, .pagination-search-widgets {
