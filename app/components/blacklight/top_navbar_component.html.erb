@@ -101,15 +101,7 @@
             >Your name</label
           >
           <div class="col-md-9">
-            <input
-              class="form-control"
-              required="required"
-              data-form-type="other"
-              autocomplete="name"
-              type="text"
-              name="name"
-              id="name"
-            />
+            <%= text_field_tag :name, helpers.current_user&.display_name, autocomplete: 'name', class:"form-control", required: true %>
           </div>
         </div>
         <div class="mb-3 row">
@@ -117,15 +109,7 @@
             >Your email</label
           >
           <div class="col-md-9">
-            <input
-              class="form-control"
-              required="required"
-              data-form-type="other"
-              autocomplete="email"
-              type="email"
-              name="email"
-              id="email"
-            />
+            <%= email_field_tag :email, helpers.current_user&.email, autocomplete: 'email', class:"form-control", required: true %>
           </div>
         </div>
         <div class="mb-3 row">
