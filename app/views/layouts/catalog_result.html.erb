@@ -1,5 +1,7 @@
+<% content_for(:container_header) do %>
+<%= render Blacklight::Document::PageHeaderComponent.new(document: @document, search_context: @search_context, search_session: search_session) %>
+<% end %>
 <% content_for(:content) do %>
-  <%= render Blacklight::Document::PageHeaderComponent.new(document: @document, search_context: @search_context, search_session: search_session) %>
   <section class="<%= show_sidebar_classes %>">
     <%= content_for(:sidebar) %>
   </section>
