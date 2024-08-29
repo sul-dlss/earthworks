@@ -20,6 +20,7 @@
   "dcat_bbox": "ENVELOPE(-71.163984, -71.052581, 42.408316, 42.34757)",
 	"locn_geometry": "ENVELOPE(-71.163984, -71.052581, 42.408316, 42.34757)",
   "gbl_indexYear_im": [2004],
+  "date_hierarchy_sm": ["2000-2099", "2000-2099:2000-2009", "2000-2099:2000-2009:2004"],
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Polygon data"],
   "gbl_mdVersion_s": "Aardvark"

@@ -14,6 +14,7 @@
   "dct_temporal_sm": ["2005"],
   "gbl_dateRange_drsim": ["[2005 TO 2005]"],
   "gbl_indexYear_im": [2005],
+  "date_hierarchy_sm": ["2000-2099", "2000-2099:2000-2009", "2000-2099:2000-2009:2005"],
   "schema_provider_s": "Stanford",
   "dct_identifier_sm": ["https://purl.stanford.edu/cz128vq0535"],
   "gbl_resourceClass_sm": ["Datasets"],

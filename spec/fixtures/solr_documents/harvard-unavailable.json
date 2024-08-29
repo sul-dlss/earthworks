@@ -19,6 +19,7 @@
   "dcat_bbox": "ENVELOPE(-179.149436, 179.759346, 71.331916, -14.602623)",
 	"locn_geometry": "ENVELOPE(-179.149436, 179.759346, 71.331916, -14.602623)",
   "gbl_indexYear_im": [1999],
+  "date_hierarchy_sm": ["1900-1999", "1900-1999:1990-1999", "1900-1999:1990-1999:1999"],
   "layer_availability_score_f": 0.0,
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Polygon data"],

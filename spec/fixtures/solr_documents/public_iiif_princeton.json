@@ -22,6 +22,7 @@
   "dcat_bbox": "ENVELOPE(-76.3394, -72.1916, 46.5798, 38.6693)",
 	"locn_geometry": "ENVELOPE(-76.3394, -72.1916, 46.5798, 38.6693)",
   "gbl_indexYear_im": [1778],
+  "date_hierarchy_sm": ["1700-1799", "1700-1799:1770-1779", "1700-1799:1770-1779:1778"],
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Raster data"],
   "gbl_georeferenced_b": true,

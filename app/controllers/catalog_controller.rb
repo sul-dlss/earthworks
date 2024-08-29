@@ -101,9 +101,13 @@ class CatalogController < ApplicationController
     config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Genre/Data Type', limit: 8
     config.add_facet_field Settings.FIELDS.THEME, label: 'Theme', limit: 8
     config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Location', limit: 8
-    config.add_facet_field Settings.FIELDS.INDEX_YEAR, label: 'Year', limit: 10, range: {
-      assumed_boundaries: [1100, Time.zone.now.year + 2]
-    }
+
+    config.add_facet_field Settings.FIELDS.HIERARCHICAL_INDEX_YEAR, label: 'Date', limit: -1, sort: :index,
+                                                                    collapsing: true, single: true,
+                                                                    component: Blacklight::DateFacetHierarchyComponent,
+                                                                    item_component: Blacklight::FacetItemPivotComponent,
+                                                                    item_presenter: DateFacetItemPresenter
+
     config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
     config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
     config.add_facet_field Settings.FIELDS.PROVIDER, label: 'Provider', limit: 8,
