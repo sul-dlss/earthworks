@@ -281,14 +281,6 @@ label.toggle-bookmark {
   background-color: #d4dadc !important;
 }
 
-.facet-limit-active .card-header {
-  background-color: rgba(23, 94, 84) !important;
-}
-
-.facet-values li .selected {
-  color: rgba(23, 94, 84) !important;
-}
-
 .facet-limit-active {
   --bl-facet-active-bg: rgb(var(--stanford-palo-alto-rgb));
   --bl-facet-active-item-color: rgb(var(--stanford-palo-alto-rgb));
