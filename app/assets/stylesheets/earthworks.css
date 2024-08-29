@@ -7,12 +7,9 @@
 /* Selects both #main-content and navbar containers */
 #main-container, .navbar-search > *, header .container, #feedback .container, #pre-footer .container, #su-footer .container {
   max-width:  1600px;
-  padding-inline: 60px;
-}
 
-@media (max-width: 575.98px) {
-  #main-container, .navbar-search > *, header .container, #feedback .container, #pre-footer .container, #su-footer .container {
-    padding-inline: 1rem;
+  @media (min-width: 575.98px) {
+    padding-inline: 60px;
   }
 }
 
