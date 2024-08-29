@@ -1,6 +1,7 @@
 :root {
   --stanford-60-black: #767674;
   --stanford-fog-light-rgb: 244, 244, 244;
+  --stanford-palo-alto-rgb: 23, 94, 84;
 }
 
 /* Selects both #main-content and navbar containers */
@@ -27,7 +28,7 @@
 }
 
 .palo-alto-base {
-  --bs-dark-rgb: 23, 94, 84;
+  --bs-dark-rgb: var(--stanford-palo-alto-rgb);
 }
 
 .home-header .blacklight-icons, .home-header .blacklight-icons svg {
@@ -277,5 +278,19 @@ label.toggle-bookmark {
 
 /* Have to use !important because we load leaflet.css after earthworks.  */
 .leaflet-container {
-  background-color: #d4dadc!important;
+  background-color: #d4dadc !important;
+}
+
+.facet-limit-active .card-header {
+  background-color: rgba(23, 94, 84) !important;
+}
+
+.facet-values li .selected {
+  color: rgba(23, 94, 84) !important;
+}
+
+.facet-limit-active {
+  --bl-facet-active-bg: rgb(var(--stanford-palo-alto-rgb));
+  --bl-facet-active-item-color: rgb(var(--stanford-palo-alto-rgb));
+  border-color: rgb(var(--stanford-palo-alto-rgb));
 }
