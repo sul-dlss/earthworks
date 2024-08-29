@@ -249,7 +249,7 @@ label.toggle-bookmark {
 }
 
 .back-to-search::before {
-  content: "\f12A";
+  content: "\f129";
   font-family: "bootstrap-icons";
   margin-right: .25rem;
   vertical-align: middle;
