@@ -90,16 +90,18 @@ class CatalogController < ApplicationController
 
     # DEFAULT FACETS
     # to add additional facets, use the keys defined in the settings.yml file
-    config.add_facet_field Settings.FIELDS.PROVIDER, label: 'Provider', limit: 8,
-                                                     item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.CREATOR, label: 'Creator', limit: 8
-    config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
-    config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8
+    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8,
+                                                           item_component: Geoblacklight::IconFacetItemComponent
+    config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Genre/Data Type', limit: 8
     config.add_facet_field Settings.FIELDS.THEME, label: 'Theme', limit: 8
-    config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
+    config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Location', limit: 8
     config.add_facet_field Settings.FIELDS.INDEX_YEAR, label: 'Year', limit: 10, range: {
       assumed_boundaries: [1100, Time.zone.now.year + 2]
     }
+    config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
+    config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
+    config.add_facet_field Settings.FIELDS.PROVIDER, label: 'Provider', limit: 8,
+                                                     item_component: Geoblacklight::IconFacetItemComponent
     config.add_facet_field Settings.FIELDS.ACCESS_RIGHTS, label: 'Access', limit: 8,
                                                           item_component: Geoblacklight::IconFacetItemComponent
     # Disabled until GeoMonitor is updated for v4.x compatibility
@@ -117,9 +119,6 @@ class CatalogController < ApplicationController
     #                          }
     #                        },
     #                        item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8,
-                                                           item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Resource Type', limit: 8
 
     # GEOBLACKLIGHT APPLICATION FACETS
 
