@@ -9,6 +9,12 @@
   padding-inline: 60px;
 }
 
+@media (max-width: 575.98px) {
+  #main-container, .navbar-search > *, header .container, #feedback .container, #pre-footer .container, #su-footer .container {
+    padding-inline: 1rem;
+  }
+}
+
 .header-icons {
   color: var(--stanford-60-black);
   font-size: 0.875rem;
