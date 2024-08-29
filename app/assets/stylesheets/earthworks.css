@@ -319,12 +319,13 @@ label.toggle-bookmark {
 }
 
 /* Override mobile view for facets section in Blacklight */
+.facets {
+  --bl-facets-smallish-border: none;
+  --bl-facets-smallish-padding: 0;
+}
+
 @media (max-width: 991.98px) {
-  .facets-toggleable-md {
-    border: none;
-    padding-top: 0px;
-  }
   .facets-heading {
-    margin-bottom:0px;
+    margin-bottom: 0;
   }
 }
