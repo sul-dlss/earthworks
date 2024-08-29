@@ -1,0 +1,60 @@
+{
+    "dct_title_s": "Louisa County, Iowa, 1951, aerial photomosaic index",
+    "dct_description_sm": [
+    "Title supplied by cataloger based on information from sheet labels. Images are photoreductions of mosaics created from original aerial photographs. Designating symbol TD. Form of individual image numbering: TD-1R-[number], or TD-2R-[number]. \"\"Flying compl",
+    "Contact the Map Collection at The University of Iowa Libraries: http://www.lib.uiowa.edu/maps/contact/"
+    ],
+    "dct_language_sm": [
+    "eng"
+    ],
+    "dct_publisher_sm": [
+    "United States. Department of Agriculture. Production and Marketing Administration"
+    ],
+    "schema_provider_s": "Iowa",
+    "gbl_resourceClass_sm": [
+    "Imagery"
+    ],
+    "gbl_resourceType_sm": [
+    "Aerial photographs"
+    ],
+    "dcat_keyword_sm": [
+    "photomosaic maps",
+    "aerial photographs",
+    "remote sensing"
+    ],
+    "dct_temporal_sm": [
+    "1950-1960"
+    ],
+    "gbl_indexYear_im": [
+    1950
+    ],
+    "gbl_dateRange_drsim": [
+    "[1950 TO 1960]"
+    ],
+    "dct_spatial_sm": [
+    "Iowa--Louisa County",
+    "Iowa"
+    ],
+    "locn_geometry": "POLYGON((-96.64 43.50, -90.14 43.50, -90.14 40.38, -96.64 40.38, -96.64 43.50))",
+    "dcat_bbox": "ENVELOPE(-96.64,-90.14,43.50,40.38)",
+    "dcat_centroid": "41.94,-93.39",
+    "pcdm_memberOf_sm": [
+    "dc8c18df-7d64-4ff4-a754-d18d0891187d"
+    ],
+    "dct_isPartOf_sm": [
+    "03d-01-04",
+    "03d-01"
+    ],
+    "dct_rights_sm": [
+    "This is a work of the U.S. Government and is not subject to copyright protection in the United States."
+    ],
+    "dct_accessRights_s": "Public",
+    "dct_format_s": "JPEG",
+    "dct_references_s": "{\"http://iiif.io/api/image\":\"https://digital.lib.uiowa.edu/iiif/2/ui:api_2627~JP2~~default/info.json\",\"http://schema.org/url\":\"https://digital.lib.uiowa.edu/islandora/object/ui%3Aapi_2627\"}",
+    "id": "ui_api_2627",
+    "dct_identifier_sm": [
+    "https://digital.lib.uiowa.edu/islandora/object/ui%3Aapi_2627"
+    ],
+    "gbl_mdVersion_s": "Aardvark",
+    "timestamp": "2024-06-12T16:47:01.430Z"
+    }

@@ -21,6 +21,9 @@ module EarthworksGeoblacklightHelper
 
   # Use Mirador as the IIIF manifest viewer
   def iiif_manifest_viewer
-    tag.div(nil, id: 'mirador', data: { 'manifest-url' => @document.viewer_endpoint })
+    tag.div(nil, id: 'mirador', data: {
+              'manifest-url' => @document.viewer_endpoint,
+              controller: 'mirador'
+            })
   end
 end

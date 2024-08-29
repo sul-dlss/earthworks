@@ -14,5 +14,6 @@ pin 'blacklight', to: 'https://cdn.skypack.dev/blacklight-frontend@8.3.0/dist/bl
 pin '@github/auto-complete-element', to: 'https://cdn.skypack.dev/@github/auto-complete-element'
 
 # Earthworks
+pin 'mirador', to: 'https://esm.sh/mirador@4.0.0-alpha.2'
 pin_all_from 'app/javascript/controllers', under: 'controllers'
 pin_all_from 'app/javascript'

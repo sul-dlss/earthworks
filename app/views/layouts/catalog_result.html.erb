@@ -12,7 +12,7 @@
     <% if (@document.image? || @document.item_viewer.iiif) && !@document[Settings.FIELDS[:GEOREFERENCED]] %>
       <%= render Earthworks::AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
     <% end %>
-    <%= render Geoblacklight::ViewerContainerComponent.new(document: @document) %>
+    <%= render Earthworks::ViewerContainerComponent.new(document: @document) %>
     <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
     <%= render Geoblacklight::IndexMapInspectComponent.new(document: @document) %>
   </section>
