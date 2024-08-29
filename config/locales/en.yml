@@ -6,10 +6,10 @@ en:
     home:
       datasets:
         header: Geospatial data
-        description: Need copy for this ... contains over %{sets} datasets...
+        description: Data that includes location information (coordinates) and is natively usable in GIS software and services such as ArcGIS, QGIS, WFS, and WMS. Geospatial data types include vector data, such as Shapefile, GeoJSON, and GeoPackage, and raster data, such as GeoTIFF, grid files, and georeferenced maps.
       maps:
         header:  Scanned maps
-        description: Need copy for this ... contains over %{sets} maps...
+        description: Images of paper maps that have been scanned and/or georeferenced. These digital cartographic resources cover all parts of the world and include topographical maps, historical maps, nautical charts, thematic maps, and atlases.
     show:
       no_georeference_message: 'This map is not georeferenced.'
     code_snippet:
