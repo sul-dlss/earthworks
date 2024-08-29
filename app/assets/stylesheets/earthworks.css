@@ -193,7 +193,9 @@ Uncomment lines 142-144
 
 .code-snippet-content {
   background-color: #f4f4f4 !important;
-  font-size: 1.2em;
+  pre {
+    font-size: 1rem;
+  }
 }
 
 .code-snippet-tab {
