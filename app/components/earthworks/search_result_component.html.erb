@@ -1,18 +1,19 @@
+<div class="result">
 <%# This template copies from Blacklight's components/document_component.html.erb 
       # for the wrapping `content_tag @component` structure
       # and adds custom layout within for the document header, status-icons and more-info areas %>
 
-<%= content_tag @component,
-  id: @id,
-  data: {
-    'document-id': @document.id.to_s.parameterize,
-    'document-counter': @counter,
-    'search-results-target': 'result',
-    'action': 'mouseenter->search-results#previewResultOnMap mouseleave->search-results#clearPreview'
-  },
-  itemscope: true,
-  itemtype: @document.itemtype,
-  class: classes.flatten.join(' ') do %>
+  <%= content_tag @component,
+    id: @id,
+    data: {
+      'document-id': @document.id.to_s.parameterize,
+      'document-counter': @counter,
+      'search-results-target': 'result',
+      'action': 'mouseenter->search-results#previewResultOnMap mouseleave->search-results#clearPreview'
+    },
+    itemscope: true,
+    itemtype: @document.itemtype,
+    class: classes.flatten.join(' ') do %>
     <%= content_tag :div, class: 'row index-split d-flex flex-grow-1 flex-column me-2', data: { layer_id: @document.id, geom: @document.geometry.geojson } do %>
       <%= title %>
       <div class='status-icons flex-grow-1 ms-0'>
@@ -20,10 +21,11 @@
       </div>
     <% end %>
   <% end %>
-  <div class='more-info-area border-bottom'>
+  <div class='more-info-area border-bottom px-2 pb-2'>
     <div id="doc-<%= @document.id %>-fields-collapse" class='collapse description' data-controller="description">
       <small itemprop="description">
         <%= index_fields_display %>
       </small>
     </div>
   </div>
+</div>
