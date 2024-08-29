@@ -317,3 +317,14 @@ label.toggle-bookmark {
   --bs-link-color-rgb: var(--stanford-digital-blue-dark-rgb);
   text-decoration: underline;
 }
+
+/* Override mobile view for facets section in Blacklight */
+@media (max-width: 991.98px) {
+  .facets-toggleable-md {
+    border: none;
+    padding-top: 0px;
+  }
+  .facets-heading {
+    margin-bottom:0px;
+  }
+}
