@@ -94,7 +94,7 @@
   fill: var(--stanford-digital-red)
 }
 
-.documents-list article:hover, .documents-list article:focus {
+.documents-list .result:hover, .documents-list .result:focus {
   box-shadow: -4px 4px 4px 0px var(--stanford-fog-light);
 }
 
