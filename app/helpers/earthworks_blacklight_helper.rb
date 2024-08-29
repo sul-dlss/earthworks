@@ -1,7 +1,7 @@
 module EarthworksBlacklightHelper
   include Blacklight::LayoutHelperBehavior
   def show_content_classes
-    'col-lg-5 show-document'
+    'col-lg-10 show-document row'
   end
 
   def show_sidebar_classes
