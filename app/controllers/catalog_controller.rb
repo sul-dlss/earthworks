@@ -40,6 +40,7 @@ class CatalogController < ApplicationController
 
     config.index.document_component = Earthworks::SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
+    config.index.search_bar_component = Earthworks::SearchBarComponent
 
     config.bookmark_icon_component = Blacklight::Icons::BookmarkIconComponent
 

@@ -1,7 +1,7 @@
 <div class='mt-4 mb-4'>
   <div class='row'>
     <div class='col-sm'>
-    <%= render Blacklight::SearchBarComponent.new(
+    <%= render blacklight_config.index.search_bar_component.new(
         url: search_action_url,
         advanced_search_url: search_action_url(action: 'advanced_search'),
         params: search_state.params_for_search.except(:qt),
