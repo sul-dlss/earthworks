@@ -103,7 +103,7 @@
   } 
 }
 
-.search-widgets .btn {
+.search-widgets .btn, .clear-bookmarks {
   --bs-btn-font-size: .875rem;
   --bs-border-radius: 4px;
   --bs-btn-padding-x: 6px;
