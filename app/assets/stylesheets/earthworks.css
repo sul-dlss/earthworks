@@ -324,8 +324,21 @@ label.toggle-bookmark {
   --bl-facets-smallish-padding: 0;
 }
 
+/* To help vertically align on mobile */
 @media (max-width: 991.98px) {
   .facets-heading {
     margin-bottom: 0;
   }
+}
+
+/* Hide/show button on mobile */
+.facets-header .navbar-toggler {
+  --bl-facets-smallish-border: none;
+  --bs-navbar-toggler-border-color: var(--stanford-digital-blue);
+  --bs-navbar-color: var(--stanford-digital-blue);
+  color: var(--stanford-digital-blue);
+}
+
+.facets-header .navbar-toggler:hover {
+  color: var(--stanford-digital-blue-dark);
 }
