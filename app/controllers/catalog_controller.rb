@@ -34,7 +34,7 @@ class CatalogController < ApplicationController
     config.view.split(partials: ['index'])
     config.view.delete_field('list')
 
-    config.index.dropdown_component = Earthworks::System::DropdownComponent
+    config.index.dropdown_component = DropdownComponent
 
     # solr field configuration for search results/index views
     # config.index.show_link = 'title_display'
