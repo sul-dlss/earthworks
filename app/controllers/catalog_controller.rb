@@ -13,10 +13,11 @@ class CatalogController < ApplicationController
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :start => 0,
-      :rows => 10,
+      :rows => 20,
       'q.alt' => '*:*'
     }
 
+    config.default_per_page = 20
     # Default parameters to send on single-document requests to Solr.
     # These settings are the Blacklight defaults (see SolrHelper#solr_doc_params) or
     # parameters included in the Blacklight-jetty document requestHandler.
@@ -24,6 +25,9 @@ class CatalogController < ApplicationController
       qt: 'document',
       q: "{!raw f=#{Settings.FIELDS.ID} v=$id}"
     }
+
+    # When set to true, Blacklight uses container-fluid as the layout container
+    config.full_width_layout = true
 
     # GeoBlacklight Defaults
     # * Adds the "map" split view for catalog#index
@@ -34,21 +38,24 @@ class CatalogController < ApplicationController
     # config.index.show_link = 'title_display'
     # config.index.record_display_type = 'format'
 
+    config.index.document_component = SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
+    config.index.search_bar_component = SearchBarComponent
+
+    config.bookmark_icon_component = Blacklight::Icons::BookmarkIconComponent
+
+    config.track_search_session.applied_params_component = SearchContext::ServerAppliedParamsComponent
+    config.index.constraints_component = ConstraintsComponent
 
     config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }
 
     # solr field configuration for document/show views
     config.show.display_type_field = 'format'
-    config.show.partials << 'show_message'
-    config.show.partials << 'show_default_viewer_container'
-    config.show.partials << 'show_default_attribute_table'
-    config.show.partials << 'show_default_viewer_information'
-    config.show.partials << 'show_default_canonical_link'
 
-    ##
-    # Configure the index document presenter.
-    config.index.document_presenter_class = Geoblacklight::DocumentPresenter
+    config.show.sidebar_component = Document::SidebarComponent
+    config.show.document_component = DocumentComponent
+    config.show.metadata_component = DocumentMetadataComponent
+    config.header_component = Geoblacklight::HeaderComponent
 
     # solr fields that will be treated as facets by the blacklight application
     #   The ordering of the field names is the order of the display
@@ -86,16 +93,18 @@ class CatalogController < ApplicationController
 
     # DEFAULT FACETS
     # to add additional facets, use the keys defined in the settings.yml file
-    config.add_facet_field Settings.FIELDS.PROVIDER, label: 'Provider', limit: 8,
-                                                     item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.CREATOR, label: 'Creator', limit: 8
-    config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
-    config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', limit: 8
+    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8,
+                                                           item_component: Geoblacklight::IconFacetItemComponent
+    config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Genre/Data Type', limit: 8
     config.add_facet_field Settings.FIELDS.THEME, label: 'Theme', limit: 8
-    config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Place', limit: 8
+    config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Location', limit: 8
     config.add_facet_field Settings.FIELDS.INDEX_YEAR, label: 'Year', limit: 10, range: {
       assumed_boundaries: [1100, Time.zone.now.year + 2]
     }
+    config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
+    config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
+    config.add_facet_field Settings.FIELDS.PROVIDER, label: 'Provider', limit: 8,
+                                                     item_component: Geoblacklight::IconFacetItemComponent
     config.add_facet_field Settings.FIELDS.ACCESS_RIGHTS, label: 'Access', limit: 8,
                                                           item_component: Geoblacklight::IconFacetItemComponent
     # Disabled until GeoMonitor is updated for v4.x compatibility
@@ -113,9 +122,6 @@ class CatalogController < ApplicationController
     #                          }
     #                        },
     #                        item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8,
-                                                           item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Resource Type', limit: 8
 
     # GEOBLACKLIGHT APPLICATION FACETS
 
@@ -185,9 +191,9 @@ class CatalogController < ApplicationController
     config.add_show_field(
       Settings.FIELDS.IDENTIFIER,
       label: 'More details at',
-      accessor: [:external_url],
-      if: proc { |_, _, doc| doc.external_url },
-      helper_method: :render_references_url
+      accessor: [:identifiers],
+      if: proc { |_, _, doc| doc.identifiers.any? },
+      helper_method: :render_details_links
     )
 
     # ADDITIONAL FIELDS
@@ -237,6 +243,7 @@ class CatalogController < ApplicationController
     # solr request handler? The one set in config[:default_solr_parameters][:qt],
     # since we aren't specifying it otherwise.
 
+    config.add_search_field 'all_fields', label: 'All Fields'
     # config.add_search_field 'text', :label => 'All Fields'
     # config.add_search_field 'dct_title_ti', :label => 'Title'
     # config.add_search_field 'dct_description_ti', :label => 'Description'
@@ -300,10 +307,18 @@ class CatalogController < ApplicationController
     # mean") suggestion is offered.
     config.spell_max = 5
 
+    # Nav actions from Blacklight
+    config.add_nav_action(:bookmark, partial: 'blacklight/nav/bookmark', if: :render_bookmarks_control?)
+    config.add_nav_action(:search_history, partial: 'blacklight/nav/search_history')
+
+    config.add_results_document_tool(:bookmark, component: Blacklight::Document::BookmarkComponent,
+                                                if: :render_bookmarks_control?)
+
     # Tools from Blacklight
     config.add_results_collection_tool(:sort_widget)
     config.add_results_collection_tool(:per_page_widget)
-    config.add_show_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_tools_partial(:bookmark, component: Blacklight::Document::BookmarkComponent,
+                                             if: :render_bookmarks_control?)
     config.add_show_tools_partial(:citation)
     config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
                                                    options[:document] &&
@@ -314,16 +329,21 @@ class CatalogController < ApplicationController
     config.add_show_tools_partial(:sms, if: :render_sms_action?, callback: :sms_action, validator: :validate_sms_params)
 
     # Custom tools for GeoBlacklight
-    config.add_show_tools_partial :searchworks_url, component: Earthworks::SearchworksUrl,
-                                                    if: proc { |_context, _config, options|
-                                                          options[:document] &&
-                                                            options[:document].searchworks_url.present?
-                                                        }
-
+    config.add_show_tools_partial :metadata, if: proc { |_context, _config, options|
+                                                   options[:document] &&
+                                                     (Settings.METADATA_SHOWN &
+                                                      options[:document].references.refs.map { |x| x.type.to_s }).any?
+                                                 }
+    config.add_show_tools_partial :code_snippet_link, component: CodeSnippetLinkComponent,
+                                                      if: proc { |_context, _config, options|
+                                                        options[:document] &&
+                                                          !options[:document].restricted?
+                                                      }
     config.show.document_actions.delete(:sms)
 
-    # Configure basemap provider
-    config.basemap_provider = 'OpenStreetMap.HOT'
+    config.add_show_header_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
+    config.add_show_header_tools_partial(:citation)
+    config.add_show_header_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
 
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
@@ -331,7 +351,7 @@ class CatalogController < ApplicationController
   end
 
   def web_services
-    @response, @documents = action_documents
+    @docs = action_documents
 
     respond_to do |format|
       format.html do
@@ -341,10 +361,15 @@ class CatalogController < ApplicationController
     end
   end
 
-  ##
-  # Overrides default Blacklight method to return true for an empty q value
-  # @return [Boolean]
-  def has_search_parameters?
-    !params[:q].nil? || super
+  # Adding code snippet function, uses code_snippet.html.erb partial
+  def code_snippet
+    @docs = action_documents
+
+    respond_to do |format|
+      format.html do
+        return render layout: false if request.xhr?
+        # Otherwise draw the full page
+      end
+    end
   end
 end

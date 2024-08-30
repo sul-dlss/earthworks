@@ -225,11 +225,18 @@ WMS_PARAMS:
   :STYLES: ""
   :SRS: "EPSG:4326"
   :EXCEPTIONS: "application/json"
-  :INFO_FORMAT: "text/html"
+  :INFO_FORMAT: "application/json"
 
 # Settings for leaflet
 LEAFLET:
   MAP:
+  BOUNDSOVERLAY:
+    INDEX:
+      color: '#175E54'
+    SHOW:
+      color: '#175E54'
+    STATIC_MAP:
+      color: '#175E54'
   LAYERS:
     DETECT_RETINA: true
     INDEX:
@@ -243,27 +250,6 @@ LEAFLET:
       SELECTED:
         <<: *default
         color: "yellow"
-  VIEWERS:
-    WMS:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    TILEDMAPLAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    FEATURELAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    DYNAMICMAPLAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
-    IMAGEMAPLAYER:
-      CONTROLS:
-        - "Opacity"
-        - "Fullscreen"
 
 # Toggle the help text feature that offers users context
 HELP_TEXT:
@@ -507,3 +493,17 @@ ALLOWED_OGM_THEMES:
   - Transportation
   - Utilities
 
+ICON_MAPPING:
+  berkeley: university-of-california-berkeley
+  chicago: university-of-chicago
+  illinois: university-of-illinois-urbana-champaign
+  iowa: university-of-iowa
+  maryland: university-of-maryland
+  michigan-state: michigan-state-university
+  michigan: university-of-michigan
+  minnesota: university-of-minnesota
+  nebraska: university-of-nebraska-lincoln
+  ohio-state: the-ohio-state-university
+  penn-state: pennsylvania-state-university
+  purdue: purdue-university
+  wisconsin: university-of-wisconsin-madison

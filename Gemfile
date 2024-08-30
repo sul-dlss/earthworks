@@ -3,17 +3,11 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 7.1'
 
-# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+# Successor to sprockets. https://github.com/rails/propshaft
+gem "propshaft"
 
 # Use Puma as the app server
 gem 'puma', '~> 6'
-
-# Use SCSS for stylesheets
-gem 'sassc-rails'
-
-# Use jquery as the JavaScript library
-gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
@@ -44,12 +38,13 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'selenium-webdriver', '!= 3.13.0'
-  gem 'factory_bot_rails', '~> 6.4'
+  gem 'factory_bot_rails'
   gem 'database_cleaner'
   gem 'dotenv'
   gem 'simplecov', require: false
   gem 'solr_wrapper'
   gem 'sqlite3', '~> 1.7'
+  gem "axe-core-rspec"
 end
 
 group :deployment do
@@ -67,9 +62,10 @@ group :production do
   gem 'pg'
 end
 
-gem 'blacklight', '~> 7.33'
+#gem 'blacklight', '~> 8.3'
+gem 'blacklight', github: 'projectblacklight/blacklight', branch: 'main'
 gem 'rsolr' # required for Blacklight
-gem 'geoblacklight','~> 4.4'
+gem 'geoblacklight', github: 'geoblacklight/geoblacklight', branch: 'main'
 gem 'faraday', '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
@@ -87,7 +83,11 @@ gem 'redis', '~> 5.0'
 gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false
-gem 'bootstrap', '~> 4.0'
+gem 'bootstrap', '~> 5.3'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
+gem "cssbundling-rails", "~> 1.4"
+gem "importmap-rails", "~> 2.0"
+gem "stimulus-rails", "~> 1.3"
+gem "turbo-rails", "~> 2.0"

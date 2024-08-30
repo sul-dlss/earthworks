@@ -1,5 +1,7 @@
 en:
   geoblacklight:
+    download:
+      export_link: '%{download_format}'
     home:
       headline: 'Discover and download GIS data and maps'
     relations:

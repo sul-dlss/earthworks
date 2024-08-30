@@ -50,4 +50,10 @@ class SolrDocument
   # and Blacklight::Solr::Document#to_semantic_values
   # Recommendation: Use field names from Dublin Core
   use_extension(Blacklight::Document::DublinCore)
+
+  # Check to see if view is an image
+  # Used for georeferencing message
+  def image?
+    file_format&.include?('JPEG')
+  end
 end

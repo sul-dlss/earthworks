@@ -13,7 +13,7 @@
   "dct_language_sm": ["jpn"],
   "dct_spatial_sm": ["Asia", "East Asia"],
   "schema_provider_s": "Stanford",
-  "dct_identifier_sm": ["https://purl.stanford.edu/dy750qs3024"],
+  "dct_identifier_sm": ["https://purl.stanford.edu/dy750qs3024", "https://doi.org/10.7946/P2Z31V"],
   "gbl_resourceClass_sm": ["Maps"],
   "dct_format_s": "JPEG2000",
   "locn_geometry": "ENVELOPE(50.0, 160.0, 60.0, 20.0)",
