@@ -92,8 +92,9 @@
 }
 
 .documents-list .result:hover, .documents-list .result:focus {
-  box-shadow: -4px 4px 4px 0px var(--stanford-fog-light);
-}
+  box-shadow: -4px 4px 4px 0px #0000000D,
+               4px 4px 4px 0px #0000000D;
+  }
 
 .search-widgets {
   /* center these widgets on small screens */
