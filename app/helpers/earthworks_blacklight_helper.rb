@@ -1,10 +1,22 @@
 module EarthworksBlacklightHelper
   include Blacklight::LayoutHelperBehavior
+  # Blacklight override for show main content
   def show_content_classes
     'col-lg-10 show-document row'
   end
 
+  # Blacklight override for show page sidebar
   def show_sidebar_classes
+    'page-sidebar col-lg-2'
+  end
+
+  # Blacklight override for search results
+  def main_content_classes
+    'col-lg-10'
+  end
+
+  # Blacklight override for search result facets
+  def sidebar_classes
     'page-sidebar col-lg-2'
   end
 
