@@ -4,6 +4,11 @@
   --stanford-palo-alto-rgb: 23, 94, 84;
 }
 
+#main-container {
+  /* force the footer to the bottom on a tall viewport */
+  min-height: calc(100vh - 323px);
+}
+
 /* Selects both #main-content and navbar containers */
 #main-container, .navbar-search > *, header .container, #feedback .container, #pre-footer .container, #su-footer .container {
   max-width:  1600px;
