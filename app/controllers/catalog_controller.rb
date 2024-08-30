@@ -44,7 +44,7 @@ class CatalogController < ApplicationController
 
     config.bookmark_icon_component = Blacklight::Icons::BookmarkIconComponent
 
-    config.track_search_session.applied_params_component = ServerAppliedParamsComponent
+    config.track_search_session.applied_params_component = SearchContext::ServerAppliedParamsComponent
 
     config.crawler_detector = ->(req) { req.env['HTTP_USER_AGENT']&.include?('bot') }
 
