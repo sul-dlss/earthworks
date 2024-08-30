@@ -32,6 +32,13 @@ RSpec/MultipleMemoizedHelpers:
   Exclude:
     - "spec/lib/earthworks/harvester_spec.rb"
 
+RSpec/MultipleExpectations:
+  Enabled: false
+
+Metrics/ClassLength:
+  Exclude:
+    - "app/controllers/catalog_controller.rb"
+
 Gemspec/DeprecatedAttributeAssignment: # new in 1.30
   Enabled: true
 Gemspec/RequireMFA: # new in 1.23

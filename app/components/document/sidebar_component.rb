@@ -5,10 +5,10 @@ module Document
   class SidebarComponent < Geoblacklight::Document::SidebarComponent
     def components
       [
-        Geoblacklight::LoginLinkComponent.new(document: document),
-        Geoblacklight::StaticMapComponent.new(document: document),
-        DownloadLinksComponent.new(document: document),
-        AlsoAvailableComponent.new(document: document)
+        Geoblacklight::LoginLinkComponent.new(document:),
+        Geoblacklight::StaticMapComponent.new(document:),
+        DownloadLinksComponent.new(document:),
+        AlsoAvailableComponent.new(document:)
       ]
     end
   end

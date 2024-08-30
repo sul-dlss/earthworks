@@ -107,8 +107,7 @@ class CodeSnippetModalComponent < ViewComponent::Base
                     'vector data']
 
     # If the intersection of these arrays is not empty, then there is at least one vector type value
-    !(@document[Settings.FIELDS.RESOURCE_TYPE].map(&:downcase) &
-      vector_types).empty?
+    !!@document[Settings.FIELDS.RESOURCE_TYPE].map(&:downcase).intersect?(vector_types)
   end
 
   def raster_data?
