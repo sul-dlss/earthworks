@@ -1,6 +1,6 @@
 <%= title %>
 <div class="mb-2">
-  <%= render Earthworks::HeaderIconsComponent.new(document: @document) %>
+  <%= render HeaderIconsComponent.new(document: @document) %>
 </div>
 <%= content_tag @component,
   id: @id,
@@ -43,7 +43,7 @@
 
 <section class="col-lg-6">
   <% if (@document.image? || @document.item_viewer.iiif) && !@document[Settings.FIELDS[:GEOREFERENCED]] %>
-    <%= render Earthworks::AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
+    <%= render AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
   <% end %>
   <%= render Geoblacklight::ViewerContainerComponent.new(document: @document) %>
   <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
