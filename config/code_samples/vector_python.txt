@@ -2,6 +2,10 @@
 # Before running this code, install or check for these libraries
 # !pip install geopandas folium
 
+import requests
+import geopandas as gpd
+import folium
+
 # Accept user input for the GeoServer URL and the typeName of the layer
 geoserver_url = "<<GEOSERVER_WFS>>?"
 type_name = "<<WXS_ID>>"
@@ -18,6 +22,9 @@ params = {
 # Send a GET request to the GeoServer WFS service
 response = requests.get(geoserver_url, params=params)
 
+# Load the features from the WFS service into a GeoDataFrame
+gdf = gpd.read_file(response.text)
+
 # Get the bounds of the GeoDataFrame
 bounds = gdf.total_bounds
 
@@ -26,10 +33,6 @@ center = [(bounds[1] + bounds[3]) / 2, (bounds[0] + bounds[2]) / 2]
 
 # Create the map
 m = folium.Map(location=center, zoom_start=2)
-
-# Load the features from the WFS service into a GeoDataFrame
-gdf = gpd.read_file(response.text)
-
 
 # Add the GeoDataFrame to the map as a GeoJson layer
 folium.GeoJson(gdf).add_to(m)
