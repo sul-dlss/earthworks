@@ -17,7 +17,7 @@
             maxZoom: 19,
         }).addTo(map)
         var geojsonLayer = new L.GeoJSON.AJAX("<<GEOSERVER_WFS>>?service=WFS&" +
-            "version=1.1.0&request=GetFeature&typename=<<WXS_ID>>" +
+            "version=1.1.0&request=GetFeature&typename=<<WXS_ID>>&" +
             "outputFormat=application/json&srsname=EPSG:4326", {
             onEachFeature: function (feature, layer) {
                 var popupContent = '';
