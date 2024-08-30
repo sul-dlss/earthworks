@@ -100,7 +100,7 @@
   /* center these widgets on small screens */
   @media (max-width: 575.98px) {
     justify-content: center;
-  } 
+  }
 }
 
 .search-widgets .btn, .clear-bookmarks {
@@ -120,7 +120,7 @@
     & > .page-links {
       padding-right: 0;
     }
-  } 
+  }
 }
 
 .sort-pagination, .pagination-search-widgets {
@@ -208,10 +208,13 @@ Uncomment lines 142-144
 
 .expand-collapse .btn-outline-secondary {
   display: flex;
-  &.active {
-    color: white;
-    background-color:var(--stanford-cardinal);
-  }
+  --bs-btn-border-color: var(--stanford-digital-blue);
+  --bs-btn-color: var(--stanford-digital-blue);
+  --bs-btn-hover-color: var(--stanford-digital-blue-dark);
+  --bs-btn-hover-border-color: var(--stanford-digital-blue-dark);
+  --bs-btn-active-color: white;
+  --bs-btn-active-bg: var(--stanford-digital-blue-darker);
+  --bs-btn-active-border-color: var(--stanford-digital-blue-darker);
 }
 
 .expand-collapse i {
