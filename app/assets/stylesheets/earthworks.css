@@ -143,7 +143,7 @@
   padding: .5rem;
   border-radius: .25rem;
   background-color: white;
-  width: 100%;
+  width: 100%; /* overrides https://github.com/projectblacklight/blacklight/blob/69373f202753f04ec6aca179fdf8fa01248a9edf/app/assets/stylesheets/blacklight/_header.scss#L32 */
   @media (min-width: 576px) {
     max-width: 520px;
   }
