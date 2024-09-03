@@ -208,11 +208,10 @@ Uncomment lines 142-144
 
 .expand-collapse .btn-outline-primary {
   display: flex;
-  --bs-btn-hover-color: var(--stanford-digital-blue-dark);
-  --bs-btn-hover-border-color: var(--stanford-digital-blue-dark);
-  --bs-btn-active-color: white;
-  --bs-btn-active-bg: var(--stanford-digital-blue-darker);
-  --bs-btn-active-border-color: var(--stanford-digital-blue-darker);
+  &.active {
+    color: white;
+    background-color:var(--stanford-digital-blue-darker);
+  }
 }
 
 .expand-collapse i {
