@@ -5,11 +5,14 @@ en:
     unavailable_html: This data is hosted by %{institution}, and is currently unavailable to preview and download. Stanford University does not hold this data and cannot provide access to it, at this time. If you have questions about this or other unavailable datasets from %{department} please submit your feedback to <a href="mailto:%{email}">%{email}</a>.
     home:
       datasets:
-        header: Geospatial data
-        description: Need copy for this ... contains over %{sets} datasets...
+        header: Geospatial datasets
+        description_html: Data that includes location information (coordinates) and is natively usable in GIS software and services such as ArcGIS, QGIS, WFS, and WMS. Geospatial data types include vector data, such as Shapefile, GeoJSON, and GeoPackage, and raster data, such as GeoTIFFs, grid files, and georeferenced maps. There are <b>%{sets} datasets</b> in EarthWorks.
+        button_text: 'Browse all datasets'
       maps:
-        header:  Scanned maps
-        description: Need copy for this ... contains over %{sets} maps...
+        header:  Maps
+        description_html: Images of paper maps that have been scanned and/or georeferenced. These digital cartographic resources cover all parts of the world and include topographical maps, historical maps, nautical charts, thematic maps, and atlases. There are <b>%{sets} maps</b> in EarthWorks.
+        button_text: 'Browse all maps'
+
     show:
       no_georeference_message: 'This map is not georeferenced.'
     code_snippet:

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class RecentlyAddedList < ViewComponent::Base
+class RecentlyAddedListComponent < ViewComponent::Base
   attr_reader :count, :docs, :type, :field, :term
 
   def initialize(term:, additional_fq: '', rows: 4, field: 'gbl_resourceClass_sm')
