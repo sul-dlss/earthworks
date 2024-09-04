@@ -43,6 +43,7 @@ class CatalogController < ApplicationController
     config.index.document_component = SearchResultComponent
     config.index.title_field = Settings.FIELDS.TITLE
     config.index.search_bar_component = SearchBarComponent
+    config.index.facet_group_component = FacetGroupComponent
 
     config.bookmark_icon_component = Blacklight::Icons::BookmarkIconComponent
 

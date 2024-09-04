@@ -12,7 +12,7 @@
     <hr>
     <%= render RecentlyAddedList.new(additional_fq: '-gbl_resourceClass_sm: Datasets', term: 'Maps') %>
     </div>
-    <div class='col-sm'>
+    <div class='col-sm d-none d-md-block'>
       <%= render(Geoblacklight::LocationLeafletMapComponent.new(page: 'home', geosearch: { dynamic: false })) %>
     </div>
   </div>
