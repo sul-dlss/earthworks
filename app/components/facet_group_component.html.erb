@@ -7,9 +7,9 @@
 </div>
 <%= content_tag :div, id: @id,  class: 'facets sidenav facets-toggleable-sm' do %>
   <div class="facets-header">
-    <%= content_tag :h2, @title, class: 'facets-heading' if @title %>
+    <%= content_tag :h2, @title, class: 'facets-heading d-none d-md-block' if @title %>
     <%= content_tag :button,
-      class:'navbar-toggler navbar-toggler-right',
+      class:'navbar-toggler btn btn-outline-primary col-12',
       type: 'button',
       data: {
         toggle: 'collapse',
@@ -21,8 +21,16 @@
         controls: @panel_id,
         expanded: 'false',
       } do %>
-      <span data-show-label><%= t('blacklight.search.facets.group.open') %></span>
-      <span data-hide-label><%= t('blacklight.search.facets.group.close') %></span>
+      <span data-show-label>
+        <i class="bi bi-sliders me-1"></i><%= @title %>
+      </span>
+      </span>
+      <span data-hide-label>
+        <span class="float-start">
+          <i class="bi bi-sliders me-1"></i><%= @title %>
+        </span>
+        <i class="bi bi-x float-end"></i>
+      </span>
     <% end %>
   </div>
 

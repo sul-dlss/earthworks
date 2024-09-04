@@ -330,3 +330,9 @@ label.toggle-bookmark {
     margin-bottom: 0;
   }
 }
+
+.sidenav .navbar-toggler:hover, .sidenav .navbar-toggler:focus, .sidenav .navbar-toggler {
+  --bs-navbar-toggler-border-color: var(--stanford-digital-blue);
+  color: var(--stanford-digital-blue);
+  --bs-navbar-toggler-padding-y: .5rem;
+}
