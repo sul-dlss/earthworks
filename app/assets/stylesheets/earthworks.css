@@ -123,6 +123,13 @@
   }
 }
 
+.page-links {
+  @media (max-width: 991.98px) { 
+    /* override GBL here so that it centers correctly */
+   padding: 0.375rem 0;
+  } 
+}
+
 .sort-pagination, .pagination-search-widgets {
   padding-bottom: .5rem;
   border-bottom: 2px solid var(--bs-border-color);
