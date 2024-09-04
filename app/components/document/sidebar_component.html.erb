@@ -8,6 +8,8 @@
   <%= tools %>
 </div>
 
+<%= render AlsoAvailableComponent.new(document:) %>
+
 <div class="mt-4">
   <%= render Blacklight::Document::MoreLikeThisComponent.new(document:) %>
 </div>
