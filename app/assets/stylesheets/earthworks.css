@@ -159,6 +159,7 @@
 
 .navbar-search {
   --bs-light-rgb: var(--stanford-fog-light-rgb);
+  --bs-navbar-padding-y: 1rem;
 }
 
 .navbar-search > .container-fluid {
