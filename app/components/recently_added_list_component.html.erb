@@ -4,7 +4,7 @@
 </h1>
 <div class="home-tab">
   <div class="mb-1">
-    <%= t("earthworks.home.#{type}.description_html", sets: count) %>
+    <%= t("earthworks.home.#{type}.description_html", sets: number_with_delimiter(count)) %>
   </div>
   <h2 class="h4">Recently added</h2>
   <ul class="list-unstyled">
