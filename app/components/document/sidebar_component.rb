@@ -7,8 +7,7 @@ module Document
       [
         Geoblacklight::LoginLinkComponent.new(document:),
         Geoblacklight::StaticMapComponent.new(document:),
-        DownloadLinksComponent.new(document:),
-        AlsoAvailableComponent.new(document:)
+        DownloadLinksComponent.new(document:)
       ]
     end
   end
