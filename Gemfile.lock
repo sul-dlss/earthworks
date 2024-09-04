@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: fcc0a9460662d5ee81ef40943024d900f00f287c
+  revision: 9be157a6ace72bd38c9c24cb2417f4831e3f5e81
   branch: main
   specs:
     geoblacklight (4.4.0)
@@ -18,7 +18,7 @@ GIT
 
 GIT
   remote: https://github.com/projectblacklight/blacklight.git
-  revision: a4ec2d85eeb8d61bd2d462ccdfb5de1c50dba27d
+  revision: 9fc666991dea383dd2a0250f6cfbc84e5975dc4f
   branch: main
   specs:
     blacklight (8.3.0)
@@ -329,7 +329,7 @@ GEM
     method_source (1.1.0)
     mime-types (3.5.2)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2024.0820)
+    mime-types-data (3.2024.0903)
     mini_mime (1.1.5)
     minitar (1.0.2)
     minitest (5.25.1)
@@ -339,7 +339,7 @@ GEM
       uri
     net-http-persistent (4.0.2)
       connection_pool (~> 2.2)
-    net-imap (0.4.15)
+    net-imap (0.4.16)
       date
       net-protocol
     net-pop (0.1.2)
@@ -574,7 +574,7 @@ GEM
     vite_rails (3.0.17)
       railties (>= 5.1, < 8)
       vite_ruby (~> 3.0, >= 3.2.2)
-    vite_ruby (3.8.0)
+    vite_ruby (3.8.1)
       dry-cli (>= 0.7, < 2)
       rack-proxy (~> 0.6, >= 0.6.1)
       zeitwerk (~> 2.2)
