@@ -190,13 +190,9 @@ Uncomment lines 142-144
   display: none;
 } */
 
-#main-container .leaflet-container {
-  height: 620px;
-}
-
-@media (max-width: 575.98px) {
-  #main-container #leaflet-viewer  {
-    display: none;
+#main-container #leaflet-viewer  {
+  @media (min-width: 992px) {
+    height: 620px;
   }
 }
 
