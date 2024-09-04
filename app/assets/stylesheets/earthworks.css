@@ -320,3 +320,16 @@ label.toggle-bookmark {
   --bs-link-color-rgb: var(--stanford-digital-blue-dark-rgb);
   text-decoration: underline;
 }
+
+/* Override mobile view for facets section in Blacklight */
+.facets {
+  --bl-facets-smallish-border: none;
+  --bl-facets-smallish-padding: 0;
+}
+
+/* To help vertically align on mobile */
+@media (max-width: 991.98px) {
+  .facets-heading {
+    margin-bottom: 0;
+  }
+}
