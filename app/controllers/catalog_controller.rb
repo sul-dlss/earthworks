@@ -333,7 +333,7 @@ class CatalogController < ApplicationController
                                                  }
     config.add_show_tools_partial :code_snippet_link, component: CodeSnippetLinkComponent,
                                                       if: proc { |_context, _config, options|
-                                                        options[:document] &&
+                                                        options[:document]&.dataset? &&
                                                           !options[:document].restricted?
                                                       }
     config.show.document_actions.delete(:sms)

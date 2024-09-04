@@ -12,6 +12,10 @@ class SolrDocument
     fetch(Settings.FIELDS.PROVIDER, '')
   end
 
+  def dataset?
+    fetch(Settings.FIELDS.RESOURCE_CLASS, []).include?('Datasets')
+  end
+
   def contact_email
     Settings.INSTITUTIONS.send(institution)&.email
   end
