@@ -8,12 +8,12 @@
     >
     <% isIndex = results_js_map_selector(controller.controller_name) == "index" %>
     <%= render blacklight_config.view_config(document_index_view_type).search_header_component.new if isIndex%>
-    <turbo-frame id="documents-frame">
+    <div id="documents-container">
       <% document_presenters = documents.map { |doc| document_presenter(doc) } -%>
       <% document_presenters.each_with_index do |presenter, index| %>
         <%= render blacklight_config.index.document_component.new(document: presenter, document_counter: index) %>
       <% end %>
-    </turbo-frame>
+    </div>
   </div>
   <div class="col-lg-5 order-first order-lg-last d-none d-lg-block results-map-container" data-controller="searchmapcontainer">
     <% if results_js_map_selector(controller.controller_name) == "index" %>
