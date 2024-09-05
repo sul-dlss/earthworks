@@ -210,6 +210,7 @@ Uncomment lines 142-144
   --bs-focus-ring-color: none;
   --bs-pagination-focus-bg: none;
   --bs-pagination-focus-box-shadow: none;
+  --bs-pagination-color: var(--stanford-digital-blue);
 }
 
 /* Styles for search result description expand/collapse */
