@@ -6,7 +6,7 @@
   <div class="mb-1">
     <%= t("earthworks.home.#{type}.description_html", sets: number_with_delimiter(count)) %>
   </div>
-  <h2 class="h4">Recently added</h2>
+  <h2 class="h4 mt-3">Recently added</h2>
   <ul class="list-unstyled">
     <% docs.each do | doc | %>
       <li class="my-1"><%= link_to doc['dct_title_s'], solr_document_path(doc['id']) %></li>
