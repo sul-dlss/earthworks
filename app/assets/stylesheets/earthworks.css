@@ -346,3 +346,14 @@ label.toggle-bookmark {
   --bs-link-hover-decoration: underline;
   --bs-link-hover-color-rgb: var(--stanford-digital-blue-dark-rgb);
 }
+
+/* Push footer to the bottom on short pages */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#main-container {
+  flex: 1;
+}
