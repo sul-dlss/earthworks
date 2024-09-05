@@ -152,14 +152,18 @@
   border-radius: .25rem;
   background-color: white;
   width: 100%; /* overrides https://github.com/projectblacklight/blacklight/blob/69373f202753f04ec6aca179fdf8fa01248a9edf/app/assets/stylesheets/blacklight/_header.scss#L32 */
-  @media (min-width: 576px) {
-    max-width: 520px;
-  }
 }
 
 .navbar-search {
   --bs-light-rgb: var(--stanford-fog-light-rgb);
   --bs-navbar-padding-y: 1rem;
+}
+
+/* Search bar outside of homepage: override GBL to set a smaller max-width */
+.navbar-search .search-query-form {
+  @media (min-width: 768px) {
+    max-width: 520px;
+  }
 }
 
 .navbar-search > .container-fluid {
