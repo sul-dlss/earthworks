@@ -340,3 +340,8 @@ label.toggle-bookmark {
   color: var(--stanford-digital-blue);
   --bs-navbar-toggler-padding-y: .5rem;
 }
+
+.document-metadata.su-underline {
+  --bs-link-hover-decoration: underline;
+  --bs-link-hover-color-rgb: var(--stanford-digital-blue-dark-rgb);
+}
