@@ -6,7 +6,6 @@
   "dependencies": {
     "@geoblacklight/frontend": "^5.0.0-alpha.10",
     "blacklight-frontend": "^8.3.0",
-    "blacklight-range-limit": "^8.5.0",
     "bootstrap": "^5.3.3",
     "bootstrap-slider": "^11.0.2",
     "leaflet": "^1.9.4",

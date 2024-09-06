@@ -75,7 +75,6 @@ gem 'honeybadger'
 gem 'blacklight_dynamic_sitemap', '~> 0.3'
 gem 'newrelic_rpm'
 gem 'twitter-typeahead-rails'
-gem 'blacklight_range_limit', '~> 7.0'
 gem 'redis', '~> 5.0'
 # Not compatible with GeoBlacklight 4.x
 # https://github.com/geoblacklight/geo_monitor/issues/12
