@@ -20,5 +20,6 @@
   "id": "stanford-bq589tv8583",
   "schema_provider_s": "Stanford",
   "gbl_indexYear_im": [2010],
+  "date_hierarchy_sm": ["2000-2099", "2000-2099:2010-2019", "2000-2099:2010-2019:2010"],
   "gbl_resourceClass_sm": ["Other"]
 }

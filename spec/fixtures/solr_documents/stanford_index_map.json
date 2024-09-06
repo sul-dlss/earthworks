@@ -28,6 +28,7 @@
   "dcat_bbox": "ENVELOPE(108.000122, 116.500122, 41.666687, 39.000122)",
 	"locn_geometry": "ENVELOPE(108.000122, 116.500122, 41.666687, 39.000122)",
   "gbl_indexYear_im": [1940],
+  "date_hierarchy_sm": ["1900-1999", "1900-1999:1940-1949", "1900-1999:1940-1949:1940"],
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Polygon data"],
   "gbl_mdVersion_s": "Aardvark"

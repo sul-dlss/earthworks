@@ -1,7 +1,6 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
-  concern :range_searchable, BlacklightRangeLimit::Routes::RangeSearchable.new
   mount Blacklight::Engine => '/'
   mount OkComputer::Engine, at: '/status'
   # API compatibility with is_it_working checks
@@ -12,7 +11,6 @@ Rails.application.routes.draw do
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
     concerns :searchable
-    concerns :range_searchable
   end
 
   get '/catalog/:id/code_snippet' => 'catalog#code_snippet'

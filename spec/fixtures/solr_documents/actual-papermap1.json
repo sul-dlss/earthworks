@@ -18,6 +18,7 @@
   "dcat_bbox": "ENVELOPE(-13.0, 4.0, 62.0, 49.0)",
 	"locn_geometry": "ENVELOPE(-13.0, 4.0, 62.0, 49.0)",
   "gbl_indexYear_im": [1996],
+  "date_hierarchy_sm": ["1900-1999", "1900-1999:1990-1999", "1900-1999:1990-1999:1996"],
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_mdVersion_s": "Aardvark"
 }

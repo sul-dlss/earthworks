@@ -40,6 +40,7 @@
   "dcat_bbox": "ENVELOPE(30.013108, 30.875309, 60.041712, 59.669749)",
 	"locn_geometry": "ENVELOPE(30.013108, 30.875309, 60.041712, 59.669749)",
   "gbl_indexYear_im": [1834],
+  "date_hierarchy_sm": ["1800-1899", "1800-1899:1830-1839", "1800-1899:1830-1839:1834"],
   "solr_issued_dt": "2000-01-01T00:00:00Z",
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Raster data"],

@@ -33,6 +33,7 @@
   "dcat_bbox": "ENVELOPE(-121.7948738, -121.7389503, 36.8606925, 36.8085911)",
 	"locn_geometry": "ENVELOPE(-121.7948738, -121.7389503, 36.8606925, 36.8085911)",
   "gbl_indexYear_im": [2005],
+  "date_hierarchy_sm": ["2000-2099", "2000-2099:2000-2009", "2000-2099:2000-2009:2005"],
   "gbl_resourceClass_sm": ["Datasets"],
   "gbl_resourceType_sm": ["Raster data"],
   "gbl_mdVersion_s": "Aardvark"

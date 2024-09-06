@@ -52,6 +52,7 @@ FIELDS:
   :FORMAT: "dct_format_s"
   :FILE_SIZE: "gbl_fileSize_s"
   :GEOREFERENCED: "gbl_georeferenced_b"
+  :HIERARCHICAL_INDEX_YEAR: "date_hierarchy_sm"
   :ID: "id"
   :IDENTIFIER: "dct_identifier_sm"
   :INDEX_YEAR: "gbl_indexYear_im"
