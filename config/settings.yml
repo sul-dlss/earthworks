@@ -217,6 +217,13 @@ RELATIONSHIPS_SHOWN:
     label: geoblacklight.relations.version_of_descendants
     query_type: descendants
 
+# Vector data download formats to be displayed
+DOWNLOAD_FORMATS:
+  VECTOR:
+    - 'Shapefile'
+    - 'CSV'
+    - 'GeoJSON'
+
 # WMS Parameters
 WMS_PARAMS:
   :SERVICE: "WMS"
