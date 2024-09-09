@@ -153,6 +153,7 @@ class CatalogController < ApplicationController
     config.add_facet_field Settings.FIELDS.IS_REPLACED_BY, label: 'Is Replaced By', show: false
     config.add_facet_field Settings.FIELDS.SOURCE, label: 'Source', show: false
     config.add_facet_field Settings.FIELDS.VERSION, label: 'Is Version Of', show: false
+    config.add_facet_field Settings.FIELDS.SUBJECT, label: 'Subject', show: false
 
     # Have BL send all facet field names to Solr, which has been the default
     # previously. Simply remove these lines if you'd rather use Solr request
