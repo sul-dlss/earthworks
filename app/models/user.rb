@@ -20,8 +20,11 @@ class User < ActiveRecord::Base
     email.gsub('@stanford.edu', '')
   end
 
-  attr_accessor :display_name
-  attr_reader :shibboleth_groups
+  attr_reader :shibboleth_groups, :display_name
+
+  def display_name=(display_name)
+    @display_name ||= display_name
+  end
 
   def shibboleth_groups=(groups)
     @shibboleth_groups = groups.split(';')
