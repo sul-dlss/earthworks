@@ -51,7 +51,7 @@ Rails.application.routes.draw do
     concerns :exportable
   end
 
-  resources :bookmarks do
+  resources :bookmarks, only: %i[index update create destroy] do
     concerns :exportable
 
     collection do
