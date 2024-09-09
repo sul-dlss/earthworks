@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: 71571edd686cbeaca0dfb34aeac586fd8b6f9e8f
+  revision: eec0950b765b4e31af9c63104d8d96caf368a292
   branch: main
   specs:
-    geoblacklight (4.4.0)
+    geoblacklight (5.0.0.pre.alpha.10)
       blacklight (~> 8.0)
       coderay
       config
@@ -456,7 +456,7 @@ GEM
       faraday (>= 0.9, < 3, != 2.0.0)
     rspec-core (3.13.1)
       rspec-support (~> 3.13.0)
-    rspec-expectations (3.13.2)
+    rspec-expectations (3.13.3)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.13.0)
     rspec-mocks (3.13.1)
@@ -490,12 +490,12 @@ GEM
     rubocop-performance (1.21.1)
       rubocop (>= 1.48.1, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rails (2.26.0)
+    rubocop-rails (2.26.1)
       activesupport (>= 4.2.0)
       rack (>= 1.1)
       rubocop (>= 1.52.0, < 2.0)
       rubocop-ast (>= 1.31.1, < 2.0)
-    rubocop-rspec (3.0.4)
+    rubocop-rspec (3.0.5)
       rubocop (~> 1.61)
     rubocop-rspec_rails (2.30.0)
       rubocop (~> 1.61)
@@ -522,7 +522,7 @@ GEM
       docile (~> 1.1)
       simplecov-html (~> 0.11)
       simplecov_json_formatter (~> 0.1)
-    simplecov-html (0.12.3)
+    simplecov-html (0.13.1)
     simplecov_json_formatter (0.1.4)
     solr_wrapper (4.0.2)
       http
