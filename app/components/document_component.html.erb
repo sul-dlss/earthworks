@@ -1,51 +1,57 @@
 <%= title %>
-<div class="mb-2">
+<div class="mb-2 row">
   <%= render HeaderIconsComponent.new(document: @document) %>
 </div>
-<%= content_tag @component,
-  id: @id,
-  data: {
-    'document-id': @document.id.to_s.parameterize,
-    'document-counter': @counter,
-  },
-  itemscope: true,
-  itemtype: @document.itemtype,
-  class: classes.flatten.join(' ') do %>
-  <%= header %>
-  <% if body.present? %>
-    <%= body %>
-  <% else %>
-    <% if @document.stanford? %>
-      <% content_for :head do %>
-        <link rel="canonical" href="<%= "#{Settings.HOST_URL}#{solr_document_path(@document.id)}" %>">
+<div class="row">
+  <%= content_tag @component,
+    id: @id,
+    data: {
+      'document-id': @document.id.to_s.parameterize,
+      'document-counter': @counter,
+    },
+    itemscope: true,
+    itemtype: @document.itemtype,
+    class: classes.flatten.join(' ') do %>
+    <%= header %>
+    <% if body.present? %>
+      <%= body %>
+    <% else %>
+      <% if @document.stanford? %>
+        <% content_for :head do %>
+          <link rel="canonical" href="<%= "#{Settings.HOST_URL}#{solr_document_path(@document.id)}" %>">
+        <% end %>
       <% end %>
+      <div class="document-main-section">
+        <% @document.display_note.each do |display_note| %>
+          <%= render Geoblacklight::DisplayNoteComponent.new(display_note: display_note) %>
+        <% end %>
+        <%= embed %>
+        <%= content %>
+        <%= metadata %>
+        <% metadata_sections.each do |section| %>
+          <%= section %>
+        <% end %>
+  
+        <% partials.each do |partial| %>
+          <%= partial %>
+        <% end %>
+      </div>
+  
+      <%= thumbnail %>
     <% end %>
-    <div class="document-main-section">
-      <% @document.display_note.each do |display_note| %>
-        <%= render Geoblacklight::DisplayNoteComponent.new(display_note: display_note) %>
-      <% end %>
-      <%= embed %>
-      <%= content %>
-      <%= metadata %>
-      <% metadata_sections.each do |section| %>
-        <%= section %>
-      <% end %>
-
-      <% partials.each do |partial| %>
-        <%= partial %>
-      <% end %>
+    <%= footer %>
+  <% end %>
+  <div class="col-lg-6">
+    <% if (@document.image? || @document.item_viewer.iiif) && !@document[Settings.FIELDS[:GEOREFERENCED]] %>
+      <%= render AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
+    <% end %>
+    <div id="viewer-container">
+      <%= render Geoblacklight::ViewerHelpTextComponent.new('viewer_protocol', @document.viewer_protocol) %>
+      <%= render Geoblacklight::IndexMapLegendComponent.new(document: @document) %>
+      <%= render Geoblacklight::ItemMapViewerComponent.new(document: @document) %>
+      <%= render Geoblacklight::IiifDragDropComponent.new(document: @document) %>
     </div>
-
-    <%= thumbnail %>
-  <% end %>
-  <%= footer %>
-<% end %>
-
-<section class="col-lg-6">
-  <% if (@document.image? || @document.item_viewer.iiif) && !@document[Settings.FIELDS[:GEOREFERENCED]] %>
-    <%= render AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
-  <% end %>
-  <%= render Geoblacklight::ViewerContainerComponent.new(document: @document) %>
-  <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
-  <%= render Geoblacklight::IndexMapInspectComponent.new(document: @document) %>
-</section>
+    <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
+    <%= render Geoblacklight::IndexMapInspectComponent.new(document: @document) %>
+  </div>
+</div>
