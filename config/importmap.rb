@@ -13,6 +13,6 @@ pin 'bootstrap', to: 'https://cdn.skypack.dev/bootstrap@5.3.3'
 pin 'blacklight', to: 'https://cdn.skypack.dev/blacklight-frontend@8.3.0/dist/blacklight.js'
 pin '@github/auto-complete-element', to: 'https://cdn.skypack.dev/@github/auto-complete-element'
 
-# Earthworks
+# EarthWorks
 pin_all_from 'app/javascript/controllers', under: 'controllers'
 pin_all_from 'app/javascript'
