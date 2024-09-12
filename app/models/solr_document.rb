@@ -32,6 +32,10 @@ class SolrDocument
     fetch(Settings.FIELDS.RESOURCE_CLASS, []) == 'Other'
   end
 
+  def external_links
+    fetch(Settings.FIELDS.IDENTIFIER, []).filter { |identifier| identifier.start_with?('http') }
+  end
+
   # Examine the list of references (in dct_references_s) to find a "schema.org/relatedLink"
   #  This is going to be the searchworks url if present.
   #  See https://github.com/sul-dlss/searchworks_traject_indexer/pull/1490

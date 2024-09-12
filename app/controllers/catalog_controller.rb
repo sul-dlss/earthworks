@@ -198,8 +198,8 @@ class CatalogController < ApplicationController
     config.add_show_field(
       Settings.FIELDS.IDENTIFIER,
       label: 'More details at',
-      accessor: [:identifiers],
-      if: proc { |_, _, doc| doc.identifiers.any? },
+      accessor: [:external_links],
+      if: proc { |_, _, doc| doc.external_links.any? },
       helper_method: :render_details_links
     )
 

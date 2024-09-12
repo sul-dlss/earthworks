@@ -22,7 +22,7 @@ module EarthworksBlacklightHelper
 
   def render_details_links(args)
     tag.ul class: 'list-unstyled' do
-      args[:document].identifiers.collect { |identifier| concat tag.li(link_to(identifier, identifier)) }
+      args[:document].external_links.collect { |url| concat tag.li(link_to(url, url)) }
     end
   end
 end
