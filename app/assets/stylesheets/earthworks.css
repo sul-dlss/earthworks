@@ -195,6 +195,9 @@ Uncomment lines 142-144
 } */
 
 #main-container #leaflet-viewer  {
+  /* match sul-embed border */
+  border: 1px solid black;
+
   @media (min-width: 992px) {
     height: 620px;
   }
