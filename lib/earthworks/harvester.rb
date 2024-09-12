@@ -40,7 +40,7 @@ module Earthworks
     end
 
     # We transform some records in order to get more consistent metadata display
-    # in Earthworks, especially for facets.
+    # in EarthWorks, especially for facets.
     def transform_record(record, path)
       # Transform provider name to a shorter, consistent value based on the repository
       if (transformed_provider = @ogm_repos.dig(record_repo(path), :provider))
