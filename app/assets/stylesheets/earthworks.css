@@ -6,7 +6,7 @@
 
 /* Selects both #main-content and navbar containers */
 #main-container, .navbar-search > *, header .container, #feedback .container, #pre-footer .container, #su-footer .container {
-  max-width:  1600px;
+  max-width: 1920px;
 
   @media (min-width: 575.98px) {
     padding-inline: 60px;
