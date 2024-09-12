@@ -318,6 +318,11 @@ label.toggle-bookmark {
   border-color: rgb(var(--stanford-palo-alto-rgb));
 }
 
+/* Ensure facet icons are all the same color */
+.facet-label .blacklight-icons svg {
+  fill: var(--stanford-60-black);
+}
+
 .header-tools > *:hover, .toggle-bookmark span[data-checkboxsubmit-target="span"]:hover {
   --bs-link-color-rgb: var(--stanford-digital-blue-dark-rgb);
   text-decoration: underline;
