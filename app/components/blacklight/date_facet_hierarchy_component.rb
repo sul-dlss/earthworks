@@ -36,37 +36,24 @@ module Blacklight
     # @return [Array<Blacklight::Solr::Response::Facets::FacetItem>]
     def facet_item_tree_hierarchy_from_year_list
       tree = {} # a hash mapping each century string (e.g. '1900-1999') to its FacetItem
+      top_level = [] # the top-level facet items (centuries)
 
       @facet_field.paginator.items.each do |item|
-        century_str, decade_str, year_str = item.value.split(':')
+        # add the item to the tree at its parent
+        *parents, _last = item.value.split(':')
+        parent = parents.join(':')
+        tree[parent] ||= []
+        tree[parent] << item
+        tree[item.value] ||= []
 
-        # if we haven't encountered this century before in the list, add it to the tree
-        tree[century_str] ||= Blacklight::Solr::Response::Facets::FacetItem.new(value: century_str, items: [], hits: 0)
+        # update the item with its children, if any
+        item.items = tree[item.value] if tree[item.value]
 
-        next unless decade_str # if this item is century only (no decade/year), this iteration's done (e.g. '1900-1999')
-
-        # have we already added a node for this decade on a prior loop iteration?
-        decade_facet = tree[century_str].items.find do |decade_item|
-          decade_item.value == "#{century_str}:#{decade_str}"
-        end
-
-        # if this is the first entry referring to this decade, add a new FacetItem for it to the tree
-        unless decade_facet
-          decade_facet = Blacklight::Solr::Response::Facets::FacetItem.new(value: "#{century_str}:#{decade_str}",
-                                                                           items: [], hits: 0)
-          tree[century_str].items << decade_facet
-        end
-
-        next unless year_str # if item is century:decade (no year), this iteration's done (e.g. '1900-1999:1990-1999')
-
-        # add this year to its decade FacetItem, and increment the hit count for the parent decade and century
-        decade_facet.items << item
-        tree[century_str].hits += 1
-        decade_facet.hits += 1
+        # if this is a century, add it to the top_level array
+        top_level << item unless item.value.include?(':')
       end
 
-      # the consumer can walk the tree from the root nodes
-      tree.values
+      top_level
     end
   end
 end
