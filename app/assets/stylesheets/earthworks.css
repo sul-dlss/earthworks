@@ -365,3 +365,12 @@ body {
 #main-container {
   flex: 1;
 }
+
+/* Add margin for consecutive paragraphs in item descriptions */
+.document-metadata p {
+  margin-bottom: 0;
+}
+
+.document-metadata p + p {
+  margin-top: 1rem;
+}
