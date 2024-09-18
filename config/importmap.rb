@@ -10,7 +10,7 @@ pin '@popperjs/core', to: 'https://cdn.skypack.dev/@popperjs/core@2.11.8'
 pin 'bootstrap', to: 'https://cdn.skypack.dev/bootstrap@5.3.3'
 
 # Blacklight
-pin 'blacklight', to: 'https://cdn.skypack.dev/blacklight-frontend@8.3.0/dist/blacklight.js'
+pin 'blacklight', to: 'https://cdn.skypack.dev/blacklight-frontend@8.4.0/dist/blacklight.js'
 pin '@github/auto-complete-element', to: 'https://cdn.skypack.dev/@github/auto-complete-element'
 
 # EarthWorks
