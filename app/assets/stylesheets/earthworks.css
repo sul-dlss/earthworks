@@ -374,3 +374,9 @@ body {
 .document-metadata p + p {
   margin-top: 1rem;
 }
+
+/* Prevent transparency of Leaflet's affiliations display */
+/* See: https://github.com/sul-dlss/earthworks/issues/1432 */
+.leaflet-container .leaflet-control-attribution {
+  background: white !important;
+}
