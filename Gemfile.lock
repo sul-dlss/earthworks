@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: eec0950b765b4e31af9c63104d8d96caf368a292
-  tag: v5.0.0-alpha.10
+  revision: 36fa3977309891a026baf43516bff7bc7f4a6803
+  tag: v5.0.0-alpha.11
   specs:
-    geoblacklight (5.0.0.pre.alpha.10)
+    geoblacklight (5.0.0.pre.alpha.11)
       blacklight (~> 8.0)
       coderay
       config
@@ -13,6 +13,7 @@ GIT
       mime-types
       rails (>= 6.1, < 8)
       rgeo-geojson
+      rsolr
       vite_rails (~> 3.0)
       zeitwerk
 
