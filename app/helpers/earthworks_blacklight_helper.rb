@@ -2,7 +2,7 @@ module EarthworksBlacklightHelper
   include Blacklight::LayoutHelperBehavior
   # Blacklight override for show main content
   def show_content_classes
-    'col-lg-10 show-document row'
+    'col-lg-10 show-document'
   end
 
   # Blacklight override for show page sidebar
