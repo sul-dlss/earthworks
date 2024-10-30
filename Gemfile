@@ -62,7 +62,7 @@ group :production do
   gem 'pg'
 end
 
-gem 'blacklight', '~> 8.4'
+gem 'blacklight', '~> 8.6'
 gem 'rsolr' # required for Blacklight
 gem 'geoblacklight', github: 'geoblacklight/geoblacklight', tag: 'v5.0.0-alpha.11'
 gem 'faraday', '~> 2.0'
