@@ -81,7 +81,6 @@ gem 'redis', '~> 5.0'
 gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
 gem 'sidekiq', '~> 7.0'
 gem 'whenever', require: false
-gem 'bootstrap', '~> 5.3'
 gem 'rack-attack' # For throttle configuration
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
