@@ -1,17 +1,13 @@
-<% filtered_components = components.map{|component | render component }.uniq.compact_blank %>
-<% tools = render_show_tools %>
-<% if filtered_components.any? || tools.present?  %>
+<% filtered_components = filter_components(components) %>
+<% if filtered_components.any?  %>
   <div class="bg-fog-light component-container rounded">
-    <%= filtered_components.join('<hr style="border-top: dotted 1px;" />').html_safe if filtered_components.any? %>
-    <% if filtered_components.any? && tools.present? %>
-      <hr style="border-top: dotted 1px;" />
-    <% end %>
-    <%= tools %>
+    <%= safe_join filtered_components, separator %>
   </div>
 <% end %>
 
-<%= render AlsoAvailableComponent.new(document:) %>
-
-<div class="mt-4">
-  <%= render Blacklight::Document::MoreLikeThisComponent.new(document:) %>
-</div>
+<% filtered_components = filter_components(secondary_components) %>
+<% if filtered_components.any? %>
+  <div class="bg-fog-light component-container rounded mt-4">
+    <%= safe_join filtered_components, separator %>
+  </div>
+<% end %>
