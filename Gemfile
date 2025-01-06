@@ -43,7 +43,7 @@ group :development, :test do
   gem 'dotenv'
   gem 'simplecov', require: false
   gem 'solr_wrapper'
-  gem 'sqlite3', '~> 1.7'
+  gem 'sqlite3', '~> 2.0'
   gem "axe-core-rspec"
 end
 
