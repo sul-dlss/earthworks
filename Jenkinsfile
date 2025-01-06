@@ -23,7 +23,7 @@ pipeline {
           export DEPLOY=1
 
           # Load RVM
-          rvm use 3.1.2@earthworks --create
+          rvm use 3.3.1@earthworks --create
           gem install bundler
 
           bundle install --without production
@@ -67,7 +67,7 @@ pipeline {
           export DEPLOY=1
 
           # Load RVM
-          rvm use 3.1.2@earthworks --create
+          rvm use 3.3.1@earthworks --create
           gem install bundler
 
           bundle install --without production
@@ -112,7 +112,7 @@ pipeline {
           export REVISION=$TAG_NAME
 
           # Load RVM
-          rvm use 3.1.2@earthworks --create
+          rvm use 3.3.1@earthworks --create
           gem install bundler
 
           bundle install --without production
