@@ -28,7 +28,7 @@ class Rack::Attack
         {}
       end
 
-      req.ip if route[:controller] == 'catalog' && (route[:action] == 'index' || route[:action] == 'facet')
+      req.ip if route[:controller] == 'catalog' && %w[index facet].include?(route[:action])
     end
 
     # Throttle document actions requests by IP (15rpm)
