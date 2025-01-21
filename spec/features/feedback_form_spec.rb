@@ -30,7 +30,7 @@ describe 'Feedback form (no js)' do
   end
 
   it 'feedback form should be shown filled out and submitted' do
-    click_on 'Feedback'
+    click_on 'Feedback', match: :first
     expect(page).to have_css('#feedback', visible: true)
     expect(page).to have_button('Cancel')
     within 'form.feedback-form' do
