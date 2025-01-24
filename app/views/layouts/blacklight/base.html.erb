@@ -26,7 +26,9 @@
       document.querySelector('html').classList.remove('no-js');
     </script>
     <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
-    <%= favicon_link_tag %>
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-01-24/styles/icon.png" type="image/png">
+    <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-01-24/styles/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-01-24/styles/icon.png">
 
     <!-- viewer styles (non-render-blocking; deferred) -->
     <%= preload_link_tag "https://cdn.skypack.dev/leaflet@1.9.4/dist/leaflet.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
