@@ -13,11 +13,11 @@ describe RestrictedProxyController do
   context 'with a current user' do
     before do
       allow(HTTP).to receive(:get).and_return(
-        double(:response, {
-                 headers: { 'Content-Type' => 'image/png', 'geowebcache-stuff' => 'foo' },
-                 status: 200,
-                 body: 'image!'
-               })
+        instance_double(HTTP::Response, {
+                          headers: { 'Content-Type' => 'image/png', 'geowebcache-stuff' => 'foo' },
+                          status: 200,
+                          body: 'image!'
+                        })
       )
     end
 

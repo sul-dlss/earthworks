@@ -26,8 +26,8 @@ class RestrictedProxyController < ApplicationController
       headers[k] = v
     end
 
-    self.status = proxied_response.status
-    send_data proxied_response.body, type: proxied_response.headers['Content-Type'], disposition: 'inline'
+    send_data proxied_response.body, type: proxied_response.headers['Content-Type'], disposition: 'inline',
+                                     status: proxied_response.status
   end
 
   private
