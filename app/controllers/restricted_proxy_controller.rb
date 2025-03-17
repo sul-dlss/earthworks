@@ -1,12 +1,33 @@
 class RestrictedProxyController < ApplicationController
-  before_action :authenticate_user!
+  before_action :headers_auth
+
+  def headers_auth
+    JWT.decode(request.params['stacks_token'], Settings.geo_proxy_secret, true, { algorithm: 'HS256' })
+    set_cors_headers
+  rescue JWT::ExpiredSignature
+    render json: { error: 'Expired token' }, status: :unauthorized
+  rescue JWT::DecodeError
+    render json: { error: 'Invalid token' }, status: :unauthorized
+  end
+
+  def set_cors_headers
+    origin = request.origin
+    permitted_origins = [Settings.cors.allow_origin_url]
+    if permitted_origins.include?(origin)
+      response.headers['Access-Control-Allow-Origin'] = origin
+      response.headers['Access-Control-Allow-Credentials'] = true
+    else
+      response.headers['Access-Control-Allow-Origin'] = '*'
+    end
+  end
 
   def access
     proxied_headers.each do |k, v|
       headers[k] = v
     end
-    self.status = proxied_response.status
-    self.response_body = proxied_response.body
+
+    send_data proxied_response.body, type: proxied_response.headers['Content-Type'], disposition: 'inline',
+                                     status: proxied_response.status
   end
 
   private

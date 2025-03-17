@@ -515,3 +515,8 @@ ICON_MAPPING:
   penn-state: pennsylvania-state-university
   purdue: purdue-university
   wisconsin: university-of-wisconsin-madison
+
+cors:
+  allow_origin_url: 'https://embed-stage.stanford.edu'
+
+geo_proxy_secret: 'my$ecretK3y'
