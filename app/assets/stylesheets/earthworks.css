@@ -323,6 +323,11 @@ label.toggle-bookmark {
   --bl-facets-smallish-padding: 0;
 }
 
+/* Fix for remove icon on selected facets being out of line */
+.facet-label {
+  display: flex;
+}
+
 /* To help vertically align on mobile */
 @media (max-width: 991.98px) {
   .facets-heading {
