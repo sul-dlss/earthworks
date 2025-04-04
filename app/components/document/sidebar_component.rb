@@ -7,7 +7,7 @@ module Document
     def components
       [
         Geoblacklight::LoginLinkComponent.new(document:),
-        Geoblacklight::StaticMapComponent.new(document:),
+        StaticMapComponent.new(document:),
         DownloadLinksComponent.new(document:),
         Blacklight::Document::ShowToolsComponent.new(document:)
       ]
