@@ -5,8 +5,13 @@
 }
 
 /* Selects both #main-content and navbar containers */
-#main-container, .navbar-search > *, header .container, #feedback .container, #pre-footer .container, #su-footer .container {
-  max-width:  1600px;
+#main-container,
+.navbar-search > *,
+header .container,
+#feedback .container,
+#pre-footer .container,
+#su-footer .container {
+  max-width: 1600px;
 
   @media (min-width: 575.98px) {
     padding-inline: 60px;
@@ -19,16 +24,18 @@
   line-height: 1.125rem;
 }
 
-.header-icons .blacklight-icons, .header-icons .blacklight-icons svg {
-  height: .875rem;
-  width: .875rem;
+.header-icons .blacklight-icons,
+.header-icons .blacklight-icons svg {
+  height: 0.875rem;
+  width: 0.875rem;
 }
 
 .palo-alto-base {
   --bs-dark-rgb: var(--stanford-palo-alto-rgb);
 }
 
-.home-header .blacklight-icons, .home-header .blacklight-icons svg {
+.home-header .blacklight-icons,
+.home-header .blacklight-icons svg {
   height: 1.5rem;
   width: 1.5rem;
 }
@@ -37,14 +44,19 @@
   margin-left: 2.3rem;
 }
 
-.component-container .card, .component-container .card-header, .component-container .card-body, .component-container .list-group, .component-container .list-group-item {
+.component-container .card,
+.component-container .card-header,
+.component-container .card-body,
+.component-container .list-group,
+.component-container .list-group-item {
   background-color: inherit;
-  border: none!important;
-  padding: 0px!important;
-  margin: 0px!important;
+  border: none !important;
+  padding: 0px !important;
+  margin: 0px !important;
 }
 
-.component-container .card-header, .blacklight-catalog-show .page-sidebar .card-header h2 {
+.component-container .card-header,
+.blacklight-catalog-show .page-sidebar .card-header h2 {
   font-size: calc(1.275rem + 0.3vw);
 }
 
@@ -52,20 +64,22 @@
   color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
 }
 
-.component-container, .card.relations {
+.component-container,
+.card.relations {
   --bs-border-radius: 4px;
   padding: 1.5rem 1rem;
 }
 .authentication {
-  text-align:center;
+  text-align: center;
 }
 
 .bg-fog-light {
   background-color: var(--stanford-fog-light);
 }
 
-.card.relations, .card.relations > * {
-  border: none!important;
+.card.relations,
+.card.relations > * {
+  border: none !important;
   --bs-list-group-bg: var(--stanford-fog-light);
   background-color: var(--stanford-fog-light);
   --bs-list-group-item-padding-y: 5px;
@@ -75,12 +89,12 @@
 }
 
 .authentication .btn {
-  --bs-btn-bg: var(--stanford-cardinal)!important;
-  --bs-btn-border-color: var(--stanford-cardinal)!important;
-  --bs-btn-hover-bg: var(--stanford-digital-red-dark)!important;
-  --bs-btn-hover-border-color: var(--stanford-digital-red-dark)!important;
-  --bs-btn-active-bg: var(--stanford-digital-red-darker)!important;
-  --bs-btn-active-border-color: var(--stanford-digital-red-darker)!important;
+  --bs-btn-bg: var(--stanford-cardinal) !important;
+  --bs-btn-border-color: var(--stanford-cardinal) !important;
+  --bs-btn-hover-bg: var(--stanford-digital-red-dark) !important;
+  --bs-btn-hover-border-color: var(--stanford-digital-red-dark) !important;
+  --bs-btn-active-bg: var(--stanford-digital-red-darker) !important;
+  --bs-btn-active-border-color: var(--stanford-digital-red-darker) !important;
 }
 
 .blacklight-icons-stanford svg path {
@@ -88,13 +102,15 @@
 }
 
 .blacklight-icons-restricted svg path {
-  fill: var(--stanford-digital-red)
+  fill: var(--stanford-digital-red);
 }
 
-.documents-list .result:hover, .documents-list .result:focus {
-  box-shadow: -4px 4px 4px 0px #0000000D,
-               4px 4px 4px 0px #0000000D;
-  }
+.documents-list .result:hover,
+.documents-list .result:focus {
+  box-shadow:
+    -4px 4px 4px 0px #0000000d,
+    4px 4px 4px 0px #0000000d;
+}
 
 .search-widgets {
   /* center these widgets on small screens */
@@ -103,8 +119,9 @@
   }
 }
 
-.search-widgets .btn, .clear-bookmarks {
-  --bs-btn-font-size: .875rem;
+.search-widgets .btn,
+.clear-bookmarks {
+  --bs-btn-font-size: 0.875rem;
   --bs-border-radius: 4px;
   --bs-btn-padding-x: 6px;
   --bs-btn-padding-y: 2px;
@@ -124,20 +141,22 @@
 }
 
 .page-links {
-  @media (max-width: 991.98px) { 
+  @media (max-width: 991.98px) {
     /* override GBL here so that it centers correctly */
-   padding: 0.375rem 0;
-  } 
+    padding: 0.375rem 0;
+  }
 }
 
-.sort-pagination, .pagination-search-widgets {
-  padding-bottom: .5rem;
+.sort-pagination,
+.pagination-search-widgets {
+  padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--bs-border-color);
 }
 
 .search-q {
   padding: 0 0 0 2rem;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'/%3E%3C/svg%3E") no-repeat left;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0'/%3E%3C/svg%3E")
+    no-repeat left;
   background-size: 1rem;
   outline: none;
 }
@@ -147,9 +166,9 @@
 }
 
 .search-query-form {
-  border: 1px solid #ABABA9;
-  padding: .5rem;
-  border-radius: .25rem;
+  border: 1px solid #ababa9;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
   background-color: white;
   width: 100%; /* overrides https://github.com/projectblacklight/blacklight/blob/69373f202753f04ec6aca179fdf8fa01248a9edf/app/assets/stylesheets/blacklight/_header.scss#L32 */
 }
@@ -175,7 +194,7 @@
   box-shadow: none;
 }
 .search-query-form .search-btn {
-  border-radius: .25rem!important;
+  border-radius: 0.25rem !important;
   padding: 2px 6px;
   align-items: center;
 }
@@ -194,7 +213,7 @@ Uncomment lines 142-144
   display: none;
 } */
 
-#main-container #leaflet-viewer  {
+#main-container #leaflet-viewer {
   /* match sul-embed border */
   border: 1px solid black;
 
@@ -209,7 +228,7 @@ Uncomment lines 142-144
   display: flex;
   &.active {
     color: white;
-    background-color:var(--stanford-digital-blue-darker);
+    background-color: var(--stanford-digital-blue-darker);
   }
 }
 
@@ -242,23 +261,25 @@ Uncomment lines 142-144
 }
 
 .bd-clipboard {
-  position:relative;
-  float:right;
+  position: relative;
+  float: right;
 }
 
-.btn-clipboard{
+.btn-clipboard {
   background-color: white !important;
 }
 
-.btn-clipboard:active, .btn-clipboard:hover, .btn-clipboard:focus {
+.btn-clipboard:active,
+.btn-clipboard:hover,
+.btn-clipboard:focus {
   color: var(--stanford-digital-blue-dark) !important;
   border-color: var(--stanford-digital-blue-dark) !important;
 }
 
 .logout-dropdown {
-  background-color:  rgb(var(--stanford-palo-alto-dark-rgb));
+  background-color: rgb(var(--stanford-palo-alto-dark-rgb));
   --bs-navbar-active-color: white;
-  border-radius: .25rem;
+  border-radius: 0.25rem;
 }
 
 .document-counter {
@@ -279,13 +300,14 @@ label.toggle-bookmark {
 .back-to-search::before {
   content: "\f129";
   font-family: "bootstrap-icons";
-  margin-right: .25rem;
+  margin-right: 0.25rem;
   vertical-align: middle;
 }
 
-#citationLink, #emailLink{
+#citationLink,
+#emailLink {
   padding-left: 1rem;
-  --bs-btn-padding-x: .25rem;
+  --bs-btn-padding-x: 0.25rem;
   --bs-btn-padding-y: 0;
 }
 
@@ -312,7 +334,8 @@ label.toggle-bookmark {
   fill: var(--stanford-60-black);
 }
 
-.header-tools > *:hover, .toggle-bookmark span[data-checkboxsubmit-target="span"]:hover {
+.header-tools > *:hover,
+.toggle-bookmark span[data-checkboxsubmit-target="span"]:hover {
   --bs-link-color-rgb: var(--stanford-digital-blue-dark-rgb);
   text-decoration: underline;
 }
@@ -333,12 +356,6 @@ label.toggle-bookmark {
   .facets-heading {
     margin-bottom: 0;
   }
-}
-
-.sidenav .navbar-toggler:hover, .sidenav .navbar-toggler:focus, .sidenav .navbar-toggler {
-  --bs-navbar-toggler-border-color: var(--stanford-digital-blue);
-  color: var(--stanford-digital-blue);
-  --bs-navbar-toggler-padding-y: .5rem;
 }
 
 .document-metadata.su-underline {
