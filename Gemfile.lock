@@ -401,6 +401,8 @@ GEM
     rack (3.1.10)
     rack-attack (6.7.0)
       rack (>= 1.0, < 4)
+    rack-cors (2.0.2)
+      rack (>= 2.0.0)
     rack-mini-profiler (2.3.4)
       rack (>= 1.2.0)
     rack-proxy (0.7.7)
@@ -667,6 +669,7 @@ DEPENDENCIES
   propshaft
   puma (~> 6)
   rack-attack
+  rack-cors (~> 2.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 7.1)
   recaptcha (>= 5.4.1)
