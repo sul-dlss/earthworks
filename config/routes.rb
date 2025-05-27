@@ -63,4 +63,7 @@ Rails.application.routes.draw do
   # accomplished using Apache configuration that is managed by Puppet which
   # require a user be logged in as a developer to access /queues
   mount Sidekiq::Web => '/queues'
+
+  # Cloudflare turnstile bot challenges via bot_challenge_page gem
+  post '/challenge', to: 'bot_challenge_page/bot_challenge_page#verify_challenge', as: :bot_detect_challenge
 end

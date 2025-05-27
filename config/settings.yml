@@ -371,11 +371,13 @@ INSTITUTIONS:
 BING_SITE_VERIFICATION: "4E61263975C6ABBF2ECE5A8CA5E592B7"
 GOOGLE_SITE_VERIFICATION: "654321sitever"
 
-# Turn on to enable rack-attack throttling
-THROTTLE_TRAFFIC: false
-
-throttling:
-  notify_honeybadger: true
+# Cloudflare turnstile settings for bot challenge page
+# NOTE: these example keys always pass the challenge; see:
+# https://developers.cloudflare.com/turnstile/troubleshooting/testing/
+turnstile:
+  enabled: false
+  site_key: '1x00000000000000000000AA'
+  secret_key: '1x0000000000000000000000000000000AA'
   safelist:
   - 171.64.0.0/14
   - 10.0.0.0/8
