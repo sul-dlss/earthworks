@@ -1,4 +1,9 @@
 class ApplicationController < ActionController::Base
+  # See config/initializers/bot_challenge_page.rb to control this behavior
+  before_action do |controller|
+    BotChallengePage::BotChallengePageController.bot_challenge_enforce_filter(controller)
+  end
+
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
   # Please be sure to impelement current_user and user_session. Blacklight depends on
