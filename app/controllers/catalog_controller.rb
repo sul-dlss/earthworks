@@ -3,6 +3,16 @@ require 'blacklight/catalog'
 class CatalogController < ApplicationController
   include Blacklight::Catalog
 
+  # Protect searches with bot_challenge_page & turnstile
+  # See: https://github.com/samvera-labs/bot_challenge_page
+  #
+  # We protect requests for searches, but not for show pages, so we can still
+  # crawl ourselves and let well-behaved search engines index our content via
+  # the sitemap.
+  before_action only: :index do |controller|
+    BotChallengePage::BotChallengePageController.bot_challenge_enforce_filter(controller, immediate: true)
+  end
+
   configure_blacklight do |config|
     # Ensures that JSON representations of Solr Documents can be retrieved using
     # the path /catalog/:id/raw
