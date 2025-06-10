@@ -664,7 +664,6 @@ DEPENDENCIES
   pg
   propshaft
   puma (~> 6)
-  rack-attack
   rack-cors (~> 2.0)
   rack-mini-profiler (~> 2.0)
   rails (~> 7.1)
