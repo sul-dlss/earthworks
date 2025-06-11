@@ -11,6 +11,13 @@ class CatalogController < ApplicationController
   # the sitemap.
   before_action only: :index do |controller|
     BotChallengePage::BotChallengePageController.bot_challenge_enforce_filter(controller, immediate: true)
+
+    # Additional fields needed for Bento
+    if request.format.json?
+      blacklight_config.add_index_field Settings.FIELDS.RESOURCE_CLASS, helper_method: :get_specific_field_type
+      blacklight_config.add_index_field Settings.FIELDS.SPATIAL_COVERAGE
+      blacklight_config.index_fields.each_value { |v| v.if = true }
+    end
   end
 
   configure_blacklight do |config|
