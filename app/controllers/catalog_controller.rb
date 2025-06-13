@@ -10,6 +10,7 @@ class CatalogController < ApplicationController
   # crawl ourselves and let well-behaved search engines index our content via
   # the sitemap.
   before_action only: :index do |controller|
+    unless request.format.json?
     BotChallengePage::BotChallengePageController.bot_challenge_enforce_filter(controller, immediate: true)
 
     # Additional fields needed for Bento
