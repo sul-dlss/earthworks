@@ -392,10 +392,11 @@ GEM
     prism (1.4.0)
     process_executer (4.0.0)
       track_open_instances (~> 0.1)
-    propshaft (1.2.0)
+    propshaft (1.1.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
       rack
+      railties (>= 7.0.0)
     psych (5.2.6)
       date
       stringio
@@ -678,7 +679,7 @@ DEPENDENCIES
   newrelic_rpm
   okcomputer
   pg
-  propshaft
+  propshaft (= 1.1.0)
   puma (~> 6)
   rack-cors (~> 2.0)
   rack-mini-profiler (~> 2.0)
