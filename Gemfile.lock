@@ -224,7 +224,7 @@ GEM
     factory_bot_rails (6.5.0)
       factory_bot (~> 6.5)
       railties (>= 6.1.0)
-    faraday (2.13.2)
+    faraday (2.13.4)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
@@ -267,7 +267,7 @@ GEM
       rchardet (~> 1.9)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    honeybadger (5.29.1)
+    honeybadger (6.0.2)
       logger
       ostruct
     http (5.3.1)
@@ -281,7 +281,7 @@ GEM
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
-    importmap-rails (2.1.0)
+    importmap-rails (2.2.0)
       actionpack (>= 6.0.0)
       activesupport (>= 6.0.0)
       railties (>= 6.0.0)
@@ -293,7 +293,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.13.0)
+    json (2.13.2)
     json-schema (5.2.1)
       addressable (~> 2.8)
       bigdecimal (~> 3.1)
@@ -331,7 +331,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2025.0715)
+    mime-types-data (3.2025.0722)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitar (1.0.2)
@@ -382,10 +382,14 @@ GEM
     orm_adapter (0.5.0)
     ostruct (0.6.3)
     parallel (1.27.0)
-    parser (3.3.8.0)
+    parser (3.3.9.0)
       ast (~> 2.4.1)
       racc
-    pg (1.5.9)
+    pg (1.6.0)
+    pg (1.6.0-aarch64-linux)
+    pg (1.6.0-arm64-darwin)
+    pg (1.6.0-x86_64-darwin)
+    pg (1.6.0-x86_64-linux)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -455,7 +459,7 @@ GEM
     rdoc (6.14.2)
       erb
       psych (>= 4.0.0)
-    recaptcha (5.20.0)
+    recaptcha (5.20.1)
     redis (5.4.1)
       redis-client (>= 0.22.0)
     redis-client (0.25.1)
@@ -492,7 +496,7 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.4)
-    rubocop (1.78.0)
+    rubocop (1.79.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
@@ -500,8 +504,9 @@ GEM
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 2.9.3, < 3.0)
-      rubocop-ast (>= 1.45.1, < 2.0)
+      rubocop-ast (>= 1.46.0, < 2.0)
       ruby-progressbar (~> 1.7)
+      tsort (>= 0.2.0)
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.46.0)
       parser (>= 3.3.7.2)
@@ -584,6 +589,7 @@ GEM
     thread_safe (0.3.6)
     timeout (0.4.3)
     track_open_instances (0.1.15)
+    tsort (0.2.0)
     turbo-rails (2.0.16)
       actionpack (>= 7.1.0)
       railties (>= 7.1.0)
@@ -706,4 +712,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.7.0
+   2.7.1
