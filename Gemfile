@@ -78,7 +78,7 @@ gem 'redis', '~> 5.0'
 # https://github.com/geoblacklight/geo_monitor/issues/12
 # gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
 gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
-gem 'sidekiq', '~> 7.0'
+gem 'sidekiq', '~> 8.0'
 gem 'whenever', require: false
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
