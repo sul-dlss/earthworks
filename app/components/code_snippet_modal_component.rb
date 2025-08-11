@@ -5,7 +5,7 @@ class CodeSnippetModalComponent < ViewComponent::Base
     @document = document
     @raster_data_type = raster_data?
     @vector_data_type = vector_data?
-    super
+    super()
   end
 
   def code_block(content)

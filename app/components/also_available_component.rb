@@ -6,7 +6,7 @@ class AlsoAvailableComponent < ViewComponent::Base
 
   def initialize(document:)
     @document = document
-    super
+    super()
   end
 
   # a list of all the available other urls for the document

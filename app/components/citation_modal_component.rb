@@ -3,6 +3,6 @@
 class CitationModalComponent < ViewComponent::Base
   def initialize(documents:)
     @documents = documents
-    super
+    super()
   end
 end
