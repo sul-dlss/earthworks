@@ -258,6 +258,8 @@ LEAFLET:
       SELECTED:
         <<: *default
         color: "yellow"
+  SLEEP:
+    SLEEP: false
 
 # Toggle the help text feature that offers users context
 HELP_TEXT:
