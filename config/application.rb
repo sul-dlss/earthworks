@@ -2,6 +2,9 @@ require_relative 'boot'
 
 require 'rails/all'
 
+# Required to avoid "uninitialized constant ViewComponent::VERSION" in CI?
+require 'view_component/version'
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

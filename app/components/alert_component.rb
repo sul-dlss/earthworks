@@ -2,7 +2,7 @@ class AlertComponent < ViewComponent::Base
   attr_reader :title, :body, :type, :icon
 
   def initialize(body:, type:, title: nil)
-    super
+    super()
     @title = title
     @body = body
     @type = type

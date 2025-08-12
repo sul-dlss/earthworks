@@ -4,7 +4,7 @@ class RecentlyAddedListComponent < ViewComponent::Base
   attr_reader :count, :docs, :type, :field, :term
 
   def initialize(term:, additional_fq: '', rows: 4, field: 'gbl_resourceClass_sm')
-    super
+    super()
     @fq = ["#{field}:#{term}"] + [additional_fq]
     @field = field
     @rows = rows
