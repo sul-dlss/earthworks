@@ -22,7 +22,7 @@ Rails.application.config.to_prepare do
   # We also have an exception for index json so that the mini-bento frontend fetch in Searchworks doesn't get blocked.
   # Also exempt any IPs contained in the CIDR blocks in Settings.turnstile.safelist.
   BotChallengePage::BotChallengePageController.bot_challenge_config.allow_exempt = lambda do |controller, _config|
-    (controller.is_a?(CatalogController) && controller.params[:action].in?(%w[facet index]) && controller.params[:format] == 'json' && controller.request.headers['sec-fetch-dest'] == 'empty') ||
+    (controller.is_a?(CatalogController) && controller.params[:action].in?(%w[facet index]) && controller.request.format.json? && controller.request.headers['sec-fetch-dest'] == 'empty') ||
       Settings.turnstile.safelist.map { |cidr| IPAddr.new(cidr) }.any? { |range| controller.request.remote_ip.in?(range) }
   end
 
