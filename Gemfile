@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 7.1'
+gem 'rails', '~> 8.0.2'
 
 # Successor to sprockets. https://github.com/rails/propshaft
 gem "propshaft", "1.1.0"  # Pinned because it made asset loading way too slow in 1.2.0?
