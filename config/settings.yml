@@ -524,3 +524,13 @@ cors:
   allow_origin_url: 'https://embed-stage.stanford.edu'
 
 geo_proxy_secret: 'my$ecretK3y'
+
+## Indexing settings
+
+kafka:
+  topic: testing_topic # purl_fetcher_stage, purl_fetcher_prod
+  group_id: testing_group # earthworks-stage-indexer, earthworks-prod-indexer
+
+purl_fetcher:
+  target: earthworks # case-insensitive
+  skip_catkey: true # skip indexing if item has a catkey
