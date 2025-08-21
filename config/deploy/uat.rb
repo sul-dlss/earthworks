@@ -1,5 +1,3 @@
-# Deploys to all UAT nodes
-
 set :bundle_without, %w[test development deployment].join(' ')
 
 server 'earthworks-uat-a.stanford.edu', user: 'geostaff', roles: %w[web db app]
