@@ -38,7 +38,8 @@ set :linked_dirs, %w[config/settings log tmp/pids tmp/cache tmp/sockets vendor/b
 
 set :honeybadger_env, fetch(:stage)
 
-set :whenever_roles, [:whenevs]
+# Role for scheduled one-off tasks that run on a single machine
+set :whenever_roles, [:cron]
 
 # update shared_configs before restarting app
 before 'deploy:restart', 'shared_configs:update'
