@@ -12,11 +12,13 @@ describe 'Unavailable layer', skip: 'needs GBLv4 compatibility' do
 
   it 'iiif layer' do
     visit solr_document_path 'princeton-02870w62c'
+    expect(page).to have_content 'The provinces of New York and New Jersey'
     expect(page).to have_no_content 'unavailable to download'
   end
 
   it 'oembed layer' do
     visit solr_document_path 'stanford-dt131hw5005'
+    expect(page).to have_content 'Buffer Zone Study, Stanford University. Eldridge T. Spencer. 1955'
     expect(page).to have_no_content 'unavailable to preview and download'
   end
 

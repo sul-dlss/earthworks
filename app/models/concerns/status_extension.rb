@@ -1,5 +1,6 @@
 module StatusExtension
   extend ActiveSupport::Concern
+
   included do
     after_commit :update_index
   end
