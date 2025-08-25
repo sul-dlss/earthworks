@@ -17,10 +17,6 @@ RSpec.describe SdrConsumer do
   let(:message_contents) { { druid: 'druid:abc123', true_targets: ['Earthworks'] } }
 
   before do
-    allow(Settings.kafka).to receive_messages(
-      topic: 'testing_topic',
-      group_id: 'testing_group'
-    )
     allow(Honeybadger).to receive(:notify)
     allow(cocina_service).to receive(:fetch_record).and_return(record)
     allow(solr_service).to receive_messages(delete_by_id: true, update: true)
