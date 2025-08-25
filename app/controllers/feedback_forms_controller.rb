@@ -3,7 +3,7 @@ class FeedbackFormsController < ApplicationController
 
   def create
     if request.post?
-      if validate
+      if valid?
         FeedbackMailer.submit_feedback(params, request.remote_ip).deliver_now
         flash[:success] = t 'earthworks.feedback_form.success'
       end
@@ -24,7 +24,7 @@ class FeedbackFormsController < ApplicationController
     %r{/.*href=.*|.*url=.*|.*http://.*|.*https://.*/i}
   end
 
-  def validate
+  def valid?
     errors = []
 
     errors << 'You did not pass the reCaptcha challenge' if current_user.blank? && !verify_recaptcha

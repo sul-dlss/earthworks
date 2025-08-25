@@ -12,6 +12,7 @@ describe 'More detail links' do
   context 'when a document has no URLs in its identifiers' do
     it 'does not show the more details section' do
       visit solr_document_path 'harvard-g7064-s2-1834-k3'
+      expect(page).to have_content 'Saint Petersburg Region, Russia, 1834 (Raster Image)'
       expect(page).to have_no_text 'More details at'
     end
   end

@@ -8,6 +8,7 @@ describe 'Canonical urls' do
 
   it 'not Stanford' do
     visit solr_document_path 'princeton-02870w62c'
+    expect(page).to have_content 'The provinces of New York and New Jersey'
     expect(page).to have_no_css 'link[rel="canonical"]', visible: false
   end
 end

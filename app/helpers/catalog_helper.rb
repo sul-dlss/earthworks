@@ -1,5 +1,6 @@
 module CatalogHelper
   include Blacklight::CatalogHelperBehavior
+
   def get_specific_field_type(document:, field:, **)
     field_value = document[field]
     if field_value&.include?('Datasets') && document[Settings.FIELDS.RESOURCE_TYPE]

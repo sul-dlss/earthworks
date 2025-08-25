@@ -11,6 +11,7 @@ describe 'Show page' do
   context 'when gbl_georeferenced_b is set to true' do
     it 'does not have georeference alert' do
       visit solr_document_path 'princeton-02870w62c'
+      expect(page).to have_content 'The provinces of New York and New Jersey'
       expect(page).to have_no_content 'This map is not georeferenced.'
     end
   end
@@ -18,6 +19,7 @@ describe 'Show page' do
   context 'when page is a non iiif page' do
     it 'does not have georeference alert' do
       visit solr_document_path 'mit-001145244'
+      expect(page).to have_content 'tectonic map of Britain, Ireland and adjacent areas'
       expect(page).to have_no_content 'This map is not georeferenced.'
     end
   end
