@@ -527,10 +527,21 @@ geo_proxy_secret: 'my$ecretK3y'
 
 ## Indexing settings
 
-kafka:
-  topic: testing_topic # purl_fetcher_stage, purl_fetcher_prod
-  group_id: testing_group # earthworks-stage-indexer, earthworks-prod-indexer
+# Should be purl_fetcher_stage or purl_fetcher_prod; determines which queue
+# of SDR item updates we are 'listening' to
+indexer_topic: purl_fetcher_stage 
 
+# Kafka groups split messages across consumers; we don't want to take messages
+# from the 'real' stage/prod indexers so we set this to a different value
+indexer_group: earthworks-dev-indexer
+
+# Target should always be earthworks since we don't want to receive items
+# released to e.g. searchworks
 purl_fetcher:
-  target: earthworks # case-insensitive
+  target: earthworks # case-insensitive ("EarthWorks", "Earthworks", etc.)
   skip_catkey: true # skip indexing if item has a catkey
+
+# Determines the environment that cocina metadata will be fetched from; for
+# stage indexing it should be set to staging PURL
+purl:
+  hostname: purl.stanford.edu
