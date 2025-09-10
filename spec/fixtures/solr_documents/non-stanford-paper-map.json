@@ -1,0 +1,56 @@
+{
+  "dct_title_s": "Chart prepared by James B. Moore to accompany his memorial to Congress respecting the subject of steam communication with China, Japan & c, 1850.",
+  "dct_description_sm": [
+    "Inset: Harbour of San Francisco, California. Tables of distances. Shows distances between major ports of the world. 1 map; 71 x 96 cm."
+  ],
+  "dct_language_sm": [
+    "eng"
+  ],
+  "dct_creator_sm": [
+    "Gollmer, H., engraver.",
+    "Moore, James B."
+  ],
+  "schema_provider_s": "University of Michigan",
+  "gbl_resourceClass_sm": [
+    "Maps"
+  ],
+  "gbl_resourceType_sm": [
+    "Nautical charts"
+  ],
+  "dct_temporal_sm": [
+    "1850"
+  ],
+  "dct_issued_s": "1850",
+  "gbl_indexYear_im": [
+    "1850"
+  ],
+  "gbl_dateRange_drsim": [
+    "[1850 TO 1850]"
+  ],
+  "dct_spatial_sm": [
+    "World"
+  ],
+  "locn_geometry": "POLYGON((-23.000 81.000, 0.000 81.000, 0.000 -65.000, -23.000 -65.000, -23.000 81.000))",
+  "dcat_bbox": "ENVELOPE(-23.000,0.000,81.000,-65.000)",
+  "dcat_centroid": "8.0,-11.5",
+  "pcdm_memberOf_sm": [
+    "64bd8c4c-8e60-4956-b43d-bdc3f93db488"
+  ],
+  "dct_isPartOf_sm": [
+    "07d-01"
+  ],
+  "dct_rights_sm": [
+    "This map is in the public domain."
+  ],
+  "dct_rightsHolder_sm": [
+    "Please attribute access and use of this digitized map to the Stephen S. Clark Library, University of Michigan Library. https://www.lib.umich.edu/about-us/policies/copyright-policy"
+  ],
+  "dct_accessRights_s": "Public",
+  "dct_format_s": "JPEG",
+  "dct_references_s": "{\"http://schema.org/url\":\"https://quod.lib.umich.edu/c/clark1ic/x-003286623/39015091197155\",\"http://iiif.io/api/presentation#manifest\":\"https://quod.lib.umich.edu/cgi/i/image/api/search/clark1ic:003286623\"}",
+  "id": "fe9da789-ff05-40b3-a84e-e99938f3596f",
+  "dct_identifier_sm": [
+    "fe9da789-ff05-40b3-a84e-e99938f3596f"
+  ],
+  "gbl_mdVersion_s": "Aardvark"
+}

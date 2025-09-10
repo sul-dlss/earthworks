@@ -2,9 +2,8 @@
 <div class="mb-2 row">
   <%= render HeaderIconsComponent.new(document: @document) %>
 </div>
-<div class="row">
+<div class="row" id="<%= @id %>">
   <%= content_tag @component,
-    id: @id,
     data: {
       'document-id': @document.id.to_s.parameterize,
       'document-counter': @counter,
