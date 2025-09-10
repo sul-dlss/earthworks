@@ -18,9 +18,4 @@ module EarthworksGeoblacklightHelper
   rescue License::UnknownLicenseError
     tag.span args[:value]
   end
-
-  # Use Mirador as the IIIF manifest viewer
-  def iiif_manifest_viewer
-    tag.div(nil, id: 'mirador', data: { 'manifest-url' => @document.viewer_endpoint })
-  end
 end

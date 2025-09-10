@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@geoblacklight/frontend": "^5.0.0-alpha.10",
+    "@geoblacklight/frontend": "^5",
     "blacklight-frontend": "^8.4.0",
     "bootstrap": "^5.3.3",
     "bootstrap-slider": "^11.0.2",
