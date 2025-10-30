@@ -183,10 +183,7 @@ class CatalogController < ApplicationController
     # SEARCH RESULTS FIELDS
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field Settings.FIELDS.INDEX_YEAR
-    config.add_index_field Settings.FIELDS.CREATOR
     config.add_index_field Settings.FIELDS.DESCRIPTION, helper_method: :snippit
-    config.add_index_field Settings.FIELDS.PUBLISHER
 
     # ITEM VIEW FIELDS
     # solr fields to be displayed in the show (single result) view
