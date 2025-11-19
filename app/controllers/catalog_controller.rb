@@ -9,9 +9,10 @@ class CatalogController < ApplicationController
   # We protect requests for searches, but not for show pages, so we can still
   # crawl ourselves and let well-behaved search engines index our content via
   # the sitemap.
-  before_action only: :index do |controller|
-    BotChallengePage::BotChallengePageController.bot_challenge_enforce_filter(controller, immediate: true)
+  #
+  bot_challenge only: :index
 
+  before_action only: :index do
     # Additional fields needed for Bento
     if request.format.json?
       blacklight_config.add_index_field Settings.FIELDS.RESOURCE_CLASS, helper_method: :get_specific_field_type
