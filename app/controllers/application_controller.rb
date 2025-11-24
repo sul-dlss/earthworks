@@ -1,9 +1,6 @@
 class ApplicationController < ActionController::Base
   include BotChallengePage::Controller
 
-  # See config/initializers/bot_challenge_page.rb to control this behavior
-  bot_challenge
-
   # Adds a few additional behaviors into the application controller
   include Blacklight::Controller
 
