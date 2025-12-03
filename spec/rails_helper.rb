@@ -74,7 +74,7 @@ RSpec.configure do |config|
   # The different available types are documented in the features, such as in
   # https://relishapp.com/rspec/rspec-rails/docs
   config.infer_spec_type_from_file_location!
-  config.include Capybara::DSL
+  config.include Capybara::DSL, type: :feature
   config.include ViewComponent::TestHelpers, type: :component
   config.include ViewComponent::SystemTestHelpers, type: :component
   config.include Capybara::RSpecMatchers, type: :component
