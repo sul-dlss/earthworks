@@ -53,7 +53,7 @@
                                 termVectors="true" termPositions="true" termOffsets="true"/>
     <dynamicField name="*_tmi"  type="text_en" stored="false" indexed="true" multiValued="true"
                                 termVectors="true" termPositions="true" termOffsets="true"/>
-    <dynamicField name="*_sort" type="text_sort" stored="false" indexed="true" multiValued="false"/>
+    <dynamicField name="*_sort" type="text_sort" stored="false" indexed="true" multiValued="false" uninvertible="true" />
 
     <dynamicField name="*spell" type="textSpell" indexed="true" stored="false" multiValued="true" />
 
