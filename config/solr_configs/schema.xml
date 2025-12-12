@@ -57,7 +57,7 @@
 
     <dynamicField name="*spell" type="textSpell" indexed="true" stored="false" multiValued="true" />
 
-    <dynamicField name="*suggest" type="textSuggest" indexed="true" stored="false" multiValued="true" />
+    <dynamicField name="*suggest" type="textSuggest" indexed="true" stored="true" multiValued="true" />
 
     <!-- date range (_drsim) -->
     <dynamicField name="*_drsim" type="dateRange" stored="true" indexed="true" multiValued="true"/>
@@ -185,13 +185,10 @@
   <copyField source="dct_subject_sm" dest="spell"/>
   <copyField source="dct_spatial_sm" dest="spell"/>
 
-  <!-- for suggestions -->
-  <copyField source="dct_title_s" dest="suggest"/>
-  <copyField source="dct_creator_sm" dest="suggest"/>
-  <copyField source="dct_publisher_sm" dest="suggest"/>
-  <copyField source="schema_provider_s" dest="suggest"/>
-  <copyField source="dct_subject_sm" dest="suggest"/>
-  <copyField source="dct_spatial_sm" dest="suggest"/>
+  <!-- for specific field suggestions-->
+  <copyField source="dct_title_s" dest="title_suggest"/>
+  <copyField source="dct_spatial_sm" dest="spatial_suggest"/>
+  <copyField source="dcat_theme_sm" dest="theme_suggest"/>
 
   <!-- for bbox value -->
   <copyField source="dcat_bbox" dest="solr_bboxtype"/>
