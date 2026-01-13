@@ -65,9 +65,9 @@
     >
 
     <!-- viewer styles (non-render-blocking; deferred) -->
-    <%= preload_link_tag "https://cdn.skypack.dev/leaflet@1.9.4/dist/leaflet.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
+    <%= preload_link_tag "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
     <%= preload_link_tag "https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
-    <%= preload_link_tag "https://cdn.skypack.dev/ol@8.1.0/ol.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
+    <%= preload_link_tag "https://cdn.jsdelivr.net/npm/ol@8.1.0/ol.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
 
     <!-- main app styles -->
     <%= stylesheet_link_tag "geoblacklight", media: "all", "data-turbo-track": "reload" %>
@@ -84,7 +84,7 @@
       <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
       <%= javascript_include_tag "blacklight/blacklight", type: 'module' %>
       <script type="module">
-        import githubAutoCompleteElement from 'https://cdn.skypack.dev/@github/auto-complete-element';
+        import githubAutoCompleteElement from 'https://cdn.jsdelivr.net/npm/@github/auto-complete-element@3.8.0/+esm';
       </script>
     <% end %>
 
