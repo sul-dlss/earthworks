@@ -24,6 +24,10 @@ header .container,
   line-height: 1.125rem;
 }
 
+.show-document .header-icons .label {
+  vertical-align: middle;
+}
+
 .header-icons .blacklight-icons,
 .header-icons .blacklight-icons svg {
   height: 0.875rem;
