@@ -16,7 +16,7 @@
     class: classes.flatten.join(' ') do %>
     <%= content_tag :div, class: 'row index-split d-flex flex-grow-1 flex-column me-2', data: { layer_id: @document.id, geom: @document.geometry.geojson } do %>
       <%= title %>
-      <div class='status-icons flex-grow-1 ms-0'>
+      <div class='flex-grow-1 ms-0'>
         <%= render HeaderIconsComponent.new(document: @document) %>
       </div>
     <% end %>

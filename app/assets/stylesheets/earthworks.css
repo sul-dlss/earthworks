@@ -28,6 +28,7 @@ header .container,
 .header-icons .blacklight-icons svg {
   height: 0.875rem;
   width: 0.875rem;
+  vertical-align: unset;
 }
 
 .palo-alto-base {

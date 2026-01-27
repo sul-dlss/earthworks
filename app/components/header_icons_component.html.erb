@@ -1,9 +1,11 @@
-<div class="header-icons">
+<div class="header-icons d-flex gap-3">
   <% @fields.each do |field| %>
     <% icon, label = get_icon(field) %>
     <% if label %>
-      <%= icon %>
-      <span class="me-1"><%= label.upcase %></span>
+      <div class="header-icon d-flex gap-1 align-items-center">
+        <%= icon %>
+        <span class="label"><%= label.upcase %></span>
+      </div>
     <% end %>
   <% end %>
 </div>
