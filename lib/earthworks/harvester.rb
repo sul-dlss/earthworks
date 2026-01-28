@@ -47,10 +47,16 @@ module Earthworks
         record.update({ 'schema_provider_s' => transformed_provider })
       end
 
+      # Filter out themes that are not in the controlled vocabulary from OGM
       if (themes = record['dcat_theme_sm'])
-        # Filter out themes that are not in the controlled vocabulary from OGM
         record.update({ 'dcat_theme_sm' => themes.select { |theme| Settings.ALLOWED_OGM_THEMES.include?(theme) } })
       end
+
+      # Add a hierarchicalized version of the dates for the year facet
+      if (years = record['gbl_indexYear_im'])
+        record.update({ 'date_hierarchy_sm' => hierarchicalize_year_list(years) })
+      end
+
       record
     end
 
@@ -62,6 +68,44 @@ module Earthworks
     # Only harvest configured repositories, if configuration was provided
     def repositories
       @repositories ||= @ogm_repos ? super.compact.select { |repo| @ogm_repos.key?(repo) } : super
+    end
+
+    # NOTE: this duplicates logic in searchworks_traject_indexer, see:
+    # https://github.com/sul-dlss/searchworks_traject_indexer/pull/1521
+    def hierarchicalize_year_list(years)
+      centuries = Set.new
+      decades = Set.new
+
+      hierarchicalized_years = years.map do |year|
+        century, decade = centimate_and_decimate(year)
+        centuries << century
+        decades << [century, decade].join(':')
+        [century, decade, year].join(':')
+      end
+
+      centuries.to_a + decades.to_a + hierarchicalized_years
+    end
+
+    # NOTE: this duplicates logic in searchworks_traject_indexer, see:
+    # https://github.com/sul-dlss/searchworks_traject_indexer/pull/1521
+    def centimate_and_decimate(maybe_year)
+      parsed_date = Date.new(maybe_year.to_i)
+      [century_from_date(parsed_date), decade_from_date(parsed_date)]
+    rescue Date::Error
+      %w[unknown_century unknown_decade] # guess not
+    end
+
+    # NOTE: this duplicates logic in searchworks_traject_indexer, see:
+    # https://github.com/sul-dlss/searchworks_traject_indexer/pull/1521
+    def century_from_date(date)
+      date.strftime('%C00-%C99')
+    end
+
+    # NOTE: this duplicates logic in searchworks_traject_indexer, see:
+    # https://github.com/sul-dlss/searchworks_traject_indexer/pull/1521
+    def decade_from_date(date)
+      decade_prefix = (date.strftime('%Y').to_i / 10).to_s
+      "#{decade_prefix}0-#{decade_prefix}9"
     end
   end
 end
