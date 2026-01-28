@@ -1,7 +1,7 @@
 # Harvest items published from SDR for indexing
 class SdrConsumer < Racecar::Consumer
-  subscribes_to Settings.kafka.topic
-  self.group_id = Settings.kafka.group_id
+  subscribes_to Settings.indexer_topic
+  self.group_id = Settings.indexer_group
 
   def initialize(
     target: Settings.purl_fetcher.target.downcase,

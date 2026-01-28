@@ -41,6 +41,10 @@ set :honeybadger_env, fetch(:stage)
 # Role for scheduled one-off tasks that run on a single machine
 set :whenever_roles, [:cron]
 
+# Manage racecar via systemd (from dlss-capistrano gem)
+set :racecar_systemd_role, :indexer
+set :racecar_systemd_use_hooks, true
+
 # update shared_configs before restarting app
 before 'deploy:restart', 'shared_configs:update'
 
