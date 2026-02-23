@@ -16,15 +16,8 @@ task ci: %i[rubocop environment] do
   Rake::Task['db:migrate'].invoke
   SolrWrapper.wrap do |solr|
     solr.with_collection(name: 'blacklight-core', dir: "#{Rails.root}/config/solr_configs") do
-      Rake::Task['geoblacklight:index:seed'].invoke
-      Rake::Task['earthworks:spec:without-data-integration'].invoke
+      Rake::Task['earthworks:fixtures'].invoke
+      Rake::Task['spec'].invoke
     end
   end
-end
-
-desc 'Execute the integration test build against production index'
-task integration: [:environment] do
-  ENV['environment'] = 'test'
-
-  Rake::Task['earthworks:spec:data-integration'].invoke
 end

@@ -1,14 +1,24 @@
 require 'earthworks/harvester'
+require 'rspec/core/rake_task'
 
 namespace :earthworks do
   desc 'Install EarthWorks'
   task install: [:environment] do
     Rake::Task['db:migrate'].invoke
   end
+
   desc 'Index test fixtures'
   task :fixtures do
+    # Index all of Geoblacklight's built-in fixtures
     Rake::Task['geoblacklight:index:seed'].invoke
+
+    # Index our own local fixtures
+    fixtures_path = Rails.root.join('spec', 'fixtures', 'solr_documents', '*.json')
+    docs = Dir[fixtures_path].map { |file| JSON.parse(File.read(file)) }
+    Blacklight.default_index.connection.add docs
+    Blacklight.default_index.connection.commit
   end
+
   desc 'Run an EarthWorks server'
   task :server, [:rails_server_args] do |_t, args|
     Rake::Task['db:migrate'].invoke
@@ -19,42 +29,7 @@ namespace :earthworks do
       end
     end
   end
-  namespace :spec do
-    require 'rspec/core/rake_task'
-    desc 'spec task that runs only data-integration tests (run locally against production data)'
-    RSpec::Core::RakeTask.new('data-integration') do |t|
-      t.rspec_opts = '--tag data-integration'
-    end
-    desc 'spec task that ignores data-integration tests (run during local development/travis on local data)'
-    RSpec::Core::RakeTask.new('without-data-integration') do |t|
-      t.rspec_opts = '--tag ~data-integration'
-    end
-    task 'spec:all' => 'test:prepare'
-  rescue LoadError => e
-    desc 'rspec not installed'
-    task 'data-integration' do
-      abort 'rspec not installed'
-    end
-    desc 'rspec not installed'
-    task 'without-data-integration' do
-      abort 'rspec not installed'
-    end
-  end
-  desc 'Remediate geoblacklight.json schema from preversion to 1.0'
-  task :remediate_geoblacklight_schema do
-    fields = %w[uuid georss_polygon_s georss_point_s georss_box_s dc_relation_sm solr_issued_i]
-    Dir.glob("#{Rails.root}/spec/fixtures/solr_documents/*.json").each do |fn|
-      data = JSON.parse(File.read(fn))
-      data['geoblacklight_version'] = '1.0'
-      fields.each do |field|
-        if data.include?(field)
-          puts "Deleting #{field} for #{data['layer_slug_s']}"
-          data.delete(field)
-        end
-      end
-      File.open(fn, 'w') { |f| f << JSON.pretty_generate(data) }
-    end
-  end
+
   namespace :geomonitor do
     desc 'Update the layers GeoMonitor checks from the Solr index'
     task update: [:environment] do
