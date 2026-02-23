@@ -5,10 +5,19 @@ namespace :earthworks do
   task install: [:environment] do
     Rake::Task['db:migrate'].invoke
   end
+
   desc 'Index test fixtures'
   task :fixtures do
+    # Index all of Geoblacklight's built-in fixtures
     Rake::Task['geoblacklight:index:seed'].invoke
+
+    # Index our own local fixtures
+    fixtures_path = Rails.root.join('spec', 'fixtures', 'solr_documents', '*.json')
+    docs = Dir[fixtures_path].map { |file| JSON.parse(File.read(file)) }
+    Blacklight.default_index.connection.add docs
+    Blacklight.default_index.connection.commit
   end
+
   desc 'Run an EarthWorks server'
   task :server, [:rails_server_args] do |_t, args|
     Rake::Task['db:migrate'].invoke
