@@ -1,5 +1,4 @@
 require 'earthworks/harvester'
-require 'rspec/core/rake_task'
 
 namespace :earthworks do
   desc 'Install EarthWorks'
