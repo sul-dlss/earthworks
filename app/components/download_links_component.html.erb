@@ -1,7 +1,7 @@
 <div data-controller="downloads">
   <% direct_dowload = document.direct_download.present? || document.iiif_download.present?  %>
   <% if direct_dowload %>
-  <h2 class="h4">Download</h2>
+  <h2>Download</h2>
   <% end %>
   <% if document.direct_download.present? %>
   <% if document.direct_download[:download].is_a? Array %>
@@ -29,7 +29,7 @@
   <% end %>
 
   <% if document.download_types.present? %>
-  <h2 class="h4">Export as</h2>
+  <h2>Export as</h2>
   <% document.download_types.each do |type| %>
       <div><%= download_link_generated(type.first, document) %></div>
   <% end %>
