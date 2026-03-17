@@ -1,4 +1,4 @@
-<h1 class="h3 home-header">
+<h1 class="home-header">
   <%= helpers.geoblacklight_icon(type) %>
   <span class="ms-1"><%= t("earthworks.home.#{type}.header") %></span>
 </h1>
@@ -8,7 +8,7 @@
     <%= t("earthworks.home.#{type}.description_html", sets: number_with_delimiter(count)) %>
   </div>
 
-  <h2 class="h4 mt-3">Recently added</h2>
+  <h2 class="mt-3">Recently added</h2>
 
   <ul class="list-unstyled">
     <% docs.each do | doc | %>
