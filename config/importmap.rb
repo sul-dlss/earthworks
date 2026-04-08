@@ -13,6 +13,9 @@ pin 'bootstrap', to: 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/+esm'
 pin 'blacklight', to: 'https://cdn.jsdelivr.net/npm/blacklight-frontend@8.4.0/app/assets/javascripts/blacklight/blacklight.js'
 pin '@github/auto-complete-element', to: 'https://cdn.jsdelivr.net/npm/@github/auto-complete-element@3.8.0/+esm'
 
+# OpenLayers temporary fix
+pin "ol-pmtiles", to: "https://cdn.jsdelivr.net/npm/ol-pmtiles@0.3.0/+esm"
+
 # EarthWorks
 pin_all_from 'app/javascript/controllers', under: 'controllers'
 pin_all_from 'app/javascript'
