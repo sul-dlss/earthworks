@@ -17,6 +17,8 @@ pin '@github/auto-complete-element', to: 'https://cdn.jsdelivr.net/npm/@github/a
 pin 'ol-pmtiles', to: 'https://cdn.jsdelivr.net/npm/ol-pmtiles@0.3.0/+esm'
 
 # Leaflet temporary fix
+pin 'leaflet', to: 'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet-src.esm.js'
+pin 'esri-leaflet', to: 'https://cdn.jsdelivr.net/npm/esri-leaflet@3.0.19/+esm'
 pin 'leaflet.fullscreen', to: 'https://cdn.jsdelivr.net/npm/leaflet.fullscreen@5.3.0/+esm'
 
 # EarthWorks
