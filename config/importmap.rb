@@ -16,7 +16,7 @@ pin '@github/auto-complete-element', to: 'https://cdn.jsdelivr.net/npm/@github/a
 # OpenLayers temporary fix
 pin 'ol-pmtiles', to: 'https://cdn.jsdelivr.net/npm/ol-pmtiles@0.3.0/+esm'
 
-#Leaflet temporary fix
+# Leaflet temporary fix
 pin 'leaflet.fullscreen', to: 'https://cdn.jsdelivr.net/npm/leaflet.fullscreen@5.3.0/+esm'
 
 # EarthWorks
