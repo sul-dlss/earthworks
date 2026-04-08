@@ -14,7 +14,7 @@ pin 'blacklight', to: 'https://cdn.jsdelivr.net/npm/blacklight-frontend@8.4.0/ap
 pin '@github/auto-complete-element', to: 'https://cdn.jsdelivr.net/npm/@github/auto-complete-element@3.8.0/+esm'
 
 # OpenLayers temporary fix
-pin "ol-pmtiles", to: "https://cdn.jsdelivr.net/npm/ol-pmtiles@0.3.0/+esm"
+pin 'ol-pmtiles', to: 'https://cdn.jsdelivr.net/npm/ol-pmtiles@0.3.0/+esm'
 
 # EarthWorks
 pin_all_from 'app/javascript/controllers', under: 'controllers'
