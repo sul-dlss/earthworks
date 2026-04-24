@@ -97,6 +97,8 @@
       <%= content_for(:skip_links) %>
     <% end %>
 
+    <%= render GlobalAlertComponent.new(Settings.local_alert || GlobalAlerts::Alert.active) if Settings.GLOBAL_ALERT %>
+
     <%= render blacklight_config.header_component.new(blacklight_config: blacklight_config) do |c| %>
       <%= c.with_top_bar(component: TopNavbarComponent) %>
     <% end %>

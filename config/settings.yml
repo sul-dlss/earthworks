@@ -534,3 +534,7 @@ kafka:
 purl_fetcher:
   target: earthworks # case-insensitive
   skip_catkey: true # skip indexing if item has a catkey
+
+# Enable/disable global alerts
+# https://github.com/sul-dlss/global_alerts
+GLOBAL_ALERT: false
