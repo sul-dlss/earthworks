@@ -7,7 +7,7 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 6
-Capybara/VisibilityMatcher:
+Capybara/RSpec/VisibilityMatcher:
   Exclude:
     - 'spec/features/blacklight_customizations/layout_spec.rb'
     - 'spec/features/canonical_urls_spec.rb'
