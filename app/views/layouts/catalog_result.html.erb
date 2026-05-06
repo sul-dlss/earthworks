@@ -2,13 +2,12 @@
 <%= render Blacklight::Document::PageHeaderComponent.new(document: @document, search_context: @search_context, search_session: search_session) %>
 <% end %>
 <% content_for(:content) do %>
-  <aside class="<%= show_sidebar_classes %>" aria-label="<%= t('.aria.sidebar') %>">
-    <%= content_for(:sidebar) %>
-  </aside>
-
   <section class="<%= show_content_classes %>">
     <%= yield %>
   </section>
+  <aside class="<%= show_sidebar_classes %>" aria-label="<%= t('.aria.sidebar') %>">
+    <%= content_for(:sidebar) %>
+  </aside>
 <% end %>
 
 <%= render template: "layouts/blacklight/base" %>
