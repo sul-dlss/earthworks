@@ -3,12 +3,12 @@ module EarthworksBlacklightHelper
 
   # Blacklight override for show main content
   def show_content_classes
-    'col-lg-10 show-document'
+    'col-lg-9 show-document'
   end
 
   # Blacklight override for show page sidebar
   def show_sidebar_classes
-    'page-sidebar col-lg-2'
+    'page-sidebar col-lg-3'
   end
 
   # Blacklight override for search results

@@ -6,7 +6,6 @@ class DocumentComponent < Geoblacklight::DocumentComponent
       @classes,
       helpers.render_document_class(@document),
       'document',
-      'col-lg-6',
       ("document-position-#{@counter}" if @counter)
     ].compact.flatten
   end

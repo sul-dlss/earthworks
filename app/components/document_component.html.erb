@@ -25,6 +25,17 @@
           <%= render Geoblacklight::DisplayNoteComponent.new(display_note: display_note) %>
         <% end %>
         <%= embed %>
+        <% if (@document.image? || @document.item_viewer.iiif) && !@document[Settings.FIELDS[:GEOREFERENCED]] %>
+          <%= render AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
+        <% end %>
+        <div id="viewer-container">
+          <%= render Geoblacklight::ViewerHelpTextComponent.new('viewer_protocol', @document.viewer_protocol) %>
+          <%= render Geoblacklight::IndexMapLegendComponent.new(document: @document) %>
+          <%= render Geoblacklight::ItemMapViewerComponent.new(document: @document) %>
+          <%= render Geoblacklight::IiifDragDropComponent.new(document: @document) %>
+        </div>
+        <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
+        <%= render Geoblacklight::IndexMapInspectComponent.new(document: @document) %>
         <%= content %>
         <%= metadata %>
         <% metadata_sections.each do |section| %>
@@ -35,22 +46,8 @@
           <%= partial %>
         <% end %>
       </div>
-  
       <%= thumbnail %>
     <% end %>
     <%= footer %>
   <% end %>
-  <div class="col-lg-6">
-    <% if (@document.image? || @document.item_viewer.iiif) && !@document[Settings.FIELDS[:GEOREFERENCED]] %>
-      <%= render AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
-    <% end %>
-    <div id="viewer-container">
-      <%= render Geoblacklight::ViewerHelpTextComponent.new('viewer_protocol', @document.viewer_protocol) %>
-      <%= render Geoblacklight::IndexMapLegendComponent.new(document: @document) %>
-      <%= render Geoblacklight::ItemMapViewerComponent.new(document: @document) %>
-      <%= render Geoblacklight::IiifDragDropComponent.new(document: @document) %>
-    </div>
-    <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
-    <%= render Geoblacklight::IndexMapInspectComponent.new(document: @document) %>
-  </div>
 </div>
