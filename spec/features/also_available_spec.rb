@@ -14,7 +14,7 @@ RSpec.describe 'Also available at urls' do
     it 'does not show it' do
       visit solr_document_path 'stanford-cg357zz0321'
       within 'main' do
-        expect(page).to have_content '10 Meter Contours: Russian River Basin, California'
+        expect(page).to have_text '10 Meter Contours: Russian River Basin, California'
         expect(page).to have_no_link 'SearchWorks'
       end
     end
