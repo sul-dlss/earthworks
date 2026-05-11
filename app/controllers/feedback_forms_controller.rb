@@ -27,24 +27,10 @@ class FeedbackFormsController < ApplicationController
   def valid?
     errors = []
 
-    errors << 'You did not pass the reCaptcha challenge' if current_user.blank? && !verify_recaptcha
+    errors << 'You must pass the reCAPTCHA challenge' if current_user.blank? && !verify_recaptcha(action: 'feedback')
 
     errors << 'A message is required' if params[:message].nil? || params[:message] == ''
-    if params[:email_address] && params[:email_address] != ''
-      # rubocop:disable Layout/LineLength
-      errors << 'You have filled in a field that makes you appear as a spammer.  Please follow the directions for the individual form fields.'
-      # rubocop:enable Layout/LineLength
-    end
-    if params[:message]&.match?(url_regex)
-      # rubocop:disable Layout/LineLength
-      errors << 'Your message appears to be spam, and has not been sent. Please try sending your message again without any links in the comments.'
-      # rubocop:enable Layout/LineLength
-    end
-    if params[:user_agent] =~ url_regex ||
-       params[:viewport] =~ url_regex
-      errors << 'Your message appears to be spam, and has not been sent.'
-    end
-    flash[:danger] = errors.join('<br/>') unless errors.empty?
-    flash[:danger].nil?
+    flash.now[:danger] = errors.join('<br/>') unless errors.empty?
+    flash.now[:danger].nil?
   end
 end
