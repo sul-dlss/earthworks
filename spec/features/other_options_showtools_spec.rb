@@ -13,7 +13,7 @@ describe 'Display relevant links in Other Options section' do
     end
 
     it 'contains the code snippets text' do
-      expect(page).to have_content('Code Snippets')
+      expect(page).to have_text('Code Snippets')
     end
   end
 
@@ -23,7 +23,7 @@ describe 'Display relevant links in Other Options section' do
     end
 
     it 'does not contain the code snippets text' do
-      expect(page).to have_no_content('Code Snippets')
+      expect(page).to have_no_text('Code Snippets')
     end
   end
 end

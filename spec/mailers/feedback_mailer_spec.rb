@@ -31,23 +31,23 @@ describe FeedbackMailer do
       end
 
       it 'has the right email' do
-        expect(mail.body).to have_content 'Name: Mildred Turner'
+        expect(mail.body).to have_text 'Name: Mildred Turner'
       end
 
       it 'has the right name' do
-        expect(mail.body).to have_content 'Email: test@test.com'
+        expect(mail.body).to have_text 'Email: test@test.com'
       end
 
       it 'has the right host' do
-        expect(mail.body).to have_content 'Host: HOST'
+        expect(mail.body).to have_text 'Host: HOST'
       end
 
       it 'has the right IP' do
-        expect(mail.body).to have_content '123.43.54.123'
+        expect(mail.body).to have_text '123.43.54.123'
       end
 
       it 'has the user_agent' do
-        expect(mail.body).to have_content 'agent #1'
+        expect(mail.body).to have_text 'agent #1'
       end
     end
 
@@ -57,11 +57,11 @@ describe FeedbackMailer do
       let(:mail) { FeedbackMailer.submit_feedback(params, ip) }
 
       it 'has the right email' do
-        expect(mail.body).to have_content 'Name: No name given'
+        expect(mail.body).to have_text 'Name: No name given'
       end
 
       it 'has the right name' do
-        expect(mail.body).to have_content 'Email: No email given'
+        expect(mail.body).to have_text 'Email: No email given'
       end
     end
   end

@@ -40,11 +40,11 @@ RSpec.describe CodeSnippetModalComponent, type: :component do
 
     # Check that the code portion has value correctly subsituted
     it 'correctly subsitutes WXS identifier' do
-      expect(rendered).to have_content('druid:abc123')
+      expect(rendered).to have_text('druid:abc123')
     end
 
     it 'correctly subsitutes layer id' do
-      expect(rendered).to have_content('layer_name = "abc123"')
+      expect(rendered).to have_text('layer_name = "abc123"')
     end
   end
 
@@ -54,11 +54,11 @@ RSpec.describe CodeSnippetModalComponent, type: :component do
     let(:references) { '{"http://www.opengis.net/def/serviceType/ogc/wms":"http://test.com/wms"}' }
 
     it 'correctly substitutes WMS endpoint' do
-      expect(rendered).to have_content('http://test.com/wms')
+      expect(rendered).to have_text('http://test.com/wms')
     end
 
     it 'correctly substitutes bounding box values' do
-      expect(rendered).to have_content('[3.416667, 172.666667], [-1.975, 176.05]')
+      expect(rendered).to have_text('[3.416667, 172.666667], [-1.975, 176.05]')
     end
   end
 
@@ -68,7 +68,7 @@ RSpec.describe CodeSnippetModalComponent, type: :component do
     let(:references) { '{"http://www.opengis.net/def/serviceType/ogc/wfs":"http://test.com/wfs"}' }
 
     it 'correctly substitutes WFS endpoint' do
-      expect(rendered).to have_content('http://test.com/wfs')
+      expect(rendered).to have_text('http://test.com/wfs')
     end
   end
 
@@ -76,10 +76,10 @@ RSpec.describe CodeSnippetModalComponent, type: :component do
     let(:document) { SolrDocument.new({ id: 'abc123' }) }
 
     it 'correctly subsitutes placeholder values' do
-      expect(rendered).to have_content('[Insert bounding box min X value]')
-      expect(rendered).to have_content('[Insert bounding box min Y value]')
-      expect(rendered).to have_content('[Insert bounding box max X value]')
-      expect(rendered).to have_content('[Insert bounding box max Y value]')
+      expect(rendered).to have_text('[Insert bounding box min X value]')
+      expect(rendered).to have_text('[Insert bounding box min Y value]')
+      expect(rendered).to have_text('[Insert bounding box max X value]')
+      expect(rendered).to have_text('[Insert bounding box max Y value]')
     end
   end
 
@@ -91,11 +91,11 @@ RSpec.describe CodeSnippetModalComponent, type: :component do
     end
 
     it 'correctly subsitutes WXS ID placeholder value' do
-      expect(rendered).to have_content('[Insert Web Services ID]')
+      expect(rendered).to have_text('[Insert Web Services ID]')
     end
 
     it 'correctly subsitutes WFS placeholder value' do
-      expect(rendered).to have_content('[Insert WFS endpoint]')
+      expect(rendered).to have_text('[Insert WFS endpoint]')
     end
   end
 
@@ -107,11 +107,11 @@ RSpec.describe CodeSnippetModalComponent, type: :component do
     end
 
     it 'correctly subsitutes WMS placeholder value' do
-      expect(rendered).to have_content('[Insert WMS endpoint]')
+      expect(rendered).to have_text('[Insert WMS endpoint]')
     end
 
     it 'correctly subsitutes layer id placeholder value' do
-      expect(rendered).to have_content('[Insert Layer ID]')
+      expect(rendered).to have_text('[Insert Layer ID]')
     end
   end
 end

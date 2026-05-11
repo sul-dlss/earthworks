@@ -14,6 +14,6 @@ class WmsController < ApplicationController
   def format_url
     return unless /#{Settings.PROXY_URL}.*/.match?(params['URL'])
 
-    params['URL'] = params['URL'].gsub(%r{.+?(?=/geoserver)}, Settings.RESTRICTED_URL)
+    params['URL'] = params.expect('URL').gsub(%r{.+?(?=/geoserver)}, Settings.RESTRICTED_URL)
   end
 end
