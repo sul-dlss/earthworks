@@ -63,7 +63,6 @@
        Query section - these settings control query time things like caches
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
   <query>
-    <maxBooleanClauses>1024</maxBooleanClauses>
     <filterCache class="solr.search.CaffeineCache" size="512" initialSize="512" autowarmCount="0" />
     <queryResultCache class="solr.search.CaffeineCache" size="512" initialSize="512" autowarmCount="0"/>
     <documentCache class="solr.search.CaffeineCache" size="512" initialSize="512" autowarmCount="0"/>
