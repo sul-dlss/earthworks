@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 8.0.2'
+gem 'rails', '~> 8.1.0'
 
 # Successor to sprockets. https://github.com/rails/propshaft
 gem "propshaft", "1.1.0"  # Pinned because it made asset loading way too slow in 1.2.0?
@@ -13,8 +13,6 @@ gem 'puma', '~> 6'
 gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
-
-gem 'connection_pool', '~> 2.5' # Needed until we have rails 8.1.1+ (https://github.com/rails/rails/pull/56292)
 
 group :development, :test do
   # Rubocop is a static code analyzer to enforce style.
