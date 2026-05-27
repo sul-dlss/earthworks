@@ -24,4 +24,4 @@ jobs:
       - name: Prepare application
         run: bin/rails test:prepare
       - name: Run tests
-        run: bundle exec rake ci
+        run: bundle exec bin/ci

@@ -26,7 +26,7 @@ ensure
 end
 
 desc 'Execute the test build that runs in CI'
-task ci: %i[rubocop environment] do
+task ci: %i[environment] do
   ENV['environment'] = 'test'
 
   Rake::Task['db:migrate'].invoke
