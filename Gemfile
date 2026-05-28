@@ -7,7 +7,7 @@ gem 'rails', '~> 8.1.0'
 gem "propshaft", "1.1.0"  # Pinned because it made asset loading way too slow in 1.2.0?
 
 # Use Puma as the app server
-gem 'puma', '~> 6'
+gem 'puma', '>= 6'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
