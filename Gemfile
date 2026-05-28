@@ -90,5 +90,5 @@ gem 'jwt'
 gem "rack-cors", "~> 2.0"
 gem "bot_challenge_page", "~> 1.0"
 gem "racecar", "~> 2.12"
-gem "cocina_display", "~> 1.1"
+gem "cocina_display", "~> 2"
 gem "global_alerts"
