@@ -61,14 +61,31 @@ RSpec.describe Earthworks::Harvester do
 
   describe '#docs_to_index' do
     # Provenance value will be transformed by our ogm_repos config
-    let(:psu_doc) { { schema_provider_s: 'Pennsylvania State University', gbl_mdVersion_s: 'Aardvark' }.to_json }
+    let(:psu_doc) do
+      {
+        schema_provider_s: 'Pennsylvania State University',
+        gbl_mdVersion_s: 'Aardvark',
+        gbl_indexYear_im: [1701, 1980, 1991, 1995]
+      }.to_json
+    end
     let(:psu_path) { "#{ogm_path}/edu.psu/metadata-aardvark/Maps/08d-01/geoblacklight.json" }
 
     # PolicyMap records have placeholder data and should be skipped
-    let(:policymap_doc) { { schema_provider_s: 'Geoblacklight', gbl_mdVersion_s: 'Aardvark' }.to_json }
+    let(:policymap_doc) do
+      {
+        schema_provider_s: 'Geoblacklight',
+        gbl_mdVersion_s: 'Aardvark'
+      }.to_json
+    end
     let(:policymap_path) { "#{ogm_path}/shared-repository/gbl-policymap/records/geoblacklight.json" }
 
-    let(:psu_doc2_hash) { { schema_provider_s: 'Pennsylvania State University', gbl_mdVersion_s: 'Aardvark' } }
+    let(:psu_doc2_hash) do
+      {
+        schema_provider_s: 'Pennsylvania State University',
+        gbl_mdVersion_s: 'Aardvark',
+        gbl_indexYear_im: [1538]
+      }
+    end
     let(:psu_doc2) { psu_doc2_hash.to_json }
     let(:psu_path2) { "#{ogm_path}/edu.psu/metadata-aardvark/Maps/08d-01/geoblacklight_2.json" }
 
@@ -99,6 +116,19 @@ RSpec.describe Earthworks::Harvester do
     it 'transforms provider name based on repository' do
       docs = harvester.docs_to_index.to_a
       expect(docs.first.first['schema_provider_s']).to eq('Penn State')
+    end
+
+    it 'generates hierarchical years for the year facet' do
+      docs = harvester.docs_to_index.to_a
+      expect(docs.first.first['date_hierarchy_sm']).to contain_exactly(
+        '1700-1799', '1900-1999',
+        '1700-1799:1700-1709', '1900-1999:1980-1989', '1900-1999:1990-1999',
+        '1700-1799:1700-1709:1701', '1900-1999:1980-1989:1980', '1900-1999:1990-1999:1991', '1900-1999:1990-1999:1995'
+      )
+      expect(docs.last.first['date_hierarchy_sm']).to contain_exactly(
+        '1500-1599', '1500-1599:1530-1539',
+        '1500-1599:1530-1539:1538'
+      )
     end
 
     context 'when record contains themes outside the controlled vocabulary' do
