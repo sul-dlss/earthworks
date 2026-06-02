@@ -89,9 +89,6 @@ FIELDS:
 # Institution deployed at
 INSTITUTION: "Stanford"
 
-# Stanford contact email
-INSTITUTION_EMAIL: "stanford-geospatial@stanford.edu"
-
 # Metadata shown in tool panel
 METADATA_SHOWN:
   - "mods"
