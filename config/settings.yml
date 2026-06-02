@@ -2,7 +2,7 @@
 ARCGIS_BASE_URL: "https://www.arcgis.com/home/webmap/viewer.html"
 
 # DOWNLOAD_PATH is set in production but defaults to this tmp dir when not set
-DOWNLOAD_PATH: './tmp/cache/downloads'
+DOWNLOAD_PATH: "./tmp/cache/downloads"
 download_cache_expiry_time_days: 14 # the number of days since a download was last accessed before it is removed from the cache
 
 # Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
@@ -221,9 +221,9 @@ RELATIONSHIPS_SHOWN:
 # Vector data download formats to be displayed
 DOWNLOAD_FORMATS:
   VECTOR:
-    - 'Shapefile'
-    - 'CSV'
-    - 'GeoJSON'
+    - "Shapefile"
+    - "CSV"
+    - "GeoJSON"
 
 # WMS Parameters
 WMS_PARAMS:
@@ -240,11 +240,11 @@ LEAFLET:
   MAP:
   BOUNDSOVERLAY:
     INDEX:
-      color: '#175E54'
+      color: "#175E54"
     SHOW:
-      color: '#175E54'
+      color: "#175E54"
     STATIC_MAP:
-      color: '#175E54'
+      color: "#175E54"
   LAYERS:
     DETECT_RETINA: true
     INDEX:
@@ -283,7 +283,7 @@ SIDEBAR_STATIC_MAP:
   - "iiif_manifest"
 
 # Full names and contact info for institutions contributing metadata
-INSTITUTIONS:
+institutions:
   NYU:
     department: NYU Data Services
     email: data.services@nyu.edu
@@ -370,56 +370,56 @@ INSTITUTIONS:
     email: gisdata@vt.edu
 
 # Search engine settings
-BING_SITE_VERIFICATION: "4E61263975C6ABBF2ECE5A8CA5E592B7"
-GOOGLE_SITE_VERIFICATION: "654321sitever"
+bing_site_verification: "4E61263975C6ABBF2ECE5A8CA5E592B7"
+google_site_verification: "654321sitever"
 
 # Cloudflare turnstile settings for bot challenge page
 # NOTE: these example keys always pass the challenge; see:
 # https://developers.cloudflare.com/turnstile/troubleshooting/testing/
 turnstile:
   enabled: false
-  site_key: '1x00000000000000000000AA'
-  secret_key: '1x0000000000000000000000000000000AA'
+  site_key: "1x00000000000000000000AA"
+  secret_key: "1x0000000000000000000000000000000AA"
   safelist:
-  - 171.64.0.0/14
-  - 10.0.0.0/8
-  - 172.16.0.0/12
+    - 171.64.0.0/14
+    - 10.0.0.0/8
+    - 172.16.0.0/12
 
 # Turn off in production to store events via google analytics
-ANALYTICS_DEBUG: true
+analytics_debug: true
 
 # Settings for feedback submission form
-HOSTNAME: "HOST"
-EMAIL_TO: "fake-email@example.com"
-RECAPTCHA:
-  SITE_KEY: 6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy
-  SECRET_KEY: 6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx
+hostname: "HOST"
+email_to: "fake-email@example.com"
+recaptcha:
+  site_key: 6Lc6BAAAAAAAAChqRbQZcn_yyyyyyyyyyyyyyyyy
+  secret_key: 6Lc6BAAAAAAAAKN3DRm6VA_xxxxxxxxxxxxxxxxx
 
 # Used to generate canonical links and JSON-LD content in the <head>
-HOST_URL: "http://www.example.com"
+host_url: "http://www.example.com"
 
 # New Relic settings
-NEWRELIC_APP_NAME: "should be specific to stage and prod"
-NEWRELIC_LICENSE_KEY: "this is private"
-NEWRELIC_ENABLED: false
+newrelic_app_name: "should be specific to stage and prod"
+newrelic_license_key: "this is private"
+newrelic_enabled: false
 
 # Geoserver URLs
-PROXY_URL: "http://www.example.com/restricted"
-RESTRICTED_URL: "http://www.example-services.com"
+proxy_url: "http://www.example.com/restricted"
+restricted_url: "http://www.example-services.com"
 
 # Server used for background jobs
-REDIS_URL: "redis://localhost:6379/"
+redis_url: "redis://localhost:6379/"
 
 # GeoMonitor settings
-SOLR_COMMIT_WITHIN: 5000
-GEOMONITOR_TOLERANCE: 0.2
+solr_commit_within: 5000
+geomonitor_tolerance: 0.2
 
 # GeoCombine settings (harvesting/indexing from OpenGeoMetadata)
 # Repositories listed here will be harvested and indexed by rake tasks. See:
 # https://github.com/OpenGeoMetadata
 # If supplied, "provider" value overrides the dct_provider_s in the record
 # This creates a more consistent display in facets, etc.
-OGM_REPOS:
+ogm_repos:
   edu.nyu: # includes records from both NYU and Baruch CUNY
   shared-repository: # multi-institutional
   edu.princeton.arks:
@@ -479,10 +479,10 @@ OGM_REPOS:
   edu.vt:
     provider: Virginia Tech
 
-IIIF_DRAG_DROP_LINK: '@manifest?manifest=@manifest'
+IIIF_DRAG_DROP_LINK: "@manifest?manifest=@manifest"
 
 # Allowed values itemized in https://opengeometadata.org/ogm-aardvark/#theme-values
-ALLOWED_OGM_THEMES:
+allowed_ogm_themes:
   - Agriculture
   - Biology
   - Boundaries
@@ -521,15 +521,15 @@ ICON_MAPPING:
   wisconsin: university-of-wisconsin-madison
 
 cors:
-  allow_origin_url: 'https://embed-stage.stanford.edu'
+  allow_origin_url: "https://embed-stage.stanford.edu"
 
-geo_proxy_secret: 'my$ecretK3y'
+geo_proxy_secret: "my$ecretK3y"
 
 ## Indexing settings
 
 # Should be purl_fetcher_stage or purl_fetcher_prod; determines which queue
 # of SDR item updates we are 'listening' to
-indexer_topic: purl_fetcher_stage 
+indexer_topic: purl_fetcher_stage
 
 # Kafka groups split messages across consumers; we don't want to take messages
 # from the 'real' stage/prod indexers so we set this to a different value
@@ -548,4 +548,4 @@ purl:
 
 # Enable/disable global alerts
 # https://github.com/sul-dlss/global_alerts
-GLOBAL_ALERT: false
+global_alert: false

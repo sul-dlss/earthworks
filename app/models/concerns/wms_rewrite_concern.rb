@@ -4,7 +4,7 @@ module WmsRewriteConcern
   def viewer_endpoint
     if stanford? && restricted?
       # replace wms prefix with webauthed proxy
-      super.gsub(%r{.+?(?=/geoserver)}, Settings.PROXY_URL)
+      super.gsub(%r{.+?(?=/geoserver)}, Settings.proxy_url)
     else
       super
     end

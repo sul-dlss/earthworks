@@ -17,7 +17,7 @@
     <% else %>
       <% if @document.stanford? %>
         <% content_for :head do %>
-          <link rel="canonical" href="<%= "#{Settings.HOST_URL}#{solr_document_path(@document.id)}" %>">
+          <link rel="canonical" href="<%= "#{Settings.host_url}#{solr_document_path(@document.id)}" %>">
         <% end %>
       <% end %>
       <div class="document-main-section">
@@ -41,7 +41,7 @@
         <% metadata_sections.each do |section| %>
           <%= section %>
         <% end %>
-  
+
         <% partials.each do |partial| %>
           <%= partial %>
         <% end %>

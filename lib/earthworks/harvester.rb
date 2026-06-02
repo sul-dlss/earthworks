@@ -6,7 +6,7 @@ module Earthworks
     attr_reader :ogm_repos
 
     # Support passing in a configured list of repositories to harvest
-    def initialize(ogm_repos: ENV.fetch('OGM_REPOS'), **)
+    def initialize(ogm_repos: ENV.fetch(''), **)
       super(**)
 
       @ogm_repos = ogm_repos.to_h.transform_keys(&:to_s)
@@ -49,7 +49,7 @@ module Earthworks
 
       if (themes = record['dcat_theme_sm'])
         # Filter out themes that are not in the controlled vocabulary from OGM
-        record.update({ 'dcat_theme_sm' => themes.select { |theme| Settings.ALLOWED_OGM_THEMES.include?(theme) } })
+        record.update({ 'dcat_theme_sm' => themes.select { |theme| Settings.allowed_ogm_themes.include?(theme) } })
       end
       record
     end

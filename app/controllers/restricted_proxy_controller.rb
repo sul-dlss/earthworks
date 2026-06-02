@@ -33,7 +33,7 @@ class RestrictedProxyController < ApplicationController
   private
 
   def request_url
-    request.url.gsub(Settings.PROXY_URL, Settings.RESTRICTED_URL)
+    request.url.gsub(Settings.proxy_url, Settings.restricted_url)
   end
 
   def proxied_response

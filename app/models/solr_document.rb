@@ -17,11 +17,11 @@ class SolrDocument
   end
 
   def contact_email
-    Settings.INSTITUTIONS.send(institution)&.email
+    Settings.institutions.send(institution)&.email
   end
 
   def department
-    Settings.INSTITUTIONS.send(institution)&.department
+    Settings.institutions.send(institution)&.department
   end
 
   def collection?

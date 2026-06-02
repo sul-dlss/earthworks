@@ -138,11 +138,11 @@ class CatalogController < ApplicationController
     #                        query: {
     #                          available: {
     #                            label: 'Available',
-    #                            fq: "(layer_availability_score_f:[#{Settings.GEOMONITOR_TOLERANCE} TO 1])"
+    #                            fq: "(layer_availability_score_f:[#{Settings.geomonitor_tolerance} TO 1])"
     #                          },
     #                          unavailable: {
     #                            label: 'Unavailable',
-    #                            fq: "layer_availability_score_f:[0 TO #{Settings.GEOMONITOR_TOLERANCE}]"
+    #                            fq: "layer_availability_score_f:[0 TO #{Settings.geomonitor_tolerance}]"
     #                          }
     #                        },
     #                        item_component: Geoblacklight::IconFacetItemComponent
