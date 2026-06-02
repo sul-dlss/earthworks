@@ -9,6 +9,9 @@ require 'factory_bot'
 require 'view_component/test_helpers'
 require 'view_component/system_test_helpers'
 require 'capybara/rspec'
+require 'webmock/rspec'
+
+WebMock.disable_net_connect!(allow_localhost: true)
 
 Capybara.javascript_driver = :selenium_chrome_headless
 

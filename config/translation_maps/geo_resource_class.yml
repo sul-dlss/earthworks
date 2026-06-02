@@ -1,0 +1,3 @@
+/.*[Cc]ollection.*/: Collections
+/.*[Dd]ataset.*/: Datasets
+/.*[Mm]ap.*/: Maps

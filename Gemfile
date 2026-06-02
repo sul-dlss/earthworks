@@ -45,6 +45,7 @@ group :development, :test do
   gem 'solr_wrapper'
   gem 'sqlite3', '~> 2.0'
   gem "axe-core-rspec"
+  gem 'webmock'
 end
 
 group :deployment do

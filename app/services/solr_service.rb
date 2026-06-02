@@ -1,14 +1,25 @@
 # Update or delete records from the Solr index
 class SolrService
   # Delete a record from the index by ID
-  # TODO: https://github.com/sul-dlss/earthworks/issues/1536
-  def self.delete_by_id(record_id)
+  def self.delete_by_id(druid)
+    record_id = "stanford-#{druid}"
     Rails.logger.info "Deleting Solr document: #{record_id}"
+    connection.delete_by_id(record_id)
+    connection.commit
   end
 
   # Update a record in the index
-  # TODO: https://github.com/sul-dlss/earthworks/issues/1536
   def self.update(record)
-    Rails.logger.info "Updating Solr document: #{record.druid}"
+    Rails.logger.info "Updating Solr document: stanford-#{record.druid}"
+    doc = CocinaToSolrMapper.map(record)
+    connection.update(
+      params: { commitWithin: Settings.solr_commit_within, overwrite: true },
+      data: [doc].to_json,
+      headers: { 'Content-Type' => 'application/json' }
+    )
+  end
+
+  def self.connection
+    Blacklight.default_index.connection
   end
 end
