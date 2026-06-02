@@ -2,7 +2,7 @@
 ARCGIS_BASE_URL: "https://www.arcgis.com/home/webmap/viewer.html"
 
 # DOWNLOAD_PATH is set in production but defaults to this tmp dir when not set
-DOWNLOAD_PATH: './tmp/cache/downloads'
+DOWNLOAD_PATH: "./tmp/cache/downloads"
 download_cache_expiry_time_days: 14 # the number of days since a download was last accessed before it is removed from the cache
 
 # Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
@@ -88,9 +88,6 @@ FIELDS:
 
 # Institution deployed at
 INSTITUTION: "Stanford"
-
-# Stanford contact email
-INSTITUTION_EMAIL: "stanford-geospatial@stanford.edu"
 
 # Metadata shown in tool panel
 METADATA_SHOWN:
@@ -221,9 +218,9 @@ RELATIONSHIPS_SHOWN:
 # Vector data download formats to be displayed
 DOWNLOAD_FORMATS:
   VECTOR:
-    - 'Shapefile'
-    - 'CSV'
-    - 'GeoJSON'
+    - "Shapefile"
+    - "CSV"
+    - "GeoJSON"
 
 # WMS Parameters
 WMS_PARAMS:
@@ -240,11 +237,11 @@ LEAFLET:
   MAP:
   BOUNDSOVERLAY:
     INDEX:
-      color: '#175E54'
+      color: "#175E54"
     SHOW:
-      color: '#175E54'
+      color: "#175E54"
     STATIC_MAP:
-      color: '#175E54'
+      color: "#175E54"
   LAYERS:
     DETECT_RETINA: true
     INDEX:
@@ -378,12 +375,12 @@ GOOGLE_SITE_VERIFICATION: "654321sitever"
 # https://developers.cloudflare.com/turnstile/troubleshooting/testing/
 turnstile:
   enabled: false
-  site_key: '1x00000000000000000000AA'
-  secret_key: '1x0000000000000000000000000000000AA'
+  site_key: "1x00000000000000000000AA"
+  secret_key: "1x0000000000000000000000000000000AA"
   safelist:
-  - 171.64.0.0/14
-  - 10.0.0.0/8
-  - 172.16.0.0/12
+    - 171.64.0.0/14
+    - 10.0.0.0/8
+    - 172.16.0.0/12
 
 # Turn off in production to store events via google analytics
 ANALYTICS_DEBUG: true
@@ -479,7 +476,7 @@ OGM_REPOS:
   edu.vt:
     provider: Virginia Tech
 
-IIIF_DRAG_DROP_LINK: '@manifest?manifest=@manifest'
+IIIF_DRAG_DROP_LINK: "@manifest?manifest=@manifest"
 
 # Allowed values itemized in https://opengeometadata.org/ogm-aardvark/#theme-values
 ALLOWED_OGM_THEMES:
@@ -521,15 +518,15 @@ ICON_MAPPING:
   wisconsin: university-of-wisconsin-madison
 
 cors:
-  allow_origin_url: 'https://embed-stage.stanford.edu'
+  allow_origin_url: "https://embed-stage.stanford.edu"
 
-geo_proxy_secret: 'my$ecretK3y'
+geo_proxy_secret: "my$ecretK3y"
 
 ## Indexing settings
 
 # Should be purl_fetcher_stage or purl_fetcher_prod; determines which queue
 # of SDR item updates we are 'listening' to
-indexer_topic: purl_fetcher_stage 
+indexer_topic: purl_fetcher_stage
 
 # Kafka groups split messages across consumers; we don't want to take messages
 # from the 'real' stage/prod indexers so we set this to a different value
