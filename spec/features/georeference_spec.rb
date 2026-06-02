@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Show page' do
+RSpec.describe 'Show page' do
   context 'when gbl_georeferenced_b is not set' do
     it 'have georeference alert' do
       visit solr_document_path 'stanford-dt131hw5005'
