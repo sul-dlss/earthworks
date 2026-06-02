@@ -48,7 +48,7 @@ Rails.application.configure do
 
   # Replace the default in-process memory cache store with a durable alternative.
   config.cache_store = :redis_cache_store, {
-    url: ENV.fetch('REDIS_URL') { Settings.REDIS_URL },
+    url: ENV.fetch('REDIS_URL') { Settings.redis_url },
     connect_timeout: 30, # Defaults to 20 seconds
     read_timeout: 0.2, # Defaults to 1 second
     write_timeout: 0.2, # Defaults to 1 second

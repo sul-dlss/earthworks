@@ -10,6 +10,6 @@ class Indexer
   end
 
   def commit_within
-    ENV.fetch('SOLR_COMMIT_WITHIN') { Settings.SOLR_COMMIT_WITHIN } || 5000
+    ENV.fetch('SOLR_COMMIT_WITHIN') { Settings.solr_commit_within } || 5000
   end
 end

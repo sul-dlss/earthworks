@@ -6,7 +6,7 @@ describe 'Customized layout' do
   end
 
   it 'includes the google-site-verification code' do
-    expect(page).to have_css("meta[name='google-site-verification'][content='#{Settings.GOOGLE_SITE_VERIFICATION}']",
+    expect(page).to have_css("meta[name='google-site-verification'][content='#{Settings.google_site_verification}']",
                              visible: false)
   end
 end

@@ -10,9 +10,9 @@ class FeedbackMailer < ApplicationMailer
     @user_agent = params[:user_agent]
     @viewport = params[:viewport]
 
-    mail(to: Settings.EMAIL_TO,
+    mail(to: Settings.email_to,
          subject: 'Feedback from EarthWorks',
          from: 'feedback@earthworks.stanford.edu',
-         reply_to: Settings.EMAIL_TO)
+         reply_to: Settings.email_to)
   end
 end

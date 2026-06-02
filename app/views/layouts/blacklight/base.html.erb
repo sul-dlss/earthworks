@@ -12,13 +12,13 @@
 
     <meta
       name="google-site-verification"
-      content="<%= Settings.GOOGLE_SITE_VERIFICATION %>"
-    />
+      content="<%= Settings.google_site_verification %>"
+>
 
     <meta
       name="msvalidate.01"
-      content="<%= Settings.BING_SITE_VERIFICATION %>"
-    />
+      content="<%= Settings.bing_site_verification %>"
+>
 
     <!-- Google tag (gtag.js) -->
     <script
@@ -32,7 +32,7 @@
       gtag('js', new Date());
 
       const config = {};
-      <% if Settings.ANALYTICS_DEBUG %>
+      <% if Settings.analytics_debug %>
         config.debug_mode = true
       <% end %>
 
@@ -97,7 +97,7 @@
       <%= content_for(:skip_links) %>
     <% end %>
 
-    <%= render GlobalAlertComponent.new(Settings.local_alert || GlobalAlerts::Alert.active) if Settings.GLOBAL_ALERT %>
+    <%= render GlobalAlertComponent.new(Settings.local_alert || GlobalAlerts::Alert.active) if Settings.global_alert %>
 
     <%= render blacklight_config.header_component.new(blacklight_config: blacklight_config) do |c| %>
       <%= c.with_top_bar(component: TopNavbarComponent) %>
