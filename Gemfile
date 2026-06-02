@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '~> 8.1.0'
 
 # Successor to sprockets. https://github.com/rails/propshaft
-gem "propshaft", "1.1.0"  # Pinned because it made asset loading way too slow in 1.2.0?
+gem "propshaft", "~>1.3"
 
 # Use Puma as the app server
 gem 'puma', '>= 6'
