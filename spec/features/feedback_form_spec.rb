@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Feedback form (js)', :js do
+RSpec.describe 'Feedback form (js)', :js do
   before do
     visit root_path
   end
@@ -24,7 +24,7 @@ describe 'Feedback form (js)', :js do
   end
 end
 
-describe 'Feedback form (no js)' do
+RSpec.describe 'Feedback form (no js)' do
   before do
     visit root_path
   end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'Display relevant links in Other Options section' do
+RSpec.describe 'Display relevant links in Other Options section' do
   context 'when dataset is publicly available' do
     before do
       visit solr_document_path 'stanford-cz128vq0535'

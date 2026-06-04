@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe WmsController do
+RSpec.describe WmsController do
   describe 'POST handle' do
     let(:wms_layer) { instance_double(Geoblacklight::WmsLayer) }
 

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe FeedbackFormsController do
+RSpec.describe FeedbackFormsController do
   context 'when the current user is anonymous' do
     before { stub_current_user(user: double(blank?: true)) }
 

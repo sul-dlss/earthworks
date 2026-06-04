@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 # rubocop:disable Layout/LineLength
-describe 'License rendering' do
+RSpec.describe 'License rendering' do
   context 'with a CC license' do
     it 'renders the human-friendly license description' do
       visit solr_document_path 'stanford-dy750qs3024'

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Hierarchical date facet' do
+RSpec.describe 'Hierarchical date facet' do
   before do
     visit root_path
     click_link_or_button 'search'

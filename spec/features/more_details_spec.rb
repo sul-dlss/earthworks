@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'More detail links' do
+RSpec.describe 'More detail links' do
   context 'when a document has a purl and doi in its identifiers' do
     it 'shows them in more details' do
       visit solr_document_path 'stanford-dy750qs3024'

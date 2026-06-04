@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe RestrictedProxyController do
+RSpec.describe RestrictedProxyController do
   include Devise::Test::ControllerHelpers
 
   context 'when the current user is anonymous' do

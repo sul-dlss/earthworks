@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe 'Search' do
+RSpec.describe 'Search' do
   describe 'spelling suggestions' do
     it 'are turned on' do
       visit root_path

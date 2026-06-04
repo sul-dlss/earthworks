@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe WmsRewriteConcern do
+RSpec.describe WmsRewriteConcern do
   let(:document) { SolrDocument.new(document_attributes) }
 
   describe 'viewer_endpoint' do
