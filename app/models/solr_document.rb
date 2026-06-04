@@ -8,20 +8,8 @@ class SolrDocument
 
   alias stanford? same_institution?
 
-  def institution
-    fetch(Settings.FIELDS.PROVIDER, '')
-  end
-
   def dataset?
     fetch(Settings.FIELDS.RESOURCE_CLASS, []).include?('Datasets')
-  end
-
-  def contact_email
-    Settings.institutions.send(institution)&.email
-  end
-
-  def department
-    Settings.institutions.send(institution)&.department
   end
 
   def collection?
