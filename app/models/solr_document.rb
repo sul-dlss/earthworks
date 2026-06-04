@@ -12,14 +12,6 @@ class SolrDocument
     fetch(Settings.FIELDS.RESOURCE_CLASS, []).include?('Datasets')
   end
 
-  def collection?
-    fetch(Settings.FIELDS.RESOURCE_CLASS, []).include? 'Collections'
-  end
-
-  def mixed?
-    fetch(Settings.FIELDS.RESOURCE_CLASS, []) == 'Other'
-  end
-
   def external_links
     fetch(Settings.FIELDS.IDENTIFIER, []).filter { |identifier| identifier.start_with?('http') }
   end
