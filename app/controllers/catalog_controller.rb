@@ -357,10 +357,6 @@ class CatalogController < ApplicationController
                                                       }
     config.show.document_actions.delete(:sms)
 
-    config.add_show_header_tools_partial(:bookmark, partial: 'bookmark_control', if: :render_bookmarks_control?)
-    config.add_show_header_tools_partial(:citation)
-    config.add_show_header_tools_partial(:email, callback: :email_action, validator: :validate_email_params)
-
     # Configuration for autocomplete suggestor
     config.autocomplete_enabled = true
     config.autocomplete_path = 'suggest'
