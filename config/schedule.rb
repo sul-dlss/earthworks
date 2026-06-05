@@ -55,3 +55,7 @@ every :tuesday, at: '5:04 am', roles: %i[cron] do
   rake 'rake earthworks:opengeometadata:pull'
   rake 'rake earthworks:opengeometadata:index'
 end
+
+every :wednesday, at: '5:04 am', roles: %i[cron] do
+  rake 'geocombine:pull geocombine:index', environment_variable: 'OGM_PATH=/opt/app/geostaff/opengeometadata RAILS_ENV'
+end
