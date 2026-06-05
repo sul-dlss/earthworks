@@ -87,7 +87,7 @@ gem "importmap-rails", "~> 2.0"
 gem "stimulus-rails", "~> 1.3"
 gem "turbo-rails", "~> 2.0"
 gem 'jwt'
-gem "rack-cors", "~> 2.0"
+gem "rack-cors", "~> 3.0"
 gem "bot_challenge_page", "~> 1.0"
 gem "racecar", "~> 2.12"
 gem "cocina_display", "~> 2"
