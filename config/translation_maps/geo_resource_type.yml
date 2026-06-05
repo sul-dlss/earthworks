@@ -1,0 +1,5 @@
+/.*[Rr]aster.*/: Raster data
+/.*[Vv]ector.*/: Vector data
+/.*[Pp]oint.*/: Point data
+/.*[Ll]ine.*/: Line data
+/.*[Pp]olygon.*/: Polygon data

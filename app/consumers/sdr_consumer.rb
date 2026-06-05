@@ -31,6 +31,7 @@ class SdrConsumer < Racecar::Consumer
   # Determine if the item should be removed from the index
   def delete?
     return true if @change.blank? # No associated kafka message
+    return true if @change['deleted_at'].present?
     return true if false_target?
     return true unless true_target?
     return true if record.blank? # No public Cocina

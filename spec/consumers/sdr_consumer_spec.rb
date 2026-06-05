@@ -112,6 +112,15 @@ RSpec.describe SdrConsumer do
       end
     end
 
+    context 'when the item is deleted' do
+      let(:message_contents) { { druid: 'druid:abc123', deleted_at: '2024-06-02T00:00:00Z' } }
+
+      it 'executes a delete' do
+        expect(solr_service).to receive(:delete_by_id).with('abc123')
+        consumer.process(message)
+      end
+    end
+
     context 'when processing raises an error' do
       before do
         allow(cocina_service).to receive(:fetch_record).and_raise(StandardError, 'Fetch error')

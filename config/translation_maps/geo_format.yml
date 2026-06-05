@@ -1,0 +1,6 @@
+/.*[Gg]eo[Tt][Ii][Ff][Ff].*/: GeoTIFF
+/.*[Ss]hapefile.*/: Shapefile
+/.*[Gg]eo[Jj][Ss][Oo][Nn].*/: GeoJSON
+/.*[Kk][Mm][Ll].*/: KML
+/.*[Pp][Mm][Tt][Ii][Ll][Ee][Ss].*/: PMTiles
+/.*[Cc][Oo][Gg].*/: COG
