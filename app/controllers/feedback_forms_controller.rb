@@ -1,6 +1,4 @@
 class FeedbackFormsController < ApplicationController
-  def new; end
-
   def create
     if request.post?
       if valid?
