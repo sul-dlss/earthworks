@@ -23,8 +23,7 @@ Rails.application.routes.draw do
           :via => Devise.mappings[:user].sign_out_via
   end
 
-  resource :feedback_form, path: 'feedback', only: %i[new create]
-  get 'feedback' => 'feedback_forms#new'
+  resource :feedback_form, path: 'feedback', only: %i[create]
 
   concern :gbl_exportable, Geoblacklight::Routes::Exportable.new
   resources :solr_documents, only: [:show], path: '/catalog', controller: 'catalog' do
