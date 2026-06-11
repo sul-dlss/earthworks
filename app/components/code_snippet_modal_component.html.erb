@@ -3,7 +3,7 @@
   <% component.with_body do %>
     <div class="p-3" data-controller="clipboard-copy">
       <div class="mb-2">
-        <ul id='codeNav' class='nav nav-tabs border-0' role='tablist'>
+        <ul id="codeNav" class="nav nav-tabs border-0" role="tablist">
           <li class="nav-item" role="presentation">
               <button class="nav-link btn-link border-0 pl-0 active code-snippet-tab" id="python-tab" data-bs-toggle="tab" data-bs-target="#python-code" type="button" role="tab" 
                 aria-controls="python-code" aria-selected="true" data-action="clipboard-copy#reset">Python</button>
@@ -34,13 +34,13 @@
       <!-- Code snippet content -->
       <div class="tab-content code-snippet-content" id="codeContent">
         <div class="tab-pane fade show p-3 active" id="python-code" role="tabpanel" aria-labelledby="python-tab">
-          <%= code_block(render_python) %> 
+          <%= code_block(render_python) %>
         </div>
         <div class="tab-pane fade p-3" id="r-code" role="tabpanel" aria-labelledby="r-tab">
-          <%= code_block(render_r) %> 
+          <%= code_block(render_r) %>
         </div>
         <div class="tab-pane fade p-3" id="leaflet-code" role="tabpanel" aria-labelledby="leaflet-tab">
-          <%= code_block(render_leaflet) %> 
+          <%= code_block(render_leaflet) %>
         </div>
       </div>
     </div>
