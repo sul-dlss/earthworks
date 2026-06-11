@@ -31,12 +31,13 @@ RSpec.describe CocinaToSolrMapper do
       world_access?: true,
       modified_time: Time.zone.parse('2024-01-01'),
       collection?: false,
-      files: [],
+      files:,
       download_url: 'https://stacks.stanford.edu/file/druid:abc12345678/data.zip',
       oembed_url: 'https://purl.stanford.edu/abc12345678/embed',
       thumbnail_url: 'https://stacks.stanford.edu/file/druid:abc12345678/thumb.jpg'
     )
   end
+  let(:files) { [] }
 
   describe '.map' do
     subject(:doc) { described_class.map(record) }
@@ -67,6 +68,18 @@ RSpec.describe CocinaToSolrMapper do
       it 'handles georeferenced title' do
         expect(doc['gbl_georeferenced_b']).to be true
         expect(doc['gbl_resourceClass_sm']).to include 'Datasets'
+      end
+    end
+
+    context 'with IIIF georeference annotations' do
+      let(:files) do
+        [instance_double(CocinaDisplay::Structural::File, mime_type: 'application/json', use: 'georeference',
+                                                          filename: 'iiif_georeference.json')]
+      end
+      let(:json) { JSON.parse(doc['dct_references_s']) }
+
+      it 'is indexed' do
+        expect(json['https://iiif.io/api/extension/georef/1/context.json']).to eq 'https://stacks.stanford.edu/file/druid:abc12345678/iiif_georeference.json'
       end
     end
   end

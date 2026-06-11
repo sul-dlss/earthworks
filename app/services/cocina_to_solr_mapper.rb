@@ -1,8 +1,10 @@
 class CocinaToSolrMapper
+  # @param [CocinaDisplay::CocinaRecord] record
   def self.map(record)
     new(record).map
   end
 
+  # @param [CocinaDisplay::CocinaRecord] record
   def initialize(record)
     @record = record
   end
@@ -105,6 +107,9 @@ class CocinaToSolrMapper
     refs['http://iiif.io/api/presentation#manifest'] = iiif_manifest_url
     refs['http://schema.org/thumbnailUrl'] = record.thumbnail_url
     refs['https://schema.org/relatedLink'] = searchworks_url
+    iiif_annotation = record.files(mime_type: 'application/json', use: 'georeference')
+                            .map { |file| stacks_file_url(file.filename) }.first
+    refs['https://iiif.io/api/extension/georef/1/context.json'] = iiif_annotation
 
     # Files
     add_file_reference(refs, /index_map\.(json|geojson)/, 'https://openindexmaps.org')
