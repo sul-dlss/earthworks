@@ -1,5 +1,5 @@
 <div data-controller="downloads">
-  <% direct_dowload = document.direct_download.present? || document.iiif_download.present?  %>
+  <% direct_dowload = document.direct_download.present? || document.iiif_download.present? %>
   <% if direct_dowload %>
   <h2 class="h4">Download</h2>
   <% end %>
@@ -25,7 +25,7 @@
   <% end %>
 
   <% if direct_dowload && document.download_types.present? %>
-  <hr style="border-top: dotted 1px;" />
+  <hr style="border-top: dotted 1px;">
   <% end %>
 
   <% if document.download_types.present? %>
