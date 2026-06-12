@@ -84,8 +84,9 @@ class CocinaToSolrMapper
     TranslationMap.new('geo_resource_type').translate(record.all_forms.map(&:to_s) + record.subject_topics)
   end
 
+  # @return [String]
   def map_format
-    TranslationMap.new('geo_format').translate(record.all_forms.map(&:to_s) + record.file_mime_types)
+    TranslationMap.new('geo_format').translate(record.all_forms.map(&:to_s) + record.file_mime_types).first
   end
 
   def map_source
