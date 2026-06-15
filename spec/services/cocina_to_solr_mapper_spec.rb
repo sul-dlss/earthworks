@@ -71,6 +71,16 @@ RSpec.describe CocinaToSolrMapper do
       end
     end
 
+    context 'when all_forms returns multiple formats' do
+      before do
+        allow(record).to receive(:all_forms).and_return(%w[Shapefile PMTiles])
+      end
+
+      it 'maps dct_format_s to only a single value' do
+        expect(doc['dct_format_s']).to eq 'Shapefile'
+      end
+    end
+
     context 'with IIIF georeference annotations' do
       let(:files) do
         [instance_double(CocinaDisplay::Structural::File, mime_type: 'application/json', use: 'georeference',
