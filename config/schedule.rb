@@ -37,11 +37,6 @@ every 1.day, at: '4:04 am', roles: %i[cron] do
   rake 'rake earthworks:prune_old_search_data[14]'
 end
 
-every :tuesday, at: '5:04 am', roles: %i[cron] do
-  rake 'rake earthworks:opengeometadata:pull'
-  rake 'rake earthworks:opengeometadata:index'
-end
-
-every :wednesday, at: '5:04 am', roles: %i[cron] do
+every 1.day, at: '5:04 am', roles: %i[cron] do
   rake 'geocombine:pull geocombine:index', environment_variable: 'OGM_PATH=/opt/app/geostaff/opengeometadata RAILS_ENV'
 end
