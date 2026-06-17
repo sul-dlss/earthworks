@@ -1,8 +1,6 @@
 class SolrDocument
   include Blacklight::Solr::Document
   include Geoblacklight::SolrDocument
-  # include GeomonitorConcern
-  # https://github.com/geoblacklight/geo_monitor/issues/12
   include WmsRewriteConcern
   include LicenseConcern
 

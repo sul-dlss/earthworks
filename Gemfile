@@ -72,9 +72,6 @@ gem 'honeybadger'
 gem 'blacklight_dynamic_sitemap', '~> 0.3'
 gem 'newrelic_rpm'
 gem 'redis', '~> 5.0'
-# Not compatible with GeoBlacklight 4.x
-# https://github.com/geoblacklight/geo_monitor/issues/12
-# gem 'geo_monitor', '~> 0.7', github: 'geoblacklight/geo_monitor'
 gem 'geo_combine', '>= 0.9' # For OpenGeoMetadata indexing
 gem 'sidekiq', '~> 8.0'
 gem 'whenever', require: false

@@ -131,21 +131,6 @@ class CatalogController < ApplicationController
                                                      item_component: Geoblacklight::IconFacetItemComponent
     config.add_facet_field Settings.FIELDS.ACCESS_RIGHTS, label: 'Access', limit: 8,
                                                           item_component: Geoblacklight::IconFacetItemComponent
-    # Disabled until GeoMonitor is updated for v4.x compatibility
-    # https://github.com/geoblacklight/geo_monitor/issues/12
-    # config.add_facet_field 'availability',
-    #                        label: 'Availability',
-    #                        query: {
-    #                          available: {
-    #                            label: 'Available',
-    #                            fq: "(layer_availability_score_f:[#{Settings.geomonitor_tolerance} TO 1])"
-    #                          },
-    #                          unavailable: {
-    #                            label: 'Unavailable',
-    #                            fq: "layer_availability_score_f:[0 TO #{Settings.geomonitor_tolerance}]"
-    #                          }
-    #                        },
-    #                        item_component: Geoblacklight::IconFacetItemComponent
 
     # GEOBLACKLIGHT APPLICATION FACETS
 
