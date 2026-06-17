@@ -29,60 +29,6 @@ namespace :earthworks do
     end
   end
 
-  namespace :geomonitor do
-    desc 'Update the layers GeoMonitor checks from the Solr index'
-    task update: [:environment] do
-      num_found = 999_999 # Set sufficiently large, and then update in first query
-      rows = 100
-      start = 1
-      while start < num_found
-        puts "Selecting from Solr at #{start}, #{rows} rows"
-        response = Blacklight.default_index.connection.get(
-          'select',
-          params: { q: '*:*', fl: '*', start:, rows: }
-        )
-        num_found = response['response']['numFound'].to_i
-        docs = response.try(:[], 'response').try(:[], 'docs')
-        docs.each do |doc|
-          puts "Updating GeoMonitor::Layer #{doc['layer_slug_s']}"
-          GeoMonitor::Layer.from_geoblacklight(doc.to_json).save!
-        end
-        start += rows
-      end
-    end
-    desc 'Check all of the active GeoMonitor layers'
-    task check: [:environment] do
-      GeoMonitor::Layer.where(active: true).find_each(batch_size: 250) do |layer|
-        puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: ((1.minute)...(4.hours)).to_a.sample.seconds).perform_later(layer)
-      end
-    end
-    desc 'Check all of the active Stanford layers'
-    task check_stanford: [:environment] do
-      GeoMonitor::Layer.where(active: true, institution: 'Stanford').find_each(batch_size: 250) do |layer|
-        puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: ((1.minute)...(4.hours)).to_a.sample.seconds).perform_later(layer)
-      end
-    end
-    desc 'Check all of the active public layers'
-    task check_public: [:environment] do
-      GeoMonitor::Layer.where(active: true, rights: 'Public').find_each(batch_size: 250) do |layer|
-        puts "Enqueueing check for #{layer.slug}"
-        CheckLayerJob.set(wait: ((1.minute)...(4.hours)).to_a.sample.seconds).perform_later(layer)
-      end
-    end
-    desc 'Reset availability for GeoMonitor layers'
-    task reset_availability: [:environment] do
-      GeoMonitor::Layer.find_each do |layer|
-        data = [{
-          layer_availability_score_f: { set: nil },
-          layer_slug_s: layer.slug
-        }]
-        Indexer.new.solr_update(data)
-      end
-    end
-  end
-
   # Customized tasks for OpenGeoMetadata records
   namespace :opengeometadata do
     desc 'Initialize OpenGeoMetadata repositories'
