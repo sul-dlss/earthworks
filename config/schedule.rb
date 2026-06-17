@@ -21,10 +21,6 @@
 
 set :output, 'log/cron.log'
 
-every '0 3 * * *', roles: %i[app] do # daily at 3 am
-  rake 'earthworks:clear_rack_attack_cache'
-end
-
 every 1.day, at: '1:04 am', roles: %i[cron] do
   rake 'rake earthworks:clear_download_cache_stale_files'
 end
