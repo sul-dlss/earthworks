@@ -1,5 +1,3 @@
-require 'earthworks/harvester'
-
 namespace :earthworks do
   desc 'Install EarthWorks'
   task install: [:environment] do
@@ -26,28 +24,6 @@ namespace :earthworks do
         Rake::Task['geoblacklight:index:seed'].invoke
         system "bundle exec rails s #{args[:rails_server_args]}"
       end
-    end
-  end
-
-  # Customized tasks for OpenGeoMetadata records
-  namespace :opengeometadata do
-    desc 'Initialize OpenGeoMetadata repositories'
-    task :clone do
-      harvester = Earthworks::Harvester.new(ogm_repos: Settings.ogm_repos)
-      harvester.clone_all
-    end
-
-    desc 'Fetch updated OpenGeoMetadata records for indexing'
-    task :pull do
-      harvester = Earthworks::Harvester.new(ogm_repos: Settings.ogm_repos)
-      harvester.pull_all
-    end
-
-    desc 'Index OpenGeoMetadata repositories'
-    task :index do
-      harvester = Earthworks::Harvester.new(ogm_repos: Settings.ogm_repos)
-      indexer = GeoCombine::Indexer.new
-      indexer.index(harvester.docs_to_index)
     end
   end
 
