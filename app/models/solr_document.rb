@@ -2,9 +2,12 @@ class SolrDocument
   include Blacklight::Solr::Document
   include Geoblacklight::SolrDocument
   include WmsRewriteConcern
-  include LicenseConcern
 
   alias stanford? same_institution?
+
+  attribute :rights, :array, :dct_rights_sm
+  attribute :rights_holder, :array, :dct_rightsHolder_sm
+  attribute :license_uris, :array, :dct_license_sm
 
   def dataset?
     fetch(Settings.FIELDS.RESOURCE_CLASS, []).include?('Datasets')

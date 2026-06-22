@@ -20,10 +20,4 @@ module EarthworksBlacklightHelper
   def sidebar_classes
     'page-sidebar col-md-3 col-lg-2 order-md-1'
   end
-
-  def render_details_links(args)
-    tag.ul class: 'list-unstyled' do
-      args[:document].external_links.collect { |url| concat tag.li(link_to(url, url)) }
-    end
-  end
 end

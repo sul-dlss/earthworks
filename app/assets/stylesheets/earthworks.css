@@ -46,40 +46,37 @@ header .container,
 }
 
 .component-container {
+  --bs-border-radius: 4px;
+
+  background-color: var(--stanford-fog-light);
+  padding: 1.5rem 1rem;
+
   & > * + * {
     border-top: 1px dotted
       color-mix(in srgb, var(--bs-body-color), transparent 80%);
     padding-top: 1rem;
   }
+
+  /* this is used for "Collection items" */
+  .card.relations {
+    --bs-border-width: 0;
+    --bs-card-cap-padding-y: 0px;
+    --bs-card-cap-padding-x: 0px;
+
+    .list-group {
+      --bs-list-group-bg: var(--stanford-fog-light);
+      --bs-list-group-item-padding-y: 5px;
+      --bs-list-group-item-padding-x: 0px;
+    }
+
+    .card-header h2 {
+      font-size: calc(1.275rem + 0.3vw);
+    }
+  }
 }
 
-.component-container .card-header,
-.blacklight-catalog-show .page-sidebar .card-header h2 {
-  font-size: calc(1.275rem + 0.3vw);
-}
-
-.component-container,
-.card.relations {
-  --bs-border-radius: 4px;
-  padding: 1.5rem 1rem;
-}
 .authentication {
   text-align: center;
-}
-
-.bg-fog-light {
-  background-color: var(--stanford-fog-light);
-}
-
-.card.relations,
-.card.relations > * {
-  border: none !important;
-  --bs-list-group-bg: var(--stanford-fog-light);
-  background-color: var(--stanford-fog-light);
-  --bs-list-group-item-padding-y: 5px;
-  --bs-list-group-item-padding-x: 0px;
-  --bs-card-cap-padding-y: 0px;
-  --bs-card-cap-padding-x: 0px;
 }
 
 .authentication .btn {

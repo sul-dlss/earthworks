@@ -1,0 +1,32 @@
+<div>
+  <h2 class="h4">Access rights</h2>
+  <dl class="mb-0">
+    <% if rights.present? %>
+      <dt>Use and reproduction</dt>
+      <dd>
+        <%= safe_join rights %>
+      </dd>
+    <% end %>
+
+    <% if rights_holder.present? %>
+      <dt>Copyright</dt>
+      <dd>
+        <%= safe_join rights_holder %>
+      </dd>
+    <% end %>
+
+    <% if license_uris.present? %>
+      <dt>License</dt>
+      <dd>
+        <%= render_license %>
+      </dd>
+    <% end %>
+
+    <% if external_links.present? %>
+      <dt>More details at</dt>
+      <dd>
+      <%= render_details_links %>
+    </dd>
+    <% end %>
+  </dl>
+</div>
