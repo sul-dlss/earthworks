@@ -1,13 +1,3 @@
-<% filtered_components = filter_components(components) %>
-<% if filtered_components.any? %>
-  <div class="bg-fog-light component-container rounded">
-    <%= safe_join filtered_components, separator %>
-  </div>
-<% end %>
-
-<% filtered_components = filter_components(secondary_components) %>
-<% if filtered_components.any? %>
-  <div class="bg-fog-light component-container rounded mt-4">
-    <%= safe_join filtered_components, separator %>
-  </div>
-<% end %>
+<div class="bg-fog-light component-container rounded">
+  <%= safe_join filtered_components, separator %>
+</div>

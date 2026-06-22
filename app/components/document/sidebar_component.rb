@@ -9,13 +9,7 @@ module Document
         Geoblacklight::LoginLinkComponent.new(document:),
         StaticMapComponent.new(document:),
         DownloadLinksComponent.new(document:),
-        Blacklight::Document::ShowToolsComponent.new(document:)
-      ]
-    end
-
-    # Second section of the sidebar that displays below the main one
-    def secondary_components
-      [
+        Blacklight::Document::ShowToolsComponent.new(document:),
         AlsoAvailableComponent.new(document:),
         'relations_container',
         Blacklight::Document::MoreLikeThisComponent.new(document:)
@@ -23,7 +17,7 @@ module Document
     end
 
     # Determine if there's actually anything to show by rendering everything
-    def filter_components(components)
+    def filtered_components
       components.map { |component| render component, document: }.compact_blank
     end
 
