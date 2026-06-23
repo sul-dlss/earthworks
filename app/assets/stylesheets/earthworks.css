@@ -45,24 +45,17 @@ header .container,
   margin-left: 2.3rem;
 }
 
-.component-container .card,
-.component-container .card-header,
-.component-container .card-body,
-.component-container .list-group,
-.component-container .list-group-item {
-  background-color: inherit;
-  border: none !important;
-  padding: 0px !important;
-  margin: 0px !important;
+.component-container {
+  & > * + * {
+    border-top: 1px dotted
+      color-mix(in srgb, var(--bs-body-color), transparent 80%);
+    padding-top: 1rem;
+  }
 }
 
 .component-container .card-header,
 .blacklight-catalog-show .page-sidebar .card-header h2 {
   font-size: calc(1.275rem + 0.3vw);
-}
-
-.component-container li a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
 }
 
 .component-container,
@@ -388,7 +381,7 @@ body {
 [data-controller="downloads"] .text-break {
   text-transform: capitalize;
 
-  &:nth-of-type(n+2) {
+  &:nth-of-type(n + 2) {
     padding-top: 0.5rem;
   }
 

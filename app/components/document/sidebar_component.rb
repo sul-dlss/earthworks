@@ -9,7 +9,7 @@ module Document
         Geoblacklight::LoginLinkComponent.new(document:),
         StaticMapComponent.new(document:),
         DownloadLinksComponent.new(document:),
-        Blacklight::Document::ShowToolsComponent.new(document:),
+        ShowToolsComponent.new(document:),
         AlsoAvailableComponent.new(document:),
         'relations_container',
         Blacklight::Document::MoreLikeThisComponent.new(document:)
@@ -19,11 +19,6 @@ module Document
     # Determine if there's actually anything to show by rendering everything
     def filtered_components
       components.map { |component| render component, document: }.compact_blank
-    end
-
-    # Rendered in between each component
-    def separator
-      content_tag :hr, nil, style: 'border-top: dotted 1px;'
     end
   end
 end

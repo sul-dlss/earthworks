@@ -1,0 +1,10 @@
+<div class="show-tools">
+  <h2 class="h4"><%= t('blacklight.tools.title') %></h2>
+  <%= render Blacklight::Document::ActionsComponent.new(document: document,
+                                                        tag: 'ul',
+                                                        classes: 'list-unstyled',
+                                                        wrapping_tag: 'li',
+                                                        wrapping_classes: '',
+                                                        actions: actions,
+                                                        url_opts: Blacklight::Parameters.sanitize(params.to_unsafe_h)) %>
+</div>

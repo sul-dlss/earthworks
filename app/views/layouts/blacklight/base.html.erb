@@ -70,10 +70,15 @@
     <%= preload_link_tag "https://cdn.jsdelivr.net/npm/ol@8.1.0/ol.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
 
     <!-- main app styles -->
-    <%= stylesheet_link_tag "geoblacklight", media: "all", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "earthworks", media: "all", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/sul.css" %>
-    <%= stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" %>
+    <style>
+      @layer framework, components, local;
+      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css")
+      layer(framework);
+      @import url("<%= stylesheet_url("geoblacklight") %>") layer(framework);
+      @import url("https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/sul.css")
+      layer(components);
+      @import url("<%= stylesheet_url("earthworks") %>") layer(local);
+    </style>
 
     <!-- scripts -->
     <% if defined? Importmap %>
