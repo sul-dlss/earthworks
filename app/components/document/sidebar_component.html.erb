@@ -1,3 +1,5 @@
 <div class="bg-fog-light component-container rounded">
-  <%= safe_join filtered_components %>
+  <% components.each do |component| %>
+    <%= render component, document: %>
+  <% end %>
 </div>

@@ -15,10 +15,5 @@ module Document
         Blacklight::Document::MoreLikeThisComponent.new(document:)
       ]
     end
-
-    # Determine if there's actually anything to show by rendering everything
-    def filtered_components
-      components.map { |component| render component, document: }.compact_blank
-    end
   end
 end
