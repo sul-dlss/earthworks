@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   end
 
   get '/catalog/:id/code_snippet' => 'catalog#code_snippet'
-  get 'restricted_proxy/geoserver/:webservice' => 'restricted_proxy#access'
 
   devise_for :users, skip: %i[registrations passwords sessions]
   devise_scope :user do

@@ -313,10 +313,6 @@ newrelic_app_name: "should be specific to stage and prod"
 newrelic_license_key: "this is private"
 newrelic_enabled: false
 
-# Geoserver URLs
-proxy_url: "http://www.example.com/restricted"
-restricted_url: "http://www.example-services.com"
-
 # Server used for background jobs
 redis_url: "redis://localhost:6379/"
 
@@ -324,8 +320,6 @@ IIIF_DRAG_DROP_LINK: "@manifest?manifest=@manifest"
 
 cors:
   allow_origin_url: "https://embed-stage.stanford.edu"
-
-geo_proxy_secret: "my$ecretK3y"
 
 ## Indexing settings
 

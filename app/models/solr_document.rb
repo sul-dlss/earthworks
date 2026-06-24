@@ -1,7 +1,6 @@
 class SolrDocument
   include Blacklight::Solr::Document
   include Geoblacklight::SolrDocument
-  include WmsRewriteConcern
 
   alias stanford? same_institution?
 
