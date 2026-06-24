@@ -11,9 +11,9 @@ module Document
         DownloadLinksComponent.new(document:),
         ShowToolsComponent.new(document:),
         AccessComponent.new(document:),
-        AlsoAvailableComponent.new(document:),
         'relations_container',
-        Blacklight::Document::MoreLikeThisComponent.new(document:)
+        Blacklight::Document::MoreLikeThisComponent.new(document:),
+        AlsoAvailableComponent.new(document:)
       ]
     end
   end
