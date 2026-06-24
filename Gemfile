@@ -60,9 +60,9 @@ group :production do
   gem 'pg'
 end
 
-gem 'blacklight', '~> 8.6'
+gem 'blacklight', '~> 9.0'
 gem 'rsolr' # required for Blacklight
-gem 'geoblacklight', '~> 5'
+gem 'geoblacklight', '~> 6.0.0.alpha'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
@@ -76,7 +76,6 @@ gem 'sidekiq', '~> 8.0'
 gem 'whenever', require: false
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
-gem "cssbundling-rails", "~> 1.4"
 gem "importmap-rails", "~> 2.0"
 gem "stimulus-rails", "~> 1.3"
 gem "turbo-rails", "~> 2.0"

@@ -65,15 +65,20 @@
     >
 
     <!-- viewer styles (non-render-blocking; deferred) -->
-    <%= preload_link_tag "https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
     <%= preload_link_tag "https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
     <%= preload_link_tag "https://cdn.jsdelivr.net/npm/ol@8.1.0/ol.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
 
     <!-- main app styles -->
     <style>
       @layer framework, components, local;
+      @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css)
+      layer(framework);
+      @import url("https://cdn.jsdelivr.net/npm/blacklight-frontend@9.0.0/app/assets/builds/blacklight.min.css") layer(framework);
       @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css")
       layer(framework);
+      @import url("https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css")
+      layer(framework);
+      @import url("https://cdn.jsdelivr.net/npm/blacklight-frontend@8.12.3/app/assets/builds/blacklight.min.css") layer(framework);
       @import url("<%= stylesheet_url("geoblacklight") %>") layer(framework);
       @import url("https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/sul.css")
       layer(components);
