@@ -63,7 +63,6 @@ end
 gem 'blacklight', '~> 8.6'
 gem 'rsolr' # required for Blacklight
 gem 'geoblacklight', '~> 5'
-gem 'faraday', '~> 2.0'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'
