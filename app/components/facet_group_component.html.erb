@@ -1,40 +1,18 @@
-<% # main container for facets/limits menu -%>
+<%# main container for facets/limits menu -%>
 <div class="d-lg-none d-block" data-controller="maptogglebutton" data-maptogglebutton-searchmapcontainer-outlet=".results-map-container">
   <button class="btn btn-outline-primary col-12" data-action="maptogglebutton#toggleMap">
     <i class="bi bi-map"></i>
     <span>Search using map</span>
   </button>
 </div>
-<%= content_tag :div, id: @id,  class: 'facets sidenav facets-toggleable-sm' do %>
+<%= content_tag :div, id: @id,  class: container_classes do %>
   <div class="facets-header">
-    <%= content_tag :h2, @title, class: 'facets-heading d-none d-md-block' if @title %>
-    <%= content_tag :button,
-      class: 'btn btn-outline-primary facet-toggle-button d-block d-md-none col-12',
-      type: 'button',
-      data: {
-        toggle: 'collapse',
-        target: "##{@panel_id}",
-        'bs-toggle': 'collapse',
-        'bs-target': "##{@panel_id}"
-      },
-      aria: {
-        controls: @panel_id,
-        expanded: 'false',
-      } do %>
-      <span data-show-label>
-        <i class="bi bi-sliders me-1"></i><%= @title %>
-      </span>
-      </span>
-      <span data-hide-label>
-        <span class="float-start">
-          <i class="bi bi-sliders me-1"></i><%= @title %>
-        </span>
-        <i class="bi bi-x float-end"></i>
-      </span>
-    <% end %>
+    <%= content_tag :h2, @title, class: header_classes if @title %>
+
+    <%= collapse_toggle_button(@panel_id) %>
   </div>
 
-  <div id="<%= @panel_id %>" class="facets-collapse collapse">
+  <div id="<%= @panel_id %>" class="<%= body_classes %>">
     <%= body %>
   </div>
 <% end %>

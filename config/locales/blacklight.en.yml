@@ -1,20 +1,24 @@
 en:
   blacklight:
-    application_name: 'EarthWorks'
-    back_to_search: 'Back to search results'
+    application_name: "EarthWorks"
+    back_to_search: "Back to search results"
     search:
+      facets:
+        group:
+          close: Hide facets
+          open: Limit your search
       filters:
-        title: 'Your selections: '
+        title: "Your selections: "
       form:
         search:
-          label: 'search for'
+          label: "search for"
           placeholder: 'Try "groundwater"'
       show:
-        title: '%{document_title} in %{application_name}'
-        label: '%{label}'
-      start_over: 'Clear all'
+        title: "%{document_title} in %{application_name}"
+        label: "%{label}"
+      start_over: "Clear all"
       fields:
-        search: 'Keywords'
+        search: "Keywords"
       bookmarks:
         present: "Bookmarked"
         absent: "Bookmark"
@@ -22,12 +26,12 @@ en:
       per_page:
         label: '%{count}<span class="sr-only visually-hidden"> per page</span>'
         button_label_html: '%{count}<span class="d-sm-inline"> per page</span>'
-        title: 'Number of results to display per page'
-        submit: 'Update'
-        aria_label: 'Results navigation'
+        title: "Number of results to display per page"
+        submit: "Update"
+        aria_label: "Results navigation"
       sort:
         label_html: 'Sort<span class="d-sm-inline"> by %{field}</span>'
-        submit: 'sort results'
+        submit: "sort results"
     tools:
       citation: Cite
-      title: 'Other options'
+      title: "Other options"

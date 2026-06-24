@@ -46,6 +46,8 @@ class CatalogController < ApplicationController
     # When set to true, Blacklight uses container-fluid as the layout container
     config.full_width_layout = true
 
+    config.advanced_search.enabled = false
+
     # GeoBlacklight Defaults
     # * Adds the "map" split view for catalog#index
     config.view.split(partials: ['index'])
@@ -113,8 +115,7 @@ class CatalogController < ApplicationController
 
     # DEFAULT FACETS
     # to add additional facets, use the keys defined in the settings.yml file
-    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8,
-                                                           item_component: Geoblacklight::IconFacetItemComponent
+    config.add_facet_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', limit: 8
     config.add_facet_field Settings.FIELDS.RESOURCE_TYPE, label: 'Genre/Data Type', limit: 8
     config.add_facet_field Settings.FIELDS.THEME, label: 'Theme', limit: 8
     config.add_facet_field Settings.FIELDS.SPATIAL_COVERAGE, label: 'Location', limit: 8
@@ -127,10 +128,8 @@ class CatalogController < ApplicationController
 
     config.add_facet_field Settings.FIELDS.CREATOR, label: 'Author', limit: 8
     config.add_facet_field Settings.FIELDS.PUBLISHER, label: 'Publisher', limit: 8
-    config.add_facet_field Settings.FIELDS.PROVIDER, label: 'Provider', limit: 8,
-                                                     item_component: Geoblacklight::IconFacetItemComponent
-    config.add_facet_field Settings.FIELDS.ACCESS_RIGHTS, label: 'Access', limit: 8,
-                                                          item_component: Geoblacklight::IconFacetItemComponent
+    config.add_facet_field Settings.FIELDS.PROVIDER, label: 'Provider', limit: 8
+    config.add_facet_field Settings.FIELDS.ACCESS_RIGHTS, label: 'Access', limit: 8
 
     # GEOBLACKLIGHT APPLICATION FACETS
 

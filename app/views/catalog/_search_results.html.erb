@@ -1,0 +1,30 @@
+<%# overridden from Blacklight to remove the Search header component. We render it in document_split instead %>
+<% @page_title = t('blacklight.search.page_title.title', constraints: render_search_to_page_title(search_state), application_name: application_name) %>
+
+<% content_for(:head) do -%>
+  <%= render 'catalog/opensearch_response_metadata', response: @response %>
+  <%= rss_feed_link_tag %>
+  <%= atom_feed_link_tag %>
+  <%= json_api_link_tag %>
+<% end %>
+
+<% content_for(:skip_links) do -%>
+  <%= render Blacklight::SkipLinkItemComponent.new(text: t('blacklight.skip_links.first_result'), href: '#documents') %>
+<% end %>
+
+<% content_for(:container_header) do -%>
+  <%= render 'search_results_header' %>
+  <%= render blacklight_config.view_config(document_index_view_type).constraints_component.new(search_state: search_state) %>
+<% end %>
+
+<h2 class="visually-hidden"><%= t('blacklight.search.search_results') %></h2>
+
+<%- if @response.empty? %>
+  <%= render "zero_results" %>
+<%- elsif render_grouped_response? %>
+  <%= render 'group' %>
+<%- else %>
+  <%= render_document_index @response.documents %>
+<%- end %>
+
+<%= render 'results_pagination' %>
