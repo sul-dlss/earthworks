@@ -11,11 +11,4 @@ module EarthworksGeoblacklightHelper
       Array(args[:value]).flatten.collect { |v| concat tag.p(v) }
     end
   end
-
-  # Try to render a human-readable license description, or fall back to the URI
-  def render_license(args)
-    tag.span @document.license.description
-  rescue License::UnknownLicenseError
-    tag.span args[:value]
-  end
 end

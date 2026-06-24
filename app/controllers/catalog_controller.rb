@@ -191,17 +191,6 @@ class CatalogController < ApplicationController
     config.add_show_field Settings.FIELDS.RESOURCE_CLASS, label: 'Resource Class', itemprop: 'class',
                                                           link_to_facet: true
     config.add_show_field Settings.FIELDS.RESOURCE_TYPE, label: 'Resource Type', itemprop: 'type', link_to_facet: true
-    # config.add_show_field Settings.FIELDS.FORMAT, label: 'Format', itemprop: 'format'
-    config.add_show_field Settings.FIELDS.RIGHTS, label: 'Use and Reproduction', itemprop: 'rights'
-    config.add_show_field Settings.FIELDS.RIGHTS_HOLDER, label: 'Copyright', itemprop: 'rights_holder'
-    config.add_show_field Settings.FIELDS.LICENSE, label: 'License', itemprop: 'license', helper_method: :render_license
-    config.add_show_field(
-      Settings.FIELDS.IDENTIFIER,
-      label: 'More details at',
-      accessor: [:external_links],
-      if: proc { |_, _, doc| doc.external_links.any? },
-      helper_method: :render_details_links
-    )
 
     # ADDITIONAL FIELDS
     # The following fields are not user friendly and are not set to appear on the item show page.
