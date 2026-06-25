@@ -21,18 +21,19 @@
 
 set :output, 'log/cron.log'
 
-every 1.day, at: '1:04 am', roles: %i[cron] do
-  rake 'rake earthworks:clear_download_cache_stale_files'
+every :day, at: '1:04 am', roles: %i[cron] do
+  rake 'earthworks:clear_download_cache_stale_files'
 end
 
-every 1.day, at: '3:04 am', roles: %i[cron] do
-  rake 'rake earthworks:prune_old_guest_user_data[3]'
+every :day, at: '3:04 am', roles: %i[cron] do
+  rake 'earthworks:prune_old_guest_user_data[3]'
 end
 
-every 1.day, at: '4:04 am', roles: %i[cron] do
-  rake 'rake earthworks:prune_old_search_data[14]'
+every :day, at: '4:04 am', roles: %i[cron] do
+  rake 'earthworks:prune_old_search_data[14]'
 end
 
-every 1.day, at: '5:04 am', roles: %i[cron] do
-  rake 'geocombine:pull geocombine:index', environment_variable: 'OGM_PATH=/opt/app/geostaff/opengeometadata RAILS_ENV'
+every :day, at: '5:04 am', roles: %i[cron] do
+  rake 'geocombine:pull', environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
+  rake 'geocombine:index', environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
 end
