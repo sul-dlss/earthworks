@@ -11,12 +11,6 @@ BBOX_WITHIN_BOOST: "10"
 # The bf boost value for overlap ratio
 OVERLAP_RATIO_BOOST: "2"
 
-# Homepage Map Geometry
-# Leave null to default to entire world
-# Add a stringified GeoJSON object to scope initial render (example from UMass)
-HOMEPAGE_MAP_GEOM: null
-# HOMEPAGE_MAP_GEOM: '{"type":"Polygon","coordinates":[[[-73.58,42.93],[-73.58,41.20],[-69.90,41.20],[-69.90,42.93]]]}'
-
 # Non-search-field GeoBlacklight application permitted params
 GBL_PARAMS:
   - :bbox
@@ -83,9 +77,6 @@ FIELDS:
   :VERSION: "dct_isVersionOf_sm"
   :WXS_IDENTIFIER: "gbl_wxsIdentifier_s"
 
-# Institution deployed at
-INSTITUTION: "Stanford"
-
 # Metadata shown in tool panel
 METADATA_SHOWN:
   - "mods"
@@ -95,44 +86,6 @@ METADATA_SHOWN:
 
 # (For external Download) timeout and open_timeout parameters for Faraday
 TIMEOUT_DOWNLOAD: 16
-
-# (For WMS inspection) timeout and open_timeout parameters for Faraday
-TIMEOUT_WMS: 4
-
-# Web services shown in tool panel
-WEBSERVICES_SHOWN:
-  - "wms"
-  - "tms"
-  - "wfs"
-  - "xyz"
-  - "wmts"
-  - "tilejson"
-  - "iiif"
-  - "feature_layer"
-  - "tiled_map_layer"
-  - "dynamic_map_layer"
-  - "image_map_layer"
-  - "cog"
-  - "pmtiles"
-
-# Display Notes to display / Non-prefixed default bootstrap class is alert-secondary
-DISPLAY_NOTES_SHOWN:
-  danger:
-    bootstrap_alert_class: alert-danger
-    icon: fire-solid
-    note_prefix: "Danger: "
-  info:
-    bootstrap_alert_class: alert-info
-    icon: circle-info-solid
-    note_prefix: "Info: "
-  tip:
-    bootstrap_alert_class: alert-success
-    icon: lightbulb-solid
-    note_prefix: "Tip: "
-  warning:
-    bootstrap_alert_class: alert-warning
-    icon: triangle-exclamation-solid
-    note_prefix: "Warning: "
 
 # Relationships to display
 RELATIONSHIPS_SHOWN:
@@ -216,16 +169,6 @@ DOWNLOAD_FORMATS:
     - "CSV"
     - "GeoJSON"
 
-# WMS Parameters
-WMS_PARAMS:
-  :SERVICE: "WMS"
-  :VERSION: "1.1.1"
-  :REQUEST: "GetFeatureInfo"
-  :STYLES: ""
-  :SRS: "EPSG:4326"
-  :EXCEPTIONS: "application/json"
-  :INFO_FORMAT: "application/json"
-
 # Settings for leaflet
 LEAFLET:
   MAP:
@@ -251,27 +194,6 @@ LEAFLET:
         color: "yellow"
   SLEEP:
     SLEEP: false
-
-# Toggle the help text feature that offers users context
-HELP_TEXT:
-  viewer_protocol:
-    - "dynamic_map_layer"
-    - "feature_layer"
-    - "iiif"
-    - "iiif_manifest"
-    - "image_map_layer"
-    - "index_map"
-    - "tiled_map_layer"
-    - "wms"
-    - "tms"
-    - "oembed"
-    - "pmtiles"
-    - "cog"
-
-# Enable catalog#show sidebar static map for items with the following viewer protocols
-SIDEBAR_STATIC_MAP:
-  - "iiif"
-  - "iiif_manifest"
 
 # Search engine settings
 bing_site_verification: "4E61263975C6ABBF2ECE5A8CA5E592B7"
@@ -309,8 +231,6 @@ newrelic_enabled: false
 
 # Server used for background jobs
 redis_url: "redis://localhost:6379/"
-
-IIIF_DRAG_DROP_LINK: "@manifest?manifest=@manifest"
 
 cors:
   allow_origin_url: "https://embed-stage.stanford.edu"
