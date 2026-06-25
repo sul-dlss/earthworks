@@ -11,7 +11,7 @@ module Document
         DownloadLinksComponent.new(document:),
         ShowToolsComponent.new(document:),
         AccessComponent.new(document:),
-        'relations_container',
+        Geoblacklight::Document::RelationsContainerComponent.new(document:),
         Blacklight::Document::MoreLikeThisComponent.new(document:),
         AlsoAvailableComponent.new(document:)
       ]
