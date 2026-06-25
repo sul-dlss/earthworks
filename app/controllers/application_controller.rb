@@ -22,6 +22,6 @@ class ApplicationController < ActionController::Base
 
   def allow_geoblacklight_params
     # Blacklight::Parameters will pass these to params.permit
-    blacklight_config.search_state_fields.append(Settings.GBL_PARAMS)
+    blacklight_config.search_state_fields.append(Geoblacklight.configuration.gbl_params)
   end
 end

@@ -9,11 +9,11 @@ class SolrDocument
   attribute :license_uris, :array, :dct_license_sm
 
   def dataset?
-    fetch(Settings.FIELDS.RESOURCE_CLASS, []).include?('Datasets')
+    fetch(Geoblacklight.configuration.fields.resource_class, []).include?('Datasets')
   end
 
   def external_links
-    fetch(Settings.FIELDS.IDENTIFIER, []).filter { |identifier| identifier.start_with?('http') }
+    fetch(Geoblacklight.configuration.fields.identifier, []).filter { |identifier| identifier.start_with?('http') }
   end
 
   # Examine the list of references (in dct_references_s) to find a "schema.org/relatedLink"

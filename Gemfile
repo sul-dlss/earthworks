@@ -62,7 +62,7 @@ end
 
 gem 'blacklight', '~> 9.0'
 gem 'rsolr' # required for Blacklight
-gem 'geoblacklight', '~> 6.0.0.alpha'
+gem 'geoblacklight', github: 'geoblacklight/geoblacklight'
 gem "devise"
 gem "devise-guests", ">= 0.3.3"
 gem 'devise-remote-user'

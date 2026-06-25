@@ -101,19 +101,19 @@ class CodeSnippetModalComponent < ViewComponent::Base
   end
 
   def vector_data?
-    return false unless @document.key?(Settings.FIELDS.RESOURCE_TYPE)
+    return false unless @document.key?(Geoblacklight.configuration.fields.resource_type)
 
     vector_types = ['polygon data', 'point data', 'line data', 'index maps',
                     'vector data']
 
     # If the intersection of these arrays is not empty, then there is at least one vector type value
-    !!@document[Settings.FIELDS.RESOURCE_TYPE].map(&:downcase).intersect?(vector_types)
+    !!@document[Geoblacklight.configuration.fields.resource_type].map(&:downcase).intersect?(vector_types)
   end
 
   def raster_data?
-    return false unless @document.key?(Settings.FIELDS.RESOURCE_TYPE)
+    return false unless @document.key?(Geoblacklight.configuration.fields.resource_type)
 
-    @document[Settings.FIELDS.RESOURCE_TYPE].map(&:downcase).include?('raster data')
+    @document[Geoblacklight.configuration.fields.resource_type].map(&:downcase).include?('raster data')
   end
 
   def code_sample_file_name(language)
