@@ -17,11 +17,12 @@ class RecentlyAddedListComponent < ViewComponent::Base
   end
 
   def search_params
+    fields = Geoblacklight.configuration.fields
     {
       'fq' => @fq,
       'sort' => @sort,
       'rows' => @rows,
-      'fl' => [Settings.FIELDS.TITLE, Settings.FIELDS.ID, Settings.FIELDS.RESOURCE_TYPE]
+      'fl' => [fields.title, fields.id, fields.resource_type]
     }
   end
 
