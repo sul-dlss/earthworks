@@ -5,9 +5,6 @@ ARCGIS_BASE_URL: "https://www.arcgis.com/home/webmap/viewer.html"
 DOWNLOAD_PATH: "./tmp/cache/downloads"
 download_cache_expiry_time_days: 14 # the number of days since a download was last accessed before it is removed from the cache
 
-# Main Solr geometry field used for spatial search and bounding box. Should be type 'rpt'
-GEOMETRY_FIELD: "solr_geom"
-
 # The bq boost value for spatial search matches within a bounding box
 BBOX_WITHIN_BOOST: "10"
 
@@ -101,9 +98,6 @@ TIMEOUT_DOWNLOAD: 16
 
 # (For WMS inspection) timeout and open_timeout parameters for Faraday
 TIMEOUT_WMS: 4
-
-# Use the geometry type for the data relations icon
-USE_GEOM_FOR_RELATIONS_ICON: true
 
 # Web services shown in tool panel
 WEBSERVICES_SHOWN:
