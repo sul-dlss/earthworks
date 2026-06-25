@@ -1,9 +1,4 @@
 namespace :earthworks do
-  desc 'Install EarthWorks'
-  task install: [:environment] do
-    Rake::Task['db:migrate'].invoke
-  end
-
   desc 'Index test fixtures'
   task :fixtures do
     # Index all of Geoblacklight's built-in fixtures
