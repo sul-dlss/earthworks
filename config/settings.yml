@@ -1,6 +1,3 @@
-# ArcGIS Online Base URL
-ARCGIS_BASE_URL: "https://www.arcgis.com/home/webmap/viewer.html"
-
 # the number of days since a download was last accessed before it is removed from the cache
 download_cache_expiry_time_days: 14
 
