@@ -16,17 +16,6 @@ namespace :earthworks do
     Blacklight.default_index.connection.commit
   end
 
-  desc 'Run an EarthWorks server'
-  task :server, [:rails_server_args] do |_t, args|
-    Rake::Task['db:migrate'].invoke
-    SolrWrapper.wrap do |solr|
-      solr.with_collection(name: 'blacklight-core', dir: "#{Rails.root}/config/solr_configs") do
-        Rake::Task['geoblacklight:index:seed'].invoke
-        system "bundle exec rails s #{args[:rails_server_args]}"
-      end
-    end
-  end
-
   desc 'Prune old guest users from the database'
   task :prune_old_guest_user_data, [:months_old] => [:environment] do |_t, args|
     # rubocop:disable Layout/MultilineMethodCallIndentation
