@@ -1,134 +1,72 @@
 <!DOCTYPE html>
 
 <%= content_tag :html, class: 'no-js', **html_tag_attributes do %>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    >
-
-    <meta
-      name="google-site-verification"
-      content="<%= Settings.google_site_verification %>"
->
-
-    <meta
-      name="msvalidate.01"
-      content="<%= Settings.bing_site_verification %>"
->
-
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-ZL7MQNBFW9"
-    ></script>
-
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag('js', new Date());
-
-      const config = {};
-      <% if Settings.analytics_debug %>
-        config.debug_mode = true
-      <% end %>
-
-      gtag('config', 'G-ZL7MQNBFW9', config)
-    </script>
-
-    <title><%= render_page_title %></title>
-
-    <script>
-      document.querySelector('html').classList.remove('no-js');
-    </script>
-
-    <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
-
-    <link
-      rel="icon"
-      href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/icon.png"
-      type="image/png"
-    >
-
-    <link
-      rel="icon"
-      href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/icon.svg"
-      type="image/svg+xml"
-    >
-
-    <link
-      rel="apple-touch-icon"
-      href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/icon.png"
-    >
-
-    <!-- viewer styles (non-render-blocking; deferred) -->
-    <%= preload_link_tag "https://cdn.jsdelivr.net/npm/leaflet-fullscreen@1.0.2/dist/leaflet.fullscreen.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
-    <%= preload_link_tag "https://cdn.jsdelivr.net/npm/ol@8.1.0/ol.css", as: "style", onload: "this.onload=null;this.rel='stylesheet'" %>
-
-    <!-- main app styles -->
-    <style>
-      @layer framework, components, local;
-      @import url(https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css)
-      layer(framework);
-      @import url("https://cdn.jsdelivr.net/npm/blacklight-frontend@9.0.0/app/assets/builds/blacklight.min.css") layer(framework);
-      @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css")
-      layer(framework);
-      @import url("https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css")
-      layer(framework);
-      @import url("https://cdn.jsdelivr.net/npm/blacklight-frontend@8.12.3/app/assets/builds/blacklight.min.css") layer(framework);
-      @import url("<%= stylesheet_url("geoblacklight") %>") layer(framework);
-      @import url("https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/sul.css")
-      layer(components);
-      @import url("<%= stylesheet_url("earthworks") %>") layer(local);
-    </style>
-
-    <!-- scripts -->
-    <% if defined? Importmap %>
-      <%= javascript_importmap_tags %>
-    <% elsif defined? Propshaft %>
-      <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <% else %>
-      <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-      <%= javascript_include_tag "blacklight/blacklight", type: 'module' %>
-      <script type="module">
-        import githubAutoCompleteElement from 'https://cdn.jsdelivr.net/npm/@github/auto-complete-element@3.8.0/+esm';
-      </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-site-verification" content="<%= Settings.google_site_verification %>">
+  <meta name="msvalidate.01" content="<%= Settings.bing_site_verification %>">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZL7MQNBFW9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    
+    const config = {};
+    <% if Settings.analytics_debug %>
+    config.debug_mode = true
     <% end %>
+    
+    gtag('config', 'G-ZL7MQNBFW9', config)
+  </script>
 
-    <%= csrf_meta_tags %>
-    <%= content_for(:head) %>
-  </head>
+  <title><%= render_page_title %></title>
 
-  <body class="<%= render_body_class %>">
-    <%= render blacklight_config.skip_link_component.new do %>
-      <%= content_for(:skip_links) %>
-    <% end %>
+  <script>
+    document.querySelector("html").classList.remove("no-js");
+  </script>
 
-    <%= render GlobalAlertComponent.new(Settings.local_alert || GlobalAlerts::Alert.active) if Settings.global_alert %>
+  <%= opensearch_description_tag application_name, opensearch_catalog_url(format: 'xml') %>
 
-    <%= render blacklight_config.header_component.new(blacklight_config: blacklight_config) do |c| %>
-      <%= c.with_top_bar(component: TopNavbarComponent) %>
-    <% end %>
+  <!-- app icon -->
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/icon.png" type="image/png">
+  <link rel="icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/icon.png">
 
-    <main
-      id="main-container"
-      class="<%= container_classes %>"
-      role="main"
-      aria-label="<%= t('blacklight.main.aria.main_container') %>"
-    >
-      <%= content_for(:container_header) %>
+  <!-- styles -->
+  <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
 
-      <%= render partial: 'shared/flash_msg', layout: 'shared/flash_messages' %>
+  <!-- scripts -->
+  <%= javascript_importmap_tags %>
+  <%= csrf_meta_tags %>
+  <%= content_for(:head) %>
+</head>
 
-      <div class="row">
-        <%= content_for?(:content) ? yield(:content) : yield %>
-      </div>
-    </main>
+<body class="<%= render_body_class %>">
+  <%= render blacklight_config.skip_link_component.new do %>
+    <%= content_for(:skip_links) %>
+  <% end %>
+  
+  <%= render GlobalAlertComponent.new(Settings.local_alert || GlobalAlerts::Alert.active) if Settings.global_alert %>
+  
+  <%= render blacklight_config.header_component.new(blacklight_config: blacklight_config) do |c| %>
+    <%= c.with_top_bar(component: TopNavbarComponent) %>
+  <% end %>
 
-    <%= render 'shared/footer' %>
-    <%= render 'shared/modal' %>
-  </body>
+  <main id="main-container" class="<%= container_classes %>" role="main" aria-label="<%= t('blacklight.main.aria.main_container') %>">
+    <%= content_for(:container_header) %>
+    <%= render 'shared/flash_msg', layout: 'shared/flash_messages' if flash.any? %>
+
+    <div class="row">
+      <%= content_for?(:content) ? yield(:content) : yield %>
+    </div>
+  </main>
+
+  <%= render 'shared/footer' %>
+  <%= render 'shared/modal' %>
+</body>
 <% end %>

@@ -1,0 +1,7 @@
+@layer framework, components, local;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css") layer(framework);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css") layer(framework);
+@import url("blacklight.css") layer(framework);
+@import url("geoblacklight.css") layer(framework);
+@import url("https://cdn.jsdelivr.net/gh/sul-dlss/component-library@v2025-09-11/styles/sul.css") layer(components);
+@import url("earthworks.css") layer(local);
