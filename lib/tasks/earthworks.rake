@@ -1,9 +1,4 @@
 namespace :earthworks do
-  desc 'Install EarthWorks'
-  task install: [:environment] do
-    Rake::Task['db:migrate'].invoke
-  end
-
   desc 'Index test fixtures'
   task :fixtures do
     # Index all of Geoblacklight's built-in fixtures
@@ -14,17 +9,6 @@ namespace :earthworks do
     docs = Dir[fixtures_path].map { |file| JSON.parse(File.read(file)) }
     Blacklight.default_index.connection.add docs
     Blacklight.default_index.connection.commit
-  end
-
-  desc 'Run an EarthWorks server'
-  task :server, [:rails_server_args] do |_t, args|
-    Rake::Task['db:migrate'].invoke
-    SolrWrapper.wrap do |solr|
-      solr.with_collection(name: 'blacklight-core', dir: "#{Rails.root}/config/solr_configs") do
-        Rake::Task['geoblacklight:index:seed'].invoke
-        system "bundle exec rails s #{args[:rails_server_args]}"
-      end
-    end
   end
 
   desc 'Prune old guest users from the database'
