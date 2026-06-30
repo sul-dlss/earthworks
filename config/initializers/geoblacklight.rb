@@ -8,9 +8,14 @@ leaflet.bounds_overlay = {
   STATIC_MAP: { color: '#175E54' }
 }
 leaflet.layers.index = {
-  DEFAULT: { color: '#006CB8', weight: 1, radius: 4 },
-  UNAVAILABLE: { color: '#B1040E', weight: 1, radius: 4 },
-  SELECTED: { color: 'yellow', weight: 1, radius: 4 }
+  DEFAULT: { color: '#006CB8' },
+  UNAVAILABLE: { color: '#B1040E' },
+  SELECTED: { color: 'yellow' }
 }
 leaflet.sleep.sleep = false
+
+# We don't have "KMZ" downloads
 config.vector_download_formats = %w[Shapefile CSV GeoJSON]
+
+# (For external Download) timeout and open_timeout parameters for Faraday
+config.timeout_download = 16
