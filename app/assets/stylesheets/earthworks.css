@@ -170,6 +170,10 @@ header .container,
   --bs-navbar-padding-y: 1rem;
 }
 
+.navbar-logo {
+  background-image: none; /* override blacklight logo */
+}
+
 /* Search bar outside of homepage: override GBL to set a smaller max-width */
 .navbar-search .search-query-form {
   @media (min-width: 768px) {
