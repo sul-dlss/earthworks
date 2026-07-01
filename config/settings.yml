@@ -1,12 +1,6 @@
 # the number of days since a download was last accessed before it is removed from the cache
 download_cache_expiry_time_days: 14
 
-# (For external Download) timeout and open_timeout parameters for Faraday
-TIMEOUT_DOWNLOAD: 16
-
-# Settings for leaflet
-# (customized in config/initializers/geoblacklight.rb; GeoBlacklight defaults otherwise apply)
-
 # Search engine settings
 bing_site_verification: "4E61263975C6ABBF2ECE5A8CA5E592B7"
 google_site_verification: "654321sitever"

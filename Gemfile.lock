@@ -1,20 +1,3 @@
-GIT
-  remote: https://github.com/geoblacklight/geoblacklight.git
-  revision: cd6cd9a318fe20a4a71976cc2ab6a10a5122c229
-  specs:
-    geoblacklight (6.0.0.pre.alpha.2)
-      blacklight (>= 8.0, < 10)
-      coderay
-      config
-      deprecation
-      faraday (~> 2.0)
-      geo_combine (~> 0.9)
-      mime-types
-      rails (>= 6.1, < 9)
-      rgeo-geojson
-      rsolr
-      zeitwerk
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -247,6 +230,18 @@ GEM
       sanitize
       thor
     geo_coord (0.2.0)
+    geoblacklight (6.0.0.pre.alpha.2)
+      blacklight (>= 8.0, < 10)
+      coderay
+      config
+      deprecation
+      faraday (~> 2.0)
+      geo_combine (~> 0.9)
+      mime-types
+      rails (>= 6.1, < 9)
+      rgeo-geojson
+      rsolr
+      zeitwerk
     git (4.3.2)
       activesupport (>= 5.0)
       addressable (~> 2.8)
@@ -694,7 +689,7 @@ DEPENDENCIES
   ed25519 (~> 1.3)
   factory_bot_rails
   geo_combine (>= 0.9)
-  geoblacklight!
+  geoblacklight (= 6.0.0.pre.alpha.2)
   global_alerts
   honeybadger
   http
