@@ -13,13 +13,10 @@ namespace :earthworks do
 
   desc 'Prune old guest users from the database'
   task :prune_old_guest_user_data, [:months_old] => [:environment] do |_t, args|
-    # rubocop:disable Layout/MultilineMethodCallIndentation
-    old_bookmarkless_guest_users_ids = User.guests_without_bookmarks
-      .where('users.updated_at < :date', { date: args[:months_old].to_i.months.ago })
-      .pluck(:id)
-    # rubocop:enable Layout/MultilineMethodCallIndentation
-
-    User.delete(old_bookmarkless_guest_users_ids)
+    User.guests_without_bookmarks
+        .where('users.updated_at < :date', { date: args[:months_old].to_i.months.ago })
+        .in_batches(of: 1000)
+        .delete_all
   end
 
   desc 'Clean earthworks stale download files'
