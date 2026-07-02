@@ -51,10 +51,20 @@ header .container,
   background-color: var(--stanford-fog-light);
   padding: 1.5rem 1rem;
 
+  & > *:not(:last-child) {
+    padding-bottom: 1rem;
+  }
+
   & > * + * {
     border-top: 1px dotted
       color-mix(in srgb, var(--bs-body-color), transparent 80%);
     padding-top: 1rem;
+  }
+
+  /* Access rights */
+  dl dd:last-child,
+  ul {
+    margin-bottom: 0;
   }
 
   /* this is used for "Collection items" */
