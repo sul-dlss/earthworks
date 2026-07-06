@@ -11,6 +11,11 @@ namespace :earthworks do
     Blacklight.default_index.connection.commit
   end
 
+  desc 'Index from geocombine'
+  task index: [:environment, 'geocombine:index'] do
+    Honeybadger.check_in(Settings.honeybadger.check_in_id)
+  end
+
   desc 'Prune old guest users from the database'
   task :prune_old_guest_user_data, [:months_old] => [:environment] do |_t, args|
     User.guests_without_bookmarks

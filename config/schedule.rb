@@ -35,5 +35,5 @@ end
 
 every :day, at: '5:04 am', roles: %i[cron] do
   rake 'geocombine:pull', environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
-  rake 'geocombine:index', environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
+  rake 'earthworks:index', environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
 end

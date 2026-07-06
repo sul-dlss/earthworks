@@ -68,3 +68,6 @@ purl:
 # Enable/disable global alerts
 # https://github.com/sul-dlss/global_alerts
 global_alert: false
+
+honeybadger:
+  check_in_id: ~
