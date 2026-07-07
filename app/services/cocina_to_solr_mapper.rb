@@ -1,3 +1,4 @@
+# Maps a Cocina record to a Solr document
 class CocinaToSolrMapper
   # @param [CocinaDisplay::CocinaRecord] record
   def self.map(record)
@@ -35,7 +36,7 @@ class CocinaToSolrMapper
     @doc['schema_provider_s'] = 'Stanford'
     @doc['dct_identifier_sm'] = [record.purl_url, record.doi_url].compact
 
-    @doc['gbl_georeferenced_b'] = @doc['dct_title_s'].include?('(Raster Image)')
+    @doc['gbl_georeferenced_b'] = georeferenced?
 
     @doc['gbl_resourceClass_sm'] = map_resource_class
     @doc['gbl_resourceType_sm'] = map_resource_type
@@ -100,47 +101,35 @@ class CocinaToSolrMapper
 
   def map_references
     refs = {}
+
+    # URLs
     refs['http://schema.org/url'] = record.purl_url
+    refs['https://oembed.com'] = record.oembed_url(params: { hide_title: true })
+    refs['http://iiif.io/api/presentation#manifest'] = record.iiif_manifest_url
+    refs['http://schema.org/thumbnailUrl'] = record.thumbnail_url
+    refs['https://schema.org/relatedLink'] = record.searchworks_url
+
+    # Files
+    add_file_reference(refs, 'https://openindexmaps.org', filename: /index_map\.(json|geojson)/)
+    add_file_reference(refs, 'http://www.isotc211.org/schemas/2005/gmd', filename: /iso19139\.xml/)
+    add_file_reference(refs, 'http://www.isotc211.org/schemas/2005/gco', filename: /iso19110\.xml/)
+    add_file_reference(refs, 'http://www.opengis.net/cat/csw/csdgm', filename: /fgdc\.xml/)
+    add_file_reference(refs, 'http://geojson.org/geojson-spec.html', filename: /\.geojson/)
+    add_file_reference(refs, 'https://github.com/protomaps/PMTiles', filename: /\.pmtiles/)
+    add_file_reference(refs, 'https://github.com/cogeotiff/cog-spec', filename: /\.tif/, mime_type: /cloud-optimized/)
+    add_file_reference(refs, 'https://iiif.io/api/extension/georef/1/context.json', use: 'georeference')
+
+    # Whole object download (.zip)
     if record.download_url.present?
       refs['http://schema.org/downloadUrl'] = [{ url: record.download_url, label: 'Zipped object' }]
     end
-    refs['https://oembed.com'] = record.oembed_url(params: { hide_title: true })
-    refs['http://iiif.io/api/presentation#manifest'] = iiif_manifest_url
-    refs['http://schema.org/thumbnailUrl'] = record.thumbnail_url
-    refs['https://schema.org/relatedLink'] = searchworks_url
-    iiif_annotation = record.files(mime_type: %r{^application/json$}, use: 'georeference')
-                            .map { |file| stacks_file_url(file.filename) }.first
-    refs['https://iiif.io/api/extension/georef/1/context.json'] = iiif_annotation
-
-    # Files
-    add_file_reference(refs, /index_map\.(json|geojson)/, 'https://openindexmaps.org')
-    add_file_reference(refs, /iso19139\.xml/, 'http://www.isotc211.org/schemas/2005/gmd')
-    add_file_reference(refs, /iso19110\.xml/, 'http://www.isotc211.org/schemas/2005/gco')
-    add_file_reference(refs, /fgdc\.xml/, 'http://www.opengis.net/cat/csw/csdgm')
-    add_file_reference(refs, /\.geojson/, 'http://geojson.org/geojson-spec.html')
-    add_file_reference(refs, /\.pmtiles/, 'https://github.com/protomaps/PMTiles')
-    add_file_reference(refs, /\.tif/, 'https://github.com/cogeotiff/cog-spec', mime_type: /cloud-optimized/)
 
     refs.compact
   end
 
-  def add_file_reference(refs, filename_regex, reference_type, mime_type: nil)
-    file = record.files.find do |f|
-      f.filename =~ filename_regex && (mime_type.nil? || f.mime_type =~ mime_type)
-    end
-    refs[reference_type] = stacks_file_url(file.filename) if file
-  end
-
-  def stacks_file_url(filename)
-    "https://stacks.stanford.edu/file/druid:#{record.bare_druid}/#{filename}"
-  end
-
-  def iiif_manifest_url
-    "https://purl.stanford.edu/#{record.bare_druid}/iiif/manifest"
-  end
-
-  def searchworks_url
-    "https://searchworks.stanford.edu/view/#{record.bare_druid}"
+  def add_file_reference(refs, reference_type, **)
+    file = record.files(**).first
+    refs[reference_type] = file.download_url if file.present?
   end
 
   def extract_years(values)
@@ -157,5 +146,18 @@ class CocinaToSolrMapper
         "#{century}-#{century + 99}:#{decade}-#{decade + 9}:#{year}"
       ]
     end.uniq
+  end
+
+  # Determine if an object is georeferenced
+  # Used for the gbl_georeferenced_b field:
+  # https://opengeometadata.org/ogm-aardvark/#georeferenced
+  def georeferenced?
+    # All geo items (vector and raster data) are georeferenced
+    return true if record.content_type == 'geo'
+
+    # For other data, only georeferenced if annotations are present
+    return true if record.files(use: 'georeference').any?
+
+    false
   end
 end

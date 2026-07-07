@@ -18,6 +18,7 @@ RSpec.describe CocinaToSolrMapper do
       purl_url: 'https://purl.stanford.edu/abc12345678',
       doi_url: nil,
       all_forms: ['map'],
+      content_type: 'geo',
       genres: [],
       subject_genres: [],
       file_mime_types: [],
@@ -31,16 +32,22 @@ RSpec.describe CocinaToSolrMapper do
       world_access?: true,
       modified_time: Time.zone.parse('2024-01-01'),
       collection?: false,
-      files:,
       download_url: 'https://stacks.stanford.edu/file/druid:abc12345678/data.zip',
       oembed_url: 'https://purl.stanford.edu/abc12345678/embed',
-      thumbnail_url: 'https://stacks.stanford.edu/file/druid:abc12345678/thumb.jpg'
+      thumbnail_url: 'https://stacks.stanford.edu/file/druid:abc12345678/thumb.jpg',
+      iiif_manifest_url: 'https://purl.stanford.edu/abc12345678/iiif3/manifest',
+      searchworks_url: 'https://searchworks.stanford.edu/view/abc12345678'
     )
   end
-  let(:files) { [] }
 
   describe '.map' do
     subject(:doc) { described_class.map(record) }
+
+    let(:references) { JSON.parse(doc['dct_references_s']) }
+
+    before do
+      allow(record).to receive(:files).and_return([])
+    end
 
     it 'maps cocina record to solr document' do
       expect(doc['id']).to eq 'stanford-abc12345678'
@@ -48,6 +55,7 @@ RSpec.describe CocinaToSolrMapper do
       expect(doc['dcat_theme_sm']).to eq ['Agriculture']
       expect(doc['gbl_indexYear_im']).to eq [2024]
       expect(doc['dct_accessRights_s']).to eq 'Public'
+      expect(doc['gbl_georeferenced_b']).to be true
     end
 
     context 'with restricted access' do
@@ -60,14 +68,39 @@ RSpec.describe CocinaToSolrMapper do
       end
     end
 
-    context 'with georeferenced title' do
+    context 'with georeferenced scanned map' do
       before do
-        allow(record).to receive(:display_title).and_return('Test Title (Raster Image)')
+        allow(record).to receive(:files)
+          .with(use: 'georeference')
+          .and_return(
+            [
+              instance_double(
+                CocinaDisplay::Structural::File,
+                use: 'georeference',
+                filename: 'iiif_georeference.json',
+                download_url: 'https://stacks.stanford.edu/file/druid:abc12345678/iiif_georeference.json'
+              )
+            ]
+          )
+        allow(record).to receive(:content_type).and_return('map')
       end
 
-      it 'handles georeferenced title' do
+      it 'is georeferenced' do
         expect(doc['gbl_georeferenced_b']).to be true
-        expect(doc['gbl_resourceClass_sm']).to include 'Datasets'
+      end
+
+      it 'adds the georeference annotation to dct_references_s' do
+        expect(references['https://iiif.io/api/extension/georef/1/context.json']).to eq 'https://stacks.stanford.edu/file/druid:abc12345678/iiif_georeference.json'
+      end
+    end
+
+    context 'with non-georeferenced scanned map' do
+      before do
+        allow(record).to receive(:content_type).and_return('map')
+      end
+
+      it 'is not georeferenced' do
+        expect(doc['gbl_georeferenced_b']).to be false
       end
     end
 
@@ -78,18 +111,6 @@ RSpec.describe CocinaToSolrMapper do
 
       it 'maps dct_format_s to only a single value' do
         expect(doc['dct_format_s']).to eq 'Shapefile'
-      end
-    end
-
-    context 'with IIIF georeference annotations' do
-      let(:files) do
-        [instance_double(CocinaDisplay::Structural::File, mime_type: 'application/json', use: 'georeference',
-                                                          filename: 'iiif_georeference.json')]
-      end
-      let(:json) { JSON.parse(doc['dct_references_s']) }
-
-      it 'is indexed' do
-        expect(json['https://iiif.io/api/extension/georef/1/context.json']).to eq 'https://stacks.stanford.edu/file/druid:abc12345678/iiif_georeference.json'
       end
     end
   end
