@@ -13,9 +13,3 @@ leaflet.layers.index = {
   SELECTED: { color: 'yellow' }
 }
 leaflet.sleep.sleep = false
-
-# We don't have "KMZ" downloads
-config.vector_download_formats = %w[Shapefile CSV GeoJSON]
-
-# (For external Download) timeout and open_timeout parameters for Faraday
-config.timeout_download = 16

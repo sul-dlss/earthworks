@@ -21,10 +21,6 @@
 
 set :output, 'log/cron.log'
 
-every :day, at: '1:04 am', roles: %i[cron] do
-  rake 'earthworks:clear_download_cache_stale_files'
-end
-
 every :day, at: '3:04 am', roles: %i[cron] do
   rake 'earthworks:prune_old_guest_user_data[3]'
 end

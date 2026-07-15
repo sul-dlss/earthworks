@@ -34,13 +34,6 @@ Rails.application.routes.draw do
     concerns :gbl_wms
   end
 
-  concern :gbl_downloadable, Geoblacklight::Routes::Downloadable.new
-  namespace :download do
-    concerns :gbl_downloadable
-  end
-
-  resources :download, only: [:show]
-
   mount Geoblacklight::Engine => 'geoblacklight'
   mount BlacklightDynamicSitemap::Engine => '/'
   concern :exportable, Blacklight::Routes::Exportable.new
