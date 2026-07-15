@@ -72,6 +72,8 @@ header .container,
     --bs-border-width: 0;
     --bs-card-cap-padding-y: 0px;
     --bs-card-cap-padding-x: 0px;
+    --bs-card-bg: transparent;
+    --bs-card-cap-bg: transparent;
 
     .list-group {
       --bs-list-group-bg: var(--stanford-fog-light);
