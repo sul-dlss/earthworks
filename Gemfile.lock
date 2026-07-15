@@ -229,7 +229,7 @@ GEM
       sanitize
       thor
     geo_coord (0.2.0)
-    geoblacklight (6.0.0.pre.alpha.4)
+    geoblacklight (6.0.0.pre.alpha.6)
       blacklight (>= 8.0, < 10)
       coderay
       config
@@ -681,7 +681,7 @@ DEPENDENCIES
   dotenv
   ed25519 (~> 1.3)
   factory_bot_rails
-  geoblacklight (= 6.0.0.pre.alpha.4)
+  geoblacklight (= 6.0.0.pre.alpha.6)
   global_alerts
   honeybadger
   http

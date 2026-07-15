@@ -1,0 +1,6 @@
+<li class="download">
+  <%= link_to url, data: @data do %>
+  <p class="title"><%= title %></p>
+  <% if file_type.present? %><span class="badge text-bg-dark"><%= file_type %></span><% end %>
+  <% end %>
+</li>
