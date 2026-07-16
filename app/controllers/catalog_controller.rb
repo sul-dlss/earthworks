@@ -47,6 +47,9 @@ class CatalogController < ApplicationController
       q: "{!raw f=#{field_config.id} v=$id}"
     }
 
+    # Turn off advanced search
+    config.advanced_search.enabled = false
+
     # GeoBlacklight Defaults
     # * Adds the "map" split view for catalog#index
     config.view.split(partials: ['index'])

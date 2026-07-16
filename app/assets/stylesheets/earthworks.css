@@ -4,6 +4,20 @@
   --stanford-palo-alto-rgb: 23, 94, 84;
 }
 
+/* Below lg, match the gap between show-document and the sidebar to the metadata section gap. */
+@media (max-width: 991.98px) {
+  .blacklight-catalog-show .page-sidebar {
+    margin-top: 2rem;
+  }
+}
+
+/* Above xl, widen the gap between the record and the sidebar on the show view. */
+@media (min-width: 1400px) {
+  .blacklight-catalog-show .show-document {
+    padding-right: 6rem;
+  }
+}
+
 .header-icons {
   color: var(--stanford-60-black);
   font-size: 0.875rem;
