@@ -299,7 +299,7 @@ class CatalogController < ApplicationController
     config.add_sort_field "score desc, #{field_config.index_year} desc, dct_title_sort asc", label: 'relevance'
     config.add_sort_field "#{field_config.index_year} desc, dct_title_sort asc", label: 'year'
     config.add_sort_field 'dct_title_sort asc', label: 'title'
-    config.add_sort_field "#{field_config.modified} asc", label: 'Layer modified date (for API use only)', if: false
+    config.add_sort_field "#{field_config.modified} desc", label: 'recently updated'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
