@@ -386,13 +386,6 @@ body {
   margin-top: 1rem;
 }
 
-/* Download sidebar */
-.downloads .badge {
-  float: none;
-  margin-inline-start: 0.5em;
-  vertical-align: top;
-}
-
 /* Global alert styles */
 .global-alert {
   --bs-alert-margin-bottom: 0;
