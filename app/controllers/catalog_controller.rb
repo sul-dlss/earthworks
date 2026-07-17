@@ -24,7 +24,7 @@ class CatalogController < ApplicationController
     end
   end
 
-  configure_blacklight do |config| # rubocop:disable Metrics/BlockLength
+  configure_blacklight do |config|
     field_config = Geoblacklight.configuration.fields
     # Ensures that JSON representations of Solr Documents can be retrieved using
     # the path /catalog/:id/raw
@@ -47,9 +47,7 @@ class CatalogController < ApplicationController
       q: "{!raw f=#{field_config.id} v=$id}"
     }
 
-    # When set to true, Blacklight uses container-fluid as the layout container
-    config.full_width_layout = true
-
+    # Turn off advanced search
     config.advanced_search.enabled = false
 
     # GeoBlacklight Defaults
