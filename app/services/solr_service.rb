@@ -7,6 +7,13 @@ class SolrService
     connection.delete_by_id(record_id, params: { commitWithin: Settings.solr_commit_within })
   end
 
+  # Delete records from the index by ID
+  def self.delete_by_ids(druids)
+    record_ids = druids.map { |druid| "stanford-#{druid}" }
+    Rails.logger.info "Deleting #{record_ids.size} Solr documents"
+    connection.delete_by_id(record_ids, params: { commitWithin: Settings.solr_commit_within })
+  end
+
   # Update a record in the index
   def self.update(record)
     Rails.logger.info "Updating Solr document: stanford-#{record.druid}"

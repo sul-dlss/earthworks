@@ -19,13 +19,18 @@ RSpec.describe SdrConsumer do
   before do
     allow(Honeybadger).to receive(:notify)
     allow(cocina_service).to receive(:fetch_record).and_return(record)
-    allow(solr_service).to receive_messages(delete_by_id: true, update: true)
+    allow(solr_service).to receive_messages(delete_by_ids: true, update: true)
   end
 
-  describe '#process' do
+  describe '#process_batch' do
     it 'executes an update' do
       expect(solr_service).to receive(:update).with(record)
-      consumer.process(message)
+      consumer.process_batch([message])
+    end
+
+    it 'fetches the Cocina record once per message' do
+      expect(cocina_service).to receive(:fetch_record).once.and_return(record)
+      consumer.process_batch([message])
     end
 
     context 'with varying spelling of target names' do
@@ -33,7 +38,7 @@ RSpec.describe SdrConsumer do
 
       it 'counts as valid' do
         expect(solr_service).to receive(:update).with(record)
-        consumer.process(message)
+        consumer.process_batch([message])
       end
     end
 
@@ -41,8 +46,8 @@ RSpec.describe SdrConsumer do
       let(:message_contents) { nil }
 
       it 'executes a delete' do
-        expect(solr_service).to receive(:delete_by_id).with('abc123')
-        consumer.process(message)
+        expect(solr_service).to receive(:delete_by_ids).with(['abc123'])
+        consumer.process_batch([message])
       end
     end
 
@@ -55,8 +60,8 @@ RSpec.describe SdrConsumer do
       end
 
       it 'executes a delete' do
-        expect(solr_service).to receive(:delete_by_id).with('abc123')
-        consumer.process(message)
+        expect(solr_service).to receive(:delete_by_ids).with(['abc123'])
+        consumer.process_batch([message])
       end
     end
 
@@ -69,8 +74,8 @@ RSpec.describe SdrConsumer do
       end
 
       it 'executes a delete' do
-        expect(solr_service).to receive(:delete_by_id).with('abc123')
-        consumer.process(message)
+        expect(solr_service).to receive(:delete_by_ids).with(['abc123'])
+        consumer.process_batch([message])
       end
     end
 
@@ -80,8 +85,8 @@ RSpec.describe SdrConsumer do
       end
 
       it 'executes a delete' do
-        expect(solr_service).to receive(:delete_by_id).with('abc123')
-        consumer.process(message)
+        expect(solr_service).to receive(:delete_by_ids).with(['abc123'])
+        consumer.process_batch([message])
       end
     end
 
@@ -89,8 +94,8 @@ RSpec.describe SdrConsumer do
       let(:record) { instance_double(CocinaDisplay::CocinaRecord, folio_hrid: 'a12345') }
 
       it 'executes a delete' do
-        expect(solr_service).to receive(:delete_by_id).with('abc123')
-        consumer.process(message)
+        expect(solr_service).to receive(:delete_by_ids).with(['abc123'])
+        consumer.process_batch([message])
       end
     end
 
@@ -108,7 +113,7 @@ RSpec.describe SdrConsumer do
 
       it 'executes an update' do
         expect(solr_service).to receive(:update).with(record)
-        consumer.process(message)
+        consumer.process_batch([message])
       end
     end
 
@@ -116,8 +121,44 @@ RSpec.describe SdrConsumer do
       let(:message_contents) { { druid: 'druid:abc123', deleted_at: '2024-06-02T00:00:00Z' } }
 
       it 'executes a delete' do
-        expect(solr_service).to receive(:delete_by_id).with('abc123')
-        consumer.process(message)
+        expect(solr_service).to receive(:delete_by_ids).with(['abc123'])
+        consumer.process_batch([message])
+      end
+    end
+
+    context 'with multiple deletes' do
+      it 'deletes them in one Solr request' do
+        messages = %w[abc123 def456 ghi789].map do |druid|
+          instance_double(Racecar::Message, key: "druid:#{druid}", value: nil)
+        end
+
+        expect(solr_service).to receive(:delete_by_ids).with(%w[abc123 def456 ghi789])
+        consumer.process_batch(messages)
+      end
+    end
+
+    context 'when an update occurs between deletes' do
+      it 'flushes deletes around the update to preserve order' do
+        first_delete = instance_double(Racecar::Message, key: 'druid:abc123', value: nil)
+        update = instance_double(Racecar::Message, key: 'druid:def456', value: message_contents.to_json)
+        last_delete = instance_double(Racecar::Message, key: 'druid:ghi789', value: nil)
+
+        expect(solr_service).to receive(:delete_by_ids).with(['abc123']).ordered
+        expect(solr_service).to receive(:update).with(record).ordered
+        expect(solr_service).to receive(:delete_by_ids).with(['ghi789']).ordered
+
+        consumer.process_batch([first_delete, update, last_delete])
+      end
+    end
+
+    context 'with a blank message after an update' do
+      it 'does not reuse the preceding message contents' do
+        blank_message = instance_double(Racecar::Message, key: 'druid:def456', value: nil)
+
+        expect(solr_service).to receive(:update).with(record).ordered
+        expect(solr_service).to receive(:delete_by_ids).with(['def456']).ordered
+
+        consumer.process_batch([message, blank_message])
       end
     end
 
@@ -128,7 +169,7 @@ RSpec.describe SdrConsumer do
 
       it 'notifies Honeybadger' do
         expect(Honeybadger).to receive(:notify).with(instance_of(StandardError))
-        expect { consumer.process(message) }.to raise_error(StandardError)
+        expect { consumer.process_batch([message]) }.to raise_error(StandardError)
       end
     end
   end
