@@ -26,6 +26,10 @@ class RecentlyAddedListComponent < ViewComponent::Base
     }
   end
 
+  def search_url
+    helpers.search_catalog_path("f[#{@field}][]": @term, sort: @sort)
+  end
+
   def results
     solr = RSolr.connect url: Blacklight.connection_config[:url]
     @results = solr.get 'select', params: search_params
