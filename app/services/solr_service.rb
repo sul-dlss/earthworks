@@ -4,8 +4,7 @@ class SolrService
   def self.delete_by_id(druid)
     record_id = "stanford-#{druid}"
     Rails.logger.info "Deleting Solr document: #{record_id}"
-    connection.delete_by_id(record_id)
-    connection.commit
+    connection.delete_by_id(record_id, params: { commitWithin: Settings.solr_commit_within })
   end
 
   # Update a record in the index
