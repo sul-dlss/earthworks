@@ -58,6 +58,20 @@ RSpec.describe CocinaToSolrMapper do
       expect(doc['gbl_georeferenced_b']).to be true
     end
 
+    it 'does not map the iiif manifest url' do
+      expect(references).not_to have_key('http://iiif.io/api/presentation#manifest')
+    end
+
+    context 'with a scanned map' do
+      before do
+        allow(record).to receive(:content_type).and_return('map')
+      end
+
+      it 'maps the iiif manifest url' do
+        expect(references['http://iiif.io/api/presentation#manifest']).to eq 'https://purl.stanford.edu/abc12345678/iiif3/manifest'
+      end
+    end
+
     context 'with restricted access' do
       before do
         allow(record).to receive(:world_access?).and_return(false)

@@ -105,7 +105,7 @@ class CocinaToSolrMapper
     # URLs
     refs['http://schema.org/url'] = record.purl_url
     refs['https://oembed.com'] = record.oembed_url(params: { hide_title: true })
-    refs['http://iiif.io/api/presentation#manifest'] = record.iiif_manifest_url
+    refs['http://iiif.io/api/presentation#manifest'] = record.iiif_manifest_url if iiif_viewable?
     refs['http://schema.org/thumbnailUrl'] = record.thumbnail_url
     refs['https://schema.org/relatedLink'] = record.searchworks_url
 
@@ -159,5 +159,10 @@ class CocinaToSolrMapper
     return true if record.files(use: 'georeference').any?
 
     false
+  end
+
+  # Object types with actually useful IIIF manifests
+  def iiif_viewable?
+    %(map image).include?(record.content_type)
   end
 end
