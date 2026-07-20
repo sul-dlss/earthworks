@@ -75,7 +75,6 @@ class CocinaToSolrMapper
   def map_resource_class
     res = TranslationMap.new('geo_resource_class')
                         .translate(record.all_forms.map(&:to_s) + record.genres + record.subject_genres)
-    res += %w[Maps Datasets] if @doc['gbl_georeferenced_b']
     res = ['Collections'] if record.collection?
     res << 'Other' if res.empty?
     res.uniq
