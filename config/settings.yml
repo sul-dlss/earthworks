@@ -62,6 +62,15 @@ purl_fetcher:
 purl:
   hostname: purl.stanford.edu
 
+# Report indexing outcomes to SDR via RabbitMQ
+sdr_events:
+  enabled: false
+  rabbitmq:
+    vhost: /
+    hostname: localhost
+    username: guest
+    password: guest
+
 # Enable/disable global alerts
 # https://github.com/sul-dlss/global_alerts
 global_alert: false

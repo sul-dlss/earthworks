@@ -20,11 +20,17 @@ RSpec.describe SdrConsumer do
     allow(Honeybadger).to receive(:notify)
     allow(cocina_service).to receive(:fetch_record).and_return(record)
     allow(solr_service).to receive_messages(delete_by_ids: true, update: true)
+    allow(SdrEvents).to receive_messages(report_indexing_deleted: true, report_indexing_success: true)
   end
 
   describe '#process_batch' do
     it 'executes an update' do
       expect(solr_service).to receive(:update).with(record)
+      consumer.process_batch([message])
+    end
+
+    it 'reports a successful update' do
+      expect(SdrEvents).to receive(:report_indexing_success).with('abc123', target: 'earthworks')
       consumer.process_batch([message])
     end
 
@@ -133,6 +139,18 @@ RSpec.describe SdrConsumer do
         end
 
         expect(solr_service).to receive(:delete_by_ids).with(%w[abc123 def456 ghi789])
+        consumer.process_batch(messages)
+      end
+
+      it 'reports each successful delete' do
+        messages = %w[abc123 def456 ghi789].map do |druid|
+          instance_double(Racecar::Message, key: "druid:#{druid}", value: nil)
+        end
+
+        %w[abc123 def456 ghi789].each do |druid|
+          expect(SdrEvents).to receive(:report_indexing_deleted).with(druid, target: 'earthworks')
+        end
+
         consumer.process_batch(messages)
       end
     end

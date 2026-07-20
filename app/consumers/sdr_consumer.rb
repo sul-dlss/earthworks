@@ -84,11 +84,15 @@ class SdrConsumer < Racecar::Consumer
 
   # Remove items from the index
   def process_deletes(druids)
-    @solr_service.delete_by_ids(druids) if druids.any?
+    return if druids.empty?
+
+    @solr_service.delete_by_ids(druids)
+    druids.each { |druid| SdrEvents.report_indexing_deleted(druid, target: @target) }
   end
 
   # Update item in the index
   def process_update
     @solr_service.update(record)
+    SdrEvents.report_indexing_success(@druid, target: @target)
   end
 end
