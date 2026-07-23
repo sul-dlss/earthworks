@@ -25,7 +25,7 @@ bin/setup
 For a basic development server, you can use GeoBlacklight's rake task, which will run solr via Docker and Rails:
 
 ```sh
-bundle exec rake geoblacklight:server
+bin/rake geoblacklight:server
 ```
 
 ### Supporting services
@@ -59,9 +59,11 @@ External data is fetched from [OpenGeoMetadata](https://github.com/OpenGeoMetada
 To index data yourself in local development, you can use the same tasks:
 
 ```sh
-bundle exec rake geocombine:clone
-bundle exec rake geocombine:index
+bin/rake geocombine:clone
+bin/rake geocombine:index
 ```
+
+The default location for downloaded records is `tmp/opengeometadata`, but you can override this by setting the `OGM_PATH` environment variable.
 
 For more info on fetching external records, see the [GeoCombine README](https://github.com/OpenGeoMetadata/GeoCombine/blob/main/README.md).
 
@@ -70,5 +72,5 @@ For more info on fetching external records, see the [GeoCombine README](https://
 You can run the full suite of tests with the `ci` command. **Do not** run this while ssh tunneled as it may delete the production index!
 
 ```sh
-bundle exec rake ci
+bin/rake ci
 ```
