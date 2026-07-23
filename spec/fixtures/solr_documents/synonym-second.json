@@ -1,9 +1,7 @@
 {
   "id": ["stanford-synonymtwo"],
   "dct_title_s": "Marine mammals are so cool",
-  "dct_description_sm": [
-    "Marine mammals are cool"
-  ],
+  "dct_description_sm": ["Marine mammals are cool"],
   "dct_language_sm": ["eng"],
   "schema_provider_s": "Stanford",
   "gbl_resourceClass_sm": ["Datasets"],

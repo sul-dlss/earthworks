@@ -26,3 +26,9 @@ pin 'leaflet-fullscreen', to: 'https://cdn.jsdelivr.net/npm/leaflet.fullscreen@5
 # EarthWorks
 pin_all_from 'app/javascript/controllers', under: 'controllers'
 pin_all_from 'app/javascript'
+# chart.js is dependency of blacklight-range-limit, currently is not working
+# as vendored importmaps, but instead must be pinned to CDN. You may want to update
+# versions perioidically.
+pin 'chart.js', to: 'https://cdn.jsdelivr.net/npm/chart.js@4.5.1/+esm'
+# single dependency of chart.js:
+pin '@kurkle/color', to: 'https://cdn.jsdelivr.net/npm/@kurkle/color@0.4.0/dist/color.esm.min.js'
