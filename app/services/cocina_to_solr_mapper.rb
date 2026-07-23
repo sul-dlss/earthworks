@@ -30,7 +30,6 @@ class CocinaToSolrMapper
     if years.any?
       @doc['gbl_dateRange_drsim'] = ["[#{years.first} TO #{years.last}]"]
       @doc['gbl_indexYear_im'] = (years.first..years.last).to_a
-      @doc['date_hierarchy_sm'] = hierarchicalize_year_list(@doc['gbl_indexYear_im'])
     end
 
     @doc['schema_provider_s'] = 'Stanford'
@@ -133,18 +132,6 @@ class CocinaToSolrMapper
 
   def extract_years(values)
     Array(values).flat_map { |v| v.to_s.scan(/\d{4}/) }.map(&:to_i).uniq.sort
-  end
-
-  def hierarchicalize_year_list(years)
-    years.flat_map do |year|
-      century = (year / 100) * 100
-      decade = (year / 10) * 10
-      [
-        "#{century}-#{century + 99}",
-        "#{century}-#{century + 99}:#{decade}-#{decade + 9}",
-        "#{century}-#{century + 99}:#{decade}-#{decade + 9}:#{year}"
-      ]
-    end.uniq
   end
 
   # Determine if an object is georeferenced

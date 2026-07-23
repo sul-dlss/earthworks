@@ -85,3 +85,5 @@ gem "racecar", "~> 2.12"
 gem "cocina_display", "~> 2"
 gem "dor-event-client", "~> 1.2"
 gem "global_alerts"
+
+gem "blacklight_range_limit", "~> 9.2"

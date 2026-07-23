@@ -2,8 +2,7 @@ require 'blacklight/catalog'
 
 class CatalogController < ApplicationController
   include Blacklight::Catalog
-
-  DATE_HIERARCHY_FIELD = 'date_hierarchy_sm'.freeze
+  include BlacklightRangeLimit::ControllerOverride
 
   # Protect searches with bot_challenge_page & turnstile
   # See: https://github.com/samvera-labs/bot_challenge_page
@@ -121,11 +120,7 @@ class CatalogController < ApplicationController
     config.add_facet_field field_config.theme, label: 'Theme', limit: 8
     config.add_facet_field field_config.spatial_coverage, label: 'Location', limit: 8
 
-    config.add_facet_field DATE_HIERARCHY_FIELD, label: 'Date', limit: -1, sort: :index,
-                                                 collapsing: true, single: true,
-                                                 component: Blacklight::DateFacetHierarchyComponent,
-                                                 item_component: Blacklight::FacetItemPivotComponent,
-                                                 item_presenter: DateFacetItemPresenter
+    config.add_facet_field field_config.index_year, label: 'Date', range: true
 
     config.add_facet_field field_config.creator, label: 'Author', limit: 8
     config.add_facet_field field_config.publisher, label: 'Publisher', limit: 8

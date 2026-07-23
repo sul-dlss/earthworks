@@ -1,9 +1,7 @@
 {
   "id": ["stanford-synonymone"],
   "dct_title_s": "Dolphins are so cool",
-  "dct_description_sm": [
-    "Dolphins are cool"
-  ],
+  "dct_description_sm": ["Dolphins are cool"],
   "dct_language_sm": ["eng"],
   "schema_provider_s": "Stanford",
   "gbl_resourceClass_sm": ["Datasets"],
