@@ -8,7 +8,7 @@ Geospatial discovery application for Stanford University Libraries, built using 
 
 For the currently supported Ruby version, see the `.github/workflows/ruby.yml` file.
 
-### Installing
+### Setup
 
 Pull down the code:
 
@@ -16,69 +16,54 @@ Pull down the code:
 git clone git@github.com:sul-dlss/earthworks.git
 ```
 
-#### Run the supporting services
-
-You can do this by either running them directly on your dev machine, or by running them in containers using Docker (you should choose one or the other)
-
-##### Running supporting services directly
-
-Start an [Apache Solr](https://solr.apache.org/) instance using [solr_wrapper](https://github.com/cbeer/solr_wrapper):
-
-```sh
-solr_wrapper
-```
-
-##### Running supporting services using Docker
-
-A more production-like setup using [Redis](https://redis.com/) and [Postgresql](https://www.postgresql.org/) is available via Docker. To start the stack:
-
-```sh
-docker compose up
-```
-
-To have the app use the Postresql container instead of SQLite, uncomment the `DATABASE_URL` line in the `.env[.test]` file(s) (in the project root).
-
-To have the app use the Redis container, uncomment the `REDIS_URL`, `REDIS_HOST`, and `REDIS_PORT` lines in the `.env[.test]` file(s).
-
-The Solr connection info is the same regardless of whether it's run using solr_wrapper or Docker.
-
-Alternatively, you could specify those env vars by prefixing the rails command with them, to (for example) run the app once using Postgres while generally defaulting to SQLite (e.g. `DATABASE_URL='postgresql://earthworks:earthworks@localhost/earthworks?pool=5' bin/rails server`).
-
-#### Install the Ruby and Javascript dependencies, and prepare the database
-
-Next, run the setup script:
+Install dependencies and prepare the database:
 
 ```sh
 bin/setup
 ```
 
-### Run the application
-
-Finally, start the development web server:
+For a basic development server, you can use GeoBlacklight's rake task, which will run solr via Docker and Rails:
 
 ```sh
+bin/rake geoblacklight:server
+```
+
+### Supporting services
+
+Earthworks uses a solr index for search, and optionally a Redis cache and a Postgresql database to mimic the production setup.
+
+To run the production setup, you need to uncomment the `DATABASE_URL`, `REDIS_URL`, `REDIS_HOST`, and `REDIS_PORT` lines in the `.env[.test]` file(s) (in the project root).
+
+Then you need to invoke the compose file yourself, set up the Postgres database, and run the rails server separately:
+
+```sh
+docker compose up -d
+bin/setup
 bin/dev
 ```
 
-This will compile the SCSS stylesheets with live reloading in addition to running a rails server.
+The Solr connection info is the same as for the basic dev server.
 
-### Adding data
+### Indexing data
 
-To add a small amount of test records to the Solr index, you can use the `seed` task:
+Earthworks indexes data from multiple sources. The indexing processes run on a dedicated worker machine rather than the main web servers (e.g. `earthworks-worker-prod-a` instead of `earthworks-prod-a`).
+
+#### Stanford data
+
+Stanford data published from SDR is consumed from a Kafka queue via the `SdrConsumer`, which fetches Cocina JSON from PURL and hands it off to the `CocinaToSolrMapper` to transform into OGM Aardvark records. These are then indexed into Solr by the `SolrService`, and the result is reported back to Argo via the `SdrEvents` class. This process is "push", in that the Solr index is updated as soon as new data is published to SDR.
+
+#### External data
+
+External data is fetched from [OpenGeoMetadata](https://github.com/OpenGeoMetadata) via [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine), which downloads records from the OpenGeoMetadata GitHub organization and places them on a local filesystem. After downloading, the files are indexed into Solr. This process is "pull", in that it is run on a schedule to fetch and index new data. The `config/schedule.rb` controls the `cron` that runs these tasks and [checks in with Honeybadger](https://app.honeybadger.io/projects/49895/check_ins) when they are completed.
+
+To index data yourself in local development, you can use the same tasks:
 
 ```sh
-bin/rake earthworks:fixtures
+bin/rake geocombine:clone
+bin/rake geocombine:index
 ```
 
-To index arbitary data from SDR, see the [searchworks_traject_indexer README](https://github.com/sul-dlss/searchworks_traject_indexer/blob/main/README.md).
-
-You can also fetch non-Stanford records from [OpenGeoMetadata](https://github.com/OpenGeoMetadata) using [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine):
-
-```sh
-export OGM_PATH=tmp/opengeometadata     # location to store data
-bin/rake geocombine:clone[edu.nyu]      # pull data from NYU
-bin/rake geocombine:index               # index data in Solr
-```
+For more info on fetching external records, see the [GeoCombine README](https://github.com/OpenGeoMetadata/GeoCombine/blob/main/README.md).
 
 ## Testing
 
