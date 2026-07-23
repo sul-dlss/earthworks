@@ -1,0 +1,771 @@
+{
+  "cocinaVersion": "0.129.0",
+  "type": "https://cocina.sul.stanford.edu/models/geo",
+  "externalIdentifier": "druid:bb223nv3920",
+  "version": 11,
+  "access": {
+    "view": "world",
+    "download": "world",
+    "controlledDigitalLending": false,
+    "copyright": "This work is in the Public Domain, meaning that it is not subject to copyright.",
+    "useAndReproductionStatement": "This item is in the public domain.  There are no restrictions on use."
+  },
+  "administrative": {
+    "hasAdminPolicy": "druid:bz466cq3451"
+  },
+  "description": {
+    "title": [
+      {
+        "value": "Urban Land Cover, Pretoria, South Africa, 1990"
+      }
+    ],
+    "contributor": [
+      {
+        "name": [
+          {
+            "value": "Angel, Shlomo"
+          }
+        ],
+        "type": "person",
+        "role": [
+          {
+            "value": "creator",
+            "source": {
+              "code": "marcrelator"
+            }
+          }
+        ]
+      },
+      {
+        "name": [
+          {
+            "value": "Parent, Jason"
+          }
+        ],
+        "type": "person",
+        "role": [
+          {
+            "value": "creator",
+            "source": {
+              "code": "marcrelator"
+            }
+          }
+        ]
+      },
+      {
+        "name": [
+          {
+            "value": "Civco, Daniel L."
+          }
+        ],
+        "type": "person",
+        "role": [
+          {
+            "value": "creator",
+            "source": {
+              "code": "marcrelator"
+            }
+          }
+        ]
+      },
+      {
+        "name": [
+          {
+            "value": "Blei, Alejandro M"
+          }
+        ],
+        "type": "person",
+        "role": [
+          {
+            "value": "creator",
+            "source": {
+              "code": "marcrelator"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "date": [
+          {
+            "value": "2012",
+            "type": "publication",
+            "status": "primary",
+            "encoding": {
+              "code": "w3cdtf"
+            }
+          },
+          {
+            "value": "1990",
+            "type": "validity",
+            "encoding": {
+              "code": "w3cdtf"
+            }
+          }
+        ],
+        "contributor": [
+          {
+            "name": [
+              {
+                "value": "Lincoln Institute of Land Policy"
+              }
+            ],
+            "type": "organization",
+            "role": [
+              {
+                "value": "publisher",
+                "code": "pbl",
+                "uri": "http://id.loc.gov/vocabulary/relators/pbl",
+                "source": {
+                  "code": "marcrelator",
+                  "uri": "http://id.loc.gov/vocabulary/relators/"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "form": [
+      {
+        "value": "Geospatial data",
+        "type": "genre",
+        "uri": "http://id.loc.gov/authorities/genreForms/gf2011026297",
+        "source": {
+          "code": "lcgft"
+        }
+      },
+      {
+        "value": "cartographic dataset",
+        "type": "genre",
+        "uri": "http://rdvocab.info/termList/RDAContentType/1001",
+        "source": {
+          "code": "rdacontent"
+        }
+      },
+      {
+        "value": "Dataset",
+        "type": "genre",
+        "source": {
+          "value": "local"
+        }
+      },
+      {
+        "value": "cartographic",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "software, multimedia",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "born digital",
+        "type": "digital origin",
+        "source": {
+          "value": "MODS digital origin terms"
+        }
+      },
+      {
+        "value": "GeoTIFF",
+        "type": "form"
+      },
+      {
+        "value": "EPSG::32735",
+        "type": "map projection"
+      }
+    ],
+    "geographic": [
+      {
+        "form": [
+          {
+            "value": "image/tiff",
+            "type": "media type",
+            "source": {
+              "value": "IANA media type terms"
+            }
+          },
+          {
+            "value": "GeoTIFF",
+            "type": "data format"
+          },
+          {
+            "value": "Dataset#Raster",
+            "type": "type"
+          }
+        ],
+        "subject": [
+          {
+            "structuredValue": [
+              {
+                "value": "27.6072743",
+                "type": "west"
+              },
+              {
+                "value": "-26.0054826",
+                "type": "south"
+              },
+              {
+                "value": "28.4655926",
+                "type": "east"
+              },
+              {
+                "value": "-24.9686597",
+                "type": "north"
+              }
+            ],
+            "type": "bounding box coordinates",
+            "standard": {
+              "code": "EPSG:4326"
+            },
+            "encoding": {
+              "value": "decimal"
+            }
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "code": "eng",
+        "source": {
+          "code": "iso639-2b"
+        }
+      }
+    ],
+    "note": [
+      {
+        "value": "This raster layer contains urban land use and land cover data for Pretoria, South Africa in 1990. Categories of urban land use represented in these data include: urban, nonurban, water and other. Urban land cover, or urban extent, is typically measured by the total built-up area (or impervious surface) of cities, sometimes including the open spaces captured by their built-up areas and the open spaces on the urban fringe affected by urban development. Urban land is occupied by urban uses that include all land in residential, commercial, industrial, and office use; land used for transport, parks, and public facilities; protected land, and vacant land. Land in urban use does not include cultivated lands, pasture lands, forests, farms and villages, intercity roads, and nature areas. These data are part of the Atlas of Urban Expansion.",
+        "type": "abstract",
+        "displayLabel": "Abstract"
+      },
+      {
+        "value": "The Atlas of Urban Expansion is also available as a printed book. The Atlas of Urban Expansion accompanies the Policy Focus Report Making Room for a Planet of Cities, a comprehensive and original analysis of the quantitative dimensions of past, present, and future global urban land cover, culminating in a proposed new paradigm for preparing for explosive growth in cities the world over. Further detail of that analysis is available in three working papers available for downloading: The Persistent Decline in Urban Densities, The Fragmentation of Urban Footprints, and A Planet of Cities: Country Estimates and Projections of Urban Land Cover, 2000-2050. A forthcoming book, titled The Expansion of Cities, bringing together the analysis of the maps in the Atlas of Urban Expansion within a broader discussion of urban expansion in a global and historical perspective, will be published by the Lincoln Institute in 2012.",
+        "type": "other",
+        "displayLabel": "Supplemental information"
+      },
+      {
+        "value": "The Atlas of Urban Expansion provides the geographic and quantitative dimensions of urban expansion and its key attributes in cities the world over. The data and images are available for free downloading, for scholars, public officials, planners, those engaged in international development, and concerned citizens. The global empirical evidence presented here is critical for an intelligent discussion of plans and policies to manage urban expansion everywhere. This resource provides both the conceptual framework and, for the first time, the basic empirical data and quantitative dimensions of past, present, and future urban expansion in cities around the world that are necessary for making minimal preparations for the massive urban growth expected in the coming decades.",
+        "type": "other",
+        "displayLabel": "Purpose"
+      }
+    ],
+    "subject": [
+      {
+        "value": "Pretoria (South Africa)",
+        "type": "place",
+        "uri": "http://sws.geonames.org/964137/",
+        "source": {
+          "code": "geonames",
+          "uri": "http://www.geonames.org/ontology#"
+        }
+      },
+      {
+        "value": "Urbanization",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Metropolitan areas",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Cities and towns",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Land use",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Land cover",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Society",
+        "type": "topic",
+        "code": "society",
+        "source": {
+          "code": "ISO19115TopicCategory",
+          "uri": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
+        }
+      },
+      {
+        "value": "Imagery and Base Maps",
+        "type": "topic",
+        "code": "imageryBaseMapsEarthCover",
+        "source": {
+          "code": "ISO19115TopicCategory",
+          "uri": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
+        }
+      },
+      {
+        "value": "1990-1990",
+        "type": "time",
+        "encoding": {
+          "code": "w3cdtf"
+        }
+      },
+      {
+        "value": "E 27°36ʹ26ʺ--E 28°27ʹ56ʺ/S 24°58ʹ7ʺ--S 26°20ʺ",
+        "type": "map coordinates"
+      }
+    ],
+    "access": {
+      "accessContact": [
+        {
+          "value": "help@lincolninst.edu",
+          "type": "email",
+          "displayLabel": "Contact"
+        }
+      ]
+    },
+    "adminMetadata": {
+      "contributor": [
+        {
+          "name": [
+            {
+              "value": "Stanford"
+            }
+          ]
+        }
+      ],
+      "event": [
+        {
+          "type": "creation",
+          "date": [
+            {
+              "value": "2016-11-17",
+              "encoding": {
+                "code": "w3cdtf"
+              }
+            }
+          ]
+        },
+        {
+          "type": "modification",
+          "date": [
+            {
+              "value": "2016-11-17",
+              "encoding": {
+                "code": "w3cdtf"
+              }
+            }
+          ]
+        },
+        {
+          "type": "modification",
+          "date": [
+            {
+              "value": "2016-11-17",
+              "encoding": {
+                "code": "w3cdtf"
+              }
+            }
+          ]
+        },
+        {
+          "type": "modification",
+          "date": [
+            {
+              "value": "2016-11-17",
+              "encoding": {
+                "code": "w3cdtf"
+              }
+            }
+          ]
+        }
+      ],
+      "language": [
+        {
+          "code": "eng",
+          "source": {
+            "code": "iso639-2b"
+          }
+        }
+      ],
+      "identifier": [
+        {
+          "value": "edu.stanford.purl:bb223nv3920"
+        }
+      ]
+    },
+    "purl": "https://purl.stanford.edu/bb223nv3920"
+  },
+  "identification": {
+    "sourceId": "branner:AUE_Pretoria_landcover_t1.img"
+  },
+  "structural": {
+    "contains": [
+      {
+        "type": "https://cocina.sul.stanford.edu/models/resources/object",
+        "externalIdentifier": "bb223nv3920_1",
+        "label": "Object",
+        "version": 6,
+        "structural": {
+          "contains": [
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/d510a572-0041-4ebe-a96f-0248d2c32ce4",
+              "label": "Pretoria_landcover_t1.tif.vat.dbf",
+              "filename": "Pretoria_landcover_t1.tif.vat.dbf",
+              "size": 650,
+              "version": 6,
+              "hasMimeType": "application/octet-stream",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "d4cc1bcad5946af219885639be655c685782bb5a"
+                },
+                {
+                  "type": "md5",
+                  "digest": "69548153561da83a456d7620769c672b"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/0aacb6cb-5317-4b99-bd2b-79efdac728e1",
+              "label": "Pretoria_landcover_t1.tif.vat.cpg",
+              "filename": "Pretoria_landcover_t1.tif.vat.cpg",
+              "size": 5,
+              "version": 6,
+              "hasMimeType": "text/plain",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "663b90c899fa25a111067be0c22ffc64dcf581c2"
+                },
+                {
+                  "type": "md5",
+                  "digest": "ae3b3df9970b49b6523e608759bc957d"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/9490ec73-4f58-4510-addc-09c782a2a84c",
+              "label": "Pretoria_landcover_t1.tif",
+              "filename": "Pretoria_landcover_t1.tif",
+              "size": 356966,
+              "version": 6,
+              "hasMimeType": "image/tiff; application=geotiff",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "9f9bd0f1ac8cbce6c60ce30b76176cf5e0448ec8"
+                },
+                {
+                  "type": "md5",
+                  "digest": "1c18b109a73cbe8b8522f85a1af89bd6"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/a1acb889-e440-4a83-9da3-5ae307f43623",
+              "label": "Pretoria_landcover_t1.tfw",
+              "filename": "Pretoria_landcover_t1.tfw",
+              "size": 92,
+              "version": 6,
+              "hasMimeType": "text/plain",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "3172a44f61872fd2973537b4afd831359792614b"
+                },
+                {
+                  "type": "md5",
+                  "digest": "1bb11ee3e00e4a44abb1c14fbc6ce5bd"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/d7d561f8-d5fd-4e5a-b87b-55e191b830cf",
+              "label": "Pretoria_landcover_t1.tif.ovr",
+              "filename": "Pretoria_landcover_t1.tif.ovr",
+              "size": 133906,
+              "version": 6,
+              "hasMimeType": "application/octet-stream",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "de11ea53b59616a9683c88c4f0838e26f751d367"
+                },
+                {
+                  "type": "md5",
+                  "digest": "3ed8ff7159a3fe3f0adc0dec094fd441"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/80e12134-c0c6-4841-a99a-e131d7920832",
+              "label": "Pretoria_landcover_t1.tif.xml",
+              "filename": "Pretoria_landcover_t1.tif.xml",
+              "size": 90973,
+              "version": 6,
+              "hasMimeType": "application/xml",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "110b0aaedd054dddef65622d4ca32e05d83e0c41"
+                },
+                {
+                  "type": "md5",
+                  "digest": "e656f666d135cf6e75102f3ef242d5c7"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/b9dc5960-ee8e-4806-951f-e000a6d8626e",
+              "label": "Pretoria_landcover_t1-iso19139.xml",
+              "filename": "Pretoria_landcover_t1-iso19139.xml",
+              "size": 34650,
+              "version": 6,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "b472e34c1f0999b3f85f42066d055417d17e1254"
+                },
+                {
+                  "type": "md5",
+                  "digest": "4819f6f9ef3cbbbd686ca4f71210d86d"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/db22a685-242e-4649-af14-2f4554a1efea",
+              "label": "Pretoria_landcover_t1-fgdc.xml",
+              "filename": "Pretoria_landcover_t1-fgdc.xml",
+              "size": 8567,
+              "version": 6,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "1edccbf1b6b20b70ce264305bdaff5027c81aa84"
+                },
+                {
+                  "type": "md5",
+                  "digest": "03828a0c7e01ea0e5744d8f56025bcb2"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/557151c9-9917-48f7-9ad0-8dff6b654865",
+              "label": "Pretoria_landcover_t1.jp2",
+              "filename": "Pretoria_landcover_t1.jp2",
+              "size": 445376,
+              "version": 9,
+              "hasMimeType": "image/jp2",
+              "use": "thumbnail",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "c6e52a0467e128224d24cf0655559987c80a1bc5"
+                },
+                {
+                  "type": "md5",
+                  "digest": "359c8334a4ca27e904de9dbf18d2ae96"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              },
+              "presentation": {
+                "height": 4006,
+                "width": 2996
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/a784747f-ddcd-4aad-8370-09b2c4d61a46",
+              "label": "Pretoria_landcover_t1_cog.tif",
+              "filename": "Pretoria_landcover_t1_cog.tif",
+              "size": 353611,
+              "version": 11,
+              "hasMimeType": "image/tiff; application=geotiff; profile=cloud-optimized",
+              "use": "derivative",
+              "sdrGeneratedText": true,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "593b9eb576d669cd32bf80e067d4cace2aecf8cf"
+                },
+                {
+                  "type": "md5",
+                  "digest": "1a66d8c488d504e0029ee72e84da9252"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "isMemberOf": [
+      "druid:rr276tj2464"
+    ]
+  },
+  "geographic": {
+    "iso19139": "\u003crdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e\n              \u003crdf:Description rdf:about=\"http://purl.stanford.edu/bb223nv3920\"\u003e\n                \u003cMD_Metadata xmlns=\"http://www.isotc211.org/2005/gmd\" xmlns:gco=\"http://www.isotc211.org/2005/gco\" xmlns:gts=\"http://www.isotc211.org/2005/gts\" xmlns:srv=\"http://www.isotc211.org/2005/srv\" xmlns:gml=\"http://www.opengis.net/gml\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\u003e\n  \u003cfileIdentifier\u003e\n    \u003cgco:CharacterString\u003eedu.stanford.purl:bb223nv3920\u003c/gco:CharacterString\u003e\n  \u003c/fileIdentifier\u003e\n  \u003clanguage\u003e\n    \u003cLanguageCode codeList=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\" codeListValue=\"eng\" codeSpace=\"ISO639-2\"\u003eeng\u003c/LanguageCode\u003e\n  \u003c/language\u003e\n  \u003ccharacterSet\u003e\n    \u003cMD_CharacterSetCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode\" codeListValue=\"utf8\" codeSpace=\"ISOTC211/19115\"\u003eutf8\u003c/MD_CharacterSetCode\u003e\n  \u003c/characterSet\u003e\n  \u003cparentIdentifier\u003e\n    \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/rr276tj2464.mods\u003c/gco:CharacterString\u003e\n  \u003c/parentIdentifier\u003e\n  \u003chierarchyLevel\u003e\n    \u003cMD_ScopeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode\" codeListValue=\"dataset\" codeSpace=\"ISOTC211/19115\"\u003edataset\u003c/MD_ScopeCode\u003e\n  \u003c/hierarchyLevel\u003e\n  \u003chierarchyLevelName\u003e\n    \u003cgco:CharacterString\u003edataset\u003c/gco:CharacterString\u003e\n  \u003c/hierarchyLevelName\u003e\n  \u003ccontact\u003e\n    \u003cCI_ResponsibleParty\u003e\n      \u003corganisationName\u003e\n        \u003cgco:CharacterString\u003eStanford Geospatial Center\u003c/gco:CharacterString\u003e\n      \u003c/organisationName\u003e\n      \u003ccontactInfo\u003e\n        \u003cCI_Contact\u003e\n          \u003cphone\u003e\n            \u003cCI_Telephone\u003e\n              \u003cvoice\u003e\n                \u003cgco:CharacterString\u003e650-723-2746\u003c/gco:CharacterString\u003e\n              \u003c/voice\u003e\n            \u003c/CI_Telephone\u003e\n          \u003c/phone\u003e\n          \u003caddress\u003e\n            \u003cCI_Address\u003e\n              \u003cdeliveryPoint\u003e\n                \u003cgco:CharacterString\u003eMitchell Bldg. 2nd floor\u003c/gco:CharacterString\u003e\n              \u003c/deliveryPoint\u003e\n              \u003cdeliveryPoint\u003e\n                \u003cgco:CharacterString\u003e397 Panama Mall\u003c/gco:CharacterString\u003e\n              \u003c/deliveryPoint\u003e\n              \u003ccity\u003e\n                \u003cgco:CharacterString\u003eStanford\u003c/gco:CharacterString\u003e\n              \u003c/city\u003e\n              \u003cadministrativeArea\u003e\n                \u003cgco:CharacterString\u003eCalifornia\u003c/gco:CharacterString\u003e\n              \u003c/administrativeArea\u003e\n              \u003cpostalCode\u003e\n                \u003cgco:CharacterString\u003e94305\u003c/gco:CharacterString\u003e\n              \u003c/postalCode\u003e\n              \u003ccountry\u003e\n                \u003cgco:CharacterString\u003eUS\u003c/gco:CharacterString\u003e\n              \u003c/country\u003e\n              \u003celectronicMailAddress\u003e\n                \u003cgco:CharacterString\u003ebrannerlibrary@stanford.edu\u003c/gco:CharacterString\u003e\n              \u003c/electronicMailAddress\u003e\n            \u003c/CI_Address\u003e\n          \u003c/address\u003e\n        \u003c/CI_Contact\u003e\n      \u003c/contactInfo\u003e\n      \u003crole\u003e\n        \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"pointOfContact\" codeSpace=\"ISOTC211/19115\"\u003epointOfContact\u003c/CI_RoleCode\u003e\n      \u003c/role\u003e\n    \u003c/CI_ResponsibleParty\u003e\n  \u003c/contact\u003e\n  \u003cdateStamp\u003e\n    \u003cgco:Date\u003e2016-11-17\u003c/gco:Date\u003e\n  \u003c/dateStamp\u003e\n  \u003cmetadataStandardName\u003e\n    \u003cgco:CharacterString\u003eISO 19139 Geographic Information - Metadata - Implementation Specification\u003c/gco:CharacterString\u003e\n  \u003c/metadataStandardName\u003e\n  \u003cmetadataStandardVersion\u003e\n    \u003cgco:CharacterString\u003e2007\u003c/gco:CharacterString\u003e\n  \u003c/metadataStandardVersion\u003e\n  \u003cdataSetURI\u003e\n    \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/bb223nv3920\u003c/gco:CharacterString\u003e\n  \u003c/dataSetURI\u003e\n  \u003cspatialRepresentationInfo\u003e\n    \u003cMD_Georectified\u003e\n      \u003cnumberOfDimensions\u003e\n        \u003cgco:Integer\u003e2\u003c/gco:Integer\u003e\n      \u003c/numberOfDimensions\u003e\n      \u003caxisDimensionProperties\u003e\n        \u003cMD_Dimension\u003e\n          \u003cdimensionName\u003e\n            \u003cMD_DimensionNameTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode\" codeListValue=\"column\" codeSpace=\"ISOTC211/19115\"\u003ecolumn\u003c/MD_DimensionNameTypeCode\u003e\n          \u003c/dimensionName\u003e\n          \u003cdimensionSize\u003e\n            \u003cgco:Integer\u003e2996\u003c/gco:Integer\u003e\n          \u003c/dimensionSize\u003e\n          \u003cresolution\u003e\n            \u003cgco:Measure uom=\"Meter\"\u003e28.500000\u003c/gco:Measure\u003e\n          \u003c/resolution\u003e\n        \u003c/MD_Dimension\u003e\n      \u003c/axisDimensionProperties\u003e\n      \u003caxisDimensionProperties\u003e\n        \u003cMD_Dimension\u003e\n          \u003cdimensionName\u003e\n            \u003cMD_DimensionNameTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_DimensionNameTypeCode\" codeListValue=\"row\" codeSpace=\"ISOTC211/19115\"\u003erow\u003c/MD_DimensionNameTypeCode\u003e\n          \u003c/dimensionName\u003e\n          \u003cdimensionSize\u003e\n            \u003cgco:Integer\u003e4006\u003c/gco:Integer\u003e\n          \u003c/dimensionSize\u003e\n          \u003cresolution\u003e\n            \u003cgco:Measure uom=\"Meter\"\u003e28.500000\u003c/gco:Measure\u003e\n          \u003c/resolution\u003e\n        \u003c/MD_Dimension\u003e\n      \u003c/axisDimensionProperties\u003e\n      \u003ccellGeometry\u003e\n        \u003cMD_CellGeometryCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CellGeometryCode\" codeListValue=\"area\" codeSpace=\"ISOTC211/19115\"\u003earea\u003c/MD_CellGeometryCode\u003e\n      \u003c/cellGeometry\u003e\n      \u003ctransformationParameterAvailability\u003e\n        \u003cgco:Boolean\u003etrue\u003c/gco:Boolean\u003e\n      \u003c/transformationParameterAvailability\u003e\n      \u003ccheckPointAvailability\u003e\n        \u003cgco:Boolean\u003efalse\u003c/gco:Boolean\u003e\n      \u003c/checkPointAvailability\u003e\n      \u003ccornerPoints\u003e\n        \u003cgml:Point gml:id=\"idp119984\"\u003e\n          \u003cgml:pos\u003e561293.250000 7123566.250000\u003c/gml:pos\u003e\n        \u003c/gml:Point\u003e\n      \u003c/cornerPoints\u003e\n      \u003ccornerPoints\u003e\n        \u003cgml:Point gml:id=\"idp120992\"\u003e\n          \u003cgml:pos\u003e561293.250000 7237737.250000\u003c/gml:pos\u003e\n        \u003c/gml:Point\u003e\n      \u003c/cornerPoints\u003e\n      \u003ccornerPoints\u003e\n        \u003cgml:Point gml:id=\"idp122000\"\u003e\n          \u003cgml:pos\u003e646679.250000 7237737.250000\u003c/gml:pos\u003e\n        \u003c/gml:Point\u003e\n      \u003c/cornerPoints\u003e\n      \u003ccornerPoints\u003e\n        \u003cgml:Point gml:id=\"idp123008\"\u003e\n          \u003cgml:pos\u003e646679.250000 7123566.250000\u003c/gml:pos\u003e\n        \u003c/gml:Point\u003e\n      \u003c/cornerPoints\u003e\n      \u003ccenterPoint\u003e\n        \u003cgml:Point gml:id=\"idp124016\"\u003e\n          \u003cgml:pos\u003e603986.250000 7180651.750000\u003c/gml:pos\u003e\n        \u003c/gml:Point\u003e\n      \u003c/centerPoint\u003e\n      \u003cpointInPixel\u003e\n        \u003cMD_PixelOrientationCode\u003ecenter\u003c/MD_PixelOrientationCode\u003e\n      \u003c/pointInPixel\u003e\n    \u003c/MD_Georectified\u003e\n  \u003c/spatialRepresentationInfo\u003e\n  \u003creferenceSystemInfo\u003e\n    \u003cMD_ReferenceSystem\u003e\n      \u003creferenceSystemIdentifier\u003e\n        \u003cRS_Identifier\u003e\n          \u003ccode\u003e\n            \u003cgco:CharacterString\u003e32735\u003c/gco:CharacterString\u003e\n          \u003c/code\u003e\n          \u003ccodeSpace\u003e\n            \u003cgco:CharacterString\u003eEPSG\u003c/gco:CharacterString\u003e\n          \u003c/codeSpace\u003e\n          \u003cversion\u003e\n            \u003cgco:CharacterString\u003e8.6.2\u003c/gco:CharacterString\u003e\n          \u003c/version\u003e\n        \u003c/RS_Identifier\u003e\n      \u003c/referenceSystemIdentifier\u003e\n    \u003c/MD_ReferenceSystem\u003e\n  \u003c/referenceSystemInfo\u003e\n  \u003cidentificationInfo\u003e\n    \u003cMD_DataIdentification\u003e\n      \u003ccitation\u003e\n        \u003cCI_Citation\u003e\n          \u003ctitle\u003e\n            \u003cgco:CharacterString\u003eUrban Land Cover, Pretoria, South Africa, 1990\u003c/gco:CharacterString\u003e\n          \u003c/title\u003e\n          \u003cdate\u003e\n            \u003cCI_Date\u003e\n              \u003cdate\u003e\n                \u003cgco:Date\u003e2012-01-01\u003c/gco:Date\u003e\n              \u003c/date\u003e\n              \u003cdateType\u003e\n                \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"publication\" codeSpace=\"ISOTC211/19115\"\u003epublication\u003c/CI_DateTypeCode\u003e\n              \u003c/dateType\u003e\n            \u003c/CI_Date\u003e\n          \u003c/date\u003e\n          \u003cidentifier\u003e\n            \u003cMD_Identifier\u003e\n              \u003ccode\u003e\n                \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/bb223nv3920\u003c/gco:CharacterString\u003e\n              \u003c/code\u003e\n            \u003c/MD_Identifier\u003e\n          \u003c/identifier\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003cindividualName\u003e\n                \u003cgco:CharacterString\u003eAngel, Shlomo\u003c/gco:CharacterString\u003e\n              \u003c/individualName\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003cindividualName\u003e\n                \u003cgco:CharacterString\u003eParent, Jason\u003c/gco:CharacterString\u003e\n              \u003c/individualName\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003cindividualName\u003e\n                \u003cgco:CharacterString\u003eCivco, Daniel L.\u003c/gco:CharacterString\u003e\n              \u003c/individualName\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003cindividualName\u003e\n                \u003cgco:CharacterString\u003eBlei, Alejandro M\u003c/gco:CharacterString\u003e\n              \u003c/individualName\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003corganisationName\u003e\n                \u003cgco:CharacterString\u003eLincoln Institute of Land Policy\u003c/gco:CharacterString\u003e\n              \u003c/organisationName\u003e\n              \u003ccontactInfo\u003e\n                \u003cCI_Contact\u003e\n                  \u003caddress\u003e\n                    \u003cCI_Address\u003e\n                      \u003ccity\u003e\n                        \u003cgco:CharacterString\u003eCambridge\u003c/gco:CharacterString\u003e\n                      \u003c/city\u003e\n                      \u003cadministrativeArea\u003e\n                        \u003cgco:CharacterString\u003eMA\u003c/gco:CharacterString\u003e\n                      \u003c/administrativeArea\u003e\n                      \u003ccountry\u003e\n                        \u003cgco:CharacterString\u003eUS\u003c/gco:CharacterString\u003e\n                      \u003c/country\u003e\n                    \u003c/CI_Address\u003e\n                  \u003c/address\u003e\n                \u003c/CI_Contact\u003e\n              \u003c/contactInfo\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"publisher\" codeSpace=\"ISOTC211/19115\"\u003epublisher\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n          \u003cpresentationForm\u003e\n            \u003cCI_PresentationFormCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode\" codeListValue=\"mapDigital\" codeSpace=\"ISOTC211/19115\"\u003emapDigital\u003c/CI_PresentationFormCode\u003e\n          \u003c/presentationForm\u003e\n          \u003cotherCitationDetails\u003e\n            \u003cgco:CharacterString\u003eThese data were downloaded from the Atlas of Urban Expansion website (May 2015) http://www.lincolninst.edu/subcenters/atlas-urban-expansion/\u003c/gco:CharacterString\u003e\n          \u003c/otherCitationDetails\u003e\n          \u003ccollectiveTitle\u003e\n            \u003cgco:CharacterString\u003eAtlas of Urban Expansion\u003c/gco:CharacterString\u003e\n          \u003c/collectiveTitle\u003e\n        \u003c/CI_Citation\u003e\n      \u003c/citation\u003e\n      \u003cabstract\u003e\n        \u003cgco:CharacterString\u003eThis raster layer contains urban land use and land cover data for Pretoria, South Africa in 1990. Categories of urban land use represented in these data include: urban, nonurban, water and other. Urban land cover, or urban extent, is typically measured by the total built-up area (or impervious surface) of cities, sometimes including the open spaces captured by their built-up areas and the open spaces on the urban fringe affected by urban development. Urban land is occupied by urban uses that include all land in residential, commercial, industrial, and office use; land used for transport, parks, and public facilities; protected land, and vacant land. Land in urban use does not include cultivated lands, pasture lands, forests, farms and villages, intercity roads, and nature areas. These data are part of the Atlas of Urban Expansion.\u003c/gco:CharacterString\u003e\n      \u003c/abstract\u003e\n      \u003cpurpose\u003e\n        \u003cgco:CharacterString\u003eThe Atlas of Urban Expansion provides the geographic and quantitative dimensions of urban expansion and its key attributes in cities the world over. The data and images are available for free downloading, for scholars, public officials, planners, those engaged in international development, and concerned citizens. The global empirical evidence presented here is critical for an intelligent discussion of plans and policies to manage urban expansion everywhere. This resource provides both the conceptual framework and, for the first time, the basic empirical data and quantitative dimensions of past, present, and future urban expansion in cities around the world that are necessary for making minimal preparations for the massive urban growth expected in the coming decades.\u003c/gco:CharacterString\u003e\n      \u003c/purpose\u003e\n      \u003ccredit\u003e\n        \u003cgco:CharacterString\u003eAngel, S., J. Parent, D. L. Civco and A. M. Blei, 2010. Atlas of Urban Expansion, Cambridge MA: Lincoln Institute of Land Policy, online at http://www.lincolninst.edu/subcenters/atlas-urban-expansion/.\u003c/gco:CharacterString\u003e\n      \u003c/credit\u003e\n      \u003cstatus\u003e\n        \u003cMD_ProgressCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode\" codeListValue=\"completed\" codeSpace=\"ISOTC211/19115\"\u003ecompleted\u003c/MD_ProgressCode\u003e\n      \u003c/status\u003e\n      \u003cpointOfContact\u003e\n        \u003cCI_ResponsibleParty\u003e\n          \u003corganisationName\u003e\n            \u003cgco:CharacterString\u003eLincoln Institute of Land Policy\u003c/gco:CharacterString\u003e\n          \u003c/organisationName\u003e\n          \u003ccontactInfo\u003e\n            \u003cCI_Contact\u003e\n              \u003caddress\u003e\n                \u003cCI_Address\u003e\n                  \u003cdeliveryPoint\u003e\n                    \u003cgco:CharacterString\u003e113 Brattle St.\u003c/gco:CharacterString\u003e\n                  \u003c/deliveryPoint\u003e\n                  \u003ccity\u003e\n                    \u003cgco:CharacterString\u003eCambridge\u003c/gco:CharacterString\u003e\n                  \u003c/city\u003e\n                  \u003cadministrativeArea\u003e\n                    \u003cgco:CharacterString\u003eMA\u003c/gco:CharacterString\u003e\n                  \u003c/administrativeArea\u003e\n                  \u003ccountry\u003e\n                    \u003cgco:CharacterString\u003eUS\u003c/gco:CharacterString\u003e\n                  \u003c/country\u003e\n                  \u003celectronicMailAddress\u003e\n                    \u003cgco:CharacterString\u003ehelp@lincolninst.edu\u003c/gco:CharacterString\u003e\n                  \u003c/electronicMailAddress\u003e\n                \u003c/CI_Address\u003e\n              \u003c/address\u003e\n            \u003c/CI_Contact\u003e\n          \u003c/contactInfo\u003e\n          \u003crole\u003e\n            \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"pointOfContact\" codeSpace=\"ISOTC211/19115\"\u003epointOfContact\u003c/CI_RoleCode\u003e\n          \u003c/role\u003e\n        \u003c/CI_ResponsibleParty\u003e\n      \u003c/pointOfContact\u003e\n      \u003cresourceMaintenance\u003e\n        \u003cMD_MaintenanceInformation\u003e\n          \u003cmaintenanceAndUpdateFrequency\u003e\n            \u003cMD_MaintenanceFrequencyCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode\" codeListValue=\"unknown\" codeSpace=\"ISOTC211/19115\"\u003eunknown\u003c/MD_MaintenanceFrequencyCode\u003e\n          \u003c/maintenanceAndUpdateFrequency\u003e\n        \u003c/MD_MaintenanceInformation\u003e\n      \u003c/resourceMaintenance\u003e\n      \u003cdescriptiveKeywords\u003e\n        \u003cMD_Keywords\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003ePretoria (South Africa)\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ctype\u003e\n            \u003cMD_KeywordTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode\" codeListValue=\"place\" codeSpace=\"ISOTC211/19115\"\u003eplace\u003c/MD_KeywordTypeCode\u003e\n          \u003c/type\u003e\n          \u003cthesaurusName\u003e\n            \u003cCI_Citation\u003e\n              \u003ctitle\u003e\n                \u003cgco:CharacterString\u003egeonames\u003c/gco:CharacterString\u003e\n              \u003c/title\u003e\n              \u003cdate\u003e\n                \u003cCI_Date\u003e\n                  \u003cdate\u003e\n                    \u003cgco:Date\u003e2012-11-01\u003c/gco:Date\u003e\n                  \u003c/date\u003e\n                  \u003cdateType\u003e\n                    \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\" codeSpace=\"ISOTC211/19115\"\u003erevision\u003c/CI_DateTypeCode\u003e\n                  \u003c/dateType\u003e\n                \u003c/CI_Date\u003e\n              \u003c/date\u003e\n              \u003cedition\u003e\n                \u003cgco:CharacterString\u003e3.1\u003c/gco:CharacterString\u003e\n              \u003c/edition\u003e\n              \u003cidentifier\u003e\n                \u003cMD_Identifier\u003e\n                  \u003ccode\u003e\n                    \u003cgco:CharacterString\u003ehttp://www.geonames.org/ontology#\u003c/gco:CharacterString\u003e\n                  \u003c/code\u003e\n                \u003c/MD_Identifier\u003e\n              \u003c/identifier\u003e\n            \u003c/CI_Citation\u003e\n          \u003c/thesaurusName\u003e\n        \u003c/MD_Keywords\u003e\n      \u003c/descriptiveKeywords\u003e\n      \u003cdescriptiveKeywords\u003e\n        \u003cMD_Keywords\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003e1990\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ctype\u003e\n            \u003cMD_KeywordTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode\" codeListValue=\"temporal\" codeSpace=\"ISOTC211/19115\"\u003etemporal\u003c/MD_KeywordTypeCode\u003e\n          \u003c/type\u003e\n        \u003c/MD_Keywords\u003e\n      \u003c/descriptiveKeywords\u003e\n      \u003cdescriptiveKeywords\u003e\n        \u003cMD_Keywords\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eUrbanization\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eMetropolitan areas\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eCities and towns\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eLand use\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eLand cover\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ctype\u003e\n            \u003cMD_KeywordTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode\" codeListValue=\"theme\" codeSpace=\"ISOTC211/19115\"\u003etheme\u003c/MD_KeywordTypeCode\u003e\n          \u003c/type\u003e\n          \u003cthesaurusName\u003e\n            \u003cCI_Citation\u003e\n              \u003ctitle\u003e\n                \u003cgco:CharacterString\u003elcsh\u003c/gco:CharacterString\u003e\n              \u003c/title\u003e\n              \u003cdate\u003e\n                \u003cCI_Date\u003e\n                  \u003cdate\u003e\n                    \u003cgco:Date\u003e2011-04-26\u003c/gco:Date\u003e\n                  \u003c/date\u003e\n                  \u003cdateType\u003e\n                    \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\" codeSpace=\"ISOTC211/19115\"\u003erevision\u003c/CI_DateTypeCode\u003e\n                  \u003c/dateType\u003e\n                \u003c/CI_Date\u003e\n              \u003c/date\u003e\n              \u003cidentifier\u003e\n                \u003cMD_Identifier\u003e\n                  \u003ccode\u003e\n                    \u003cgco:CharacterString\u003ehttp://id.loc.gov/authorities/subjects.html\u003c/gco:CharacterString\u003e\n                  \u003c/code\u003e\n                \u003c/MD_Identifier\u003e\n              \u003c/identifier\u003e\n            \u003c/CI_Citation\u003e\n          \u003c/thesaurusName\u003e\n        \u003c/MD_Keywords\u003e\n      \u003c/descriptiveKeywords\u003e\n      \u003cresourceConstraints\u003e\n        \u003cMD_LegalConstraints\u003e\n          \u003cuseLimitation\u003e\n            \u003cgco:CharacterString\u003eUse of data should include the following citation: Angel, S., J. Parent, D. L. Civco and A. M. Blei, 2010. Atlas of Urban Expansion, Cambridge MA: Lincoln Institute of Land Policy, online at http://www.lincolninst.edu/subcenters/atlas-urban-expansion.\u003c/gco:CharacterString\u003e\n          \u003c/useLimitation\u003e\n        \u003c/MD_LegalConstraints\u003e\n      \u003c/resourceConstraints\u003e\n      \u003caggregationInfo\u003e\n        \u003cMD_AggregateInformation\u003e\n          \u003caggregateDataSetName\u003e\n            \u003cCI_Citation\u003e\n              \u003ctitle\u003e\n                \u003cgco:CharacterString\u003eAtlas of Urban Expansion\u003c/gco:CharacterString\u003e\n              \u003c/title\u003e\n              \u003cdate\u003e\n                \u003cCI_Date\u003e\n                  \u003cdate\u003e\n                    \u003cgco:Date\u003e2012-01-01\u003c/gco:Date\u003e\n                  \u003c/date\u003e\n                  \u003cdateType\u003e\n                    \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"publication\" codeSpace=\"ISOTC211/19115\"\u003epublication\u003c/CI_DateTypeCode\u003e\n                  \u003c/dateType\u003e\n                \u003c/CI_Date\u003e\n              \u003c/date\u003e\n              \u003cidentifier\u003e\n                \u003cMD_Identifier\u003e\n                  \u003ccode\u003e\n                    \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/rr276tj2464\u003c/gco:CharacterString\u003e\n                  \u003c/code\u003e\n                \u003c/MD_Identifier\u003e\n              \u003c/identifier\u003e\n              \u003ccitedResponsibleParty\u003e\n                \u003cCI_ResponsibleParty\u003e\n                  \u003cindividualName\u003e\n                    \u003cgco:CharacterString\u003eAngel, Shlomo\u003c/gco:CharacterString\u003e\n                  \u003c/individualName\u003e\n                  \u003crole\u003e\n                    \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n                  \u003c/role\u003e\n                \u003c/CI_ResponsibleParty\u003e\n              \u003c/citedResponsibleParty\u003e\n              \u003ccitedResponsibleParty\u003e\n                \u003cCI_ResponsibleParty\u003e\n                  \u003cindividualName\u003e\n                    \u003cgco:CharacterString\u003eParent, Jason\u003c/gco:CharacterString\u003e\n                  \u003c/individualName\u003e\n                  \u003crole\u003e\n                    \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n                  \u003c/role\u003e\n                \u003c/CI_ResponsibleParty\u003e\n              \u003c/citedResponsibleParty\u003e\n              \u003ccitedResponsibleParty\u003e\n                \u003cCI_ResponsibleParty\u003e\n                  \u003cindividualName\u003e\n                    \u003cgco:CharacterString\u003eCivco, Daniel L.\u003c/gco:CharacterString\u003e\n                  \u003c/individualName\u003e\n                  \u003crole\u003e\n                    \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n                  \u003c/role\u003e\n                \u003c/CI_ResponsibleParty\u003e\n              \u003c/citedResponsibleParty\u003e\n              \u003ccitedResponsibleParty\u003e\n                \u003cCI_ResponsibleParty\u003e\n                  \u003cindividualName\u003e\n                    \u003cgco:CharacterString\u003eBlei, Alejandro M\u003c/gco:CharacterString\u003e\n                  \u003c/individualName\u003e\n                  \u003crole\u003e\n                    \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n                  \u003c/role\u003e\n                \u003c/CI_ResponsibleParty\u003e\n              \u003c/citedResponsibleParty\u003e\n              \u003ccitedResponsibleParty\u003e\n                \u003cCI_ResponsibleParty\u003e\n                  \u003corganisationName\u003e\n                    \u003cgco:CharacterString\u003eLincoln Institute of Land Policy\u003c/gco:CharacterString\u003e\n                  \u003c/organisationName\u003e\n                  \u003ccontactInfo\u003e\n                    \u003cCI_Contact\u003e\n                      \u003caddress\u003e\n                        \u003cCI_Address\u003e\n                          \u003ccity\u003e\n                            \u003cgco:CharacterString\u003eCambridge\u003c/gco:CharacterString\u003e\n                          \u003c/city\u003e\n                          \u003cadministrativeArea\u003e\n                            \u003cgco:CharacterString\u003eMA\u003c/gco:CharacterString\u003e\n                          \u003c/administrativeArea\u003e\n                        \u003c/CI_Address\u003e\n                      \u003c/address\u003e\n                    \u003c/CI_Contact\u003e\n                  \u003c/contactInfo\u003e\n                  \u003crole\u003e\n                    \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"publisher\" codeSpace=\"ISOTC211/19115\"\u003epublisher\u003c/CI_RoleCode\u003e\n                  \u003c/role\u003e\n                \u003c/CI_ResponsibleParty\u003e\n              \u003c/citedResponsibleParty\u003e\n            \u003c/CI_Citation\u003e\n          \u003c/aggregateDataSetName\u003e\n          \u003cassociationType\u003e\n            \u003cDS_AssociationTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode\" codeListValue=\"largerWorkCitation\" codeSpace=\"ISOTC211/19115\"\u003elargerWorkCitation\u003c/DS_AssociationTypeCode\u003e\n          \u003c/associationType\u003e\n          \u003cinitiativeType\u003e\n            \u003cDS_InitiativeTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_InitiativeTypeCode\" codeListValue=\"collection\" codeSpace=\"ISOTC211/19115\"\u003ecollection\u003c/DS_InitiativeTypeCode\u003e\n          \u003c/initiativeType\u003e\n        \u003c/MD_AggregateInformation\u003e\n      \u003c/aggregationInfo\u003e\n      \u003cspatialRepresentationType\u003e\n        \u003cMD_SpatialRepresentationTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode\" codeListValue=\"grid\" codeSpace=\"ISOTC211/19115\"\u003egrid\u003c/MD_SpatialRepresentationTypeCode\u003e\n      \u003c/spatialRepresentationType\u003e\n      \u003clanguage\u003e\n        \u003cLanguageCode codeList=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\" codeListValue=\"eng\" codeSpace=\"ISO639-2\"\u003eeng\u003c/LanguageCode\u003e\n      \u003c/language\u003e\n      \u003ccharacterSet\u003e\n        \u003cMD_CharacterSetCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode\" codeListValue=\"utf8\" codeSpace=\"ISOTC211/19115\"\u003eutf8\u003c/MD_CharacterSetCode\u003e\n      \u003c/characterSet\u003e\n      \u003ctopicCategory\u003e\n        \u003cMD_TopicCategoryCode\u003esociety\u003c/MD_TopicCategoryCode\u003e\n      \u003c/topicCategory\u003e\n      \u003ctopicCategory\u003e\n        \u003cMD_TopicCategoryCode\u003eimageryBaseMapsEarthCover\u003c/MD_TopicCategoryCode\u003e\n      \u003c/topicCategory\u003e\n      \u003cenvironmentDescription\u003e\n        \u003cgco:CharacterString\u003eMicrosoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.3.1.4959\u003c/gco:CharacterString\u003e\n      \u003c/environmentDescription\u003e\n      \u003cextent\u003e\n        \u003cEX_Extent\u003e\n          \u003cgeographicElement\u003e\n            \u003cEX_GeographicBoundingBox\u003e\n              \u003cextentTypeCode\u003e\n                \u003cgco:Boolean\u003etrue\u003c/gco:Boolean\u003e\n              \u003c/extentTypeCode\u003e\n              \u003cwestBoundLongitude\u003e\n                \u003cgco:Decimal\u003e27.607274\u003c/gco:Decimal\u003e\n              \u003c/westBoundLongitude\u003e\n              \u003ceastBoundLongitude\u003e\n                \u003cgco:Decimal\u003e28.465547\u003c/gco:Decimal\u003e\n              \u003c/eastBoundLongitude\u003e\n              \u003csouthBoundLatitude\u003e\n                \u003cgco:Decimal\u003e-26.005475\u003c/gco:Decimal\u003e\n              \u003c/southBoundLatitude\u003e\n              \u003cnorthBoundLatitude\u003e\n                \u003cgco:Decimal\u003e-24.96866\u003c/gco:Decimal\u003e\n              \u003c/northBoundLatitude\u003e\n            \u003c/EX_GeographicBoundingBox\u003e\n          \u003c/geographicElement\u003e\n        \u003c/EX_Extent\u003e\n      \u003c/extent\u003e\n      \u003cextent\u003e\n        \u003cEX_Extent\u003e\n          \u003cdescription\u003e\n            \u003cgco:CharacterString\u003eground condition\u003c/gco:CharacterString\u003e\n          \u003c/description\u003e\n          \u003ctemporalElement\u003e\n            \u003cEX_TemporalExtent\u003e\n              \u003cextent\u003e\n                \u003cgml:TimePeriod gml:id=\"idp68816\"\u003e\n                  \u003cgml:beginPosition\u003e1990-01-01T00:00:00\u003c/gml:beginPosition\u003e\n                  \u003cgml:endPosition\u003e1990-12-31T00:00:00\u003c/gml:endPosition\u003e\n                \u003c/gml:TimePeriod\u003e\n              \u003c/extent\u003e\n            \u003c/EX_TemporalExtent\u003e\n          \u003c/temporalElement\u003e\n        \u003c/EX_Extent\u003e\n      \u003c/extent\u003e\n      \u003csupplementalInformation\u003e\n        \u003cgco:CharacterString\u003eThis downloaded layer may also conain an ERDAS Imagine Image format raster dataset. The Atlas of Urban Expansion is also available as a printed book. The Atlas of Urban Expansion accompanies the Policy Focus Report Making Room for a Planet of Cities, a comprehensive and original analysis of the quantitative dimensions of past, present, and future global urban land cover, culminating in a proposed new paradigm for preparing for explosive growth in cities the world over. Further detail of that analysis is available in three working papers available for downloading: The Persistent Decline in Urban Densities, The Fragmentation of Urban Footprints, and A Planet of Cities: Country Estimates and Projections of Urban Land Cover, 2000-2050. A forthcoming book, titled The Expansion of Cities, bringing together the analysis of the maps in the Atlas of Urban Expansion within a broader discussion of urban expansion in a global and historical perspective, will be published by the Lincoln Institute in 2012.\u003c/gco:CharacterString\u003e\n      \u003c/supplementalInformation\u003e\n    \u003c/MD_DataIdentification\u003e\n  \u003c/identificationInfo\u003e\n  \u003ccontentInfo\u003e\n    \u003cMD_ImageDescription\u003e\n      \u003cattributeDescription gco:nilReason=\"missing\"/\u003e\n      \u003ccontentType\u003e\n        \u003cMD_CoverageContentTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CoverageContentTypeCode\" codeListValue=\"thematicClassification\" codeSpace=\"ISOTC211/19115\"\u003ethematicClassification\u003c/MD_CoverageContentTypeCode\u003e\n      \u003c/contentType\u003e\n      \u003cdimension\u003e\n        \u003cMD_Band\u003e\n          \u003cdescriptor\u003e\n            \u003cgco:CharacterString\u003eBand_1\u003c/gco:CharacterString\u003e\n          \u003c/descriptor\u003e\n          \u003cmaxValue\u003e\n            \u003cgco:Real\u003e3\u003c/gco:Real\u003e\n          \u003c/maxValue\u003e\n          \u003cminValue\u003e\n            \u003cgco:Real\u003e0\u003c/gco:Real\u003e\n          \u003c/minValue\u003e\n          \u003cunits\u003e\n            \u003cgml:UnitDefinition gml:id=\"idp170784\"\u003e\n              \u003cgml:identifier codeSpace=\"GML_UomSymbol\"\u003eUnified Code of Units of Measure\u003c/gml:identifier\u003e\n            \u003c/gml:UnitDefinition\u003e\n          \u003c/units\u003e\n          \u003cbitsPerValue\u003e\n            \u003cgco:Integer\u003e4\u003c/gco:Integer\u003e\n          \u003c/bitsPerValue\u003e\n        \u003c/MD_Band\u003e\n      \u003c/dimension\u003e\n    \u003c/MD_ImageDescription\u003e\n  \u003c/contentInfo\u003e\n  \u003cdistributionInfo\u003e\n    \u003cMD_Distribution\u003e\n      \u003cdistributionFormat\u003e\n        \u003cMD_Format\u003e\n          \u003cname\u003e\n            \u003cgco:CharacterString\u003eGeoTIFF\u003c/gco:CharacterString\u003e\n          \u003c/name\u003e\n          \u003cversion gco:nilReason=\"missing\"/\u003e\n        \u003c/MD_Format\u003e\n      \u003c/distributionFormat\u003e\n      \u003cdistributor\u003e\n        \u003cMD_Distributor\u003e\n          \u003cdistributorContact\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003corganisationName\u003e\n                \u003cgco:CharacterString\u003eStanford Geospatial Center\u003c/gco:CharacterString\u003e\n              \u003c/organisationName\u003e\n              \u003ccontactInfo\u003e\n                \u003cCI_Contact\u003e\n                  \u003cphone\u003e\n                    \u003cCI_Telephone\u003e\n                      \u003cvoice\u003e\n                        \u003cgco:CharacterString\u003e650-723-2746\u003c/gco:CharacterString\u003e\n                      \u003c/voice\u003e\n                    \u003c/CI_Telephone\u003e\n                  \u003c/phone\u003e\n                  \u003caddress\u003e\n                    \u003cCI_Address\u003e\n                      \u003cdeliveryPoint\u003e\n                        \u003cgco:CharacterString\u003eBranner Earth Sciences Library\u003c/gco:CharacterString\u003e\n                      \u003c/deliveryPoint\u003e\n                      \u003cdeliveryPoint\u003e\n                        \u003cgco:CharacterString\u003eMitchell Building, 2nd Floor\u003c/gco:CharacterString\u003e\n                      \u003c/deliveryPoint\u003e\n                      \u003cdeliveryPoint\u003e\n                        \u003cgco:CharacterString\u003e397 Panama Mall\u003c/gco:CharacterString\u003e\n                      \u003c/deliveryPoint\u003e\n                      \u003ccity\u003e\n                        \u003cgco:CharacterString\u003eStanford\u003c/gco:CharacterString\u003e\n                      \u003c/city\u003e\n                      \u003cadministrativeArea\u003e\n                        \u003cgco:CharacterString\u003eCalifornia\u003c/gco:CharacterString\u003e\n                      \u003c/administrativeArea\u003e\n                      \u003cpostalCode\u003e\n                        \u003cgco:CharacterString\u003e94305\u003c/gco:CharacterString\u003e\n                      \u003c/postalCode\u003e\n                      \u003celectronicMailAddress\u003e\n                        \u003cgco:CharacterString\u003ebrannerlibrary@stanford.edu\u003c/gco:CharacterString\u003e\n                      \u003c/electronicMailAddress\u003e\n                    \u003c/CI_Address\u003e\n                  \u003c/address\u003e\n                \u003c/CI_Contact\u003e\n              \u003c/contactInfo\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"distributor\" codeSpace=\"ISOTC211/19115\"\u003edistributor\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/distributorContact\u003e\n        \u003c/MD_Distributor\u003e\n      \u003c/distributor\u003e\n      \u003ctransferOptions\u003e\n        \u003cMD_DigitalTransferOptions\u003e\n          \u003conLine\u003e\n            \u003cCI_OnlineResource\u003e\n              \u003clinkage\u003e\n                \u003cURL\u003ehttp://purl.stanford.edu/bb223nv3920\u003c/URL\u003e\n              \u003c/linkage\u003e\n              \u003cprotocol\u003e\n                \u003cgco:CharacterString\u003ehttp\u003c/gco:CharacterString\u003e\n              \u003c/protocol\u003e\n              \u003cname\u003e\n                \u003cgco:CharacterString\u003ePretoria_landcover_t1.img\u003c/gco:CharacterString\u003e\n              \u003c/name\u003e\n              \u003cfunction\u003e\n                \u003cCI_OnLineFunctionCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode\" codeListValue=\"download\" codeSpace=\"ISOTC211/19115\"\u003edownload\u003c/CI_OnLineFunctionCode\u003e\n              \u003c/function\u003e\n            \u003c/CI_OnlineResource\u003e\n          \u003c/onLine\u003e\n        \u003c/MD_DigitalTransferOptions\u003e\n      \u003c/transferOptions\u003e\n    \u003c/MD_Distribution\u003e\n  \u003c/distributionInfo\u003e\n  \u003cdataQualityInfo\u003e\n    \u003cDQ_DataQuality\u003e\n      \u003cscope gco:nilReason=\"missing\"/\u003e\n      \u003clineage\u003e\n        \u003cLI_Lineage\u003e\n          \u003cstatement\u003e\n            \u003cgco:CharacterString\u003eLand cover maps were derived from satellite imagery of 120 cities and metropolitan areas in two time periods, one circa 1990 and one circa 2000.\n\nIn an earlier 2005 study, the Lincoln Institute identified a total of 3,945 large cities with populations of 100,000 or more that were home to a total of 2.12 billion people or three-quarters of the world's urban population in the year 2000. The global sample of 120 cities is a stratified sample from this universe (Angel et al. 2005, chapter 2). It includes cities from nine geographic regions, four population size classes, and four per capita income classes. \n\nFor each city in this sample, the Lincoln Institute obtained two medium-resolution Landsat satellite images, one for each time period. These images were classified into built-up and non-built-up 30x30 meter pixels, using a thematic extraction algorithm.\n\nUsing 10,000 Google Earth validation sites, Potere et al. (2009) later reported that pixels identified as built-up in our sample were found to be built-up in Google Earth 91 percent of the time and those identified in Google Earth as urban were identified in our sample 89 percent of the time, a relatively high level of accuracy.\u003c/gco:CharacterString\u003e\n          \u003c/statement\u003e\n        \u003c/LI_Lineage\u003e\n      \u003c/lineage\u003e\n    \u003c/DQ_DataQuality\u003e\n  \u003c/dataQualityInfo\u003e\n\u003c/MD_Metadata\u003e\n              \u003c/rdf:Description\u003e\n              \u003crdf:Description rdf:about=\"http://purl.stanford.edu/bb223nv3920\"\u003e\n                \u003cgfc:FC_FeatureCatalogue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:gco=\"http://www.isotc211.org/2005/gco\" xmlns:gfc=\"http://www.isotc211.org/2005/gfc\" xmlns:gmd=\"http://www.isotc211.org/2005/gmd\" xmlns:gmx=\"http://www.isotc211.org/2005/gmx\" xmlns:gml=\"http://www.opengis.net/gml/3.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns=\"http://www.isotc211.org/2005/gfc\" xsi:schemaLocation=\"http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd\" uuid=\"\"\u003e\n  \u003cgmx:name\u003e\n    \u003cgco:CharacterString/\u003e\n  \u003c/gmx:name\u003e\n  \u003cgmx:scope\u003e\n    \u003cgco:CharacterString\u003eUrbanization; Metropolitan areas; Cities and towns; Land use; Land cover\u003c/gco:CharacterString\u003e\n  \u003c/gmx:scope\u003e\n  \u003cgmx:versionNumber gco:nilReason=\"unknown\"/\u003e\n  \u003cgmx:versionDate\u003e\n    \u003cgco:Date\u003e2012\u003c/gco:Date\u003e\n  \u003c/gmx:versionDate\u003e\n  \u003cgmx:language\u003e\n    \u003cgco:CharacterString\u003eeng; US\u003c/gco:CharacterString\u003e\n  \u003c/gmx:language\u003e\n  \u003cgmx:characterSet\u003e\n    \u003cgmd:MD_CharacterSetCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode\" codeListValue=\"utf8\" codeSpace=\"ISOTC211/19115\"/\u003e\n  \u003c/gmx:characterSet\u003e\n  \u003cgfc:featureType\u003e\n    \u003cgfc:FC_FeatureType\u003e\n      \u003cgfc:typeName\u003e\n        \u003cgco:LocalName\u003ePretoria_landcover_t1.tif.vat\u003c/gco:LocalName\u003e\n      \u003c/gfc:typeName\u003e\n      \u003cgfc:definition/\u003e\n      \u003cgfc:isAbstract\u003e\n        \u003cgco:Boolean\u003efalse\u003c/gco:Boolean\u003e\n      \u003c/gfc:isAbstract\u003e\n      \u003cgfc:featureCatalogue uuidref=\"\"/\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eOID\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString\u003eInternal feature number.\u003c/gco:CharacterString\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:definitionReference\u003e\n            \u003cgfc:FC_DefinitionReference\u003e\n              \u003cgfc:definitionSource\u003e\n                \u003cgfc:FC_DefinitionSource\u003e\n                  \u003cgfc:source\u003e\n                    \u003cgmd:CI_Citation\u003e\n                      \u003cgmd:title\u003e\n                        \u003cgco:CharacterString\u003eEsri\u003c/gco:CharacterString\u003e\n                      \u003c/gmd:title\u003e\n                      \u003cgmd:date gco:nilReason=\"unknown\"/\u003e\n                      \u003cgmd:citedResponsibleParty\u003e\n                        \u003cgmd:CI_ResponsibleParty\u003e\n                          \u003cgmd:organisationName\u003e\n                            \u003cgco:CharacterString\u003eEsri\u003c/gco:CharacterString\u003e\n                          \u003c/gmd:organisationName\u003e\n                          \u003cgmd:role\u003e\n                            \u003cgmd:CI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"resourceProvider\" codeSpace=\"001\"/\u003e\n                          \u003c/gmd:role\u003e\n                        \u003c/gmd:CI_ResponsibleParty\u003e\n                      \u003c/gmd:citedResponsibleParty\u003e\n                    \u003c/gmd:CI_Citation\u003e\n                  \u003c/gfc:source\u003e\n                \u003c/gfc:FC_DefinitionSource\u003e\n              \u003c/gfc:definitionSource\u003e\n            \u003c/gfc:FC_DefinitionReference\u003e\n          \u003c/gfc:definitionReference\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eOID\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eValue\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eInteger\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eRed\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eDouble\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eGreen\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eDouble\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eBlue\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eDouble\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eOpacity\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eDouble\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eCount\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eDouble\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n    \u003c/gfc:FC_FeatureType\u003e\n  \u003c/gfc:featureType\u003e\n\u003c/gfc:FC_FeatureCatalogue\u003e\n              \u003c/rdf:Description\u003e\n            \u003c/rdf:RDF\u003e"
+  },
+  "created": "2015-05-26T20:30:47.000+00:00",
+  "modified": "2026-07-23T17:16:18.000+00:00",
+  "lock": "druid:bb223nv3920=18=2",
+  "label": "Urban Land Cover, Pretoria, South Africa, 1990"
+}

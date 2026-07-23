@@ -1,0 +1,683 @@
+{
+  "cocinaVersion": "0.129.0",
+  "type": "https://cocina.sul.stanford.edu/models/geo",
+  "externalIdentifier": "druid:bb099zb1450",
+  "version": 13,
+  "access": {
+    "view": "stanford",
+    "download": "stanford",
+    "controlledDigitalLending": false,
+    "copyright": "Copyright ownership resides with the originator.",
+    "useAndReproductionStatement": "These data are licensed by Stanford Libraries and are available to Stanford University affiliates only. Affiliates are limited to current faculty, staff and students. Non affiliates seeking access should contact the publisher directly. These data may not be reproduced or used for any purpose without permission."
+  },
+  "administrative": {
+    "hasAdminPolicy": "druid:gz830zp4734"
+  },
+  "description": {
+    "title": [
+      {
+        "value": "Department Boundary: Haute-Garonne, France, 2010"
+      }
+    ],
+    "event": [
+      {
+        "date": [
+          {
+            "value": "2010",
+            "type": "publication",
+            "status": "primary",
+            "encoding": {
+              "code": "w3cdtf"
+            }
+          },
+          {
+            "value": "2010",
+            "type": "validity",
+            "encoding": {
+              "code": "w3cdtf"
+            }
+          }
+        ],
+        "contributor": [
+          {
+            "name": [
+              {
+                "value": "Articque informatique"
+              }
+            ],
+            "type": "organization",
+            "role": [
+              {
+                "value": "publisher",
+                "code": "pbl",
+                "uri": "http://id.loc.gov/vocabulary/relators/pbl",
+                "source": {
+                  "code": "marcrelator",
+                  "uri": "http://id.loc.gov/vocabulary/relators/"
+                }
+              }
+            ]
+          }
+        ],
+        "note": [
+          {
+            "value": "1",
+            "type": "edition"
+          }
+        ]
+      }
+    ],
+    "form": [
+      {
+        "value": "Geospatial data",
+        "type": "genre",
+        "uri": "http://id.loc.gov/authorities/genreForms/gf2011026297",
+        "source": {
+          "code": "lcgft"
+        }
+      },
+      {
+        "value": "cartographic dataset",
+        "type": "genre",
+        "uri": "http://rdvocab.info/termList/RDAContentType/1001",
+        "source": {
+          "code": "rdacontent"
+        }
+      },
+      {
+        "value": "Dataset",
+        "type": "genre",
+        "source": {
+          "value": "local"
+        }
+      },
+      {
+        "value": "cartographic",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "software, multimedia",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "born digital",
+        "type": "digital origin",
+        "source": {
+          "value": "MODS digital origin terms"
+        }
+      },
+      {
+        "value": "Shapefile",
+        "type": "form"
+      },
+      {
+        "value": "EPSG::2154",
+        "type": "map projection"
+      }
+    ],
+    "geographic": [
+      {
+        "form": [
+          {
+            "value": "application/x-esri-shapefile",
+            "type": "media type",
+            "source": {
+              "value": "IANA media type terms"
+            }
+          },
+          {
+            "value": "Shapefile",
+            "type": "data format"
+          },
+          {
+            "value": "Dataset#Polygon",
+            "type": "type"
+          }
+        ],
+        "subject": [
+          {
+            "structuredValue": [
+              {
+                "value": "0.441292",
+                "type": "west"
+              },
+              {
+                "value": "42.68919",
+                "type": "south"
+              },
+              {
+                "value": "2.048281",
+                "type": "east"
+              },
+              {
+                "value": "43.921245",
+                "type": "north"
+              }
+            ],
+            "type": "bounding box coordinates",
+            "standard": {
+              "code": "EPSG:4326"
+            },
+            "encoding": {
+              "value": "decimal"
+            }
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "code": "eng",
+        "source": {
+          "code": "iso639-2b"
+        }
+      }
+    ],
+    "note": [
+      {
+        "value": "This polygon shapefile represents the Department Boundary for the Haute-Garonne department of France for 2010. These are the level 2 administrative divisions (ADM2) of Haute-Garonne. Department is one of the three levels of government below the national level (\"territorial collectivities\"), between the region and the commune. There are 96 departments in metropolitan France and 5 overseas departments, which also are classified as regions. Departments are further subdivided into 342 arrondissements, themselves divided into cantons; the latter two have no autonomy and are used for the organisation of public services and sometimes elections.",
+        "type": "abstract",
+        "displayLabel": "Abstract"
+      },
+      {
+        "value": "This dataset is intended for researchers, students, and policy makers for reference and mapping purposes, and may be used for basic applications such as viewing, querying, and map output production, or to provide a basemap to support graphical overlays and analysis with other spatial data.",
+        "type": "other",
+        "displayLabel": "Purpose"
+      }
+    ],
+    "subject": [
+      {
+        "value": "Haute-Garonne (France)",
+        "type": "place",
+        "uri": "http://sws.geonames.org/3013767/",
+        "source": {
+          "code": "geonames",
+          "uri": "http://www.geonames.org/ontology#"
+        }
+      },
+      {
+        "value": "Administrative and political divisions",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Departments",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Boundaries",
+        "type": "topic",
+        "code": "boundaries",
+        "source": {
+          "code": "ISO19115TopicCategory",
+          "uri": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
+        }
+      },
+      {
+        "value": "2010",
+        "type": "time",
+        "encoding": {
+          "code": "w3cdtf"
+        }
+      },
+      {
+        "value": "E 0°23ʹ50ʺ--E 2°3ʹ39ʺ/N 43°55ʹ37ʺ--N 42°41ʹ3ʺ",
+        "type": "map coordinates"
+      }
+    ],
+    "access": {
+      "accessContact": [
+        {
+          "value": "support@articque.com",
+          "type": "email",
+          "displayLabel": "Contact"
+        }
+      ]
+    },
+    "adminMetadata": {
+      "contributor": [
+        {
+          "name": [
+            {
+              "value": "Stanford"
+            }
+          ]
+        }
+      ],
+      "event": [
+        {
+          "type": "creation",
+          "date": [
+            {
+              "value": "2014-12-10",
+              "encoding": {
+                "code": "w3cdtf"
+              }
+            }
+          ]
+        },
+        {
+          "type": "modification",
+          "date": [
+            {
+              "value": "2014-12-10",
+              "encoding": {
+                "code": "w3cdtf"
+              }
+            }
+          ]
+        }
+      ],
+      "language": [
+        {
+          "code": "eng",
+          "source": {
+            "code": "iso639-2b"
+          }
+        }
+      ],
+      "identifier": [
+        {
+          "value": "edu.stanford.purl:bb099zb1450"
+        }
+      ]
+    },
+    "purl": "https://purl.stanford.edu/bb099zb1450"
+  },
+  "identification": {
+    "sourceId": "branner:cfa_D31_dep.shp"
+  },
+  "structural": {
+    "contains": [
+      {
+        "type": "https://cocina.sul.stanford.edu/models/resources/object",
+        "externalIdentifier": "bb099zb1450_1",
+        "label": "Object",
+        "version": 7,
+        "structural": {
+          "contains": [
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/6f0e4691-461d-4edb-b48e-0a45192bfd59",
+              "label": "D31_dep.shp",
+              "filename": "D31_dep.shp",
+              "size": 29372,
+              "version": 7,
+              "hasMimeType": "application/vnd.shp",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "12e7441f9ec35f58b55d2127baa5c809c2bed878"
+                },
+                {
+                  "type": "md5",
+                  "digest": "726d1ed77678c3a56ecf749accece297"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/59fc0f57-d59f-48b0-a0af-cb159a80e8b9",
+              "label": "D31_dep.shx",
+              "filename": "D31_dep.shx",
+              "size": 108,
+              "version": 7,
+              "hasMimeType": "application/vnd.shx",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "aedf72a304c12c020bbf565a621ce696a1cbac82"
+                },
+                {
+                  "type": "md5",
+                  "digest": "50e2993b9287399c962b7a9c8bf6efee"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/334e3241-5aa8-49b6-89ee-d60badd3067e",
+              "label": "D31_dep.dbf",
+              "filename": "D31_dep.dbf",
+              "size": 181,
+              "version": 7,
+              "hasMimeType": "application/vnd.dbf",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "a5031fb42f0b7a44e159bc73af243dd1a5acdc93"
+                },
+                {
+                  "type": "md5",
+                  "digest": "61755529cf19e69fecc63e31c43136a1"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/ed67d0ff-bae9-4e9e-8630-462989aa45e5",
+              "label": "D31_dep.prj",
+              "filename": "D31_dep.prj",
+              "size": 452,
+              "version": 7,
+              "hasMimeType": "text/plain",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "658a280ae92f4b7536244fa7700c8718cb47f9ca"
+                },
+                {
+                  "type": "md5",
+                  "digest": "19acbcf8e832fb072a66ba37c478108e"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/7721ff28-8757-423e-9581-360513c68950",
+              "label": "D31_dep.shp.xml",
+              "filename": "D31_dep.shp.xml",
+              "size": 20439,
+              "version": 7,
+              "hasMimeType": "application/xml",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "9b4404d42dfb1c4c91e7f719ffc494b345146435"
+                },
+                {
+                  "type": "md5",
+                  "digest": "826dd3b45dd823c1a3106a344f87b1c0"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/5314981d-63ad-41d0-9cf1-7abf20c42ac2",
+              "label": "D31_dep-iso19139.xml",
+              "filename": "D31_dep-iso19139.xml",
+              "size": 26849,
+              "version": 7,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "5fbc81cb8cda282a9f12e83124bba167e8fe1c8c"
+                },
+                {
+                  "type": "md5",
+                  "digest": "90936038e16d60193d23ed13da60e4e6"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/114fd355-27eb-4add-9004-d9b4a907211c",
+              "label": "D31_dep-iso19110.xml",
+              "filename": "D31_dep-iso19110.xml",
+              "size": 8188,
+              "version": 7,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "cc1275706d7c20ab9e91d8fc50d488ad744ab25e"
+                },
+                {
+                  "type": "md5",
+                  "digest": "5de5ce5f9abb91c6aa841a25fed1fc09"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/6591de0a-aef2-499f-83ec-5b1b1f5f6228",
+              "label": "D31_dep-fgdc.xml",
+              "filename": "D31_dep-fgdc.xml",
+              "size": 6335,
+              "version": 7,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "201d2b413936f9a431658c462c07a47f52b7e907"
+                },
+                {
+                  "type": "md5",
+                  "digest": "d57f4c8c893e44f2a9dfb67a156c0b7f"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/c07c2ee3-9075-4c93-83ac-621f48ee8a7a",
+              "label": "D31_dep.jp2",
+              "filename": "D31_dep.jp2",
+              "size": 30572,
+              "version": 11,
+              "hasMimeType": "image/jp2",
+              "use": "thumbnail",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "6e9f72a94f448b91c1ffc1e2277ac85b08dfc380"
+                },
+                {
+                  "type": "md5",
+                  "digest": "2ac4e04fd9e70d833c7f0df13517107a"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              },
+              "presentation": {
+                "height": 512,
+                "width": 512
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/3d2d6500-16f1-4093-b536-d89affff76aa",
+              "label": "D31_dep.fgb",
+              "filename": "D31_dep.fgb",
+              "size": 30624,
+              "version": 13,
+              "hasMimeType": "application/vnd.fgb",
+              "use": "derivative",
+              "sdrGeneratedText": true,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "add249cd625fbd4ac458560093f957f1ae7259cd"
+                },
+                {
+                  "type": "md5",
+                  "digest": "159940df5ba276e4e89a53770d5b978c"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/8119092e-f391-48ee-a76d-1cedfbe5c9c8",
+              "label": "D31_dep.pmtiles",
+              "filename": "D31_dep.pmtiles",
+              "size": 8823,
+              "version": 13,
+              "hasMimeType": "application/vnd.pmtiles",
+              "use": "derivative",
+              "sdrGeneratedText": true,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "62677a05ed084537847670b8ec89dea8339c5dfb"
+                },
+                {
+                  "type": "md5",
+                  "digest": "9e16e76fc9f0ead3d7a8f431c52bc3f2"
+                }
+              ],
+              "access": {
+                "view": "stanford",
+                "download": "stanford",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "isMemberOf": [
+      "druid:wn457nv9847"
+    ]
+  },
+  "geographic": {
+    "iso19139": "\u003crdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"\u003e\n              \u003crdf:Description rdf:about=\"http://purl.stanford.edu/bb099zb1450\"\u003e\n                \u003cMD_Metadata xmlns=\"http://www.isotc211.org/2005/gmd\" xmlns:gco=\"http://www.isotc211.org/2005/gco\" xmlns:gts=\"http://www.isotc211.org/2005/gts\" xmlns:srv=\"http://www.isotc211.org/2005/srv\" xmlns:gml=\"http://www.opengis.net/gml\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\u003e\n  \u003cfileIdentifier\u003e\n    \u003cgco:CharacterString\u003eedu.stanford.purl:bb099zb1450\u003c/gco:CharacterString\u003e\n  \u003c/fileIdentifier\u003e\n  \u003clanguage\u003e\n    \u003cLanguageCode codeList=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\" codeListValue=\"eng\" codeSpace=\"ISO639-2\"\u003eeng\u003c/LanguageCode\u003e\n  \u003c/language\u003e\n  \u003ccharacterSet\u003e\n    \u003cMD_CharacterSetCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode\" codeListValue=\"utf8\" codeSpace=\"ISOTC211/19115\"\u003eutf8\u003c/MD_CharacterSetCode\u003e\n  \u003c/characterSet\u003e\n  \u003cparentIdentifier\u003e\n    \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/wn457nv9847.mods\u003c/gco:CharacterString\u003e\n  \u003c/parentIdentifier\u003e\n  \u003chierarchyLevel\u003e\n    \u003cMD_ScopeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode\" codeListValue=\"dataset\" codeSpace=\"ISOTC211/19115\"\u003edataset\u003c/MD_ScopeCode\u003e\n  \u003c/hierarchyLevel\u003e\n  \u003chierarchyLevelName\u003e\n    \u003cgco:CharacterString\u003edataset\u003c/gco:CharacterString\u003e\n  \u003c/hierarchyLevelName\u003e\n  \u003ccontact\u003e\n    \u003cCI_ResponsibleParty\u003e\n      \u003corganisationName\u003e\n        \u003cgco:CharacterString\u003eStanford Geospatial Center\u003c/gco:CharacterString\u003e\n      \u003c/organisationName\u003e\n      \u003ccontactInfo\u003e\n        \u003cCI_Contact\u003e\n          \u003cphone\u003e\n            \u003cCI_Telephone\u003e\n              \u003cvoice\u003e\n                \u003cgco:CharacterString\u003e650-723-2746\u003c/gco:CharacterString\u003e\n              \u003c/voice\u003e\n            \u003c/CI_Telephone\u003e\n          \u003c/phone\u003e\n          \u003caddress\u003e\n            \u003cCI_Address\u003e\n              \u003cdeliveryPoint\u003e\n                \u003cgco:CharacterString\u003eBranner Earth Sciences Library\u003c/gco:CharacterString\u003e\n              \u003c/deliveryPoint\u003e\n              \u003cdeliveryPoint\u003e\n                \u003cgco:CharacterString\u003eMitchell Building, 2nd Floor\u003c/gco:CharacterString\u003e\n              \u003c/deliveryPoint\u003e\n              \u003cdeliveryPoint\u003e\n                \u003cgco:CharacterString\u003e397 Panama Mall\u003c/gco:CharacterString\u003e\n              \u003c/deliveryPoint\u003e\n              \u003ccity\u003e\n                \u003cgco:CharacterString\u003eStanford\u003c/gco:CharacterString\u003e\n              \u003c/city\u003e\n              \u003cadministrativeArea\u003e\n                \u003cgco:CharacterString\u003eCalifornia\u003c/gco:CharacterString\u003e\n              \u003c/administrativeArea\u003e\n              \u003cpostalCode\u003e\n                \u003cgco:CharacterString\u003e94305\u003c/gco:CharacterString\u003e\n              \u003c/postalCode\u003e\n              \u003celectronicMailAddress\u003e\n                \u003cgco:CharacterString\u003ebrannerlibrary@stanford.edu\u003c/gco:CharacterString\u003e\n              \u003c/electronicMailAddress\u003e\n            \u003c/CI_Address\u003e\n          \u003c/address\u003e\n        \u003c/CI_Contact\u003e\n      \u003c/contactInfo\u003e\n      \u003crole\u003e\n        \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"pointOfContact\" codeSpace=\"ISOTC211/19115\"\u003epointOfContact\u003c/CI_RoleCode\u003e\n      \u003c/role\u003e\n    \u003c/CI_ResponsibleParty\u003e\n  \u003c/contact\u003e\n  \u003cdateStamp\u003e\n    \u003cgco:Date\u003e2014-12-10\u003c/gco:Date\u003e\n  \u003c/dateStamp\u003e\n  \u003cmetadataStandardName\u003e\n    \u003cgco:CharacterString\u003eISO 19139 Geographic Information - Metadata - Implementation Specification\u003c/gco:CharacterString\u003e\n  \u003c/metadataStandardName\u003e\n  \u003cmetadataStandardVersion\u003e\n    \u003cgco:CharacterString\u003e2007\u003c/gco:CharacterString\u003e\n  \u003c/metadataStandardVersion\u003e\n  \u003cdataSetURI\u003e\n    \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/bb099zb1450\u003c/gco:CharacterString\u003e\n  \u003c/dataSetURI\u003e\n  \u003cspatialRepresentationInfo\u003e\n    \u003cMD_VectorSpatialRepresentation\u003e\n      \u003ctopologyLevel\u003e\n        \u003cMD_TopologyLevelCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopologyLevelCode\" codeListValue=\"geometryOnly\" codeSpace=\"ISOTC211/19115\"\u003egeometryOnly\u003c/MD_TopologyLevelCode\u003e\n      \u003c/topologyLevel\u003e\n      \u003cgeometricObjects\u003e\n        \u003cMD_GeometricObjects\u003e\n          \u003cgeometricObjectType\u003e\n            \u003cMD_GeometricObjectTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_GeometricObjectTypeCode\" codeListValue=\"composite\" codeSpace=\"ISOTC211/19115\"\u003ecomposite\u003c/MD_GeometricObjectTypeCode\u003e\n          \u003c/geometricObjectType\u003e\n          \u003cgeometricObjectCount\u003e\n            \u003cgco:Integer\u003e1\u003c/gco:Integer\u003e\n          \u003c/geometricObjectCount\u003e\n        \u003c/MD_GeometricObjects\u003e\n      \u003c/geometricObjects\u003e\n    \u003c/MD_VectorSpatialRepresentation\u003e\n  \u003c/spatialRepresentationInfo\u003e\n  \u003creferenceSystemInfo\u003e\n    \u003cMD_ReferenceSystem\u003e\n      \u003creferenceSystemIdentifier\u003e\n        \u003cRS_Identifier\u003e\n          \u003ccode\u003e\n            \u003cgco:CharacterString\u003e2154\u003c/gco:CharacterString\u003e\n          \u003c/code\u003e\n          \u003ccodeSpace\u003e\n            \u003cgco:CharacterString\u003eEPSG\u003c/gco:CharacterString\u003e\n          \u003c/codeSpace\u003e\n          \u003cversion\u003e\n            \u003cgco:CharacterString\u003e7.9.4\u003c/gco:CharacterString\u003e\n          \u003c/version\u003e\n        \u003c/RS_Identifier\u003e\n      \u003c/referenceSystemIdentifier\u003e\n    \u003c/MD_ReferenceSystem\u003e\n  \u003c/referenceSystemInfo\u003e\n  \u003cidentificationInfo\u003e\n    \u003cMD_DataIdentification\u003e\n      \u003ccitation\u003e\n        \u003cCI_Citation\u003e\n          \u003ctitle\u003e\n            \u003cgco:CharacterString\u003eDepartment Boundary: Haute-Garonne, France, 2010 \u003c/gco:CharacterString\u003e\n          \u003c/title\u003e\n          \u003cdate\u003e\n            \u003cCI_Date\u003e\n              \u003cdate\u003e\n                \u003cgco:Date\u003e2010-01-01\u003c/gco:Date\u003e\n              \u003c/date\u003e\n              \u003cdateType\u003e\n                \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"publication\" codeSpace=\"ISOTC211/19115\"\u003epublication\u003c/CI_DateTypeCode\u003e\n              \u003c/dateType\u003e\n            \u003c/CI_Date\u003e\n          \u003c/date\u003e\n          \u003cedition\u003e\n            \u003cgco:CharacterString\u003e1\u003c/gco:CharacterString\u003e\n          \u003c/edition\u003e\n          \u003cidentifier\u003e\n            \u003cMD_Identifier\u003e\n              \u003ccode\u003e\n                \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/bb099zb1450\u003c/gco:CharacterString\u003e\n              \u003c/code\u003e\n            \u003c/MD_Identifier\u003e\n          \u003c/identifier\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003corganisationName\u003e\n                \u003cgco:CharacterString\u003eArticque informatique\u003c/gco:CharacterString\u003e\n              \u003c/organisationName\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003corganisationName\u003e\n                \u003cgco:CharacterString\u003eArticque informatique\u003c/gco:CharacterString\u003e\n              \u003c/organisationName\u003e\n              \u003ccontactInfo\u003e\n                \u003cCI_Contact\u003e\n                  \u003caddress\u003e\n                    \u003cCI_Address\u003e\n                      \u003ccity\u003e\n                        \u003cgco:CharacterString\u003eFondettes\u003c/gco:CharacterString\u003e\n                      \u003c/city\u003e\n                      \u003ccountry\u003e\n                        \u003cgco:CharacterString\u003eFR\u003c/gco:CharacterString\u003e\n                      \u003c/country\u003e\n                    \u003c/CI_Address\u003e\n                  \u003c/address\u003e\n                \u003c/CI_Contact\u003e\n              \u003c/contactInfo\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"publisher\" codeSpace=\"ISOTC211/19115\"\u003epublisher\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n          \u003cpresentationForm\u003e\n            \u003cCI_PresentationFormCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_PresentationFormCode\" codeListValue=\"mapDigital\" codeSpace=\"ISOTC211/19115\"\u003emapDigital\u003c/CI_PresentationFormCode\u003e\n          \u003c/presentationForm\u003e\n          \u003ccollectiveTitle\u003e\n            \u003cgco:CharacterString\u003eCarticque France Administratif 2010\u003c/gco:CharacterString\u003e\n          \u003c/collectiveTitle\u003e\n        \u003c/CI_Citation\u003e\n      \u003c/citation\u003e\n      \u003cabstract\u003e\n        \u003cgco:CharacterString\u003eThis polygon shapefile represents the Department Boundary for the Haute-Garonne department of France for 2010. These are the level 2 administrative divisions (ADM2) of Haute-Garonne. Department is one of the three levels of government below the national level (\"territorial collectivities\"), between the region and the commune. There are 96 departments in metropolitan France and 5 overseas departments, which also are classified as regions. Departments are further subdivided into 342 arrondissements, themselves divided into cantons; the latter two have no autonomy and are used for the organisation of public services and sometimes elections.\u003c/gco:CharacterString\u003e\n      \u003c/abstract\u003e\n      \u003cpurpose\u003e\n        \u003cgco:CharacterString\u003eThis dataset is intended for researchers, students, and policy makers for reference and mapping purposes, and may be used for basic applications such as viewing, querying, and map output production, or to provide a basemap to support graphical overlays and analysis with other spatial data.\u003c/gco:CharacterString\u003e\n      \u003c/purpose\u003e\n      \u003ccredit\u003e\n        \u003cgco:CharacterString\u003eArticque informatique. (2010). Department Boundary: Haute-Garonne, France, 2010. Articque informatique.\u003c/gco:CharacterString\u003e\n      \u003c/credit\u003e\n      \u003cstatus\u003e\n        \u003cMD_ProgressCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ProgressCode\" codeListValue=\"completed\" codeSpace=\"ISOTC211/19115\"\u003ecompleted\u003c/MD_ProgressCode\u003e\n      \u003c/status\u003e\n      \u003cpointOfContact\u003e\n        \u003cCI_ResponsibleParty\u003e\n          \u003corganisationName\u003e\n            \u003cgco:CharacterString\u003eArticque informatique\u003c/gco:CharacterString\u003e\n          \u003c/organisationName\u003e\n          \u003ccontactInfo\u003e\n            \u003cCI_Contact\u003e\n              \u003cphone\u003e\n                \u003cCI_Telephone\u003e\n                  \u003cvoice\u003e\n                    \u003cgco:CharacterString\u003e+33 (0)2 47 49 63 21\u003c/gco:CharacterString\u003e\n                  \u003c/voice\u003e\n                \u003c/CI_Telephone\u003e\n              \u003c/phone\u003e\n              \u003caddress\u003e\n                \u003cCI_Address\u003e\n                  \u003cdeliveryPoint\u003e\n                    \u003cgco:CharacterString\u003e149 avenue du G\u0026#xE9;n\u0026#xE9;ral de Gaulle\u003c/gco:CharacterString\u003e\n                  \u003c/deliveryPoint\u003e\n                  \u003ccity\u003e\n                    \u003cgco:CharacterString\u003eFondettes\u003c/gco:CharacterString\u003e\n                  \u003c/city\u003e\n                  \u003ccountry\u003e\n                    \u003cgco:CharacterString\u003eFR\u003c/gco:CharacterString\u003e\n                  \u003c/country\u003e\n                  \u003celectronicMailAddress\u003e\n                    \u003cgco:CharacterString\u003esupport@articque.com\u003c/gco:CharacterString\u003e\n                  \u003c/electronicMailAddress\u003e\n                \u003c/CI_Address\u003e\n              \u003c/address\u003e\n            \u003c/CI_Contact\u003e\n          \u003c/contactInfo\u003e\n          \u003crole\u003e\n            \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"pointOfContact\" codeSpace=\"ISOTC211/19115\"\u003epointOfContact\u003c/CI_RoleCode\u003e\n          \u003c/role\u003e\n        \u003c/CI_ResponsibleParty\u003e\n      \u003c/pointOfContact\u003e\n      \u003cresourceMaintenance\u003e\n        \u003cMD_MaintenanceInformation\u003e\n          \u003cmaintenanceAndUpdateFrequency\u003e\n            \u003cMD_MaintenanceFrequencyCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_MaintenanceFrequencyCode\" codeListValue=\"unknown\" codeSpace=\"ISOTC211/19115\"\u003eunknown\u003c/MD_MaintenanceFrequencyCode\u003e\n          \u003c/maintenanceAndUpdateFrequency\u003e\n        \u003c/MD_MaintenanceInformation\u003e\n      \u003c/resourceMaintenance\u003e\n      \u003cdescriptiveKeywords\u003e\n        \u003cMD_Keywords\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eHaute-Garonne (France)\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ctype\u003e\n            \u003cMD_KeywordTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode\" codeListValue=\"place\" codeSpace=\"ISOTC211/19115\"\u003eplace\u003c/MD_KeywordTypeCode\u003e\n          \u003c/type\u003e\n          \u003cthesaurusName\u003e\n            \u003cCI_Citation\u003e\n              \u003ctitle\u003e\n                \u003cgco:CharacterString\u003egeonames\u003c/gco:CharacterString\u003e\n              \u003c/title\u003e\n              \u003cdate\u003e\n                \u003cCI_Date\u003e\n                  \u003cdate\u003e\n                    \u003cgco:Date\u003e2012-11-01\u003c/gco:Date\u003e\n                  \u003c/date\u003e\n                  \u003cdateType\u003e\n                    \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\" codeSpace=\"ISOTC211/19115\"\u003erevision\u003c/CI_DateTypeCode\u003e\n                  \u003c/dateType\u003e\n                \u003c/CI_Date\u003e\n              \u003c/date\u003e\n              \u003cedition\u003e\n                \u003cgco:CharacterString\u003e3.1\u003c/gco:CharacterString\u003e\n              \u003c/edition\u003e\n              \u003cidentifier\u003e\n                \u003cMD_Identifier\u003e\n                  \u003ccode\u003e\n                    \u003cgco:CharacterString\u003ehttp://www.geonames.org/ontology#\u003c/gco:CharacterString\u003e\n                  \u003c/code\u003e\n                \u003c/MD_Identifier\u003e\n              \u003c/identifier\u003e\n            \u003c/CI_Citation\u003e\n          \u003c/thesaurusName\u003e\n        \u003c/MD_Keywords\u003e\n      \u003c/descriptiveKeywords\u003e\n      \u003cdescriptiveKeywords\u003e\n        \u003cMD_Keywords\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003e2010\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ctype\u003e\n            \u003cMD_KeywordTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode\" codeListValue=\"temporal\" codeSpace=\"ISOTC211/19115\"\u003etemporal\u003c/MD_KeywordTypeCode\u003e\n          \u003c/type\u003e\n        \u003c/MD_Keywords\u003e\n      \u003c/descriptiveKeywords\u003e\n      \u003cdescriptiveKeywords\u003e\n        \u003cMD_Keywords\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eAdministrative and political divisions\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ckeyword\u003e\n            \u003cgco:CharacterString\u003eDepartments\u003c/gco:CharacterString\u003e\n          \u003c/keyword\u003e\n          \u003ctype\u003e\n            \u003cMD_KeywordTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_KeywordTypeCode\" codeListValue=\"theme\" codeSpace=\"ISOTC211/19115\"\u003etheme\u003c/MD_KeywordTypeCode\u003e\n          \u003c/type\u003e\n          \u003cthesaurusName\u003e\n            \u003cCI_Citation\u003e\n              \u003ctitle\u003e\n                \u003cgco:CharacterString\u003elcsh\u003c/gco:CharacterString\u003e\n              \u003c/title\u003e\n              \u003cdate\u003e\n                \u003cCI_Date\u003e\n                  \u003cdate\u003e\n                    \u003cgco:Date\u003e2011-04-26\u003c/gco:Date\u003e\n                  \u003c/date\u003e\n                  \u003cdateType\u003e\n                    \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"revision\" codeSpace=\"ISOTC211/19115\"\u003erevision\u003c/CI_DateTypeCode\u003e\n                  \u003c/dateType\u003e\n                \u003c/CI_Date\u003e\n              \u003c/date\u003e\n              \u003cidentifier\u003e\n                \u003cMD_Identifier\u003e\n                  \u003ccode\u003e\n                    \u003cgco:CharacterString\u003ehttp://id.loc.gov/authorities/subjects.html\u003c/gco:CharacterString\u003e\n                  \u003c/code\u003e\n                \u003c/MD_Identifier\u003e\n              \u003c/identifier\u003e\n            \u003c/CI_Citation\u003e\n          \u003c/thesaurusName\u003e\n        \u003c/MD_Keywords\u003e\n      \u003c/descriptiveKeywords\u003e\n      \u003cresourceConstraints\u003e\n        \u003cMD_LegalConstraints\u003e\n          \u003cuseLimitation\u003e\n            \u003cgco:CharacterString\u003eAccess is granted to Stanford University affiliates only. Affiliates are limited to current faculty, staff and students.\u003c/gco:CharacterString\u003e\n          \u003c/useLimitation\u003e\n          \u003caccessConstraints\u003e\n            \u003cMD_RestrictionCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode\" codeListValue=\"restricted\" codeSpace=\"ISOTC211/19115\"\u003erestricted\u003c/MD_RestrictionCode\u003e\n          \u003c/accessConstraints\u003e\n          \u003cuseConstraints\u003e\n            \u003cMD_RestrictionCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_RestrictionCode\" codeListValue=\"restricted\" codeSpace=\"ISOTC211/19115\"\u003erestricted\u003c/MD_RestrictionCode\u003e\n          \u003c/useConstraints\u003e\n        \u003c/MD_LegalConstraints\u003e\n      \u003c/resourceConstraints\u003e\n      \u003caggregationInfo\u003e\n        \u003cMD_AggregateInformation\u003e\n          \u003caggregateDataSetName\u003e\n            \u003cCI_Citation\u003e\n              \u003ctitle\u003e\n                \u003cgco:CharacterString\u003eCarticque France Administratif 2010\u003c/gco:CharacterString\u003e\n              \u003c/title\u003e\n              \u003cdate\u003e\n                \u003cCI_Date\u003e\n                  \u003cdate\u003e\n                    \u003cgco:Date\u003e2010-01-01\u003c/gco:Date\u003e\n                  \u003c/date\u003e\n                  \u003cdateType\u003e\n                    \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"publication\" codeSpace=\"ISOTC211/19115\"\u003epublication\u003c/CI_DateTypeCode\u003e\n                  \u003c/dateType\u003e\n                \u003c/CI_Date\u003e\n              \u003c/date\u003e\n              \u003cidentifier\u003e\n                \u003cMD_Identifier\u003e\n                  \u003ccode\u003e\n                    \u003cgco:CharacterString\u003ehttp://purl.stanford.edu/wn457nv9847\u003c/gco:CharacterString\u003e\n                  \u003c/code\u003e\n                \u003c/MD_Identifier\u003e\n              \u003c/identifier\u003e\n              \u003ccitedResponsibleParty\u003e\n                \u003cCI_ResponsibleParty\u003e\n                  \u003corganisationName\u003e\n                    \u003cgco:CharacterString\u003eArticque informatique\u003c/gco:CharacterString\u003e\n                  \u003c/organisationName\u003e\n                  \u003ccontactInfo\u003e\n                    \u003cCI_Contact\u003e\n                      \u003caddress\u003e\n                        \u003cCI_Address\u003e\n                          \u003ccity\u003e\n                            \u003cgco:CharacterString\u003eFondettes\u003c/gco:CharacterString\u003e\n                          \u003c/city\u003e\n                          \u003ccountry\u003e\n                            \u003cgco:CharacterString\u003eFR\u003c/gco:CharacterString\u003e\n                          \u003c/country\u003e\n                        \u003c/CI_Address\u003e\n                      \u003c/address\u003e\n                    \u003c/CI_Contact\u003e\n                  \u003c/contactInfo\u003e\n                  \u003crole\u003e\n                    \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n                  \u003c/role\u003e\n                \u003c/CI_ResponsibleParty\u003e\n              \u003c/citedResponsibleParty\u003e\n              \u003ccitedResponsibleParty\u003e\n                \u003cCI_ResponsibleParty\u003e\n                  \u003corganisationName\u003e\n                    \u003cgco:CharacterString\u003eArticque informatique\u003c/gco:CharacterString\u003e\n                  \u003c/organisationName\u003e\n                  \u003crole\u003e\n                    \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"publisher\" codeSpace=\"ISOTC211/19115\"\u003epublisher\u003c/CI_RoleCode\u003e\n                  \u003c/role\u003e\n                \u003c/CI_ResponsibleParty\u003e\n              \u003c/citedResponsibleParty\u003e\n            \u003c/CI_Citation\u003e\n          \u003c/aggregateDataSetName\u003e\n          \u003cassociationType\u003e\n            \u003cDS_AssociationTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_AssociationTypeCode\" codeListValue=\"largerWorkCitation\" codeSpace=\"ISOTC211/19115\"\u003elargerWorkCitation\u003c/DS_AssociationTypeCode\u003e\n          \u003c/associationType\u003e\n          \u003cinitiativeType\u003e\n            \u003cDS_InitiativeTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#DS_InitiativeTypeCode\" codeListValue=\"collection\" codeSpace=\"ISOTC211/19115\"\u003ecollection\u003c/DS_InitiativeTypeCode\u003e\n          \u003c/initiativeType\u003e\n        \u003c/MD_AggregateInformation\u003e\n      \u003c/aggregationInfo\u003e\n      \u003cspatialRepresentationType\u003e\n        \u003cMD_SpatialRepresentationTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_SpatialRepresentationTypeCode\" codeListValue=\"vector\" codeSpace=\"ISOTC211/19115\"\u003evector\u003c/MD_SpatialRepresentationTypeCode\u003e\n      \u003c/spatialRepresentationType\u003e\n      \u003clanguage\u003e\n        \u003cLanguageCode codeList=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\" codeListValue=\"eng\" codeSpace=\"ISO639-2\"\u003eeng\u003c/LanguageCode\u003e\n      \u003c/language\u003e\n      \u003ccharacterSet\u003e\n        \u003cMD_CharacterSetCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode\" codeListValue=\"utf8\" codeSpace=\"ISOTC211/19115\"\u003eutf8\u003c/MD_CharacterSetCode\u003e\n      \u003c/characterSet\u003e\n      \u003ctopicCategory\u003e\n        \u003cMD_TopicCategoryCode\u003eboundaries\u003c/MD_TopicCategoryCode\u003e\n      \u003c/topicCategory\u003e\n      \u003cenvironmentDescription\u003e\n        \u003cgco:CharacterString\u003eMicrosoft Windows 7 Version 6.1 (Build 7601) Service Pack 1; Esri ArcGIS 10.1.0.3035\u003c/gco:CharacterString\u003e\n      \u003c/environmentDescription\u003e\n      \u003cextent\u003e\n        \u003cEX_Extent\u003e\n          \u003cdescription\u003e\n            \u003cgco:CharacterString\u003eground condition\u003c/gco:CharacterString\u003e\n          \u003c/description\u003e\n          \u003ctemporalElement\u003e\n            \u003cEX_TemporalExtent\u003e\n              \u003cextent\u003e\n                \u003cgml:TimeInstant gml:id=\"idm5676992\"\u003e\n                  \u003cgml:timePosition\u003e2010-01-01T00:00:00\u003c/gml:timePosition\u003e\n                \u003c/gml:TimeInstant\u003e\n              \u003c/extent\u003e\n            \u003c/EX_TemporalExtent\u003e\n          \u003c/temporalElement\u003e\n        \u003c/EX_Extent\u003e\n      \u003c/extent\u003e\n      \u003cextent\u003e\n        \u003cEX_Extent\u003e\n          \u003cgeographicElement\u003e\n            \u003cEX_GeographicBoundingBox\u003e\n              \u003cextentTypeCode\u003e\n                \u003cgco:Boolean\u003etrue\u003c/gco:Boolean\u003e\n              \u003c/extentTypeCode\u003e\n              \u003cwestBoundLongitude\u003e\n                \u003cgco:Decimal\u003e0.397118\u003c/gco:Decimal\u003e\n              \u003c/westBoundLongitude\u003e\n              \u003ceastBoundLongitude\u003e\n                \u003cgco:Decimal\u003e2.060967\u003c/gco:Decimal\u003e\n              \u003c/eastBoundLongitude\u003e\n              \u003csouthBoundLatitude\u003e\n                \u003cgco:Decimal\u003e42.684233\u003c/gco:Decimal\u003e\n              \u003c/southBoundLatitude\u003e\n              \u003cnorthBoundLatitude\u003e\n                \u003cgco:Decimal\u003e43.926889\u003c/gco:Decimal\u003e\n              \u003c/northBoundLatitude\u003e\n            \u003c/EX_GeographicBoundingBox\u003e\n          \u003c/geographicElement\u003e\n        \u003c/EX_Extent\u003e\n      \u003c/extent\u003e\n    \u003c/MD_DataIdentification\u003e\n  \u003c/identificationInfo\u003e\n  \u003ccontentInfo\u003e\n    \u003cMD_FeatureCatalogueDescription\u003e\n      \u003ccomplianceCode\u003e\n        \u003cgco:Boolean\u003efalse\u003c/gco:Boolean\u003e\n      \u003c/complianceCode\u003e\n      \u003clanguage\u003e\n        \u003cLanguageCode codeList=\"http://www.loc.gov/standards/iso639-2/php/code_list.php\" codeListValue=\"eng\" codeSpace=\"ISO639-2\"\u003eeng\u003c/LanguageCode\u003e\n      \u003c/language\u003e\n      \u003cincludedWithDataset\u003e\n        \u003cgco:Boolean\u003etrue\u003c/gco:Boolean\u003e\n      \u003c/includedWithDataset\u003e\n      \u003cfeatureCatalogueCitation\u003e\n        \u003cCI_Citation\u003e\n          \u003ctitle\u003e\n            \u003cgco:CharacterString\u003eFeature Catalog for Department Boundary: Haute-Garonne, France, 2010 \u003c/gco:CharacterString\u003e\n          \u003c/title\u003e\n          \u003cdate\u003e\n            \u003cCI_Date\u003e\n              \u003cdate\u003e\n                \u003cgco:Date\u003e2010-01-01\u003c/gco:Date\u003e\n              \u003c/date\u003e\n              \u003cdateType\u003e\n                \u003cCI_DateTypeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_DateTypeCode\" codeListValue=\"publication\" codeSpace=\"ISOTC211/19115\"\u003epublication\u003c/CI_DateTypeCode\u003e\n              \u003c/dateType\u003e\n            \u003c/CI_Date\u003e\n          \u003c/date\u003e\n          \u003cidentifier\u003e\n            \u003cMD_Identifier\u003e\n              \u003ccode\u003e\n                \u003cgco:CharacterString\u003e41b390ae-7481-49df-a686-99d2c3c1c332\u003c/gco:CharacterString\u003e\n              \u003c/code\u003e\n            \u003c/MD_Identifier\u003e\n          \u003c/identifier\u003e\n          \u003ccitedResponsibleParty\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003corganisationName\u003e\n                \u003cgco:CharacterString\u003eArticque informatique\u003c/gco:CharacterString\u003e\n              \u003c/organisationName\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"ISOTC211/19115\"\u003eoriginator\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/citedResponsibleParty\u003e\n        \u003c/CI_Citation\u003e\n      \u003c/featureCatalogueCitation\u003e\n    \u003c/MD_FeatureCatalogueDescription\u003e\n  \u003c/contentInfo\u003e\n  \u003cdistributionInfo\u003e\n    \u003cMD_Distribution\u003e\n      \u003cdistributionFormat\u003e\n        \u003cMD_Format\u003e\n          \u003cname\u003e\n            \u003cgco:CharacterString\u003eShapefile\u003c/gco:CharacterString\u003e\n          \u003c/name\u003e\n          \u003cversion gco:nilReason=\"missing\"/\u003e\n        \u003c/MD_Format\u003e\n      \u003c/distributionFormat\u003e\n      \u003cdistributor\u003e\n        \u003cMD_Distributor\u003e\n          \u003cdistributorContact\u003e\n            \u003cCI_ResponsibleParty\u003e\n              \u003corganisationName\u003e\n                \u003cgco:CharacterString\u003eStanford Geospatial Center\u003c/gco:CharacterString\u003e\n              \u003c/organisationName\u003e\n              \u003ccontactInfo\u003e\n                \u003cCI_Contact\u003e\n                  \u003cphone\u003e\n                    \u003cCI_Telephone\u003e\n                      \u003cvoice\u003e\n                        \u003cgco:CharacterString\u003e650-723-2746\u003c/gco:CharacterString\u003e\n                      \u003c/voice\u003e\n                    \u003c/CI_Telephone\u003e\n                  \u003c/phone\u003e\n                  \u003caddress\u003e\n                    \u003cCI_Address\u003e\n                      \u003cdeliveryPoint\u003e\n                        \u003cgco:CharacterString\u003eBranner Earth Sciences Library\u003c/gco:CharacterString\u003e\n                      \u003c/deliveryPoint\u003e\n                      \u003cdeliveryPoint\u003e\n                        \u003cgco:CharacterString\u003eMitchell Building, 2nd Floor\u003c/gco:CharacterString\u003e\n                      \u003c/deliveryPoint\u003e\n                      \u003cdeliveryPoint\u003e\n                        \u003cgco:CharacterString\u003e397 Panama Mall\u003c/gco:CharacterString\u003e\n                      \u003c/deliveryPoint\u003e\n                      \u003ccity\u003e\n                        \u003cgco:CharacterString\u003eStanford\u003c/gco:CharacterString\u003e\n                      \u003c/city\u003e\n                      \u003cadministrativeArea\u003e\n                        \u003cgco:CharacterString\u003eCalifornia\u003c/gco:CharacterString\u003e\n                      \u003c/administrativeArea\u003e\n                      \u003cpostalCode\u003e\n                        \u003cgco:CharacterString\u003e94305\u003c/gco:CharacterString\u003e\n                      \u003c/postalCode\u003e\n                      \u003celectronicMailAddress\u003e\n                        \u003cgco:CharacterString\u003ebrannerlibrary@stanford.edu\u003c/gco:CharacterString\u003e\n                      \u003c/electronicMailAddress\u003e\n                    \u003c/CI_Address\u003e\n                  \u003c/address\u003e\n                \u003c/CI_Contact\u003e\n              \u003c/contactInfo\u003e\n              \u003crole\u003e\n                \u003cCI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"distributor\" codeSpace=\"ISOTC211/19115\"\u003edistributor\u003c/CI_RoleCode\u003e\n              \u003c/role\u003e\n            \u003c/CI_ResponsibleParty\u003e\n          \u003c/distributorContact\u003e\n        \u003c/MD_Distributor\u003e\n      \u003c/distributor\u003e\n      \u003ctransferOptions\u003e\n        \u003cMD_DigitalTransferOptions\u003e\n          \u003conLine\u003e\n            \u003cCI_OnlineResource\u003e\n              \u003clinkage\u003e\n                \u003cURL\u003ehttp://purl.stanford.edu/bb099zb1450\u003c/URL\u003e\n              \u003c/linkage\u003e\n              \u003cprotocol\u003e\n                \u003cgco:CharacterString\u003ehttp\u003c/gco:CharacterString\u003e\n              \u003c/protocol\u003e\n              \u003cname\u003e\n                \u003cgco:CharacterString\u003eD31_dep.shp\u003c/gco:CharacterString\u003e\n              \u003c/name\u003e\n              \u003cfunction\u003e\n                \u003cCI_OnLineFunctionCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_OnLineFunctionCode\" codeListValue=\"download\" codeSpace=\"ISOTC211/19115\"\u003edownload\u003c/CI_OnLineFunctionCode\u003e\n              \u003c/function\u003e\n            \u003c/CI_OnlineResource\u003e\n          \u003c/onLine\u003e\n        \u003c/MD_DigitalTransferOptions\u003e\n      \u003c/transferOptions\u003e\n    \u003c/MD_Distribution\u003e\n  \u003c/distributionInfo\u003e\n  \u003cdataQualityInfo\u003e\n    \u003cDQ_DataQuality\u003e\n      \u003cscope\u003e\n        \u003cDQ_Scope\u003e\n          \u003clevel\u003e\n            \u003cMD_ScopeCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_ScopeCode\" codeListValue=\"dataset\" codeSpace=\"ISOTC211/19115\"\u003edataset\u003c/MD_ScopeCode\u003e\n          \u003c/level\u003e\n        \u003c/DQ_Scope\u003e\n      \u003c/scope\u003e\n    \u003c/DQ_DataQuality\u003e\n  \u003c/dataQualityInfo\u003e\n\u003c/MD_Metadata\u003e\n              \u003c/rdf:Description\u003e\n              \u003crdf:Description rdf:about=\"http://purl.stanford.edu/bb099zb1450\"\u003e\n                \u003cgfc:FC_FeatureCatalogue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:gco=\"http://www.isotc211.org/2005/gco\" xmlns:gfc=\"http://www.isotc211.org/2005/gfc\" xmlns:gmd=\"http://www.isotc211.org/2005/gmd\" xmlns:gmx=\"http://www.isotc211.org/2005/gmx\" xmlns:gml=\"http://www.opengis.net/gml/3.2\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns=\"http://www.isotc211.org/2005/gfc\" xsi:schemaLocation=\"http://www.isotc211.org/2005/gfc http://www.isotc211.org/2005/gfc/gfc.xsd\" uuid=\"\u0026#10;\u0026#9;\u0026#9;\u0026#9;\u0026#9;\u0026#9;          41b390ae-7481-49df-a686-99d2c3c1c332\"\u003e\n  \u003cgmx:name\u003e\n    \u003cgco:CharacterString\u003eFeature Catalog for Department Boundary: Haute-Garonne, France, 2010 \u003c/gco:CharacterString\u003e\n  \u003c/gmx:name\u003e\n  \u003cgmx:scope\u003e\n    \u003cgco:CharacterString\u003eAdministrative and political divisions; Departments\u003c/gco:CharacterString\u003e\n  \u003c/gmx:scope\u003e\n  \u003cgmx:versionNumber gco:nilReason=\"unknown\"/\u003e\n  \u003cgmx:versionDate\u003e\n    \u003cgco:Date\u003e2010\u003c/gco:Date\u003e\n  \u003c/gmx:versionDate\u003e\n  \u003cgmx:language\u003e\n    \u003cgco:CharacterString\u003eeng; US\u003c/gco:CharacterString\u003e\n  \u003c/gmx:language\u003e\n  \u003cgmx:characterSet\u003e\n    \u003cgmd:MD_CharacterSetCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_CharacterSetCode\" codeListValue=\"utf8\" codeSpace=\"ISOTC211/19115\"/\u003e\n  \u003c/gmx:characterSet\u003e\n  \u003cgfc:producer\u003e\n    \u003cgmd:CI_ResponsibleParty\u003e\n      \u003cgmd:organisationName\u003e\n        \u003cgco:CharacterString\u003eArticque informatique\u003c/gco:CharacterString\u003e\n      \u003c/gmd:organisationName\u003e\n      \u003cgmd:role\u003e\n        \u003cgmd:CI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"originator\" codeSpace=\"006\"/\u003e\n      \u003c/gmd:role\u003e\n    \u003c/gmd:CI_ResponsibleParty\u003e\n  \u003c/gfc:producer\u003e\n  \u003cgfc:featureType\u003e\n    \u003cgfc:FC_FeatureType\u003e\n      \u003cgfc:typeName\u003e\n        \u003cgco:LocalName\u003eD31_dep\u003c/gco:LocalName\u003e\n      \u003c/gfc:typeName\u003e\n      \u003cgfc:definition/\u003e\n      \u003cgfc:isAbstract\u003e\n        \u003cgco:Boolean\u003efalse\u003c/gco:Boolean\u003e\n      \u003c/gfc:isAbstract\u003e\n      \u003cgfc:featureCatalogue uuidref=\"\u0026#10;\u0026#9;\u0026#9;\u0026#9;\u0026#9;\u0026#9;          41b390ae-7481-49df-a686-99d2c3c1c332\"/\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eFID\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString/\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString\u003eInternal feature number.\u003c/gco:CharacterString\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:definitionReference\u003e\n            \u003cgfc:FC_DefinitionReference\u003e\n              \u003cgfc:definitionSource\u003e\n                \u003cgfc:FC_DefinitionSource\u003e\n                  \u003cgfc:source\u003e\n                    \u003cgmd:CI_Citation\u003e\n                      \u003cgmd:title\u003e\n                        \u003cgco:CharacterString\u003eEsri\u003c/gco:CharacterString\u003e\n                      \u003c/gmd:title\u003e\n                      \u003cgmd:date gco:nilReason=\"unknown\"/\u003e\n                      \u003cgmd:citedResponsibleParty\u003e\n                        \u003cgmd:CI_ResponsibleParty\u003e\n                          \u003cgmd:organisationName\u003e\n                            \u003cgco:CharacterString\u003eEsri\u003c/gco:CharacterString\u003e\n                          \u003c/gmd:organisationName\u003e\n                          \u003cgmd:role\u003e\n                            \u003cgmd:CI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"resourceProvider\" codeSpace=\"001\"/\u003e\n                          \u003c/gmd:role\u003e\n                        \u003c/gmd:CI_ResponsibleParty\u003e\n                      \u003c/gmd:citedResponsibleParty\u003e\n                    \u003c/gmd:CI_Citation\u003e\n                  \u003c/gfc:source\u003e\n                \u003c/gfc:FC_DefinitionSource\u003e\n              \u003c/gfc:definitionSource\u003e\n            \u003c/gfc:FC_DefinitionReference\u003e\n          \u003c/gfc:definitionReference\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eOID\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eShape\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString/\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString\u003eFeature geometry.\u003c/gco:CharacterString\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:definitionReference\u003e\n            \u003cgfc:FC_DefinitionReference\u003e\n              \u003cgfc:definitionSource\u003e\n                \u003cgfc:FC_DefinitionSource\u003e\n                  \u003cgfc:source\u003e\n                    \u003cgmd:CI_Citation\u003e\n                      \u003cgmd:title\u003e\n                        \u003cgco:CharacterString\u003eEsri\u003c/gco:CharacterString\u003e\n                      \u003c/gmd:title\u003e\n                      \u003cgmd:date gco:nilReason=\"unknown\"/\u003e\n                      \u003cgmd:citedResponsibleParty\u003e\n                        \u003cgmd:CI_ResponsibleParty\u003e\n                          \u003cgmd:organisationName\u003e\n                            \u003cgco:CharacterString\u003eEsri\u003c/gco:CharacterString\u003e\n                          \u003c/gmd:organisationName\u003e\n                          \u003cgmd:role\u003e\n                            \u003cgmd:CI_RoleCode codeList=\"http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#CI_RoleCode\" codeListValue=\"resourceProvider\" codeSpace=\"001\"/\u003e\n                          \u003c/gmd:role\u003e\n                        \u003c/gmd:CI_ResponsibleParty\u003e\n                      \u003c/gmd:citedResponsibleParty\u003e\n                    \u003c/gmd:CI_Citation\u003e\n                  \u003c/gfc:source\u003e\n                \u003c/gfc:FC_DefinitionSource\u003e\n              \u003c/gfc:definitionSource\u003e\n            \u003c/gfc:FC_DefinitionReference\u003e\n          \u003c/gfc:definitionReference\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eGeometry\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eid_reg\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString\u003eRegion ID\u003c/gco:CharacterString\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eString\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003eid_dep\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString\u003eDepartment ID\u003c/gco:CharacterString\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eString\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n      \u003cgfc:carrierOfCharacteristics\u003e\n        \u003cgfc:FC_FeatureAttribute\u003e\n          \u003cgfc:memberName\u003e\n            \u003cgco:LocalName\u003elib_dep\u003c/gco:LocalName\u003e\n          \u003c/gfc:memberName\u003e\n          \u003cgfc:definition\u003e\n            \u003cgco:CharacterString\u003eDepartment name\u003c/gco:CharacterString\u003e\n          \u003c/gfc:definition\u003e\n          \u003cgfc:cardinality gco:nilReason=\"unknown\"/\u003e\n          \u003cgfc:valueType\u003e\n            \u003cgco:TypeName\u003e\n              \u003cgco:aName\u003e\n                \u003cgco:CharacterString\u003eString\u003c/gco:CharacterString\u003e\n              \u003c/gco:aName\u003e\n            \u003c/gco:TypeName\u003e\n          \u003c/gfc:valueType\u003e\n        \u003c/gfc:FC_FeatureAttribute\u003e\n      \u003c/gfc:carrierOfCharacteristics\u003e\n    \u003c/gfc:FC_FeatureType\u003e\n  \u003c/gfc:featureType\u003e\n\u003c/gfc:FC_FeatureCatalogue\u003e\n              \u003c/rdf:Description\u003e\n            \u003c/rdf:RDF\u003e"
+  },
+  "created": "2014-12-18T21:48:04.000+00:00",
+  "modified": "2026-07-23T17:15:58.000+00:00",
+  "lock": "druid:bb099zb1450=14=2",
+  "label": "Department Boundary: Haute-Garonne, France, 2010"
+}
