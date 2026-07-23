@@ -2,7 +2,7 @@
 import "@hotwired/turbo-rails";
 import "bootstrap";
 import "@github/auto-complete-element";
-import "blacklight";
+import Blacklight from "blacklight-frontend";
 import "controllers/application";
 import "geoblacklight";
 import "controllers";
