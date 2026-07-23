@@ -72,6 +72,8 @@ class CocinaToSolrMapper
   end
 
   def map_resource_class
+    return ['Maps'] if index_map? # Special case: don't treat it as a dataset
+
     res = TranslationMap.new('geo_resource_class')
                         .translate(record.all_forms.map(&:to_s) + record.genres + record.subject_genres)
     res = ['Collections'] if record.collection?
@@ -80,7 +82,10 @@ class CocinaToSolrMapper
   end
 
   def map_resource_type
-    TranslationMap.new('geo_resource_type').translate(record.all_forms.map(&:to_s) + record.subject_topics)
+    res_types = TranslationMap.new('geo_resource_type').translate(record.all_forms.map(&:to_s) + record.subject_topics)
+    return res_types.without('Polygon data', 'Point data') if index_map? # Special case: don't treat it as a dataset
+
+    res_types.uniq
   end
 
   # @return [String]
@@ -117,12 +122,18 @@ class CocinaToSolrMapper
     add_file_reference(refs, 'https://github.com/cogeotiff/cog-spec', filename: /\.tif/, mime_type: /cloud-optimized/)
     add_file_reference(refs, 'https://iiif.io/api/extension/georef/1/context.json', use: 'georeference')
 
-    # Whole object download (.zip)
-    if record.download_url.present?
-      refs['http://schema.org/downloadUrl'] = [{ url: record.download_url, label: 'Zipped object' }]
-    end
+    # Downloads
+    downloads = []
+    downloads << { url: record.download_url, label: 'Zipped object' } if record.download_url.present?
+    add_file_download(downloads, 'FlatGeoBuf', filename: /\.fgb/)
+    refs['http://schema.org/downloadUrl'] = downloads if downloads.any?
 
     refs.compact
+  end
+
+  def add_file_download(downloads, label, **)
+    file = record.files(**).first
+    downloads << { url: file.download_url, label: label } if file.present?
   end
 
   def add_file_reference(refs, reference_type, **)
@@ -150,5 +161,10 @@ class CocinaToSolrMapper
   # Object types with actually useful IIIF manifests
   def iiif_viewable?
     %(map image).include?(record.content_type)
+  end
+
+  # Use the subjects to check if this is an index map
+  def index_map?
+    record.subject_topics.include?('Index maps')
   end
 end

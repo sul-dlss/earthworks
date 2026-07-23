@@ -1,5 +1,78 @@
+# Map values coming from cocina to OpenGeoMetadata "resource type" values
+# See: https://opengeometadata.org/ogm-aardvark/#resource-type-values-ogm
 /.*[Rr]aster.*/: Raster data
 /.*[Vv]ector.*/: Vector data
 /.*[Pp]oint.*/: Point data
 /.*[Ll]ine.*/: Line data
 /.*[Pp]olygon.*/: Polygon data
+/.*[Ss]atellite.*/: Satellite imagery
+
+# LOC Cartographic Genres are also valid
+# See: https://opengeometadata.org/ogm-aardvark/#resource-type-values-loc
+Aerial photographs: Aerial photographs
+Aerial views: Aerial views
+Aeronautical charts: Aeronautical charts
+Armillary spheres: Armillary spheres
+Astronautical charts: Astronautical charts
+Astronomical models: Astronomical models
+Atlases: Atlases
+Bathymetric maps: Bathymetric maps
+Block diagrams: Block diagrams
+Bottle-charts: Bottle-charts
+Cadastral maps: Cadastral maps
+Cartographic materials: Cartographic materials
+Cartographic materials for people with visual disabilities: Cartographic materials for people with visual disabilities
+Celestial charts: Celestial charts
+Celestial globes: Celestial globes
+Census data: Census data
+Children's atlases: Children's atlases
+Children's maps: Children's maps
+Comparative maps: Comparative maps
+Composite atlases: Composite atlases
+Digital elevation models: Digital elevation models
+Digital maps: Digital maps
+Early maps: Early maps
+Ephemerides: Ephemerides
+Ethnographic maps: Ethnographic maps
+Fire insurance maps: Fire insurance maps
+Flow maps: Flow maps
+Gazetteers: Gazetteers
+Geological cross-sections: Geological cross-sections
+Geological maps: Geological maps
+Globes: Globes
+Gores (Maps): Gores (Maps)
+Gravity anomaly maps: Gravity anomaly maps
+Index maps: Index maps
+Linguistic atlases: Linguistic atlases
+Loran charts: Loran charts
+Manuscript maps: Manuscript maps
+Mappae mundi: Mappae mundi
+Mental maps: Mental maps
+Meteorological charts: Meteorological charts
+Military maps: Military maps
+Mine maps: Mine maps
+Miniature maps: Miniature maps
+Nautical charts: Nautical charts
+Outline maps: Outline maps
+Photogrammetric maps: Photogrammetric maps
+Photomaps: Photomaps
+Physical maps: Physical maps
+Pictorial maps: Pictorial maps
+Plotting charts: Plotting charts
+Portolan charts: Portolan charts
+Quadrangle maps: Quadrangle maps
+Relief models: Relief models
+Remote-sensing maps: Remote-sensing maps
+Road maps: Road maps
+Statistical maps: Statistical maps
+Stick charts: Stick charts
+Strip maps: Strip maps
+Thematic maps: Thematic maps
+Topographic maps: Topographic maps
+Tourist maps: Tourist maps
+Upside-down maps: Upside-down maps
+Wall maps: Wall maps
+World atlases: World atlases
+World maps: World maps
+Worm's-eye views: Worm's-eye views
+Zoning maps: Zoning maps
