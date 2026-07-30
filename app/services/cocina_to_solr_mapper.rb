@@ -72,6 +72,8 @@ class CocinaToSolrMapper
   end
 
   def map_resource_class
+    return ['Maps'] if index_map? # Special case: don't treat it as a dataset
+
     res = TranslationMap.new('geo_resource_class')
                         .translate(record.all_forms.map(&:to_s) + record.genres + record.subject_genres)
     res = ['Collections'] if record.collection?
@@ -80,7 +82,10 @@ class CocinaToSolrMapper
   end
 
   def map_resource_type
-    TranslationMap.new('geo_resource_type').translate(record.all_forms.map(&:to_s) + record.subject_topics)
+    res_types = TranslationMap.new('geo_resource_type').translate(record.all_forms.map(&:to_s) + record.subject_topics)
+    return res_types.without('Polygon data', 'Point data') if index_map? # Special case: don't treat it as a dataset
+
+    res_types.uniq
   end
 
   # @return [String]
@@ -112,8 +117,9 @@ class CocinaToSolrMapper
     add_file_reference(refs, 'http://www.isotc211.org/schemas/2005/gmd', filename: /iso19139\.xml/)
     add_file_reference(refs, 'http://www.isotc211.org/schemas/2005/gco', filename: /iso19110\.xml/)
     add_file_reference(refs, 'http://www.opengis.net/cat/csw/csdgm', filename: /fgdc\.xml/)
-    add_file_reference(refs, 'http://geojson.org/geojson-spec.html', filename: /\.geojson/)
+    add_file_reference(refs, 'http://geojson.org/geojson-spec.html', filename: /\.geojson/) unless index_map?
     add_file_reference(refs, 'https://github.com/protomaps/PMTiles', filename: /\.pmtiles/)
+    add_file_reference(refs, 'https://flatgeobuf.org/', filename: /\.fgb/)
     add_file_reference(refs, 'https://github.com/cogeotiff/cog-spec', filename: /\.tif/, mime_type: /cloud-optimized/)
     add_file_reference(refs, 'https://iiif.io/api/extension/georef/1/context.json', use: 'georeference')
 
@@ -150,5 +156,10 @@ class CocinaToSolrMapper
   # Object types with actually useful IIIF manifests
   def iiif_viewable?
     %(map image).include?(record.content_type)
+  end
+
+  # Use the subjects to check if this is an index map
+  def index_map?
+    record.subject_topics.include?('Index maps')
   end
 end

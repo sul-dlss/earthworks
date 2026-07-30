@@ -1,0 +1,828 @@
+{
+  "cocinaVersion": "0.129.0",
+  "type": "https://cocina.sul.stanford.edu/models/geo",
+  "externalIdentifier": "druid:bc576pk4911",
+  "version": 5,
+  "access": {
+    "view": "world",
+    "download": "world",
+    "controlledDigitalLending": false,
+    "copyright": "This work is in the Public Domain, meaning that it is not subject to copyright.",
+    "useAndReproductionStatement": "This item is in the public domain.  There are no restrictions on use."
+  },
+  "administrative": {
+    "hasAdminPolicy": "druid:bz466cq3451"
+  },
+  "description": {
+    "title": [
+      {
+        "value": "Clearwater, Los Angeles Co., Cal., Sept. 1927, including Hynes, Maps Index"
+      }
+    ],
+    "contributor": [
+      {
+        "name": [
+          {
+            "value": "Stanford Geospatial Center"
+          }
+        ],
+        "type": "organization",
+        "role": [
+          {
+            "value": "creator",
+            "source": {
+              "code": "marcrelator"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "date": [
+          {
+            "value": "2025",
+            "type": "publication",
+            "status": "primary",
+            "encoding": {
+              "code": "w3cdtf"
+            }
+          }
+        ],
+        "contributor": [
+          {
+            "name": [
+              {
+                "value": "Stanford Digital Repository"
+              }
+            ],
+            "type": "organization",
+            "role": [
+              {
+                "value": "publisher",
+                "code": "pbl",
+                "uri": "http://id.loc.gov/vocabulary/relators/pbl",
+                "source": {
+                  "code": "marcrelator",
+                  "uri": "http://id.loc.gov/vocabulary/relators/"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "form": [
+      {
+        "value": "Geospatial data",
+        "type": "genre",
+        "uri": "http://id.loc.gov/authorities/genreForms/gf2011026297",
+        "source": {
+          "code": "lcgft"
+        }
+      },
+      {
+        "value": "cartographic dataset",
+        "type": "genre",
+        "uri": "http://rdvocab.info/termList/RDAContentType/1001",
+        "source": {
+          "code": "rdacontent"
+        }
+      },
+      {
+        "value": "Dataset",
+        "type": "genre",
+        "source": {
+          "value": "local"
+        }
+      },
+      {
+        "value": "cartographic",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "software, multimedia",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "born digital",
+        "type": "digital origin",
+        "source": {
+          "value": "MODS digital origin terms"
+        }
+      },
+      {
+        "value": "Shapefile",
+        "type": "form"
+      },
+      {
+        "value": "EPSG::4326",
+        "type": "map projection"
+      }
+    ],
+    "geographic": [
+      {
+        "form": [
+          {
+            "value": "application/x-esri-shapefile",
+            "type": "media type",
+            "source": {
+              "value": "IANA media type terms"
+            }
+          },
+          {
+            "value": "Shapefile",
+            "type": "data format"
+          },
+          {
+            "value": "Dataset#Polygon",
+            "type": "type"
+          }
+        ],
+        "subject": [
+          {
+            "structuredValue": [
+              {
+                "value": "-118.168715",
+                "type": "west"
+              },
+              {
+                "value": "33.883095",
+                "type": "south"
+              },
+              {
+                "value": "-118.16462",
+                "type": "east"
+              },
+              {
+                "value": "33.897317",
+                "type": "north"
+              }
+            ],
+            "type": "bounding box coordinates",
+            "standard": {
+              "code": "EPSG:4326"
+            },
+            "encoding": {
+              "value": "decimal"
+            }
+          }
+        ]
+      }
+    ],
+    "language": [
+      {
+        "code": "eng",
+        "source": {
+          "code": "iso639-2b"
+        }
+      }
+    ],
+    "note": [
+      {
+        "value": "This is an index to the map series 'Clearwater, Los Angeles Co., Cal., Sept. 1927, including Hynes'. The maps were created by the Sanborn Map Company (1927). This layer provides an index map that can be used to locate individual scanned map sheets.",
+        "type": "abstract",
+        "displayLabel": "Abstract"
+      }
+    ],
+    "subject": [
+      {
+        "value": "Los Angeles County (Calif.)",
+        "type": "place",
+        "source": {
+          "code": "geonames",
+          "uri": "http://www.geonames.org/ontology#"
+        }
+      },
+      {
+        "value": "Clearwater (Calif.)",
+        "type": "place",
+        "source": {
+          "code": "geonames",
+          "uri": "http://www.geonames.org/ontology#"
+        }
+      },
+      {
+        "value": "Grids (Cartography)",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Fire insurance",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Cities and towns",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Fire risk assessment",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Index maps",
+        "type": "topic",
+        "source": {
+          "code": "lcsh",
+          "uri": "http://id.loc.gov/authorities/subjects.html"
+        }
+      },
+      {
+        "value": "Boundaries",
+        "type": "topic",
+        "code": "boundaries",
+        "source": {
+          "code": "ISO19115TopicCategory",
+          "uri": "http://www.isotc211.org/2005/resources/Codelist/gmxCodelists.xml#MD_TopicCategoryCode"
+        }
+      },
+      {
+        "value": "1927",
+        "type": "time",
+        "encoding": {
+          "code": "w3cdtf"
+        }
+      },
+      {
+        "value": "W 118°10ʹ7ʺ--W 118°9ʹ53ʺ/N 33°53ʹ50ʺ--N 33°52ʹ59ʺ",
+        "type": "map coordinates"
+      }
+    ],
+    "access": {
+      "accessContact": [
+        {
+          "value": "brannerlibrary@stanford.edu",
+          "type": "email",
+          "displayLabel": "Contact"
+        }
+      ]
+    },
+    "adminMetadata": {
+      "contributor": [
+        {
+          "name": [
+            {
+              "value": "Stanford"
+            }
+          ]
+        }
+      ],
+      "event": [
+        {
+          "type": "creation",
+          "date": [
+            {
+              "value": "2025-08-14",
+              "encoding": {
+                "code": "w3cdtf"
+              }
+            }
+          ]
+        }
+      ],
+      "language": [
+        {
+          "code": "eng",
+          "source": {
+            "code": "iso639-2b"
+          }
+        }
+      ],
+      "identifier": [
+        {
+          "value": "edu.stanford.purl:bc576pk4911"
+        }
+      ]
+    },
+    "purl": "https://purl.stanford.edu/bc576pk4911"
+  },
+  "identification": {
+    "sourceId": "branner:sanborn_SANB_a2725322.shp"
+  },
+  "structural": {
+    "contains": [
+      {
+        "type": "https://cocina.sul.stanford.edu/models/resources/object",
+        "externalIdentifier": "bc576pk4911_1",
+        "label": "Data",
+        "version": 1,
+        "structural": {
+          "contains": [
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/aa7683da-fd3f-463f-aa0a-b04f00994c04",
+              "label": "SANB_a2725322.shp",
+              "filename": "SANB_a2725322.shp",
+              "size": 372,
+              "version": 1,
+              "hasMimeType": "application/vnd.shp",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "97bf624a14c87326fdd3da601a64cbeefb22a678"
+                },
+                {
+                  "type": "md5",
+                  "digest": "7681f56dc885f6ea7787e54b526ef925"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/0a12cde2-c843-4807-b3b3-2567e6ac1721",
+              "label": "SANB_a2725322.shx",
+              "filename": "SANB_a2725322.shx",
+              "size": 116,
+              "version": 1,
+              "hasMimeType": "application/vnd.shx",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "ce157df5c524cb273f80edddda3dcf4367ecb984"
+                },
+                {
+                  "type": "md5",
+                  "digest": "3bca3db23ef5d67d57cbd6745db1fbd5"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/5003ed94-ecc8-477f-9485-606eee28e6bf",
+              "label": "SANB_a2725322.dbf",
+              "filename": "SANB_a2725322.dbf",
+              "size": 4452,
+              "version": 1,
+              "hasMimeType": "application/vnd.dbf",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "b0367cc11d7f87de1ec541d1eaaca6703477de06"
+                },
+                {
+                  "type": "md5",
+                  "digest": "1913a5a0f36b14a4bee37a7e6c1f89a5"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/877a048e-1d65-48e9-a3f6-63007b704091",
+              "label": "SANB_a2725322.sbn",
+              "filename": "SANB_a2725322.sbn",
+              "size": 140,
+              "version": 1,
+              "hasMimeType": "application/octet-stream",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "52d38f7f03218c615631b0d0c42a14e569cb958d"
+                },
+                {
+                  "type": "md5",
+                  "digest": "8ca156550344cea153948c69aedd9f15"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/85f43ba9-7d77-4631-bd6c-f99972bd67b1",
+              "label": "SANB_a2725322.sbx",
+              "filename": "SANB_a2725322.sbx",
+              "size": 116,
+              "version": 1,
+              "hasMimeType": "application/octet-stream",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "7d06a832ae0186f8a8883d8651fa53079d7c8d63"
+                },
+                {
+                  "type": "md5",
+                  "digest": "ae5f1e644fd1659a65ff30c929dfda60"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/f018f935-a4ae-445a-ab2b-3c9844e8a0d8",
+              "label": "SANB_a2725322.prj",
+              "filename": "SANB_a2725322.prj",
+              "size": 145,
+              "version": 1,
+              "hasMimeType": "text/plain",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "86813d76269ab91b40ed3e67a86745bd933124e0"
+                },
+                {
+                  "type": "md5",
+                  "digest": "c742bee3d4edfc2948a2ad08de1790a5"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/d01dc959-119e-472e-b60f-1c0f11cfbde0",
+              "label": "SANB_a2725322.cpg",
+              "filename": "SANB_a2725322.cpg",
+              "size": 5,
+              "version": 1,
+              "hasMimeType": "text/plain",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "663b90c899fa25a111067be0c22ffc64dcf581c2"
+                },
+                {
+                  "type": "md5",
+                  "digest": "ae3b3df9970b49b6523e608759bc957d"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/fa762ad6-f3ff-4e6b-8c4b-f571c06aabab",
+              "label": "index_map.geojson",
+              "filename": "index_map.geojson",
+              "size": 1333,
+              "version": 1,
+              "hasMimeType": "application/geo+json",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "db64d89ff7d3f21cce5205e1845d461ec9888ed0"
+                },
+                {
+                  "type": "md5",
+                  "digest": "df547c50ee2d3cc3769c9f485bddfbb5"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/21b40bea-9703-4688-b8af-90380bf7241a",
+              "label": "SANB_a2725322.shp.xml",
+              "filename": "SANB_a2725322.shp.xml",
+              "size": 22086,
+              "version": 1,
+              "hasMimeType": "application/xml",
+              "use": "master",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "97672dd0c937d3c111099ad4949ca22cd6e1ef27"
+                },
+                {
+                  "type": "md5",
+                  "digest": "df0a335e8ad37265d48a3fdcd4c9ebbe"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/53b1ba3e-877c-49e8-9df3-085651e06d96",
+              "label": "SANB_a2725322-iso19139.xml",
+              "filename": "SANB_a2725322-iso19139.xml",
+              "size": 22508,
+              "version": 1,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "77cdf6278c09408776a0e264e81b50201bb1630a"
+                },
+                {
+                  "type": "md5",
+                  "digest": "fa77e99ff3745cc5d7d8f4ed3196e75e"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/ecc6883a-5eda-4c0a-b30b-021b9da054dc",
+              "label": "SANB_a2725322-iso19110.xml",
+              "filename": "SANB_a2725322-iso19110.xml",
+              "size": 12120,
+              "version": 1,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "6f8c6e7a393a1f89ec0184339d1dde19e59fc337"
+                },
+                {
+                  "type": "md5",
+                  "digest": "61584f7fcfcf1994b9a96aba6fdbdaca"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/3c6be593-ada4-4e00-b34b-070dcc105737",
+              "label": "SANB_a2725322-fgdc.xml",
+              "filename": "SANB_a2725322-fgdc.xml",
+              "size": 6208,
+              "version": 1,
+              "hasMimeType": "application/xml",
+              "use": "derivative",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "6edccf0cb2ef7771b5e1d291ee185e2ea792bc47"
+                },
+                {
+                  "type": "md5",
+                  "digest": "0913fd08c41f893cc0ce93e341946bc7"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/a2b1d99e-a185-4820-abc5-7340c1fd1ab4",
+              "label": "SANB_a2725322.jp2",
+              "filename": "SANB_a2725322.jp2",
+              "size": 7550,
+              "version": 5,
+              "hasMimeType": "image/jp2",
+              "use": "thumbnail",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "38d58289701eed8ab289ed551da239951e4fca1b"
+                },
+                {
+                  "type": "md5",
+                  "digest": "60fcb59568545cfaa2fb5a6dffc14102"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              },
+              "presentation": {
+                "height": 512,
+                "width": 512
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/800ab409-0f34-426c-965a-5bd800386d39",
+              "label": "index_map.fgb",
+              "filename": "index_map.fgb",
+              "size": 2456,
+              "version": 5,
+              "hasMimeType": "application/vnd.fgb",
+              "use": "derivative",
+              "sdrGeneratedText": true,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "64c7d006696c59fa8a950fd57d530670c461a662"
+                },
+                {
+                  "type": "md5",
+                  "digest": "ed08b52927aa2d347cd88b1a0af2b241"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            },
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/8b74634e-d5a9-4ae7-a2e9-70759596fcbc",
+              "label": "index_map.pmtiles",
+              "filename": "index_map.pmtiles",
+              "size": 3199,
+              "version": 5,
+              "hasMimeType": "application/vnd.pmtiles",
+              "use": "derivative",
+              "sdrGeneratedText": true,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "58564177594ac257da03037f94f50852e56a4901"
+                },
+                {
+                  "type": "md5",
+                  "digest": "23a84c931ea5774d5cf77949ff1841e6"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": false,
+                "shelve": true
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "isMemberOf": [
+      "druid:wk761dz8051"
+    ]
+  },
+  "created": "2025-08-14T16:44:30.000+00:00",
+  "modified": "2026-07-23T17:25:13.000+00:00",
+  "lock": "druid:bc576pk4911=10=2",
+  "label": "Clearwater, Los Angeles Co., Cal., Sept. 1927, including Hynes, Maps Index"
+}

@@ -1,0 +1,305 @@
+{
+  "cocinaVersion": "0.128.0",
+  "type": "https://cocina.sul.stanford.edu/models/map",
+  "externalIdentifier": "druid:bc592pz8308",
+  "label": "L'AMERIQUE, MERIDIONALE ET SEPTENTRIONALE dressée selon les dernieres Relations et suivant les nouvelles Decouvertes dontles points principaux sont placer sur les observations de Mrs. de l[']Academie Royale des Sciences",
+  "version": 11,
+  "access": {
+    "copyright": "This work has been identified as being free of known restrictions under copyright law, including all related and neighboring rights. You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission.",
+    "useAndReproductionStatement": "Image from the Glen McLaughlin Map Collection of California as an Island courtesy Stanford University Libraries. This item is in the public domain. There are no restrictions on use. If you have questions, please contact the David Rumsey Map Center at rumseymapcenter@stanford.edu.",
+    "license": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "view": "world",
+    "download": "world",
+    "controlledDigitalLending": false
+  },
+  "administrative": {
+    "hasAdminPolicy": "druid:nk327xn8125"
+  },
+  "description": {
+    "title": [
+      {
+        "value": "L'AMERIQUE, MERIDIONALE ET SEPTENTRIONALE dressée selon les dernieres Relations et suivant les nouvelles Decouvertes dontles points principaux sont placer sur les observations de Mrs. de l[']Academie Royale des Sciences"
+      }
+    ],
+    "contributor": [
+      {
+        "name": [
+          {
+            "value": "Fer, Nicolas de, 1646-1720"
+          }
+        ],
+        "type": "person",
+        "status": "primary"
+      }
+    ],
+    "event": [
+      {
+        "type": "publication",
+        "date": [
+          {
+            "value": "1700",
+            "type": "publication"
+          }
+        ],
+        "contributor": [
+          {
+            "name": [
+              {
+                "value": "s.n."
+              }
+            ],
+            "role": [
+              {
+                "value": "publisher"
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "value": "A Paris"
+          }
+        ]
+      }
+    ],
+    "form": [
+      {
+        "value": "Scale [ca.1:60,000,000].",
+        "type": "map scale"
+      },
+      {
+        "value": "1 map ; 22.5 x 31.7 cm., 22.5 x 33.1 cm. including border.",
+        "type": "extent"
+      },
+      {
+        "value": "Digital Maps",
+        "type": "genre"
+      },
+      {
+        "value": "Early Maps",
+        "type": "genre"
+      },
+      {
+        "value": "map",
+        "type": "genre"
+      },
+      {
+        "value": "cartographic",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "Cartographic",
+        "type": "resource type",
+        "source": {
+          "value": "LC Resource Types Scheme"
+        }
+      }
+    ],
+    "geographic": [
+      {
+        "subject": [
+          {
+            "structuredValue": [
+              {
+                "value": "W1600000",
+                "type": "west"
+              },
+              {
+                "value": "E0200000",
+                "type": "east"
+              },
+              {
+                "value": "N0900000",
+                "type": "north"
+              },
+              {
+                "value": "S0900000",
+                "type": "south"
+              }
+            ],
+            "type": "bounding box coordinates"
+          }
+        ]
+      }
+    ],
+    "note": [
+      {
+        "value": "Par N. de Fer.",
+        "type": "statement of responsibility"
+      },
+      {
+        "value": "\"Echelle 20 degrez de l'Equateur qui sont 400. grad. Lieües de france a 20 au degré. \""
+      },
+      {
+        "value": "California with indented northern coast; Agubela de Cato to north. Includes partial outline on Nouvelle Zeelande. Engraved by: C. Inselin Scripsic. (within scale cartouche, lower right). Title cartouche, rectangle with scrollwork (lower left). Dedication: Dressée et dediée a nosseigneurs les enfans de France. Par leur tres humble et tres obeissant serviteur de Fer. Geog. de Mgr. LeDauphin (within crowned cartouche, upper left)."
+      },
+      {
+        "value": "Issued in his: Atlas ou recüeil de cartes geographiques, Paris, 1709-[28]. Reissued in his: Introduction a la geographie avec une description historique sur touttes [sic]les parties de la terre, Paris, 1717. (Entry TP 13)"
+      },
+      {
+        "value": "Wagner 482; Tooley 61; Leighly 105; BN FER I(5), FER IIC(9), FER XIB(6); UCB); Nordenskïold Collection, I,72 (7).",
+        "type": "citation/reference"
+      },
+      {
+        "value": "Original McLaughlin book number (1995 edition) with latest state information: 135-01"
+      },
+      {
+        "value": "Original McLaughlin Book Number (1995 edition): 135"
+      },
+      {
+        "value": "State 1: Dated 1700, with imprint, \"A Paris Chez l'Autheur dans l'Isle du Palais sur le Quay de l'Orloge a la Sphere Royale Avec priv. du Roy, 1700.\" Issued in his: L'Atlas curieux ou le monde, Paris, 1700."
+      },
+      {
+        "value": "State 2: Dated 1705, with imprint, \"A Paris Chez l'Autheur dans l'Isle du Palais sur le Quay de l'Orloge a la Sphere Royale Avec priv. du Roy, 1705.\" Issued in his: L'Atlas curieux ou le monde, Paris, 1705."
+      },
+      {
+        "value": "State 3: Dated 1717, with imprint: \"A Paris Chez l'Autheur dans l'Isle du Palais sur le Quay de l'Orloge a la Sphere Royale Avec priv. du Roy\". Issued in his: L'Atlas Curieux ou le monde réprésenté dans des cartes generales et particulieres du ciel ... -- A Paris : Chez I. F. Benar [Bernard] Gendre de l’Auteur ... , 1725."
+      },
+      {
+        "value": "State 4: 1740, with new imprint \" A Paris Chez G. Danet sur le Pont de Notre Dame a la Sphere Royale\"."
+      }
+    ],
+    "subject": [
+      {
+        "value": "G3290 1700.F47",
+        "type": "classification",
+        "source": {
+          "code": "lcc"
+        }
+      },
+      {
+        "value": "(W 160°--E 20°/N 90°--S 90°).",
+        "type": "map coordinates"
+      },
+      {
+        "value": "America",
+        "type": "place"
+      },
+      {
+        "value": "Maps",
+        "type": "genre"
+      }
+    ],
+    "access": {
+      "url": [
+        {
+          "value": "https://purl.stanford.edu/bc592pz8308"
+        }
+      ]
+    },
+    "adminMetadata": {
+      "contributor": [
+        {
+          "name": [
+            {
+              "code": "CSt-ES",
+              "source": {
+                "code": "marcorg"
+              }
+            }
+          ],
+          "type": "organization"
+        }
+      ],
+      "event": [
+        {
+          "type": "creation",
+          "date": [
+            {
+              "value": "240711",
+              "encoding": {
+                "code": "marc"
+              }
+            }
+          ]
+        }
+      ],
+      "note": [
+        {
+          "value": "Converted from MARC to Cocina 2026-07-13",
+          "type": "record origin"
+        }
+      ],
+      "identifier": [
+        {
+          "value": "a10624983",
+          "type": "FOLIO"
+        }
+      ]
+    },
+    "purl": "https://purl.stanford.edu/bc592pz8308"
+  },
+  "identification": {
+    "catalogLinks": [
+      {
+        "catalog": "folio",
+        "refresh": true,
+        "catalogRecordId": "a10624983"
+      },
+      {
+        "catalog": "symphony",
+        "refresh": true,
+        "catalogRecordId": "10624983"
+      }
+    ],
+    "sourceId": "sul:36105223393062"
+  },
+  "structural": {
+    "contains": [
+      {
+        "type": "https://cocina.sul.stanford.edu/models/resources/image",
+        "externalIdentifier": "https://cocina.sul.stanford.edu/fileSet/bc592pz8308-bc592pz8308_1",
+        "label": "0001",
+        "version": 8,
+        "structural": {
+          "contains": [
+            {
+              "type": "https://cocina.sul.stanford.edu/models/file",
+              "externalIdentifier": "https://cocina.sul.stanford.edu/file/bc592pz8308-bc592pz8308_1/bc592pz8308_05_0001.jp2",
+              "label": "bc592pz8308_05_0001.jp2",
+              "filename": "bc592pz8308_05_0001.jp2",
+              "size": 14389018,
+              "version": 8,
+              "hasMimeType": "image/jp2",
+              "sdrGeneratedText": false,
+              "correctedForAccessibility": false,
+              "hasMessageDigests": [
+                {
+                  "type": "sha1",
+                  "digest": "b0efe7d4ad2fa64dd63e401c4bf986d6a5a3b357"
+                },
+                {
+                  "type": "md5",
+                  "digest": "c4e9ba6c359886733c79b480bbd6d02d"
+                }
+              ],
+              "access": {
+                "view": "world",
+                "download": "world",
+                "controlledDigitalLending": false
+              },
+              "administrative": {
+                "publish": true,
+                "sdrPreserve": true,
+                "shelve": true
+              },
+              "presentation": {
+                "height": 7579,
+                "width": 10108
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "isMemberOf": [
+      "druid:zb871zd0767"
+    ]
+  },
+  "created": "2011-10-31T17:08:49.000+00:00",
+  "modified": "2026-07-13T15:40:27.000+00:00",
+  "lock": "druid:bc592pz8308=4=2"
+}
