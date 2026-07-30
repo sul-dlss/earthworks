@@ -1,7 +1,4 @@
 <%= title %>
-<div class="mb-2 row">
-  <%= render HeaderIconsComponent.new(document: @document) %>
-</div>
 <div class="row" id="<%= @id %>">
   <%= content_tag @component,
     data: {
@@ -28,12 +25,7 @@
         <% if (@document.image? || @document.item_viewer.iiif) && !@document[Geoblacklight.configuration.fields.georeferenced] %>
           <%= render AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
         <% end %>
-        <div id="viewer-container">
-          <%= render Geoblacklight::ViewerHelpTextComponent.new('viewer_protocol', @document.viewer_protocol) %>
-          <%= render Geoblacklight::IndexMapLegendComponent.new(document: @document) %>
-          <%= render Geoblacklight::ItemMapViewerComponent.new(document: @document) %>
-          <%= render Geoblacklight::IiifDragDropComponent.new(document: @document) %>
-        </div>
+        <%= render Geoblacklight::Document::PreviewComponent.new(document: @document) %>
         <%= render Geoblacklight::AttributeTableComponent.new(document: @document) %>
         <%= render Geoblacklight::IndexMapInspectComponent.new(document: @document) %>
         <%= content %>

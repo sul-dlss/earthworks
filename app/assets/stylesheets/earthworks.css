@@ -12,19 +12,6 @@
   }
 }
 
-.header-icons {
-  color: var(--stanford-60-black);
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-}
-
-.header-icons .blacklight-icons,
-.header-icons .blacklight-icons svg {
-  height: 0.875rem;
-  width: 0.875rem;
-  vertical-align: unset;
-}
-
 .palo-alto-base {
   --bs-dark-rgb: var(--stanford-palo-alto-rgb);
 }
@@ -37,6 +24,11 @@
 
 .home-tab {
   margin-left: 2.3rem;
+}
+
+/* Search result badges */
+.result .document .badge {
+  --bs-secondary-rgb: var(--bs-dark-rgb);
 }
 
 .component-container {
@@ -73,7 +65,6 @@
     --bs-btn-active-border-color: var(--stanford-digital-red-darker);
   }
 
-
   /* this is used for "Collection items" */
   .card.relations {
     --bs-border-width: 0;
@@ -97,7 +88,6 @@
 .authentication {
   text-align: center;
 }
-
 
 .blacklight-icons-stanford svg path {
   fill: var(--stanford-cardinal);
@@ -199,27 +189,8 @@
   align-items: center;
 }
 
-/* TODO: when we get a new blacklight release (v8.3.1)
-Remove file app/components/blacklight/icons/search_component.rb
-Remove lines 138-140
-Uncomment lines 142-144
-*/
-
 .search-query-form .search-btn .blacklight-icons {
   width: auto;
-}
-
-/* .search-query-form .search-btn .blacklight-icons-search {
-  display: none;
-} */
-
-#main-container #leaflet-viewer {
-  /* match sul-embed border */
-  border: 1px solid black;
-
-  @media (min-width: 992px) {
-    height: 620px;
-  }
 }
 
 /* Styles for search result description expand/collapse */
@@ -359,20 +330,23 @@ body {
   flex: 1;
 }
 
-/* Add margin for consecutive paragraphs in item descriptions */
-.document-metadata p {
-  margin-bottom: 0;
-}
-
-.document-metadata p + p {
-  margin-top: 1rem;
-}
-
 /* Download sidebar */
-.downloads .badge {
-  float: none;
-  margin-inline-start: 0.5em;
-  vertical-align: top;
+.downloads .download + .download {
+  margin-top: 0.5em;
+}
+
+.download .badge {
+  --bs-badge-padding-x: 0.5em;
+  --bs-badge-padding-y: 0.25em;
+}
+
+.downloads a {
+  --bs-link-hover-decoration: none;
+}
+
+.downloads a:hover .title,
+.downloads a:focus-visible .title {
+  text-decoration: underline;
 }
 
 /* Global alert styles */
