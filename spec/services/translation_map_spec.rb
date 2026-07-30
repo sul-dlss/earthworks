@@ -11,7 +11,9 @@ RSpec.describe TranslationMap do
       'exact_key' => 'exact_value',
       '/^regex_.*$/' => 'regex_value',
       'other_key' => 'other_value',
-      '/foo/' => 'bar'
+      '/foo/' => 'bar',
+      'multi_key' => %w[first_value second_value],
+      '/^multi_regex/' => %w[regex_first regex_second]
     }
   end
 
@@ -44,6 +46,26 @@ RSpec.describe TranslationMap do
 
       it 'handles mid-string regex keys properly' do
         expect(translation_map.translate('my foo bar')).to eq(['bar'])
+      end
+    end
+
+    context 'with keys mapped to multiple values' do
+      it 'flattens the values of an exact match key' do
+        expect(translation_map.translate('multi_key')).to contain_exactly('first_value', 'second_value')
+      end
+
+      it 'flattens the values of a regex match key' do
+        expect(translation_map.translate('multi_regex_key')).to contain_exactly('regex_first', 'regex_second')
+      end
+
+      it 'flattens the values of every input into a single list' do
+        input = %w[exact_key multi_key]
+        expect(translation_map.translate(input)).to contain_exactly('exact_value', 'first_value', 'second_value')
+      end
+
+      it 'de-duplicates values shared between inputs' do
+        input = %w[multi_regex_a multi_regex_b]
+        expect(translation_map.translate(input)).to contain_exactly('regex_first', 'regex_second')
       end
     end
 
@@ -89,7 +111,19 @@ RSpec.describe TranslationMap do
       # Since we only stubbed 'test_map.yml', 'geo_theme' will load the real file
       map = described_class.new('geo_theme')
       expect(map.translate('Agriculture')).to eq(['Agriculture'])
-      expect(map.translate('Farming')).to eq(['Agriculture'])
+      expect(map.translate('intelligenceMilitary')).to eq(['Military'])
+    end
+
+    it 'flattens keys that map to more than one theme' do
+      map = described_class.new('geo_theme')
+      expect(map.translate('imageryBaseMapsEarthCover')).to contain_exactly('Imagery', 'Land Cover')
+      expect(map.translate('Imagery and Base Maps')).to contain_exactly('Imagery', 'Land Cover')
+    end
+
+    it 'flattens and de-duplicates across multiple inputs' do
+      map = described_class.new('geo_theme')
+      themes = map.translate(['imageryBaseMapsEarthCover', 'Land Cover', 'farming'])
+      expect(themes).to contain_exactly('Imagery', 'Land Cover', 'Agriculture')
     end
   end
 end
