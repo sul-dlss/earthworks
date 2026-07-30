@@ -1,20 +1,79 @@
+# Map values coming from cocina to DCAT "theme" values
+# Related ISO 19115 topic categories are also mapped
+# See: https://opengeometadata.org/ogm-aardvark/#theme
+
+# 1:1 mapping
 Agriculture: Agriculture
-Biota: Biology
+Biology: Biology
 Boundaries: Boundaries
-ClimatologyMeteorologyAtmosphere: Climate
+Climate: Climate
 Economy: Economy
 Elevation: Elevation
 Environment: Environment
-Farming: Agriculture
-GeoscientificInformation: Geology
+Events: Events
+Geology: Geology
 Health: Health
-ImageryBaseMapsEarthCover: Imagery
-InlandWaters: Inland Waters
+Imagery: Imagery
+Inland Waters: Inland Waters
+Land Cover: Land Cover
 Location: Location
-IntelligenceMilitary: Military
+Military: Military
 Oceans: Oceans
-PlanningCadastre: Property
+Property: Property
 Society: Society
 Structure: Structure
 Transportation: Transportation
-UtilitiesCommunication: Utilities
+Utilities: Utilities
+
+# ISO 19115 topic categories mapping
+farming: Agriculture
+biota: Biology
+Biota: Biology
+boundaries: Boundaries
+Climatology, Meteorology and Atmosphere: Climate
+climatologyMeteorologyAtmosphere: Climate
+economy: Economy
+elevation: Elevation
+environment: Environment
+geoscientificInformation: Geology
+health: Health
+imageryBaseMapsEarthCover:
+  - Imagery
+  - Land Cover
+Imagery and Base Maps:
+  - Imagery
+  - Land Cover
+location: Location
+Landcover: Land Cover
+Land cover: Land Cover
+intelligenceMilitary: Military
+Intelligence and Military: Military
+oceans: Oceans
+planningCadastre: Property
+Planning and Cadastral: Property
+society: Society
+structure: Structure
+transportation: Transportation
+utilitiesCommunication: Utilities
+Utilities and Communication: Utilities
+
+# Misc. other Stanford data
+Aerial photographs: Imagery
+Aerial surveys: Imagery
+Bathymetric maps: Imagery
+California as an island--Maps: Imagery
+Composite map: Imagery
+Landsat satellites: Imagery
+Multibeam mapping: Imagery
+Nautical charts: Imagery
+Remote sensing: Imagery
+Remote sensing images: Imagery
+Satellite image maps: Imagery
+Coasts: Land Cover
+Forests: Land Cover
+Forest canopies: Land Cover
+Forests and forestry: Land Cover
+Hydrology: Land Cover
+Hydrography: Land Cover
+Landforms: Land Cover
+Vegetation mapping: Land Cover

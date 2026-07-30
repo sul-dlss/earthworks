@@ -91,7 +91,7 @@ RSpec.describe CocinaToSolrMapper do
     end
 
     it 'maps the subjects that are valid DCAT themes' do
-      expect(doc['dcat_theme_sm']).to eq ['Society']
+      expect(doc['dcat_theme_sm']).to eq ['Land Cover', 'Society', 'Imagery']
     end
 
     it 'maps the format' do
