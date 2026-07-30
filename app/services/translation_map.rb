@@ -1,4 +1,4 @@
-# frozen_string_literal: nil
+# frozen_string_literal: true
 
 class TranslationMap
   def initialize(name)
@@ -6,21 +6,20 @@ class TranslationMap
   end
 
   def translate(values)
-    Array(values).filter_map do |value|
-      match = nil
-      @map.each do |k, v|
-        if k.start_with?('/') && k.end_with?('/')
-          regex = Regexp.new(k[1..-2])
-          if value.to_s.match?(regex)
-            match = v
-            break
-          end
-        elsif k == value.to_s
-          match = v
-          break
-        end
-      end
-      match
-    end.uniq
+    Array(values).flat_map { |value| lookup(value) }.uniq
+  end
+
+  private
+
+  # A key may map to a single value or to a list of values; always return a list
+  def lookup(value)
+    _key, translation = @map.find { |key, _translation| match?(key, value.to_s) }
+    Array(translation)
+  end
+
+  def match?(key, value)
+    return value.match?(Regexp.new(key[1..-2])) if key.start_with?('/') && key.end_with?('/')
+
+    key == value
   end
 end
