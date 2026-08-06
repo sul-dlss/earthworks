@@ -8,7 +8,7 @@
     <%= t("earthworks.home.#{type}.description_html", sets: number_with_delimiter(count)) %>
   </div>
 
-  <h2 class="h4 mt-3">Recently added</h2>
+  <h2 class="h4 mt-3"><%= t("earthworks.home.recently_updated") %></h2>
 
   <ul class="list-unstyled">
     <% docs.each do | doc | %>

@@ -7,9 +7,9 @@
       autocomplete_path: suggest_index_catalog_path
     ) %>
   <hr>
-  <%= render RecentlyAddedListComponent.new(term: 'Datasets') %>
+  <%= render RecentlyUpdatedListComponent.new(term: 'Datasets') %>
   <hr>
-  <%= render RecentlyAddedListComponent.new(term: 'Maps') %>
+  <%= render RecentlyUpdatedListComponent.new(term: 'Maps') %>
   </div>
   <div class="col-sm d-none d-md-block">
     <%= render(Geoblacklight::LocationLeafletMapComponent.new(page: 'home', geosearch: { dynamic: false })) %>

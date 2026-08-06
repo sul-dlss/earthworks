@@ -2,6 +2,7 @@ en:
   geoblacklight:
     home:
       headline: 'Discover and download GIS data and maps'
+      recently_updated: 'Recently updated'
     relations:
       member_of_ancestors: 'Item belongs to a collection'
       member_of_descendants: 'Collection items'
