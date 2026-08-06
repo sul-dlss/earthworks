@@ -61,6 +61,7 @@ class CatalogController < ApplicationController
     # config.index.record_display_type = 'format'
 
     config.index.document_component = SearchResultComponent
+    config.index.title_component = DocumentTitleComponent
     config.index.title_field = field_config.title
     config.index.search_bar_component = SearchBarComponent
     config.index.facet_group_component = FacetGroupComponent
