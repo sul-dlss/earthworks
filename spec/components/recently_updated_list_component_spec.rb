@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe RecentlyAddedListComponent, type: :component do
+RSpec.describe RecentlyUpdatedListComponent, type: :component do
   let(:term) { 'Datasets' }
   let(:component) { described_class.new(term:) }
   let(:rendered_component) { render_inline(component) }
