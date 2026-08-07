@@ -56,7 +56,6 @@ class SdrConsumer < Racecar::Consumer
     return true if false_target?
     return true unless true_target?
     return true if record.blank? # No public Cocina
-    return true if @skip_catkey && catkey?
 
     false
   end
@@ -69,11 +68,6 @@ class SdrConsumer < Racecar::Consumer
   # Is the item excluded from release to this target?
   def false_target?
     @target.in? Array(@change['false_targets']).map(&:downcase)
-  end
-
-  # Does the item have a catkey?
-  def catkey?
-    @change['catkey'].present? || record.folio_hrid.present?
   end
 
   # Public cocina record for the item
