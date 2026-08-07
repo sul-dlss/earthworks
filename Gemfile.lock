@@ -149,6 +149,15 @@ GEM
       janeway-jsonpath (>= 0.6, < 2)
       zeitwerk (~> 2.7)
     coderay (1.1.3)
+    commonmarker (2.9.0)
+      rb_sys (~> 0.9)
+    commonmarker (2.9.0-aarch64-linux)
+    commonmarker (2.9.0-aarch64-linux-musl)
+    commonmarker (2.9.0-arm-linux)
+    commonmarker (2.9.0-arm64-darwin)
+    commonmarker (2.9.0-x86_64-darwin)
+    commonmarker (2.9.0-x86_64-linux)
+    commonmarker (2.9.0-x86_64-linux-musl)
     concurrent-ruby (1.3.8)
     config (5.6.1)
       deep_merge (~> 1.2, >= 1.2.1)
@@ -240,14 +249,15 @@ GEM
       sanitize
       thor
     geo_coord (0.2.0)
-    geoblacklight (6.0.0.pre.alpha.6)
+    geoblacklight (6.0.0.pre.alpha.7)
       blacklight (>= 8.0, < 10)
       coderay
+      commonmarker (~> 2.9)
       config
       deprecation
       faraday (~> 2.0)
       faraday-follow_redirects
-      geo_combine (~> 0.10)
+      geo_combine (~> 0.11)
       mime-types
       rails (>= 8, < 9)
       rgeo-geojson
@@ -448,6 +458,9 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.4.2)
+    rake-compiler-dock (1.12.0)
+    rb_sys (0.9.128)
+      rake-compiler-dock (= 1.12.0)
     rbs (4.1.2)
       logger
       prism (>= 1.6.0)
@@ -697,7 +710,7 @@ DEPENDENCIES
   dotenv
   ed25519 (~> 1.3)
   factory_bot_rails
-  geoblacklight (= 6.0.0.pre.alpha.6)
+  geoblacklight (= 6.0.0.pre.alpha.7)
   global_alerts
   honeybadger
   http
