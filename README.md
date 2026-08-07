@@ -52,11 +52,17 @@ Earthworks indexes data from multiple sources. The indexing processes run on a d
 
 Stanford data published from SDR is consumed from a Kafka queue via the `SdrConsumer`, which fetches Cocina JSON from PURL and hands it off to the `CocinaToSolrMapper` to transform into OGM Aardvark records. These are then indexed into Solr by the `SolrService`, and the result is reported back to Argo via the `SdrEvents` class. This process is "push", in that the Solr index is updated as soon as new data is published to SDR.
 
+To index a single Stanford record yourself in local development, you can use the helper script:
+
+```sh
+bin/rails runner script/index_druid.rb vh286rq6087  # replace with your DRUID
+```
+
 #### External data
 
 External data is fetched from [OpenGeoMetadata](https://github.com/OpenGeoMetadata) via [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine), which downloads records from the OpenGeoMetadata GitHub organization and places them on a local filesystem. After downloading, the files are indexed into Solr. This process is "pull", in that it is run on a schedule to fetch and index new data. The `config/schedule.rb` controls the `cron` that runs these tasks and [checks in with Honeybadger](https://app.honeybadger.io/projects/49895/check_ins) when they are completed.
 
-To index data yourself in local development, you can use the same tasks:
+To index external data yourself in local development, you can use the same tasks:
 
 ```sh
 bin/rake geocombine:clone
