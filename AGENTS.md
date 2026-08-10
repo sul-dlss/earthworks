@@ -62,8 +62,6 @@ Stanford geospatial discovery app built on Blacklight 9 + GeoBlacklight 6
   `app/consumers/sdr_consumer.rb` (Racecar), which pulls SDR item updates and
   writes to Solr via `CocinaService` / `SolrService` in `app/services`. In
   production this runs under systemd (Capistrano `indexer` role).
-- Sidekiq for background jobs; web UI mounted at `/queues` (Apache-gated to
-  admins in prod).
 - Custom rake tasks live in `lib/tasks/earthworks.rake` (fixture indexing,
   guest-user/search pruning, download-cache cleanup). Cron schedule is
   `config/schedule.rb` (`whenever`, role `:cron`).
