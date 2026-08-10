@@ -115,6 +115,23 @@ class CatalogController < ApplicationController
     #    :years_25 => { :label => 'within 25 Years', :fq => "pub_date:[#{Time.now.year - 25 } TO *]" }
     # }
 
+    # GEOBLACKLIGHT APPLICATION FACETS
+
+    # Map-Based "Search Here" Feature
+    # component:           - Defines how the facet appears in the sidebar
+    # item_presenter       - Defines how the facet values appear in the constraints section
+    # filter_query_builder - Defines the query generated for Solr
+    # filter_class         - Defines how to add/remove facet from query
+    # label                - Defines the label used for the facet
+    config.add_facet_field field_config.geometry, component: Geoblacklight::Facets::BboxFieldComponent,
+                                                  item_presenter: Geoblacklight::BboxItemPresenter,
+                                                  filter_class: Geoblacklight::BboxFilterField,
+                                                  filter_query_builder: Geoblacklight::BboxFilterQuery,
+                                                  within_boost: config.bbox_within_boost,
+                                                  overlap_boost: config.overlap_ratio_boost,
+                                                  overlap_field: field_config.overlap_field,
+                                                  label: 'Bounding Box'
+
     # DEFAULT FACETS
     config.add_facet_field field_config.resource_class, label: 'Resource Class', limit: 8
     config.add_facet_field field_config.resource_type, label: 'Genre/Data Type', limit: 8
@@ -127,22 +144,6 @@ class CatalogController < ApplicationController
     config.add_facet_field field_config.publisher, label: 'Publisher', limit: 8
     config.add_facet_field field_config.provider, label: 'Provider', limit: 8
     config.add_facet_field field_config.access_rights, label: 'Access', limit: 8
-
-    # GEOBLACKLIGHT APPLICATION FACETS
-
-    # Map-Based "Search Here" Feature
-    # item_presenter       - Defines how the facet appears in the GBL UI
-    # filter_query_builder - Defines the query generated for Solr
-    # filter_class         - Defines how to add/remove facet from query
-    # label                - Defines the label used in contstraints container
-    config.add_facet_field field_config.geometry,
-                           item_presenter: Geoblacklight::BboxItemPresenter,
-                           filter_class: Geoblacklight::BboxFilterField,
-                           filter_query_builder: Geoblacklight::BboxFilterQuery,
-                           within_boost: Geoblacklight.configuration.bbox_within_boost,
-                           overlap_boost: Geoblacklight.configuration.overlap_ratio_boost,
-                           overlap_field: field_config.overlap_field,
-                           label: 'Bounding Box'
 
     # Item Relationship Facets
     # * Not displayed to end user (show: false)
@@ -175,7 +176,7 @@ class CatalogController < ApplicationController
     # helper_method: [Symbol] method that can be used to render the value
     config.add_show_field field_config.creator, label: 'Creator', itemprop: 'creator', link_to_facet: true
     config.add_show_field field_config.description, label: 'Description', itemprop: 'description',
-                                                    helper_method: :render_value_as_truncate_abstract
+                                                    component: Geoblacklight::MetadataDescriptionMarkdownComponent
     config.add_show_field field_config.publisher, label: 'Publisher', itemprop: 'publisher', link_to_facet: true
     config.add_show_field field_config.spatial_coverage, label: 'Place', itemprop: 'spatial',
                                                          link_to_facet: true

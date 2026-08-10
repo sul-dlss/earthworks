@@ -17,7 +17,7 @@
     <%= content_tag :div, class: 'row index-split d-flex flex-grow-1 flex-column', data: { layer_id: @document.id, geom: @document.geometry.geojson } do %>
       <%= title %>
       <div class="flex-grow-1 ms-0">
-        <%= render HeaderIconsComponent.new(document: @document) %>
+        <%= render Geoblacklight::HeaderIconsComponent.new(document: @document) %>
       </div>
     <% end %>
   <% end %>
