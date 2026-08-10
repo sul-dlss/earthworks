@@ -1,4 +1,3 @@
-# rubocop:disable Layout/LineLength
 BotChallengePage.configure do |config|
   # If disabled, no challenges will be issued
   config.enabled = Settings.turnstile.enabled
@@ -20,13 +19,17 @@ BotChallengePage.configure do |config|
   # Exempt async JS facet requests from the challenge. Someone really determined could fake
   # this header, but until we see that behavior, we'll allow it so the facet UI works.
   # We also have an exception for index json so that the mini-bento frontend fetch in Searchworks doesn't get blocked.
+  # Also exempt Siteimprove's crawler, which is used for accessibility testing and SEO analysis.
   # Also exempt any IPs contained in the CIDR blocks in Settings.turnstile.safelist.
-  config.skip_when = lambda do |_config|
-    (is_a?(CatalogController) && params[:action].in?(%w[facet index]) && request.format.json? && request.headers['sec-fetch-dest'] == 'empty') ||
+  config.skip_when = lambda { |_config|
+    (is_a?(CatalogController) &&
+      params[:action].in?(%w[facet index]) &&
+      request.format.json? &&
+      request.headers['sec-fetch-dest'] == 'empty') ||
+      request.user_agent&.match?('Siteimprove') ||
       Settings.turnstile.safelist.map { |cidr| IPAddr.new(cidr) }.any? { |range| request.remote_ip.in?(range) }
-  end
+  }
 
   # More configuration is available; see:
   # https://github.com/samvera-labs/bot_challenge_page/blob/main/app/models/bot_challenge_page/config.rb
 end
-# rubocop:enable Layout/LineLength
