@@ -55,7 +55,6 @@ indexer_group: earthworks-dev-indexer
 # released to e.g. searchworks
 purl_fetcher:
   target: earthworks # case-insensitive ("EarthWorks", "Earthworks", etc.)
-  skip_catkey: true # skip indexing if item has a catkey
 
 # Determines the environment that cocina metadata will be fetched from; for
 # stage indexing it should be set to staging PURL
