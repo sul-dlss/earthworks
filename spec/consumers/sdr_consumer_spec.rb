@@ -4,7 +4,6 @@ RSpec.describe SdrConsumer do
   subject(:consumer) do
     described_class.new(
       target: 'earthworks',
-      skip_catkey: true,
       cocina_service: cocina_service,
       solr_service: solr_service
     )
