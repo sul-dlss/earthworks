@@ -58,6 +58,14 @@ To index a single Stanford record yourself in local development, you can use the
 bin/rails runner script/index_druid.rb vh286rq6087  # replace with your DRUID
 ```
 
+There is also a parallelized reindexing script that can be used to reindex all Stanford records in SDR. This is useful if you have made changes to the indexing process and want to reindex all records:
+
+```sh
+bin/rails runner script/reindex_sdr.rb
+```
+
+The script accepts `THREADS` and `BATCH_SIZE` environment variables to control the number of threads and batch size for indexing. Using the default values, it takes about 5 minutes to index ~27,000 items on a developer laptop. It also accepts `SOLR_URL` if you want to point it at someplace other than local development.
+
 #### External data
 
 External data is fetched from [OpenGeoMetadata](https://github.com/OpenGeoMetadata) via [GeoCombine](https://github.com/OpenGeoMetadata/GeoCombine), which downloads records from the OpenGeoMetadata GitHub organization and places them on a local filesystem. After downloading, the files are indexed into Solr. This process is "pull", in that it is run on a schedule to fetch and index new data. The `config/schedule.rb` controls the `cron` that runs these tasks and [checks in with Honeybadger](https://app.honeybadger.io/projects/49895/check_ins) when they are completed.
