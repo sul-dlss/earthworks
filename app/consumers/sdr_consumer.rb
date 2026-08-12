@@ -8,13 +8,11 @@ class SdrConsumer < Racecar::Consumer
 
   def initialize(
     target: Settings.purl_fetcher.target.downcase,
-    skip_catkey: Settings.purl_fetcher.skip_catkey,
     cocina_service: CocinaService,
     solr_service: SolrService
   )
     super()
     @target = target
-    @skip_catkey = skip_catkey
     @cocina_service = cocina_service
     @solr_service = solr_service
   end
