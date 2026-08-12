@@ -28,6 +28,11 @@ end
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 4.1.0'
+  # Used for reindexing SDR items locally via script/reindex_sdr.rb
+  gem "purl_fetcher-client", "~> 3.2"
+  gem "faraday", "~> 2.14"
+  gem "faraday-net_http_persistent", "~> 2.3"
+  gem "progress_bar", "~> 1.0"
 end
 
 group :development, :test do
