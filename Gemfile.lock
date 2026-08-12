@@ -268,6 +268,8 @@ GEM
     globalid (1.4.0)
       activesupport (>= 6.1)
     hashdiff (1.2.1)
+    highline (3.1.2)
+      reline
     honeybadger (6.9.1)
       logger
       ostruct
@@ -376,6 +378,7 @@ GEM
       racc (~> 1.4)
     okcomputer (1.20.0)
       benchmark
+    options (2.3.2)
     orm_adapter (0.5.0)
     ostruct (0.6.3)
     parallel (2.2.0)
@@ -394,6 +397,9 @@ GEM
     prism (1.9.0)
     process_executer (4.1.1)
       track_open_instances (~> 0.1)
+    progress_bar (1.3.4)
+      highline (>= 1.6)
+      options (~> 2.3.0)
     propshaft (1.3.2)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -401,6 +407,10 @@ GEM
     public_suffix (7.0.5)
     puma (8.0.2)
       nio4r (~> 2.0)
+    purl_fetcher-client (3.2.1)
+      activesupport
+      faraday (~> 2.1)
+      faraday-retry (~> 2.4)
     racc (1.8.1)
     racecar (2.12.0)
       king_konf (~> 1.0.0)
@@ -689,6 +699,8 @@ DEPENDENCIES
   dotenv
   ed25519 (~> 1.3)
   factory_bot_rails
+  faraday (~> 2.14)
+  faraday-net_http_persistent (~> 2.3)
   geoblacklight (= 6.0.0.pre.beta.1)
   global_alerts
   honeybadger
@@ -700,8 +712,10 @@ DEPENDENCIES
   newrelic_rpm
   okcomputer
   pg
+  progress_bar (~> 1.0)
   propshaft (~> 1.3)
   puma (>= 6)
+  purl_fetcher-client (~> 3.2)
   racecar (~> 2.12)
   rack-cors (~> 3.0)
   rails (~> 8.1.0)
@@ -823,6 +837,7 @@ CHECKSUMS
   global_alerts (0.8.0) sha256=b27ff1f6dd7432abae349c9e483049bde13918e5f8de08095cbe49d06e84927a
   globalid (1.4.0) sha256=037f12fbf1d9d7a014d501c2d5c77356fd4ddd96d7a7991d6700bba96706f427
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
+  highline (3.1.2) sha256=67cbd34d19f6ef11a7ee1d82ffab5d36dfd5b3be861f450fc1716c7125f4bb4a
   honeybadger (6.9.1) sha256=3e79543ab171f810306bd152b3f470ce2b905b1a27f766f3138568949078cf68
   http (6.0.4) sha256=3768f902489ea8309424f1881c668af8d3ca73675648a755dfe2cb0030d42d26
   http-cookie (1.1.6) sha256=ba4b82be64de61dc281243dac70e3c382c45142f20268ed9276a3670c93feaa9
@@ -876,6 +891,7 @@ CHECKSUMS
   nokogiri (1.19.4-x86_64-linux-gnu) sha256=379fae440b28915e3f19d752ce2dcf8465ed2b2fbefd2a7ca0dd497bc981a06a
   nokogiri (1.19.4-x86_64-linux-musl) sha256=17dfb7c1fa194ae02fbf7c51a7afc8d278045ab3fdacfd86f91d02d7b274470b
   okcomputer (1.20.0) sha256=cc0cc3bcd3abea12705493bc557d7002f090b9fe189cf78072fe0c3c60c6a223
+  options (2.3.2) sha256=32413a4b9e363234eed2eecfb2a1a9deb32810f72c54820a37a62f65b905c5e8
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   ostruct (0.6.3) sha256=95a2ed4a4bd1d190784e666b47b2d3f078e4a9efda2fccf18f84ddc6538ed912
   parallel (2.2.0) sha256=e1059c5fd7b649558a0aec38a769f06a42942bdb40503d005a59c352fe011cd8
@@ -890,9 +906,11 @@ CHECKSUMS
   prettyprint (0.2.0) sha256=2bc9e15581a94742064a3cc8b0fb9d45aae3d03a1baa6ef80922627a0766f193
   prism (1.9.0) sha256=7b530c6a9f92c24300014919c9dcbc055bf4cdf51ec30aed099b06cd6674ef85
   process_executer (4.1.1) sha256=02e93624eb984c94282a892084781d8343d39198b983a25753c862c228f1786e
+  progress_bar (1.3.4) sha256=adb10e040275e08eadfbe405749584e4b01fd15e8e692fdcb4b1969e9c071c8c
   propshaft (1.3.2) sha256=1d56a3e56a92c21bfc29caf07406b5386b00d4c47ddf357cf989a5a234b1389e
   public_suffix (7.0.5) sha256=1a8bb08f1bbea19228d3bed6e5ed908d1cb4f7c2726d18bd9cadf60bc676f623
   puma (8.0.2) sha256=c8ed871dfbbe66448ea9ffd46692342d9804d4071522b52b5331b7b6e7b686fb
+  purl_fetcher-client (3.2.1) sha256=a1192dee34d975b6c0b1abbf556a438ac6ff8f1b7b52cdea9efc1171f677c081
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
   racecar (2.12.0) sha256=0d317084115c5666929e9f35ce4e6d38f57c4f30175416fe386f55ae20708bf0
   rack (3.2.7) sha256=93e13e1c24f93556671d85d2d79fa228c3485815c50d7e2f265b5330c6528fb7
