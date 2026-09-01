@@ -140,17 +140,15 @@ class CocinaToSolrMapper
     Array(values).flat_map { |v| v.to_s.scan(/\d{4}/) }.map(&:to_i).uniq.sort
   end
 
-  # Determine if an object is georeferenced
+  # Determine if a map is georeferenced
+  # Not set for non-map objects
   # Used for the gbl_georeferenced_b field:
   # https://opengeometadata.org/ogm-aardvark/#georeferenced
+  # rubocop:disable-next Style/ReturnNilInPredicateMethodDefinition
   def georeferenced?
-    # All geo items (vector and raster data) are georeferenced
-    return true if record.content_type == 'geo'
+    return unless record.content_type == 'map'
 
-    # For other data, only georeferenced if annotations are present
-    return true if record.files(use: 'georeference').any?
-
-    false
+    record.files(use: 'georeference').any?
   end
 
   # Object types with actually useful IIIF manifests
