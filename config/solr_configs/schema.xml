@@ -193,6 +193,8 @@
   <copyField source="dct_subject_sm" dest="dct_subject_tmi" maxChars="10000" />
   <copyField source="dct_title_s" dest="dct_title_ti" maxChars="1000" />
   <copyField source="dct_isPartOf_sm" dest="dct_isPartOf_tmi" maxChars="1000" />
+  <copyField source="gbl_resourceClass_sm" dest="gbl_resourceClass_tmi" maxChars="100" />
+  <copyField source="gbl_resourceType_sm" dest="gbl_resourceType_tmi" maxChars="1000" />
   <copyField source="id" dest="layer_slug_ti" maxChars="100" />
 
   <!-- core text search -->
