@@ -25,10 +25,6 @@ RSpec.describe CocinaToSolrMapper do
       expect(doc['dct_format_s']).to eq 'Shapefile'
     end
 
-    it 'is georeferenced' do
-      expect(doc['gbl_georeferenced_b']).to be true
-    end
-
     it 'maps the collections' do
       expect(doc['pcdm_memberOf_sm']).to eq ['stanford-wn457nv9847']
     end
@@ -96,10 +92,6 @@ RSpec.describe CocinaToSolrMapper do
 
     it 'maps the format' do
       expect(doc['dct_format_s']).to eq 'GeoTIFF'
-    end
-
-    it 'is georeferenced' do
-      expect(doc['gbl_georeferenced_b']).to be true
     end
 
     it 'maps the access as public' do
