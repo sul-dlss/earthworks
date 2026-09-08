@@ -86,3 +86,6 @@ gem "dor-event-client", "~> 1.2"
 gem "global_alerts"
 
 gem "blacklight_range_limit", "~> 9.2"
+
+# Pin for https://stanfordlib.slack.com/archives/C060ZTZRV/p1788872608537449
+gem 'json', '< 3'
