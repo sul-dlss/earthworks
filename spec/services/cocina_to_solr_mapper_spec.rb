@@ -68,7 +68,7 @@ RSpec.describe CocinaToSolrMapper do
     it 'has a zipfile download' do
       expect(references['http://schema.org/downloadUrl']).to include(
         {
-          'url' => 'https://stacks.stanford.edu/object/bb099zb1450',
+          'url' => 'https://stacks.stanford.edu/object/bb099zb1450.zip',
           'label' => 'Zipped object'
         }
       )
@@ -129,7 +129,7 @@ RSpec.describe CocinaToSolrMapper do
     it 'has a zipfile download' do
       expect(references['http://schema.org/downloadUrl']).to include(
         {
-          'url' => 'https://stacks.stanford.edu/object/bb223nv3920',
+          'url' => 'https://stacks.stanford.edu/object/bb223nv3920.zip',
           'label' => 'Zipped object'
         }
       )

@@ -125,7 +125,7 @@ class CocinaToSolrMapper
 
     # Whole object download (.zip)
     if record.download_url.present?
-      refs['http://schema.org/downloadUrl'] = [{ url: record.download_url, label: 'Zipped object' }]
+      refs['http://schema.org/downloadUrl'] = [{ url: "#{record.download_url}.zip", label: 'Zipped object' }]
     end
 
     refs.compact
