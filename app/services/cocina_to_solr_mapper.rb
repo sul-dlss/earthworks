@@ -119,7 +119,7 @@ class CocinaToSolrMapper
     add_file_reference(refs, 'http://www.opengis.net/cat/csw/csdgm', filename: /fgdc\.xml/)
     add_file_reference(refs, 'http://geojson.org/geojson-spec.html', filename: /\.geojson/) unless index_map?
     add_file_reference(refs, 'https://github.com/protomaps/PMTiles', filename: /\.pmtiles/)
-    add_file_reference(refs, 'https://flatgeobuf.org/', filename: /\.fgb/)
+    add_file_reference(refs, 'https://flatgeobuf.org', filename: /\.fgb/)
     add_file_reference(refs, 'https://github.com/cogeotiff/cog-spec', filename: /\.tif/, mime_type: /cloud-optimized/)
     add_file_reference(refs, 'https://iiif.io/api/extension/georef/1/context.json', use: 'georeference')
 
