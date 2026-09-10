@@ -58,7 +58,7 @@ RSpec.describe CocinaToSolrMapper do
     end
 
     it 'has a FlatGeoBuf reference' do
-      expect(references['https://flatgeobuf.org/']).to eq 'https://stacks.stanford.edu/file/druid:bb099zb1450/D31_dep.fgb'
+      expect(references['https://flatgeobuf.org']).to eq 'https://stacks.stanford.edu/file/druid:bb099zb1450/D31_dep.fgb'
     end
 
     it 'has a thumbnail URL reference' do
