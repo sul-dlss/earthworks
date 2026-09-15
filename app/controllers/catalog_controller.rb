@@ -143,7 +143,8 @@ class CatalogController < ApplicationController
     config.add_facet_field field_config.creator, label: 'Author', limit: 8
     config.add_facet_field field_config.publisher, label: 'Publisher', limit: 8
     config.add_facet_field field_config.provider, label: 'Provider', limit: 8
-    config.add_facet_field field_config.access_rights, label: 'Access', limit: 8
+    config.add_facet_field field_config.access_rights, label: 'Access'
+    config.add_facet_field field_config.georeferenced, label: 'Georeferenced'
 
     # Item Relationship Facets
     # * Not displayed to end user (show: false)
