@@ -30,6 +30,12 @@ class CatalogController < ApplicationController
     # Please see https://github.com/projectblacklight/blacklight/pull/2006/
     config.raw_endpoint.enabled = true
 
+    # We do not support dark mode: our layouts/blacklight/base.html.erb override
+    # omits Blacklight's theme switcher and the data-bs-theme attribute it sets.
+    # Saying so keeps the GeoBlacklight viewer in light mode too, instead of
+    # letting it follow the reader's OS preference onto an otherwise light page.
+    config.dark_mode_support = false
+
     ## Default parameters to send to solr for all search-like requests. See also SolrHelper#solr_search_params
     config.default_solr_params = {
       :start => 0,

@@ -9,11 +9,38 @@ require 'factory_bot'
 require 'view_component/test_helpers'
 require 'view_component/system_test_helpers'
 require 'capybara/rspec'
+require 'selenium-webdriver'
 require 'webmock/rspec'
 
 WebMock.disable_net_connect!(allow_localhost: true)
 
-Capybara.javascript_driver = :selenium_chrome_headless
+# Mirrors GeoBlacklight 6's own spec_helper. The stock :selenium_chrome_headless
+# driver is not enough for the ogm-viewer web components: they draw with MapLibre,
+# which needs WebGL, and they are fetched from unpkg at runtime.
+Capybara.register_driver :chrome_headless do |app|
+  options = Selenium::WebDriver::Chrome::Options.new
+  options.add_argument('--headless=new')
+  options.add_argument('--disable-gpu')
+  options.add_argument('--no-sandbox')
+  options.add_argument('--window-size=1280,1024')
+  # Software WebGL. Headless Chrome has no GPU to give MapLibre, and since Chrome
+  # 128 its own CPU renderer has to be asked for by name before WebGL will fall
+  # back to it at all.
+  options.add_argument('--enable-unsafe-swiftshader')
+  options.add_argument('--use-angle=swiftshader')
+  # Return from #visit at DOMContentLoaded instead of the full window `load`
+  # event. The viewer pulls its bundle from unpkg and basemap tiles from CARTO;
+  # in CI those can hang and stop `load` from ever firing, which surfaces as
+  # Net::ReadTimeout on #visit.
+  options.page_load_strategy = :eager
+
+  client = Selenium::WebDriver::Remote::Http::Default.new
+  client.read_timeout = 120 # seconds
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, options:, http_client: client)
+end
+
+Capybara.javascript_driver = :chrome_headless
 
 Capybara.default_max_wait_time = 10
 # Add additional requires below this line. Rails is not loaded until this point!

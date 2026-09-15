@@ -3,8 +3,14 @@ en:
     home:
       headline: 'Discover and download GIS data and maps'
       recently_updated: 'Recently updated'
+    # GeoBlacklight 6.0.0-beta.1 renders these with a :count, so they need the
+    # one/other shape or the count is silently dropped.
     relations:
-      member_of_ancestors: 'Item belongs to a collection'
-      member_of_descendants: 'Collection items'
+      member_of_ancestors:
+        one: 'Item belongs to a collection'
+        other: 'Item belongs to %{count} collections'
+      member_of_descendants:
+        one: 'Collection item'
+        other: 'Collection items'
     formats:
       jpeg2000: 'JP2'

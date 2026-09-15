@@ -2,6 +2,19 @@ en:
   blacklight:
     application_name: "EarthWorks"
     back_to_search: "Back to search results"
+    # Accessible names for the badge and thumbnail icons. Blacklight::Icons::*
+    # components look these up as blacklight.icon.<name>; GeoBlacklight shipped
+    # them until 6.0.0-alpha.7 and dropped the whole tree in 6.0.0-beta.1, so we
+    # supply the ones our records actually use.
+    icon:
+      public: Public content
+      restricted: Restricted content
+      # These four have never been defined for EarthWorks' resource classes and
+      # types, so they rendered as "translation missing" before this upgrade too.
+      datasets: Datasets
+      maps: Maps
+      line: Line data
+      polygon: Polygon data
     search:
       facets:
         group:

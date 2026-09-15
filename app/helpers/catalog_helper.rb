@@ -1,6 +1,16 @@
 module CatalogHelper
   include Blacklight::CatalogHelperBehavior
 
+  # Truncate a field value to 150 chars. GeoBlacklight provided this up to
+  # 6.0.0-alpha.7 and dropped it in 6.0.0-beta.1 along with the index fields in
+  # the search results view, but we still configure it on the description index
+  # field for the Bento JSON API (see CatalogController).
+  # @param [Hash] args
+  # @return [String]
+  def snippit(args)
+    truncate(Array(args[:value]).flatten.join(' '), length: 150)
+  end
+
   def get_specific_field_type(document:, field:, **)
     field_value = document[field]
     resource_type_field = Geoblacklight.configuration.fields.resource_type
