@@ -40,15 +40,6 @@
   margin-left: 2.3rem;
 }
 
-/* Search result badges. GeoBlacklight 6 styles these as .icon-badge off
-   --bs-secondary-bg rather than Bootstrap's .text-bg-secondary, so darkening
-   --bs-secondary-rgb no longer reaches them. */
-.result .document .badge {
-  --bs-secondary-bg: rgb(var(--bs-dark-rgb));
-
-  color: white;
-}
-
 .component-container {
   --bs-border-radius: 4px;
 
@@ -108,10 +99,6 @@
       --bs-list-group-item-padding-y: 5px;
       --bs-list-group-item-padding-x: 0px;
     }
-
-    .card-header h2 {
-      font-size: calc(1.275rem + 0.3vw);
-    }
   }
 }
 
@@ -127,8 +114,10 @@
   fill: var(--stanford-digital-red);
 }
 
-.documents-list .result:hover,
-.documents-list .result:focus {
+.document:hover,
+.document:focus,
+.document.highlighted {
+  background: none;
   box-shadow:
     -4px 4px 4px 0px #0000000d,
     4px 4px 4px 0px #0000000d;
@@ -189,7 +178,6 @@
 }
 
 .navbar-logo {
-  /* TODO: remove. Should be fixed when geoblacklight uses blacklight v9 */
   background-size: auto;
 }
 
@@ -223,26 +211,33 @@
   width: auto;
 }
 
-/* Styles for search result description expand/collapse */
+/* Styles for search results and the show/hide all descriptions control */
+.documentHeader {
+  flex-grow: 0;
+}
 
 .index_title {
   margin: 0 0 0.25em 0;
 }
 
-.expand-collapse .btn-outline-primary {
-  display: flex;
-  &.active {
+.btn-check:focus-visible + .btn {
+  outline: 2px solid var(--bs-btn-focus-box-shadow);
+  box-shadow: 0 0 0 4px var(--stanford-black);
+}
+
+.toggle-descriptions {
+  .btn-outline-primary {
+    display: flex;
+  }
+
+  .btn-check:checked + .btn-outline-primary {
     color: white;
     background-color: var(--stanford-digital-blue-darker);
   }
-}
 
-.expand-collapse i {
-  align-self: center;
-}
-
-.more-info-area > div {
-  padding: 0;
+  i {
+    align-self: center;
+  }
 }
 
 /* Styles for code snippet */
@@ -291,8 +286,8 @@
   border-radius: 0.25rem;
 }
 
-.document-counter {
-  display: none;
+.document-main-section .metadata {
+  padding: 0;
 }
 
 .toggle-bookmark-label {
