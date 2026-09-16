@@ -63,6 +63,8 @@ RSpec.describe 'Accessibility testing', :js do
   end
 
   def be_accessible
-    be_axe_clean.excluding('#clover-viewer')
+    # The ogm-viewer web components GeoBlacklight 6 renders are tested upstream;
+    # GeoBlacklight's own axe spec excludes them the same way.
+    be_axe_clean.excluding('#clover-viewer', '.viewer')
   end
 end
