@@ -18,12 +18,6 @@ Capybara/RSpec/VisibilityMatcher:
 Metrics/AbcSize:
   Max: 45
 
-# Offense count: 3
-# Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns, inherit_mode.
-# AllowedMethods: refine
-Metrics/BlockLength:
-  Max: 103
-
 # Offense count: 1
 # Configuration parameters: CountComments, CountAsOne.
 Metrics/ClassLength:
