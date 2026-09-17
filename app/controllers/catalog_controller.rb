@@ -71,6 +71,8 @@ class CatalogController < ApplicationController
     config.index.title_field = field_config.title
     config.index.search_bar_component = SearchBarComponent
     config.index.facet_group_component = FacetGroupComponent
+    config.index.thumbnail_method = :geoblacklight_thumbnail
+    config.index.default_thumbnail = :geoblacklight_default_thumbnail
 
     config.bookmark_icon_component = Blacklight::Icons::BookmarkIconComponent
 

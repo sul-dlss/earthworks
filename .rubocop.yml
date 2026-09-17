@@ -39,6 +39,12 @@ Metrics/ClassLength:
   Exclude:
     - "app/controllers/catalog_controller.rb"
 
+Metrics/BlockLength:
+  Exclude:
+    - "app/controllers/catalog_controller.rb"
+    - "config/routes.rb"
+    - "lib/tasks/earthworks.rake"
+
 Gemspec/DeprecatedAttributeAssignment: # new in 1.30
   Enabled: true
 Gemspec/RequireMFA: # new in 1.23
