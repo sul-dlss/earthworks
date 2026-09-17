@@ -1,30 +1,36 @@
-<div class="result">
 <%# This template copies from Blacklight's components/document_component.html.erb
       # for the wrapping `content_tag @component` structure
-      # and adds custom layout within for the document header, badges and more-info areas %>
+      # and adds custom layout within for the document header, badges and description areas %>
 
-  <%= content_tag @component,
-    id: @id,
-    data: {
-      'document-id': @document.id.to_s.parameterize,
-      'map-id': @document.id.to_s,
-      'document-counter': @counter
-    },
-    itemscope: true,
-    itemtype: @document.itemtype,
-    class: classes.flatten.join(' ') do %>
-    <%= content_tag :div, class: 'row index-split d-flex flex-grow-1 flex-column' do %>
-      <%= title %>
-      <div class="flex-grow-1 ms-0">
-        <%= render Geoblacklight::HeaderBadgesComponent.new(document: @document) %>
-      </div>
-    <% end %>
-  <% end %>
-  <div class="more-info-area border-bottom px-2">
-    <div id="doc-<%= @document.id %>-fields-collapse" class="collapse description pb-2" data-controller="description">
-      <small itemprop="description">
-        <%= description %>
-      </small>
+<%= content_tag @component,
+  id: @id,
+  data: {
+    'document-id': @document.id.to_s.parameterize,
+    'map-id': @document.id.to_s,
+    'document-counter': @counter
+  },
+  itemscope: true,
+  itemtype: @document.itemtype,
+  class: classes do %>
+  <%= header %>
+  <div class="document-main-section">
+    <%= title %>
+    <div class="metadata">
+      <%= render Geoblacklight::HeaderBadgesComponent.new(document: @document) %>
+      <%# Hidden until the "show all descriptions" control reveals it. GeoBlacklight then
+            truncates the description itself and adds its own read more button, so each one
+            can be expanded and collapsed in place. %>
+      <% if document.description.present? %>
+        <div class="description-container pb-2" data-controller="description" hidden>
+          <div class="truncate-abstract description"
+               data-read-more-text="<%= t('geoblacklight.truncate.read_more') %>"
+               data-close-text="<%= t('geoblacklight.truncate.close') %>"
+               data-max-lines="4"
+               itemprop="description">
+            <%= description %>
+          </div>
+        </div>
+      <% end %>
     </div>
   </div>
-</div>
+<% end %>
