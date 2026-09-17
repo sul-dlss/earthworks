@@ -114,13 +114,15 @@
   fill: var(--stanford-digital-red);
 }
 
-.document:hover,
-.document:focus,
-.document.highlighted {
-  background: none;
-  box-shadow:
-    -4px 4px 4px 0px #0000000d,
-    4px 4px 4px 0px #0000000d;
+.blacklight-catalog-index .document {
+  &:hover,
+  &:focus,
+  &.highlighted {
+    background: none;
+    box-shadow:
+      -4px 4px 4px 0px #0000000d,
+      4px 4px 4px 0px #0000000d;
+  }
 }
 
 .search-widgets {
