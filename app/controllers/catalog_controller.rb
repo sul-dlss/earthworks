@@ -304,6 +304,7 @@ class CatalogController < ApplicationController
     config.add_sort_field "#{field_config.index_year} desc, dct_title_sort asc", label: 'year'
     config.add_sort_field 'dct_title_sort asc', label: 'title'
     config.add_sort_field "#{field_config.modified} desc", label: 'recently updated'
+    config.add_sort_field 'id asc', label: 'ID', if: false
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.
