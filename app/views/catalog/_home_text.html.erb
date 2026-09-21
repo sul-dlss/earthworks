@@ -12,6 +12,6 @@
   <%= render RecentlyUpdatedListComponent.new(term: 'Maps') %>
   </div>
   <div class="col-sm d-none d-md-block">
-    <%= render(Geoblacklight::OverviewMapComponent.new) %>
+    <%= render(Geoblacklight::OverviewMapComponent.new(geosearch: true)) %>
   </div>
 </div>
