@@ -135,8 +135,8 @@ class CatalogController < ApplicationController
                                                   item_presenter: Geoblacklight::BboxItemPresenter,
                                                   filter_class: Geoblacklight::BboxFilterField,
                                                   filter_query_builder: Geoblacklight::BboxFilterQuery,
-                                                  within_boost: config.bbox_within_boost,
-                                                  overlap_boost: config.overlap_ratio_boost,
+                                                  within_boost: Geoblacklight.configuration.bbox_within_boost,
+                                                  overlap_boost: Geoblacklight.configuration.overlap_ratio_boost,
                                                   overlap_field: field_config.overlap_field,
                                                   label: 'Bounding Box'
 
