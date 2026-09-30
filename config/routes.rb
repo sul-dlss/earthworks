@@ -29,11 +29,6 @@ Rails.application.routes.draw do
     concerns :gbl_exportable
   end
 
-  concern :gbl_wms, Geoblacklight::Routes::Wms.new
-  namespace :wms do
-    concerns :gbl_wms
-  end
-
   mount Geoblacklight::Engine => 'geoblacklight'
   mount BlacklightDynamicSitemap::Engine => '/'
   concern :exportable, Blacklight::Routes::Exportable.new

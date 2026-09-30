@@ -245,7 +245,7 @@ GEM
       sanitize
       thor
     geo_coord (0.2.0)
-    geoblacklight (6.0.0.pre.beta.1)
+    geoblacklight (6.0.0.pre.beta.2)
       blacklight (>= 9.1, < 10)
       coderay
       commonmarker (~> 2.9)
@@ -268,7 +268,7 @@ GEM
     globalid (1.4.0)
       activesupport (>= 6.1)
     hashdiff (1.2.1)
-    honeybadger (6.9.2)
+    honeybadger (6.9.3)
       logger
       ostruct
     http (6.0.4)
@@ -330,7 +330,7 @@ GEM
     mime-types (3.7.0)
       logger
       mime-types-data (~> 3.2025, >= 3.2025.0507)
-    mime-types-data (3.2026.0922)
+    mime-types-data (3.2026.0929)
     mini_mime (1.1.5)
     mini_portile2 (2.8.9)
     minitar (1.1.0)
@@ -354,10 +354,10 @@ GEM
       net-ssh (>= 2.6.5, < 8.0.0)
     net-sftp (4.0.0)
       net-ssh (>= 5.0.0, < 8.0.0)
-    net-smtp (0.5.1)
+    net-smtp (0.5.2)
       net-protocol
     net-ssh (7.3.3)
-    newrelic_rpm (10.8.0)
+    newrelic_rpm (10.9.0)
       logger
     nio4r (2.7.5)
     nokogiri (1.19.4-aarch64-linux-gnu)
@@ -493,7 +493,7 @@ GEM
       logger
       mini_portile2 (~> 2.6)
       rake (> 12)
-    rdoc (8.0.0)
+    rdoc (8.1.0)
       erb
       prism (>= 1.6.0)
       rbs (>= 4.0.0)
@@ -503,7 +503,7 @@ GEM
       redis-client (>= 0.22.0)
     redis-client (0.30.1)
       connection_pool
-    regexp_parser (2.13.0)
+    regexp_parser (2.13.1)
     reline (0.7.0)
       io-console (~> 0.5)
     responders (3.2.1)
@@ -585,7 +585,7 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 4.0)
       websocket (~> 1.0)
-    simplecov (1.3.1)
+    simplecov (1.3.2)
     solr_wrapper (4.4.0)
       faraday (~> 2.0)
       faraday-follow_redirects
@@ -689,7 +689,7 @@ DEPENDENCIES
   dotenv
   ed25519 (~> 1.3)
   factory_bot_rails
-  geoblacklight (= 6.0.0.pre.beta.1)
+  geoblacklight (= 6.0.0.pre.beta.2)
   global_alerts
   honeybadger
   http
@@ -818,12 +818,12 @@ CHECKSUMS
   ffi (1.17.4-x86_64-linux-musl) sha256=3fdf9888483de005f8ef8d1cf2d3b20d86626af206cbf780f6a6a12439a9c49e
   geo_combine (0.11.0) sha256=6e112cd09ca6961b9d21a59e278496b27f5ee8f031b4748ef4ff55c9c1089a51
   geo_coord (0.2.0) sha256=ae4e2dc5799deafa4db9138f3d7e85cf5e7dbd00b3b8395f1e1dbd34e007d7e8
-  geoblacklight (6.0.0.pre.beta.1) sha256=0d1dcd245313e6e631138d59bb7b87d69dc390a01b81a41657d34349805418b5
+  geoblacklight (6.0.0.pre.beta.2) sha256=39a3f8a833123baeae883e759014cc9a3406c6c55188ce4bfddb4012a5eeacf2
   git (5.6.0) sha256=f10227e352b12804ae6c1947b520f6fb027261c5952e93dafcb08ba7cad65363
   global_alerts (0.8.0) sha256=b27ff1f6dd7432abae349c9e483049bde13918e5f8de08095cbe49d06e84927a
   globalid (1.4.0) sha256=037f12fbf1d9d7a014d501c2d5c77356fd4ddd96d7a7991d6700bba96706f427
   hashdiff (1.2.1) sha256=9c079dbc513dfc8833ab59c0c2d8f230fa28499cc5efb4b8dd276cf931457cd1
-  honeybadger (6.9.2) sha256=6f5a9c20f7a6448623c8fdc397fc3c96623b3d8fc85449810d42a0be4f8ae214
+  honeybadger (6.9.3) sha256=2a58808bb80f2c3bebaf084f215a4dcf803dda4236762719e2ae74cf9528253f
   http (6.0.4) sha256=3768f902489ea8309424f1881c668af8d3ca73675648a755dfe2cb0030d42d26
   http-cookie (1.1.6) sha256=ba4b82be64de61dc281243dac70e3c382c45142f20268ed9276a3670c93feaa9
   i18n (1.15.2) sha256=00f9eb62412fe593b2a65a97daa75300d37abb8f7202ec748e94b6d46a9dd1b5
@@ -850,7 +850,7 @@ CHECKSUMS
   marcel (1.2.1) sha256=1678e9360e32f9eafa917c80029e2f6d10b2715c66a4b87b6d0da9b9cd1f859f
   matrix (0.4.3) sha256=a0d5ab7ddcc1973ff690ab361b67f359acbb16958d1dc072b8b956a286564c5b
   mime-types (3.7.0) sha256=dcebf61c246f08e15a4de34e386ebe8233791e868564a470c3fe77c00eed5e56
-  mime-types-data (3.2026.0922) sha256=f49b8cf20f3b9cf3e874791cd9ec96bdd5c1740dfd1a256ce4ea56762f4c58ae
+  mime-types-data (3.2026.0929) sha256=3632d6a08f6ff832ef1181365b24cfe365b82a97c47ff76d5ae363d6d695aedc
   mini_mime (1.1.5) sha256=8681b7e2e4215f2a159f9400b5816d85e9d8c6c6b491e96a12797e798f8bccef
   mini_portile2 (2.8.9) sha256=0cd7c7f824e010c072e33f68bc02d85a00aeb6fce05bb4819c03dfd3c140c289
   minitar (1.1.0) sha256=38db0cfb6f3801017946cdcd8dc53f2cf3fd41ff752892312bf9a1639c9ea23e
@@ -864,9 +864,9 @@ CHECKSUMS
   net-protocol (0.4.0) sha256=f9f90c8c6f64794a45160bf422177a336db12809de3beeeaa26b88fcd2e8c853
   net-scp (4.1.0) sha256=a99b0b92a1e5d360b0de4ffbf2dc0c91531502d3d4f56c28b0139a7c093d1a5d
   net-sftp (4.0.0) sha256=65bb91c859c2f93b09826757af11b69af931a3a9155050f50d1b06d384526364
-  net-smtp (0.5.1) sha256=ed96a0af63c524fceb4b29b0d352195c30d82dd916a42f03c62a3a70e5b70736
+  net-smtp (0.5.2) sha256=35103cc04d6b2d94632f9928ede07483c24b70b9c0db1f231fea43909b678f3c
   net-ssh (7.3.3) sha256=831def58b2c51dcef66ec00d29397d4f210de89c19fe78f95873ca30f386e86a
-  newrelic_rpm (10.8.0) sha256=8445de6010e439389c330af2215fd832b58b110fb6335f9966fd928a0339d3b4
+  newrelic_rpm (10.9.0) sha256=ef06acaf63cb44af49800c2a46799ee424a1aa9674d8fffcdf255e03fe0cc396
   nio4r (2.7.5) sha256=6c90168e48fb5f8e768419c93abb94ba2b892a1d0602cb06eef16d8b7df1dca1
   nokogiri (1.19.4-aarch64-linux-gnu) sha256=1269fb644a6de405057a53dd5c762b1209b43ca7424f839454d3dbc677c31a8f
   nokogiri (1.19.4-aarch64-linux-musl) sha256=35c65b9ce72b3bb03207bdbe7067915019dc18c1b9b59139684bd6690fdd01af
@@ -917,11 +917,11 @@ CHECKSUMS
   rdkafka (0.30.0-arm64-darwin) sha256=e9e9c937c77fd454b3eb5db8af2dc75ee27a75d00b102154cd82ca26434f5869
   rdkafka (0.30.0-x86_64-linux-gnu) sha256=f65c3fd0207e8cf03f74c92d7781f102d2ccfc651c4bfcac52e98563432a80be
   rdkafka (0.30.0-x86_64-linux-musl) sha256=4ec048cfa0e27fbcbc6be0a3a6c1945d74725161e6fe2cecaf5e1dacaa952638
-  rdoc (8.0.0) sha256=03bf8c08a9639658855a0cfd77c0abca8325c227693f7f33f82957811348c469
+  rdoc (8.1.0) sha256=befc37880a5cfd36dcb176c748b5fd5ee39dd3536a75e81824e4972ce230f60a
   recaptcha (5.21.2) sha256=8f7bb6cc9f04c523fff3f38126b7c5f1314c35fcb3691fc8e70d2b464533c12a
   redis (5.4.1) sha256=b5e675b57ad22b15c9bcc765d5ac26f60b675408af916d31527af9bd5a81faae
   redis-client (0.30.1) sha256=5151bc5c7bbfe48623732cdae3b900d8a22dc691cc7cdfacfb351ac55116522d
-  regexp_parser (2.13.0) sha256=d105d95d2138954e73914d2fbfb3d0a8f8605a49a3e89864c32e78b9107cb770
+  regexp_parser (2.13.1) sha256=5aedb6b7c35688f51e86eef17a15374dfd287c83f4ca644b2c5f3ec50a33b44b
   reline (0.7.0) sha256=5b012d8e55dbf9d450f12bde2cf7d15ff546ae80b3f8f3b30e570d431815583d
   responders (3.2.1) sha256=c2772970cbda654c0e772d852e5a851e82cd8e96f5fa958650861ba75b8ffa84
   retriable (5.0.1) sha256=181cc7ae5fe9b289b6611f0223ee8c5cd361175238fd602a2cd48c8b81c30742
@@ -947,7 +947,7 @@ CHECKSUMS
   sanitize (7.0.0) sha256=269d1b9d7326e69307723af5643ec032ff86ad616e72a3b36d301ac75a273984
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
   selenium-webdriver (4.49.0) sha256=b430f091a3cababb356b6f6132e0e4f385b017819355f563557e1537819edc89
-  simplecov (1.3.1) sha256=b326d38e819053499aa2ebe35d544d8bd780eba143a50f48a624b450ad87feec
+  simplecov (1.3.2) sha256=2a22ec1759f1b8db60881a2e038758956fc69ef93ed669be0bde0678de6d0e85
   solr_wrapper (4.4.0) sha256=1eaf0667611a90c623d05c3c2c765d7a2e4174427d03580396cc2124b10430bb
   sorted_set (1.1.0) sha256=bac01eb16b6bcfcdb7d732a28e87422be8b5c9fdcfeadbe9072682407524ee83
   sqlite3 (2.9.6-aarch64-linux-gnu) sha256=d8b1f7d23efd7abac285775a9566562fc7debfef79d594e3a20354406fb7907c
