@@ -30,6 +30,8 @@ every :day, at: '4:04 am', roles: %i[cron] do
 end
 
 every :day, at: '5:04 am', roles: %i[cron] do
-  rake 'geocombine:pull', environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
-  rake 'earthworks:index', environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
+  # Run as a single rake invocation so indexing doesn't start until the pull has finished;
+  # separate rake jobs become separate cron entries that run concurrently.
+  rake 'geocombine:pull earthworks:index',
+       environment_variable: 'OGM_PATH=/var/cache/earthworks/opengeometadata RAILS_ENV'
 end
