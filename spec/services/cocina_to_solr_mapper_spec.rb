@@ -215,4 +215,16 @@ RSpec.describe CocinaToSolrMapper do
       expect(references['http://geojson.org/geojson-spec.html']).to be_nil
     end
   end
+
+  context 'with a public collection' do
+    let(:druid) { 'rf707sq8358' }
+
+    it 'has a resource class of Collections' do
+      expect(doc['gbl_resourceClass_sm']).to eq ['Collections']
+    end
+
+    it 'maps the access as public' do
+      expect(doc['dct_accessRights_s']).to eq 'Public'
+    end
+  end
 end
