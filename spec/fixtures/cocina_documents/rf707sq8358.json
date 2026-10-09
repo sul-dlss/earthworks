@@ -1,0 +1,158 @@
+{
+  "cocinaVersion": "0.127.0",
+  "type": "https://cocina.sul.stanford.edu/models/collection",
+  "externalIdentifier": "druid:rf707sq8358",
+  "label": "Mono County, California, GIS Maps and Data",
+  "version": 7,
+  "access": {
+    "view": "world",
+    "useAndReproductionStatement": "You are free to share (copy and redistribute the material in any medium or format), adapt (remix, transform, and build upon the material) for any purpose, even commercially. The licensor cannot revoke these freedoms as long as you follow the license terms. You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use. You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits. http://creativecommons.org/licenses/by/4.0/"
+  },
+  "administrative": {
+    "hasAdminPolicy": "druid:yh275nc5174"
+  },
+  "description": {
+    "title": [
+      {
+        "value": "Mono County, California, GIS Maps and Data",
+        "status": "primary"
+      }
+    ],
+    "contributor": [
+      {
+        "name": [
+          {
+            "value": "Mono County (Calif.). Information Technology"
+          }
+        ],
+        "type": "organization",
+        "role": [
+          {
+            "value": "creator",
+            "source": {
+              "code": "marcrelator"
+            }
+          }
+        ]
+      }
+    ],
+    "event": [
+      {
+        "date": [
+          {
+            "value": "2019",
+            "type": "publication",
+            "status": "primary",
+            "encoding": {
+              "code": "w3cdtf"
+            }
+          }
+        ],
+        "contributor": [
+          {
+            "name": [
+              {
+                "value": "Mono County (Calif.). Information Technology"
+              }
+            ],
+            "type": "organization",
+            "role": [
+              {
+                "value": "publisher",
+                "code": "pbl",
+                "uri": "http://id.loc.gov/vocabulary/relators/pbl",
+                "source": {
+                  "code": "marcrelator",
+                  "uri": "http://id.loc.gov/vocabulary/relators/"
+                }
+              }
+            ]
+          }
+        ],
+        "location": [
+          {
+            "value": "US"
+          }
+        ]
+      }
+    ],
+    "form": [
+      {
+        "value": "mixed material",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      },
+      {
+        "value": "Geospatial data",
+        "type": "genre",
+        "uri": "http://id.loc.gov/authorities/genreForms/gf2011026297",
+        "source": {
+          "code": "lcgft"
+        }
+      },
+      {
+        "value": "cartographic dataset",
+        "type": "genre",
+        "uri": "http://rdvocab.info/termList/RDAContentType/1001",
+        "source": {
+          "code": "rdacontent"
+        }
+      },
+      {
+        "value": "Geographic information systems data",
+        "type": "genre"
+      },
+      {
+        "value": "Scale not given.",
+        "type": "map scale"
+      },
+      {
+        "value": "Custom projection",
+        "type": "map projection"
+      },
+      {
+        "value": "collection",
+        "type": "resource type",
+        "source": {
+          "value": "MODS resource types"
+        }
+      }
+    ],
+    "language": [
+      {
+        "code": "eng",
+        "source": {
+          "code": "iso639-2b"
+        }
+      }
+    ],
+    "note": [
+      {
+        "value": "Mono County, California. GIS Data and Maps",
+        "type": "abstract"
+      }
+    ],
+    "subject": [
+      {
+        "value": "Mono County (Calif.)",
+        "type": "place",
+        "valueLanguage": {
+          "code": "eng",
+          "source": {
+            "code": "iso639-2b"
+          }
+        }
+      },
+      {
+        "value": "W 119°28ʹ45ʺ--W 118°56ʹ45ʺ/N 38°30ʹ46ʺ--N 37°37ʹ20ʺ",
+        "type": "map coordinates"
+      }
+    ],
+    "purl": "https://purl.stanford.edu/rf707sq8358"
+  },
+  "created": "2021-04-02T18:34:01.000+00:00",
+  "modified": "2026-07-08T21:50:31.000+00:00",
+  "lock": "druid:rf707sq8358=2=2"
+}
