@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Canonical urls' do
   it 'Stanford' do
-    visit solr_document_path 'stanford-cg357zz0321'
+    visit solr_document_path 'stanford-dp018hs9766'
     expect(page).to have_css 'link[rel="canonical"]', visible: false
   end
 

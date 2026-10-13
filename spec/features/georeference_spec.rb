@@ -10,8 +10,8 @@ RSpec.describe 'Show page' do
 
   context 'when gbl_georeferenced_b is set to true' do
     it 'does not have georeference alert' do
-      visit solr_document_path 'princeton-02870w62c'
-      expect(page).to have_text 'The provinces of New York and New Jersey'
+      visit solr_document_path 'stanford-bc576pk4911'
+      expect(page).to have_text 'Clearwater, Los Angeles Co., Cal.'
       expect(page).to have_no_text 'This map is not georeferenced.'
     end
   end

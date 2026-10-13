@@ -11,7 +11,7 @@ RSpec.describe 'Accessibility testing', :js do
     end
 
     it 'validates an item page' do
-      visit solr_document_path('tufts-cambridgegrid100-04')
+      visit solr_document_path('berkeley-s7st30')
       expect(page).to be_accessible
     end
 
@@ -21,7 +21,7 @@ RSpec.describe 'Accessibility testing', :js do
     # end
 
     # it 'validates an bookmarks page' do
-    #   visit solr_document_path('tufts-cambridgegrid100-04')
+    #   visit solr_document_path('berkeley-s7st30')
     #   find('.checkbox.toggle-bookmark').click
     #   visit bookmarks_path
     #   expect(page).to be_accessible
