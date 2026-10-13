@@ -142,20 +142,20 @@ class CocinaToSolrMapper
     Array(values).flat_map { |v| v.to_s.scan(/\d{4}/) }.map(&:to_i).uniq.sort
   end
 
-  # Determine if a map is georeferenced
+  # Determine if a map or image is georeferenced
   # Used for the gbl_georeferenced_b field:
   # https://opengeometadata.org/ogm-aardvark/#georeferenced
   # rubocop:disable-next Style/ReturnNilInPredicateMethodDefinition
   def georeferenced?
     return true if scanned_map_as_raster?
-    return unless record.content_type == 'map'
+    return unless iiif_viewable?
 
     record.files(use: 'georeference').any?
   end
 
   # Object types with actually useful IIIF manifests
   def iiif_viewable?
-    %(map image).include?(record.content_type)
+    %w[map image].include?(record.content_type)
   end
 
   # Use the subjects to check if this is an index map
