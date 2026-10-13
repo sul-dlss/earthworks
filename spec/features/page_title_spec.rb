@@ -16,7 +16,8 @@ end
 
 RSpec.describe 'Show page' do
   it 'have title' do
-    visit solr_document_path 'stanford-cg357zz0321'
-    expect(page.title).to eq '10 Meter Contours: Russian River Basin, California in EarthWorks'
+    visit solr_document_path 'stanford-dp018hs9766'
+    expect(page.title).to eq '1-Meter Shaded Relief Multibeam Bathymetry Image (Color): ' \
+                             'Elkhorn Slough, California, 2005 in EarthWorks'
   end
 end
