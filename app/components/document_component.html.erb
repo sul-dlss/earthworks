@@ -22,9 +22,7 @@
           <%= render Geoblacklight::DisplayNoteComponent.new(display_note: display_note) %>
         <% end %>
         <%= embed %>
-        <% if (@document.image? || @document.item_viewer.iiif) && !@document[Geoblacklight.configuration.fields.georeferenced] %>
-          <%= render AlertComponent.new(type: 'info', body: t('earthworks.show.no_georeference_message')) %>
-        <% end %>
+        <%= render Document::GeoreferencedAlertComponent.new(document: @document) %>
         <%= render Geoblacklight::Document::PreviewComponent.new(document: @document) %>
         <%= content %>
         <%= metadata %>
