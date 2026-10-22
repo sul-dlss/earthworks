@@ -72,20 +72,23 @@ class CocinaToSolrMapper
   end
 
   def map_resource_class
-    return ['Maps'] if index_map? || scanned_map_as_raster? # Special cases: don't treat it as a dataset
-
-    res = TranslationMap.new('geo_resource_class')
-                        .translate(record.all_forms.map(&:to_s) + record.genres + record.subject_genres)
+    res = TranslationMap.new('geo_resource_class').translate(record.all_forms.map(&:to_s) + record.subject_all)
     res = ['Collections'] if record.collection?
     res << 'Other' if res.empty?
-    res.uniq
+    res.uniq!
+
+    # Special case: don't treat scans as datasets
+    res = res.without('Datasets') if scan_as_raster?
+
+    # We only allow one for simplicity, even though this is multi-valued in Aardvark
+    Array(res.first)
   end
 
   def map_resource_type
-    res_types = TranslationMap.new('geo_resource_type').translate(record.all_forms.map(&:to_s) + record.subject_topics)
+    res_types = TranslationMap.new('geo_resource_type').translate(record.all_forms.map(&:to_s) + record.subject_all)
 
-    # Special cases: don't treat it as a dataset
-    return res_types.without('Polygon data', 'Point data', 'Raster data') if index_map? || scanned_map_as_raster?
+    # Special case: don't treat scans as raster datasets
+    return res_types.without('Raster data') if scan_as_raster?
 
     res_types.uniq
   end
@@ -147,7 +150,7 @@ class CocinaToSolrMapper
   # https://opengeometadata.org/ogm-aardvark/#georeferenced
   # rubocop:disable-next Style/ReturnNilInPredicateMethodDefinition
   def georeferenced?
-    return true if scanned_map_as_raster?
+    return true if scan_as_raster?
     return unless iiif_viewable?
 
     record.files(use: 'georeference').any?
@@ -163,11 +166,11 @@ class CocinaToSolrMapper
     record.subject_topics.include?('Index maps')
   end
 
-  # Special case: there are over 1,000 scanned maps where we created a geoTIFF
+  # Special case: there are over 1,000 scanned images where we created a geoTIFF
   # (and thus COG) instead of georeferencing a IIIF image. These go through
-  # the entire GIS robots pipeline and are 'geo' despite being scanned maps.
+  # the entire GIS robots pipeline and are 'geo' despite not being datasets.
   # Fortunately, the titles always include this exact string.
-  def scanned_map_as_raster?
+  def scan_as_raster?
     record.content_type == 'geo' && record.display_title.include?('(Raster Image)')
   end
 end
