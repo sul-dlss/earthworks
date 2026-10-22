@@ -12,9 +12,8 @@ en:
         header:  Maps
         description_html: Images of paper maps that have been scanned and/or georeferenced. These digital cartographic resources cover all parts of the world and include topographical maps, historical maps, nautical charts, thematic maps, and atlases. There are <b>%{sets} maps</b> in EarthWorks.
         button_text: 'Browse all maps'
-
     show:
-      no_georeference_message: 'This map is not georeferenced.'
+      no_georeference_message: 'This item is not georeferenced.'
     code_snippet:
       title: 'Code snippets'
       copy: 'Copy'
