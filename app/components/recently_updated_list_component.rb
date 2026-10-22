@@ -1,37 +1,28 @@
 # frozen_string_literal: true
 
 class RecentlyUpdatedListComponent < ViewComponent::Base
-  attr_reader :count, :docs, :type, :field, :term
+  attr_reader :response, :term
 
-  def initialize(term:, additional_fq: '', rows: 4, field: 'gbl_resourceClass_sm')
+  delegate :documents, :total, to: :response
+
+  # @param response [Blacklight::Solr::Response] recently updated items of the given type
+  # @param term [String] the value of the resource class facet the items belong to
+  def initialize(response:, term:)
     super()
-    @fq = ["#{field}:#{term}"] + [additional_fq]
-    @field = field
-    @rows = rows
-    @sort = 'gbl_mdModified_dt desc'
-    response = results['response']
-    @docs = response['docs']
-    @count = response['numFound']
+    @response = response
     @term = term
-    @type = term.downcase
   end
 
-  def search_params
-    fields = Geoblacklight.configuration.fields
-    {
-      'fq' => @fq,
-      'sort' => @sort,
-      'rows' => @rows,
-      'fl' => [fields.title, fields.id, fields.resource_type]
-    }
+  def type
+    term.downcase
   end
 
   def search_url
-    helpers.search_catalog_path("f[#{@field}][]": @term, sort: @sort)
+    fields = Geoblacklight.configuration.fields
+    helpers.search_catalog_path("f[#{fields.resource_class}][]": term, sort: "#{fields.modified} desc")
   end
 
-  def results
-    solr = RSolr.connect url: Blacklight.connection_config[:url]
-    @results = solr.get 'select', params: search_params
+  def heading_id
+    "recently-updated-#{type}"
   end
 end

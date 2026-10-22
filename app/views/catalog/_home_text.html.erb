@@ -6,10 +6,11 @@
       params: search_state.params_for_search.except(:qt),
       autocomplete_path: suggest_index_catalog_path
     ) %>
-  <hr>
-  <%= render RecentlyUpdatedListComponent.new(term: 'Datasets') %>
-  <hr>
-  <%= render RecentlyUpdatedListComponent.new(term: 'Maps') %>
+  <%= tag.h1 t("earthworks.home.title"), class: "visually-hidden" %>
+  <% @recently_updated.each do |term, response| %>
+    <hr>
+    <%= render RecentlyUpdatedListComponent.new(response:, term:) %>
+  <% end %>
   </div>
   <div class="col-sm d-none d-md-block">
     <%= render(Geoblacklight::OverviewMapComponent.new(geosearch: true)) %>

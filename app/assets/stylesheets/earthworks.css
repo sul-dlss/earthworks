@@ -30,14 +30,13 @@
   --ogm-invalid-color: var(--stanford-digital-red);
 }
 
-.home-header .blacklight-icons,
-.home-header .blacklight-icons svg {
-  height: 1.5rem;
-  width: 1.5rem;
+.recently-updated .blacklight-icons {
+  font-size: 1.25rem;
 }
 
-.home-tab {
-  margin-left: 2.3rem;
+.recently-updated li {
+  line-height: 1.2;
+  margin: 0.5rem 0;
 }
 
 .component-container {

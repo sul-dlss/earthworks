@@ -23,6 +23,9 @@ class CatalogController < ApplicationController
     end
   end
 
+  # Lists of recently updated items for the home page
+  before_action :load_recently_updated, only: :index, unless: :has_search_parameters?
+
   configure_blacklight do |config|
     field_config = Geoblacklight.configuration.fields
     # Ensures that JSON representations of Solr Documents can be retrieved using
@@ -364,5 +367,24 @@ class CatalogController < ApplicationController
         # Otherwise draw the full page
       end
     end
+  end
+
+  private
+
+  def load_recently_updated
+    @recently_updated = %w[Datasets Maps].index_with { |term| recently_updated_response(term) }
+  end
+
+  # Run the search through the search service so the SearchBuilder's
+  # processor chain (e.g. hiding suppressed records) applies
+  def recently_updated_response(term, rows: 4)
+    fields = Geoblacklight.configuration.fields
+    state = search_state_class.new(
+      { f: { fields.resource_class => [term] }, sort: "#{fields.modified} desc", rows: },
+      blacklight_config,
+      self
+    )
+    search_service_class.new(config: blacklight_config, search_state: state, **search_service_context)
+                        .search_results { |builder| builder.merge(facet: false, fl: [fields.id, fields.title]) }
   end
 end
