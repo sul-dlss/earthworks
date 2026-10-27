@@ -1,15 +1,14 @@
 <%= render 'did_you_mean' %>
-<h2><%= t 'blacklight.search.zero_results.title' %></h2>
-<div id="documents" class="noresults">
-  <h3 class="modify-search"> <%= t 'blacklight.search.zero_results.modify_search' %></h3>
-  <ul>
-    <li><%= t 'blacklight.search.zero_results.use_fewer_keywords' %></li>
-  </ul>
-  <h3 class="ask-for-dataset"> Ask for a dataset to be added</h3>
-  <p>You can submit  <a href="#feedback"
-      class="nav-link"
-      data-bs-toggle="collapse"
-      data-bs-target="#feedback">feedback</a> to the
-  <%= link_to 'EarthWorks', root_path %> team requesting data to be added.
-  </p>
-</div>
+<%= tag.h2 t('blacklight.search.zero_results.title') %>
+<%= tag.div(id: "documents", class: "noresults") do %>
+  <%= tag.h3 t('blacklight.search.zero_results.modify_search'), class: "modify-search" %>
+  <%= tag.p t('blacklight.search.zero_results.use_fewer_keywords') %>
+  <%= tag.h3 t('earthworks.search.zero_results.ask_for_dataset'), class: "ask-for-dataset" %>
+  <%= tag.p t('earthworks.search.zero_results.use_feedback_html',
+    link: link_to(
+      t('earthworks.search.zero_results.submit_feedback'),
+      '#feedback',
+      data: { bs_toggle: 'collapse', bs_target: '#feedback'}
+    ))
+  %>
+<% end %>

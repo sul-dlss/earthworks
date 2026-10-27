@@ -19,3 +19,8 @@ en:
     code_snippet:
       title: 'Code snippets'
       copy: 'Copy'
+    search:
+      zero_results:
+        ask_for_dataset: Ask for a dataset to be added
+        use_feedback_html: You can %{link} to the EarthWorks team requesting data to be added.
+        submit_feedback: submit feedback
