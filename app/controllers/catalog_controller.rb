@@ -184,22 +184,33 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
     # item_prop: [String] property given to span with Schema.org item property
-    # link_to_search: [Boolean] that can be passed to link to a facet search
-    # helper_method: [Symbol] method that can be used to render the value
-    config.add_show_field field_config.creator, label: 'Creator', itemprop: 'creator', link_to_facet: true
+    # link_to_search: [Boolean] render the item as a link to a facet search
+    # component: [Class] view component that is used to render the value
+    # layout_component: [Class] wrapper view component used for alternate presentation
     config.add_show_field field_config.description, label: 'Description', itemprop: 'description',
                                                     component: Geoblacklight::MetadataDescriptionMarkdownComponent
+    config.add_show_field field_config.creator, label: 'Creator', itemprop: 'creator', link_to_facet: true
     config.add_show_field field_config.publisher, label: 'Publisher', itemprop: 'publisher', link_to_facet: true
-    config.add_show_field field_config.spatial_coverage, label: 'Place', itemprop: 'spatial',
-                                                         link_to_facet: true
-    config.add_show_field field_config.subject, label: 'Subject', itemprop: 'keywords', link_to_facet: true
-    config.add_show_field field_config.theme, label: 'Theme', itemprop: 'theme', link_to_facet: true
-    config.add_show_field field_config.date_issued, label: 'Date Issued', itemprop: 'issued'
-    config.add_show_field field_config.temporal_coverage, label: 'Temporal Coverage', itemprop: 'temporal'
-    config.add_show_field field_config.provider, label: 'Provider', link_to_facet: true
-    config.add_show_field field_config.resource_class, label: 'Resource Class', itemprop: 'class',
-                                                       link_to_facet: true
-    config.add_show_field field_config.resource_type, label: 'Resource Type', itemprop: 'type', link_to_facet: true
+    config.add_show_field field_config.provider, label: 'Provider', itemprop: 'provider', link_to_facet: true
+    config.add_show_field field_config.resource_class, label: 'Resource Class', link_to_facet: true
+    config.add_show_field field_config.resource_type, label: 'Resource Type', link_to_facet: true
+    config.add_show_field field_config.subject, label: 'Subject', itemprop: 'keywords', link_to_facet: true,
+                                                layout_component: Geoblacklight::TruncatableMetadataFieldLayoutComponent
+    config.add_show_field field_config.theme, label: 'Theme', itemprop: 'keywords', link_to_facet: true,
+                                              layout_component: Geoblacklight::TruncatableMetadataFieldLayoutComponent
+    config.add_show_field field_config.temporal_coverage, label: 'Temporal Coverage', itemprop: 'temporalCoverage'
+    config.add_show_field field_config.spatial_coverage, label: 'Place', itemprop: 'spatialCoverage',
+                                                         link_to_facet: true,
+                                                         layout_component: Geoblacklight::TruncatableMetadataFieldLayoutComponent
+    config.add_show_field field_config.date_issued, label: 'Date Issued', itemprop: 'datePublished'
+    config.add_show_field field_config.georeferenced, label: 'Georeferenced'
+    config.add_show_field(
+      field_config.references,
+      label: 'More details at',
+      accessor: [:external_url],
+      if: proc { |_, _, doc| doc.external_url },
+      helper_method: :render_references_url
+    )
 
     # ADDITIONAL FIELDS
     # The following fields are not user friendly and are not set to appear on the item show page.
