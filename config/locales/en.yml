@@ -15,7 +15,7 @@ en:
         button_text: 'Browse all maps'
       recently_updated: 'Recently updated'
     show:
-      no_georeference_message: 'This map is not georeferenced.'
+      no_georeference_message: 'This item is not georeferenced.'
     code_snippet:
       title: 'Code snippets'
       copy: 'Copy'
