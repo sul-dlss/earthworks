@@ -18,10 +18,6 @@ class FeedbackFormsController < ApplicationController
 
   protected
 
-  def url_regex
-    %r{/.*href=.*|.*url=.*|.*http://.*|.*https://.*/i}
-  end
-
   def valid?
     errors = []
 
