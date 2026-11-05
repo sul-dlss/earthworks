@@ -164,6 +164,22 @@ RSpec.describe CocinaToSolrMapper do
     end
   end
 
+  context 'with a COG made from an aerial photo' do
+    let(:druid) { 'gb217dk2634' }
+
+    it 'has resource class of Imagery' do
+      expect(doc['gbl_resourceClass_sm']).to eq ['Imagery']
+    end
+
+    it 'has resource type of Aerial Photographs' do
+      expect(doc['gbl_resourceType_sm']).to eq ['Aerial photographs']
+    end
+
+    it 'is georeferenced' do
+      expect(doc['gbl_georeferenced_b']).to be true
+    end
+  end
+
   context 'with a georeferenced scanned map' do
     let(:druid) { 'bb013fz9675' }
 
@@ -196,15 +212,15 @@ RSpec.describe CocinaToSolrMapper do
     end
   end
 
-  context 'with an index map' do
+  context 'with an index map of polygons' do
     let(:druid) { 'bc576pk4911' }
 
-    it 'has a resource class of Maps' do
-      expect(doc['gbl_resourceClass_sm']).to eq ['Maps']
+    it 'has a resource class of Datasets' do
+      expect(doc['gbl_resourceClass_sm']).to eq ['Datasets']
     end
 
-    it 'has a resource type of Index maps' do
-      expect(doc['gbl_resourceType_sm']).to eq ['Index maps']
+    it 'has a resource type of Index maps and Polygon data' do
+      expect(doc['gbl_resourceType_sm']).to eq ['Polygon data', 'Index maps']
     end
 
     it 'has an index map reference' do
