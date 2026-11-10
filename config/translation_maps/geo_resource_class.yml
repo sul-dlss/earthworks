@@ -1,3 +1,5 @@
 /.*[Cc]ollection.*/: Collections
 /.*[Dd]ataset.*/: Datasets
 /.*[Mm]ap.*/: Maps
+/.*[Pp]hoto.*/: Imagery
+/.*[Ss]atellite.*/: Imagery
