@@ -244,7 +244,7 @@ GEM
       sanitize
       thor
     geo_coord (0.2.0)
-    geoblacklight (6.0.0.pre.beta.2)
+    geoblacklight (6.0.0.pre.beta.3)
       blacklight (>= 9.1, < 10)
       coderay
       commonmarker (~> 2.9)
@@ -252,7 +252,7 @@ GEM
       deprecation
       faraday (~> 2.0)
       faraday-follow_redirects
-      geo_combine (~> 0.11)
+      geo_combine (~> 0.12)
       mime-types
       rails (>= 8, < 9)
       rgeo-geojson
@@ -695,7 +695,7 @@ DEPENDENCIES
   dotenv
   ed25519 (~> 1.3)
   factory_bot_rails
-  geoblacklight (= 6.0.0.pre.beta.2)
+  geoblacklight (= 6.0.0.pre.beta.3)
   global_alerts
   honeybadger
   http
@@ -824,7 +824,7 @@ CHECKSUMS
   ffi (1.17.4-x86_64-linux-musl) sha256=3fdf9888483de005f8ef8d1cf2d3b20d86626af206cbf780f6a6a12439a9c49e
   geo_combine (0.12.0) sha256=1376ff852746b7cae1b204e0b3403ccd78bbbccb6e821fd04928ca02d34a9381
   geo_coord (0.2.0) sha256=ae4e2dc5799deafa4db9138f3d7e85cf5e7dbd00b3b8395f1e1dbd34e007d7e8
-  geoblacklight (6.0.0.pre.beta.2) sha256=39a3f8a833123baeae883e759014cc9a3406c6c55188ce4bfddb4012a5eeacf2
+  geoblacklight (6.0.0.pre.beta.3) sha256=154c67dd8d44b300677a686be8cc4bf0750e236129efd03f94dce4f16be8de1b
   git (6.0.0) sha256=f5e8d15b4af7fcf28f9f8aeeeb858f9681eba90c1f2dc68d9f01f3192fb3d514
   global_alerts (0.8.0) sha256=b27ff1f6dd7432abae349c9e483049bde13918e5f8de08095cbe49d06e84927a
   globalid (1.4.0) sha256=037f12fbf1d9d7a014d501c2d5c77356fd4ddd96d7a7991d6700bba96706f427

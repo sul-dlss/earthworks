@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class CodeSnippetModalComponent < ViewComponent::Base
+  # Matches a WKT ENVELOPE(...) and captures its four coordinates
+  ENVELOPE_PATTERN = /ENVELOPE\(\s*([-.\d]+)\s*,\s*([-.\d]+)\s*,\s*([-.\d]+)\s*,\s*([-.\d]+)\s*\)/
+
   def initialize(document)
     @document = document
     @raster_data_type = raster_data?
@@ -45,29 +48,21 @@ class CodeSnippetModalComponent < ViewComponent::Base
                                    substitute_webservice_value(@document.references.wfs, '[Insert WFS endpoint]'))
 
     # Replace Bounding box information
-    if @document.geom_field.blank? || @document.geometry.geom.blank?
+    envelope = @document.geom_field&.match(ENVELOPE_PATTERN)
+    if envelope
+      min_x, max_x, min_y, max_y = envelope.captures
+
+      sub_content = sub_content.gsub('<<MIN_X>>', min_x)
+      sub_content = sub_content.gsub('<<MIN_Y>>', min_y)
+      sub_content = sub_content.gsub('<<MAX_X>>', max_x)
+      sub_content.gsub('<<MAX_Y>>', max_y)
+    else
       # If geometry information is not available, subsitute the coordinates with placeholder text
       sub_content = sub_content.gsub('<<MIN_X>>', '[Insert bounding box min X value]')
       sub_content = sub_content.gsub('<<MIN_Y>>', '[Insert bounding box min Y value]')
       sub_content = sub_content.gsub('<<MAX_X>>', '[Insert bounding box max X value]')
-      sub_content = sub_content.gsub('<<MAX_Y>>', '[Insert bounding box max Y value]')
-    else
-      geometry = @document.geometry.geom
-      bbox_array = geometry.split('ENVELOPE(')[1].split(')')[0].split(',').map(&:strip)
-
-      if bbox_array.length == 4
-        min_x = bbox_array[0]
-        max_x = bbox_array[1]
-        min_y = bbox_array[2]
-        max_y = bbox_array[3]
-
-        sub_content = sub_content.gsub('<<MIN_X>>', min_x)
-        sub_content = sub_content.gsub('<<MIN_Y>>', min_y)
-        sub_content = sub_content.gsub('<<MAX_X>>', max_x)
-        sub_content = sub_content.gsub('<<MAX_Y>>', max_y)
-      end
+      sub_content.gsub('<<MAX_Y>>', '[Insert bounding box max Y value]')
     end
-    sub_content
   end
 
   def layer_id
