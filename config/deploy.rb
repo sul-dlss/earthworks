@@ -46,6 +46,10 @@ set :whenever_roles, [:cron]
 set :racecar_systemd_role, :indexer
 set :racecar_systemd_use_hooks, true
 
+# Only restart Passenger on the web servers. The worker hosts keep the :app role
+# (needed for shared_configs, etc.) but don't run Apache/Passenger.
+set :passenger_roles, :web
+
 # update shared_configs before restarting app
 before 'deploy:restart', 'shared_configs:update'
 
