@@ -32,9 +32,6 @@ newrelic_app_name: "should be specific to stage and prod"
 newrelic_license_key: "this is private"
 newrelic_enabled: false
 
-# Server used for background jobs
-redis_url: "redis://localhost:6379/"
-
 cors:
   allow_origin_url: "https://embed-stage.stanford.edu"
 

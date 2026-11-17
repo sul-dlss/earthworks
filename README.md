@@ -30,9 +30,9 @@ bin/rake geoblacklight:server
 
 ### Supporting services
 
-Earthworks uses a solr index for search, and optionally a Redis cache and a Postgresql database to mimic the production setup.
+Earthworks uses a solr index for search, and optionally a Postgresql database to mimic the production setup. In production, the Rails cache is stored in the database via [Solid Cache](https://github.com/rails/solid_cache).
 
-To run the production setup, you need to uncomment the `DATABASE_URL`, `REDIS_URL`, `REDIS_HOST`, and `REDIS_PORT` lines in the `.env[.test]` file(s) (in the project root).
+To run the production setup, you need to uncomment the `DATABASE_URL` line in the `.env[.test]` file(s) (in the project root).
 
 Then you need to invoke the compose file yourself, set up the Postgres database, and run the rails server separately:
 

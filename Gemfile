@@ -70,7 +70,7 @@ gem 'okcomputer'
 gem 'honeybadger'
 gem 'blacklight_dynamic_sitemap', '~> 0.3'
 gem 'newrelic_rpm'
-gem 'redis', '~> 5.0'
+gem 'solid_cache', '~> 1.0'
 gem 'whenever', require: false
 gem 'recaptcha', '>= 5.4.1'
 gem 'http'
