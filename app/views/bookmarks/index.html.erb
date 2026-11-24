@@ -1,7 +1,7 @@
 <%# This template copies the same Blacklight file, but places the 'clear_bookmarks_widget' in a custom position.
 We also add some custom spacing and alignment. %>
 
-<% @page_title = t('blacklight.bookmarks.page_title', :application_name => application_name) %>
+<% content_for(:page_title, t('blacklight.bookmarks.page_title', :application_name => application_name)) %>
 
 <div id="content" class="col-md-12">
   <div class="bookmarks-page-heading d-flex justify-content-center justify-content-sm-start">
