@@ -3,12 +3,11 @@
   <%
     overview_results = document_presenters.each_with_index.map do |presenter, index|
       document = presenter.document
-      { id: document.id, place: document_counter_with_offset(index), geometry: JSON.parse(document.geometry.geojson) }
+      { id: document.id, place: document_counter_with_offset(index), geometry: document.geom_field }
     end
   -%>
   <%= tag.div id: 'documents', class: 'documents-list', data: { overview_map_results: overview_results.to_json } do %>
-    <% isIndex = results_js_map_selector(controller.controller_name) == "index" %>
-    <%= render blacklight_config.view_config(document_index_view_type).search_header_component.new if isIndex %>
+    <%= render blacklight_config.view_config(document_index_view_type).search_header_component.new unless controller.controller_name == "bookmarks" %>
     <div id="documents-container">
       <% document_presenters.each_with_index do |presenter, index| %>
         <%= render blacklight_config.index.document_component.new(document: presenter, counter: document_counter_with_offset(index)) %>
