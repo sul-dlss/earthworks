@@ -1,5 +1,5 @@
 <%# overridden from Blacklight to remove the Search header component. We render it in document_split instead %>
-<% @page_title = t('blacklight.search.page_title.title', constraints: render_search_to_page_title(search_state), application_name: application_name) %>
+<% content_for(:page_title, t('blacklight.search.page_title.title', constraints: render_search_to_page_title(search_state), application_name: application_name)) %>
 
 <% content_for(:head) do -%>
   <%= render 'catalog/opensearch_response_metadata', response: @response %>
